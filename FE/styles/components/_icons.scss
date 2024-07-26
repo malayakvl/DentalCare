@@ -1,0 +1,202 @@
+.f-email {
+  background-image: url("../../public/images/icons/input-email.svg");
+}
+//.f-facebook {
+//  background-image: url("../../public/images/icons/facebook-gray.svg");
+//}
+
+.f-fname {
+  background-image: url("../../public/images/icons/input-name.svg");
+}
+.f-lname {
+  background-image: url("../../public/images/icons/input-f-name.svg");
+}
+.f-company {
+  background-image: url("../../public/images/icons/input-company.svg");
+}
+.f-company-id {
+  background-image: url("../../public/images/icons/input-company-id.svg");
+}
+.f-vat {
+  background-image: url("../../public/images/icons/input-vat.svg");
+}
+.f-phone {
+  background-image: url("../../public/images/icons/input-phone.svg");
+}
+.f-location {
+  background-image: url("../../public/images/icons/input-location.svg");
+}
+.f-search {
+  background-image: url("../../public/images/icons/input-search.svg");
+}
+.f-key {
+  background-image: url("../../public/images/icons/input-key.svg");
+}
+.f-eye {
+  background-image: url("../../public/images/icons/input-eye.svg");
+}
+.f-password {
+  background-image: url("../../public/images/icons/input-password.svg");
+}
+.f-credit-card {
+  background-image: url("../../public/images/icons/icon-credit-card.svg");
+}
+.f-credit-credit-card-exp {
+  background-image: url("../../public/images/icons/icon-credit-card-exp.svg");
+}
+.f-credit-credit-card-ccv {
+  background-image: url("../../public/images/icons/icon-credit-card-ccv.svg");
+}
+.f-message {
+  background-image: url("../../public/images/icons/icon-message.svg");
+  background-size: 20px 20px;
+}
+.f-history {
+  background-image: url("../../public/images/icons/icon-history.svg");
+  background-size: 20px 20px;
+}
+
+.order-status {
+  display: inline-block;
+  //width: 85px;
+  height: 27px;
+  margin-right: 4px;
+  text-align: center;
+  min-width: 80px;
+}
+.f-pdf {
+  background-image: url("../../public/images/icons/icon-pdf.svg");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.invoice-dropdown {
+  .dropdown-menu {
+
+  }
+}
+
+.info {
+  background-image: url("../../public/images/icons/icon-info.svg");
+  @apply inline-block w-[14px] h-[14px];
+}
+.scenario {
+  background-image: url("../../public/images/icons/icon-table-chatbot.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.message {
+  background-image: url("../../public/images/icons/icon-message.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[14px] h-[14px] float-left mt-0.5;
+}
+.chatbot-product {
+  background-image: url("../../public/images/icons/icon-message.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[14px] h-[14px] float-left mt-0.5;
+}
+.eye {
+  background-image: url("../../public/images/icons/icon-eye.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[14px] h-[14px] float-left mt-0.5;
+}
+.icon-tbl-date {
+  background-image: url("../../public/images/icons/icon-tbl-date.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-time {
+  background-image: url("../../public/images/icons/icon-tbl-time.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-status {
+  background-image: url("../../public/images/icons/icon-tbl-status.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-pdf {
+  background-image: url("../../public/images/icons/icon-tbl-pdf.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[16px] float-left mt-0;
+}
+.icon-tbl-historystatus {
+  background-image: url("../../public/images/icons/icon-history.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[14px] h-[16px] float-left mt-0;
+}
+.icon-tbl-country {
+  background-image: url("../../public/images/icons/icon-tbl-country.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-sh-cart {
+  background-image: url("../../public/images/icons/icon-tbl-sh-cart.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-card {
+  background-image: url("../../public/images/icons/icon-tbl-card.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-order {
+  background-image: url("../../public/images/icons/icon-tbl-order.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-triangle {
+  background-image: url("../../public/images/icons/icon-tbl-triangle.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-total {
+  background-image: url("../../public/images/icons/icon-tbl-total.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-cart {
+  background-image: url("../../public/images/icons/icon-tbl-cart.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-keys {
+  background-image: url("../../public/images/icons/icon-tbl-keys.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[20px] float-left mt-0;
+}
+.icon-tbl-users {
+  background-image: url("../../public/images/icons/icon-tbl-users.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-amount {
+  background-image: url("../../public/images/icons/icon-tbl-amount.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-phone {
+  background-image: url("../../public/images/icons/icon-tbl-phone.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-address {
+  background-image: url("../../public/images/icons/icon-tbl-address.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.icon-tbl-index {
+  background-image: url("../../public/images/icons/icon-tbl-index.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[16px] h-[14px] float-left mt-0;
+}
+.action-triangle {
+  background-image: url("../../public/images/icons/action-arrow.svg");
+  background-repeat: no-repeat;
+  @apply inline-block w-[14px] h-[14px] float-left mt-0.5;
+}
+
+

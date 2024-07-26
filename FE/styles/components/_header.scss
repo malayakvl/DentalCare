@@ -1,0 +1,156 @@
+header {
+    //border-bottom: 1px solid #0a6aa1;
+    background-color: #fff;
+    //box-shadow: 10px 10px 5px 0px rgba(35,9,112,1);
+    padding-top: 14px;
+    //padding-bottom: 14px;
+    box-shadow: 0 2px 14px rgba(2, 2, 68, 0.64);
+    z-index: 1000;
+    display: grid;
+
+    @apply md:h-[90px];
+}
+
+ul li {
+    //float: right;
+    list-style: none;
+    display: inline-block;
+    //padding: 20px;
+
+    a {
+        font-weight: bold;
+        color: #5042a6;
+    }
+}
+
+.logo {
+    width: 100px;
+    //height: 150px;
+    align-content: flex-start;
+    position: relative;
+    background-position-y: -10px;
+
+    @apply ml-[-15px];
+
+    .logo-img {
+        background: url(../../public/images/header/logo-top.svg);
+        width: 240px;
+        height: 190px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-block;
+        position: absolute;
+        top: -65px;
+        left: 5px;
+    }
+
+    span {
+        //font-family: "Dancing Script", cursive;
+        font-family: "Pacifico", cursive;
+        //text-transform: uppercase;
+        color: #452596;
+        position: absolute;
+        left: 72px;
+        white-space: nowrap;
+        top: 0px;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
+}
+
+.language-block {
+    position: absolute;
+    //right: 280px;
+    //top: 15px;
+    right: 145px;
+    top: 25px;
+
+    li {
+        padding:  0 10px 0;
+        font-weight: bold;
+        font-size: 13px;
+        color: #aea1e7;
+        border:solid 1px #c6beea;
+        border-radius: 4px;
+        box-shadow: 0 2px 14px rgba(18, 9, 122, 0.1);
+        margin-left: 7px;
+    }
+    li.active {
+        color: #573ad9;
+    }
+}
+
+.nav-text {
+    @apply lg:mt-[15px];
+
+    li {
+        //border:solid 1px;
+        font-family: 'Montserrat', sans-serif;
+        @apply lg:min-w-[120px] text-[15px];
+
+        a {
+            font-size: 17px;
+            font-weight: normal;
+        }
+    }
+}
+
+.btn-login {
+    //position: absolute;
+    //right: 70px;
+    //top: -10px;
+    @apply absolute top-0 right-[75px] min-w-[160px];
+}
+.enter-btn {
+    background-image: url(../../public/images/header/login-button.svg);
+    display: inline-block;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 7px;
+    right: -70px;
+}
+
+.btn-toogle {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    @apply block lg:hidden;
+
+    .btn-primary {
+        padding: 15px 25px;
+        position: relative;
+
+        span {
+            background-image: url("../../public/images/header/menu.svg");
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            //border: solid 1px red;
+            background-position: center;
+            //background-color: red;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 11px;
+            //border: solid 1px;
+            left: 13px;
+        }
+    }
+}
+
+.profile-small-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: -10px;
+}
+
+.active-lang img {
+    width: 24px;
+    height: 16px;
+}
