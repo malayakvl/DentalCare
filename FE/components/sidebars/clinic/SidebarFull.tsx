@@ -54,6 +54,17 @@ const SidebarFull: React.FC = () => {
                     </a>
                 </Link>
             </li>
+            <li
+                role="presentation"
+                className={currRoute === 'scheduler' ? 'active' : ''}
+                onClick={() => closeMenu()}>
+                <Link href={'/scheduler'} legacyBehavior>
+                    <a>
+                        <i className="scheduler"/>
+                        <span className="s-caption">{t('Scheduler')}</span>
+                    </a>
+                </Link>
+            </li>
             {/*<li role="presentation" className="separator-line">*/}
             {/*    <div className="separator"/>*/}
             {/*</li>*/}

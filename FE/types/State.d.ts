@@ -7,6 +7,7 @@ declare namespace State {
         // notifications: Notifications;
         clinics: Clinics;
         layouts: Layouts;
+        scheduler: Scheduler;
         // products: Products;
         // chatbot: Chatbot;
         // countries: Countries;
