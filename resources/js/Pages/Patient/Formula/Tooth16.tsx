@@ -50,7 +50,6 @@ export default function Tooth16({
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
-console.log('here we are')
         if (diagnozis === 'caries') {
             if (toothPart === 'bottom') {
                 teethDiagnozis.tooth16.caries_bottom = !teethDiagnozis.tooth16.caries_bottom;
@@ -87,6 +86,7 @@ console.log('here we are')
                 dispatch(setToothDiagnoze(teethDiagnozis));
             }
             if (toothPart === 'bottom') {
+                console.log(teethDiagnozis.tooth16.seal_bottom_color, sealColor2)
                 if (teethDiagnozis.tooth16.seal_bottom_color != sealColor1 && sealColor1 != '') {
                     teethDiagnozis.tooth16.seal_bottom_color = sealColor1;
                     teethDiagnozis.tooth16.seal_bottom = true;
@@ -94,6 +94,7 @@ console.log('here we are')
                     teethDiagnozis.tooth16.seal_bottom_color = sealColor2;
                     teethDiagnozis.tooth16.seal_bottom = true;
                 } else if (teethDiagnozis.tooth16.seal_bottom_color != sealColor3 && sealColor3 != '') {
+                    console.log('BLEAT')
                     teethDiagnozis.tooth16.seal_bottom_color = sealColor3;
                     teethDiagnozis.tooth16.seal_bottom = true;
                 } else {
@@ -117,6 +118,8 @@ console.log('here we are')
                 dispatch(setToothDiagnoze(teethDiagnozis));
             }
             if (toothPart === 'right') {
+                console.log(sealColor1, sealColor2, sealColor3);
+                console.log(teethDiagnozis.tooth16.seal_right_color);
                 if (teethDiagnozis.tooth16.seal_right_color != sealColor1 && sealColor1 != '') {
                     teethDiagnozis.tooth16.seal_right_color = sealColor1;
                     teethDiagnozis.tooth16.seal_right = true;
@@ -124,6 +127,7 @@ console.log('here we are')
                     teethDiagnozis.tooth16.seal_right_color = sealColor2;
                     teethDiagnozis.tooth16.seal_right = true;
                 } else if (teethDiagnozis.tooth16.seal_right_color != sealColor3 && sealColor3 != '') {
+                    console.log('TUT')
                     teethDiagnozis.tooth16.seal_right_color = sealColor3;
                     teethDiagnozis.tooth16.seal_right = true;
                 } else {
@@ -460,7 +464,7 @@ console.log('here we are')
                                     `st8 caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth16.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth16.caries_bottom ? `seal-fill ${teethDiagnozis.tooth16.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth16.seal_bottom ? `seal-fill ${teethDiagnozis.tooth16.seal_bottom_color}` : ''}
                                 `}
                                 d="M453.4,646.4C453.4,646.4,453.4,646.4,453.4,646.4c3.2,6.4,8.3,11.6,14.4,15.4c5.5,3.3,11.6,5.4,18,6.5
                                 c6,1.1,12.2,1.3,18.2,0.1c9.5-1.8,18.2-7,28-7.1c5.6,0,11,1.6,16.6,2.4c9.9,1.3,20-0.4,28.1-5.6c2.9-1.8,5.4-4,7.7-6.4
@@ -520,8 +524,8 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_left && !tooth16Diagnozis.seal_top) ||
-                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_top)
+                                        (tooth16Diagnozis.seal_left && !tooth16Diagnozis.seal_bottom) ||
+                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M488.5 621C485.333 625.333 474.6 636.1 457 644.5" 
@@ -541,8 +545,8 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_left && !tooth16Diagnozis.seal_bottom) ||
-                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_bottom)
+                                        (tooth16Diagnozis.seal_left && !tooth16Diagnozis.seal_top) ||
+                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}
                                 d="M496 574C495.5 568.333 491.8 555.6 481 550"
@@ -552,8 +556,8 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_bottom) ||
-                                        (!tooth16Diagnozis.seal_center && tooth16Diagnozis.seal_bottom)
+                                        (tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_top) ||
+                                        (!tooth16Diagnozis.seal_center && tooth16Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}
                             />
@@ -562,8 +566,8 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_right && !tooth16Diagnozis.seal_bottom) ||
-                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_bottom)
+                                        (tooth16Diagnozis.seal_right && !tooth16Diagnozis.seal_top) ||
+                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}
                                 d="M573 576C579.167 572.167 593 561.8 599 551" 
@@ -584,18 +588,18 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_right && !tooth16Diagnozis.seal_top) ||
-                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_top)
+                                        (tooth16Diagnozis.seal_right && !tooth16Diagnozis.seal_bottom) ||
+                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                             />
-                            {/*Овал черточка низ*/}
+                            {/*Овал черточка низ право*/}
                             <path className="st54" d="M560.5 624C550.5 630 505.6 631.5 488 621.5" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_top) ||
-                                        (!tooth16Diagnozis.seal_center && tooth16Diagnozis.seal_top)
+                                        (tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_bottom) ||
+                                        (!tooth16Diagnozis.seal_center && tooth16Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                             />
@@ -916,7 +920,7 @@ console.log('here we are')
                                     `st8 caries-right
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth16.caries_right ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth16.seal_right ? `seal-fill ${teethDiagnozis.tooth16.seal_center_color}` : ''}
+                                ${teethDiagnozis.tooth16.seal_right ? `seal-fill ${teethDiagnozis.tooth16.seal_right_color}` : ''}
                             `} 
                                 d="M565.8,481.9c0.6,0.4,1.2,0.8,1.7,1.2c2.1,1.5,3.9,3.2,5.7,5l6.1,0.8c7.8-3.4,14.6-8.2,19.8-14.1
                                 c3.2-3.6,5.8-7.5,7.7-11.7c1.5-6.5,2.3-13.1,2.4-19.7c0.1-6.9-0.6-13.9-1.3-20.8c-0.5-5.4-1.1-10.8-1.8-16.2
@@ -989,9 +993,9 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_left && !tooth16Diagnozis.seal_bottom) ||
-                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_bottom && !tooth16Diagnozis.seal_center) ||
-                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_bottom && tooth16Diagnozis.seal_center)
+                                        (tooth16Diagnozis.seal_left && !tooth16Diagnozis.seal_top) ||
+                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_top && !tooth16Diagnozis.seal_center) ||
+                                        (!tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_top && tooth16Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                             />
@@ -1000,9 +1004,9 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_bottom && !tooth16Diagnozis.seal_center) ||
-                                        (tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_bottom) ||
-                                        (!tooth16Diagnozis.seal_bottom && !tooth16Diagnozis.seal_top && tooth16Diagnozis.seal_center)
+                                        (tooth16Diagnozis.seal_top && !tooth16Diagnozis.seal_center) ||
+                                        (tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_top) ||
+                                        (!tooth16Diagnozis.seal_top && !tooth16Diagnozis.seal_bottom && tooth16Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M502.5 436.999C518.5 420.999 559.7 421.699 578.5 440.499" 
@@ -1012,9 +1016,9 @@ console.log('here we are')
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth16Diagnozis.seal_right && !tooth16Diagnozis.seal_bottom) ||
-                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_bottom && !tooth16Diagnozis.seal_center) ||
-                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_bottom && tooth16Diagnozis.seal_center)
+                                        (tooth16Diagnozis.seal_right && !tooth16Diagnozis.seal_top) ||
+                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_top && !tooth16Diagnozis.seal_center) ||
+                                        (!tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_top && tooth16Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }}
