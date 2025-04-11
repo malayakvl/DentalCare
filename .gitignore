@@ -19,4 +19,17 @@
 
 /OLDFORREMOVE/
 /public/build/
-./DS_Store
+./DS
+
+.DS_Store
+public/.DS_Store
+public/images/.DS_Store
+public/uploads/.DS_Store
+resources/.DS_Store
+resources/images/.DS_Store
+resources/js/.DS_Store
+resources/js/Pages/.DS_Store
+resources/js/Pages/Patient/.DS_Store
+resources/js/Pages/Patient/FormulaMilk/.DS_Store
+resources/js/Pages/Patient/Partials/.DS_Store
+resources/.DS_Store
