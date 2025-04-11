@@ -1,0 +1,4764 @@
+{
+  "_ApplicationLogo-fdB6LoQ_.js": {
+    "file": "assets/ApplicationLogo-fdB6LoQ_.js",
+    "name": "ApplicationLogo",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_AuthenticatedLayout-BBwQuZdH.js": {
+    "file": "assets/AuthenticatedLayout-BBwQuZdH.js",
+    "name": "AuthenticatedLayout",
+    "imports": [
+      "resources/js/app.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js"
+    ]
+  },
+  "_Checkbox-fxRrBKYk.js": {
+    "file": "assets/Checkbox-fxRrBKYk.js",
+    "name": "Checkbox",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_DataTable-DOKtOU6j.js": {
+    "file": "assets/DataTable-DOKtOU6j.js",
+    "name": "DataTable",
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js"
+    ]
+  },
+  "_FormPopupCreate-!~{03D}~.js": {
+    "file": "assets/FormPopupCreate-CNnP5Sax.css",
+    "src": "_FormPopupCreate-!~{03D}~.js"
+  },
+  "_FormPopupCreate-C30OULp5.js": {
+    "file": "assets/FormPopupCreate-C30OULp5.js",
+    "name": "FormPopupCreate",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_InputText-8GBDd7K4.js",
+      "_moment-xMAXktoI.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_SecondaryButton-b2dv0hg0.js",
+      "_index-BUYc01sp.js",
+      "_reselect-NCCDNIWx.js",
+      "_transition-Dk6MwGSW.js"
+    ],
+    "css": [
+      "assets/FormPopupCreate-CNnP5Sax.css"
+    ]
+  },
+  "_GuestLayout-_oh4o1R8.js": {
+    "file": "assets/GuestLayout-_oh4o1R8.js",
+    "name": "GuestLayout",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_InputCalendar-!~{04l}~.js": {
+    "file": "assets/InputCalendar-CMm55t9y.css",
+    "src": "_InputCalendar-!~{04l}~.js"
+  },
+  "_InputCalendar-Bvslxe5p.js": {
+    "file": "assets/InputCalendar-Bvslxe5p.js",
+    "name": "InputCalendar",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js",
+      "_clsx-B-dksMZM.js",
+      "_floating-ui.react-CImirEtS.js"
+    ],
+    "css": [
+      "assets/InputCalendar-CMm55t9y.css"
+    ]
+  },
+  "_InputError-Di-9Svck.js": {
+    "file": "assets/InputError-Di-9Svck.js",
+    "name": "InputError",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_InputLabel-Doo0KOeK.js": {
+    "file": "assets/InputLabel-Doo0KOeK.js",
+    "name": "InputLabel",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_InputRoleSelect-XhwVtRZb.js": {
+    "file": "assets/InputRoleSelect-XhwVtRZb.js",
+    "name": "InputRoleSelect",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CclwJSWy.js"
+    ]
+  },
+  "_InputSelect-BKKZVYkM.js": {
+    "file": "assets/InputSelect-BKKZVYkM.js",
+    "name": "InputSelect",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_lang-Rf8_tUbV.js"
+    ]
+  },
+  "_InputTaxSelect-WIwtnPKw.js": {
+    "file": "assets/InputTaxSelect-WIwtnPKw.js",
+    "name": "InputTaxSelect",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_lang-Rf8_tUbV.js"
+    ]
+  },
+  "_InputText-8GBDd7K4.js": {
+    "file": "assets/InputText-8GBDd7K4.js",
+    "name": "InputText",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "_InputTreeSelect-Ciw_oVnd.js": {
+    "file": "assets/InputTreeSelect-Ciw_oVnd.js",
+    "name": "InputTreeSelect",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "_Modal-EpUJ5xvo.js": {
+    "file": "assets/Modal-EpUJ5xvo.js",
+    "name": "Modal",
+    "imports": [
+      "resources/js/app.tsx",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js"
+    ]
+  },
+  "_ModalError-CMV25L4x.js": {
+    "file": "assets/ModalError-CMV25L4x.js",
+    "name": "ModalError",
+    "imports": [
+      "resources/js/app.tsx",
+      "_clsx-B-dksMZM.js",
+      "_index-BUYc01sp.js",
+      "_transition-Dk6MwGSW.js",
+      "_Modal-EpUJ5xvo.js"
+    ]
+  },
+  "_PrimaryButton-DDpmqCs-.js": {
+    "file": "assets/PrimaryButton-DDpmqCs-.js",
+    "name": "PrimaryButton",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_SecondaryButton-b2dv0hg0.js": {
+    "file": "assets/SecondaryButton-b2dv0hg0.js",
+    "name": "SecondaryButton",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_TextInput-BHnxEnBD.js": {
+    "file": "assets/TextInput-BHnxEnBD.js",
+    "name": "TextInput",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_clsx-B-dksMZM.js": {
+    "file": "assets/clsx-B-dksMZM.js",
+    "name": "clsx"
+  },
+  "_floating-ui.react-CImirEtS.js": {
+    "file": "assets/floating-ui.react-CImirEtS.js",
+    "name": "floating-ui.react",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_index-1s0-x6uo.js": {
+    "file": "assets/index-1s0-x6uo.js",
+    "name": "index",
+    "imports": [
+      "_index-BUYc01sp.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "_index-BUYc01sp.js": {
+    "file": "assets/index-BUYc01sp.js",
+    "name": "index",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_lang-Rf8_tUbV.js": {
+    "file": "assets/lang-Rf8_tUbV.js",
+    "name": "lang",
+    "imports": [
+      "_reselect-NCCDNIWx.js",
+      "resources/js/app.tsx"
+    ]
+  },
+  "_moment-xMAXktoI.js": {
+    "file": "assets/moment-xMAXktoI.js",
+    "name": "moment",
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "_portal-B0qkh_OA.js": {
+    "file": "assets/portal-B0qkh_OA.js",
+    "name": "portal",
+    "imports": [
+      "resources/js/app.tsx",
+      "_transition-Dk6MwGSW.js"
+    ]
+  },
+  "_reselect-NCCDNIWx.js": {
+    "file": "assets/reselect-NCCDNIWx.js",
+    "name": "reselect"
+  },
+  "_selectors-3ONsMayW.js": {
+    "file": "assets/selectors-3ONsMayW.js",
+    "name": "selectors",
+    "imports": [
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "_selectors-3sqmDyDh.js": {
+    "file": "assets/selectors-3sqmDyDh.js",
+    "name": "selectors",
+    "imports": [
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "_selectors-BaSUzsHv.js": {
+    "file": "assets/selectors-BaSUzsHv.js",
+    "name": "selectors",
+    "imports": [
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "_selectors-DcLeQ0hp.js": {
+    "file": "assets/selectors-DcLeQ0hp.js",
+    "name": "selectors",
+    "imports": [
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "_transition-Dk6MwGSW.js": {
+    "file": "assets/transition-Dk6MwGSW.js",
+    "name": "transition",
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "_translation-67tgpVHE.js": {
+    "file": "assets/translation-67tgpVHE.js",
+    "name": "translation"
+  },
+  "_translation-766vIZ7q.js": {
+    "file": "assets/translation-766vIZ7q.js",
+    "name": "translation"
+  },
+  "_translation-BfOkMoov.js": {
+    "file": "assets/translation-BfOkMoov.js",
+    "name": "translation"
+  },
+  "_translation-C3eziIDM.js": {
+    "file": "assets/translation-C3eziIDM.js",
+    "name": "translation"
+  },
+  "_translation-C7xvdQ8V.js": {
+    "file": "assets/translation-C7xvdQ8V.js",
+    "name": "translation"
+  },
+  "_translation-C8LA4uZM.js": {
+    "file": "assets/translation-C8LA4uZM.js",
+    "name": "translation"
+  },
+  "_translation-CDofm1G6.js": {
+    "file": "assets/translation-CDofm1G6.js",
+    "name": "translation"
+  },
+  "_translation-CYfE0WdF.js": {
+    "file": "assets/translation-CYfE0WdF.js",
+    "name": "translation"
+  },
+  "_translation-C_ntFpHY.js": {
+    "file": "assets/translation-C_ntFpHY.js",
+    "name": "translation"
+  },
+  "_translation-C_oq1VrL.js": {
+    "file": "assets/translation-C_oq1VrL.js",
+    "name": "translation"
+  },
+  "_translation-CclwJSWy.js": {
+    "file": "assets/translation-CclwJSWy.js",
+    "name": "translation"
+  },
+  "_translation-CtJ8uRc_.js": {
+    "file": "assets/translation-CtJ8uRc_.js",
+    "name": "translation"
+  },
+  "_translation-D28PB4j-.js": {
+    "file": "assets/translation-D28PB4j-.js",
+    "name": "translation"
+  },
+  "_translation-DenoX4fV.js": {
+    "file": "assets/translation-DenoX4fV.js",
+    "name": "translation"
+  },
+  "_translation-FNvhZ9NL.js": {
+    "file": "assets/translation-FNvhZ9NL.js",
+    "name": "translation"
+  },
+  "_translation-hRiGdJJJ.js": {
+    "file": "assets/translation-hRiGdJJJ.js",
+    "name": "translation"
+  },
+  "_translation-xJPwW3Hr.js": {
+    "file": "assets/translation-xJPwW3Hr.js",
+    "name": "translation"
+  },
+  "resources/images/bg/bg-main.jpg": {
+    "file": "assets/bg-main-qeXZK7Or.jpg",
+    "src": "resources/images/bg/bg-main.jpg"
+  },
+  "resources/js/Pages/Auth/ConfirmPassword.tsx": {
+    "file": "assets/ConfirmPassword-cGWAFFfb.js",
+    "name": "ConfirmPassword",
+    "src": "resources/js/Pages/Auth/ConfirmPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_TextInput-BHnxEnBD.js",
+      "_GuestLayout-_oh4o1R8.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ForgotPassword.tsx": {
+    "file": "assets/ForgotPassword-CCCDbP7e.js",
+    "name": "ForgotPassword",
+    "src": "resources/js/Pages/Auth/ForgotPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_TextInput-BHnxEnBD.js",
+      "_GuestLayout-_oh4o1R8.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Login.tsx": {
+    "file": "assets/Login-B_870kxS.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Auth/Login.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_Checkbox-fxRrBKYk.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_GuestLayout-_oh4o1R8.js",
+      "_InputText-8GBDd7K4.js",
+      "_lang-Rf8_tUbV.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Auth/LoginInvite.tsx": {
+    "file": "assets/LoginInvite-YOB25JW8.js",
+    "name": "LoginInvite",
+    "src": "resources/js/Pages/Auth/LoginInvite.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_Checkbox-fxRrBKYk.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-BfOkMoov.js",
+      "_InputText-8GBDd7K4.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Auth/Register.tsx": {
+    "file": "assets/Register-CvO6x_Py.js",
+    "name": "Register",
+    "src": "resources/js/Pages/Auth/Register.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_TextInput-BHnxEnBD.js",
+      "_GuestLayout-_oh4o1R8.js"
+    ]
+  },
+  "resources/js/Pages/Auth/ResetPassword.tsx": {
+    "file": "assets/ResetPassword-C86M0mmN.js",
+    "name": "ResetPassword",
+    "src": "resources/js/Pages/Auth/ResetPassword.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_TextInput-BHnxEnBD.js",
+      "_GuestLayout-_oh4o1R8.js"
+    ]
+  },
+  "resources/js/Pages/Auth/VerifyEmail.tsx": {
+    "file": "assets/VerifyEmail-uaXAsw0r.js",
+    "name": "VerifyEmail",
+    "src": "resources/js/Pages/Auth/VerifyEmail.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_GuestLayout-_oh4o1R8.js"
+    ]
+  },
+  "resources/js/Pages/Cabinet/Create.tsx": {
+    "file": "assets/Create-CawJtK58.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Cabinet/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Cabinet/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-67tgpVHE.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Cabinet/Edit.tsx": {
+    "file": "assets/Edit-CNSGo6da.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Cabinet/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Cabinet/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-67tgpVHE.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Cabinet/List.tsx": {
+    "file": "assets/List-Ukarjx0g.js",
+    "name": "List",
+    "src": "resources/js/Pages/Cabinet/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-67tgpVHE.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Cabinet/Partials/Form.tsx": {
+    "file": "assets/Form-D--jRoO2.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Cabinet/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-67tgpVHE.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/Create.tsx": {
+    "file": "assets/Create-Cld8QH0K.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Clinic/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Clinic/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-BfOkMoov.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/FilialCreate.tsx": {
+    "file": "assets/FilialCreate-BQgR6eVt.js",
+    "name": "FilialCreate",
+    "src": "resources/js/Pages/Clinic/FilialCreate.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Clinic/Partials/FormFilial.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-C_oq1VrL.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/FilialEdit.tsx": {
+    "file": "assets/FilialEdit-DkW0Hbm2.js",
+    "name": "FilialEdit",
+    "src": "resources/js/Pages/Clinic/FilialEdit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Clinic/Partials/FormFilial.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-C_oq1VrL.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/FilialShow.tsx": {
+    "file": "assets/FilialShow-CCcUab8f.js",
+    "name": "FilialShow",
+    "src": "resources/js/Pages/Clinic/FilialShow.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C_oq1VrL.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/Filials.tsx": {
+    "file": "assets/Filials-CpOPcxzi.js",
+    "name": "Filials",
+    "src": "resources/js/Pages/Clinic/Filials.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C_oq1VrL.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/Partials/Form.tsx": {
+    "file": "assets/Form-BDKjYijr.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Clinic/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-BfOkMoov.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/Partials/FormFilial.tsx": {
+    "file": "assets/FormFilial-RFO7BT5F.js",
+    "name": "FormFilial",
+    "src": "resources/js/Pages/Clinic/Partials/FormFilial.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C_oq1VrL.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Clinic/Roles.tsx": {
+    "file": "assets/Roles-D0vKG90N.js",
+    "name": "Roles",
+    "src": "resources/js/Pages/Clinic/Roles.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-BfOkMoov.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Currency/Create.tsx": {
+    "file": "assets/Create-DkcjBHVE.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Currency/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Currency/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-C_ntFpHY.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Currency/Edit.tsx": {
+    "file": "assets/Edit-ByZL_TEH.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Currency/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Currency/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-C_ntFpHY.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Currency/List.tsx": {
+    "file": "assets/List-BKaYpln4.js",
+    "name": "List",
+    "src": "resources/js/Pages/Currency/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C_ntFpHY.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Currency/Partials/Form.tsx": {
+    "file": "assets/Form-CrGF0dIf.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Currency/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C_ntFpHY.js",
+      "_InputText-8GBDd7K4.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Customer/AssignFilial.tsx": {
+    "file": "assets/AssignFilial-TFYTwVSI.js",
+    "name": "AssignFilial",
+    "src": "resources/js/Pages/Customer/AssignFilial.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C3eziIDM.js",
+      "_InputRoleSelect-XhwVtRZb.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_transition-Dk6MwGSW.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-CclwJSWy.js"
+    ]
+  },
+  "resources/js/Pages/Customer/AssignFilialEdit.tsx": {
+    "file": "assets/AssignFilialEdit-DvT_e2lm.js",
+    "name": "AssignFilialEdit",
+    "src": "resources/js/Pages/Customer/AssignFilialEdit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C3eziIDM.js",
+      "_InputRoleSelect-XhwVtRZb.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_transition-Dk6MwGSW.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-CclwJSWy.js"
+    ]
+  },
+  "resources/js/Pages/Customer/CustomerCreate.tsx": {
+    "file": "assets/CustomerCreate-DHv9RTYk.js",
+    "name": "CustomerCreate",
+    "src": "resources/js/Pages/Customer/CustomerCreate.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Customer/Partials/Form.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C3eziIDM.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_index-BUYc01sp.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputError-Di-9Svck.js",
+      "_selectors-BaSUzsHv.js"
+    ]
+  },
+  "resources/js/Pages/Customer/CustomerEdit.tsx": {
+    "file": "assets/CustomerEdit-CPhEfggc.js",
+    "name": "CustomerEdit",
+    "src": "resources/js/Pages/Customer/CustomerEdit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Customer/Partials/Form.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C3eziIDM.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_index-BUYc01sp.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputError-Di-9Svck.js",
+      "_selectors-BaSUzsHv.js"
+    ]
+  },
+  "resources/js/Pages/Customer/CustomerShow.tsx": {
+    "file": "assets/CustomerShow-Cwjj98P5.js",
+    "name": "CustomerShow",
+    "src": "resources/js/Pages/Customer/CustomerShow.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C3eziIDM.js",
+      "_translation-CclwJSWy.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Customer/List.tsx": {
+    "file": "assets/List-Cse9k0OB.js",
+    "name": "List",
+    "src": "resources/js/Pages/Customer/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_translation-C3eziIDM.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Customer/Partials/Form.tsx": {
+    "file": "assets/Form-tEVPrItD.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Customer/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C3eziIDM.js",
+      "_InputText-8GBDd7K4.js",
+      "_index-BUYc01sp.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputError-Di-9Svck.js",
+      "_selectors-BaSUzsHv.js",
+      "_transition-Dk6MwGSW.js"
+    ]
+  },
+  "resources/js/Pages/Dashboard.tsx": {
+    "file": "assets/Dashboard-C2t6_vy9.js",
+    "name": "Dashboard",
+    "src": "resources/js/Pages/Dashboard.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C8LA4uZM.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/DashboardSelect.tsx": {
+    "file": "assets/DashboardSelect-83_4L7jO.js",
+    "name": "DashboardSelect",
+    "src": "resources/js/Pages/DashboardSelect.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C8LA4uZM.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Exception/NoPermission.tsx": {
+    "file": "assets/NoPermission-DCS1-eFt.js",
+    "name": "NoPermission",
+    "src": "resources/js/Pages/Exception/NoPermission.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C8LA4uZM.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceChange/Create.tsx": {
+    "file": "assets/Create-BAMIgEMA.js",
+    "name": "Create",
+    "src": "resources/js/Pages/InvoiceChange/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/InvoiceChange/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "resources/js/Pages/InvoiceChange/Partials/Row.tsx",
+      "_selectors-DcLeQ0hp.js",
+      "_InputCalendar-Bvslxe5p.js",
+      "_clsx-B-dksMZM.js",
+      "_selectors-3ONsMayW.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceChange/Edit.tsx": {
+    "file": "assets/Edit-B3nYggXA.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/InvoiceChange/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/InvoiceChange/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "resources/js/Pages/InvoiceChange/Partials/Row.tsx",
+      "_selectors-DcLeQ0hp.js",
+      "_InputCalendar-Bvslxe5p.js",
+      "_clsx-B-dksMZM.js",
+      "_selectors-3ONsMayW.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceChange/List.tsx": {
+    "file": "assets/List-BnhX5DV-.js",
+    "name": "List",
+    "src": "resources/js/Pages/InvoiceChange/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CDofm1G6.js",
+      "_translation-hRiGdJJJ.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceChange/Partials/Form.tsx": {
+    "file": "assets/Form-WppX_lue.js",
+    "name": "Form",
+    "src": "resources/js/Pages/InvoiceChange/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "resources/js/Pages/InvoiceChange/Partials/Row.tsx",
+      "_InputCalendar-Bvslxe5p.js",
+      "_selectors-3ONsMayW.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_selectors-DcLeQ0hp.js",
+      "_clsx-B-dksMZM.js",
+      "_floating-ui.react-CImirEtS.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceChange/Partials/Row.tsx": {
+    "file": "assets/Row-B4uL5Cq3.js",
+    "name": "Row",
+    "src": "resources/js/Pages/InvoiceChange/Partials/Row.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_selectors-DcLeQ0hp.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceIncoming/Create.tsx": {
+    "file": "assets/Create-BiszFf1o.js",
+    "name": "Create",
+    "src": "resources/js/Pages/InvoiceIncoming/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/InvoiceIncoming/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "resources/js/Pages/InvoiceIncoming/Partials/Row.tsx",
+      "_selectors-3ONsMayW.js",
+      "_selectors-DcLeQ0hp.js",
+      "_InputCalendar-Bvslxe5p.js",
+      "_clsx-B-dksMZM.js",
+      "_InputTaxSelect-WIwtnPKw.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceIncoming/Edit.tsx": {
+    "file": "assets/Edit-CrGEfw0j.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/InvoiceIncoming/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/InvoiceIncoming/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "resources/js/Pages/InvoiceIncoming/Partials/Row.tsx",
+      "_selectors-3ONsMayW.js",
+      "_selectors-DcLeQ0hp.js",
+      "_InputCalendar-Bvslxe5p.js",
+      "_clsx-B-dksMZM.js",
+      "_InputTaxSelect-WIwtnPKw.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceIncoming/List.tsx": {
+    "file": "assets/List-DVdl8Bzi.js",
+    "name": "List",
+    "src": "resources/js/Pages/InvoiceIncoming/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CDofm1G6.js",
+      "_translation-hRiGdJJJ.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceIncoming/Partials/Form.tsx": {
+    "file": "assets/Form-CdBv4a5g.js",
+    "name": "Form",
+    "src": "resources/js/Pages/InvoiceIncoming/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "resources/js/Pages/InvoiceIncoming/Partials/Row.tsx",
+      "_InputCalendar-Bvslxe5p.js",
+      "_selectors-3ONsMayW.js",
+      "_InputTaxSelect-WIwtnPKw.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_selectors-DcLeQ0hp.js",
+      "_clsx-B-dksMZM.js",
+      "_floating-ui.react-CImirEtS.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceIncoming/Partials/Row.tsx": {
+    "file": "assets/Row-BZTxjoCY.js",
+    "name": "Row",
+    "src": "resources/js/Pages/InvoiceIncoming/Partials/Row.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_selectors-3ONsMayW.js",
+      "_selectors-DcLeQ0hp.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceOutgoing/Create.tsx": {
+    "file": "assets/Create-BayVX9IW.js",
+    "name": "Create",
+    "src": "resources/js/Pages/InvoiceOutgoing/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Row.tsx",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-3ONsMayW.js",
+      "_InputCalendar-Bvslxe5p.js",
+      "_clsx-B-dksMZM.js",
+      "_InputTaxSelect-WIwtnPKw.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceOutgoing/Edit.tsx": {
+    "file": "assets/Edit-C7tzogc5.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/InvoiceOutgoing/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Row.tsx",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-3ONsMayW.js",
+      "_InputCalendar-Bvslxe5p.js",
+      "_clsx-B-dksMZM.js",
+      "_InputTaxSelect-WIwtnPKw.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceOutgoing/List.tsx": {
+    "file": "assets/List-v8eOiAuS.js",
+    "name": "List",
+    "src": "resources/js/Pages/InvoiceOutgoing/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CDofm1G6.js",
+      "_translation-hRiGdJJJ.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceOutgoing/Partials/Form.tsx": {
+    "file": "assets/Form-DD8E8IJB.js",
+    "name": "Form",
+    "src": "resources/js/Pages/InvoiceOutgoing/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CDofm1G6.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Row.tsx",
+      "_InputCalendar-Bvslxe5p.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputTaxSelect-WIwtnPKw.js",
+      "_transition-Dk6MwGSW.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-3ONsMayW.js",
+      "_clsx-B-dksMZM.js",
+      "_floating-ui.react-CImirEtS.js"
+    ]
+  },
+  "resources/js/Pages/InvoiceOutgoing/Partials/Row.tsx": {
+    "file": "assets/Row-Bf95W06R.js",
+    "name": "Row",
+    "src": "resources/js/Pages/InvoiceOutgoing/Partials/Row.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-3ONsMayW.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Material/Create.tsx": {
+    "file": "assets/Create-CBc_Duf0.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Material/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Material/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-xJPwW3Hr.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputTreeSelect-Ciw_oVnd.js",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-DcLeQ0hp.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Material/Edit.tsx": {
+    "file": "assets/Edit-bzKApVyJ.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Material/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Material/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-xJPwW3Hr.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputTreeSelect-Ciw_oVnd.js",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-DcLeQ0hp.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Material/List.tsx": {
+    "file": "assets/List-IFOGTvuT.js",
+    "name": "List",
+    "src": "resources/js/Pages/Material/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Material/Partials/Form.tsx": {
+    "file": "assets/Form-C4cG5SHw.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Material/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputTreeSelect-Ciw_oVnd.js",
+      "_selectors-BaSUzsHv.js",
+      "_selectors-DcLeQ0hp.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Material/Report.tsx": {
+    "file": "assets/Report-jrew9yuK.js",
+    "name": "Report",
+    "src": "resources/js/Pages/Material/Report.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_selectors-DcLeQ0hp.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/MaterialCategories/Create.tsx": {
+    "file": "assets/Create-VBQ5-glQ.js",
+    "name": "Create",
+    "src": "resources/js/Pages/MaterialCategories/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/MaterialCategories/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_translation-CtJ8uRc_.js",
+      "_InputTreeSelect-Ciw_oVnd.js"
+    ]
+  },
+  "resources/js/Pages/MaterialCategories/Edit.tsx": {
+    "file": "assets/Edit-kwBOgAv8.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/MaterialCategories/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/MaterialCategories/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_translation-CtJ8uRc_.js",
+      "_InputTreeSelect-Ciw_oVnd.js"
+    ]
+  },
+  "resources/js/Pages/MaterialCategories/List.tsx": {
+    "file": "assets/List-Bj0Wc4AO.js",
+    "name": "List",
+    "src": "resources/js/Pages/MaterialCategories/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CtJ8uRc_.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/MaterialCategories/Partials/Form.tsx": {
+    "file": "assets/Form-H9QX9j1c.js",
+    "name": "Form",
+    "src": "resources/js/Pages/MaterialCategories/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-CtJ8uRc_.js",
+      "_InputTreeSelect-Ciw_oVnd.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Cliniccard.tsx": {
+    "file": "assets/Cliniccard-CEfk5X1I.js",
+    "name": "Cliniccard",
+    "src": "resources/js/Pages/Patient/Cliniccard.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_index-1s0-x6uo.js",
+      "resources/js/Pages/Patient/Formula/index.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/index.tsx",
+      "_selectors-3sqmDyDh.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_index-BUYc01sp.js",
+      "_translation-xJPwW3Hr.js",
+      "resources/js/Pages/Patient/Formula/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/Formula/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/Formula/Bone31.tsx",
+      "resources/js/Pages/Patient/Formula/Bone32.tsx",
+      "resources/js/Pages/Patient/Formula/Bone33.tsx",
+      "resources/js/Pages/Patient/Formula/Bone34.tsx",
+      "resources/js/Pages/Patient/Formula/Bone35.tsx",
+      "resources/js/Pages/Patient/Formula/Bone36.tsx",
+      "resources/js/Pages/Patient/Formula/Bone37.tsx",
+      "resources/js/Pages/Patient/Formula/Bone38.tsx",
+      "resources/js/Pages/Patient/Formula/Bone41.tsx",
+      "resources/js/Pages/Patient/Formula/Bone42.tsx",
+      "resources/js/Pages/Patient/Formula/Bone43.tsx",
+      "resources/js/Pages/Patient/Formula/Bone44.tsx",
+      "resources/js/Pages/Patient/Formula/Bone45.tsx",
+      "resources/js/Pages/Patient/Formula/Bone46.tsx",
+      "resources/js/Pages/Patient/Formula/Bone47.tsx",
+      "resources/js/Pages/Patient/Formula/Bone48.tsx",
+      "resources/js/Pages/Patient/Formula/Bone18.tsx",
+      "resources/js/Pages/Patient/Formula/Bone17.tsx",
+      "resources/js/Pages/Patient/Formula/Bone16.tsx",
+      "resources/js/Pages/Patient/Formula/Bone15.tsx",
+      "resources/js/Pages/Patient/Formula/Bone14.tsx",
+      "resources/js/Pages/Patient/Formula/Bone13.tsx",
+      "resources/js/Pages/Patient/Formula/Bone12.tsx",
+      "resources/js/Pages/Patient/Formula/Bone11.tsx",
+      "resources/js/Pages/Patient/Formula/Bone21.tsx",
+      "resources/js/Pages/Patient/Formula/Bone22.tsx",
+      "resources/js/Pages/Patient/Formula/Bone23.tsx",
+      "resources/js/Pages/Patient/Formula/Bone24.tsx",
+      "resources/js/Pages/Patient/Formula/Bone25.tsx",
+      "resources/js/Pages/Patient/Formula/Bone26.tsx",
+      "resources/js/Pages/Patient/Formula/Bone27.tsx",
+      "resources/js/Pages/Patient/Formula/Bone28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth48.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth47.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth46.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth45.tsx",
+      "resources/js/Pages/Patient/Formula/BoneR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneRR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneL.tsx",
+      "resources/js/Pages/Patient/Formula/BoneLL.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth85.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth44.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth84.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth43.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth83.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth42.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth82.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth41.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth81.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth31.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth71.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth32.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth72.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth33.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth73.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth34.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth74.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth35.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth75.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth36.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth37.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth38.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth27.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth26.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth25.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth65.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth24.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth64.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth23.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth63.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth22.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth62.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth21.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth61.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth11.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth51.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth12.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth52.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth13.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth53.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth14.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth54.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth15.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth55.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth16.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth17.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth18.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone31.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone32.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone33.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone34.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone35.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone36.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone37.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone38.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone41.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone42.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone43.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone44.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone45.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone46.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone47.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone48.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone18.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone17.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone16.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone15.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone14.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone13.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone12.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone11.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone21.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone22.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone23.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone24.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone25.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone26.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone27.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone28.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneRR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneLL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth55.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth54.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth53.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth52.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth51.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth61.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth62.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth63.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth64.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth65.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth85.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth84.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth83.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth82.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth81.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth71.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth72.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth73.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth74.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth75.tsx"
+    ]
+  },
+  "resources/js/Pages/Patient/Create.tsx": {
+    "file": "assets/Create-Dr3yOK4e.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Patient/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Patient/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_index-1s0-x6uo.js",
+      "_index-BUYc01sp.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_moment-xMAXktoI.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Edit.tsx": {
+    "file": "assets/Edit-pB2Lq4Cf.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Patient/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Patient/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_index-1s0-x6uo.js",
+      "_index-BUYc01sp.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_moment-xMAXktoI.js"
+    ]
+  },
+  "resources/js/Pages/Patient/EditFormula.tsx": {
+    "file": "assets/EditFormula-hStzWjHt.js",
+    "name": "EditFormula",
+    "src": "resources/js/Pages/Patient/EditFormula.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_index-1s0-x6uo.js",
+      "resources/js/Pages/Patient/Formula/index.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/index.tsx",
+      "_selectors-3sqmDyDh.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_index-BUYc01sp.js",
+      "_translation-xJPwW3Hr.js",
+      "resources/js/Pages/Patient/Formula/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/Formula/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/Formula/Bone31.tsx",
+      "resources/js/Pages/Patient/Formula/Bone32.tsx",
+      "resources/js/Pages/Patient/Formula/Bone33.tsx",
+      "resources/js/Pages/Patient/Formula/Bone34.tsx",
+      "resources/js/Pages/Patient/Formula/Bone35.tsx",
+      "resources/js/Pages/Patient/Formula/Bone36.tsx",
+      "resources/js/Pages/Patient/Formula/Bone37.tsx",
+      "resources/js/Pages/Patient/Formula/Bone38.tsx",
+      "resources/js/Pages/Patient/Formula/Bone41.tsx",
+      "resources/js/Pages/Patient/Formula/Bone42.tsx",
+      "resources/js/Pages/Patient/Formula/Bone43.tsx",
+      "resources/js/Pages/Patient/Formula/Bone44.tsx",
+      "resources/js/Pages/Patient/Formula/Bone45.tsx",
+      "resources/js/Pages/Patient/Formula/Bone46.tsx",
+      "resources/js/Pages/Patient/Formula/Bone47.tsx",
+      "resources/js/Pages/Patient/Formula/Bone48.tsx",
+      "resources/js/Pages/Patient/Formula/Bone18.tsx",
+      "resources/js/Pages/Patient/Formula/Bone17.tsx",
+      "resources/js/Pages/Patient/Formula/Bone16.tsx",
+      "resources/js/Pages/Patient/Formula/Bone15.tsx",
+      "resources/js/Pages/Patient/Formula/Bone14.tsx",
+      "resources/js/Pages/Patient/Formula/Bone13.tsx",
+      "resources/js/Pages/Patient/Formula/Bone12.tsx",
+      "resources/js/Pages/Patient/Formula/Bone11.tsx",
+      "resources/js/Pages/Patient/Formula/Bone21.tsx",
+      "resources/js/Pages/Patient/Formula/Bone22.tsx",
+      "resources/js/Pages/Patient/Formula/Bone23.tsx",
+      "resources/js/Pages/Patient/Formula/Bone24.tsx",
+      "resources/js/Pages/Patient/Formula/Bone25.tsx",
+      "resources/js/Pages/Patient/Formula/Bone26.tsx",
+      "resources/js/Pages/Patient/Formula/Bone27.tsx",
+      "resources/js/Pages/Patient/Formula/Bone28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth48.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth47.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth46.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth45.tsx",
+      "resources/js/Pages/Patient/Formula/BoneR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneRR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneL.tsx",
+      "resources/js/Pages/Patient/Formula/BoneLL.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth85.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth44.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth84.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth43.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth83.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth42.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth82.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth41.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth81.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth31.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth71.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth32.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth72.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth33.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth73.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth34.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth74.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth35.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth75.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth36.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth37.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth38.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth27.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth26.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth25.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth65.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth24.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth64.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth23.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth63.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth22.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth62.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth21.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth61.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth11.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth51.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth12.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth52.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth13.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth53.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth14.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth54.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth15.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth55.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth16.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth17.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth18.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone31.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone32.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone33.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone34.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone35.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone36.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone37.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone38.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone41.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone42.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone43.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone44.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone45.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone46.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone47.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone48.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone18.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone17.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone16.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone15.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone14.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone13.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone12.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone11.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone21.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone22.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone23.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone24.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone25.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone26.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone27.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone28.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneRR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneLL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth55.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth54.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth53.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth52.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth51.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth61.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth62.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth63.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth64.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth65.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth85.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth84.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth83.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth82.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth81.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth71.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth72.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth73.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth74.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth75.tsx"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone11.tsx": {
+    "file": "assets/Bone11-DeMzKv84.js",
+    "name": "Bone11",
+    "src": "resources/js/Pages/Patient/Formula/Bone11.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone12.tsx": {
+    "file": "assets/Bone12-zrEftf-a.js",
+    "name": "Bone12",
+    "src": "resources/js/Pages/Patient/Formula/Bone12.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone13.tsx": {
+    "file": "assets/Bone13-D2wOXDaO.js",
+    "name": "Bone13",
+    "src": "resources/js/Pages/Patient/Formula/Bone13.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone14.tsx": {
+    "file": "assets/Bone14-D_t_3Jnq.js",
+    "name": "Bone14",
+    "src": "resources/js/Pages/Patient/Formula/Bone14.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone15.tsx": {
+    "file": "assets/Bone15-Byd1FF1P.js",
+    "name": "Bone15",
+    "src": "resources/js/Pages/Patient/Formula/Bone15.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone16.tsx": {
+    "file": "assets/Bone16-CxUVYtC9.js",
+    "name": "Bone16",
+    "src": "resources/js/Pages/Patient/Formula/Bone16.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone17.tsx": {
+    "file": "assets/Bone17-JWDxwdG3.js",
+    "name": "Bone17",
+    "src": "resources/js/Pages/Patient/Formula/Bone17.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone18.tsx": {
+    "file": "assets/Bone18-DS6oFwj0.js",
+    "name": "Bone18",
+    "src": "resources/js/Pages/Patient/Formula/Bone18.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone21.tsx": {
+    "file": "assets/Bone21-CuLfmXQ6.js",
+    "name": "Bone21",
+    "src": "resources/js/Pages/Patient/Formula/Bone21.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone22.tsx": {
+    "file": "assets/Bone22-DKmlhsOf.js",
+    "name": "Bone22",
+    "src": "resources/js/Pages/Patient/Formula/Bone22.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone23.tsx": {
+    "file": "assets/Bone23-WJijbXyo.js",
+    "name": "Bone23",
+    "src": "resources/js/Pages/Patient/Formula/Bone23.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone24.tsx": {
+    "file": "assets/Bone24-DEyU7VAb.js",
+    "name": "Bone24",
+    "src": "resources/js/Pages/Patient/Formula/Bone24.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone25.tsx": {
+    "file": "assets/Bone25-CNGiNPlu.js",
+    "name": "Bone25",
+    "src": "resources/js/Pages/Patient/Formula/Bone25.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone26.tsx": {
+    "file": "assets/Bone26-DsfdbHKY.js",
+    "name": "Bone26",
+    "src": "resources/js/Pages/Patient/Formula/Bone26.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone27.tsx": {
+    "file": "assets/Bone27-DJfki1rO.js",
+    "name": "Bone27",
+    "src": "resources/js/Pages/Patient/Formula/Bone27.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone28.tsx": {
+    "file": "assets/Bone28-Co87Ar__.js",
+    "name": "Bone28",
+    "src": "resources/js/Pages/Patient/Formula/Bone28.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone31.tsx": {
+    "file": "assets/Bone31-Di2TzwIe.js",
+    "name": "Bone31",
+    "src": "resources/js/Pages/Patient/Formula/Bone31.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone32.tsx": {
+    "file": "assets/Bone32-Dfp_MlMJ.js",
+    "name": "Bone32",
+    "src": "resources/js/Pages/Patient/Formula/Bone32.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone33.tsx": {
+    "file": "assets/Bone33-CzxJMZEj.js",
+    "name": "Bone33",
+    "src": "resources/js/Pages/Patient/Formula/Bone33.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone34.tsx": {
+    "file": "assets/Bone34-DPaDMGCI.js",
+    "name": "Bone34",
+    "src": "resources/js/Pages/Patient/Formula/Bone34.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone35.tsx": {
+    "file": "assets/Bone35-CNjl6rHA.js",
+    "name": "Bone35",
+    "src": "resources/js/Pages/Patient/Formula/Bone35.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone36.tsx": {
+    "file": "assets/Bone36-CZ7Lt1fm.js",
+    "name": "Bone36",
+    "src": "resources/js/Pages/Patient/Formula/Bone36.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone37.tsx": {
+    "file": "assets/Bone37-BBrK_IAe.js",
+    "name": "Bone37",
+    "src": "resources/js/Pages/Patient/Formula/Bone37.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone38.tsx": {
+    "file": "assets/Bone38-Bnchbit0.js",
+    "name": "Bone38",
+    "src": "resources/js/Pages/Patient/Formula/Bone38.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone41.tsx": {
+    "file": "assets/Bone41-DYkrl9yk.js",
+    "name": "Bone41",
+    "src": "resources/js/Pages/Patient/Formula/Bone41.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone42.tsx": {
+    "file": "assets/Bone42-CfnDGdtL.js",
+    "name": "Bone42",
+    "src": "resources/js/Pages/Patient/Formula/Bone42.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone43.tsx": {
+    "file": "assets/Bone43-CPjBUdkb.js",
+    "name": "Bone43",
+    "src": "resources/js/Pages/Patient/Formula/Bone43.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone44.tsx": {
+    "file": "assets/Bone44-BQllj88h.js",
+    "name": "Bone44",
+    "src": "resources/js/Pages/Patient/Formula/Bone44.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone45.tsx": {
+    "file": "assets/Bone45-mz11_i42.js",
+    "name": "Bone45",
+    "src": "resources/js/Pages/Patient/Formula/Bone45.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone46.tsx": {
+    "file": "assets/Bone46-mz11_i42.js",
+    "name": "Bone46",
+    "src": "resources/js/Pages/Patient/Formula/Bone46.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone47.tsx": {
+    "file": "assets/Bone47-BlkKpHu9.js",
+    "name": "Bone47",
+    "src": "resources/js/Pages/Patient/Formula/Bone47.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Bone48.tsx": {
+    "file": "assets/Bone48-CONv3JrC.js",
+    "name": "Bone48",
+    "src": "resources/js/Pages/Patient/Formula/Bone48.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/BoneL.tsx": {
+    "file": "assets/BoneL-qOe_b88P.js",
+    "name": "BoneL",
+    "src": "resources/js/Pages/Patient/Formula/BoneL.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/BoneLL.tsx": {
+    "file": "assets/BoneLL-welciV3R.js",
+    "name": "BoneLL",
+    "src": "resources/js/Pages/Patient/Formula/BoneLL.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/BoneR.tsx": {
+    "file": "assets/BoneR-2u8A93DG.js",
+    "name": "BoneR",
+    "src": "resources/js/Pages/Patient/Formula/BoneR.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/BoneRR.tsx": {
+    "file": "assets/BoneRR-DG-Xjxde.js",
+    "name": "BoneRR",
+    "src": "resources/js/Pages/Patient/Formula/BoneRR.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/MaxilaryLeft.tsx": {
+    "file": "assets/MaxilaryLeft-Bu4T5HYt.js",
+    "name": "MaxilaryLeft",
+    "src": "resources/js/Pages/Patient/Formula/MaxilaryLeft.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/MaxilaryRight.tsx": {
+    "file": "assets/MaxilaryRight-B2F8eJLY.js",
+    "name": "MaxilaryRight",
+    "src": "resources/js/Pages/Patient/Formula/MaxilaryRight.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth11.tsx": {
+    "file": "assets/Tooth11-0YNDCpQR.js",
+    "name": "Tooth11",
+    "src": "resources/js/Pages/Patient/Formula/Tooth11.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth12.tsx": {
+    "file": "assets/Tooth12-ClmNmuln.js",
+    "name": "Tooth12",
+    "src": "resources/js/Pages/Patient/Formula/Tooth12.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth13.tsx": {
+    "file": "assets/Tooth13-b1CLFQLx.js",
+    "name": "Tooth13",
+    "src": "resources/js/Pages/Patient/Formula/Tooth13.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth14.tsx": {
+    "file": "assets/Tooth14-jVQANouR.js",
+    "name": "Tooth14",
+    "src": "resources/js/Pages/Patient/Formula/Tooth14.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth15.tsx": {
+    "file": "assets/Tooth15-CmUPr5L7.js",
+    "name": "Tooth15",
+    "src": "resources/js/Pages/Patient/Formula/Tooth15.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth16.tsx": {
+    "file": "assets/Tooth16-uiWR6E7G.js",
+    "name": "Tooth16",
+    "src": "resources/js/Pages/Patient/Formula/Tooth16.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth17.tsx": {
+    "file": "assets/Tooth17-DxKwqQD5.js",
+    "name": "Tooth17",
+    "src": "resources/js/Pages/Patient/Formula/Tooth17.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth18.tsx": {
+    "file": "assets/Tooth18-B8JopPZP.js",
+    "name": "Tooth18",
+    "src": "resources/js/Pages/Patient/Formula/Tooth18.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth21.tsx": {
+    "file": "assets/Tooth21-BpSEaTW2.js",
+    "name": "Tooth21",
+    "src": "resources/js/Pages/Patient/Formula/Tooth21.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth22.tsx": {
+    "file": "assets/Tooth22-CvBlds0G.js",
+    "name": "Tooth22",
+    "src": "resources/js/Pages/Patient/Formula/Tooth22.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth23.tsx": {
+    "file": "assets/Tooth23-B7Tz4ARB.js",
+    "name": "Tooth23",
+    "src": "resources/js/Pages/Patient/Formula/Tooth23.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth24.tsx": {
+    "file": "assets/Tooth24-DxLEVdi_.js",
+    "name": "Tooth24",
+    "src": "resources/js/Pages/Patient/Formula/Tooth24.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth25.tsx": {
+    "file": "assets/Tooth25-d7jFaOTw.js",
+    "name": "Tooth25",
+    "src": "resources/js/Pages/Patient/Formula/Tooth25.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth26.tsx": {
+    "file": "assets/Tooth26-BT2EX8HY.js",
+    "name": "Tooth26",
+    "src": "resources/js/Pages/Patient/Formula/Tooth26.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth27.tsx": {
+    "file": "assets/Tooth27-1Te_xMSw.js",
+    "name": "Tooth27",
+    "src": "resources/js/Pages/Patient/Formula/Tooth27.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth28.tsx": {
+    "file": "assets/Tooth28-DQv-7jW5.js",
+    "name": "Tooth28",
+    "src": "resources/js/Pages/Patient/Formula/Tooth28.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth31.tsx": {
+    "file": "assets/Tooth31-WrJLqkKR.js",
+    "name": "Tooth31",
+    "src": "resources/js/Pages/Patient/Formula/Tooth31.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth32.tsx": {
+    "file": "assets/Tooth32-BPOnSDUF.js",
+    "name": "Tooth32",
+    "src": "resources/js/Pages/Patient/Formula/Tooth32.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth33.tsx": {
+    "file": "assets/Tooth33-H5TaqPwt.js",
+    "name": "Tooth33",
+    "src": "resources/js/Pages/Patient/Formula/Tooth33.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth34.tsx": {
+    "file": "assets/Tooth34-Dxmbemo8.js",
+    "name": "Tooth34",
+    "src": "resources/js/Pages/Patient/Formula/Tooth34.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth35.tsx": {
+    "file": "assets/Tooth35-Cq-5k11C.js",
+    "name": "Tooth35",
+    "src": "resources/js/Pages/Patient/Formula/Tooth35.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth36.tsx": {
+    "file": "assets/Tooth36-DysZj3xn.js",
+    "name": "Tooth36",
+    "src": "resources/js/Pages/Patient/Formula/Tooth36.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth37.tsx": {
+    "file": "assets/Tooth37-B_SeVUJF.js",
+    "name": "Tooth37",
+    "src": "resources/js/Pages/Patient/Formula/Tooth37.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth38.tsx": {
+    "file": "assets/Tooth38-CemzWMTu.js",
+    "name": "Tooth38",
+    "src": "resources/js/Pages/Patient/Formula/Tooth38.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth41.tsx": {
+    "file": "assets/Tooth41-DljugaJ4.js",
+    "name": "Tooth41",
+    "src": "resources/js/Pages/Patient/Formula/Tooth41.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth42.tsx": {
+    "file": "assets/Tooth42-cHgmAs6c.js",
+    "name": "Tooth42",
+    "src": "resources/js/Pages/Patient/Formula/Tooth42.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth43.tsx": {
+    "file": "assets/Tooth43-DZNmLPRH.js",
+    "name": "Tooth43",
+    "src": "resources/js/Pages/Patient/Formula/Tooth43.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth44.tsx": {
+    "file": "assets/Tooth44-CnOpC6E6.js",
+    "name": "Tooth44",
+    "src": "resources/js/Pages/Patient/Formula/Tooth44.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth45.tsx": {
+    "file": "assets/Tooth45-BhqEmrol.js",
+    "name": "Tooth45",
+    "src": "resources/js/Pages/Patient/Formula/Tooth45.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth46.tsx": {
+    "file": "assets/Tooth46-CYcU5yya.js",
+    "name": "Tooth46",
+    "src": "resources/js/Pages/Patient/Formula/Tooth46.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth47.tsx": {
+    "file": "assets/Tooth47-CwvjwXkQ.js",
+    "name": "Tooth47",
+    "src": "resources/js/Pages/Patient/Formula/Tooth47.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth48.tsx": {
+    "file": "assets/Tooth48-Cktj9TK2.js",
+    "name": "Tooth48",
+    "src": "resources/js/Pages/Patient/Formula/Tooth48.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth51.tsx": {
+    "file": "assets/Tooth51-D2Gsq__g.js",
+    "name": "Tooth51",
+    "src": "resources/js/Pages/Patient/Formula/Tooth51.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth52.tsx": {
+    "file": "assets/Tooth52-Cs67_fnx.js",
+    "name": "Tooth52",
+    "src": "resources/js/Pages/Patient/Formula/Tooth52.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth53.tsx": {
+    "file": "assets/Tooth53-BrrEfI1i.js",
+    "name": "Tooth53",
+    "src": "resources/js/Pages/Patient/Formula/Tooth53.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth54.tsx": {
+    "file": "assets/Tooth54-rXgQqM25.js",
+    "name": "Tooth54",
+    "src": "resources/js/Pages/Patient/Formula/Tooth54.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth55.tsx": {
+    "file": "assets/Tooth55-Fb2ZRQ9t.js",
+    "name": "Tooth55",
+    "src": "resources/js/Pages/Patient/Formula/Tooth55.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth61.tsx": {
+    "file": "assets/Tooth61-DhuedvQj.js",
+    "name": "Tooth61",
+    "src": "resources/js/Pages/Patient/Formula/Tooth61.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth62.tsx": {
+    "file": "assets/Tooth62-DjWmv5Pq.js",
+    "name": "Tooth62",
+    "src": "resources/js/Pages/Patient/Formula/Tooth62.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth63.tsx": {
+    "file": "assets/Tooth63-CrneXZZn.js",
+    "name": "Tooth63",
+    "src": "resources/js/Pages/Patient/Formula/Tooth63.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth64.tsx": {
+    "file": "assets/Tooth64-PY-xhWhf.js",
+    "name": "Tooth64",
+    "src": "resources/js/Pages/Patient/Formula/Tooth64.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth65.tsx": {
+    "file": "assets/Tooth65-D5N2Iafv.js",
+    "name": "Tooth65",
+    "src": "resources/js/Pages/Patient/Formula/Tooth65.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth71.tsx": {
+    "file": "assets/Tooth71-n11cR6m_.js",
+    "name": "Tooth71",
+    "src": "resources/js/Pages/Patient/Formula/Tooth71.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth72.tsx": {
+    "file": "assets/Tooth72-Be6AxK_Z.js",
+    "name": "Tooth72",
+    "src": "resources/js/Pages/Patient/Formula/Tooth72.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth73.tsx": {
+    "file": "assets/Tooth73-DGvN2mSs.js",
+    "name": "Tooth73",
+    "src": "resources/js/Pages/Patient/Formula/Tooth73.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth74.tsx": {
+    "file": "assets/Tooth74-C2A-Wo0p.js",
+    "name": "Tooth74",
+    "src": "resources/js/Pages/Patient/Formula/Tooth74.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth75.tsx": {
+    "file": "assets/Tooth75-ryp9T3f7.js",
+    "name": "Tooth75",
+    "src": "resources/js/Pages/Patient/Formula/Tooth75.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth81.tsx": {
+    "file": "assets/Tooth81-edhCf2Kv.js",
+    "name": "Tooth81",
+    "src": "resources/js/Pages/Patient/Formula/Tooth81.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth82.tsx": {
+    "file": "assets/Tooth82-DLZSMatB.js",
+    "name": "Tooth82",
+    "src": "resources/js/Pages/Patient/Formula/Tooth82.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth83.tsx": {
+    "file": "assets/Tooth83-CCF3a_Lz.js",
+    "name": "Tooth83",
+    "src": "resources/js/Pages/Patient/Formula/Tooth83.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth84.tsx": {
+    "file": "assets/Tooth84-DZn8TOa4.js",
+    "name": "Tooth84",
+    "src": "resources/js/Pages/Patient/Formula/Tooth84.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/Tooth85.tsx": {
+    "file": "assets/Tooth85-CMlZgPtV.js",
+    "name": "Tooth85",
+    "src": "resources/js/Pages/Patient/Formula/Tooth85.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Formula/index.tsx": {
+    "file": "assets/index-D53H7ZJO.js",
+    "name": "index",
+    "src": "resources/js/Pages/Patient/Formula/index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "resources/js/Pages/Patient/Formula/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/Formula/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/Formula/Bone31.tsx",
+      "resources/js/Pages/Patient/Formula/Bone32.tsx",
+      "resources/js/Pages/Patient/Formula/Bone33.tsx",
+      "resources/js/Pages/Patient/Formula/Bone34.tsx",
+      "resources/js/Pages/Patient/Formula/Bone35.tsx",
+      "resources/js/Pages/Patient/Formula/Bone36.tsx",
+      "resources/js/Pages/Patient/Formula/Bone37.tsx",
+      "resources/js/Pages/Patient/Formula/Bone38.tsx",
+      "resources/js/Pages/Patient/Formula/Bone41.tsx",
+      "resources/js/Pages/Patient/Formula/Bone42.tsx",
+      "resources/js/Pages/Patient/Formula/Bone43.tsx",
+      "resources/js/Pages/Patient/Formula/Bone44.tsx",
+      "resources/js/Pages/Patient/Formula/Bone45.tsx",
+      "resources/js/Pages/Patient/Formula/Bone46.tsx",
+      "resources/js/Pages/Patient/Formula/Bone47.tsx",
+      "resources/js/Pages/Patient/Formula/Bone48.tsx",
+      "resources/js/Pages/Patient/Formula/Bone18.tsx",
+      "resources/js/Pages/Patient/Formula/Bone17.tsx",
+      "resources/js/Pages/Patient/Formula/Bone16.tsx",
+      "resources/js/Pages/Patient/Formula/Bone15.tsx",
+      "resources/js/Pages/Patient/Formula/Bone14.tsx",
+      "resources/js/Pages/Patient/Formula/Bone13.tsx",
+      "resources/js/Pages/Patient/Formula/Bone12.tsx",
+      "resources/js/Pages/Patient/Formula/Bone11.tsx",
+      "resources/js/Pages/Patient/Formula/Bone21.tsx",
+      "resources/js/Pages/Patient/Formula/Bone22.tsx",
+      "resources/js/Pages/Patient/Formula/Bone23.tsx",
+      "resources/js/Pages/Patient/Formula/Bone24.tsx",
+      "resources/js/Pages/Patient/Formula/Bone25.tsx",
+      "resources/js/Pages/Patient/Formula/Bone26.tsx",
+      "resources/js/Pages/Patient/Formula/Bone27.tsx",
+      "resources/js/Pages/Patient/Formula/Bone28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth48.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth47.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth46.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth45.tsx",
+      "resources/js/Pages/Patient/Formula/BoneR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneRR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneL.tsx",
+      "resources/js/Pages/Patient/Formula/BoneLL.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth85.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth44.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth84.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth43.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth83.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth42.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth82.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth41.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth81.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth31.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth71.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth32.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth72.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth33.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth73.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth34.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth74.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth35.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth75.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth36.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth37.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth38.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth27.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth26.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth25.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth65.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth24.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth64.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth23.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth63.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth22.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth62.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth21.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth61.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth11.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth51.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth12.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth52.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth13.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth53.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth14.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth54.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth15.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth55.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth16.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth17.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth18.tsx",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone11.tsx": {
+    "file": "assets/Bone11-1CC4j9Bs.js",
+    "name": "Bone11",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone11.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone12.tsx": {
+    "file": "assets/Bone12-CdQHSA1r.js",
+    "name": "Bone12",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone12.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone13.tsx": {
+    "file": "assets/Bone13-DqdXvSSs.js",
+    "name": "Bone13",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone13.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone14.tsx": {
+    "file": "assets/Bone14-Cz3HD917.js",
+    "name": "Bone14",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone14.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone15.tsx": {
+    "file": "assets/Bone15-BCemwmtT.js",
+    "name": "Bone15",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone15.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone16.tsx": {
+    "file": "assets/Bone16-BVIL1HkQ.js",
+    "name": "Bone16",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone16.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone17.tsx": {
+    "file": "assets/Bone17-D5i8Bkfj.js",
+    "name": "Bone17",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone17.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone18.tsx": {
+    "file": "assets/Bone18-dC00g5il.js",
+    "name": "Bone18",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone18.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone21.tsx": {
+    "file": "assets/Bone21-Cj19_eMZ.js",
+    "name": "Bone21",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone21.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone22.tsx": {
+    "file": "assets/Bone22-5nKOmyU-.js",
+    "name": "Bone22",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone22.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone23.tsx": {
+    "file": "assets/Bone23-BuyjkFLq.js",
+    "name": "Bone23",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone23.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone24.tsx": {
+    "file": "assets/Bone24-DPRpO9gg.js",
+    "name": "Bone24",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone24.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone25.tsx": {
+    "file": "assets/Bone25-DdB6lBEO.js",
+    "name": "Bone25",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone25.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone26.tsx": {
+    "file": "assets/Bone26-DverRdOU.js",
+    "name": "Bone26",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone26.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone27.tsx": {
+    "file": "assets/Bone27-CqBumKmo.js",
+    "name": "Bone27",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone27.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone28.tsx": {
+    "file": "assets/Bone28-pnI7U6rO.js",
+    "name": "Bone28",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone28.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone31.tsx": {
+    "file": "assets/Bone31-txwOzUCI.js",
+    "name": "Bone31",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone31.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone32.tsx": {
+    "file": "assets/Bone32-jrSJbRev.js",
+    "name": "Bone32",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone32.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone33.tsx": {
+    "file": "assets/Bone33-CCOjfXGZ.js",
+    "name": "Bone33",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone33.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone34.tsx": {
+    "file": "assets/Bone34-B9PvKycy.js",
+    "name": "Bone34",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone34.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone35.tsx": {
+    "file": "assets/Bone35-BE5mWyVf.js",
+    "name": "Bone35",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone35.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone36.tsx": {
+    "file": "assets/Bone36-CsvZVPa3.js",
+    "name": "Bone36",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone36.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone37.tsx": {
+    "file": "assets/Bone37-BzGieWRY.js",
+    "name": "Bone37",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone37.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone38.tsx": {
+    "file": "assets/Bone38-CD1YnfS4.js",
+    "name": "Bone38",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone38.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone41.tsx": {
+    "file": "assets/Bone41-DDFTugG5.js",
+    "name": "Bone41",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone41.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone42.tsx": {
+    "file": "assets/Bone42-BgrjRGYY.js",
+    "name": "Bone42",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone42.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone43.tsx": {
+    "file": "assets/Bone43-2-jjJsKu.js",
+    "name": "Bone43",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone43.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone44.tsx": {
+    "file": "assets/Bone44-BkKMmpsZ.js",
+    "name": "Bone44",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone44.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone45.tsx": {
+    "file": "assets/Bone45-jZkPHM8_.js",
+    "name": "Bone45",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone45.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone46.tsx": {
+    "file": "assets/Bone46-HT3MKxnN.js",
+    "name": "Bone46",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone46.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone47.tsx": {
+    "file": "assets/Bone47-B8e1-Vc1.js",
+    "name": "Bone47",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone47.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Bone48.tsx": {
+    "file": "assets/Bone48-DyI9C5tU.js",
+    "name": "Bone48",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Bone48.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/BoneL.tsx": {
+    "file": "assets/BoneL-jNWl4zHU.js",
+    "name": "BoneL",
+    "src": "resources/js/Pages/Patient/FormulaMilk/BoneL.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/BoneLL.tsx": {
+    "file": "assets/BoneLL-BEBLaI9y.js",
+    "name": "BoneLL",
+    "src": "resources/js/Pages/Patient/FormulaMilk/BoneLL.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/BoneR.tsx": {
+    "file": "assets/BoneR-CEftIzh0.js",
+    "name": "BoneR",
+    "src": "resources/js/Pages/Patient/FormulaMilk/BoneR.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/BoneRR.tsx": {
+    "file": "assets/BoneRR-BfAUuPj3.js",
+    "name": "BoneRR",
+    "src": "resources/js/Pages/Patient/FormulaMilk/BoneRR.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/MaxilaryLeft.tsx": {
+    "file": "assets/MaxilaryLeft-B99utU98.js",
+    "name": "MaxilaryLeft",
+    "src": "resources/js/Pages/Patient/FormulaMilk/MaxilaryLeft.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/MaxilaryRight.tsx": {
+    "file": "assets/MaxilaryRight-Bw_MRQQU.js",
+    "name": "MaxilaryRight",
+    "src": "resources/js/Pages/Patient/FormulaMilk/MaxilaryRight.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth51.tsx": {
+    "file": "assets/Tooth51-Dayh6Q95.js",
+    "name": "Tooth51",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth51.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth52.tsx": {
+    "file": "assets/Tooth52-Ds0jUJ60.js",
+    "name": "Tooth52",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth52.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth53.tsx": {
+    "file": "assets/Tooth53-CquVEawB.js",
+    "name": "Tooth53",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth53.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth54.tsx": {
+    "file": "assets/Tooth54-lrj4j3QT.js",
+    "name": "Tooth54",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth54.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth55.tsx": {
+    "file": "assets/Tooth55-DoVKrZW4.js",
+    "name": "Tooth55",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth55.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth61.tsx": {
+    "file": "assets/Tooth61-Cv_vlzXl.js",
+    "name": "Tooth61",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth61.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth62.tsx": {
+    "file": "assets/Tooth62-CsG20Xin.js",
+    "name": "Tooth62",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth62.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth63.tsx": {
+    "file": "assets/Tooth63-CFZdSm0V.js",
+    "name": "Tooth63",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth63.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth64.tsx": {
+    "file": "assets/Tooth64-Dqr20Dg_.js",
+    "name": "Tooth64",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth64.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth65.tsx": {
+    "file": "assets/Tooth65-DXT_w27_.js",
+    "name": "Tooth65",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth65.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth71.tsx": {
+    "file": "assets/Tooth71-DG4E6Jsr.js",
+    "name": "Tooth71",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth71.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth72.tsx": {
+    "file": "assets/Tooth72-DWvCUl2C.js",
+    "name": "Tooth72",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth72.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth73.tsx": {
+    "file": "assets/Tooth73-COslFNhv.js",
+    "name": "Tooth73",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth73.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth74.tsx": {
+    "file": "assets/Tooth74-CvztnJ6u.js",
+    "name": "Tooth74",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth74.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth75.tsx": {
+    "file": "assets/Tooth75-C4zmkN3c.js",
+    "name": "Tooth75",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth75.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth81.tsx": {
+    "file": "assets/Tooth81-B9ZwMMrk.js",
+    "name": "Tooth81",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth81.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth82.tsx": {
+    "file": "assets/Tooth82-YUwTlsrU.js",
+    "name": "Tooth82",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth82.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth83.tsx": {
+    "file": "assets/Tooth83-CDUloS2b.js",
+    "name": "Tooth83",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth83.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth84.tsx": {
+    "file": "assets/Tooth84-CuVN9FzO.js",
+    "name": "Tooth84",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth84.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/Tooth85.tsx": {
+    "file": "assets/Tooth85-Dso2so9Y.js",
+    "name": "Tooth85",
+    "src": "resources/js/Pages/Patient/FormulaMilk/Tooth85.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/FormulaMilk/index.tsx": {
+    "file": "assets/index-Cv1kDQ4w.js",
+    "name": "index",
+    "src": "resources/js/Pages/Patient/FormulaMilk/index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_lang-Rf8_tUbV.js",
+      "_translation-xJPwW3Hr.js",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone31.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone32.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone33.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone34.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone35.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone36.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone37.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone38.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone41.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone42.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone43.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone44.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone45.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone46.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone47.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone48.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone18.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone17.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone16.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone15.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone14.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone13.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone12.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone11.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone21.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone22.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone23.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone24.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone25.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone26.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone27.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone28.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneRR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneLL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth55.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth54.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth53.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth52.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth51.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth61.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth62.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth63.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth64.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth65.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth85.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth84.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth83.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth82.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth81.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth71.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth72.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth73.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth74.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth75.tsx",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Patient/List.tsx": {
+    "file": "assets/List-Dn030i2w.js",
+    "name": "List",
+    "src": "resources/js/Pages/Patient/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_index-1s0-x6uo.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_index-BUYc01sp.js"
+    ]
+  },
+  "resources/js/Pages/Patient/Partials/Form.tsx": {
+    "file": "assets/Form-66kYI157.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Patient/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_index-1s0-x6uo.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_moment-xMAXktoI.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_index-BUYc01sp.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Pricing/Create.tsx": {
+    "file": "assets/Create-a5COBP0U.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Pricing/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Pricing/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_translation-FNvhZ9NL.js",
+      "resources/js/Pages/Pricing/Partials/Row.tsx",
+      "_selectors-DcLeQ0hp.js"
+    ]
+  },
+  "resources/js/Pages/Pricing/Edit.tsx": {
+    "file": "assets/Edit-Z8YUDOBj.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Pricing/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Pricing/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_translation-FNvhZ9NL.js",
+      "resources/js/Pages/Pricing/Partials/Row.tsx",
+      "_selectors-DcLeQ0hp.js"
+    ]
+  },
+  "resources/js/Pages/Pricing/List.tsx": {
+    "file": "assets/List-DT1v_LW8.js",
+    "name": "List",
+    "src": "resources/js/Pages/Pricing/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-FNvhZ9NL.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputError-Di-9Svck.js",
+      "_SecondaryButton-b2dv0hg0.js",
+      "_Modal-EpUJ5xvo.js",
+      "_InputText-8GBDd7K4.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Pricing/Partials/Form.tsx": {
+    "file": "assets/Form-BOofQ9bE.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Pricing/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-FNvhZ9NL.js",
+      "resources/js/Pages/Pricing/Partials/Row.tsx",
+      "_reselect-NCCDNIWx.js",
+      "_transition-Dk6MwGSW.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_selectors-DcLeQ0hp.js"
+    ]
+  },
+  "resources/js/Pages/Pricing/Partials/Row.tsx": {
+    "file": "assets/Row-BNizitlK.js",
+    "name": "Row",
+    "src": "resources/js/Pages/Pricing/Partials/Row.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_selectors-DcLeQ0hp.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_translation-hRiGdJJJ.js",
+      "_lang-Rf8_tUbV.js"
+    ]
+  },
+  "resources/js/Pages/Producer/Create.tsx": {
+    "file": "assets/Create-1_rSdutQ.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Producer/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Producer/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-766vIZ7q.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Producer/Edit.tsx": {
+    "file": "assets/Edit-WiAvLJWe.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Producer/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Producer/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-766vIZ7q.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Producer/List.tsx": {
+    "file": "assets/List-7-gXj-PI.js",
+    "name": "List",
+    "src": "resources/js/Pages/Producer/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-766vIZ7q.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Producer/Partials/Form.tsx": {
+    "file": "assets/Form-BYUk_AqD.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Producer/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-766vIZ7q.js",
+      "_InputText-8GBDd7K4.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Edit.tsx": {
+    "file": "assets/Edit-BxLV6ub5.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Profile/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_Modal-EpUJ5xvo.js",
+      "_SecondaryButton-b2dv0hg0.js",
+      "_TextInput-BHnxEnBD.js",
+      "_translation-CYfE0WdF.js",
+      "_PrimaryButton-DDpmqCs-.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx": {
+    "file": "assets/DeleteUserForm-D0Tak1cF.js",
+    "name": "DeleteUserForm",
+    "src": "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_Modal-EpUJ5xvo.js",
+      "_SecondaryButton-b2dv0hg0.js",
+      "_TextInput-BHnxEnBD.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CYfE0WdF.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx": {
+    "file": "assets/UpdatePasswordForm-QT1InROM.js",
+    "name": "UpdatePasswordForm",
+    "src": "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_TextInput-BHnxEnBD.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CYfE0WdF.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx": {
+    "file": "assets/UpdateProfileInformationForm-5Eueke8y.js",
+    "name": "UpdateProfileInformationForm",
+    "src": "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputError-Di-9Svck.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_TextInput-BHnxEnBD.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CYfE0WdF.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Role/Create.tsx": {
+    "file": "assets/Create-ju9aCpTr.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Role/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CclwJSWy.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_Checkbox-fxRrBKYk.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_transition-Dk6MwGSW.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Role/Edit.tsx": {
+    "file": "assets/Edit-C16dsa1c.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Role/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CclwJSWy.js",
+      "_InputText-8GBDd7K4.js",
+      "_Checkbox-fxRrBKYk.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_transition-Dk6MwGSW.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Role/Index.tsx": {
+    "file": "assets/Index-C8jnXrHG.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Role/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-CclwJSWy.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Scheduler/Index.tsx": {
+    "file": "assets/Index-_Tajww2B.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Scheduler/Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_FormPopupCreate-C30OULp5.js",
+      "_ModalError-CMV25L4x.js",
+      "_Modal-EpUJ5xvo.js",
+      "_moment-xMAXktoI.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_SecondaryButton-b2dv0hg0.js",
+      "_index-BUYc01sp.js",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
+  "resources/js/Pages/Scheduler/_Index.tsx": {
+    "file": "assets/_Index-DAGFfO_K.js",
+    "name": "_Index",
+    "src": "resources/js/Pages/Scheduler/_Index.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_FormPopupCreate-C30OULp5.js",
+      "_ModalError-CMV25L4x.js",
+      "_Modal-EpUJ5xvo.js",
+      "_moment-xMAXktoI.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js",
+      "_SecondaryButton-b2dv0hg0.js",
+      "_index-BUYc01sp.js",
+      "_clsx-B-dksMZM.js"
+    ]
+  },
+  "resources/js/Pages/Scheduler/data.tsx": {
+    "file": "assets/data-CtAjWvYx.js",
+    "name": "data",
+    "src": "resources/js/Pages/Scheduler/data.tsx",
+    "isDynamicEntry": true
+  },
+  "resources/js/Pages/Size/Create.tsx": {
+    "file": "assets/Create-B9cFH50H.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Size/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Size/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-D28PB4j-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Size/Edit.tsx": {
+    "file": "assets/Edit-Ck1GkCHh.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Size/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Size/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-D28PB4j-.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Size/List.tsx": {
+    "file": "assets/List-XdWcNQne.js",
+    "name": "List",
+    "src": "resources/js/Pages/Size/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-D28PB4j-.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Size/Partials/Form.tsx": {
+    "file": "assets/Form-BxDB_dzf.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Size/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-D28PB4j-.js",
+      "_InputText-8GBDd7K4.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Store/Create.tsx": {
+    "file": "assets/Create-Dhg80fCN.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Store/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Store/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-C7xvdQ8V.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Store/Edit.tsx": {
+    "file": "assets/Edit-B_xtJkw0.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Store/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Store/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-C7xvdQ8V.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Store/List.tsx": {
+    "file": "assets/List-CsEjruPS.js",
+    "name": "List",
+    "src": "resources/js/Pages/Store/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C7xvdQ8V.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Store/Partials/Form.tsx": {
+    "file": "assets/Form-BphkDuxF.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Store/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_InputLabel-Doo0KOeK.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-C7xvdQ8V.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputSelect-BKKZVYkM.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_translation-hRiGdJJJ.js"
+    ]
+  },
+  "resources/js/Pages/Unit/Create.tsx": {
+    "file": "assets/Create-B8RnfGcc.js",
+    "name": "Create",
+    "src": "resources/js/Pages/Unit/Create.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Unit/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-DenoX4fV.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Unit/Edit.tsx": {
+    "file": "assets/Edit-BrSA3xYA.js",
+    "name": "Edit",
+    "src": "resources/js/Pages/Unit/Edit.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "resources/js/Pages/Unit/Partials/Form.tsx",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_lang-Rf8_tUbV.js",
+      "_reselect-NCCDNIWx.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_translation-DenoX4fV.js",
+      "_InputText-8GBDd7K4.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Unit/List.tsx": {
+    "file": "assets/List-sRl8ANJb.js",
+    "name": "List",
+    "src": "resources/js/Pages/Unit/List.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_AuthenticatedLayout-BBwQuZdH.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-DenoX4fV.js",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_DataTable-DOKtOU6j.js",
+      "_ApplicationLogo-fdB6LoQ_.js",
+      "_portal-B0qkh_OA.js",
+      "_transition-Dk6MwGSW.js",
+      "_floating-ui.react-CImirEtS.js",
+      "_reselect-NCCDNIWx.js"
+    ]
+  },
+  "resources/js/Pages/Unit/Partials/Form.tsx": {
+    "file": "assets/Form-BbFvTzkS.js",
+    "name": "Form",
+    "src": "resources/js/Pages/Unit/Partials/Form.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx",
+      "_PrimaryButton-DDpmqCs-.js",
+      "_lang-Rf8_tUbV.js",
+      "_translation-DenoX4fV.js",
+      "_InputText-8GBDd7K4.js",
+      "_transition-Dk6MwGSW.js",
+      "_reselect-NCCDNIWx.js",
+      "_InputLabel-Doo0KOeK.js"
+    ]
+  },
+  "resources/js/Pages/Welcome.tsx": {
+    "file": "assets/Welcome-CX5jrsPw.js",
+    "name": "Welcome",
+    "src": "resources/js/Pages/Welcome.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.tsx"
+    ]
+  },
+  "resources/js/app.tsx": {
+    "file": "assets/app-DUD9FxAe.js",
+    "name": "app",
+    "src": "resources/js/app.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Auth/ConfirmPassword.tsx",
+      "resources/js/Pages/Auth/ForgotPassword.tsx",
+      "resources/js/Pages/Auth/Login.tsx",
+      "resources/js/Pages/Auth/LoginInvite.tsx",
+      "resources/js/Pages/Auth/Register.tsx",
+      "resources/js/Pages/Auth/ResetPassword.tsx",
+      "resources/js/Pages/Auth/VerifyEmail.tsx",
+      "resources/js/Pages/Cabinet/Create.tsx",
+      "resources/js/Pages/Cabinet/Edit.tsx",
+      "resources/js/Pages/Cabinet/List.tsx",
+      "resources/js/Pages/Cabinet/Partials/Form.tsx",
+      "resources/js/Pages/Clinic/Create.tsx",
+      "resources/js/Pages/Clinic/FilialCreate.tsx",
+      "resources/js/Pages/Clinic/FilialEdit.tsx",
+      "resources/js/Pages/Clinic/FilialShow.tsx",
+      "resources/js/Pages/Clinic/Filials.tsx",
+      "resources/js/Pages/Clinic/Partials/Form.tsx",
+      "resources/js/Pages/Clinic/Partials/FormFilial.tsx",
+      "resources/js/Pages/Clinic/Roles.tsx",
+      "resources/js/Pages/Currency/Create.tsx",
+      "resources/js/Pages/Currency/Edit.tsx",
+      "resources/js/Pages/Currency/List.tsx",
+      "resources/js/Pages/Currency/Partials/Form.tsx",
+      "resources/js/Pages/Customer/AssignFilial.tsx",
+      "resources/js/Pages/Customer/AssignFilialEdit.tsx",
+      "resources/js/Pages/Customer/CustomerCreate.tsx",
+      "resources/js/Pages/Customer/CustomerEdit.tsx",
+      "resources/js/Pages/Customer/CustomerShow.tsx",
+      "resources/js/Pages/Customer/List.tsx",
+      "resources/js/Pages/Customer/Partials/Form.tsx",
+      "resources/js/Pages/Dashboard.tsx",
+      "resources/js/Pages/DashboardSelect.tsx",
+      "resources/js/Pages/Exception/NoPermission.tsx",
+      "resources/js/Pages/InvoiceChange/Create.tsx",
+      "resources/js/Pages/InvoiceChange/Edit.tsx",
+      "resources/js/Pages/InvoiceChange/List.tsx",
+      "resources/js/Pages/InvoiceChange/Partials/Form.tsx",
+      "resources/js/Pages/InvoiceChange/Partials/Row.tsx",
+      "resources/js/Pages/InvoiceIncoming/Create.tsx",
+      "resources/js/Pages/InvoiceIncoming/Edit.tsx",
+      "resources/js/Pages/InvoiceIncoming/List.tsx",
+      "resources/js/Pages/InvoiceIncoming/Partials/Form.tsx",
+      "resources/js/Pages/InvoiceIncoming/Partials/Row.tsx",
+      "resources/js/Pages/InvoiceOutgoing/Create.tsx",
+      "resources/js/Pages/InvoiceOutgoing/Edit.tsx",
+      "resources/js/Pages/InvoiceOutgoing/List.tsx",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Form.tsx",
+      "resources/js/Pages/InvoiceOutgoing/Partials/Row.tsx",
+      "resources/js/Pages/Material/Create.tsx",
+      "resources/js/Pages/Material/Edit.tsx",
+      "resources/js/Pages/Material/List.tsx",
+      "resources/js/Pages/Material/Partials/Form.tsx",
+      "resources/js/Pages/Material/Report.tsx",
+      "resources/js/Pages/MaterialCategories/Create.tsx",
+      "resources/js/Pages/MaterialCategories/Edit.tsx",
+      "resources/js/Pages/MaterialCategories/List.tsx",
+      "resources/js/Pages/MaterialCategories/Partials/Form.tsx",
+      "resources/js/Pages/Patient/Cliniccard.tsx",
+      "resources/js/Pages/Patient/Create.tsx",
+      "resources/js/Pages/Patient/Edit.tsx",
+      "resources/js/Pages/Patient/EditFormula.tsx",
+      "resources/js/Pages/Patient/Formula/Bone11.tsx",
+      "resources/js/Pages/Patient/Formula/Bone12.tsx",
+      "resources/js/Pages/Patient/Formula/Bone13.tsx",
+      "resources/js/Pages/Patient/Formula/Bone14.tsx",
+      "resources/js/Pages/Patient/Formula/Bone15.tsx",
+      "resources/js/Pages/Patient/Formula/Bone16.tsx",
+      "resources/js/Pages/Patient/Formula/Bone17.tsx",
+      "resources/js/Pages/Patient/Formula/Bone18.tsx",
+      "resources/js/Pages/Patient/Formula/Bone21.tsx",
+      "resources/js/Pages/Patient/Formula/Bone22.tsx",
+      "resources/js/Pages/Patient/Formula/Bone23.tsx",
+      "resources/js/Pages/Patient/Formula/Bone24.tsx",
+      "resources/js/Pages/Patient/Formula/Bone25.tsx",
+      "resources/js/Pages/Patient/Formula/Bone26.tsx",
+      "resources/js/Pages/Patient/Formula/Bone27.tsx",
+      "resources/js/Pages/Patient/Formula/Bone28.tsx",
+      "resources/js/Pages/Patient/Formula/Bone31.tsx",
+      "resources/js/Pages/Patient/Formula/Bone32.tsx",
+      "resources/js/Pages/Patient/Formula/Bone33.tsx",
+      "resources/js/Pages/Patient/Formula/Bone34.tsx",
+      "resources/js/Pages/Patient/Formula/Bone35.tsx",
+      "resources/js/Pages/Patient/Formula/Bone36.tsx",
+      "resources/js/Pages/Patient/Formula/Bone37.tsx",
+      "resources/js/Pages/Patient/Formula/Bone38.tsx",
+      "resources/js/Pages/Patient/Formula/Bone41.tsx",
+      "resources/js/Pages/Patient/Formula/Bone42.tsx",
+      "resources/js/Pages/Patient/Formula/Bone43.tsx",
+      "resources/js/Pages/Patient/Formula/Bone44.tsx",
+      "resources/js/Pages/Patient/Formula/Bone45.tsx",
+      "resources/js/Pages/Patient/Formula/Bone46.tsx",
+      "resources/js/Pages/Patient/Formula/Bone47.tsx",
+      "resources/js/Pages/Patient/Formula/Bone48.tsx",
+      "resources/js/Pages/Patient/Formula/BoneL.tsx",
+      "resources/js/Pages/Patient/Formula/BoneLL.tsx",
+      "resources/js/Pages/Patient/Formula/BoneR.tsx",
+      "resources/js/Pages/Patient/Formula/BoneRR.tsx",
+      "resources/js/Pages/Patient/Formula/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/Formula/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth11.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth12.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth13.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth14.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth15.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth16.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth17.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth18.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth21.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth22.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth23.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth24.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth25.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth26.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth27.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth28.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth31.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth32.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth33.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth34.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth35.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth36.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth37.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth38.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth41.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth42.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth43.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth44.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth45.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth46.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth47.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth48.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth51.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth52.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth53.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth54.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth55.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth61.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth62.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth63.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth64.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth65.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth71.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth72.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth73.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth74.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth75.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth81.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth82.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth83.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth84.tsx",
+      "resources/js/Pages/Patient/Formula/Tooth85.tsx",
+      "resources/js/Pages/Patient/Formula/index.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone11.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone12.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone13.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone14.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone15.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone16.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone17.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone18.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone21.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone22.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone23.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone24.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone25.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone26.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone27.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone28.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone31.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone32.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone33.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone34.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone35.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone36.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone37.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone38.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone41.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone42.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone43.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone44.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone45.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone46.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone47.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Bone48.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneLL.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/BoneRR.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryLeft.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/MaxilaryRight.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth51.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth52.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth53.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth54.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth55.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth61.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth62.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth63.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth64.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth65.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth71.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth72.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth73.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth74.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth75.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth81.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth82.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth83.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth84.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/Tooth85.tsx",
+      "resources/js/Pages/Patient/FormulaMilk/index.tsx",
+      "resources/js/Pages/Patient/List.tsx",
+      "resources/js/Pages/Patient/Partials/Form.tsx",
+      "resources/js/Pages/Pricing/Create.tsx",
+      "resources/js/Pages/Pricing/Edit.tsx",
+      "resources/js/Pages/Pricing/List.tsx",
+      "resources/js/Pages/Pricing/Partials/Form.tsx",
+      "resources/js/Pages/Pricing/Partials/Row.tsx",
+      "resources/js/Pages/Producer/Create.tsx",
+      "resources/js/Pages/Producer/Edit.tsx",
+      "resources/js/Pages/Producer/List.tsx",
+      "resources/js/Pages/Producer/Partials/Form.tsx",
+      "resources/js/Pages/Profile/Edit.tsx",
+      "resources/js/Pages/Profile/Partials/DeleteUserForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdatePasswordForm.tsx",
+      "resources/js/Pages/Profile/Partials/UpdateProfileInformationForm.tsx",
+      "resources/js/Pages/Role/Create.tsx",
+      "resources/js/Pages/Role/Edit.tsx",
+      "resources/js/Pages/Role/Index.tsx",
+      "_FormPopupCreate-C30OULp5.js",
+      "resources/js/Pages/Scheduler/Index.tsx",
+      "resources/js/Pages/Scheduler/_Index.tsx",
+      "resources/js/Pages/Scheduler/data.tsx",
+      "resources/js/Pages/Size/Create.tsx",
+      "resources/js/Pages/Size/Edit.tsx",
+      "resources/js/Pages/Size/List.tsx",
+      "resources/js/Pages/Size/Partials/Form.tsx",
+      "resources/js/Pages/Store/Create.tsx",
+      "resources/js/Pages/Store/Edit.tsx",
+      "resources/js/Pages/Store/List.tsx",
+      "resources/js/Pages/Store/Partials/Form.tsx",
+      "resources/js/Pages/Unit/Create.tsx",
+      "resources/js/Pages/Unit/Edit.tsx",
+      "resources/js/Pages/Unit/List.tsx",
+      "resources/js/Pages/Unit/Partials/Form.tsx",
+      "resources/js/Pages/Welcome.tsx"
+    ],
+    "css": [
+      "assets/app-D6qfomg7.css"
+    ],
+    "assets": [
+      "assets/bg-main-qeXZK7Or.jpg"
+    ]
+  }
+}
