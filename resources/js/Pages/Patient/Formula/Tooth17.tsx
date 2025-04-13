@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setTooth17Active, setToothDiagnoze } from '../../../Redux/Formula';
+import { setSubDiagnosis, setNewToothActive, setToothDiagnoze, setDisactiveAll } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -18,9 +18,10 @@ import {
     getCeramicCrownColorSelector,
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector
+    getZirconiaCrownColorSelector,
+    getStatusesSelector
 } from "../../../Redux/Formula/selectors";
-
+import PeriodontitStage17 from './periodontit17';
 
 export default function Tooth17({
     className = '',
@@ -31,13 +32,14 @@ export default function Tooth17({
         locale: appLang,
     });
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(tooth17Selector);
+    // const toothActive = useSelector(tooth17Selector);
+    const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth17Diagnozis = teethDiagnozis.tooth17;
-    const [diagnozeClass, setDiagnozeClass] = useState('');
+    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -153,11 +155,22 @@ export default function Tooth17({
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-// console.log('TOOTH 17 ACTIVE', toothActive)
+
+    useEffect(() => {
+        if (toothActive.tooth17.active) {
+            // alert(1)
+            // teethDiagnozis.tooth16.periodontit_stage = '';
+            // dispatch(setToothDiagnoze(teethDiagnozis));
+            teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
+            // console.log('TUT', subDiagnozis)
+            dispatch(setToothDiagnoze(teethDiagnozis));
+        }
+    }, [subDiagnozis]);
+
     return (
         <>
             <g id="17" className={`tooth-number-active`}>
-                <text transform="matrix(1 0 0 1 366.4678 716.1968)" className="st3 st4 st5">17</text>
+                <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${toothActive.tooth17.active ? 'num-active' : ''}`}>17</text>
             </g>
             <g className={`f-tooth-active`}
                 onMouseOver={() => {
@@ -167,8 +180,14 @@ export default function Tooth17({
                     (!toothActive && !allTeeth) && document.getElementById('17').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    teethDiagnozis.tooth18.active = !teethDiagnozis.tooth18.active;
-                    dispatch(setTooth17Active(!toothActive));
+                    // teethDiagnozis.tooth18.active = !teethDiagnozis.tooth18.active;
+                    // dispatch(setTooth17Active(!toothActive));
+                    if (toothActive.tooth16.active) {
+                        dispatch(setNewToothActive({tooth17: {active: false}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth17: {active: true}}))
+                    }
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth17.change_color = !teethDiagnozis.tooth17.change_color;
@@ -201,7 +220,7 @@ export default function Tooth17({
                         } else if (diagnozis === 'periodontit') {
                             teethDiagnozis.tooth17.periodontit = !teethDiagnozis.tooth17.periodontit;
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.periodontit ? 'periodontit' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth17.periodontit ? 'periodontit' : '');
+                            teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
                             if (!teethDiagnozis.tooth17.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth17.seal = !teethDiagnozis.tooth17.seal;
@@ -278,8 +297,6 @@ export default function Tooth17({
                             teethDiagnozis.tooth17.shaper = !teethDiagnozis.tooth17.shaper;
                         } else if (diagnozis === 'implant') {
                             teethDiagnozis.tooth17.implant = !teethDiagnozis.tooth17.implant;
-                        } else if (diagnozis === 'periodontit') {
-                            teethDiagnozis.tooth17.periodontit = !teethDiagnozis.tooth17.periodontit;
                         } else if (diagnozis === 'apex') {
                             teethDiagnozis.tooth17.apex = !teethDiagnozis.tooth17.apex;
                         } else if (diagnozis === 'absent') {
@@ -762,7 +779,8 @@ export default function Tooth17({
                             />
                             <path className={`st22 target part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} d="M436.7,247.3c4.1,14.3,5.8,29,5,43.6h1.8c0-0.9,0-1.8,0-2.8C443.5,274.3,441.2,260.5,436.7,247.3z" />
                         </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="17"
+                        <PeriodontitStage17 />
+                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="17"
                            style={{
                                opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st1' && toothActive) ? 1 : 0,
                                visibility: "inherit"
@@ -788,7 +806,8 @@ export default function Tooth17({
                             <circle className="st42" cx="433.9" cy="218.8" r="30"></circle>
                             <circle className="st42" cx="412.6" cy="194.1" r="30"></circle>
                             <circle className="st42" cx="364" cy="215.8" r="30"></circle>
-                        </g>
+                        </g> */}
+
                     </g>
                     {/* PIN */}
                     <g className="pin" style={{visibility: 'inherit', opacity: tooth17Diagnozis.pin ? 1 : 0}}>

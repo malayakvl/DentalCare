@@ -21,6 +21,7 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
+import PeriodontitStage18 from './periodontit18';
 
 
 export default function Tooth18({
@@ -293,8 +294,6 @@ export default function Tooth18({
                             teethDiagnozis.tooth18.shaper = !teethDiagnozis.tooth18.shaper;
                         } else if (diagnozis === 'implant') {
                             teethDiagnozis.tooth18.implant = !teethDiagnozis.tooth18.implant;
-                        } else if (diagnozis === 'periodontit') {
-                            teethDiagnozis.tooth18.periodontit = !teethDiagnozis.tooth18.periodontit;
                         } else if (diagnozis === 'apex') {
                             teethDiagnozis.tooth18.apex = !teethDiagnozis.tooth18.apex;
                         } else if (diagnozis === 'absent') {
@@ -788,7 +787,8 @@ export default function Tooth18({
                             c6,5.4,10.6,11.9,13.8,19c4,9.2,5.3,18.9,5.4,28.7C284.5,295.1,282.5,294.6,280.6,294.3z"
                             />
                         </g>
-                        <g className="level hEmpty hImplant"
+                        <PeriodontitStage18 />
+                        {/* <g className="level hEmpty hImplant"
                             style={{
                                 visibility: 'inherit',
                                 opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st1' && toothActive.tooth18.active) || (tooth18Diagnozis.periodontit && tooth18Diagnozis.periodontit_stage === 'st1') ? 1 : 0)
@@ -808,7 +808,7 @@ export default function Tooth18({
                                 opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st3' && toothActive.tooth18.active) || (tooth18Diagnozis.periodontit && tooth18Diagnozis.periodontit_stage === 'st3') ? 1 : 0)
                             }}>
                             <circle className="st42" cx="262.6" cy="224" r="30"></circle>
-                        </g>
+                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{
