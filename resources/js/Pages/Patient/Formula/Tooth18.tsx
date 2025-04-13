@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setTooth18Active, setToothDiagnoze } from '../../../Redux/Formula';
+import { setNewToothActive, setSubDiagnosis, setTooth18Active, setToothDiagnoze, setDisactiveAll } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -18,7 +18,8 @@ import {
     getCeramicCrownColorSelector,
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector
+    getZirconiaCrownColorSelector,
+    getStatusesSelector
 } from "../../../Redux/Formula/selectors";
 
 
@@ -31,7 +32,9 @@ export default function Tooth18({
         locale: appLang,
     });
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(tooth18Selector);
+    //const toothActive = useSelector(tooth18Selector);
+    const toothActive = useSelector(getStatusesSelector);
+    const teethStatuses = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
@@ -154,12 +157,17 @@ export default function Tooth18({
         }
     }
 
-
+    useEffect(() => {
+        if (toothActive.tooth18.active) {
+            teethDiagnozis.tooth18.periodontit_stage = subDiagnozis;
+            dispatch(setToothDiagnoze(teethDiagnozis));
+        }
+    }, [subDiagnozis]);
 
     return (
         <>
             <g id="18" className={`tooth-number-active`}>
-                <text transform="matrix(1 0 0 1 247 717)" className="st3 st4 st5">18</text>
+                <text transform="matrix(1 0 0 1 247 717)" className={`st3 st4 st5 ${toothActive.tooth18.active ? 'num-active' : ''}`}>18</text>
             </g>
             <g className={`f-tooth-active`}
                 onMouseOver={() => {
@@ -169,7 +177,12 @@ export default function Tooth18({
                     (!toothActive && !allTeeth) && document.getElementById('18').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    teethDiagnozis.tooth18.active = !teethDiagnozis.tooth18.active;
+                    if (toothActive.tooth18.active) {
+                        dispatch(setNewToothActive({tooth18: {active: true}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth18: {active: true}}))
+                    }
                     dispatch(setTooth18Active(!toothActive));
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
@@ -355,13 +368,13 @@ export default function Tooth18({
                         <g className="hIntact hEmpty hImplant pulpitis-pfilling" style={{visibility: tooth18Diagnozis?.apex ? 'inherit' : 'hidden'}}>
                             <ellipse className="st22 target" rx="7.15314" ry="5.64935"
                                         transform="matrix(-0.999903 -0.0138984 -0.0138984 0.999903 276.828 609.565)"
-                                        style={{fill: 'rgb(254, 246, 249)'}}/>
+                                        style={{fill: 'rgb(254, 246, 249)'}} />
                             <ellipse className="st22 target" rx="6.89579" ry="6.05115"
                                         transform="matrix(-0.774929 0.632048 0.632048 0.774929 261.168 592.048)"
-                                        style={{fill: 'rgb(254, 246, 249)'}}/>
+                                        style={{fill: 'rgb(254, 246, 249)'}} />
                             <ellipse className="st22 target" rx="6.88191" ry="5.68612"
                                         transform="matrix(-0.653465 -0.756957 -0.756957 0.653465 291.801 589.925)"
-                                        style={{fill: 'rgb(254, 246, 249)'}}/>
+                                        style={{fill: 'rgb(254, 246, 249)'}} />
                         </g>
                     </g>
                     {/* IMPLANT */}
@@ -778,21 +791,21 @@ export default function Tooth18({
                         <g className="level hEmpty hImplant"
                             style={{
                                 visibility: 'inherit',
-                                opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st1') ? 1 : 0)
+                                opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st1' && toothActive.tooth18.active) || (tooth18Diagnozis.periodontit && tooth18Diagnozis.periodontit_stage === 'st1') ? 1 : 0)
                             }}>
                             <circle className="st42" cx="261.6" cy="242.8" r="8.2"/>
                         </g>
                         <g className="level hEmpty hImplant"
                             style={{
                                 visibility: 'inherit',
-                                opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st2') ? 1 : 0)
+                                opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st2' && toothActive.tooth18.active) || (tooth18Diagnozis.periodontit && tooth18Diagnozis.periodontit_stage === 'st2') ? 1 : 0)
                             }}>
                             <circle className="st42" cx="264.7" cy="236.5" r="17.5"></circle>
                         </g>
                         <g className="level hEmpty hImplant"
                             style={{
                                 visibility: 'inherit',
-                                opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st3') ? 1 : 0)
+                                opacity: ((tooth18Diagnozis.periodontit && subDiagnozis === 'st3' && toothActive.tooth18.active) || (tooth18Diagnozis.periodontit && tooth18Diagnozis.periodontit_stage === 'st3') ? 1 : 0)
                             }}>
                             <circle className="st42" cx="262.6" cy="224" r="30"></circle>
                         </g>

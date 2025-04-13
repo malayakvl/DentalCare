@@ -18,7 +18,9 @@ import {
     setCeramicCrownColor,
     setMCeramicCrownColor,
     setMetalicCrownColor,
-    setZirconiaCrownColor
+    setZirconiaCrownColor,
+    setNewToothActive,
+    setDisactiveAll
 
 } from "./actions";
 
@@ -42,6 +44,7 @@ const initialState = {
     tooth18: false,
     tooth17: false,
     active_tooth: '',
+    teethStatuses: {tooth18: {active: false}, tooth17: {active: false}, tooth16: {active: false}},
     teethDiagnozes: {
         tooth18: {
             active: false,
@@ -66,6 +69,7 @@ const initialState = {
             channel_class: '',
             // periodontit
             periodontit: false,
+            periodontit_stage: '',
             periodontit_st1: false,
             periodontit_st2: false,
             periodontit_st3: false,
@@ -142,6 +146,7 @@ const initialState = {
             channel_class: '',
             // periodontit
             periodontit: false,
+            periodontit_stage: '',
             periodontit_st1: false,
             periodontit_st2: false,
             periodontit_st3: false,
@@ -218,6 +223,7 @@ const initialState = {
             channel_class: '',
             // periodontit
             periodontit: false,
+            periodontit_stage: '',
             periodontit_st1: false,
             periodontit_st2: false,
             periodontit_st3: false,
@@ -408,7 +414,18 @@ const ACTION_HANDLERS = {
             zirconia_crown_color: action.payload
         })
     },
-
+    [setNewToothActive.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            teethStatuses: {...state.teethStatuses, ...action.payload}
+        })
+    },
+    [setDisactiveAll.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            teethStatuses: {tooth18: {active: false}, tooth17: {active: false}, tooth16: {active: false}}
+        })
+    },
 }
 
 export {
@@ -430,7 +447,9 @@ export {
     setMCeramicCrownColor,
     setMetalicCrownColor,
     setZirconiaCrownColor,
-    setActiveToothName
+    setActiveToothName,
+    setNewToothActive,
+    setDisactiveAll
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);

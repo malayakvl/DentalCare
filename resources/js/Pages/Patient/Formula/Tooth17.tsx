@@ -153,7 +153,7 @@ export default function Tooth17({
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-
+// console.log('TOOTH 17 ACTIVE', toothActive)
     return (
         <>
             <g id="17" className={`tooth-number-active`}>
@@ -764,7 +764,7 @@ export default function Tooth17({
                         </g>
                         <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="17"
                            style={{
-                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st1') ? 1 : 0,
+                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st1' && toothActive) ? 1 : 0,
                                visibility: "inherit"
                         }}>
                             <circle className="st42" cx="362.8" cy="237.3" r="8.2"></circle>
@@ -773,7 +773,7 @@ export default function Tooth17({
                         </g>
                         <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="17"
                            style={{
-                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st2') ? 1 : 0,
+                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st2' && toothActive) ? 1 : 0,
                                visibility: "inherit"
                         }}>
                             <circle className="st42" cx="364" cy="229.2" r="17.5"></circle>
@@ -782,7 +782,7 @@ export default function Tooth17({
                         </g>
                         <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="17"
                            style={{
-                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st3') ? 1 : 0,
+                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st3' && toothActive) ? 1 : 0,
                                visibility: "inherit"
                         }}>
                             <circle className="st42" cx="433.9" cy="218.8" r="30"></circle>

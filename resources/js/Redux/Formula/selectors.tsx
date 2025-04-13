@@ -25,4 +25,6 @@ export const getCeramicCrownColorSelector = (state) => state.formula.ceramic_cro
 export const getCeramicMCrownColorSelector = (state) => state.formula.mceramic_crown_color;
 export const getMetalicCrownColorSelector = (state) => state.formula.metalic_crown_color;
 export const getZirconiaCrownColorSelector = (state) => state.formula.zirconia_crown_color;
+export const getStatusesSelector = (state) => state.formula.teethStatuses;
+export const getPeriodontitStageSelector = (state) => state.formula.teethDiagnozes.tooth16.periodontit_stage;
 

@@ -21,5 +21,5 @@ export const setCeramicCrownColor = createAction('formula/SET_CERAMICCROWNCOLOR'
 export const setMCeramicCrownColor = createAction('formula/SET_METALOCERAMICCROWNCOLOR');
 export const setMetalicCrownColor = createAction('formula/SET_METALICCROWNCOLOR');
 export const setZirconiaCrownColor = createAction('formula/SET_ZIRCONIACROWNCOLOR');
-// export const setCeramicCrownColor2 = createAction('formula/SET_CERAMICCROWN2');
-// export const setCeramicCrownColor3 = createAction('formula/SET_CERAMICCROWN3');
+export const setNewToothActive = createAction('formula/SET_NEW_TOOTH_ACTIVE');
+export const setDisactiveAll = createAction('formula/ALL_TEETH_DISACTIVE');

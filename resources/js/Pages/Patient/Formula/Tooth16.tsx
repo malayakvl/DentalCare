@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setTooth16Active, setToothDiagnoze } from '../../../Redux/Formula';
+import { setSubDiagnosis, setTooth16Active, setToothDiagnoze, setNewToothActive, setDisactiveAll } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -18,9 +18,10 @@ import {
     getCeramicCrownColorSelector,
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector
+    getZirconiaCrownColorSelector,
+    getStatusesSelector
 } from "../../../Redux/Formula/selectors";
-
+import PeriodontitStage16 from './periodontit16';
 
 
 export default function Tooth16({
@@ -32,7 +33,7 @@ export default function Tooth16({
         locale: appLang,
     });
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(tooth16Selector);
+    const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
@@ -161,21 +162,37 @@ export default function Tooth16({
         }
     }
 
+    useEffect(() => {
+        if (toothActive.tooth16.active) {
+            // alert(1)
+            // teethDiagnozis.tooth16.periodontit_stage = '';
+            // dispatch(setToothDiagnoze(teethDiagnozis));
+            teethDiagnozis.tooth16.periodontit_stage = subDiagnozis;
+            console.log('TUT', subDiagnozis)
+            dispatch(setToothDiagnoze(teethDiagnozis));
+        }
+    }, [subDiagnozis]);
+
+console.log('Stage', teethDiagnozis.tooth16.periodontit_stage, subDiagnozis);
     return ( 
         <>
             <g id="16" className="df-tooth-text" style={{opacity: 1}}>
-                <text transform="matrix(1 0 0 1 507.4561 716.1968)" className="st3 st4 st5">16</text>
+                <text transform="matrix(1 0 0 1 507.4561 716.1968)" className={`st3 st4 st5 ${toothActive.tooth16.active ? 'num-active' : ''}`}>16</text>
             </g>
             <g className={`f-tooth-active`}
                 onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('18').classList.add('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('16').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('18').classList.remove('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    teethDiagnozis.tooth16.active = !teethDiagnozis.tooth16.active;
-                    dispatch(setTooth16Active(!toothActive));
+                    if (toothActive.tooth16.active) {
+                        dispatch(setNewToothActive({tooth16: {active: false}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth16: {active: true}}))
+                    }
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth16.change_color = !teethDiagnozis.tooth16.change_color;
@@ -208,6 +225,7 @@ export default function Tooth16({
                         } else if (diagnozis === 'periodontit') {
                             teethDiagnozis.tooth16.periodontit = !teethDiagnozis.tooth16.periodontit;
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.periodontit ? 'periodontit' : '';
+                            teethDiagnozis.tooth16.periodontit_stage = subDiagnozis;
                             // setDiagnozeClass(teethDiagnozis.tooth16.periodontit ? 'periodontit' : '');
                             if (!teethDiagnozis.tooth16.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
@@ -346,7 +364,7 @@ export default function Tooth16({
                     </g>
                     {/* PULPIT */}
                     <g className="pulp">
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="16" style={{visibility: 'hidden'}}>
+                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" style={{visibility: 'hidden'}}>
                             <ellipse className="st22 target" rx="8.35891" ry="8.89013" transform="matrix(-0.200896 0.979613 0.979613 0.200896 511.388 615.974)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
                             <ellipse className="st22 target" rx="7.49883" ry="8.49434" transform="matrix(-0.462677 -0.886527 -0.886527 0.462677 510 592.578)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
                             <ellipse className="st22 target" rx="7.52721" ry="9.0078" transform="matrix(-0.639739 0.768592 0.768592 0.639739 557.109 592.522)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
@@ -758,9 +776,10 @@ export default function Tooth16({
                                 c1.2,0.5,2.3,1.1,3.3,1.5C598.2,315.6,597.3,304.8,595.6,294.3z" 
                             />
                         </g>
-                        <g style={{
+                        <PeriodontitStage16 />
+                        {/* <g style={{
                                 visibility: 'inherit',
-                                opacity: ((tooth16Diagnozis.periodontit && subDiagnozis === 'st1') ? 1 : 0)
+                                opacity: ((tooth16Diagnozis.periodontit && (tooth16Diagnozis.periodontit_stage === 'st1' || subDiagnozis === 'st1' )) ? 1 : 0)
                             }}
                         >
                             <circle className="st42" cx="509.3" cy="248.9" r="8.2" />
@@ -769,7 +788,7 @@ export default function Tooth16({
                         </g>
                         <g style={{
                                 visibility: 'inherit',
-                                opacity: ((tooth16Diagnozis.periodontit && subDiagnozis === 'st2') ? 1 : 0)
+                                opacity: ((tooth16Diagnozis.periodontit && (tooth16Diagnozis.periodontit_stage === 'st2' || subDiagnozis === 'st2')) ? 1 : 0)
                             }}
                         >
                             <circle className="st42" cx="510.6" cy="241.8" r="17.5" />
@@ -778,13 +797,13 @@ export default function Tooth16({
                         </g>
                         <g style={{
                                 visibility: 'inherit',
-                                opacity: ((tooth16Diagnozis.periodontit && subDiagnozis === 'st2') ? 1 : 0)
+                                opacity: ((tooth16Diagnozis.periodontit && (tooth16Diagnozis.periodontit_stage === 'st3' || subDiagnozis === 'st3')) ? 1 : 0)
                             }}
                         >
                             <circle className="st42" cx="581.2" cy="228.1" r="30" />
                             <circle className="st42" cx="545.9" cy="214.1" r="30" />
                             <circle className="st42" cx="509.6" cy="229.3" r="30" />
-                        </g>
+                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{
