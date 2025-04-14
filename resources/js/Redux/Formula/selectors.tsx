@@ -26,7 +26,8 @@ export const getCeramicMCrownColorSelector = (state) => state.formula.mceramic_c
 export const getMetalicCrownColorSelector = (state) => state.formula.metalic_crown_color;
 export const getZirconiaCrownColorSelector = (state) => state.formula.zirconia_crown_color;
 export const getStatusesSelector = (state) => state.formula.teethStatuses;
-export const getPeriodontitStage16Selector = (state) => state.formula.teethDiagnozes.tooth16.periodontit_stage;
-export const getPeriodontitStage17Selector = (state) => state.formula.teethDiagnozes.tooth17.periodontit_stage;
 export const getPeriodontitStage18Selector = (state) => state.formula.teethDiagnozes.tooth18.periodontit_stage;
+export const getPeriodontitStage17Selector = (state) => state.formula.teethDiagnozes.tooth17.periodontit_stage;
+export const getPeriodontitStage16Selector = (state) => state.formula.teethDiagnozes.tooth16.periodontit_stage;
+export const getPeriodontitStage15Selector = (state) => state.formula.teethDiagnozes.tooth15.periodontit_stage;
 

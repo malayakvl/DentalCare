@@ -153,11 +153,7 @@ export default function Tooth16() {
 
     useEffect(() => {
         if (toothActive.tooth16.active) {
-            // alert(1)
-            // teethDiagnozis.tooth16.periodontit_stage = '';
-            // dispatch(setToothDiagnoze(teethDiagnozis));
             teethDiagnozis.tooth16.periodontit_stage = subDiagnozis;
-            // console.log('TUT', subDiagnozis)
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }, [subDiagnozis]);
@@ -397,7 +393,7 @@ export default function Tooth16() {
                             625.293C475.723 619.123 476.68 611.997 479.403 605.459Z" 
                             style={{visibility: 'hidden'}}   
                         />
-                        <circle className="st57" cx="531" cy="598.001" r="12.25"  style={{fill: 'black', opacity: tooth16Diagnozis.pin ? 1 : 0}}   />
+                        <circle className="st57" cx="531" cy="598.001" r="12.25"  style={{fill: 'black', opacity: tooth16Diagnozis.pin ? 1 : 0}} />
                     </g>
                     {/* CULTTAB */}
                     <g className="stump hEmpty hIntact hImplant"  style={{visibility: !tooth16Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth16Diagnozis.culttab ? 0 : 1}}>
@@ -745,7 +741,7 @@ export default function Tooth16() {
                                 c0.4-1.6,0.7-3.2,0.9-4.8C594.9,325.2,596,325.7,597,326.2z"
                             />
                         </g>
-                        {/* Отростки пульпита */}
+                        {/* Отростки периодонтита */}
                         <g>
                             <path className={`st22 target part ${tooth16Diagnozis.channel_class} ${tooth16Diagnozis.channel_class} ${tooth16Diagnozis.pulpit ? 'pulpit' : ''} ${tooth16Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`}
                                 d="M510.1,256c-2.2,9-3.6,18.1-4,27.3c-0.5,10.6,0.2,21.2,2.3,31.7c0.2,1.1,0.4,2.1,0.7,3.2
