@@ -336,7 +336,7 @@ export default function Tooth16() {
                                 c-5.6-0.8-11-2.2-15.9-4.5c-5.4-2.6-9.9-6.3-12.6-10.8C457,625.8,458.3,616.1,462,607.2z"
                             />
                         </g>
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth16Diagnozis?.apex ? 'inherit' : 'hidden'}}>
+                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth16Diagnozis?.apex || tooth16Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth16Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth16Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M462 607.2C463.5 603.7 465.3 600.3 466.8 596.9C470.7 588 473 578 478.5 569.5C483.8 561.2 491.7 554.7 503.4 552.4C512.9 550.5 522.9 552.5 532.8 552.1C537.9 551.9 543.2 551.1 548.2 550.5C565.5 548.2 583.3 548.7 592.7 560C595.4 563.2 596.7 566.9 597.5 570.6C599.1 577.8 598.9 585 597.9 592.2C596.5 602.6 593.7 613.1 588.7 622.8C584.8 630.2 579.6 637.2 571 641.7C563.7 645.5 554.8 646.7 546.1 645.9C541.2 645.4 536.4 644.2 531.4 644.3C522.8 644.4 515.1 648.2 506.7 649.5C501.4 650.4 495.9 650.3 490.6 649.5C485 648.7 479.6 647.3 474.7 645C469.3 642.4 464.8 638.7 
                                 462.1 634.2C457 625.8 458.3 616.1 462 607.2Z" 

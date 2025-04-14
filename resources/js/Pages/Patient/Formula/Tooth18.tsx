@@ -347,7 +347,7 @@ export default function Tooth18({
                                 />
                             </g>
                         </g>
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth18Diagnozis?.apex ? 'inherit' : 'hidden'}}>
+                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth18Diagnozis?.apex || tooth18Diagnozis?.change_color ? 'inherit' : 'hidden'}}>
                             <path
                                 className={`st24 change-color ${tooth18Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth18Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M227.9 595C229.6 586.4 234.4 578.8 242.9 573.2C252.9 566.5 266.3 563.9 279.6 562.9C290.8 562.1 302.7 562.6 310.5

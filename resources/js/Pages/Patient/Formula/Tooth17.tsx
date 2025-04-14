@@ -345,7 +345,7 @@ export default function Tooth17({
                             />
                         </g>
                         {/*CHANGE COLOR*/}
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth17Diagnozis?.apex ? 'inherit' : 'hidden'}}>
+                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth17Diagnozis?.apex || tooth17Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth17Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth17Diagnozis?.apex ? 'apex' : ''}`}
                                   d="M335.5 607C336.5 603.1 338.8 599.401 339.9 595.5C342.7 585.9 338.8 575.001 345.1 566.201C349.9 559.401 358.8 555.801 368.9 554.401C378.4 553.101 388.2 553.901 397.8 552.701C403.9 551.901 410 550.5 416 550.1C422.4 549.6 428.7 550.301 434.4 551.901C438.3 553.001 442 554.6 445.2 556.8C450.6 560.6 453.6 565.901 454.7 571.401C456 577.801 454.8 584.3 452.2 590.5C448.4 599.8 441.7 608.301 437.1 617.401C434.3 623.001 432.2 628.901 427.6 633.901C423.6 638.301 417.7 641.7 410.8 642.6C405.7 643.3 400.5 642.6 395.3 642.1C388.8 641.5 382.3 641.4 375.8 641C370.1 640.7 364.4 640.2 359.1 638.6C342.3 633.9 331.9 620.701 335.5 607Z"
                             />
