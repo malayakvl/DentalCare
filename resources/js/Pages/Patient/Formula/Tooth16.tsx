@@ -812,6 +812,7 @@ export default function Tooth16() {
                             c-2.3,0.9-4.5,1.8-6.7,2.8c-0.1,0.1-0.1,0.2-0.2,0.2c-1.2,3.7-2.2,7.4-3,11.1C479.9,415,483.5,433,491.7,449.2z" 
                         />
                     </g>
+                    {/* ABUTMENT */}
                     <g className="abutment hEmpty hIntact hRoot" style={{visibility: tooth16Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth16Diagnozis.abutment ? 1 : 0}}>
                         <path className="st16" d="M606.5,406.4c-4.7-3.8-18.2-15.1-23.7-17.9c-20.6-10.8-45-14.3-68.3-10.7c-9.9,1.5-19.4,4.3-28.1,8.3
                             l50.7-25.9l30.1,1.8L606.5,406.4z" 
