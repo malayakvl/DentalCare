@@ -311,6 +311,44 @@ export default function index({ patientData }) {
                                                             {msgFormula.get('formula.wedge.shaped.defect')}
                                                         </span>
                                                     </li>
+                                                    <li>
+                                                        <div className="flex">
+                                                            <div className="w-1/2">
+                                                                <span
+                                                                    className={`diagnoze-title cursor-pointer
+                                                                        pl-[8px] w-1/2 cursor-pointer
+                                                                        ${diagnozis === 'tartar' ? 'active' : ''}`}
+                                                                    onClick={() => dispatch(setDiagnosis(diagnozis === 'tartar' ? '' : 'tartar'))}>
+                                                                    {msgFormula.get('formula.tartar')}
+                                                                </span>
+                                                            </div>
+                                                            <div className="w-1/2 text-right">
+                                                                <span
+                                                                    onClick={() => {
+                                                                        if (diagnozis !== 'tartar') {
+                                                                            dispatch(setDiagnosis('tartar'));
+                                                                        }
+                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st1' ? '' : 'st1'))
+                                                                    }}
+                                                                    className={`diagnoze-title ${subdiagnozis === 'st1' ? 'active' : ''} mr-1 cursor-pointer`}
+                                                                >
+                                                                    1 ст
+                                                                </span>
+                                                                <span
+                                                                    onClick={() => {
+                                                                        if (diagnozis !== 'tartar') {
+                                                                            dispatch(setDiagnosis('tartar'));
+                                                                        }
+                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st2' ? '' : 'st2'))
+                                                                    }}
+                                                                    className={`diagnoze-title ${subdiagnozis === 'st2' ? 'active' : ''} mr-1 cursor-pointer`}
+                                                                >
+                                                                   2 ст
+                                                                </span>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    </li>
                                                 </ul>
                                             </div>
                                             {/*NOT WORKED*/}
@@ -497,44 +535,6 @@ export default function index({ patientData }) {
                                                         <span className={`diagnoze-title flex-initial cursor-pointer ${teethType === 'adultAAAA' ? 'active': ''}`}>
                                                             Значно запалені ясна
                                                         </span>
-                                                    </li>
-                                                    <li>
-                                                        <div className="flex">
-                                                            <div className="w-1/2">
-                                                                <span
-                                                                    className={`diagnoze-title cursor-pointer
-                                                                        pl-[8px] w-1/2 cursor-pointer
-                                                                        ${diagnozis === 'tartar' ? 'active' : ''}`}
-                                                                    onClick={() => dispatch(setDiagnosis(diagnozis === 'tartar' ? '' : 'tartar'))}>
-                                                                    {msgFormula.get('formula.tartar')}
-                                                                </span>
-                                                            </div>
-                                                            <div className="w-1/2 text-right">
-                                                                <span
-                                                                    onClick={() => {
-                                                                        if (diagnozis !== 'tartar') {
-                                                                            dispatch(setDiagnosis('tartar'));
-                                                                        }
-                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st1' ? '' : 'st1'))
-                                                                    }}
-                                                                    className={`diagnoze-title ${subdiagnozis === 'st1' ? 'active' : ''} mr-1 cursor-pointer`}
-                                                                >
-                                                                    1 ст
-                                                                </span>
-                                                                <span
-                                                                    onClick={() => {
-                                                                        if (diagnozis !== 'tartar') {
-                                                                            dispatch(setDiagnosis('tartar'));
-                                                                        }
-                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st2' ? '' : 'st2'))
-                                                                    }}
-                                                                    className={`diagnoze-title ${subdiagnozis === 'st2' ? 'active' : ''} mr-1 cursor-pointer`}
-                                                                >
-                                                                   2 ст
-                                                                </span>
-                                                                
-                                                            </div>
-                                                        </div>
                                                     </li>
                                                 </ul>
 

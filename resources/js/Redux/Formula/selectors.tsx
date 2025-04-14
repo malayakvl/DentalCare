@@ -30,4 +30,5 @@ export const getPeriodontitStage18Selector = (state) => state.formula.teethDiagn
 export const getPeriodontitStage17Selector = (state) => state.formula.teethDiagnozes.tooth17.periodontit_stage;
 export const getPeriodontitStage16Selector = (state) => state.formula.teethDiagnozes.tooth16.periodontit_stage;
 export const getPeriodontitStage15Selector = (state) => state.formula.teethDiagnozes.tooth15.periodontit_stage;
+export const getPeriodontitStage14Selector = (state) => state.formula.teethDiagnozes.tooth14.periodontit_stage;
 
