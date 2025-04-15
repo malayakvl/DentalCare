@@ -20,9 +20,15 @@
 }
 
 .st3 {
-    fill: #3e3d3d;
+    fill: #9b9b9b;
     stroke-width: 5;
 }
+.st4 {
+    font-family: 'gsans', sans-serif;
+  }
+.st10 {
+ fill: #10af38;
+} 
 
 .st5 {
     font-size: 36.8738px;
@@ -457,22 +463,41 @@
 }
 .circle-blue {
     @apply w-[15px] h-[15px] bg-blue-100 inline-block mr-3;
-    background-color: rgb(208, 242, 245);
+    background-color: rgb(170, 250, 169);
 }
 .circle-blue.active {
-    background-color: rgb(110, 238, 249);
+    background-color: rgb(16, 187, 76);
 }
 .circle-yellow {
     @apply w-[15px] h-[15px] bg-yellow-100 inline-block mr-3;
+    background-color: rgba(241, 237, 22, 0.5);
 }
 .circle-yellow.active {
-    @apply bg-yellow-400;
+    background-color: rgb(236, 232, 12);
 }
 .circle-pink {
-    @apply w-[15px] h-[15px] bg-pink-100 inline-block mr-3;
+    @apply w-[15px] h-[15px] inline-block mr-3;
+    background-color: rgba(241, 22, 22, 0.5);
 }
 .circle-pink.active {
-    @apply bg-pink-400;
+    background-color: rgb(241, 22, 22);
 }
 
+.st_pointers {
+    opacity: 0;
+    fill: #ff0000;
+}
+  
+.st40 {
+opacity: 0.5;
+fill: #b3b3b300;
+stroke: #9C9C9C00;
+stroke-width: 1.0846;
+}
+
+.st40_selected {
+fill: #e8e8e8;
+
+}
+  
 

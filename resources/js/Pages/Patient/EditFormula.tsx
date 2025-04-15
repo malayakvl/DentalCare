@@ -677,6 +677,8 @@ export default function index({ patientData }) {
                                                         </span>
                                                         <div className='inline float-right'>
                                                             <span
+                                                                data-tooltip="Пломба"
+                                                                data-tooltip-position="left"
                                                                 onClick={() => {
                                                                     if (diagnozis !== 'seal') {
                                                                         dispatch(setDiagnosis('seal'))
@@ -694,6 +696,8 @@ export default function index({ patientData }) {
                                                                 className={`circle-blue cursor-pointer ${(sealColor1 === 'blue' && diagnozis === 'seal') && 'active'}`}
                                                             />
                                                             <span
+                                                                data-tooltip-position="left"
+                                                                data-tooltip="Вторинний карієс"
                                                                 onClick={() => {
                                                                     if (diagnozis !== 'seal') {
                                                                         dispatch(setDiagnosis('seal'))
@@ -711,6 +715,8 @@ export default function index({ patientData }) {
                                                                 className={`circle-yellow cursor-pointer ${(sealColor2 === 'yellow' && diagnozis === 'seal') && 'active'}`}
                                                             />
                                                             <span
+                                                                data-tooltip-position="left"
+                                                                data-tooltip="Пломба з порушеним крайовим приляганням"
                                                                 onClick={() => {
                                                                     if (diagnozis !== 'seal') {
                                                                         dispatch(setDiagnosis('seal'))

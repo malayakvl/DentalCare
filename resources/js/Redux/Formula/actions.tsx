@@ -11,6 +11,7 @@ export const setTooth15Active = createAction('formula/SET_TOOTH15_ACTIVE');
 export const setTooth14Active = createAction('formula/SET_TOOTH14_ACTIVE');
 export const setTooth13Active = createAction('formula/SET_TOOTH13_ACTIVE');
 export const setTooth12Active = createAction('formula/SET_TOOTH12_ACTIVE');
+export const setTooth11Active = createAction('formula/SET_TOOTH11_ACTIVE');
 export const setToothDiagnoze = createAction('formula/SET_TOOTH_DIAGNOZE');
 export const setActiveToothName = createAction('formula/SET_ACTIVE_TOOTH_NUBER');
 export const setDiagnosis = createAction('formula/SET_DAGNOSIS');

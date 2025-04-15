@@ -100,18 +100,27 @@ import Tooth55 from "./Tooth55";
 import Tooth16 from "./Tooth16";
 import Tooth17 from "./Tooth17";
 import Tooth18 from "./Tooth18";
-
+import {
+    allTeethSelector,
+    getDiagnosisSelector,
+    getSealColor1Selector,
+    getSealColor2Selector,
+    getSealColor3Selector,
+    getSubDiagnosisSelector,
+    getTeethDiagnozisSelector,
+    getSealServicalColorSelector,
+    getVinirColorSelector,
+    getCeramicCrownColorSelector,
+    getCeramicMCrownColorSelector,
+    getMetalicCrownColorSelector,
+    getZirconiaCrownColorSelector,
+    getStatusesSelector
+} from "../../../Redux/Formula/selectors";
 
 export default function Formula({
    className = '',
 }) {
-    const appLang = useSelector(appLangSelector);
-    const msg = new Lang({
-        messages: lngMaterial,
-        locale: appLang,
-    });
-    const dispatch = useDispatch();
-
+    const toothActive = useSelector(getStatusesSelector);
 
     return (
         <section className={className}>
@@ -217,6 +226,40 @@ export default function Formula({
                 <Tooth16 />
                 <Tooth17 />
                 <Tooth18 />
+                <g className="pointers">
+                    <path className="st35 st_pointers" d="M267.3,739.2l5.1-18.8l9.3,34.7H263L267.3,739.2" id="pointer_18" style={{opacity: toothActive.tooth18.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M267.9,773l-4.3-15.9h18.7l-9.3,34.7 L267.9,773" id="pointer_48" />
+                    <path className="st35 st_pointers" d="M404.3,773l-4.3-15.9h18.7l-9.3,34.7 L404.3,773" id="pointer_47" />
+                    <path className="st35 st_pointers" d="M562.1,773l-4.3-15.9h18.7l-9.3,34.7 L562.1,773" id="pointer_46" />
+                    <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_45" />
+                    <path className="st35 st_pointers" d="M772.4,773l-4.3-15.9h18.7l-9.3,34.7 L772.4,773" id="pointer_44" />
+                    <path className="st35 st_pointers" d="M864.9,773l-4.3-15.9h18.7l-9.3,34.7 L864.9,773" id="pointer_43" />
+                    <path className="st35 st_pointers" d="M948.6,773l-4.3-15.9H963l-9.3,34.7 L948.6,773" id="pointer_42"></path>
+                    <path className="st35 st_pointers" d="M1007.3,773l-4.3-15.9h18.7l-9.3,34.7 L1007.3,773" id="pointer_41"></path>
+                    <path className="st35 st_pointers" d="M1831.3,773l-5.1,18.8l-9.3-34.7h18.7 L1831.3,773" id="pointer_38"></path>
+                    <path className="st35 st_pointers" d="M1694.9,773l-5.1,18.8l-9.3-34.7h18.7 L1694.9,773" id="pointer_37"></path>
+                    <path className="st35 st_pointers" d="M1537.1,773l-5.1,18.8l-9.3-34.7h18.7 L1537.1,773" id="pointer_36"></path>
+                    <path className="st35 st_pointers" d="M1422.2,773l-5.1,18.8l-9.3-34.7h18.7 L1422.2,773" id="pointer_35"></path>
+                    <path className="st35 st_pointers" d="M1326.7,773l-5.1,18.8l-9.3-34.7h18.7 L1326.7,773" id="pointer_34"></path>
+                    <path className="st35 st_pointers" d="M1234.3,773l-5.1,18.8l-9.3-34.7h18.7 L1234.3,773" id="pointer_33"></path>
+                    <path className="st35 st_pointers" d="M1150.6,773l-5.1,18.8l-9.3-34.7h18.7 L1150.6,773" id="pointer_32"></path>
+                    <path className="st35 st_pointers" d="M1091.9,773l-5.1,18.8l-9.3-34.7h18.7 L1091.9,773" id="pointer_31"></path>
+                    <path className="st35 st_pointers" d="M384.7,739.2l5.1-18.8l9.3,34.7h-18.7 L384.7,739.2" id="pointer_17" style={{opacity: toothActive.tooth17.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M527.7,739.2l5.1-18.8l9.3,34.7h-18.7 L527.7,739.2" id="pointer_16" style={{opacity: toothActive.tooth16.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M656.4,739.2l5.1-18.8l9.3,34.7h-18.7 L656.4,739.2" id="pointer_15" style={{opacity: toothActive.tooth15.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M734,739.2l5.1-18.8l9.3,34.7h-18.7 L734,739.2" id="pointer_14" style={{opacity: toothActive.tooth14.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M827.9,739.2l5.1-18.8l9.3,34.7h-18.7 L827.9,739.2" id="pointer_13" style={{opacity: toothActive.tooth13.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M907.6,739.2l5.1-18.8l9.3,34.7h-18.7 L907.6,739.2" id="pointer_12" style={{opacity: toothActive.tooth12.active ? 1 : 0}} />
+                    <path className="st35 st_pointers" d="M998.5,739.2l5.1-18.8l9.3,34.7h-18.7 L998.5,739.2" id="pointer_11"></path>
+                    <path className="st35 st_pointers" d="M1831.2,739.2l4.3,15.9h-18.7l9.3-34.7 L1831.2,739.2" id="pointer_28"></path>
+                    <path className="st35 st_pointers" d="M1713.8,739.2l4.3,15.9h-18.7l9.3-34.7 L1713.8,739.2" id="pointer_27"></path>
+                    <path className="st35 st_pointers" d="M1570.8,739.2l4.3,15.9h-18.7l9.3-34.7 L1570.8,739.2" id="pointer_26"></path>
+                    <path className="st35 st_pointers" d="M1442.1,739.2l4.3,15.9h-18.7l9.3-34.7 L1442.1,739.2" id="pointer_25"></path>
+                    <path className="st35 st_pointers" d="M1364.5,739.2l4.3,15.9h-18.7l9.3-34.7 L1364.5,739.2" id="pointer_24"></path>
+                    <path className="st35 st_pointers" d="M1270.6,739.2l4.3,15.9h-18.7l9.3-34.7 L1270.6,739.2" id="pointer_23"></path>
+                    <path className="st35 st_pointers" d="M1190.9,739.2l4.3,15.9h-18.7l9.3-34.7 L1190.9,739.2" id="pointer_22"></path>
+                    <path className="st35 st_pointers" d="M1100,739.2l4.3,15.9h-18.7l9.3-34.7 L1100,739.2" id="pointer_21"></path>
+                </g>
             </svg>
         </section>
     );
