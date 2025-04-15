@@ -613,8 +613,9 @@ export default function Tooth14() {
                             />
                         </g>
                     </g>
+                    {/* VINIR */}
                     <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
-                        <g className="vinir"  style={
+                        <g className="vinir" style={
                             {
                                 visibility: tooth14Diagnozis.vinir ? 'inherit' : 'hidden',
                                 opacity: tooth14Diagnozis.vinir ? 1 : 0
@@ -664,7 +665,7 @@ export default function Tooth14() {
                             c-1.4,0.3-2.5,0.9-3.6,1.5c-1.3,0.7-2.6,1.3-4.3,1.6C750,601.2,749.3,601.2,748.6,601.2z"
                         />
                     </g>
-                     {/* FISSURES */}
+                    {/* FISSURES */}
                     <g className="fissures hEmpty hRoot hImplant" style={{visibility: (!tooth14Diagnozis.culttab && !tooth14Diagnozis.abutment && !tooth14Diagnozis.implant && !tooth14Diagnozis.apex && !tooth14Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className={`st3 fissure ${tooth14Diagnozis.fissure ? 'diagnoze' : ''}`}
                             d="M717.8,607.3l-0.5-0.9c7.5-4.4,16.5-6.4,25.4-5.7c5.3,0.4,10.3,1.8,15.1,4.1l-0.5,1
@@ -802,7 +803,7 @@ export default function Tooth14() {
                         />
                     </g>
                     {/* ФОРМУВАЧ */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}} >
+                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}}>
                         <path className="st44" d="M760.465 420.849C761.032 423.2 759.4 425.514 756.994 425.766L721.73 429.466C719.325 429.718 717.248 427.796 717.314 425.379L718.397 385.633C718.452 383.621 719.993 381.964 721.996 381.762L746.87 379.26C748.858 379.06 750.689 380.359 751.158 382.302L760.465 420.849Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
