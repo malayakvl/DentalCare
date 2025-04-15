@@ -226,7 +226,7 @@ export default function Tooth13({
                         <line className="st19" x1="832.6" y1="264.1" x2="776.2" y2="278.8"></line>
                         <line className="st19" x1="828.7" y1="234" x2="772.3" y2="248.8"></line>
                     </g>
-                    <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
+                    <g className="toutline" style={{visibility: 'inherit'}}>
                         <path className="st46" d="M876.3,460.3c-0.7-4.8-1.9-9.5-2.9-14.3c-0.7-3.5-1.4-7-2.3-10.4
                 c-2-7-5.3-13.5-9.4-19.4c-4.8-6.9-10.8-13-17.4-18.5c-3.7-3.1-7.6-6-12.2-7.5c-3-1-6.2-1.3-9.3-1.1c-11.8,0.7-22.1,7.9-27.9,18.2
                 c-3,5.3-4.8,11.2-6.6,17c-1.2,3.8-2.5,7.6-3.6,11.4c-0.7,2.3-1.2,4.6-1.7,7c-1.4,7.3-1.6,14.8-0.5,22.1c1,4.9,2.6,9.8,4.7,14.4

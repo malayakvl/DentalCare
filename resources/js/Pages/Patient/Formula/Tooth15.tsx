@@ -724,6 +724,7 @@ export default function Tooth15() {
                             style={{fill: tooth15Diagnozis.pin ? '#dbd9d3' : 'none'}}   
                         />
                     </g>
+                    {/* CULTTAB */}
                     <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth15Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth15Diagnozis.culttab ? 0 : 1}}>
                         <path className="st14" d="M646.8,382.8c0.5-0.1,1-0.2,1.5-0.3c1.4-0.3,2.8-0.4,4.2-0.5c0.4,0,0.8,0,1.2,0c2.6,0,5.2,0.4,7.7,1.1
                             c0.7,0.2,1.4,0.5,2.1,0.7c0.2,0.1,0.3,0.1,0.4,0.2c0.3,0.1,0.6,0.3,0.9,0.4l-9.6-92.3c-0.1-1.1-1-2-2.2-2.1
