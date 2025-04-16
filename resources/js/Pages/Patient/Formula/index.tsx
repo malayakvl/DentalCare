@@ -258,7 +258,7 @@ export default function Formula({
                     <path className="st35 st_pointers" d="M1364.5,739.2l4.3,15.9h-18.7l9.3-34.7 L1364.5,739.2" id="pointer_24"></path>
                     <path className="st35 st_pointers" d="M1270.6,739.2l4.3,15.9h-18.7l9.3-34.7 L1270.6,739.2" id="pointer_23"></path>
                     <path className="st35 st_pointers" d="M1190.9,739.2l4.3,15.9h-18.7l9.3-34.7 L1190.9,739.2" id="pointer_22"></path>
-                    <path className="st35 st_pointers" d="M1100,739.2l4.3,15.9h-18.7l9.3-34.7 L1100,739.2" id="pointer_21"></path>
+                    <path className="st35 st_pointers" d="M1100,739.2l4.3,15.9h-18.7l9.3-34.7 L1100,739.2" id="pointer_21" style={{opacity: toothActive.tooth21.active ? 1 : 0}} />
                 </g>
             </svg>
         </section>

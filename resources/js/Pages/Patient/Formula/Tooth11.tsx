@@ -17,7 +17,6 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage12 from './periodontit12';
 import PeriodontitStage11 from './periodontit11';
 
 
@@ -639,16 +638,6 @@ export default function Tooth11() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage11 />
-{/*                         
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="11"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="973" cy="234.2" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="11"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="975.4" cy="227.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="11"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="973" cy="215.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -757,7 +746,7 @@ export default function Tooth11() {
                     </g>
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth11Diagnozis.culttab && !tooth11Diagnozis.abutment && !tooth11Diagnozis.implant && !tooth11Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
-                    <g className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
