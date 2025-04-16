@@ -56,7 +56,6 @@ export default function Tooth12() {
             if (toothPart === 'top') {
                 teethDiagnozis.tooth12.caries_top = !teethDiagnozis.tooth12.caries_top;
             }
-            console.log(teethDiagnozis.tooth12)
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
         if (diagnozis === 'seal') {
@@ -76,7 +75,6 @@ export default function Tooth12() {
                 dispatch(setToothDiagnoze(teethDiagnozis));
             }
             if (toothPart === 'bottom') {
-                console.log(teethDiagnozis.tooth12.seal_bottom_color, sealColor2)
                 if (teethDiagnozis.tooth12.seal_bottom_color != sealColor1 && sealColor1 != '') {
                     teethDiagnozis.tooth12.seal_bottom_color = sealColor1;
                     teethDiagnozis.tooth12.seal_bottom = true;
@@ -84,7 +82,6 @@ export default function Tooth12() {
                     teethDiagnozis.tooth12.seal_bottom_color = sealColor2;
                     teethDiagnozis.tooth12.seal_bottom = true;
                 } else if (teethDiagnozis.tooth12.seal_bottom_color != sealColor3 && sealColor3 != '') {
-                    console.log('BLEAT')
                     teethDiagnozis.tooth12.seal_bottom_color = sealColor3;
                     teethDiagnozis.tooth12.seal_bottom = true;
                 } else {
@@ -108,8 +105,6 @@ export default function Tooth12() {
                 dispatch(setToothDiagnoze(teethDiagnozis));
             }
             if (toothPart === 'right') {
-                console.log(sealColor1, sealColor2, sealColor3);
-                console.log(teethDiagnozis.tooth12.seal_right_color);
                 if (teethDiagnozis.tooth12.seal_right_color != sealColor1 && sealColor1 != '') {
                     teethDiagnozis.tooth12.seal_right_color = sealColor1;
                     teethDiagnozis.tooth12.seal_right = true;
@@ -117,7 +112,6 @@ export default function Tooth12() {
                     teethDiagnozis.tooth12.seal_right_color = sealColor2;
                     teethDiagnozis.tooth12.seal_right = true;
                 } else if (teethDiagnozis.tooth12.seal_right_color != sealColor3 && sealColor3 != '') {
-                    console.log('TUT')
                     teethDiagnozis.tooth12.seal_right_color = sealColor3;
                     teethDiagnozis.tooth12.seal_right = true;
                 } else {
@@ -628,16 +622,6 @@ export default function Tooth12() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage12 />
-
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="12"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="888.1" cy="273.3" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="12"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="889.1" cy="264.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="12"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="889.1" cy="252.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

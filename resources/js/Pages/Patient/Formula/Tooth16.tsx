@@ -56,7 +56,6 @@ export default function Tooth16() {
             if (toothPart === 'top') {
                 teethDiagnozis.tooth16.caries_top = !teethDiagnozis.tooth16.caries_top;
             }
-            console.log(teethDiagnozis.tooth16)
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
         if (diagnozis === 'seal') {
@@ -76,7 +75,6 @@ export default function Tooth16() {
                 dispatch(setToothDiagnoze(teethDiagnozis));
             }
             if (toothPart === 'bottom') {
-                console.log(teethDiagnozis.tooth16.seal_bottom_color, sealColor2)
                 if (teethDiagnozis.tooth16.seal_bottom_color != sealColor1 && sealColor1 != '') {
                     teethDiagnozis.tooth16.seal_bottom_color = sealColor1;
                     teethDiagnozis.tooth16.seal_bottom = true;
@@ -84,7 +82,6 @@ export default function Tooth16() {
                     teethDiagnozis.tooth16.seal_bottom_color = sealColor2;
                     teethDiagnozis.tooth16.seal_bottom = true;
                 } else if (teethDiagnozis.tooth16.seal_bottom_color != sealColor3 && sealColor3 != '') {
-                    console.log('BLEAT')
                     teethDiagnozis.tooth16.seal_bottom_color = sealColor3;
                     teethDiagnozis.tooth16.seal_bottom = true;
                 } else {
@@ -108,8 +105,6 @@ export default function Tooth16() {
                 dispatch(setToothDiagnoze(teethDiagnozis));
             }
             if (toothPart === 'right') {
-                console.log(sealColor1, sealColor2, sealColor3);
-                console.log(teethDiagnozis.tooth16.seal_right_color);
                 if (teethDiagnozis.tooth16.seal_right_color != sealColor1 && sealColor1 != '') {
                     teethDiagnozis.tooth16.seal_right_color = sealColor1;
                     teethDiagnozis.tooth16.seal_right = true;
@@ -117,7 +112,6 @@ export default function Tooth16() {
                     teethDiagnozis.tooth16.seal_right_color = sealColor2;
                     teethDiagnozis.tooth16.seal_right = true;
                 } else if (teethDiagnozis.tooth16.seal_right_color != sealColor3 && sealColor3 != '') {
-                    console.log('TUT')
                     teethDiagnozis.tooth16.seal_right_color = sealColor3;
                     teethDiagnozis.tooth16.seal_right = true;
                 } else {

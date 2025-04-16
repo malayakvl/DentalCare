@@ -24,9 +24,7 @@ import {
 import PeriodontitStage18 from './periodontit18';
 
 
-export default function Tooth18({
-  className = '',
-}) {
+export default function Tooth18() {
     const appLang = useSelector(appLangSelector);
     const msg = new Lang({
         messages: lngMaterial,
@@ -41,7 +39,7 @@ export default function Tooth18({
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth18Diagnozis = teethDiagnozis.tooth18;
-    const [diagnozeClass, setDiagnozeClass] = useState('');
+    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);

@@ -158,11 +158,7 @@ export default function Tooth17({
 
     useEffect(() => {
         if (toothActive.tooth17.active) {
-            // alert(1)
-            // teethDiagnozis.tooth16.periodontit_stage = '';
-            // dispatch(setToothDiagnoze(teethDiagnozis));
             teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
-            // console.log('TUT', subDiagnozis)
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }, [subDiagnozis]);
