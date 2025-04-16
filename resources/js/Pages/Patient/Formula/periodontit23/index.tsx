@@ -21,19 +21,19 @@ export default function PeriodontitStage23() {
                     opacity: ((tooth23Diagnozis.periodontit && pStage === 'st1' ) ? 1 : 0)
                 }}
             >
-                <circle className="st42" cx="793.1" cy="199.8" r="8.2" />
+                <circle className="st42" cx="1305.1" cy="199.8" r="8.2" />
             </g>
             <g style={{
                     visibility: 'inherit',
                     opacity: ((tooth23Diagnozis.periodontit && pStage === 'st2' ) ? 1 : 0)}}
             >
-                <circle className="st42" cx="795" cy="192.8" r="17.5" />
+                <circle className="st42" cx="1303.1" cy="192.8" r="17.5" />
             </g>
             <g style={{
                     visibility: 'inherit',
                     opacity: ((tooth23Diagnozis.periodontit && pStage === 'st3' ) ? 1 : 0)}}
             >
-                <circle className="st42" cx="792.3" cy="180.3" r="30" />
+                <circle className="st42" cx="1305.9" cy="180.3" r="30" />
             </g>
         </>
     )

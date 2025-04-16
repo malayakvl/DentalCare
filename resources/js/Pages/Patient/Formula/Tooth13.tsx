@@ -314,7 +314,7 @@ export default function Tooth13() {
                 </g>
                 <g id="T_13_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
-                    <g className="dentin" >
+                    <g className="dentin">
                         <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth13Diagnozis.culttab && !tooth13Diagnozis.implant && !tooth13Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st24 ${tooth13Diagnozis.apex ? 'apex' : ''}`} d="M791.5,598.3c-0.7-5.4,0.9-10.5,3.2-15.3c2.2-4.5,5.1-8.9,9-12.4
                                 c6.6-6,15.6-10.5,25.8-10.4c9.5,0.1,17.8,4.2,24,9.7c4.5,3.9,7.9,8.9,11,13.9c2.1,3.3,4.1,6.8,4.3,11c0.3,5.1-2.7,9.5-5.8,13.2
