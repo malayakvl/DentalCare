@@ -418,8 +418,8 @@ export default function Tooth22() {
                             <path className={
                                     `st8 caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth12.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth12.seal_bottom ? `seal-fill ${teethDiagnozis.tooth12.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth22.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth22.seal_bottom ? `seal-fill ${teethDiagnozis.tooth22.seal_bottom_color}` : ''}
                                 `}  
                                 d="M1202.5,614.7c-2.1,3.8-4.3,7.7-7.5,10.7c-3.5,3.3-8.1,5.3-12.7,4.4c-3.1-0.6-5.9-2.5-8-5
                                 c-2.9-3.2-4.7-7.2-7-10.9c1.1-2.5,2.7-5.9,3.6-8c0.5-1.2,1-2.5,1.2-3.8c5.9-0.5,16.3-1.3,23.3-1.3
@@ -471,9 +471,9 @@ export default function Tooth22() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_bottom && !tooth22Diagnozis.seal_center) ||
-                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_bottom && !tooth22Diagnozis.seal_center) ||
-                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_center)
+                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_bottom && !tooth22Diagnozis.seal_center) ||
+                                        (tooth22Diagnozis.seal_bottom && !tooth22Diagnozis.seal_center && !tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_center && tooth22Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1195 601C1195.33 602.5 1196.7 606.4 1199.5 610" 
@@ -482,8 +482,8 @@ export default function Tooth22() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_top) ||
-                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top)
+                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1195 601C1197.67 597.667 1204.5 589.8 1210.5 585" 
@@ -492,8 +492,9 @@ export default function Tooth22() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_bottom) ||
-                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && tooth22Diagnozis.seal_top)
+                                        (tooth22Diagnozis.seal_bottom && !tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_bottom && !tooth22Diagnozis.seal_center && tooth22Diagnozis.seal_top) ||
+                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_bottom && tooth22Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1195 601C1191 600.5 1180.9 600 1172.5 602" 
@@ -502,8 +503,8 @@ export default function Tooth22() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top) ||
-                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top)
+                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1172.5 602C1174.17 599.667 1173.9 592.8 1159.5 584" 
@@ -512,8 +513,8 @@ export default function Tooth22() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_bottom) ||
-                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_bottom)
+                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_bottom) ||
+                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1173 602L1169.5 608.5" 
@@ -775,18 +776,29 @@ export default function Tooth22() {
                             />
                         </g>
                         <g className="with">
-                            {/*Черточка лево низ*/}
+                            {/*Черточка right низ*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_top) ||
-                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_center) ||
-                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && tooth22Diagnozis.seal_center)
+                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_center) ||
+                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top && tooth22Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1203 468L1195 507" 
                             />
-                            {/*Черточка лево верх*/}    
+                            {/*Черточка right верх*/}    
+                            <path className="st54" style={{
+                                    stroke: 'rgb(81, 79, 72)',
+                                    strokeWidth: (
+                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_center) ||
+                                        (!tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_top && tooth22Diagnozis.seal_center)
+                                    ) ? 5 : 0
+                                }} 
+                                d="M1203 468C1205.5 456 1207.7 451.6 1216.5 446"
+                            />
+                            {/*Черточка left верх*/} 
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -795,25 +807,15 @@ export default function Tooth22() {
                                         (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && tooth22Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
-                                d="M1203 468C1205.5 456 1207.7 451.6 1216.5 446"
-                            />
-                            <path className="st54" style={{
-                                    stroke: 'rgb(81, 79, 72)',
-                                    strokeWidth: (
-                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top) ||
-                                        (tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_center && !tooth22Diagnozis.seal_top) ||
-                                        (!tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_bottom && tooth22Diagnozis.seal_center)
-                                    ) ? 5 : 0
-                                }} 
                                 d="M1169 463.5C1170.5 453.5 1172.5 448.6 1164.5 441"
                             />
-                            {/*Черточка право верх*/}
+                            {/*Черточка верх низ*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth22Diagnozis.seal_right && !tooth22Diagnozis.seal_top) ||
-                                        (tooth22Diagnozis.seal_right && tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_center && !tooth22Diagnozis.seal_top) ||
-                                        (!tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_bottom && tooth22Diagnozis.seal_center)
+                                        (tooth22Diagnozis.seal_left && !tooth22Diagnozis.seal_top) ||
+                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && !tooth22Diagnozis.seal_center) ||
+                                        (!tooth22Diagnozis.seal_left && tooth22Diagnozis.seal_top && tooth22Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1169 463.5L1163 502.5"
