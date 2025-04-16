@@ -681,7 +681,7 @@ export default function Tooth12() {
                         <path className="st44" d="M928.473 437.859C929.031 440.197 927.416 442.496 925.027 442.763L892.999 446.344C890.611 446.611 888.528 444.726 888.555 442.324L888.999 402.614C889.022 400.587 890.558 398.898 892.573 398.682L914.959 396.284C916.96 396.07 918.808 397.375 919.275 399.333L928.473 437.859Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
-                    <g className="implant hEmpty hIntact hRoot" style={{visibility: 'hidden'}}>
+                    <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
                         <path className="st18" d="M923.1,398.9l-37.9,3.6c-1.8-20.1-3.1-40.2-3.9-60.3c-0.8-19.5-1.2-39-1.1-58.5c2.7-3.8,6.8-6.3,11.4-6.7
                             c4.8-0.5,9.8,1.2,13.7,4.8c3.5,20.2,6.8,40.4,9.8,60.6C917.9,361.1,920.6,380,923.1,398.9z"
                         />
