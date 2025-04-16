@@ -391,6 +391,7 @@ console.log('AAAA', toothActive)
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth23Diagnozis.culttab && !tooth23Diagnozis.abutment && !tooth23Diagnozis.implant && !tooth23Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <g onClick={() => {
                                 setColordedPart(diagnozis, 'left');
+                                console.log('CALEFT')
                             }}
                         >
                             <path className="st7" d="M1258,606.7c0,0.1-0.1,0.2-0.2,0.5c-1.3,2-7.8,9.8-9.4,12.8c-1.3,2.4-2.7,7.3-2.8,12.1
@@ -475,9 +476,9 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_bottom && !tooth23Diagnozis.seal_center) ||
-                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_bottom && !tooth23Diagnozis.seal_center) ||
-                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_center)
+                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_bottom && !tooth23Diagnozis.seal_center) ||
+                                        (tooth23Diagnozis.seal_bottom && !tooth23Diagnozis.seal_center && !tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center && tooth23Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1281.5 607.5C1285 607.833 1293.8 610.3 1301 617.5"
@@ -486,18 +487,19 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_top) ||
-                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top)
+                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top)
                                     ) ? 5 : 0
-                                }} 
+                                }}
                                 d="M1282 607C1284 593.286 1300 581.095 1307 575" 
                             />
                             {/*Черточка верх лево*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_bottom) ||
-                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && tooth23Diagnozis.seal_top)
+                                        (tooth23Diagnozis.seal_bottom && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_bottom && !tooth23Diagnozis.seal_center && tooth23Diagnozis.seal_top) ||
+                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_bottom && tooth23Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1282 607.5C1277.83 606.167 1267.8 603.7 1259 608.5" 
@@ -506,8 +508,8 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top) ||
-                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top)
+                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1259 608.5C1256.83 604.167 1247.8 593.5 1229 585.5" 
@@ -515,8 +517,8 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_bottom) ||
-                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_bottom)
+                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_bottom) ||
+                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1259 608.5C1255.83 610.333 1249.5 614.7 1247.5 625.5"
@@ -802,8 +804,9 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center) ||
-                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top)
+                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center) ||
+                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top && tooth23Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1290.5 501.5L1297 464" 
@@ -812,9 +815,9 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_top) ||
-                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center) ||
-                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && tooth23Diagnozis.seal_center)
+                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center) ||
+                                        (!tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_top && tooth23Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1297 464C1300.5 446.5 1302.7 442.7 1309.5 439.5" 
@@ -823,9 +826,9 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top) ||
-                                        (tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_center && !tooth23Diagnozis.seal_top) ||
-                                        (!tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_bottom && tooth23Diagnozis.seal_center)
+                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center) ||
+                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && tooth23Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1243.5 457C1246.5 433.5 1242.9 431.2 1238.5 422" 
@@ -834,9 +837,9 @@ console.log('AAAA', toothActive)
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth23Diagnozis.seal_right && !tooth23Diagnozis.seal_top) ||
-                                        (tooth23Diagnozis.seal_right && tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_center && !tooth23Diagnozis.seal_top) ||
-                                        (!tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_bottom && tooth23Diagnozis.seal_center)
+                                        (tooth23Diagnozis.seal_left && !tooth23Diagnozis.seal_top) ||
+                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && !tooth23Diagnozis.seal_center) ||
+                                        (!tooth23Diagnozis.seal_left && tooth23Diagnozis.seal_top && tooth23Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                                 d="M1243.5 457L1238.5 492.5" 
