@@ -11,9 +11,9 @@ import {
 export default function PeriodontitStage23() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth23Diagnozis = teethDiagnozis.tooth13;
+    const tooth23Diagnozis = teethDiagnozis.tooth23;
     const pStage = useSelector(getPeriodontitStage23Selector);
-
+console.log('PERIO', tooth23Diagnozis.periodontit)
     return ( 
         <>
             <g style={{
@@ -21,7 +21,7 @@ export default function PeriodontitStage23() {
                     opacity: ((tooth23Diagnozis.periodontit && pStage === 'st1' ) ? 1 : 0)
                 }}
             >
-                <circle className="st42" cx="1305.1" cy="199.8" r="8.2" />
+                <circle className="st42" cx="1305.1" cy="199.8" r="8.2"></circle>
             </g>
             <g style={{
                     visibility: 'inherit',

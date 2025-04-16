@@ -583,7 +583,7 @@ export default function Tooth13() {
                         />
                     </g>
                     {/* FISSURES */}
-                    <g className="fissures hEmpty hRoot hImplant" style={{visibility: (!tooth13Diagnozis.culttab && !tooth13Diagnozis.abutment && !tooth13Diagnozis.implant && !tooth13Diagnozis.apex && !tooth13Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className={`st3 fissure ${tooth13Diagnozis.fissure ? 'diagnoze' : ''}`} style={{visibility: (!tooth13Diagnozis.culttab && !tooth13Diagnozis.abutment && !tooth13Diagnozis.implant && !tooth13Diagnozis.apex && !tooth13Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className="st3 fissure" d="M843.6,610.4c-4.6-1.9-9.6-3.1-14.7-3.6c-4.9-0.5-9.9-0.2-14.7,0.7l-0.2-1.1c5-0.9,10-1.2,15.1-0.7
                             c5.2,0.5,10.3,1.7,15.1,3.7L843.6,610.4z" 
                         />

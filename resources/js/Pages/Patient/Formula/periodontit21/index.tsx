@@ -13,7 +13,7 @@ export default function PeriodontitStage21() {
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth21Diagnozis = teethDiagnozis.tooth21;
     const pStage = useSelector(getPeriodontitStage21Selector);
-
+console.log('Stage', pStage)
     return ( 
         <>
             <g style={{
