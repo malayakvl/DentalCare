@@ -1,28 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 import {
-    getSubDiagnosisSelector,
     getTeethDiagnozisSelector,
-    getPeriodontitStage18Selector,
-    getActiveToothNumber
 } from "../../../../Redux/Formula/selectors";
 
 
 
 export default function PeriodontitStage18() {
-    const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth18Diagnozis = teethDiagnozis.tooth18;
-    const pStage = useSelector(getPeriodontitStage18Selector);
-    const activeNumber = useSelector(getActiveToothNumber);
-    const [_, setTStage] = useState(teethDiagnozis.tooth18.periodontit_stage);
-
-    useEffect(() => {
-        console.log('SUBDIAGNOZIS:', subDiagnozis);
-        console.log('ACTIVE NUMBER:', activeNumber);
-        console.log('ACTIVE STAGE:', tooth18Diagnozis.periodontit_stage);
-        setTStage(subDiagnozis);
-    }, [subDiagnozis, activeNumber, tooth18Diagnozis])
 
     return ( 
         <>

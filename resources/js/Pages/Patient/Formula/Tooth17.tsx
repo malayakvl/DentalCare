@@ -156,13 +156,6 @@ export default function Tooth17({
         }
     }
 
-    // useEffect(() => {
-    //     if (toothActive.tooth17.active) {
-    //         teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
-    //         dispatch(setToothDiagnoze(teethDiagnozis));
-    //     }
-    // }, [subDiagnozis]);
-
     return (
         <>
             <g id="17" className={`tooth-number-active`}>

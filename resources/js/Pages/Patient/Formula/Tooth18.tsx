@@ -156,14 +156,6 @@ export default function Tooth18() {
         }
     }
 
-//     useEffect(() => {
-// console.log('ACTIVE TOOTH', toothActive.tooth18.active)        
-//         if (toothActive.tooth18.active) {
-//             teethDiagnozis.tooth18.periodontit_stage = subDiagnozis;
-//             dispatch(setToothDiagnoze(teethDiagnozis));
-//         }
-//     }, [subDiagnozis]);
-
     return (
         <>
             <g id="18" className={`tooth-number-active`}>
