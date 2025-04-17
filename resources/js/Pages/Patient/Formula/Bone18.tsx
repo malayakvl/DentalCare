@@ -31,13 +31,7 @@ export default function Bone18({
     const tooth18Diagnozis = teethDiagnozis.tooth18;
     const [stateChane, setStateChange] = useState(false)
 
-// console.log('stage', tooth18Diagnozis.parodontit_stage);
-// console.log('change state for subdiagnoze', subDiagnozis);
-// console.log('tooth18Diagnozis.parodontit', tooth18Diagnozis.parodontit);
-// console.log('tooth18Diagnozis.parodontit_stage', tooth18Diagnozis.parodontit_stage);
-
     useEffect(() => {
-        console.log('STAGE CHANGE');
         setStateChange(true)
     }, [teethDiagnozis])
 

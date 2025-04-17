@@ -14,7 +14,6 @@ export default function PeriodontitStage16() {
     const tooth16Diagnozis = teethDiagnozis.tooth16;
     const pStage = useSelector(getPeriodontitStage16Selector);
 
-// console.log('TStage', pStage)
     return ( 
         <>
             <g style={{

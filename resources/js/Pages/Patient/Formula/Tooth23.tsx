@@ -144,7 +144,6 @@ export default function Tooth23() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-console.log('AAAA', toothActive)
     useEffect(() => {
         if (toothActive.tooth23.active) {
             teethDiagnozis.tooth23.periodontit_stage = subDiagnozis;

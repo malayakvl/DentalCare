@@ -14,7 +14,6 @@ export default function PeriodontitStage17() {
     const tooth17Diagnozis = teethDiagnozis.tooth17;
     const pStage = useSelector(getPeriodontitStage17Selector);
 
-console.log('STAGE:', pStage);    
     return ( 
         <>
             <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="17"

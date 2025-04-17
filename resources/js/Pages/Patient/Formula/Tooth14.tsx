@@ -18,7 +18,6 @@ import {
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage14 from './periodontit14';
-// import PeriodontitStage15 from './periodontit15';
 
 export default function Tooth14() {
     const dispatch = useDispatch<any>();
@@ -159,10 +158,10 @@ export default function Tooth14() {
             </g>
             <g  className={`f-tooth-active`}
                 onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('15').classList.add('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('14').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('15').classList.remove('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('14').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
                     if (toothActive.tooth14.active) {
@@ -321,7 +320,7 @@ export default function Tooth14() {
                             <path className="st24" d="M703.6,600.4c-1.5-6-1.5-11.9,0.8-17.4c2.4-5.6,7.2-10.3,12.4-14.1
                                 c6.3-4.6,13.6-8.2,21.6-8.2c8.6,0.1,16.1,4.2,22.2,9.4c3.1,2.6,6,5.6,8.1,8.9c2.5,3.8,4,8.1,4,12.6c0,7.4-3.9,13.9-7.4,20.3
                                 c-2.5,4.5-4.6,9-7.6,13.5c-1.9,3-4.4,5.9-7.5,8c-4,2.6-8.8,3.7-13.5,4c-4.1,0.2-8.2-0.2-12.1-1.7c-4.6-1.9-8.3-5.2-10.6-9.1
-                                c-2.2-3.6-3.2-7.6-4.7-11.4C707.6,610.2,705,605.7,703.6,600.4z" style={{fill: 'rgb(248, 223, 168)'}}
+                                c-2.2-3.6-3.2-7.6-4.7-11.4C707.6,610.2,705,605.7,703.6,600.4z"
                             />
                         </g>
                         <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth14Diagnozis?.apex || tooth14Diagnozis.change_color ? 'inherit' : 'hidden'}}>

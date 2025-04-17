@@ -13,7 +13,7 @@ export default function PeriodontitStage23() {
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth23Diagnozis = teethDiagnozis.tooth23;
     const pStage = useSelector(getPeriodontitStage23Selector);
-console.log('PERIO', tooth23Diagnozis.periodontit)
+
     return ( 
         <>
             <g style={{

@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import {
     getSubDiagnosisSelector,
     getTeethDiagnozisSelector,
-    getPeriodontitStage14Selector
+    getPeriodontitStage24Selector
 } from "../../../../Redux/Formula/selectors";
 
 
@@ -11,8 +11,8 @@ import {
 export default function PeriodontitStage14() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth14Diagnozis = teethDiagnozis.tooth14;
-    const pStage = useSelector(getPeriodontitStage14Selector);
+    const tooth14Diagnozis = teethDiagnozis.tooth24;
+    const pStage = useSelector(getPeriodontitStage24Selector);
 
     return ( 
         <>
