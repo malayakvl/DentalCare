@@ -172,13 +172,6 @@ export default function Tooth15() {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth15: {active: true}}))
                     }
-                    // dispatch(setTooth16Active(!toothActive));
-                    // if (toothActive.tooth15.active) {
-                    //     dispatch(setNewToothActive({tooth15: {active: false}}))
-                    // } else {
-                    //     dispatch(setDisactiveAll());
-                    //     dispatch(setNewToothActive({tooth15: {active: true}}))
-                    // }
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth15.change_color = !teethDiagnozis.tooth15.change_color;

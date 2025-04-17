@@ -176,15 +176,6 @@ export default function Tooth17({
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth17: {active: true}}))
                     }
-                    // dispatch(setTooth17Active(!toothActive));
-                    // teethDiagnozis.tooth18.active = !teethDiagnozis.tooth18.active;
-                    // dispatch(setTooth17Active(!toothActive));
-                    // if (toothActive.tooth16.active) {
-                    //     dispatch(setNewToothActive({tooth17: {active: false}}))
-                    // } else {
-                    //     dispatch(setDisactiveAll());
-                    //     dispatch(setNewToothActive({tooth17: {active: true}}))
-                    // }
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth17.change_color = !teethDiagnozis.tooth17.change_color;
