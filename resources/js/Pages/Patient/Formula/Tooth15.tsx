@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll } from '../../../Redux/Formula';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, setTooth16Active } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
     allTeethSelector,
@@ -144,12 +144,12 @@ export default function Tooth15() {
         }
     }
 
-    useEffect(() => {
-        if (toothActive.tooth15.active) {
-            teethDiagnozis.tooth15.periodontit_stage = subDiagnozis;
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-    }, [subDiagnozis]);
+    // useEffect(() => {
+    //     if (toothActive.tooth15.active) {
+    //         teethDiagnozis.tooth15.periodontit_stage = subDiagnozis;
+    //         dispatch(setToothDiagnoze(teethDiagnozis));
+    //     }
+    // }, [subDiagnozis]);
 
 
     return (
@@ -165,12 +165,20 @@ export default function Tooth15() {
                     (!toothActive && !allTeeth) && document.getElementById('15').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    if (toothActive.tooth15.active) {
-                        dispatch(setNewToothActive({tooth15: {active: false}}))
+                    dispatch(setSelectedToothNumber(15));
+                    if (toothActive.tooth16.active) {
+                        dispatch(setNewToothActive({tooth15: {active: true}}))
                     } else {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth15: {active: true}}))
                     }
+                    dispatch(setTooth16Active(!toothActive));
+                    // if (toothActive.tooth15.active) {
+                    //     dispatch(setNewToothActive({tooth15: {active: false}}))
+                    // } else {
+                    //     dispatch(setDisactiveAll());
+                    //     dispatch(setNewToothActive({tooth15: {active: true}}))
+                    // }
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth15.change_color = !teethDiagnozis.tooth15.change_color;
@@ -201,14 +209,15 @@ export default function Tooth15() {
                             teethDiagnozis.tooth15.channel_class = teethDiagnozis.tooth15.channel_part_sealed ? 'channel-part-sealed' : '';
                             // setDiagnozeClass(teethDiagnozis.tooth15.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
-                            teethDiagnozis.tooth15.periodontit = !teethDiagnozis.tooth15.periodontit;
+                            if (teethDiagnozis.tooth15.periodontit_stage !== subDiagnozis) {
+                                teethDiagnozis.tooth15.periodontit_stage = subDiagnozis
+                                teethDiagnozis.tooth15.periodontit = true;
+                            } else {
+                                teethDiagnozis.tooth15.periodontit = !teethDiagnozis.tooth15.periodontit;
+                            }
                             teethDiagnozis.tooth15.channel_class = teethDiagnozis.tooth15.periodontit ? 'periodontit' : '';
-                            teethDiagnozis.tooth15.periodontit_stage = subDiagnozis;
                             if (!teethDiagnozis.tooth15.periodontit) dispatch(setSubDiagnosis(''));
-                        } else if (diagnozis === 'seal') {
-                            teethDiagnozis.tooth15.seal = !teethDiagnozis.tooth15.seal;
-                            setDiagnozeClass(teethDiagnozis.tooth15.channel_part_sealed ? 'channel-part-sealed' : '');
-                        } else if (diagnozis === 'seal_cervical') {
+                            } else if (diagnozis === 'seal_cervical') {
                             if (!teethDiagnozis.tooth15.seal_cervical && teethDiagnozis.tooth15.seal_cervical_color === "") {
                                 teethDiagnozis.tooth15.seal_cervical = true;
                                 teethDiagnozis.tooth15.seal_cervical_color = wsDefectColor;

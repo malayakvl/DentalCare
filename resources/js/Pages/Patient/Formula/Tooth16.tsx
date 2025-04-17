@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll } from '../../../Redux/Formula';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, setTooth16Active } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -158,12 +158,14 @@ export default function Tooth16() {
                     (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    dispatch(setSelectedToothNumber(16));
                     if (toothActive.tooth16.active) {
-                        dispatch(setNewToothActive({tooth16: {active: false}}))
+                        dispatch(setNewToothActive({tooth16: {active: true}}))
                     } else {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth16: {active: true}}))
                     }
+                    dispatch(setTooth16Active(!toothActive));
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth16.change_color = !teethDiagnozis.tooth16.change_color;
