@@ -1315,24 +1315,24 @@ const ACTION_HANDLERS = {
             allTeeth: action.payload
         })
     },
-    [setTooth18Active.toString()]: {
-        next: (state, action) => ({
-            ...state,
-            tooth18: action.payload
-        })
-    },
-    [setTooth17Active.toString()]: {
-        next: (state, action) => ({
-            ...state,
-            tooth17: action.payload
-        })
-    },
-    [setTooth16Active.toString()]: {
-        next: (state, action) => ({
-            ...state,
-            tooth16: action.payload
-        })
-    },
+    // [setTooth18Active.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         tooth18: action.payload
+    //     })
+    // },
+    // [setTooth17Active.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         tooth17: action.payload
+    //     })
+    // },
+    // [setTooth16Active.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         tooth16: action.payload
+    //     })
+    // },
     [setActiveToothName.toString()]: {
         next: (state, action) => ({
             ...state,

@@ -172,7 +172,7 @@ export default function Tooth15() {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth15: {active: true}}))
                     }
-                    dispatch(setTooth16Active(!toothActive));
+                    // dispatch(setTooth16Active(!toothActive));
                     // if (toothActive.tooth15.active) {
                     //     dispatch(setNewToothActive({tooth15: {active: false}}))
                     // } else {

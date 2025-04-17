@@ -166,7 +166,7 @@ export default function Tooth12() {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth12: {active: true}}))
                     }
-                    dispatch(setTooth12Active(!toothActive));
+                    // dispatch(setTooth12Active(!toothActive));
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth12.change_color = !teethDiagnozis.tooth12.change_color;

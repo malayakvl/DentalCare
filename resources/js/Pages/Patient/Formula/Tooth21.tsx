@@ -167,7 +167,7 @@ export default function Tooth21() {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth21: {active: true}}))
                     }
-                    dispatch(setTooth21Active(!toothActive));
+                    // dispatch(setTooth21Active(!toothActive));
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth21.change_color = !teethDiagnozis.tooth21.change_color;
