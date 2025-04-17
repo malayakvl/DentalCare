@@ -29,3 +29,4 @@ export const setMetalicCrownColor = createAction('formula/SET_METALICCROWNCOLOR'
 export const setZirconiaCrownColor = createAction('formula/SET_ZIRCONIACROWNCOLOR');
 export const setNewToothActive = createAction('formula/SET_NEW_TOOTH_ACTIVE');
 export const setDisactiveAll = createAction('formula/ALL_TEETH_DISACTIVE');
+export const setSelectedToothNumber = createAction('formula/SET_TOOTH_NUMBER');

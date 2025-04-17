@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll } from '../../../Redux/Formula';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
     allTeethSelector,
@@ -164,6 +164,8 @@ export default function Tooth23() {
                     (!toothActive && !allTeeth) && document.getElementById('23').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    console.log(toothActive.tooth23.active)
+                    dispatch(setSelectedToothNumber(23));
                     if (toothActive.tooth23.active) {
                         dispatch(setNewToothActive({tooth23: {active: false}}))
                     } else {

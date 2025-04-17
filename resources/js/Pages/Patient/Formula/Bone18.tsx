@@ -32,8 +32,8 @@ export default function Bone18({
     const [stateChane, setStateChange] = useState(false)
 
     useEffect(() => {
-        setStateChange(true)
-    }, [teethDiagnozis])
+        setStateChange(true);
+    }, [teethDiagnozis, subDiagnozis])
 
     return (
         <g id="bone_18" className="df-bone top"  style={{opacity: 1, transition: 'opacity 0.2s'}}

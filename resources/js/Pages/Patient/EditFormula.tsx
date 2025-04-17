@@ -618,8 +618,22 @@ export default function index({ patientData }) {
                                                                     onClick={() => {
                                                                         if (diagnozis !== 'periodontit') {
                                                                             dispatch(setDiagnosis('periodontit'));
+                                                                            dispatch(setSubDiagnosis('st1'))
+                                                                        } else if (diagnozis === 'periodontit' && subdiagnozis !== 'st1') {
+                                                                            dispatch(setDiagnosis('periodontit'));
+                                                                            dispatch(setSubDiagnosis('st1'))
+                                                                        } else if (diagnozis === 'periodontit' && subdiagnozis === 'st1') {
+                                                                            dispatch(setSubDiagnosis(''));
+                                                                            dispatch(setDiagnosis(''));
                                                                         }
-                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st1' ? '' : 'st1'))
+                                                                        // if (diagnozis !== 'periodontit' ) {
+                                                                        //     dispatch(setDiagnosis('periodontit'));
+                                                                        // } else if (subdiagnozis !== 'st1') {
+                                                                        //     dispatch(setDiagnosis('st1'));
+                                                                        // } else {
+                                                                        //     dispatch(setDiagnosis(''));
+                                                                        // }
+                                                                        // dispatch(setSubDiagnosis(subdiagnozis === 'st1' ? '' : 'st1'))
                                                                     }}
                                                                     className={`diagnoze-title ${subdiagnozis === 'st1' ? 'active' : ''} mr-1 cursor-pointer`}
                                                                 >
@@ -629,8 +643,20 @@ export default function index({ patientData }) {
                                                                     onClick={() => {
                                                                         if (diagnozis !== 'periodontit') {
                                                                             dispatch(setDiagnosis('periodontit'));
+                                                                            dispatch(setSubDiagnosis('st2'))
+                                                                        } else if (diagnozis === 'periodontit' && subdiagnozis !== 'st2') {
+                                                                            dispatch(setDiagnosis('periodontit'));
+                                                                            dispatch(setSubDiagnosis('st2'))
+                                                                        } else if (diagnozis === 'periodontit' && subdiagnozis === 'st2') {
+                                                                            dispatch(setSubDiagnosis(''));
+                                                                            dispatch(setDiagnosis(''));
                                                                         }
-                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st2' ? '' : 'st2'))
+                                                                        // if (diagnozis !== 'periodontit') {
+                                                                        //     dispatch(setDiagnosis('periodontit'));
+                                                                        // } else {
+                                                                        //     dispatch(setDiagnosis(''));
+                                                                        // }
+                                                                        // dispatch(setSubDiagnosis(subdiagnozis === 'st2' ? '' : 'st2'))
                                                                     }}
                                                                     className={`diagnoze-title ${subdiagnozis === 'st2' ? 'active' : ''} mr-1 cursor-pointer`}
                                                                 >
@@ -640,8 +666,20 @@ export default function index({ patientData }) {
                                                                     onClick={() => {
                                                                         if (diagnozis !== 'periodontit') {
                                                                             dispatch(setDiagnosis('periodontit'));
+                                                                            dispatch(setSubDiagnosis('st3'))
+                                                                        } else if (diagnozis === 'periodontit' && subdiagnozis !== 'st3') {
+                                                                            dispatch(setDiagnosis('periodontit'));
+                                                                            dispatch(setSubDiagnosis('st3'))
+                                                                        } else if (diagnozis === 'periodontit' && subdiagnozis === 'st3') {
+                                                                            dispatch(setSubDiagnosis(''));
+                                                                            dispatch(setDiagnosis(''));
                                                                         }
-                                                                        dispatch(setSubDiagnosis(subdiagnozis === 'st3' ? '' : 'st3'))
+                                                                        // if (diagnozis !== 'periodontit') {
+                                                                        //     dispatch(setDiagnosis('periodontit'));
+                                                                        // } else {
+                                                                        //     dispatch(setDiagnosis(''));
+                                                                        // }
+                                                                        // dispatch(setSubDiagnosis(subdiagnozis === 'st3' ? '' : 'st3'))
                                                                     }}
                                                                     className={`diagnoze-title ${subdiagnozis === 'st3' ? 'active' : ''} cursor-pointer`}
                                                                 >

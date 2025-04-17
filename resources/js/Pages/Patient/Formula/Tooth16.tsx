@@ -145,12 +145,12 @@ export default function Tooth16() {
         }
     }
 
-    useEffect(() => {
-        if (toothActive.tooth16.active) {
-            teethDiagnozis.tooth16.periodontit_stage = subDiagnozis;
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-    }, [subDiagnozis]);
+    // useEffect(() => {
+    //     if (toothActive.tooth16.active) {
+    //         teethDiagnozis.tooth16.periodontit_stage = subDiagnozis;
+    //         dispatch(setToothDiagnoze(teethDiagnozis));
+    //     }
+    // }, [subDiagnozis]);
 
     return ( 
         <>
@@ -201,13 +201,14 @@ export default function Tooth16() {
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.channel_part_sealed ? 'channel-part-sealed' : '';
                             // setDiagnozeClass(teethDiagnozis.tooth16.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
-                            teethDiagnozis.tooth16.periodontit = !teethDiagnozis.tooth16.periodontit;
+                            if (teethDiagnozis.tooth16.periodontit_stage !== subDiagnozis) {
+                                teethDiagnozis.tooth16.periodontit_stage = subDiagnozis
+                                teethDiagnozis.tooth16.periodontit = true;
+                            } else {
+                                teethDiagnozis.tooth16.periodontit = !teethDiagnozis.tooth16.periodontit;
+                            }
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.periodontit ? 'periodontit' : '';
-                            teethDiagnozis.tooth16.periodontit_stage = subDiagnozis;
                             if (!teethDiagnozis.tooth16.periodontit) dispatch(setSubDiagnosis(''));
-                        } else if (diagnozis === 'seal') {
-                            teethDiagnozis.tooth16.seal = !teethDiagnozis.tooth16.seal;
-                            setDiagnozeClass(teethDiagnozis.tooth16.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'seal_cervical') {
                             if (!teethDiagnozis.tooth16.seal_cervical && teethDiagnozis.tooth16.seal_cervical_color === "") {
                                 teethDiagnozis.tooth16.seal_cervical = true;

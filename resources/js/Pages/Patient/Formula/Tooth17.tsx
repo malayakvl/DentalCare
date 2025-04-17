@@ -3,7 +3,7 @@ import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setNewToothActive, setToothDiagnoze, setDisactiveAll } from '../../../Redux/Formula';
+import { setSubDiagnosis, setNewToothActive, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber, setTooth17Active } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -156,12 +156,12 @@ export default function Tooth17({
         }
     }
 
-    useEffect(() => {
-        if (toothActive.tooth17.active) {
-            teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-    }, [subDiagnozis]);
+    // useEffect(() => {
+    //     if (toothActive.tooth17.active) {
+    //         teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
+    //         dispatch(setToothDiagnoze(teethDiagnozis));
+    //     }
+    // }, [subDiagnozis]);
 
     return (
         <>
@@ -176,14 +176,22 @@ export default function Tooth17({
                     (!toothActive && !allTeeth) && document.getElementById('17').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    // teethDiagnozis.tooth18.active = !teethDiagnozis.tooth18.active;
-                    // dispatch(setTooth17Active(!toothActive));
-                    if (toothActive.tooth16.active) {
-                        dispatch(setNewToothActive({tooth17: {active: false}}))
+                    dispatch(setSelectedToothNumber(17));
+                    if (toothActive.tooth17.active) {
+                        dispatch(setNewToothActive({tooth17: {active: true}}))
                     } else {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth17: {active: true}}))
                     }
+                    dispatch(setTooth17Active(!toothActive));
+                    // teethDiagnozis.tooth18.active = !teethDiagnozis.tooth18.active;
+                    // dispatch(setTooth17Active(!toothActive));
+                    // if (toothActive.tooth16.active) {
+                    //     dispatch(setNewToothActive({tooth17: {active: false}}))
+                    // } else {
+                    //     dispatch(setDisactiveAll());
+                    //     dispatch(setNewToothActive({tooth17: {active: true}}))
+                    // }
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth17.change_color = !teethDiagnozis.tooth17.change_color;
@@ -214,9 +222,13 @@ export default function Tooth17({
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.channel_part_sealed ? 'channel-part-sealed' : '';
                             // setDiagnozeClass(teethDiagnozis.tooth17.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
-                            teethDiagnozis.tooth17.periodontit = !teethDiagnozis.tooth17.periodontit;
+                            if (teethDiagnozis.tooth17.periodontit_stage !== subDiagnozis) {
+                                teethDiagnozis.tooth17.periodontit_stage = subDiagnozis
+                                teethDiagnozis.tooth17.periodontit = true;
+                            } else {
+                                teethDiagnozis.tooth17.periodontit = !teethDiagnozis.tooth17.periodontit;
+                            }
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.periodontit ? 'periodontit' : '';
-                            teethDiagnozis.tooth17.periodontit_stage = subDiagnozis;
                             if (!teethDiagnozis.tooth17.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth17.seal = !teethDiagnozis.tooth17.seal;

@@ -20,8 +20,8 @@ import {
     setMetalicCrownColor,
     setZirconiaCrownColor,
     setNewToothActive,
-    setDisactiveAll
-
+    setDisactiveAll,
+    setSelectedToothNumber
 } from "./actions";
 
 const initialState = {
@@ -44,6 +44,7 @@ const initialState = {
     tooth18: false,
     tooth17: false,
     active_tooth: '',
+    selected_tooth_number: '',
     teethStatuses: {
         tooth18: {active: false}, 
         tooth17: {active: false}, 
@@ -1439,6 +1440,13 @@ const ACTION_HANDLERS = {
             }
         })
     },
+    [setSelectedToothNumber.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            selected_tooth_number: action.payload
+        })
+    },
+    
 }
 
 export {
@@ -1462,7 +1470,8 @@ export {
     setZirconiaCrownColor,
     setActiveToothName,
     setNewToothActive,
-    setDisactiveAll
+    setDisactiveAll,
+    setSelectedToothNumber
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);
