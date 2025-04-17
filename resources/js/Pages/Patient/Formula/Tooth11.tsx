@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll } from '../../../Redux/Formula';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
     allTeethSelector,
@@ -18,6 +18,7 @@ import {
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage11 from './periodontit11';
+import { setTooth11Active } from '@/Redux/Formula/actions';
 
 
 export default function Tooth11() {
@@ -145,13 +146,6 @@ export default function Tooth11() {
         }
     }
     
-    useEffect(() => {
-        if (toothActive.tooth11.active) {
-            teethDiagnozis.tooth11.periodontit_stage = subDiagnozis;
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-    }, [subDiagnozis]);
-
     return (
         <>
             <g id="11" className="df-tooth-text" style={{opacity: 1}}>
@@ -165,12 +159,14 @@ export default function Tooth11() {
                     (!toothActive && !allTeeth) && document.getElementById('11').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    dispatch(setSelectedToothNumber(16));
                     if (toothActive.tooth11.active) {
-                        dispatch(setNewToothActive({tooth11: {active: false}}))
+                        dispatch(setNewToothActive({tooth11: {active: true}}))
                     } else {
                         dispatch(setDisactiveAll());
                         dispatch(setNewToothActive({tooth11: {active: true}}))
                     }
+                    dispatch(setTooth11Active(!toothActive));
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth11.change_color = !teethDiagnozis.tooth11.change_color;
@@ -201,9 +197,13 @@ export default function Tooth11() {
                             teethDiagnozis.tooth11.channel_class = teethDiagnozis.tooth11.channel_part_sealed ? 'channel-part-sealed' : '';
                             // setDiagnozeClass(teethDiagnozis.tooth11.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
-                            teethDiagnozis.tooth11.periodontit = !teethDiagnozis.tooth11.periodontit;
+                            if (teethDiagnozis.tooth11.periodontit_stage !== subDiagnozis) {
+                                teethDiagnozis.tooth11.periodontit_stage = subDiagnozis
+                                teethDiagnozis.tooth11.periodontit = true;
+                            } else {
+                                teethDiagnozis.tooth11.periodontit = !teethDiagnozis.tooth11.periodontit;
+                            }
                             teethDiagnozis.tooth11.channel_class = teethDiagnozis.tooth11.periodontit ? 'periodontit' : '';
-                            teethDiagnozis.tooth11.periodontit_stage = subDiagnozis;
                             if (!teethDiagnozis.tooth11.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth11.seal = !teethDiagnozis.tooth11.seal;
