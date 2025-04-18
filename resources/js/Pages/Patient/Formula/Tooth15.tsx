@@ -144,14 +144,6 @@ export default function Tooth15() {
         }
     }
 
-    // useEffect(() => {
-    //     if (toothActive.tooth15.active) {
-    //         teethDiagnozis.tooth15.periodontit_stage = subDiagnozis;
-    //         dispatch(setToothDiagnoze(teethDiagnozis));
-    //     }
-    // }, [subDiagnozis]);
-
-
     return (
         <>
             <g id="15" className="df-tooth-text" style={{opacity: 1}}>
@@ -407,7 +399,7 @@ export default function Tooth15() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС ЦЕНТР*/}
-                        <g id="s_header_16_5" 
+                        <g id="s_header_15_5" 
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -693,7 +685,7 @@ export default function Tooth15() {
                             />
                         </g>
                         <g>
-                        <path className={`st22 target part ${tooth15Diagnozis.channel_class} ${tooth15Diagnozis.channel_class} ${tooth15Diagnozis.pulpit ? 'pulpit' : ''} ${tooth15Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`}
+                            <path className={`st22 target part ${tooth15Diagnozis.channel_class} ${tooth15Diagnozis.channel_class} ${tooth15Diagnozis.pulpit ? 'pulpit' : ''} ${tooth15Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`}
                                 d="M656.2,301.9L656.2,301.9c-2-0.2-3.8-0.2-5.5,0c-0.5-27.6-2.4-55.1-5.8-82.5
                                 C649.2,246.7,653,274.3,656.2,301.9z" 
                             />
@@ -749,7 +741,7 @@ export default function Tooth15() {
                         <path className="st44" d="M678.038 412.934C678.407 415.324 676.587 417.493 674.168 417.543L638.718 418.285C636.301 418.336 634.392 416.246 634.659 413.843L639.059 374.327C639.282 372.327 640.956 370.803 642.968 370.77L667.964 370.355C669.963 370.321 671.679 371.768 671.984 373.743L678.038 412.934Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
-                    <g className="implant hEmpty hIntact hRoot"  style={{visibility: tooth15Diagnozis.abutment || tooth15Diagnozis.implant || tooth15Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                    <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth15Diagnozis.abutment || tooth15Diagnozis.implant || tooth15Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <path className="st18" d="M675.7,372l-42.1,1c-0.4-22.3-0.3-44.6,0.4-66.9c0.6-21.6,1.7-43.2,3.3-64.7c3.3-4,8-6.4,13.1-6.5
                             c5.4-0.2,10.7,2.1,14.7,6.3c2.3,22.5,4.4,45.1,6.2,67.6C673,329.9,674.5,351,675.7,372z"
                         />
@@ -759,7 +751,7 @@ export default function Tooth15() {
                         <line className="st19" x1="676" y1="276.9" x2="627.4" y2="284.3" />
                         <line className="st19" x1="675.5" y1="251.3" x2="626.8" y2="258.8" />
                     </g>
-                    <g className="toutline hRoot hImplant hEmpty"style={{visibility: !tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.shaper && !tooth15Diagnozis.apex  ? 'inherit' : 'hidden'}}>
+                    <g className="toutline hRoot hImplant hEmpty" style={{visibility: !tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.shaper && !tooth15Diagnozis.apex  ? 'inherit' : 'hidden'}}>
                         <path className="st46" d="M694.8,440.6c-0.7-4.7-1.9-9.3-2.9-13.9c-0.5-2.1-0.9-4.3-1.4-6.4
                             c-0.3-1.2-0.6-2.5-0.9-3.7c-2.8-10-8-19.2-15.9-26.2c-3.5-3.2-7.6-5.9-12.2-7.3c-3-0.9-6.2-1.3-9.3-1.1
                             c-11.8,0.6-22.2,7.6-27.9,17.7c-2.4,4.2-3.8,8.9-5.5,13.4c-0.4,1-0.8,2.1-1.2,3.1c-2.4,6-5.5,11.7-7.5,17.9
@@ -881,7 +873,6 @@ export default function Tooth15() {
                                 style={{ fill: 'transparent', zIndex:2000 }}
                             />
                         </g>
-                        
                         {/* КАРИЕС LEFT */}
                         <g className="caries-filling hoho1"
                             onClick={() => {
@@ -903,7 +894,6 @@ export default function Tooth15() {
                                 C608.1,441,607.5,448.3,608.7,455.5z"
                             />
                         </g>
-                        
                         {/*КАРИЕС TOP*/}
                         <g className="caries-filling hoho3"
                             onClick={() => {
