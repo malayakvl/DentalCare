@@ -873,6 +873,7 @@ export default function Tooth15() {
                                 style={{ fill: 'transparent', zIndex:2000 }}
                             />
                         </g>
+                        
                         {/* КАРИЕС LEFT */}
                         <g className="caries-filling hoho1"
                             onClick={() => {
@@ -894,6 +895,7 @@ export default function Tooth15() {
                                 C608.1,441,607.5,448.3,608.7,455.5z"
                             />
                         </g>
+                        
                         {/*КАРИЕС TOP*/}
                         <g className="caries-filling hoho3"
                             onClick={() => {

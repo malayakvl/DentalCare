@@ -489,33 +489,33 @@ export default function Tooth25() {
                                 c4.1-2.8,8.8-4.8,13.2-7c5-2.5,9.8-5.4,15.5-6.2c10.6-1.5,20.2,4.2,27.9,11.2C1474.7,555.4,1476.6,557.3,1478.3,559.3z"
                             />
                         </g>
-                        <g className="with">
-                            {/*Черточка низ лево*/}
+                        <g className="with bottom-line">
+                            {/*Черточка низ право*/}
                             <path className="st54" style={{
                                 stroke: 'rgb(81, 79, 72)',
                                 strokeWidth: (
-                                    (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_bottom) ||
-                                    (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_bottom)
+                                    (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                    (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top)
                                 ) ? 5 : 0
                             }} 
                                 d="M1461.5 612C1463.17 614.5 1468 620.5 1474 624.5" 
                             />
-                            {/*Овал лево*/}
+                            {/*Овал право*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_center) ||
-                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_center)
+                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_center) ||
+                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1461.5 612C1465.5 604.667 1471.4 587.5 1463 577.5"
                             />
-                            {/*Черточка верх лево*/}
+                            {/*Черточка верх право*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top)
+                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_bottom) ||
+                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1463 578C1464.17 575 1468 567.8 1474 563" 
@@ -524,38 +524,38 @@ export default function Tooth25() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_top)
+                                        (tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_bottom) ||
+                                        (!tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1463 578C1452.5 566.001 1435.5 574.3 1429.5 583.5"
                             />
-                            {/*Черточка верх право*/}
+                            {/*Черточка верх лево*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top)
+                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_bottom) ||
+                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1429.5 583.5C1427.33 580.667 1420.4 574.1 1410 570.5"
                             />
-                            {/*Овал черточка право*/}
+                            {/*Овал черточка лево*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_center) ||
-                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_center)
+                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_center) ||
+                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1429.5 583.5C1423.5 590 1433.9 606.5 1435.5 610.5" 
                             />
-                            {/*Низ черточка право*/}
+                            {/*Низ черточка лево*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_bottom) ||
-                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_bottom)
+                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top) ||
+                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1435.5 610.5C1433.83 611.5 1428.8 616.2 1422 627"
@@ -564,8 +564,8 @@ export default function Tooth25() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_bottom) ||
-                                        (!tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_bottom)
+                                        (tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_top) ||
+                                        (!tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}
                                 d="M1435.5 610.5C1439 617.833 1449.2 628.5 1462 612.5" 
@@ -879,50 +879,6 @@ export default function Tooth25() {
                             />
                         </g>
                         <g className="with">
-                            {/*Черточка лево низ*/}
-                            <path className="st54" style={{
-                                    stroke: 'rgb(81, 79, 72)',
-                                    strokeWidth: (
-                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
-                                        (tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
-                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_center)
-                                    ) ? 5 : 0
-                                }}
-                                d="M1468.5 443.999L1469 479.999" 
-                            />
-                            {/*Черточка лево верх*/}
-                            <path className="st54" style={{
-                                    stroke: 'rgb(81, 79, 72)',
-                                    strokeWidth: (
-                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
-                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_center)
-                                    ) ? 5 : 0
-                                }} 
-                                d="M1468.5 443.999C1468.5 430.999 1468.4 424.699 1476 417.499"
-                            />
-                            {/*Черточка середина*/}
-                            <path className="st54" style={{
-                                    stroke: 'rgb(81, 79, 72)',
-                                    strokeWidth: (
-                                        (tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
-                                        (tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center)
-                                    ) ? 5 : 0
-                                }} 
-                                d="M1468.5 443.999C1461 439.833 1441.2 434.499 1422 446.499"
-                            />
-                            <path className="st54" style={{
-                                    stroke: 'rgb(81, 79, 72)',
-                                    strokeWidth: (
-                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
-                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_center)
-                                    )
-                                        ? 5 : 0
-                                }} 
-                                d="M1422 446.499C1421 430.499 1418.6 426.799 1411 423.999" 
-                            />
                             {/*Черточка право низ*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -930,6 +886,58 @@ export default function Tooth25() {
                                         (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
                                         (tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
                                         (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_center)
+                                    ) ? 5 : 0
+                                }}
+                                d="M1468.5 443.999L1469 479.999" 
+                            />
+                            {/*Черточка право верх*/}
+                            <path className="st54" style={{
+                                    stroke: 'rgb(81, 79, 72)',
+                                    strokeWidth: (
+                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom) ||
+                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_center) ||
+                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                        (!tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_bottom)
+                                    )
+                                        ? 5 : 0
+                                }} 
+                                d="M1468.5 443.999C1468.5 430.999 1468.4 424.699 1476 417.499"
+                            />
+                            {/*Черточка середина*/}
+                            <path className="st54" style={{
+                                    stroke: 'rgb(81, 79, 72)',
+                                    strokeWidth: (
+                                        (tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom) ||
+                                        (!tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center) ||
+                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top) ||
+                                        (!tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center)
+                                    ) ? 5 : 0
+                                }} 
+                                d="M1468.5 443.999C1461 439.833 1441.2 434.499 1422 446.499"
+                            />
+                            {/*Черточка лево верх*/}
+                            <path className="st54" style={{
+                                    stroke: 'rgb(81, 79, 72)',
+                                    strokeWidth: (
+                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom) ||
+                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_center) ||
+                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
+                                        (!tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center)
+                                    ) ? 5 : 0
+                                }} 
+                                d="M1422 446.499C1421 430.499 1418.6 426.799 1411 423.999" 
+                            />
+                            {/*Черточка лево низ*/}
+                            <path className="st54" style={{
+                                    stroke: 'rgb(81, 79, 72)',
+                                    strokeWidth: (
+                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
+                                        (tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_center) ||
+                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                                 d="M1422 446.999L1424 477.499"
