@@ -322,7 +322,7 @@ export default function Tooth14() {
                                 c-2.2-3.6-3.2-7.6-4.7-11.4C707.6,610.2,705,605.7,703.6,600.4z"
                             />
                         </g>
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth14Diagnozis?.apex || tooth14Diagnozis.change_color ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: tooth14Diagnozis?.apex || tooth14Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth14Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth14Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M703.6 600.4C702.1 594.4 702.1 588.5 704.4 583C706.8 577.4 711.6 572.7 716.8 568.9C723.1 564.3 730.4 560.7 738.4 560.7C747 560.8 754.5 564.9 760.6 570.1C763.7 572.7 766.6 575.7 768.7 579C771.2 582.8 772.7 587.1 
                                 772.7 591.6C772.7 599 768.8 605.5 765.3 611.9C762.8 616.4 760.7 620.9 757.7 625.4C755.8 628.4 753.3 631.3 750.2 633.4C746.2 636 
@@ -344,7 +344,7 @@ export default function Tooth14() {
                     </g>
                     {/* IMPLANT/CULTTAB */}
                     <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth14Diagnozis.implant || tooth14Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                        <circle className="st48" cx="738.5" cy="595.5" r="20.5"></circle>
+                        <circle className="st48" cx="738.5" cy="595.5" r="20.5" />
                         <g className="st27">
                             <mask id="implant_14" className="st49">
                                 <path className="st50" d="M727.871 582.971L725.176 582.093C722.886 584.398 721.182 587.286 720.308 590.515L722.416 592.412C722.227 593.412 722.129 594.444 722.129 595.5C722.129 596.555 722.227 597.588 722.416 598.588L720.308 600.484C721.182 603.713 722.886 606.602 725.177 608.906L727.871 608.029C729.427 609.371 731.236 610.428 733.217 611.119L733.804 613.892C735.357 614.301 736.986 614.519 738.667 614.519C740.349 614.519 741.979 614.301 743.532 613.891L744.119 611.118C746.099 610.427 747.908 609.37 749.464 608.028L752.158 608.906C754.449 606.601 756.152 603.712 757.027 600.483L754.918 598.587C755.107 597.587 755.206 596.555 755.206 595.5C755.206 594.445 755.107 593.413 754.918 592.413L757.027 590.517C756.152 587.287 754.449 584.399 752.158 582.094L749.464 582.971C747.908 581.629 746.099 580.572 744.119 579.881L743.532 577.108C741.979 576.699 740.349 576.48 738.667 576.48C736.986 576.48 735.357 576.698 733.804 577.108L733.217 579.88C731.236 580.571 729.427 581.629 727.871 582.971Z"></path>
@@ -355,7 +355,7 @@ export default function Tooth14() {
                     </g>
                     {/* SHAPER */}
                     <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}} >
-                        <circle className="st44" cx="738.435" cy="595.435" r="22.435"></circle>
+                        <circle className="st44" cx="738.435" cy="595.435" r="22.435" />
                         <path className="st45" d="M736.577 586.739C737.129 584.804 739.871 584.804 740.423 586.739L740.929 588.511C741.225 589.549 742.291 590.164 743.338 589.902L745.126 589.454C747.077 588.965 748.448 591.339 747.049 592.785L745.767 594.109C745.016 594.884 745.016 596.116 745.767 596.891L747.049 598.215C748.448 599.661 747.077 602.035 745.126 601.546L743.338 601.098C742.291 600.836 741.225 601.451 740.929 602.489L740.423 604.261C739.871 606.196 737.129 606.196 736.577 604.261L736.071 602.489C735.775 601.451 734.709 600.836 733.662 601.098L731.874 601.546C729.923 602.035 728.552 599.661 729.951 598.215L731.233 596.891C731.984 596.116 731.984 594.884 731.233 594.109L729.951 592.785C728.552 591.339 729.923 588.965 731.874 589.454L733.662 589.902C734.709 590.164 735.775 589.549 736.071 588.511L736.577 586.739Z"></path>
                     </g>
                     {/* ABUTMENT */}
@@ -420,7 +420,8 @@ export default function Tooth14() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
-                            className="caries-filling">
+                            className="caries-filling"
+                        >
                             <path className="st7" d="M718.8,611c0.4,3.4,2.9,6.8,5.9,9.5c2.8,2.6,6.1,4.5,8.2,5c4.2,1,9.3-1.6,12-5.9c0.2-0.3,0.3-0.5,0.5-0.8
                                 c2.5-4.8,8.1-15.3,9.8-20.2c1.5-4.4,0.8-10.5-2.3-13.8c-0.4-0.4-0.8-0.7-1.2-1c-4.1-2.9-15-5.7-15-5.7c-6.2-0.6-11.6,1.5-15.6,5.9
                                 c-0.1,0.1-0.2,0.3-0.4,0.4C716.6,588.9,718,604.4,718.8,611z" 
@@ -527,9 +528,8 @@ export default function Tooth14() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth14Diagnozis.seal_left && !tooth14Diagnozis.seal_top && !tooth14Diagnozis.seal_center) ||
-                                        (tooth14Diagnozis.seal_left && tooth14Diagnozis.seal_top && !tooth14Diagnozis.seal_center) ||
-                                        (!tooth14Diagnozis.seal_left && tooth14Diagnozis.seal_center)
+                                        (tooth14Diagnozis.seal_left && !tooth14Diagnozis.seal_bottom && !tooth14Diagnozis.seal_center) ||
+                                        (tooth14Diagnozis.seal_left && !tooth14Diagnozis.seal_bottom) 
                                     ) ? 5 : 0
                                 }}
                                 d="M724.5 620.5C722.667 622.333 717.6 626.7 712 629.5"  
@@ -760,7 +760,7 @@ export default function Tooth14() {
                         />
                     </g>
                     {/* CULTTAB */}
-                    <g className="stump hEmpty hIntact hImplant"  style={{visibility: !tooth14Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth14Diagnozis.culttab ? 0 : 1}}>
+                    <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth14Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth14Diagnozis.culttab ? 0 : 1}}>
                         <path className="st14" d="M719.8,294.3l7.7,99.6c0,0,0.1,0,0.1,0c0.3-0.1,0.5-0.2,0.8-0.2c0.3-0.1,0.6-0.2,0.9-0.2c0,0,0,0,0.1,0
                             c0.4-0.1,0.9-0.2,1.3-0.3c0.1,0,0.3-0.1,0.4-0.1c0.6-0.1,1.2-0.2,1.8-0.3c0,0,0.1,0,0.1,0c0.2,0,0.5-0.1,0.7-0.1
                             c0.3,0,0.5-0.1,0.8-0.1c0.4,0,0.7-0.1,1.1-0.1h0c0.5,0,1.1,0,1.6,0h0c0.3,0,0.6,0,0.9,0c0.2,0,0.3,0,0.5,0c0.1,0,0.1,0,0.2,0
@@ -910,7 +910,7 @@ export default function Tooth14() {
                         </g>
                         {/*КАРИЕС LEFT*/}
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -930,7 +930,6 @@ export default function Tooth14() {
                                 c-0.7-10.2-2.2-30.5-3.4-45.3c-0.8-9.5-1.4-16.7-1.6-17.3c-0.4-1.3-6.4-9.1-9.6-13.3c-0.5,1.4-0.9,2.7-1.4,4.1
                                 c-2,5.9-4.3,11.7-5.4,17.8C694.5,451,694.7,458.3,696.4,465.2z"  
                                 style={{ fill: 'transparent', zIndex:2000 }}
-                                // style={{fill: 'none', strokeWidth: 0}}
                             />
                         </g>
                         {/* КАРИЕС RIGHT */}
@@ -1039,8 +1038,6 @@ export default function Tooth14() {
                             />
                         </g>
                     </g>
-
-
                     <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
                         <g className="vinir" 
                             style={{
