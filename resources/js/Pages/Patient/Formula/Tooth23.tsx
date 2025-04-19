@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -28,7 +28,6 @@ export default function Tooth23() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth23Diagnozis = teethDiagnozis.tooth23;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -201,7 +200,6 @@ export default function Tooth23() {
                             if (!teethDiagnozis.tooth23.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth23.seal = !teethDiagnozis.tooth23.seal;
-                            setDiagnozeClass(teethDiagnozis.tooth23.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'seal_cervical') {
                             if (!teethDiagnozis.tooth23.seal_cervical && teethDiagnozis.tooth23.seal_cervical_color === "") {
                                 teethDiagnozis.tooth23.seal_cervical = true;
@@ -618,15 +616,6 @@ export default function Tooth23() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage23 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="23"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1305.1" cy="199.8" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="23"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1303.1" cy="192.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="23"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1305.9" cy="180.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

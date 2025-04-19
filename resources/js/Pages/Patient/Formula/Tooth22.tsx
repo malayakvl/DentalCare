@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -18,7 +18,6 @@ import {
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage22 from './periodontit22';
-import { setTooth22Active } from '@/Redux/Formula/actions';
 
 
 export default function Tooth22() {
@@ -29,7 +28,6 @@ export default function Tooth22() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth22Diagnozis = teethDiagnozis.tooth22;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -182,19 +180,15 @@ export default function Tooth22() {
                         else if (diagnozis === 'pulpit') {
                             teethDiagnozis.tooth22.pulpit = !teethDiagnozis.tooth22.pulpit;
                             teethDiagnozis.tooth22.channel_class = teethDiagnozis.tooth22.pulpit ? 'pulpit' : ''
-                            // setDiagnozeClass(teethDiagnozis.tooth22.pulpit ? 'pulpit' : '');
                         } else if (diagnozis === 'channel_not_sealed') {
                             teethDiagnozis.tooth22.channel_not_sealed = !teethDiagnozis.tooth22.channel_not_sealed;
                             teethDiagnozis.tooth22.channel_class = teethDiagnozis.tooth22.channel_not_sealed ? 'channel-not-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth22.channel_not_sealed ? 'channel-not-sealed' : '');
                         } else if (diagnozis === 'channel_top_sealed') {
                             teethDiagnozis.tooth22.channel_top_sealed = !teethDiagnozis.tooth22.channel_top_sealed;
                             teethDiagnozis.tooth22.channel_class = teethDiagnozis.tooth22.channel_top_sealed ? 'channel-top-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth22.channel_top_sealed ? 'channel-top-sealed' : '');
                         } else if (diagnozis === 'channel_part_sealed') {
                             teethDiagnozis.tooth22.channel_part_sealed = !teethDiagnozis.tooth22.channel_part_sealed;
                             teethDiagnozis.tooth22.channel_class = teethDiagnozis.tooth22.channel_part_sealed ? 'channel-part-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth22.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
                             if (teethDiagnozis.tooth22.periodontit_stage !== subDiagnozis) {
                                 teethDiagnozis.tooth22.periodontit_stage = subDiagnozis
@@ -206,7 +200,6 @@ export default function Tooth22() {
                             if (!teethDiagnozis.tooth22.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth22.seal = !teethDiagnozis.tooth22.seal;
-                            setDiagnozeClass(teethDiagnozis.tooth22.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'seal_cervical') {
                             if (!teethDiagnozis.tooth22.seal_cervical && teethDiagnozis.tooth22.seal_cervical_color === "") {
                                 teethDiagnozis.tooth22.seal_cervical = true;
@@ -596,16 +589,6 @@ export default function Tooth22() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage22 />
-                        
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="22"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1210.1" cy="273.3" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="22"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1209.1" cy="264.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="22"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1209.1" cy="252.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

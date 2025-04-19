@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, setTooth16Active } from '../../../Redux/Formula';
 import {
@@ -28,7 +28,6 @@ export default function Tooth16() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth16Diagnozis = teethDiagnozis.tooth16;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -181,19 +180,15 @@ export default function Tooth16() {
                         else if (diagnozis === 'pulpit') {
                             teethDiagnozis.tooth16.pulpit = !teethDiagnozis.tooth16.pulpit;
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.pulpit ? 'pulpit' : ''
-                            // setDiagnozeClass(teethDiagnozis.tooth16.pulpit ? 'pulpit' : '');
                         } else if (diagnozis === 'channel_not_sealed') {
                             teethDiagnozis.tooth16.channel_not_sealed = !teethDiagnozis.tooth16.channel_not_sealed;
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.channel_not_sealed ? 'channel-not-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth16.channel_not_sealed ? 'channel-not-sealed' : '');
                         } else if (diagnozis === 'channel_top_sealed') {
                             teethDiagnozis.tooth16.channel_top_sealed = !teethDiagnozis.tooth16.channel_top_sealed;
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.channel_top_sealed ? 'channel-top-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth16.channel_top_sealed ? 'channel-top-sealed' : '');
                         } else if (diagnozis === 'channel_part_sealed') {
                             teethDiagnozis.tooth16.channel_part_sealed = !teethDiagnozis.tooth16.channel_part_sealed;
                             teethDiagnozis.tooth16.channel_class = teethDiagnozis.tooth16.channel_part_sealed ? 'channel-part-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth16.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
                             if (teethDiagnozis.tooth16.periodontit_stage !== subDiagnozis) {
                                 teethDiagnozis.tooth16.periodontit_stage = subDiagnozis

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, setTooth16Active } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -28,7 +28,6 @@ export default function Tooth25() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth25Diagnozis = teethDiagnozis.tooth25;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -669,15 +668,6 @@ export default function Tooth25() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage25 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="25"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1456.7" cy="216.9" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="25"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1455" cy="208.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="25"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1456.7" cy="196.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

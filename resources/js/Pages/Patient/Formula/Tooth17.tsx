@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
@@ -12,7 +12,6 @@ import {
     getSealColor3Selector,
     getSubDiagnosisSelector,
     getTeethDiagnozisSelector,
-    tooth17Selector,
     getSealServicalColorSelector,
     getVinirColorSelector,
     getCeramicCrownColorSelector,
@@ -23,9 +22,7 @@ import {
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage17 from './periodontit17';
 
-export default function Tooth17({
-    className = '',
-}) {
+export default function Tooth17() {
     const appLang = useSelector(appLangSelector);
     const msg = new Lang({
         messages: lngMaterial,
@@ -39,7 +36,6 @@ export default function Tooth17({
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth17Diagnozis = teethDiagnozis.tooth17;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -192,19 +188,15 @@ export default function Tooth17({
                         else if (diagnozis === 'pulpit') {
                             teethDiagnozis.tooth17.pulpit = !teethDiagnozis.tooth17.pulpit;
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.pulpit ? 'pulpit' : ''
-                            // setDiagnozeClass(teethDiagnozis.tooth17.pulpit ? 'pulpit' : '');
                         } else if (diagnozis === 'channel_not_sealed') {
                             teethDiagnozis.tooth17.channel_not_sealed = !teethDiagnozis.tooth17.channel_not_sealed;
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.channel_not_sealed ? 'channel-not-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth17.channel_not_sealed ? 'channel-not-sealed' : '');
                         } else if (diagnozis === 'channel_top_sealed') {
                             teethDiagnozis.tooth17.channel_top_sealed = !teethDiagnozis.tooth17.channel_top_sealed;
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.channel_top_sealed ? 'channel-top-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth17.channel_top_sealed ? 'channel-top-sealed' : '');
                         } else if (diagnozis === 'channel_part_sealed') {
                             teethDiagnozis.tooth17.channel_part_sealed = !teethDiagnozis.tooth17.channel_part_sealed;
                             teethDiagnozis.tooth17.channel_class = teethDiagnozis.tooth17.channel_part_sealed ? 'channel-part-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth17.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
                             if (teethDiagnozis.tooth17.periodontit_stage !== subDiagnozis) {
                                 teethDiagnozis.tooth17.periodontit_stage = subDiagnozis
@@ -216,7 +208,6 @@ export default function Tooth17({
                             if (!teethDiagnozis.tooth17.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth17.seal = !teethDiagnozis.tooth17.seal;
-                            setDiagnozeClass(teethDiagnozis.tooth17.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'seal_cervical') {
                             if (!teethDiagnozis.tooth17.seal_cervical && teethDiagnozis.tooth17.seal_cervical_color === "") {
                                 teethDiagnozis.tooth17.seal_cervical = true;

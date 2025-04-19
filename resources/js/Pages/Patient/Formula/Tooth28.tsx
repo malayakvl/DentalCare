@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
-import { setNewToothActive, setSubDiagnosis, setTooth28Active, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
+import { setNewToothActive, setSubDiagnosis, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -12,7 +12,6 @@ import {
     getSealColor3Selector,
     getSubDiagnosisSelector,
     getTeethDiagnozisSelector,
-    tooth28Selector,
     getSealServicalColorSelector,
     getVinirColorSelector,
     getCeramicCrownColorSelector,
@@ -21,7 +20,6 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage18 from './periodontit18';
 import PeriodontitStage28 from './periodontit128';
 
 
@@ -33,15 +31,12 @@ export default function Tooth28() {
         locale: appLang,
     });
     const dispatch = useDispatch<any>();
-    //const toothActive = useSelector(tooth28Selector);
     const toothActive = useSelector(getStatusesSelector);
-    const teethStatuses = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth28Diagnozis = teethDiagnozis.tooth28;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -194,19 +189,15 @@ export default function Tooth28() {
                         else if (diagnozis === 'pulpit') {
                             teethDiagnozis.tooth28.pulpit = !teethDiagnozis.tooth28.pulpit;
                             teethDiagnozis.tooth28.channel_class = teethDiagnozis.tooth28.pulpit ? 'pulpit' : ''
-                            // setDiagnozeClass(teethDiagnozis.tooth28.pulpit ? 'pulpit' : '');
                         } else if (diagnozis === 'channel_not_sealed') {
                             teethDiagnozis.tooth28.channel_not_sealed = !teethDiagnozis.tooth28.channel_not_sealed;
                             teethDiagnozis.tooth28.channel_class = teethDiagnozis.tooth28.channel_not_sealed ? 'channel-not-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth28.channel_not_sealed ? 'channel-not-sealed' : '');
                         } else if (diagnozis === 'channel_top_sealed') {
                             teethDiagnozis.tooth28.channel_top_sealed = !teethDiagnozis.tooth28.channel_top_sealed;
                             teethDiagnozis.tooth28.channel_class = teethDiagnozis.tooth28.channel_top_sealed ? 'channel-top-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth28.channel_top_sealed ? 'channel-top-sealed' : '');
                         } else if (diagnozis === 'channel_part_sealed') {
                             teethDiagnozis.tooth28.channel_part_sealed = !teethDiagnozis.tooth28.channel_part_sealed;
                             teethDiagnozis.tooth28.channel_class = teethDiagnozis.tooth28.channel_part_sealed ? 'channel-part-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth28.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
                             if (teethDiagnozis.tooth28.periodontit_stage !== subDiagnozis) {
                                 teethDiagnozis.tooth28.periodontit_stage = subDiagnozis
@@ -218,7 +209,6 @@ export default function Tooth28() {
                             if (!teethDiagnozis.tooth28.periodontit) dispatch(setSubDiagnosis(''));
                         } else if (diagnozis === 'seal') {
                             teethDiagnozis.tooth28.seal = !teethDiagnozis.tooth28.seal;
-                            setDiagnozeClass(teethDiagnozis.tooth28.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'seal_cervical') {
                             if (!teethDiagnozis.tooth28.seal_cervical && teethDiagnozis.tooth28.seal_cervical_color === "") {
                                 teethDiagnozis.tooth28.seal_cervical = true;
@@ -713,15 +703,6 @@ export default function Tooth28() {
                             />
                         </g>
                         <PeriodontitStage28 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="28"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1836.5" cy="242.8" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="28"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1833.5" cy="236.5" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="28"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1836.5" cy="224" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{

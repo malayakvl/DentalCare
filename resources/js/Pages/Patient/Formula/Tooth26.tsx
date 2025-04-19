@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, settooth26Active } from '../../../Redux/Formula';
 import {
@@ -28,7 +28,6 @@ export default function Tooth26() {
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth26Diagnozis = teethDiagnozis.tooth26;
-    const [_, setDiagnozeClass] = useState('');
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -181,19 +180,15 @@ export default function Tooth26() {
                         else if (diagnozis === 'pulpit') {
                             teethDiagnozis.tooth26.pulpit = !teethDiagnozis.tooth26.pulpit;
                             teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.pulpit ? 'pulpit' : ''
-                            // setDiagnozeClass(teethDiagnozis.tooth26.pulpit ? 'pulpit' : '');
                         } else if (diagnozis === 'channel_not_sealed') {
                             teethDiagnozis.tooth26.channel_not_sealed = !teethDiagnozis.tooth26.channel_not_sealed;
                             teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.channel_not_sealed ? 'channel-not-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth26.channel_not_sealed ? 'channel-not-sealed' : '');
                         } else if (diagnozis === 'channel_top_sealed') {
                             teethDiagnozis.tooth26.channel_top_sealed = !teethDiagnozis.tooth26.channel_top_sealed;
                             teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.channel_top_sealed ? 'channel-top-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth26.channel_top_sealed ? 'channel-top-sealed' : '');
                         } else if (diagnozis === 'channel_part_sealed') {
                             teethDiagnozis.tooth26.channel_part_sealed = !teethDiagnozis.tooth26.channel_part_sealed;
                             teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.channel_part_sealed ? 'channel-part-sealed' : '';
-                            // setDiagnozeClass(teethDiagnozis.tooth26.channel_part_sealed ? 'channel-part-sealed' : '');
                         } else if (diagnozis === 'periodontit') {
                             if (teethDiagnozis.tooth26.periodontit_stage !== subDiagnozis) {
                                 teethDiagnozis.tooth26.periodontit_stage = subDiagnozis
@@ -721,21 +716,6 @@ export default function Tooth26() {
                             />
                         </g>
                         <PeriodontitStage26 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="26"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1588.9" cy="248.9" r="8.2"></circle>
-                            <circle className="st42" cx="1553.3" cy="233.4" r="8.2"></circle>
-                            <circle className="st42" cx="1515.7" cy="249.9" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="26"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1587.5" cy="241.8" r="17.5"></circle>
-                            <circle className="st42" cx="1551" cy="226.2" r="17.5"></circle>
-                            <circle className="st42" cx="1514.9" cy="241.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="26"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1517" cy="228.1" r="30"></circle>
-                            <circle className="st42" cx="1552.3" cy="214.1" r="30"></circle>
-                            <circle className="st42" cx="1588.6" cy="229.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{
