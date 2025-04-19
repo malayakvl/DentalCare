@@ -324,8 +324,7 @@ export default function Tooth17({
                         C353.1,248.9,359.8,255.5,364,271z"
                     />
                 </g>
-                <g id="T_17_up" className="top-view" 
-                    style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g id="T_17_up" className="top-view" style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <g className="dentin">
                         {/* CHANGE COLOR/APEX/CULTTAB */}
                         <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth17Diagnozis.culttab && !tooth17Diagnozis.implant && !tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -346,9 +345,6 @@ export default function Tooth17({
                             />
                         </g>
                     </g>
-
-
-
                     {/* PULPIT */}
                     <g className="pulp">
                         <g className={`hIntact hEmpty hImplant pulpitis-pfilling `} style={{visibility: "hidden"}}>
@@ -403,7 +399,7 @@ export default function Tooth17({
                         <path className="st47"
                               d="M352.508 604.127C353.222 601.316 354.864 598.649 355.65 595.838C357.649 588.919 354.864 581.062 359.363 574.719C362.79 569.818 369.145 567.223 376.357 566.214C383.141 565.277 390.138 565.854 396.993 564.989C401.349 564.412 405.705 563.403 409.989 563.115C414.559 562.754 419.057 563.259 423.128 564.412C425.912 565.205 428.554 566.358 430.839 567.944C434.695 570.683 436.837 574.503 437.623 578.467C438.551 583.08 437.694 587.765 435.838 592.234C433.124 598.938 428.34 605.064 425.056 611.623C423.056 615.66 421.557 619.912 418.272 623.516C415.416 626.688 411.203 629.139 406.276 629.787C402.634 630.292 398.921 629.787 395.208 629.427C390.567 628.994 385.926 628.922 381.284 628.634C377.214 628.418 373.144 628.057 369.36 626.904C357.363 623.516 349.937 614.002 352.508 604.127Z"></path>
                     </g>
-                    <g className="hRoot hImplant hEmpty BBB" style={{visibility: (!tooth17Diagnozis.culttab && !tooth17Diagnozis.abutment && !tooth17Diagnozis.implant && !tooth17Diagnozis.apex && !tooth17Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="hRoot hImplant hEmpty" style={{visibility: (!tooth17Diagnozis.culttab && !tooth17Diagnozis.abutment && !tooth17Diagnozis.implant && !tooth17Diagnozis.apex && !tooth17Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className="st46" d="M464.3,560.2c-0.2-1.2-0.5-2.4-0.8-3.5c-1.7-6.5-5.1-12.6-10.4-17.1c-3.7-3.2-8-5.4-12.5-7
                             c-6.7-2.3-14-3.3-21.3-2.7c-7,0.6-14,2.5-21,3.5c-11.1,1.6-22.4,0.4-33.3,2.2c-11.3,1.9-21.3,6.6-26.8,15.6
                             c-0.2,0.3-0.3,0.5-0.5,0.8c-7.1,12.4-2.5,27.6-5.7,41.1c-1.3,5.5-3.9,10.6-5,16.1c-2.4,11.3,0.9,22.4,8,31
@@ -449,7 +445,6 @@ export default function Tooth17({
                                     ${teethDiagnozis.tooth17.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth17.seal_center ? `seal-fill ${teethDiagnozis.tooth17.seal_center_color}` : ''}
                                 `}
-
                                 d="M350.5,608.4c0.6,2.8,1.7,5.8,3.5,8.6c4.2,6.6,12.3,12.4,27.7,12.4c21.1,0,27.9-7.4,33.1-13.3
                                 c0.2-0.2,0.4-0.4,0.6-0.6c5.2-6.1,6.8-19.6,9.9-28.7c0.9-2.5,1.3-4.8,1.3-7c-0.1-5.9-3.4-10.4-11-11.7c-10.4-1.8-27.1,0-27.1,0
                                 c-10.6,0.6-19.3,2.5-25.6,7c-1.9,1.3-3.6,2.9-5.1,4.7C351.4,587.6,348.5,599.2,350.5,608.4z"
@@ -553,13 +548,13 @@ export default function Tooth17({
                             />
                             {/*Овал лево*/}
                             <path className="st54" d="M357 618C351.333 611.667 344.6 594.2 363 575"
-                            style={{
-                                stroke: 'rgb(81, 79, 72)',
-                                strokeWidth: (
-                                    (tooth17Diagnozis.seal_left && !tooth17Diagnozis.seal_center) ||
-                                    (!tooth17Diagnozis.seal_left && tooth17Diagnozis.seal_center)
-                                ) ? 5 : 0
-                            }}
+                                style={{
+                                    stroke: 'rgb(81, 79, 72)',
+                                    strokeWidth: (
+                                        (tooth17Diagnozis.seal_left && !tooth17Diagnozis.seal_center) ||
+                                        (!tooth17Diagnozis.seal_left && tooth17Diagnozis.seal_center)
+                                    ) ? 5 : 0
+                                }}
                             />
                             {/*Черточка верх лево*/}
                             <path className="st54" d="M363 575C360 570.5 351.5 560 341.5 554"
@@ -713,8 +708,7 @@ export default function Tooth17({
                         />
                     </g>
                 </g>
-                <g id="T_17" className="common-view"
-                    style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g id="T_17" className="common-view" style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/*CHANGE COLOR*/}
                     <g className="dentin">
                         <g id="dentin_v_17" className="hRoot hImplant hEmpty" style={{visibility: !tooth17Diagnozis.implant && !tooth17Diagnozis.apex && !tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -747,7 +741,7 @@ export default function Tooth17({
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
                     <g className="pulp">
                         <g className={`hEmpty hRoot hImplant pulpitis-pfilling`}>
-                            <path className={`st22 target AAA ${tooth17Diagnozis.channel_class}`}
+                            <path className={`st22 target ${tooth17Diagnozis.channel_class}`}
                                 d="M424.2,392.7c-0.5,5.9-2.2,11.6-5.1,16.9c-3.5-7.3-10.7-12.6-19.3-14.1
                                 c-7.3-1.3-14.9,0.3-20.8,4.4c-0.7-4.1-0.4-8.4,0.7-12.4c1.3-4.4,3.6-8.6,5.2-13c2.5-6.8,3.2-14,3.5-21.2c2.8,0.1,5.6,0.2,8.3,0.5
                                 c9.6,0.8,19.2,2.4,28.2,5.8c0.2,0.1,0.5,0.2,0.7,0.3c-0.8,3.2-1.5,6.4-1.7,9.7C423.3,377.2,424.8,384.9,424.2,392.7z"
@@ -763,43 +757,18 @@ export default function Tooth17({
                             />
                         </g>
                         <g className="hEmpty hImplant pulpitis-pfilling">
-                            <path className={`st22 part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} d="M379.4,266.9c-3-8.2-6.9-16.2-11.4-23.8c6.8,15.4,12,31.4,15.5,47.8h3.4c-0.1-0.4-0.2-0.8-0.4-1.3
+                            <path className={`st22 part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} 
+                                d="M379.4,266.9c-3-8.2-6.9-16.2-11.4-23.8c6.8,15.4,12,31.4,15.5,47.8h3.4c-0.1-0.4-0.2-0.8-0.4-1.3
                                 C384.3,282,382.1,274.4,379.4,266.9z"
                             />
-                            <path className={`st22 part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} d="M416.4,222c-0.7,19.8-2.2,39.6-4.5,59.3c-0.4,3.2-0.8,6.4-1.2,9.6h8.9c-0.1-1.1-0.2-2.2-0.2-3.3
+                            <path className={`st22 part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} 
+                                d="M416.4,222c-0.7,19.8-2.2,39.6-4.5,59.3c-0.4,3.2-0.8,6.4-1.2,9.6h8.9c-0.1-1.1-0.2-2.2-0.2-3.3
                                 C417.9,265.8,416.9,243.9,416.4,222z"
                             />
-                            <path className={`st22 target part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} d="M436.7,247.3c4.1,14.3,5.8,29,5,43.6h1.8c0-0.9,0-1.8,0-2.8C443.5,274.3,441.2,260.5,436.7,247.3z" />
+                            <path className={`st22 target part ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.channel_class} ${tooth17Diagnozis.pulpit ? 'pulpit' : ''} ${tooth17Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} 
+                                d="M436.7,247.3c4.1,14.3,5.8,29,5,43.6h1.8c0-0.9,0-1.8,0-2.8C443.5,274.3,441.2,260.5,436.7,247.3z" />
                         </g>
                         <PeriodontitStage17 />
-                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="17"
-                           style={{
-                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st1' && toothActive) ? 1 : 0,
-                               visibility: "inherit"
-                        }}>
-                            <circle className="st42" cx="362.8" cy="237.3" r="8.2"></circle>
-                            <circle className="st42" cx="414" cy="215" r="8.2"></circle>
-                            <circle className="st42" cx="433" cy="239.6" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="17"
-                           style={{
-                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st2' && toothActive) ? 1 : 0,
-                               visibility: "inherit"
-                        }}>
-                            <circle className="st42" cx="364" cy="229.2" r="17.5"></circle>
-                            <circle className="st42" cx="416.4" cy="206.8" r="17.5"></circle>
-                            <circle className="st42" cx="435.8" cy="231.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="17"
-                           style={{
-                               opacity: (tooth17Diagnozis.periodontit && subDiagnozis === 'st3' && toothActive) ? 1 : 0,
-                               visibility: "inherit"
-                        }}>
-                            <circle className="st42" cx="433.9" cy="218.8" r="30"></circle>
-                            <circle className="st42" cx="412.6" cy="194.1" r="30"></circle>
-                            <circle className="st42" cx="364" cy="215.8" r="30"></circle>
-                        </g> */}
-
                     </g>
                     {/* PIN */}
                     <g className="pin" style={{visibility: 'inherit', opacity: tooth17Diagnozis.pin ? 1 : 0}}>
@@ -937,8 +906,7 @@ export default function Tooth17({
                         />
                     </g>
                     {/*TARTAR*/}
-                    <g className="tartar"
-                        style={{visibility: 'inherit', opacity: teethDiagnozis.tooth17.tartar ? 1 : 0}}>
+                    <g className="tartar" style={{visibility: 'inherit', opacity: teethDiagnozis.tooth17.tartar ? 1 : 0}}>
                         <path className="st61 level2"
                               d="M460.5 408L459.5 407L459 406.5L458.5 405.5L457.5 403.5L456.5 400.5L455.5 398.5V396.5L454 392L453.5 388L451 383.5L447.5 378.5L444.5 375.5L441.5 371L438.5 370L434 368L430 364L424.5 362.5L420.5 360H415.5L408.5 358L402 356H396.5L392 355H387L383.5 356L379.5 357L373.5 358L367.5 360H365.5L362.5 361L360 364L357 366L354 369L351.5 373L345.5 377L344 380L342 381.5L340 382.5L337 387L335.5 388L334 389H332L333 385.5L334 383.5L336 380.5L337 378.5L339 377L340 375.5L341 373L342 370L344 368L345.5 366L347.5 362.5L351.5 360V358L354 355L356 352.5L358 350L360 348.5L362.002 346L364.002 343L367.5 342H371.502L377.002 340L382.002 339L387 340H392L396.5 338L402 340H406.502H410.502H415.5L420.5 342H424.5L430 344H433.502L438.5 345.5L441.5 348.5L447.5 350L451 352.5L455.5 355L459 360L463 364L461.502 368L463 373V377L463.502 380L464.502 383.5L463 388L463.502 393L461.502 397V400.5V405.5L460.5 408Z"></path>
                         <path className="st61 level1"
@@ -949,7 +917,7 @@ export default function Tooth17({
                         <g className="caries-filling"
                            onClick={() => {
                             setColordedPart(diagnozis, 'center');
-                        }} >
+                        }}>
                             <path className={`st58`} d="M345.5,451.1l2.1,0.8c3.6-2,7.6-3.1,11.8-3.5c6.5-0.5,13.3,1.1,19.2-1.9c3.6-1.8,6.1-5.1,8.1-8.7
                                 c1.3-2.5,2.4-5.1,3.1-7.8l1.9-0.1c-1.2,2.2-2.1,4.5-2.8,6.9c-0.9,3.4-1.3,7,0,10.2c3.6,8.8,15.5,9.1,21.6,15.8
                                 c4-7.5,13.4-24.8,20.7-38.1c-3.4-3.4-8.2-7.6-13.2-10.1c-12.9-6.5-36.7-12.3-58.7-7.1C354.1,424,348.2,442.5,345.5,451.1z" />
@@ -1028,7 +996,6 @@ export default function Tooth17({
                                 c-9-3.5-18.6-5.1-28.2-5.8c-11.5-0.9-23.1-0.7-34.6,0.7c-0.1,0-0.1,0.1-0.1,0.1c2.4,6.9,6.8,19.7,6.8,21.7
                                 C368.7,377.3,364.4,391.5,359.3,407.6z" />
                         </g>
-
                         <g className="with">
                             {/*Черточка лево низ*/}
                             <path className="st54" d="M359 407L347 446"
