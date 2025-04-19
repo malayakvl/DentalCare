@@ -230,7 +230,7 @@ export default function Formula({
                 <Tooth18 />
                 <g className="pointers">
                     <path className="st35 st_pointers" d="M267.3,739.2l5.1-18.8l9.3,34.7H263L267.3,739.2" id="pointer_18" style={{opacity: toothActive.tooth18.active ? 1 : 0}} />
-                    <path className="st35 st_pointers" d="M267.9,773l-4.3-15.9h18.7l-9.3,34.7 L267.9,773" id="pointer_48" />
+                    <path className="st35 st_pointers" d="M267.9,773l-4.3-15.9h18.7l-9.3,34.7 L267.9,773" id="pointer_48" style={{opacity: toothActive.tooth48.active ? 1 : 0}} />
                     <path className="st35 st_pointers" d="M404.3,773l-4.3-15.9h18.7l-9.3,34.7 L404.3,773" id="pointer_47" />
                     <path className="st35 st_pointers" d="M562.1,773l-4.3-15.9h18.7l-9.3,34.7 L562.1,773" id="pointer_46" />
                     <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_45" />
