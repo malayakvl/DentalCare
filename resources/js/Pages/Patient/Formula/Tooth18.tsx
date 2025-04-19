@@ -1,7 +1,4 @@
 import React from 'react';
-import { appLangSelector } from "../../../Redux/Layout/selectors";
-import Lang from "lang.js";
-import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
 import { setNewToothActive, setSubDiagnosis, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import {
@@ -24,13 +21,7 @@ import PeriodontitStage18 from './periodontit18';
 
 
 export default function Tooth18() {
-    const appLang = useSelector(appLangSelector);
-    const msg = new Lang({
-        messages: lngMaterial,
-        locale: appLang,
-    });
     const dispatch = useDispatch<any>();
-    //const toothActive = useSelector(tooth18Selector);
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);

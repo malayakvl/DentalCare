@@ -1,21 +1,25 @@
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm } from '@inertiajs/react';
-import React, { useEffect, useState } from 'react';
-import { appLangSelector } from "../../../Redux/Layout/selectors";
-import Lang from "lang.js";
-import lngMaterial from "../../../Lang/Material/translation";
+import React from 'react';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
+import {
+    allTeethSelector,
+    getDiagnosisSelector,
+    getSealColor1Selector,
+    getSealColor2Selector,
+    getSealColor3Selector,
+    getSubDiagnosisSelector,
+    getTeethDiagnozisSelector,
+    getSealServicalColorSelector,
+    getVinirColorSelector,
+    getCeramicCrownColorSelector,
+    getCeramicMCrownColorSelector,
+    getMetalicCrownColorSelector,
+    getZirconiaCrownColorSelector,
+    getStatusesSelector
+} from "../../../Redux/Formula/selectors";
 
 
-export default function Tooth48({
-  className = '',
-}) {
-    const appLang = useSelector(appLangSelector);
-    const msg = new Lang({
-        messages: lngMaterial,
-        locale: appLang,
-    });
-    const dispatch = useDispatch();
+export default function Tooth48() {
 
     return (
         <>
