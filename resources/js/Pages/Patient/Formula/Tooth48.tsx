@@ -724,15 +724,6 @@ export default function Tooth48() {
                             />
                         </g>
                         <PeriodontitStage48 />
-                        {/* <g className="level hEmpty hImplant periodontitis"    style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="227" cy="1211.7" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"    style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="226.4" cy="1218.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"    style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="223" cy="1229.6" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{
