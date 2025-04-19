@@ -308,14 +308,14 @@ export default function Tooth12() {
                 <g id="T_12_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
-                        <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth12Diagnozis.culttab && !tooth12Diagnozis.implant && !tooth12Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth12Diagnozis.culttab && !tooth12Diagnozis.implant && !tooth12Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className="st24" d="M886.8,597.2c-1.9-4.6,2.9-8.6,9-10.1c5.2-1.3,11.1-1.3,17-1.4c5.9-0.1,11.8-0.4,17.1,0.5
                                 c5.7,0.9,10.9,3.8,10.7,8.5c-0.1,2.5-2.1,4.6-4.3,6.3c-2.5,1.9-5.4,3.5-7.7,5.7c-2.9,2.9-4.5,6.6-7.5,9.4
                                 c-1.7,1.6-3.7,2.8-6.1,3.2c-3.5,0.6-7-0.7-9.7-2.7c-3.4-2.6-5.2-6.4-7.6-9.6c-1-1.4-2.2-2.8-3.7-3.9
                                 C891.5,601.2,888,600,886.8,597.2z" 
                             />
                         </g>
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth12Diagnozis?.apex || tooth12Diagnozis.change_color ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: tooth12Diagnozis?.apex || tooth12Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth12Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth12Diagnozis?.apex ? 'apex' : ''}`} 
                                 d="M882.489 594.821C880.282 588.167 885.858 582.381 892.945 580.211C898.987 578.331 905.841 578.331 
                                 912.696 578.187C919.55 578.042 926.405 577.608 932.562 578.91C939.185 580.212 945.226 584.406 944.994 
@@ -327,12 +327,12 @@ export default function Tooth12() {
                         </g>
                     </g>
                     <g className="pulp">
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" style={{visibility: 'hidden'}}>
+                        <g className="pulpitis-pfilling" style={{visibility: 'hidden'}}>
                             <path className="st22 target" d="M908.171 597.772C908.171 598.17 907.749 599.199 909.763 601.356C911.265 602.729 911.78 605.151 913.701 605.189C915.77 605.229 916.34 603.039 917.679 601.58C919.285 599.829 919.512 598.545 919.319 597.772C918.921 596.179 917.824 596.15 913.701 596.125C909.578 596.1 908.171 597.374 908.171 597.772Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}
-                    <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth12Diagnozis.implant || tooth12Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                    <g className="implant" style={{visibility: tooth12Diagnozis.implant || tooth12Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <circle className="st48" cx="913" cy="600" r="19" />
                         <g className="st27">
                             <mask id="implant_12" className="st49">
@@ -352,12 +352,12 @@ export default function Tooth12() {
                         </g>
                     </g>
                     {/* SHAPER */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}} >
+                    <g className="shaper" style={{visibility: 'hidden', opacity: 0}} >
                         <circle className="st44" cx="914.77" cy="599.77" r="20.77" />
                         <path className="st45" d="M912.577 591.739C913.129 589.804 915.871 589.804 916.423 591.739L916.929 593.511C917.225 594.549 918.291 595.164 919.338 594.902L921.126 594.454C923.077 593.965 924.448 596.339 923.049 597.785L921.767 599.109C921.016 599.884 921.016 601.116 921.767 601.891L923.049 603.215C924.448 604.661 923.077 607.035 921.126 606.546L919.338 606.098C918.291 605.836 917.225 606.451 916.929 607.489L916.423 609.261C915.871 611.196 913.129 611.196 912.577 609.261L912.071 607.489C911.775 606.451 910.709 605.836 909.662 606.098L907.874 606.546C905.923 607.035 904.552 604.661 905.951 603.215L907.233 601.891C907.984 601.116 907.984 599.884 907.233 599.109L905.951 597.785C904.552 596.339 905.923 593.965 907.874 594.454L909.662 594.902C910.709 595.164 911.775 594.549 912.071 593.511L912.577 591.739Z"></path>
                     </g>
                     {/* ABUTMENT */}
-                    <g className="abutment hEmpty hIntact hRoot" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
+                    <g className="abutment" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
                         <path className="st47" d="M882.489 594.821C880.282 588.167 885.858 582.381 892.945 580.211C898.987 578.331 905.841 
                             578.331 912.696 578.187C919.55 578.042 926.405 577.608 932.562 578.91C939.185 580.212 945.226 584.406 944.994 591.205C944.877 594.821 942.554 597.858 939.998 600.317C937.093 603.065 
                             933.724 605.38 931.052 608.562C927.683 612.757 925.824 618.108 922.339 622.158C920.364 624.473 918.04 626.208 915.252 626.787C911.185 627.655 907.119 
@@ -374,12 +374,12 @@ export default function Tooth12() {
                     </g>
                     {/* PIN */}
                     <g className="pin" style={{visibility: 'inherit', opacity: tooth12Diagnozis.pin ? 1 : 0}}>
-                        <path className="st56 hIntact" d="M882.49 594.821C880.282 588.167 885.859 582.381 892.946 580.211C898.987 578.331 905.842 578.331 912.696 578.187C919.551 578.042 926.405 577.608 932.563 578.91C939.185 580.212 945.226 584.406 944.994 591.205C944.878 594.821 942.554 597.858 939.998 600.317C937.094 603.065 933.725 605.38 931.052 608.562C927.683 612.757 925.824 618.108 922.339 622.158C920.364 624.473 918.04 626.208 915.252 626.787C911.186 627.655 907.12 625.775 903.983 622.882C900.033 619.121 897.941 613.624 895.153 608.996C893.991 606.971 892.597 604.946 890.855 603.355C887.95 600.606 883.884 598.871 882.49 594.821Z" style={{visibility: 'hidden'}}></path>
-                        <path className="st56 hIntact" d="M891.35 597.015C889.773 592.262 893.756 588.129 898.819 586.58C903.134 585.237 908.03 585.237 912.926 585.133C917.822 585.03 922.718 584.72 927.116 585.65C931.847 586.58 936.162 589.576 935.996 594.432C935.913 597.015 934.253 599.184 932.428 600.941C930.353 602.904 927.946 604.557 926.038 606.83C923.631 609.826 922.303 613.649 919.814 616.542C918.403 618.195 916.743 619.435 914.752 619.848C911.847 620.468 908.943 619.125 906.702 617.058C903.881 614.372 902.387 610.446 900.395 607.14C899.565 605.693 898.57 604.247 897.325 603.11C895.25 601.147 892.346 599.908 891.35 597.015Z" style={{visibility: 'hidden'}}></path>
+                        <path className="st56" d="M882.49 594.821C880.282 588.167 885.859 582.381 892.946 580.211C898.987 578.331 905.842 578.331 912.696 578.187C919.551 578.042 926.405 577.608 932.563 578.91C939.185 580.212 945.226 584.406 944.994 591.205C944.878 594.821 942.554 597.858 939.998 600.317C937.094 603.065 933.725 605.38 931.052 608.562C927.683 612.757 925.824 618.108 922.339 622.158C920.364 624.473 918.04 626.208 915.252 626.787C911.186 627.655 907.12 625.775 903.983 622.882C900.033 619.121 897.941 613.624 895.153 608.996C893.991 606.971 892.597 604.946 890.855 603.355C887.95 600.606 883.884 598.871 882.49 594.821Z" style={{visibility: 'hidden'}}></path>
+                        <path className="st56" d="M891.35 597.015C889.773 592.262 893.756 588.129 898.819 586.58C903.134 585.237 908.03 585.237 912.926 585.133C917.822 585.03 922.718 584.72 927.116 585.65C931.847 586.58 936.162 589.576 935.996 594.432C935.913 597.015 934.253 599.184 932.428 600.941C930.353 602.904 927.946 604.557 926.038 606.83C923.631 609.826 922.303 613.649 919.814 616.542C918.403 618.195 916.743 619.435 914.752 619.848C911.847 620.468 908.943 619.125 906.702 617.058C903.881 614.372 902.387 610.446 900.395 607.14C899.565 605.693 898.57 604.247 897.325 603.11C895.25 601.147 892.346 599.908 891.35 597.015Z" style={{visibility: 'hidden'}}></path>
                         <circle className="st57" id="Ellipse_49" cx="913" cy="600" r="12.25" style={{fill: 'black', opacity: tooth12Diagnozis.pin ? 1 : 0}} />
                     </g>
                     {/* CULTTAB */}
-                    <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth12Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth12Diagnozis.culttab ? 0 : 1}}>
+                    <g className="stump" style={{visibility: !tooth12Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth12Diagnozis.culttab ? 0 : 1}}>
                         <path className="st47" d="M882.489 594.821C880.282 588.167 885.858 582.381 892.945 580.211C898.987 578.331 905.841 578.331 912.696 578.187C919.55 578.042 926.405 577.608 932.562 578.91C939.185 580.212 945.226 584.406 944.994 591.205C944.877 594.821 942.554 597.858 939.998 600.317C937.093 603.065 933.724 605.38 931.052 608.562C927.683 612.757 925.824 618.108 922.339 622.158C920.364 624.473 918.04 626.208 915.252 626.787C911.185 627.655 907.119 625.775 903.982 622.882C900.032 619.121 897.941 613.624 895.153 608.996C893.991 606.971 892.597 604.946 890.854 603.355C887.95 600.606 883.883 598.871 882.489 594.821Z"></path>
                         <path className="st47" d="M891.349 597.015C889.773 592.262 893.756 588.129 898.818 586.58C903.133 585.237 908.029 585.237 912.926 585.133C917.822 585.03 922.718 584.72 927.116 585.65C931.846 586.58 936.161 589.576 935.995 594.432C935.912 597.015 934.253 599.184 932.427 600.941C930.352 602.904 927.946 604.557 926.037 606.83C923.631 609.826 922.303 613.649 919.813 616.542C918.403 618.195 916.743 619.435 914.751 619.848C911.847 620.468 908.942 619.125 906.702 617.058C903.88 614.372 902.386 610.446 900.395 607.14C899.565 605.693 898.569 604.247 897.324 603.11C895.25 601.147 892.345 599.908 891.349 597.015Z"></path>
                     </g>
@@ -619,7 +619,7 @@ export default function Tooth12() {
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth12Diagnozis.pin ? 1 : 0
                     }}>
-                        <path className="st56 hIntact" d="M879 437.1C879.8 444.5 881.001 451.8 882.701 459C885.201 469.3 888.701 479.4 
+                        <path className="st56" d="M879 437.1C879.8 444.5 881.001 451.8 882.701 459C885.201 469.3 888.701 479.4 
                             893.201 489.1L894.3 490.6L896.201 492L934.701 486.8L936.8 485.8L938.5 483.4C939.4 475.7 939.801 467.9 939.701 460.2C939.601 455.1 
                             939.3 450 938.3 444.9C937.5 440.9 936.3 437 935.1 433.1C934.9 432.7 934.6 432.3 934.3 432C934 431.6 933.8 431.2 933.5 430.8C933.3 
                             430.5 933.101 430.3 932.901 430C932.701 429.7 932.401 429.4 932.201 429C932.001 428.7 931.7 428.4 931.5 428.2C931.4 428.1 931.301 
@@ -639,7 +639,7 @@ export default function Tooth12() {
                         />
                     </g>
                     {/* CULTTAB */}
-                    <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth12Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth12Diagnozis.culttab ? 0 : 1}}>
+                    <g className="stump" style={{visibility: !tooth12Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth12Diagnozis.culttab ? 0 : 1}}>
                         <path className="st16" d="M892.5,330.5L892.5,330.5l3.3,84.4c0.8-0.3,1.7-0.6,2.5-0.8h0c0.5-0.1,0.9-0.2,1.3-0.3c0,0,0,0,0,0
                             c0.2,0,0.4-0.1,0.7-0.1c0,0,0,0,0,0c0.2,0,0.4-0.1,0.6-0.1c0.1,0,0.1,0,0.2,0c0.2,0,0.4,0,0.6,0c0.2,0,0.3,0,0.5,0
                             c0.2,0,0.4,0,0.7,0c0.3,0,0.6,0,0.9,0c0.6,0,1.2,0,1.8,0.1h0.1c0.3,0,0.6,0,0.9,0.1c0,0,0,0,0,0c0.3,0,0.6,0.1,0.9,0.1
@@ -658,7 +658,7 @@ export default function Tooth12() {
                         />
                     </g>
                     {/* ABUTMENT */}
-                    <g className="abutment hEmpty hIntact hRoot" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
+                    <g className="abutment" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
                         <path className="st30" d="M935.1,433c-2-3.2-4.3-6.1-6.9-8.7c-4.2-4.1-9.2-7.3-14.6-9.2c-6.8-2.3-14.1-2.5-20.5,1
                             c-5.8,3.1-11.7,14.6-14.1,20.8l10.9-37.1l25.9-2.4L935.1,433z"
                         />
@@ -669,11 +669,11 @@ export default function Tooth12() {
                         />
                     </g>
                     {/* ФОРМУВАЧ */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}} >
+                    <g className="shaper" style={{visibility: 'hidden', opacity: 0}} >
                         <path className="st44" d="M928.473 437.859C929.031 440.197 927.416 442.496 925.027 442.763L892.999 446.344C890.611 446.611 888.528 444.726 888.555 442.324L888.999 402.614C889.022 400.587 890.558 398.898 892.573 398.682L914.959 396.284C916.96 396.07 918.808 397.375 919.275 399.333L928.473 437.859Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
-                    <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
+                    <g className="implant" style={{visibility: tooth12Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth12Diagnozis.abutment ? 1 : 0}}>
                         <path className="st18" d="M923.1,398.9l-37.9,3.6c-1.8-20.1-3.1-40.2-3.9-60.3c-0.8-19.5-1.2-39-1.1-58.5c2.7-3.8,6.8-6.3,11.4-6.7
                             c4.8-0.5,9.8,1.2,13.7,4.8c3.5,20.2,6.8,40.4,9.8,60.6C917.9,361.1,920.6,380,923.1,398.9z"
                         />
