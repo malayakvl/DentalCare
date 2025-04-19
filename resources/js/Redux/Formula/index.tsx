@@ -5,6 +5,7 @@ import {
     setTooth18Active,
     setTooth17Active,
     setTooth16Active,
+    setTooth28Active,
     setToothDiagnoze,
     setActiveToothName,
     setDiagnosis,
@@ -1452,6 +1453,7 @@ const ACTION_HANDLERS = {
 export {
     setTeethType,
     setAllTeeth,
+    setTooth28Active,
     setTooth18Active,
     setTooth17Active,
     setTooth16Active,
