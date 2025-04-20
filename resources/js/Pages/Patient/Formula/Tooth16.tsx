@@ -316,7 +316,7 @@ export default function Tooth16() {
                                 c-5.6-0.8-11-2.2-15.9-4.5c-5.4-2.6-9.9-6.3-12.6-10.8C457,625.8,458.3,616.1,462,607.2z"
                             />
                         </g>
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth16Diagnozis?.apex || tooth16Diagnozis.change_color ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: tooth16Diagnozis?.apex || tooth16Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth16Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth16Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M462 607.2C463.5 603.7 465.3 600.3 466.8 596.9C470.7 588 473 578 478.5 569.5C483.8 561.2 491.7 554.7 503.4 552.4C512.9 550.5 522.9 552.5 532.8 552.1C537.9 551.9 543.2 551.1 548.2 550.5C565.5 548.2 583.3 548.7 592.7 560C595.4 563.2 596.7 566.9 597.5 570.6C599.1 577.8 598.9 585 597.9 592.2C596.5 602.6 593.7 613.1 588.7 622.8C584.8 630.2 579.6 637.2 571 641.7C563.7 645.5 554.8 646.7 546.1 645.9C541.2 645.4 536.4 644.2 531.4 644.3C522.8 644.4 515.1 648.2 506.7 649.5C501.4 650.4 495.9 650.3 490.6 649.5C485 648.7 479.6 647.3 474.7 645C469.3 642.4 464.8 638.7 
                                 462.1 634.2C457 625.8 458.3 616.1 462 607.2Z" 
@@ -662,7 +662,7 @@ export default function Tooth16() {
                         />
                     </g>
                     {/* FISSURES */}
-                    <g className="fissures hEmpty hRoot hImplant" style={{visibility: (!tooth16Diagnozis.culttab && !tooth16Diagnozis.abutment && !tooth16Diagnozis.implant && !tooth16Diagnozis.apex && !tooth16Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="fissures" style={{visibility: (!tooth16Diagnozis.culttab && !tooth16Diagnozis.abutment && !tooth16Diagnozis.implant && !tooth16Diagnozis.apex && !tooth16Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className={`st3 fissure ${tooth16Diagnozis.fissure ? 'diagnoze' : ''}`}
                             d="M596.6,579.3l-19.1,13.1c-6.9-0.2-13.8,0-20.6,0.7c-8.2,0.9-14.7,2.2-20.5,4.3c-8.6,3.2-16.4,8.4-22.6,15.1
                             c-0.4-0.6-0.8-1.1-1.3-1.6l-0.5,0.5c-4.2-2.7-8.5-5.3-12.8-7.8l-1.2-0.7c-4.2-2.4-8.6-4.9-12-8.3c-2.9-2.9-5.3-6.4-6.7-10.2
@@ -821,7 +821,7 @@ export default function Tooth16() {
                         <line className="st19" x1="585.4" y1="291.3" x2="520.3" y2="298.1" />
                         <line className="st19" x1="587.1" y1="272" x2="522" y2="278.8" />
                     </g>
-                    <g className="hRoot hImplant hEmpty" style={{visibility: !tooth16Diagnozis.culttab && !tooth16Diagnozis.abutment && !tooth16Diagnozis.implant && !tooth16Diagnozis.shaper && !tooth16Diagnozis.apex  ? 'inherit' : 'hidden'}}>
+                    <g style={{visibility: !tooth16Diagnozis.culttab && !tooth16Diagnozis.abutment && !tooth16Diagnozis.implant && !tooth16Diagnozis.shaper && !tooth16Diagnozis.apex  ? 'inherit' : 'hidden'}}>
                         <path className="st46" d="M607.9,422.5c-0.5-5.4-1.1-10.8-1.8-16.2c0-0.1,0-0.1,0-0.2
                             c-6.7-7.1-14.7-13.1-23.9-17.9c-20.6-10.8-45-14.3-68.2-10.7c-9.9,1.5-19.4,4.4-28.1,8.4c-0.1,0.1-0.2,0.2-0.2,0.2
                             c-3.9,4.2-7.6,8.6-11,13.2c-3.4,4.6-6.6,9.3-9,14.3c-2.4,4.9-4,10-4.9,15.3c-0.7,8.5,0.5,17,3.6,25.2c2.4,6.4,5.9,12.6,10.3,18.2

@@ -364,7 +364,7 @@ export default function Tooth47() {
                     <g className="pin" style={{visibility: 'inherit', opacity: tooth47Diagnozis.pin ? 1 : 0}}>
                         <path className="st56 hIntact" d="M335.8 962.7C335.2 966.7 334.3 970.7 334.1 974.8C333.7 982.4 335.6 990.1 339.6 997.1C342.5 1002.1 346.4 1006.9 351.9 1010.4C355.8 1012.9 360.2 1014.6 364.8 1016.3C371.3 1018.6 378 1020.7 385.1 1021.7C392.3 1022.7 399.6 1022.4 406.8 1022.1C413.2 1021.8 419.6 1021.5 425.9 1020.6C430.6 1019.9 435.3 1018.8 439.6 1017.2C443.6 1015.7 447.2 1013.8 450.7 1011.8C455.7 1008.8 460.2 1005.4 463.5 1001.2C467 996.9 468.9 991.9 470.3 986.9C472.8 978.5 474.2 969.8 473.2 961.1C472.5 955 470.7 948.9 467.2 943.3C463.4 937.3 457.8 932.1 450.4 928.5C442.8 924.8 433.8 923.1 424.8 922.5C420.2 922.2 415.5 922.1 411.1 923C407.7 923.7 404.6 925 401 925.1C398.4 925.1 395.9 924.4 393.4 923.8C388.5 922.6 383.4 921.9 378.3 921.6C373.3 921.3 368.2 921.2 363.3 921.9C357.6 922.7 352.2 924.5 347.7 927.3C344.2 929.6 341.5 932.3 339.9 935.6C338.4 938.6 338 941.9 337.6 945.1C337.1 950.8 336.7 956.7 335.8 962.7Z" style={{visibility: 'hidden'}}></path>
                         <path className="st56 hIntact" d="M354.281 965.275C353.842 968.206 353.184 971.136 353.038 974.139C352.745 979.707 354.135 985.347 357.06 990.475C359.181 994.138 362.033 997.654 366.055 1000.22C368.907 1002.05 372.125 1003.29 375.489 1004.54C380.242 1006.22 385.142 1007.76 390.334 1008.5C395.599 1009.23 400.938 1009.01 406.203 1008.79C410.884 1008.57 415.564 1008.35 420.171 1007.69C423.608 1007.18 427.045 1006.37 430.19 1005.2C433.115 1004.1 435.748 1002.71 438.307 1001.24C441.964 999.046 445.255 996.555 447.668 993.479C450.227 990.329 451.617 986.666 452.641 983.003C454.469 976.85 455.493 970.477 454.762 964.103C454.25 959.635 452.933 955.166 450.374 951.064C447.595 946.669 443.5 942.859 438.088 940.222C432.53 937.512 425.948 936.266 419.367 935.827C416.003 935.607 412.566 935.534 409.348 936.193C406.861 936.706 404.594 937.658 401.962 937.732C400.06 937.732 398.232 937.219 396.404 936.779C392.82 935.9 389.091 935.387 385.361 935.168C381.705 934.948 377.975 934.875 374.392 935.387C370.223 935.973 366.274 937.292 362.983 939.343C360.424 941.028 358.449 943.006 357.279 945.423C356.182 947.621 355.89 950.038 355.597 952.383C355.232 956.558 354.939 960.88 354.281 965.275Z" style={{visibility: 'hidden'}}></path>
-                        <circle className="st57" r="13" transform="matrix(-1 0 0 1 402.736 970)"></circle>
+                        <circle className="st57" r="13" transform="matrix(-1 0 0 1 402.736 970)" style={{fill: 'black', opacity: tooth47Diagnozis.pin ? 1 : 0}}></circle>
                     </g>
                     {/* CULTTAB */}
                     <g className="stump" style={{visibility: !tooth47Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth47Diagnozis.culttab ? 0 : 1}}>
@@ -681,7 +681,7 @@ export default function Tooth47() {
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
                     <g className="pulp">
-                        <g className=" pulpitis-pfilling" style={{visibility: 'inherit'}}>
+                        <g className="pulpitis-pfilling" style={{visibility: 'inherit'}}>
                             <path className={`st22 target top ${tooth47Diagnozis.channel_class} ${tooth47Diagnozis.channel_class} ${tooth47Diagnozis.pulpit ? 'pulpit' : ''} ${tooth47Diagnozis.periodontit ? 'periodontit' : ''}`} 
                                 d="M422.1,1134.3c-0.3,5.6-1.5,11.1-3.3,16.4c-2.6,7.1-6.5,13.8-9.2,20.9
                                 c-1.3,3.6-2.3,7.3-3.1,11c-1.5-0.2-3-0.4-4.5-0.7c-0.6-0.1-1.1-0.2-1.7-0.3c0,0,0,0,0,0c-1-0.2-2-0.4-3.1-0.7
@@ -959,7 +959,7 @@ export default function Tooth47() {
                     {/* ТИМЧАСОВА/КЕРАМІЧНА/МЕТАЛОКЕРАМІЧНА КОРОНКА*/}
                     <g className="crown"
                         style={{
-                            visibility: tooth47Diagnozis.temporary_crown || tooth47Diagnozis.ceramic_crown || tooth47Diagnozis.mceramic_crown || tooth47Diagnozis.metalic_crown || tooth47Diagnozis.zirconia_crown ? 'inherit' : 'hidden',
+                            visibility: tooth47Diagnozis.temporary_crown || tooth47Diagnozis.ceramic_crown || tooth47Diagnozis.mceramic_crown || tooth47Diagnozis.metalic_crown || tooth47Diagnozis.zirconia_crown  ? 'inherit' : 'hidden',
                             opacity: tooth47Diagnozis.temporary_crown || tooth47Diagnozis.ceramic_crown || tooth47Diagnozis.mceramic_crown || tooth47Diagnozis.metalic_crown || tooth47Diagnozis.zirconia_crown ? 1 : 0
                         }}
                     >                        
