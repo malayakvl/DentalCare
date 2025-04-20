@@ -308,7 +308,7 @@ export default function Tooth16() {
                 <g id="T_16_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin" >
-                        <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth16Diagnozis.culttab && !tooth16Diagnozis.implant && !tooth16Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth16Diagnozis.culttab && !tooth16Diagnozis.implant && !tooth16Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st24 ${tooth16Diagnozis.apex ? 'apex' : ''}`} d="M462,607.2c1.5-3.5,3.3-6.9,4.8-10.3c3.9-8.9,6.2-18.9,11.7-27.4
                                 c5.3-8.3,13.2-14.8,24.9-17.1c9.5-1.9,19.5,0.1,29.4-0.3c5.1-0.2,10.4-1,15.4-1.6c17.3-2.3,35.1-1.8,44.5,9.5
                                 c2.7,3.2,4,6.9,4.8,10.6c1.6,7.2,1.4,14.4,0.4,21.6c-1.4,10.4-4.2,20.9-9.2,30.6c-3.9,7.4-9.1,14.4-17.7,18.9
