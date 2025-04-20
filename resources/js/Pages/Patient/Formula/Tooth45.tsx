@@ -461,7 +461,7 @@ export default function Tooth45() {
                         {/*КАРИЕС TOP*/}
                         <g id="s_header_14_1" className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st7" d="M645.5,1007.2c3.7,5.1,8.6,9.6,13.9,13.5c8.9,6.5,19.8,11.5,31.3,9.3c6.2-1.2,11.2-4.4,16.5-7.3
@@ -485,9 +485,9 @@ export default function Tooth45() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
-                                        (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom) || 
-                                        (tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center) || 
-                                        (tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) 
+                                        (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom ) || 
+                                        (tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center && !tooth45Diagnozis.seal_left) || 
+                                        (tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center && !tooth45Diagnozis.seal_left) 
                                     ) ? 5 : 0
                                 }} 
                                 d="M668 992C665.833 994.667 659.1 1001.1 649.5 1005.5" />

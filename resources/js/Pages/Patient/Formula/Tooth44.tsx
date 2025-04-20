@@ -462,7 +462,7 @@ export default function Tooth44() {
                         {/*КАРИЕС TOP*/}
                         <g id="s_header_14_1" className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >                            
                             <path className="st7" d="M746,1014.5c2.7,2.5,5.8,4.8,8.9,6.8c8.8,5.7,18.8,10.1,29.5,9.3c11.4-0.9,20.9-7.3,28.5-14.9
@@ -485,9 +485,9 @@ export default function Tooth44() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth44Diagnozis.seal_left && !tooth44Diagnozis.seal_bottom && !tooth44Diagnozis.seal_center) ||
-                                        (tooth44Diagnozis.seal_left && !tooth44Diagnozis.seal_bottom) || 
-                                        (tooth44Diagnozis.seal_bottom && tooth44Diagnozis.seal_center) || 
-                                        (tooth44Diagnozis.seal_bottom && !tooth44Diagnozis.seal_center) 
+                                        (tooth44Diagnozis.seal_left && !tooth44Diagnozis.seal_bottom ) || 
+                                        (tooth44Diagnozis.seal_bottom && tooth44Diagnozis.seal_center && !tooth44Diagnozis.seal_left) || 
+                                        (tooth44Diagnozis.seal_bottom && !tooth44Diagnozis.seal_center && !tooth44Diagnozis.seal_left) 
                                     ) ? 5 : 0
                                 }} 
                                 d="M766 997C763 998.333 755.4 1002.8 749 1010" />
