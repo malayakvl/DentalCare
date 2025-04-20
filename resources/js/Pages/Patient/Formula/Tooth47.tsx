@@ -639,7 +639,7 @@ export default function Tooth47() {
                     </g>
                     {/*FISSURES*/}
                     <g className="fissures" style={{visibility: (!tooth47Diagnozis.culttab && !tooth47Diagnozis.abutment && !tooth47Diagnozis.implant && !tooth47Diagnozis.apex && !tooth47Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
-                        <path  className={`st3 fissure ${tooth47Diagnozis.fissure ? 'diagnoze' : ''}`}  
+                        <path className={`st3 fissure ${tooth47Diagnozis.fissure ? 'diagnoze' : ''}`}  
                             d="M454.1,963.8c-3.8,0.4-7.7,1-11.5,1.8c-2,0.4-4.1,0.8-5.9,0c-0.1,0-0.1-0.1-0.2-0.1
                             c0-0.1,0.1-0.2,0.1-0.3l-1-0.5c0,0.1,0,0.1-0.1,0.2c-0.4-0.3-0.8-0.6-1.1-1c-1-0.9-2.1-1.9-3.5-2.2c-2.3-0.5-4.1,0.8-5.8,2
                             l-0.4,0.3c-1.7,1.2-3.6,2.1-5.4,2.7c-4.2,1.5-8.7,1.3-12.7-0.5c0.3-2.1,0.2-4.2,0-6c-0.1-0.9-0.2-1.9-0.3-2.8

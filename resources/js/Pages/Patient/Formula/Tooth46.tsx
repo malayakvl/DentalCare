@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, settooth46Active } from '../../../Redux/Formula';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -17,7 +17,6 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage16 from './periodontit16';
 import PeriodontitStage46 from './periodontit46';
 
 
@@ -152,10 +151,10 @@ export default function Tooth46() {
             </g>
             <g className={`f-tooth-active`}
                 onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.add('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('46').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('46').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
                     dispatch(setSelectedToothNumber(16));
@@ -324,11 +323,11 @@ export default function Tooth46() {
                         </g>
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
-                    <g className="pulpitis-pfilling" style={{visibility: 'inherit'}}>
+                    <g className="pulpitis-filling" style={{visibility: tooth46Diagnozis.change_color ? 'hidden' : 'inherit'}}>
                         <g className={`st22 target top ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.pulpit ? 'pulpit' : ''} ${tooth46Diagnozis.periodontit ? 'periodontit' : ''}`}>
-                            <ellipse className="st22 target" cx="534.806" cy="976.158" rx="10.0437" ry="6.63376" transform="rotate(-90.9902 534.806 976.158)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="579.376" cy="966.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 579.376 966.454)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="579.223" cy="986.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 579.223 986.499)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
+                            <ellipse className="st22 target" cx="534.806" cy="976.158" rx="10.0437" ry="6.63376" transform="rotate(-90.9902 534.806 976.158)" />
+                            <ellipse className="st22 target" cx="579.376" cy="966.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 579.376 966.454)" />
+                            <ellipse className="st22 target" cx="579.223" cy="986.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 579.223 986.499)" />
                         </g>
                     </g>
                     {/* IMPLANT */}
@@ -380,7 +379,7 @@ export default function Tooth46() {
                     </g>
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling" style={{visibility: (!tooth46Diagnozis.culttab && !tooth46Diagnozis.abutment && !tooth46Diagnozis.implant && !tooth46Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
-                        {/*КАРИЕС ЦЕНТР*/}
+                        {/*КАРИЕС RIGHT*/}
                         <g
                             className="caries-filling"
                             onClick={() => {
@@ -609,8 +608,10 @@ export default function Tooth46() {
                             c6.4,1.5,12.5,3.8,18.3,7l0.4,0.2c2.1,1.2,4.3,2.4,6.8,2.1c4-0.4,6.1-3.8,8.1-7.1c0.7-1.2,1.4-2.3,2.2-3.4
                             c2.5-3.3,6.4-5.5,10.5-5.9L613.8,968.6z"></path>
                     </g>
-                    <g className="fissures" style={{visibility: tooth46Diagnozis.temporary_crown || tooth46Diagnozis.ceramic_crown || tooth46Diagnozis.mceramic_crown || tooth46Diagnozis.metalic_crown || tooth46Diagnozis.zirconia_crown || tooth46Diagnozis.culttab || tooth46Diagnozis.abutment || tooth46Diagnozis.implant  ? 'hidden' : 'inherit'}}>
-                        <path className="st3 fissure" d="M613.8,968.6c-4.5,0.5-8.6,2.8-11.3,6.4c-0.8,1.1-1.6,2.3-2.3,3.5c-2,3.2-3.8,6.3-7.3,6.6
+                    {/*FISSURES*/}
+                    <g className="fissures" style={{visibility: (!tooth46Diagnozis.culttab && !tooth46Diagnozis.abutment && !tooth46Diagnozis.implant && !tooth46Diagnozis.apex && !tooth46Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                        <path className={`st3 fissure ${tooth46Diagnozis.fissure ? 'diagnoze' : ''}`} 
+                            d="M613.8,968.6c-4.5,0.5-8.6,2.8-11.3,6.4c-0.8,1.1-1.6,2.3-2.3,3.5c-2,3.2-3.8,6.3-7.3,6.6
                             c-2.2,0.2-4.2-0.9-6.2-2l-0.4-0.2c-6-3.3-12.3-5.7-18.9-7.2c-0.3-3.3,0-6,1-8.2c0.3-0.6,0.6-1.2,1-1.8c0.9-1.6,1.9-3.3,1.7-5.4
                             c-0.2-2.2-1.6-3.7-3-5.2c-0.9-0.9-1.8-1.9-2.4-3c-1.5-3-0.4-6.4,0.7-9.7c0.2-0.6,0.4-1.2,0.6-1.8c1.2-3.8,1.7-7.8,1.5-11.8
                             l-1.1,0.1c0.2,3.9-0.3,7.7-1.4,11.4c-0.2,0.6-0.4,1.2-0.6,1.8c-1.1,3.5-2.3,7.1-0.6,10.5c0.6,1.3,1.6,2.3,2.5,3.3
@@ -622,16 +623,14 @@ export default function Tooth46() {
                             c5.5-3.5,11.4-6.2,17.7-7.9c0.4,3.7,1.5,7.2,2.5,10.7c1.1,3.7,2.2,7.4,2.5,11.3c0.3,3.5,0,7.1-0.2,10.2c-0.3,3.5-0.6,7-0.9,10.6
                             l1.1,0.1c0.3-3.5,0.6-7,0.9-10.6c0.3-3.2,0.6-6.8,0.2-10.4c-0.4-3.9-1.5-7.8-2.6-11.5c-1-3.3-1.9-6.7-2.4-10.1
                             c6.4,1.5,12.5,3.8,18.3,7l0.4,0.2c2.1,1.2,4.3,2.4,6.8,2.1c4-0.4,6.1-3.8,8.1-7.1c0.7-1.2,1.4-2.3,2.2-3.4
-                            c2.5-3.3,6.4-5.5,10.5-5.9L613.8,968.6z" style={{stroke:'none'}}></path>
+                            c2.5-3.3,6.4-5.5,10.5-5.9L613.8,968.6z"
+                        />
                     </g>
                 </g>
-
-
-
                 <g id="T_46" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR */}
                     <g className="dentin">
-                        <g id="dentin_v_46" className="" style={{visibility: !tooth46Diagnozis.implant && !tooth46Diagnozis.apex && !tooth46Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g id="dentin_v_46" style={{visibility: !tooth46Diagnozis.implant && !tooth46Diagnozis.apex && !tooth46Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path id="dentin_v_46" className={`change-color ${tooth46Diagnozis.change_color ? 'diagnoze' : ''}`}  
                                 d="M622.2,1172.1c-0.2,5.8,0,6.1-1,11.4c-0.1,0.2-0.3,0.4-0.5,0.6
                                 c-10.3,8.7-22.4,14.8-35.5,17.8c-1.9,0.4-3.9,0.8-5.8,1.1c-9.6,1.5-19.2,1.5-28.9,0.9c-10.8-0.6-21.8-1.9-32.4-4.6
@@ -640,7 +639,7 @@ export default function Tooth46() {
                                 C622,1156,622.5,1164.1,622.2,1172.1z" 
                             />
                         </g>
-                        <g id="dentin_n_46" style={{visibility: !tooth46Diagnozis.implant && !tooth46Diagnozis.abutment && !tooth46Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g id="dentin_n_46" style={{visibility: !tooth46Diagnozis.culttab && !tooth46Diagnozis.abutment && !tooth46Diagnozis.implant && !tooth46Diagnozis.shaper && !tooth46Diagnozis.apex  ? 'inherit' : 'hidden'}}>
                             <path id="dentin_n_46" className={`change-color ${tooth46Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M621.2,1183.5c0,0.2-0.1,0.5-0.2,0.8c-4.6,9.1-8.9,24.7-11,34.6
                                 c-2,9.2-2.8,18.5-4,27.8c-2.5,20-6.6,39.9-14.7,58.7c-5.6,13-13.3,25.6-26.7,32c-4,1.9-8.5,2.8-12.4,3.6c-0.2,0.1-0.5,0.1-0.8,0.1
@@ -678,31 +677,19 @@ export default function Tooth46() {
                                 c-1.1-0.1-2.1-0.1-3.2-0.2c-1.3-0.1-2.6-0.2-3.9-0.3c-0.8-0.1-1.6-0.1-2.4-0.2c-0.2,0-0.4-0.1-0.7-0.1c-1-0.1-1.9-0.2-2.9-0.3
                                 c-0.9-0.1-1.8-0.2-2.7-0.3c-1.3-0.2-2.6-0.4-3.9-0.6c-0.9-0.1-1.8-0.3-2.7-0.4c-0.3-0.1-0.6-0.1-0.9-0.2c-0.9-0.2-1.8-0.3-2.7-0.5
                                 c0,0-0.1,0-0.1,0c-0.6-0.1-1.1-0.2-1.7-0.4c-0.2,0-0.5-0.1-0.7-0.1c-1.3-0.3-2.7-0.6-4-0.9c0,0,0,0,0,0c-0.5,4.7-1.4,9.2-3.4,13.5
-                                c-4.4,9.5-13.4,16.4-20.6,24.6c-5.3,6.1-9.5,12.9-13.3,19.8C480.4,1258.1,479.9,1259,479.4,1259.9z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                c-4.4,9.5-13.4,16.4-20.6,24.6c-5.3,6.1-9.5,12.9-13.3,19.8C480.4,1258.1,479.9,1259,479.4,1259.9z" />
                         </g>
                         <g>
                             <path className={`st22 target middle ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.pulpit ? 'pulpit' : ''} ${tooth46Diagnozis.periodontit ? 'periodontit' : ''}`} 
                                 d="M551,1341.2c7.7-10.4,14.2-21.2,19.5-32.6c4.6-9.8,8.2-20,8.6-30.7c0.1-2.8,0-5.7-0.3-8.5
                                 c1.9-0.4,3.7-0.8,5.4-1.2c0.1,2.7,0,5.4-0.2,8.1c-1.1,13-6.3,25.1-12.8,36.5c-5.6,9.8-12.1,19.3-19.7,28.3c0,0,0,0,0,0
-                                c-1.2,1.4-2.3,2.8-3.6,4.1C549,1343.9,550,1342.6,551,1341.2C551,1341.2,551,1341.2,551,1341.2z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                c-1.2,1.4-2.3,2.8-3.6,4.1C549,1343.9,550,1342.6,551,1341.2C551,1341.2,551,1341.2,551,1341.2z" />
                             <path className={`st22 target middle ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.pulpit ? 'pulpit' : ''} ${tooth46Diagnozis.periodontit ? 'periodontit' : ''}`}
                                 d="M456.1,1332.8c0.2-2.2,0.5-4.5,0.8-6.7v0c1.5-11.2,4.1-22.1,7.8-32.8c3.5-10.2,7.9-20.1,12.9-29.9
                                 c0.6-1.2,1.2-2.3,1.8-3.5c1.7,0.5,3.6,1.1,5.7,1.7c-1,1.5-2,3.1-3,4.7c-11.7,18.7-19.9,38.7-24.6,59.7c0,0,0,0,0,0
-                                C457,1328.2,456.6,1330.5,456.1,1332.8z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                C457,1328.2,456.6,1330.5,456.1,1332.8z" />
                         </g>
                         <PeriodontitStage46 />
-                        {/* <g className="level periodontitis"   style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="454.5" cy="1329.2" r="8.2"></circle>
-                            <circle className="st42" cx="548.4" cy="1345.3" r="8.2"></circle>
-                        </g>
-                        <g className="level periodontitis"   style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="454.5" cy="1335" r="17.5"></circle>
-                            <circle className="st42" cx="545.7" cy="1352.3" r="17.5"></circle>
-                        </g>
-                        <g className="level periodontitis"   style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="452.1" cy="1345.3" r="30"></circle>
-                            <circle className="st42" cx="545.7" cy="1363.6" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
