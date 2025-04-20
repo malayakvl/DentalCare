@@ -459,7 +459,7 @@ export default function Tooth44() {
                                 C732.8,987.5,733.3,995.7,737,1003z"
                             />
                         </g>
-                        {/*КАРИЕС TOP*/}
+                        {/*КАРИЕС BOTTOM*/}
                         <g id="s_header_14_1" className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
@@ -480,7 +480,7 @@ export default function Tooth44() {
                                 C760,1000.2,749.6,1006.9,746,1014.5z" 
                             />
                         </g>
-                        <g className="with">
+                        <g className="with up">
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -599,7 +599,7 @@ export default function Tooth44() {
                 <g id="T_44" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR */}
                     <g className="dentin">
-                        <g id="dentin_v_44"  style={{visibility: !tooth44Diagnozis.implant && !tooth44Diagnozis.apex && !tooth44Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g id="dentin_v_44" style={{visibility: !tooth44Diagnozis.implant && !tooth44Diagnozis.apex && !tooth44Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path id="dentin_v_44" className="st9" d="M816.2,1175.2c-1.2,11.4-2.5,22.7-4.1,34c-1.5,11-3.2,22-5.1,32.9
                                 c-3.5,20.5-7.6,41-12.3,61.3c-1.9,8.2-3.9,16.4-7,24.3c-2.6,6.5-5.8,12.8-9.7,18.8c-3.2,5-7.6,9.6-12.5,12.4
                                 c-2.3,1.3-4.9,2.2-7.4,2.3c2.5-0.1,5-1,7.3-2.3c4.9-2.8,9.3-7.4,12.5-12.4c3.9-6,7.1-12.3,9.7-18.8c3.1-7.9,5.1-16.1,7-24.3
@@ -742,14 +742,15 @@ export default function Tooth44() {
                                 c-0.4,8.5-1,21-2,31.6C757.3,1147.6,757,1150.2,756.7,1152.8z"
                             />
                             <path className={`
-                                st8 target caries-right 
+                                st8 target caries-center 
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth44.caries_center ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth44.seal_center ? `seal-fill ${teethDiagnozis.tooth44.seal_center_color}` : ''}
                             `} 
                                 d="M756.7,1152.8c4.4,4.7,13.3,12.5,24.3,12.6c9.2,0.1,17.2-4.8,22.1-8.9c-0.1-10.6,0-29.3,0-39.8
                                 c-1.5-2.2-2.9-4.4-4.4-6.6c-2.7-3.9-5.8-7.3-10-9.5c-4.5-2.3-9.8-2.7-14.2-0.2c-2.7,1.6-4.7,4.1-6.9,6.4c-2.5,2.5-5.2,4.7-8.2,6.6
-                                c-0.4,8.5-1,21-2,31.6C757.3,1147.6,757,1150.2,756.7,1152.8z"  style={{strokeWidth:0, fill: 'none'}}></path>
+                                c-0.4,8.5-1,21-2,31.6C757.3,1147.6,757,1150.2,756.7,1152.8z"
+                            />
                         </g>
                         {/*КАРИЕС L*/}
                         <g
@@ -870,8 +871,8 @@ export default function Tooth44() {
                                 d="M803 1156.5V1125.5" />
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
-                    <g className="vinir" 
+                    <g style={{visibility: 'inherit'}}>
+                        <g className="vinir" 
                             style={{
                                 visibility: tooth44Diagnozis.vinir ? 'inherit' : 'hidden',
                                 opacity: tooth44Diagnozis.vinir ? 1 : 0
