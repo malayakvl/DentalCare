@@ -375,7 +375,7 @@ export default function Tooth45() {
                     </g>
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth45Diagnozis.culttab && !tooth45Diagnozis.abutment && !tooth45Diagnozis.implant && !tooth45Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
-                        {/*КАРИЕС CENTER*/}
+                        {/*КАРИЕС C*/}
                         <g id="s_header_14_5" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -396,10 +396,10 @@ export default function Tooth45() {
                                 C664.5,968,663.8,975.2,665,982.6z" 
                             />
                         </g>
-                        {/*КАРИЕС LEFT*/}
+                        {/*КАРИЕС RIGHT*/}
                         <g id="s_header_14_4" className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'left');
+                                setColordedPart(diagnozis, 'right');
                             }}
                         >
                             <path className="st7" d="M711.1,978.8c0,4.1-1.4,9.1-4.4,13.3c7.1,7.6,16,13.3,21,16.2c1.6-2.1,2.9-4.3,3.9-6.6
@@ -407,20 +407,20 @@ export default function Tooth45() {
                                 C706.5,963.7,711.1,971.9,711.1,978.8z"
                             />
                             <path className={
-                                    `st8 caries-left
+                                    `st8 caries-right
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth45.caries_left ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth45.seal_left ? `seal-fill ${teethDiagnozis.tooth45.seal_left_color}` : ''}
+                                    ${teethDiagnozis.tooth45.caries_right ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth45.seal_right ? `seal-fill ${teethDiagnozis.tooth45.seal_right_color}` : ''}
                                 `} 
                                 d="M711.1,978.8c0,4.1-1.4,9.1-4.4,13.3c7.1,7.6,16,13.3,21,16.2c1.6-2.1,2.9-4.3,3.9-6.6
                                 c2.3-5.6,2.4-11.6,1.6-17.6c-1.3-9.9-4.8-19.1-9.5-27.6c-1.6-2.9-3.2-5.7-5-8.4c-3,3.7-7.9,8.8-14,12.7
                                 C706.5,963.7,711.1,971.9,711.1,978.8z"
                             />
                         </g>
-                        {/*КАРИЕС BOTTOM*/}
+                        {/*КАРИЕС TOP*/}
                         <g id="s_header_15_3 hoho-bottom" className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'bottom');
+                                setColordedPart(diagnozis, 'top');
                             }}
                         >
                             <path className="st7" d="M647.8,946.4c4.6,2.7,12.6,8,18.7,15.5c2.4-7.4,6.7-12.9,11.9-14.4c9.3-2.7,17.9,2.7,25.5,12
@@ -428,20 +428,20 @@ export default function Tooth45() {
                                 c-5.8,0.1-11.6,1.1-16.8,3.6c-6.3,3.1-11.2,8-14.1,13.6C649.1,942.8,648.4,944.6,647.8,946.4z"
                             />
                             <path className={
-                                    `st8 caries-bottom
+                                    `st8 caries-top
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth45.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth45.seal_bottom ? `seal-fill ${teethDiagnozis.tooth45.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth45.caries_top ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth45.seal_top ? `seal-fill ${teethDiagnozis.tooth45.seal_top_color}` : ''}
                                 `} 
                                 d="M647.8,946.4c4.6,2.7,12.6,8,18.7,15.5c2.4-7.4,6.7-12.9,11.9-14.4c9.3-2.7,17.9,2.7,25.5,12
                                 c0,0,0.3,0.4,0.7,1.2c6.1-3.9,10.9-9,14-12.7c-2.1-3.2-4.4-6.4-6.9-9.6c-3.1-3.9-6.7-7.8-11.4-10.3c-5.8-3.2-12.7-4.3-19.4-4.2
                                 c-5.8,0.1-11.6,1.1-16.8,3.6c-6.3,3.1-11.2,8-14.1,13.6C649.1,942.8,648.4,944.6,647.8,946.4z"  
                             />
                         </g>
-                        {/*КАРИЕС RIGHT*/}
+                        {/*КАРИЕС LEFT*/}
                         <g id="s_header_14_2" className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'right');
+                                setColordedPart(diagnozis, 'left');
                             }} 
                         >
                             <path className="st7" d="M643.6,1004.3c0.6,1,1.3,1.9,2,2.9c11.7-5.2,18.8-11.4,22.4-15.4c-1.3-2.4-2.3-5.4-2.9-9.2
@@ -451,8 +451,8 @@ export default function Tooth45() {
                             <path className={`
                                     st8 target caries-left
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth45.caries_right ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth45.seal_right ? `seal-fill ${teethDiagnozis.tooth45.seal_right_color}` : ''}
+                                    ${teethDiagnozis.tooth45.caries_left ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth45.seal_left ? `seal-fill ${teethDiagnozis.tooth45.seal_left_color}` : ''}
                                 `} 
                                 d="M643.6,1004.3c0.6,1,1.3,1.9,2,2.9c11.7-5.2,18.8-11.4,22.4-15.4c-1.3-2.4-2.3-5.4-2.9-9.2
                                 c-1.2-7.3-0.5-14.6,1.5-20.7c-6-7.5-14.1-12.8-18.7-15.5c-1.3,3.6-2.1,7.3-3.3,11c-2.2,6.9-5.7,13.4-6.8,20.9
@@ -470,24 +470,29 @@ export default function Tooth45() {
                                 C664.3,995.8,657.2,1002,645.5,1007.2z"
                             />
                             <path className={`
-                                    st8 target caries-left
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth45.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth45.seal_top ? `seal-fill ${teethDiagnozis.tooth45.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth45.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth45.seal_bottom ? `seal-fill ${teethDiagnozis.tooth45.seal_bottom_color}` : ''}
                                 `} 
                                 d="M645.5,1007.2c3.7,5.1,8.6,9.6,13.9,13.5c8.9,6.5,19.8,11.5,31.3,9.3c6.2-1.2,11.2-4.4,16.5-7.3
                                 c4.6-2.5,9.6-4.8,13.8-7.9c2.6-1.9,4.8-4.1,6.7-6.4c-5-2.9-13.9-8.6-21-16.2c-3.3,4.7-8.6,8.5-15.7,8.8c-10.4,0.4-18.6-0.9-23-9.1
-                                C664.3,995.8,657.2,1002,645.5,1007.2z"  style={{strokeWidth: 0, fill: 'none'}}></path>
+                                C664.3,995.8,657.2,1002,645.5,1007.2z" 
+                            />
                         </g>
-                        <g className="with">
+                        <g className="with down">
+                            {/* лево низ */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
-                                        (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom) 
+                                        (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom) || 
+                                        (tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center) || 
+                                        (tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) 
                                     ) ? 5 : 0
                                 }} 
                                 d="M668 992C665.833 994.667 659.1 1001.1 649.5 1005.5" />
+                            {/* овал лево */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -496,6 +501,7 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M668 992C665.167 987.667 660.9 975.6 666.5 962" />
+                            {/* лево верх */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -504,6 +510,7 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M666.5 962C665.333 959.667 660.8 953.8 652 949" />
+                            {/* овал верх */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -512,6 +519,7 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M666.5 962C669.833 952.334 682.1 938.4 704.5 960" />
+                            {/* право верх */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -520,6 +528,7 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M704.5 960C706.5 959 711.4 956 715 952" />
+                            {/* овал право */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -528,6 +537,7 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M704.5 960C708.833 966.167 715.4 981.2 707 992" />
+                            {/* право низ */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -536,6 +546,7 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M707 992C708 994.5 712.6 1000.7 723 1005.5" />
+                            {/* овал низ */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -730,8 +741,8 @@ export default function Tooth45() {
                         <path className="st61 level1" d="M722.5 1175L721 1175.5L720.5 1176L720 1177L718.5 1178L717.5 1180L716 1182L715.5 1182.5L714.5 1183L713 1185.5L711 1186.5L708.5 1187.5L707.5 1189L705 1192L703.5 1192.5L702 1194L700 1194.5L697 1196L693.5 1198L690 1199L685.5 1200.5H681L677.5 1201.5L671.5 1200.5L670.5 1199.5L667.5 1199L665 1197.5H663.5L661.5 1196L656.5 1191.5L655.5 1189.5L652.5 1187L650.5 1183.5L648.5 1182.5L648 1178L646.5 1175.5L645.5 1174.5L645 1172.5L643.5 1170.5L640.5 1168V1171.5L642 1175V1178L642.5 1180.5L643 1181.5V1184L643.5 1185.5V1187.5V1190.5L644 1193L643.5 1195L644 1196.5V1198L645.5 1200.5L647 1201L648.5 1203L652.5 1205L655 1207L658.5 1208.5L663 1209L667.5 1211L670.5 1211.5L673.5 1211L677.5 1211.5L681 1212.5L685.5 1211.5H690L694 1210.5L696 1208.5L699.5 1209L702.5 1207.5L705.5 1207L706.5 1207.5L707.5 1206L708 1203.5L709 1201.5L710.5 1200L711 1198L712.5 1195L713.5 1193.5L714.5 1190.5L716 1189.5L717.5 1186.5L718.5 1185.5L720 1183.5L720.5 1181.5L721 1180L722 1177.5L722.5 1176V1175Z"></path>
                     </g>
                     {/*КАРИЕС*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth45Diagnozis.culttab && !tooth45Diagnozis.abutment && !tooth45Diagnozis.implant && !tooth45Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
-                        {/*КАРИЕС CENTER*/}
+                    <g className="header caries-filling" style={{visibility: (!tooth45Diagnozis.culttab && !tooth45Diagnozis.abutment && !tooth45Diagnozis.implant && !tooth45Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                        {/*КАРИЕС C*/}
                         <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -752,11 +763,11 @@ export default function Tooth45() {
                                 c-0.6,0.2-1.1,0.5-1.7,0.7c-1.7,8.8-4.5,22.2-6.9,30.1C659.9,1137.5,659.5,1138.8,659.1,1140.2z"  
                             />
                         </g>
-                        {/*КАРИЕС LEFT*/}
+                        {/*КАРИЕС L*/}
                         <g
                             className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'left');
+                                setColordedPart(diagnozis, 'right');
                             }}
                         >
                             <path className="st58" d="M712.4,1181.3c0.4,1.1,1.3,2.6,2.3,4.2c6.9-8.2,11.6-17.9,14.6-28.2c2.1-7.4,3.3-15.1,3.6-22.8l-1.1-4.4
@@ -764,20 +775,20 @@ export default function Tooth45() {
                                 C709.8,1166.7,710.5,1176.5,712.4,1181.3z" 
                             />
                             <path className={
-                                `st8 caries-center
+                                `st8 caries-right
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                ${teethDiagnozis.tooth45.caries_left ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth45.seal_left ? `seal-fill ${teethDiagnozis.tooth45.seal_left_color}` : ''}
+                                ${teethDiagnozis.tooth45.caries_right ? 'caries-fill' : ''}
+                                ${teethDiagnozis.tooth45.seal_right ? `seal-fill ${teethDiagnozis.tooth45.seal_right_color}` : ''}
                             `} 
                                 d="M712.4,1181.3c0.4,1.1,1.3,2.6,2.3,4.2c6.9-8.2,11.6-17.9,14.6-28.2c2.1-7.4,3.3-15.1,3.6-22.8l-1.1-4.4
                                 c-1.3-2.2-2.9-4.2-4.7-6c-3.1-3.2-6.9-5.6-9.9-8.9c-1.7-1.9-3.2-4-4.5-6.3c-0.5,11.3-1.7,34-2.3,42.8c-0.1,1.7-0.2,3.3-0.2,4.9
                                 C709.8,1166.7,710.5,1176.5,712.4,1181.3z" 
                             />
                         </g>
-                        {/* КАРИЕС RIGHT */}
+                        {/* КАРИЕС R */}
                         <g className="caries-filling hoho1"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'right');
+                                setColordedPart(diagnozis, 'left');
                             }}
                         >
                             <path className="st58" d="M639.6,1163.1c0.5,2.5,1.1,5,1.8,7.4c2.7-1.2,5.5-2.8,7.5-5.1c4-4.8,7-14.4,10.3-25.2
@@ -785,20 +796,20 @@ export default function Tooth45() {
                                 C636.1,1142.4,637.4,1152.9,639.6,1163.1z"
                             />
                             <path className={
-                                    `st8 caries-right
+                                    `st8 caries-left
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                ${teethDiagnozis.tooth45.caries_right ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth45.seal_right ? `seal-fill ${teethDiagnozis.tooth45.seal_right_color}` : ''}
+                                ${teethDiagnozis.tooth45.caries_left ? 'caries-fill' : ''}
+                                ${teethDiagnozis.tooth45.seal_left ? `seal-fill ${teethDiagnozis.tooth45.seal_left_color}` : ''}
                             `} 
                                 d="M639.6,1163.1c0.5,2.5,1.1,5,1.8,7.4c2.7-1.2,5.5-2.8,7.5-5.1c4-4.8,7-14.4,10.3-25.2
                                 c0.4-1.3,0.8-2.7,1.2-4.1c2.4-7.9,5.2-21.4,6.9-30.1c-4.1,1.5-8.4,2.2-12.4,3.9c-4.7,2-8.7,5.3-11.5,9.6c-2.2,4-3.9,8.2-4.9,12.7
                                 C636.1,1142.4,637.4,1152.9,639.6,1163.1z"
                             />
                         </g>
-                        {/*КАРИЕС TOP*/}
-                        <g className="caries-filling hoho3"
+                        {/*КАРИЕС B*/}
+                        <g className="caries-filling bottom"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st58" d="M641.3,1170.6c1.8,6.7,4.4,13.2,8.4,18.8c3.8,5.3,8.7,9.7,14.7,12.3c8.3,3.6,17.6,3.5,26.2,0.7
@@ -806,16 +817,18 @@ export default function Tooth45() {
                                 c-11.4,2.6-25.2,3.4-36.6-1.8c-7.7-3.5-12.2-10-14.5-14.5c-3.2,10.9-6.2,20.5-10.3,25.2C646.9,1167.7,644,1169.4,641.3,1170.6z"
                             />
                             <path className={`
-                                    st8 target caries-top
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth45.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth45.seal_top ? `seal-fill ${teethDiagnozis.tooth45.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth45.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth45.seal_bottom ? `seal-fill ${teethDiagnozis.tooth45.seal_bottom_color}` : ''}
                                 `}  
                                 d="M641.3,1170.6c1.8,6.7,4.4,13.2,8.4,18.8c3.8,5.3,8.7,9.7,14.7,12.3c8.3,3.6,17.6,3.5,26.2,0.7
                                 c9.5-3.1,17.6-9.1,24-16.7c0.1-0.1,0.1-0.1,0.2-0.2c-1-1.6-1.9-3.1-2.3-4.2c-1.9-4.8-2.6-14.6-2.2-24.8
-                                c-11.4,2.6-25.2,3.4-36.6-1.8c-7.7-3.5-12.2-10-14.5-14.5c-3.2,10.9-6.2,20.5-10.3,25.2C646.9,1167.7,644,1169.4,641.3,1170.6z"  style={{strokeWidth: 0, fill: 'none'}}></path>
+                                c-11.4,2.6-25.2,3.4-36.6-1.8c-7.7-3.5-12.2-10-14.5-14.5c-3.2,10.9-6.2,20.5-10.3,25.2C646.9,1167.7,644,1169.4,641.3,1170.6z"
+                            />
                         </g>
                         <g className="with up">
+                            {/* лево верх черточка*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -825,39 +838,44 @@ export default function Tooth45() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M659.5 1140L666.5 1111.5" />
+                            {/* лево низ черточка */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_top) ||
-                                        (!tooth45Diagnozis.seal_left && tooth45Diagnozis.seal_top && !tooth45Diagnozis.seal_center) ||
-                                        (!tooth45Diagnozis.seal_left && tooth45Diagnozis.seal_top && tooth45Diagnozis.seal_center)
+                                        (tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_bottom) ||
+                                        (!tooth45Diagnozis.seal_left && tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
+                                        (!tooth45Diagnozis.seal_left && tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M659.5 1140C657 1147 656.2 1162.1 645 1168.5" />
+                            {/* поперечная полоска */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth45Diagnozis.seal_top && !tooth45Diagnozis.seal_center) ||
-                                        (tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_left && tooth45Diagnozis.seal_center && !tooth45Diagnozis.seal_top) ||
+                                        (tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
+                                        (!tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center) ||
+                                        (tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_left && !tooth45Diagnozis.seal_center && !tooth45Diagnozis.seal_top) ||
                                         (!tooth45Diagnozis.seal_top && !tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}  
                                 d="M659.5 1140C669.5 1156.5 695.2 1160.9 710 1156.5" />
+                            {/* право низ черточка */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth45Diagnozis.seal_right && !tooth45Diagnozis.seal_top) ||
-                                        (!tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_top && !tooth45Diagnozis.seal_center) ||
-                                        (!tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_top && tooth45Diagnozis.seal_center)
+                                        (tooth45Diagnozis.seal_right && !tooth45Diagnozis.seal_bottom) ||
+                                        (!tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
+                                        (!tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_bottom && tooth45Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }} 
                                 d="M710 1156.5C710 1163.5 709 1172.5 712 1180" />
+                            {/* право верх черточка */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth45Diagnozis.seal_right && !tooth45Diagnozis.seal_top && !tooth45Diagnozis.seal_center) ||
-                                        (tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_top && !tooth45Diagnozis.seal_center) ||
+                                        (tooth45Diagnozis.seal_right && !tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
+                                        (tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_bottom && !tooth45Diagnozis.seal_center) ||
                                         (!tooth45Diagnozis.seal_right && tooth45Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
