@@ -758,8 +758,8 @@ export default function Tooth43() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center && !tooth43Diagnozis.seal_right) ||
-                                        (!tooth43Diagnozis.seal_bottom && tooth43Diagnozis.seal_center && !tooth43Diagnozis.seal_right) ||
-                                        (tooth43Diagnozis.seal_right && tooth43Diagnozis.seal_left && !tooth43Diagnozis.seal_center && !tooth43Diagnozis.seal_top) 
+                                        (!tooth43Diagnozis.seal_right && tooth43Diagnozis.seal_center) ||
+                                        (tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_center) 
                                     ) ? 5 : 0
                                 }}  
                                 d="M891.5 1173.5C891.5 1192.5 890 1197.5 897 1203" />
