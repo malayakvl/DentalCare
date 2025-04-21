@@ -474,7 +474,7 @@ export default function Tooth43() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_seal_bottom && !tooth43Diagnozis.seal_center) ||
+                                        (tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center) ||
                                         (!tooth43Diagnozis.seal_right && tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center) ||
                                         (tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_bottom && tooth43Diagnozis.seal_center) ||
                                         (tooth43Diagnozis.seal_center && tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_right)
@@ -613,7 +613,7 @@ export default function Tooth43() {
                         />
                     </g>
                     {/* ABUTMENT */}
-                    <g className="abutment hEmpty hIntact hRoot" style={{visibility: tooth43Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth43Diagnozis.abutment ? 1 : 0}}>
+                    <g className="abutment" style={{visibility: tooth43Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth43Diagnozis.abutment ? 1 : 0}}>
                         <path className="st16" d="M900.9,1208l-21.3,47.9l-26.6-2.6l-14.5-43.1c0.3,0.7,0.7,1.5,1,2.2c4,8.3,9,16.3,16.2,21.9
                             c4.2,3.3,9.2,5.7,14.5,5.4c8.4-0.4,14.8-6.9,19.8-13.8C894.2,1220.2,897.7,1214.2,900.9,1208z"
                         />
@@ -734,6 +734,7 @@ export default function Tooth43() {
                             />
                         </g>
                         <g className="with down">
+                            {/* черточка лево верх */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -748,7 +749,7 @@ export default function Tooth43() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth43Diagnozis.seal_left && !tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center) ||
-                                        (!tooth43Diagnozis.seal_left && tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center) ||
+                                        (tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center && tooth43Diagnozis.seal_left) ||
                                         (!tooth43Diagnozis.seal_left && !tooth43Diagnozis.seal_bottom && tooth43Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
@@ -757,7 +758,6 @@ export default function Tooth43() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center && !tooth43Diagnozis.seal_right) ||
                                         (!tooth43Diagnozis.seal_right && tooth43Diagnozis.seal_center) ||
                                         (tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_center) 
                                     ) ? 5 : 0
@@ -768,7 +768,7 @@ export default function Tooth43() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center) ||
-                                        (!tooth43Diagnozis.seal_right && tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center) ||
+                                        (tooth43Diagnozis.seal_bottom && !tooth43Diagnozis.seal_center && tooth43Diagnozis.seal_right) ||
                                         (!tooth43Diagnozis.seal_right && !tooth43Diagnozis.seal_bottom && tooth43Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
