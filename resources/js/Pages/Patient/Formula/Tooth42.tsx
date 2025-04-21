@@ -18,7 +18,6 @@ import {
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage42 from './periodontit42';
-// import PeriodontitStage43 from './periodontit43';
 
 
 export default function Tooth42() {
@@ -308,7 +307,7 @@ export default function Tooth42() {
                 <g id="T_42_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
-                    <g style={{visibility: !tooth42Diagnozis.implant && !tooth42Diagnozis.apex && !tooth42Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth42Diagnozis.implant && !tooth42Diagnozis.apex && !tooth42Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st9 change-color ${tooth42Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M924.6,990.6c1.4,2.6,4.3,4.2,7.3,5.4c5.5,2.1,11.7,3,17.8,3c5.2-0.1,10.3-0.8,15.1-2.5
                                 c3.5-1.3,6.9-3.1,8.6-6.1c1.2-2.3,1.2-4.9-0.3-7.1c-1.2-1.8-3.3-2.9-5-4.3c-4.1-3.2-6.7-7.6-10.3-11.3c-2.4-2.4-5.4-4.5-9-4.9
@@ -591,15 +590,6 @@ export default function Tooth42() {
                             />
                         </g>
                         <PeriodontitStage42 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="42"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="939.3" cy="1369.9" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="42"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="938" cy="1376.7" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="42"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="933.5" cy="1386.4" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -636,7 +626,7 @@ export default function Tooth42() {
                         <path className="st44" d="M931.222 1196.47C931.063 1194.1 932.99 1192.12 935.363 1192.21L961.236 1193.18C963.609 1193.27 965.382 1195.39 965.047 1197.74L959.45 1236.97C959.159 1239 957.373 1240.49 955.318 1240.4L937.697 1239.64C935.66 1239.55 934.014 1237.95 933.878 1235.91L931.222 1196.47Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
-                    <g className="implant" style={{visibility: 'hidden'}}>
+                    <g className="implant" style={{visibility: tooth42Diagnozis.abutment || tooth42Diagnozis.implant || tooth42Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <path className="st18" d="M929.3,1236.5c0,0-1.5,49.5-1.8,57.5s-0.5,60.5-0.5,60.5s4.1,6.2,11.8,7c7.8,0.8,11.2-7.2,11.2-7.2
                             s8.6-73.4,9.4-77.6c0.8-4.3,4.1-38.9,4.1-38.9L929.3,1236.5z"
                         />
@@ -656,7 +646,7 @@ export default function Tooth42() {
                     {/*КЛИНОВИДНИЙ ЕФЕКТ/ПРИШИЙКОВА ПЛОМБА/ПРИШИЙКОВИЙ КАРІЄС*/}
                     <g className="wedge-shaped" style={{visibility: !tooth42Diagnozis.culttab && !tooth42Diagnozis.abutment ? 'inherit' : 'hidden'}}>
                         <path className="st7 st59" d="M918.435 1125.3C917.335 1126.7 916.835 1128.4 916.935 1130.2C916.035 1147.7 916.635 1165.3 918.835 1182.9C919.435 1188.4 920.335 1194 921.635 1199.4C922.635 1203.3 923.835 1207.2 925.335 1210.9C927.735 1216.6 930.935 1221.9 936.135 1225.3C942.835 1229.6 951.235 1229.7 958.135 1225.7C966.235 1221 970.235 1212 973.135 1202.9C973.185 1202.7 973.235 1202.53 973.285 1202.35C973.335 1202.18 973.385 1202 973.435 1201.8C977.035 1190.2 979.635 1178.3 981.135 1166.2C982.635 1153.9 982.935 1141.5 982.035 1129.1C982.435 1127 981.435 1124.8 979.535 1123.8C978.735 1123.3 977.935 1123.1 977.035 1123.2L968.035 1123.1L939.835 1122.9L922.235 1122.7C920.735 1123.1 919.435 1124 918.435 1125.3ZM968.047 1202.06C968.086 1201.94 968.125 1201.81 968.163 1201.67C969.056 1198.98 969.869 1196.28 970.6 1193.55C970.931 1192.31 970.011 1191.1 968.731 1191.07L928.573 1190.06C927.342 1190.03 926.374 1191.11 926.569 1192.32C926.979 1194.88 927.496 1197.44 928.14 1199.94C928.913 1202.75 929.84 1205.56 930.999 1208.23C932.853 1212.34 935.326 1216.16 939.344 1218.61C944.52 1221.71 951.011 1221.78 956.342 1218.9C962.6 1215.51 965.691 1209.02 967.931 1202.46C967.97 1202.31 968.009 1202.19 968.047 1202.06Z"></path>
-                        <path className={`st7 ${tooth42Diagnozis?.cervical_caries ? 'cervical-caries' : ''}`} d="M967.943 1201.67C967.865 1201.95 967.788 1202.17 967.711 1202.46C965.47 1209.02 962.38 1215.51 956.121 1218.9C950.79 1221.78 944.3 1221.71 939.123 1218.61C935.105 1216.16 932.633 1212.34 930.778 1208.23C929.619 1205.56 928.692 1202.75 927.92 1199.94C927.275 1197.44 926.758 1194.88 926.348 1192.32C926.153 1191.11 927.121 1190.03 928.353 1190.06L968.51 1191.07C969.79 1191.1 970.711 1192.31 970.379 1193.55C969.648 1196.28 968.835 1198.98 967.943 1201.67Z" style={{fill: 'rgb(255, 255, 255)', opacity: 0.7}}></path>
+                        <path className={`st7 ${tooth42Diagnozis?.cervical_caries ? 'cervical-caries' : ''}`} d="M967.943 1201.67C967.865 1201.95 967.788 1202.17 967.711 1202.46C965.47 1209.02 962.38 1215.51 956.121 1218.9C950.79 1221.78 944.3 1221.71 939.123 1218.61C935.105 1216.16 932.633 1212.34 930.778 1208.23C929.619 1205.56 928.692 1202.75 927.92 1199.94C927.275 1197.44 926.758 1194.88 926.348 1192.32C926.153 1191.11 927.121 1190.03 928.353 1190.06L968.51 1191.07C969.79 1191.1 970.711 1192.31 970.379 1193.55C969.648 1196.28 968.835 1198.98 967.943 1201.67Z" />
                         <path className={
                                 `st60
                                     ${(tooth42Diagnozis?.wedge_shaped_defect) ? `shaped-defect-stroke` : ""}
@@ -664,7 +654,7 @@ export default function Tooth42() {
                                     ${tooth42Diagnozis.seal_cervical_color}
                                 `
                             } 
-                            d="M967.943 1201.67C967.865 1201.95 967.788 1202.17 967.711 1202.46C965.47 1209.02 962.38 1215.51 956.121 1218.9C950.79 1221.78 944.3 1221.71 939.123 1218.61C935.105 1216.16 932.633 1212.34 930.778 1208.23C929.619 1205.56 928.692 1202.75 927.92 1199.94C927.275 1197.44 926.758 1194.88 926.348 1192.32C926.153 1191.11 927.121 1190.03 928.353 1190.06L968.51 1191.07C969.79 1191.1 970.711 1192.31 970.379 1193.55C969.648 1196.28 968.835 1198.98 967.943 1201.67Z" style={{opacity: 0, stroke: 'rgb(156, 156, 156)', strokeWidth: 2}}></path>
+                            d="M967.943 1201.67C967.865 1201.95 967.788 1202.17 967.711 1202.46C965.47 1209.02 962.38 1215.51 956.121 1218.9C950.79 1221.78 944.3 1221.71 939.123 1218.61C935.105 1216.16 932.633 1212.34 930.778 1208.23C929.619 1205.56 928.692 1202.75 927.92 1199.94C927.275 1197.44 926.758 1194.88 926.348 1192.32C926.153 1191.11 927.121 1190.03 928.353 1190.06L968.51 1191.07C969.79 1191.1 970.711 1192.31 970.379 1193.55C969.648 1196.28 968.835 1198.98 967.943 1201.67Z" />
                     </g>
                     {/* TARTAR */}
                     <g className="tartar" style={{visibility: 'inherit', opacity: teethDiagnozis.tooth42.tartar ? 1 : 0}}>
@@ -775,7 +765,7 @@ export default function Tooth42() {
                         </g>
                     </g>
                     <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
-                    <g className="vinir" 
+                        <g className="vinir" 
                             style={{
                                 visibility: tooth42Diagnozis.vinir ? 'inherit' : 'hidden',
                                 opacity: tooth42Diagnozis.vinir ? 1 : 0
