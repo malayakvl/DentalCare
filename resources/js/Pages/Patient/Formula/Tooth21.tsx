@@ -309,14 +309,14 @@ export default function Tooth21() {
                 <g id="T_21_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin" >
-                        <g className="hEmpty hRoot hImplant" style={{visibility: !tooth21Diagnozis.culttab && !tooth21Diagnozis.implant && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth21Diagnozis.culttab && !tooth21Diagnozis.implant && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className="st24" d="M1137.7,597.9c2-5.8-4.6-9.9-13.4-11.6c-9.3-1.8-20-1.4-30.7-1.1
                                 c-8.9,0.3-17.8,0.7-25,3.2c-3.9,1.4-7.1,3.3-8.3,6.3c-2.2,5.4,3.6,10.2,8.8,14.5c2.4,2,4.7,4.1,6.7,6.4
                                 c3.5,4.1,5.9,9.1,11.2,12.5c3.2,2,7.1,3.3,11.4,3.4c5,0.2,9.9-1.2,13.7-3.6c5.6-3.5,8.3-8.5,10.5-13.3c1.3-2.8,2.5-5.6,5.1-8
                                 C1131,603.7,1136.4,601.7,1137.7,597.9z" 
                             />
                         </g>
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth21Diagnozis?.apex || tooth21Diagnozis.change_color ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: tooth21Diagnozis?.apex || tooth21Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth21Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth21Diagnozis?.apex ? 'apex' : ''}`}  
                                 d="M1136.65 595.139C1138.59 587.917 1132.18 582.811 1123.63 580.695C1114.6 578.453 1104.21 578.951 1093.81 579.325C1085.17 579.698 1076.52 580.197 1069.53 583.309C1065.74 585.053 
                                 1062.63 587.419 1061.47 591.154C1059.33 597.878 1064.96 603.855 1070.01 609.209C1072.34 611.699 1074.58 614.314 1076.52 617.178C1079.92 622.283 1082.25 628.509 1087.4 632.743C1090.51 
@@ -331,7 +331,7 @@ export default function Tooth21() {
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}
-                    <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth21Diagnozis.implant || tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                    <g style={{visibility: tooth21Diagnozis.implant || tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <circle className="st48" cx="1099.5" cy="604.5" r="23.5" />
                         <g className="st27">
                             <mask id="implant_21" className="st49">
@@ -537,7 +537,7 @@ export default function Tooth21() {
                         </g>
                     </g>
                     {/* VINIR */}
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
+                    <g style={{visibility: 'inherit'}}>
                         <g className="vinir" style={
                             {
                                 visibility: tooth21Diagnozis.vinir ? 'inherit' : 'hidden',
@@ -570,7 +570,7 @@ export default function Tooth21() {
                 <g id="T_21" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR */}
                     <g className="dentin">
-                        <g id="dentin_v_21" className="hRoot hImplant hEmpty" style={{visibility: !tooth21Diagnozis.implant && !tooth21Diagnozis.apex && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g id="dentin_v_21" style={{visibility: !tooth21Diagnozis.implant && !tooth21Diagnozis.apex && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path id="dentin_v_21" className="st9" d="M1144,446.6c-0.5,14.5-2.3,29-5.5,43.1l-1.5,1.7l-2.4,1.6
                                 c-5.2,0.5-10.4,1-15.6,1.4c-17.7,1.3-35.4,1.8-53.1,1.4l-2.7-1.2l-2.2-2.9c-1.3-9.1-2.3-18.2-2.8-27.3c-0.5-7.7-0.7-15.4-0.2-23v0
                                 c3.9-9,9.5-17.3,16.9-23.8c4.8-4.1,10.2-7.4,16.1-9.7c0.9-0.4,1.9-0.7,2.9-1c6.3-2,12.9-2.7,19.2-1.5c2.6,0.5,5.1,1.4,7.4,2.6
@@ -578,7 +578,7 @@ export default function Tooth21() {
                             />
                         </g>
                         {/*змінений у кольорі*/}
-                        <g id="dentin_n_21" className="hImplant hEmpty" style={{visibility: !tooth21Diagnozis.implant && !tooth21Diagnozis.abutment && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g id="dentin_n_21" style={{visibility: !tooth21Diagnozis.implant && !tooth21Diagnozis.abutment && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path id="dentin_n_21" className={`st10 change-color ${tooth21Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M1144.2,347.6c-0.1,23.2-0.6,46.4-0.3,69.7c0.1,9.8,0.4,19.5,0.1,29.3
                                 c0,0.3,0,0.6,0,0.9c0-0.1,0-0.2-0.1-0.4c-1.5-6.2-3.4-12.2-6-18.1c-3.7-8.5-9-16.6-17.3-20.9c-2.4-1.2-4.9-2.1-7.4-2.6
@@ -616,16 +616,6 @@ export default function Tooth21() {
                         </g>
                         {/* Отростки периодонтита */}
                         < PeriodontitStage21 />
-                        
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="21"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1125.2" cy="234.2" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="21"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1122.8" cy="227.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="21"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1125.2" cy="215.3" r="30"></circle>
-                        </g> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth21Diagnozis.pin ? 1 : 0
@@ -846,7 +836,7 @@ export default function Tooth21() {
                         </g>
                     </g>
                     <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
-                    <g className="vinir" 
+                        <g className="vinir" 
                             style={{
                                 visibility: tooth21Diagnozis.vinir ? 'inherit' : 'hidden',
                                 opacity: tooth21Diagnozis.vinir ? 1 : 0

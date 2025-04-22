@@ -318,7 +318,7 @@ export default function Tooth41() {
                         </g>
                         <g style={{visibility: tooth41Diagnozis?.apex || tooth41Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st9 change-color ${tooth41Diagnozis.change_color ? 'diagnoze' : ''}`} 
-                                d="M989.7 990.601C991.1 993.201 994 994.801 997 996.001C1002.5 998.101 1008.7 999.001 1014.8 999.001C1020 998.901 1025.1 998.201 1029.9 996.501C1033.4 995.201 1036.8 993.401 1038.5 990.401C1039.7 988.101 1039.7 985.501 1038.2 983.301C1037 981.501 1034.9 980.401 1033.2 979.001C1029.1 975.801 1026.5 971.401 1022.9 967.701C1020.5 965.301 1017.5 963.201 1013.9 962.801C1011.2 962.501 1008.6 963.201 1006.5 964.701C1004.9 965.901 1003.7 967.701 1002.6 969.301C1000.1 972.801 997.1 976.101 994 979.101C992.4 980.601 990.8 982.201 989.8 984.101C988.7 986.301 988.6 988.601 989.7 990.601Z" style={{fill: 'rgb(248, 223, 168)'}}></path>
+                                d="M989.7 990.601C991.1 993.201 994 994.801 997 996.001C1002.5 998.101 1008.7 999.001 1014.8 999.001C1020 998.901 1025.1 998.201 1029.9 996.501C1033.4 995.201 1036.8 993.401 1038.5 990.401C1039.7 988.101 1039.7 985.501 1038.2 983.301C1037 981.501 1034.9 980.401 1033.2 979.001C1029.1 975.801 1026.5 971.401 1022.9 967.701C1020.5 965.301 1017.5 963.201 1013.9 962.801C1011.2 962.501 1008.6 963.201 1006.5 964.701C1004.9 965.901 1003.7 967.701 1002.6 969.301C1000.1 972.801 997.1 976.101 994 979.101C992.4 980.601 990.8 982.201 989.8 984.101C988.7 986.301 988.6 988.601 989.7 990.601Z" />
                         </g>
                     </g>
                     <g className="pulp">
@@ -589,15 +589,6 @@ export default function Tooth41() {
                             />
                         </g>
                         <PeriodontitStage41 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="41"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1003.2" cy="1364.7" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="41"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1002.2" cy="1372.9" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="41"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="998.2" cy="1382.9" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
