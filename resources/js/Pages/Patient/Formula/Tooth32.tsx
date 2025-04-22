@@ -460,9 +460,8 @@ export default function Tooth32() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
-                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_center)
+                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_right && tooth32Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1158.5 981.5C1161.33 985.167 1168.2 993.3 1173 996.5" />
@@ -470,9 +469,8 @@ export default function Tooth32() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_bottom) ||
-                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center) ||
-                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_bottom && tooth32Diagnozis.seal_center)
+                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_bottom) ||
+                                        (tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_right) 
                                     ) ? 5 : 0
                                 }} 
                                 d="M1158.5 981.5C1158.83 979.667 1160.5 974.8 1164.5 970" />
@@ -489,11 +487,9 @@ export default function Tooth32() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center) ||
-                                        (!tooth32Diagnozis.seal_right && tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_bottom && tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_center && tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_right)
-
+                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_bottom) ||
+                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_bottom && tooth32Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}  
                                 d="M1138 980.5C1137.17 979.5 1135.3 976 1134.5 970" />
@@ -501,9 +497,9 @@ export default function Tooth32() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth32Diagnozis.seal_right && tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_center)
-
+                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
+                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1138 980.5C1137.33 983.167 1133.9 989.9 1125.5 995.5" />
@@ -739,37 +735,36 @@ export default function Tooth32() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
-                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_center)
+                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_right && tooth32Diagnozis.seal_top) ||
+                                        (tooth32Diagnozis.seal_center && !tooth32Diagnozis.seal_right)
                                     ) ? 5 : 0
                                 }}
                                 d="M1163.5 1162.5C1162.5 1157.17 1160.4 1142.4 1160 1128" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center && tooth32Diagnozis.seal_left) ||
-                                        (!tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_bottom && tooth32Diagnozis.seal_center)
+                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_right && tooth32Diagnozis.seal_top && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_top && tooth32Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1163.5 1162.5C1167 1181.5 1167 1186.6 1173 1195" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth32Diagnozis.seal_right && tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_center) 
+                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_top && tooth32Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1132 1164.5C1132 1181.5 1133.5 1192 1130 1198" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center) ||
-                                        (tooth32Diagnozis.seal_bottom && !tooth32Diagnozis.seal_center && tooth32Diagnozis.seal_right) ||
-                                        (!tooth32Diagnozis.seal_right && !tooth32Diagnozis.seal_bottom && tooth32Diagnozis.seal_center)
-                                    )
-                                        ? 5 : 0
+                                        (tooth32Diagnozis.seal_left && !tooth32Diagnozis.seal_center) ||
+                                        (!tooth32Diagnozis.seal_left && tooth32Diagnozis.seal_center)
+                                    ) ? 5 : 0
                                 }} 
                                 d="M1132 1164.5L1130.5 1128.5" />
                         </g>
