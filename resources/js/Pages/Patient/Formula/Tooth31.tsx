@@ -418,7 +418,8 @@ export default function Tooth31() {
                         {/*КАРИЕС RIGHT*/}
                         <g id="s_header_31_2" className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'right');
+                                alert('center')
+                                setColordedPart(diagnozis, 'center');
                             }}
                         >                            
                             <path className="st7" d="M1110.6,999.3c-1.6,1.3-3.4,2.3-5.3,3.2c-7.2,3.4-15.2,4.9-23.2,4.9c-6.7,0-13.4-1.2-19.6-3.8
@@ -426,10 +427,10 @@ export default function Tooth31() {
                                 C1095.4,984.5,1104.6,993.5,1110.6,999.3z"
                             />
                             <path className={
-                                    `st8 caries-right
+                                    `st8 caries-center
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth31.caries_right ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth31.seal_right ? `seal-fill ${teethDiagnozis.tooth31.seal_right_color}` : ''}
+                                    ${teethDiagnozis.tooth31.caries_center ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth31.seal_center ? `seal-fill ${teethDiagnozis.tooth31.seal_center_color}` : ''}
                                 `}  
                                 d="M1110.6,999.3c-1.6,1.3-3.4,2.3-5.3,3.2c-7.2,3.4-15.2,4.9-23.2,4.9c-6.7,0-13.4-1.2-19.6-3.8
                                 c-2-0.8-3.9-1.9-5.6-3.1c4.8-4,11.6-9.8,13-11.9c1.5-2.2,1.7-4.8,1.2-7.5c5.9,0.5,16.3,1.3,23.3,1.3c0,0.3,0,0.5,0.1,0.6
@@ -672,7 +673,7 @@ export default function Tooth31() {
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth31Diagnozis.culttab && !tooth31Diagnozis.abutment && !tooth31Diagnozis.implant && !tooth31Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <g className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'left');
+                                setColordedPart(diagnozis, 'right');
                             }}
                         >
                             <path className="st58" d="M1113.2,1181.4c-0.8,6.4-1.8,12.8-3.6,19c-2.4-2-5.8-4.9-6.6-6.6c-1.3-2.7-2.1-12.3-3.7-30.8
@@ -680,48 +681,48 @@ export default function Tooth31() {
                                 C1115.9,1147.2,1115.3,1164.4,1113.2,1181.4z"
                             />
                             <path className={`
-                                st8 target caries-left 
+                                st8 target caries-right 
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                ${teethDiagnozis.tooth31.caries_left ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth31.seal_left ? `seal-fill ${teethDiagnozis.tooth31.seal_left_color}` : ''}
+                                ${teethDiagnozis.tooth31.caries_right ? 'caries-fill' : ''}
+                                ${teethDiagnozis.tooth31.seal_right ? `seal-fill ${teethDiagnozis.tooth31.seal_right_color}` : ''}
                             `} 
                                 d="M1113.2,1181.4c-0.8,6.4-1.8,12.8-3.6,19c-2.4-2-5.8-4.9-6.6-6.6c-1.3-2.7-2.1-12.3-3.7-30.8
                                 c-1.2-13.4-2.2-31.4-2.7-40.3l13.1-0.1c1.5,0.4,2.8,1.3,3.8,2.5c1.1,1.4,1.6,3.1,1.5,4.8
                                 C1115.9,1147.2,1115.3,1164.4,1113.2,1181.4z"
                                 style={{
-                                    fill: teethDiagnozis.tooth31.caries_left ? '#606c80' : 
-                                    teethDiagnozis.tooth31.seal_left ? teethDiagnozis.tooth31.seal_left_color : 'transparent',
+                                    fill: teethDiagnozis.tooth31.caries_right ? '#606c80' : 
+                                    teethDiagnozis.tooth31.seal_right ? teethDiagnozis.tooth31.seal_right_color : 'transparent',
 
                                 }} 
                             />
                         </g>
                         <g className="caries-filling" 
                             onClick={() => {
-                                setColordedPart(diagnozis, 'right');
+                                setColordedPart(diagnozis, 'left');
                             }}
                         >
                             <path className="st58" d="M1058.9,1201c-0.1-0.4-0.2-0.7-0.3-1.1c-3.6-11.3-6.2-23-7.7-34.8c-1.5-12-1.8-24.2-0.9-36.3
                                 c-0.4-2.1,0.6-4.2,2.5-5.2c0.8-0.4,1.6-0.6,2.5-0.5l9.4-0.1v44.8C1064.3,1180.9,1066,1195.2,1058.9,1201z"
                             />
                             <path className={`
-                                st8 target caries-right 
+                                st8 target caries-left 
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                ${teethDiagnozis.tooth31.caries_right ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth31.seal_right ? `seal-fill ${teethDiagnozis.tooth31.seal_right_color}` : ''}
+                                ${teethDiagnozis.tooth31.caries_left ? 'caries-fill' : ''}
+                                ${teethDiagnozis.tooth31.seal_left ? `seal-fill ${teethDiagnozis.tooth31.seal_left_color}` : ''}
                             `} 
                                 d="M1058.9,1201c-0.1-0.4-0.2-0.7-0.3-1.1c-3.6-11.3-6.2-23-7.7-34.8c-1.5-12-1.8-24.2-0.9-36.3
                                 c-0.4-2.1,0.6-4.2,2.5-5.2c0.8-0.4,1.6-0.6,2.5-0.5l9.4-0.1v44.8C1064.3,1180.9,1066,1195.2,1058.9,1201z"
                                 style={{
-                                    fill: teethDiagnozis.tooth31.caries_right ? '#606c80' : 
-                                    teethDiagnozis.tooth31.seal_right ? teethDiagnozis.tooth31.seal_right_color : 'transparent',
+                                    fill: teethDiagnozis.tooth31.caries_left ? '#606c80' : 
+                                    teethDiagnozis.tooth31.seal_left ? teethDiagnozis.tooth31.seal_left_color : 'transparent',
 
                                 }}
                             />
                         </g>
                         <g
-                            className="caries-filling hoho1"
+                            className="caries-filling center"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'center');
                             }}
                         >
                             <path className="st58" d="M1109.6,1200.4c-0.8,2.9-1.8,5.7-2.9,8.4c-2.4,5.6-5.6,10.8-10.8,14.1c-6.7,4.2-15.1,4.3-22,0.4
@@ -729,17 +730,17 @@ export default function Tooth31() {
                                 C1103.8,1195.5,1107.2,1198.4,1109.6,1200.4z"
                             />
                             <path className={`
-                                st8 target caries-top 
+                                st8 target caries-center 
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                ${teethDiagnozis.tooth31.caries_top ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth31.seal_top ? `seal-fill ${teethDiagnozis.tooth31.seal_top_color}` : ''}
+                                ${teethDiagnozis.tooth31.caries_center ? 'caries-fill' : ''}
+                                ${teethDiagnozis.tooth31.seal_center ? `seal-fill ${teethDiagnozis.tooth31.seal_center_color}` : ''}
                             `} 
                                 d="M1109.6,1200.4c-0.8,2.9-1.8,5.7-2.9,8.4c-2.4,5.6-5.6,10.8-10.8,14.1c-6.7,4.2-15.1,4.3-22,0.4
                                 c-8.1-4.6-12.1-13.4-15-22.3c7.2-5.8,5.4-20.1,5.4-33.1v-44.8l32.3-0.3c0.5,8.9,1.5,26.9,2.7,40.3c1.6,18.5,2.4,28.1,3.7,30.8
                                 C1103.8,1195.5,1107.2,1198.4,1109.6,1200.4z"
                                 style={{
-                                    fill: teethDiagnozis.tooth31.caries_top ? '#606c80' : 
-                                    teethDiagnozis.tooth31.seal_top ? teethDiagnozis.tooth31.seal_top_color : 'transparent',
+                                    fill: teethDiagnozis.tooth31.caries_center ? '#606c80' : 
+                                    teethDiagnozis.tooth31.seal_center ? teethDiagnozis.tooth31.seal_center_color : 'transparent',
                                 }}
                             />
                         </g>
