@@ -442,19 +442,17 @@ export default function Tooth33() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
-                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_center)
+                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_right && tooth33Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1235 976C1230.5 986 1241 995 1257 1008.5" />
-                            {/* Черточка лево низ */}
+                            {/* Черточка право верх */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_bottom) ||
-                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center) ||
-                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_bottom && tooth33Diagnozis.seal_center)
+                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_bottom) ||
+                                        (tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_right) 
                                     ) ? 5 : 0
                                 }}  
                                 d="M1235 976C1238.78 974.229 1247.47 968.35 1252 959" />
@@ -471,11 +469,9 @@ export default function Tooth33() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center) ||
-                                        (!tooth33Diagnozis.seal_right && tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_bottom && tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_center && tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_right)
-
+                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_bottom) ||
+                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_bottom && tooth33Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1217 978C1214.5 973 1203.7 965.4 1202.5 959" />
@@ -483,9 +479,9 @@ export default function Tooth33() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth33Diagnozis.seal_right && tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_center)
-
+                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
+                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1216 979C1214.4 984.396 1207.17 997.151 1191 1005" />
@@ -748,14 +744,14 @@ export default function Tooth33() {
                                 }}
                             />
                         </g>
-                        <g className="with">
+                        <g className="with down">
                             {/* черточка верх */}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
-                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_center)
+                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_right && tooth33Diagnozis.seal_top) ||
+                                        (tooth33Diagnozis.seal_center && !tooth33Diagnozis.seal_right)
                                     ) ? 5 : 0
                                 }}
                                 d="M1250.5 1171L1246.5 1130.5" />
@@ -763,9 +759,9 @@ export default function Tooth33() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center && tooth33Diagnozis.seal_left) ||
-                                        (!tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_bottom && tooth33Diagnozis.seal_center)
+                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_right && tooth33Diagnozis.seal_top && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_top && tooth33Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1250.5 1171C1252 1188 1252 1192.1 1258 1198.5" />
@@ -773,8 +769,9 @@ export default function Tooth33() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth33Diagnozis.seal_right && tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_center) 
+                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_top && tooth33Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1205.5 1173.5C1205.5 1192.5 1207 1197.5 1200 1203" />
@@ -782,11 +779,9 @@ export default function Tooth33() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center) ||
-                                        (tooth33Diagnozis.seal_bottom && !tooth33Diagnozis.seal_center && tooth33Diagnozis.seal_right) ||
-                                        (!tooth33Diagnozis.seal_right && !tooth33Diagnozis.seal_bottom && tooth33Diagnozis.seal_center)
-                                    )
-                                        ? 5 : 0
+                                        (tooth33Diagnozis.seal_left && !tooth33Diagnozis.seal_center) ||
+                                        (!tooth33Diagnozis.seal_left && tooth33Diagnozis.seal_center)
+                                    ) ? 5 : 0
                                 }} 
                                 d="M1205.5 1173.5L1203.5 1123" />
                         </g>
