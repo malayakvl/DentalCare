@@ -482,12 +482,12 @@ const dispatch = useDispatch<any>();
                                 C1433.8,995.8,1440.8,1002,1452.5,1007.2z" 
                             />
                         </g>
-                        <g className="with">
+                        <g className="with up">
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
-                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_bottom ) || 
+                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
+                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom ) || 
                                         (tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_left) || 
                                         (tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_left) 
                                     ) ? 5 : 0
@@ -496,16 +496,16 @@ const dispatch = useDispatch<any>();
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_center) ||
-                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_center)
+                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_center) ||
+                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1431.5 992C1434.33 987.667 1438.6 975.6 1433 962" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_top) ||
-                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_top)
+                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_top) ||
+                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1433 962C1434.17 959.667 1438.7 953.8 1447.5 949" />
@@ -520,24 +520,24 @@ const dispatch = useDispatch<any>();
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_top) ||
-                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_top)
+                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_top) ||
+                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1395 960C1393 959 1388.1 956 1384.5 952" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_center) ||
-                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_center)
+                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_center) ||
+                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}  
                                 d="M1395 960C1390.67 966.167 1384.1 981.2 1392.5 992" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom) ||
-                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_bottom)
+                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_bottom) ||
+                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1392.5 992C1391.5 994.5 1386.9 1000.7 1376.5 1005.5" />
@@ -821,18 +821,18 @@ const dispatch = useDispatch<any>();
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_top && !tooth35Diagnozis.seal_center) ||
-                                        (tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_top && !tooth35Diagnozis.seal_center) ||
-                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_center)
+                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_top && !tooth35Diagnozis.seal_center) ||
+                                        (tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_top && !tooth35Diagnozis.seal_center) ||
+                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1438.5 1140L1431.5 1111.5" />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_bottom) ||
-                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
-                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center)
+                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom) ||
+                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
+                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1438.5 1140C1441 1147 1441.8 1162.1 1453 1168.5" />
@@ -841,7 +841,6 @@ const dispatch = useDispatch<any>();
                                     strokeWidth: (
                                         (tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
                                         (!tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center) ||
-                                        (tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_top) ||
                                         (!tooth35Diagnozis.seal_top && !tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}  
@@ -849,9 +848,9 @@ const dispatch = useDispatch<any>();
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom) ||
-                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
-                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center)
+                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_bottom) ||
+                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
+                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }}  
@@ -859,9 +858,9 @@ const dispatch = useDispatch<any>();
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
-                                        (tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
-                                        (!tooth35Diagnozis.seal_right && tooth35Diagnozis.seal_center)
+                                        (tooth35Diagnozis.seal_left && !tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
+                                        (tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
+                                        (!tooth35Diagnozis.seal_left && tooth35Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1388 1156.5L1386 1117" />

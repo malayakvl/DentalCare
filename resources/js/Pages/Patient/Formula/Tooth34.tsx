@@ -822,18 +822,18 @@ export default function Tooth34() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_top && !tooth34Diagnozis.seal_center) ||
-                                        (tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_top && !tooth34Diagnozis.seal_center) ||
-                                        (!tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_center)
+                                        (tooth34Diagnozis.seal_right && !tooth34Diagnozis.seal_top && !tooth34Diagnozis.seal_center) ||
+                                        (tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_top && !tooth34Diagnozis.seal_center) ||
+                                        (!tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1341.5 1152.5L1339.5 1120"  />
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_bottom) ||
-                                        (!tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
-                                        (!tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center)
+                                        (tooth34Diagnozis.seal_right && !tooth34Diagnozis.seal_bottom) ||
+                                        (!tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
+                                        (!tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                                 d="M1341.5 1152.5C1344 1181 1341.3 1184 1350.5 1190"  />
@@ -842,7 +842,6 @@ export default function Tooth34() {
                                     strokeWidth: (
                                         (tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
                                         (!tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center) ||
-                                        (tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_center && !tooth34Diagnozis.seal_top) ||
                                         (!tooth34Diagnozis.seal_top && !tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
@@ -850,9 +849,9 @@ export default function Tooth34() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth34Diagnozis.seal_right && !tooth34Diagnozis.seal_bottom) ||
-                                        (!tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
-                                        (!tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center)
+                                        (tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_bottom) ||
+                                        (!tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
+                                        (!tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }}  
@@ -860,9 +859,9 @@ export default function Tooth34() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth34Diagnozis.seal_right && !tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
-                                        (tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
-                                        (!tooth34Diagnozis.seal_right && tooth34Diagnozis.seal_center)
+                                        (tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
+                                        (tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
+                                        (!tooth34Diagnozis.seal_left && tooth34Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1295.5 1156.5V1125.5"  />
