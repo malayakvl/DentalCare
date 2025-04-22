@@ -144,13 +144,6 @@ export default function Tooth24() {
         }
     }
 
-    // useEffect(() => {
-    //     if (toothActive.tooth24.active) {
-    //         teethDiagnozis.tooth24.periodontit_stage = subDiagnozis;
-    //         dispatch(setToothDiagnoze(teethDiagnozis));
-    //     }
-    // }, [subDiagnozis]);
-
     return (
         <>
             <g id="24" className="df-tooth-text" style={{opacity: 1}}>
@@ -316,7 +309,7 @@ export default function Tooth24() {
                 <g id="T_24_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
-                        <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth24Diagnozis.culttab && !tooth24Diagnozis.implant && !tooth24Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth24Diagnozis.culttab && !tooth24Diagnozis.implant && !tooth24Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth24Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth24Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M1394.4,600.4c1.5-6,1.5-11.9-0.8-17.4c-2.4-5.6-7.2-10.3-12.4-14.1
                                 c-6.3-4.6-13.6-8.2-21.6-8.2c-8.6,0.1-16.1,4.2-22.2,9.4c-3.1,2.6-6,5.6-8.1,8.9c-2.5,3.8-4,8.1-4,12.6c0,7.4,3.9,13.9,7.4,20.3
@@ -338,8 +331,8 @@ export default function Tooth24() {
                         </g>
                     </g>
                     {/* PULPIT */}
-                    <g className="pulp">
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="24" style={{visibility: 'hidden'}}>
+                    <g className="pulp" style={{visibility: tooth24Diagnozis.apex ? 'inherit' : 'hidden'}}>
+                        <g className="pulpitis-pfilling" style={{visibility: tooth24Diagnozis?.apex ? 'inherit' : 'hidden'}}>
                             <path className="st22 target" d="M1364.92 586.821C1364.37 591.656 1362.71 597 1359.99 597C1357.26 597 1355.54 591.664 1355.05 586.821C1354.5 581.393 1357.73 578 1359.99 578C1362.24 578 1365.47 581.987 1364.92 586.821Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                             <path className="st22 target" d="M1364.99 610.661C1364.99 615.356 1361.86 620 1359.98 620C1358.11 620 1354.99 615.356 1354.99 610.661C1354.99 605.967 1357.48 603 1359.98 603C1362.48 603 1364.99 605.967 1364.99 610.661Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
@@ -408,7 +401,7 @@ export default function Tooth24() {
                         <path className="st61 level1" d="M1398.63 585C1398.3 582.872 1398.76 580.778 1397.98 578.732C1397.05 576.352 1394.78 574.108 1393.28 572C1391.87 570.011 1391.25 568.142 1389.5 566.394C1387.88 564.768 1385.14 563.247 1383.37 561.83C1380.67 559.682 1377.81 556.715 1374.8 555.115C1372.61 553.949 1370.34 553.978 1368 553.272C1365.31 552.46 1362.52 551 1359.65 551C1356.46 551.041 1353.4 551.63 1350.5 552.633C1347.5 553.669 1344.66 556.147 1342 557.918C1339.62 559.502 1337.38 560.32 1335.28 562.268C1333.47 563.931 1331.71 566.73 1330.12 568.648C1328.73 570.325 1327.47 571.092 1326.39 572.937C1325.05 575.162 1323.97 578.53 1323.22 581C1322.43 583.585 1321 586.282 1321 589.041C1321 592.365 1321.6 595.538 1322.56 598.609C1323.61 602.007 1325.1 605.281 1326.68 608.5C1327.48 610.136 1329.31 611.758 1330.12 613.375C1331.59 616.25 1331.92 619.125 1333.35 622C1334.61 624.519 1336.93 627.039 1338.47 629.558C1339.67 631.632 1340.09 633.667 1341.73 635.5C1342.94 636.845 1345.26 639.082 1346.7 640.148C1348.95 641.743 1351.43 641.867 1354 642.633C1356.46 643.363 1359 644.767 1361.52 644.943C1363.69 645.058 1365.86 644.007 1368 643.721C1370.31 643.414 1372.58 643.837 1374.8 642.905C1377.09 641.874 1379.17 639.5 1381 637.872C1383.21 635.901 1385.06 633.556 1386.44 630.996C1387.6 628.915 1389.46 627.723 1390.22 625.5C1391.04 623.113 1390.75 620.69 1391.6 618.331C1392.37 615.994 1394.27 612.747 1395.18 610.5C1395.9 608.684 1395.63 607.867 1396.28 606C1396.89 604.253 1397.44 601.463 1397.86 599.59C1398.44 597.039 1398.82 595.504 1398.95 593M1398.63 585C1398.98 587.297 1399.07 590.634 1398.95 593M1398.63 585L1398.95 593M1394.4 600.399C1395.9 594.399 1395.9 588.499 1393.6 582.999C1391.2 577.399 1386.4 572.699 1381.2 568.899C1374.9 564.299 1367.6 560.699 1359.6 560.699C1351 560.799 1343.5 564.899 1337.4 570.099C1334.3 572.699 1331.4 575.699 1329.3 578.999C1326.8 582.799 1325.3 587.099 1325.3 591.599C1325.3 598.999 1329.2 605.499 1332.7 611.899C1335.2 616.399 1337.3 620.899 1340.3 625.399C1342.2 628.399 1344.7 631.299 1347.8 633.399C1351.8 635.999 1356.6 637.099 1361.3 637.399C1365.4 637.599 1369.5 637.199 1373.4 635.699C1378 633.799 1381.7 630.499 1384 626.599C1386.2 622.999 1387.2 618.999 1388.7 615.199C1390.5 610.199 1393.1 605.699 1394.4 600.399Z"></path>
                     </g>
                     {/*КАРИЕС*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth24Diagnozis.culttab && !tooth24Diagnozis.abutment && !tooth24Diagnozis.implant && !tooth24Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth24Diagnozis.culttab && !tooth24Diagnozis.abutment && !tooth24Diagnozis.implant && !tooth24Diagnozis.shaper && !tooth24Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС CENTER*/}
                         <g id="s_header_24_5" 
                             onClick={() => {

@@ -316,13 +316,13 @@ export default function Tooth41() {
                                 C988.7,986.3,988.6,988.6,989.7,990.6z"
                             />
                         </g>
-                        <g style={{visibility: 'hidden'}}>
+                        <g style={{visibility: tooth41Diagnozis?.apex || tooth41Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st9 change-color ${tooth41Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M989.7 990.601C991.1 993.201 994 994.801 997 996.001C1002.5 998.101 1008.7 999.001 1014.8 999.001C1020 998.901 1025.1 998.201 1029.9 996.501C1033.4 995.201 1036.8 993.401 1038.5 990.401C1039.7 988.101 1039.7 985.501 1038.2 983.301C1037 981.501 1034.9 980.401 1033.2 979.001C1029.1 975.801 1026.5 971.401 1022.9 967.701C1020.5 965.301 1017.5 963.201 1013.9 962.801C1011.2 962.501 1008.6 963.201 1006.5 964.701C1004.9 965.901 1003.7 967.701 1002.6 969.301C1000.1 972.801 997.1 976.101 994 979.101C992.4 980.601 990.8 982.201 989.8 984.101C988.7 986.301 988.6 988.601 989.7 990.601Z" style={{fill: 'rgb(248, 223, 168)'}}></path>
                         </g>
                     </g>
                     <g className="pulp">
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" style={{visibility: 'hidden'}}>
+                        <g style={{visibility: tooth41Diagnozis.apex ? 'inherit' : 'hidden'}}>
                             <path className="st22 target" d="M1008.17 985.526C1008.17 985.127 1007.75 984.098 1009.76 981.942C1011.26 980.569 1011.78 978.147 1013.7 978.109C1015.77 978.069 1016.34 980.259 1017.68 981.718C1019.28 983.469 1019.51 984.753 1019.32 985.526C1018.92 987.118 1017.82 987.148 1013.7 987.173C1009.58 987.198 1008.17 985.924 1008.17 985.526Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
                     </g>
@@ -373,7 +373,7 @@ export default function Tooth41() {
                         <path className="st61 level1" d="M1042.66 982.654C1041.28 980.322 1037.86 977.896 1035.9 976.082C1034.27 974.647 1033.84 974.026 1032.5 972.32C1031.15 970.598 1028.89 967.789 1027.59 966C1026.46 964.442 1025.31 963.898 1024.04 962.438C1022.56 960.771 1021.88 959.216 1020 958.052C1018.38 957.044 1015.6 956.329 1013.68 956.088C1010.57 955.7 1007.58 956.607 1005.16 958.551C1003.32 960.106 1001.93 961.438 1000.67 963.512C999.698 965.039 998.663 967.537 997.581 969C996.442 970.54 995.25 971.042 994.026 972.5C992.959 973.772 991.867 976.01 990.764 977.212C988.921 979.155 987.079 980.229 985.927 982.691C984.776 985.542 984.661 989.523 985.812 992.114C986.463 993.475 987.396 995.624 988.504 996.613C990.14 998.074 992.159 998.185 994.218 999.112C997.26 1000.42 1000.49 1002.37 1003.8 1003C1007.38 1003.68 1011.06 1003 1014.72 1003C1017.51 1002.94 1020.28 1003.71 1023 1003.26C1026.11 1002.74 1029.16 1000.93 1032.1 999.76C1034.19 998.889 1036.24 998.844 1038.01 997.5C1039.66 996.246 1041.06 994.732 1042.01 992.855C1042.73 991.3 1043.07 988.638 1042.99 987C1042.92 985.499 1043.49 984.017 1042.66 982.654ZM996.904 996.001C993.904 994.801 991.004 993.201 989.604 990.601C988.604 988.601 988.704 986.301 989.704 984.101C990.704 982.201 992.304 980.601 993.904 979.101C997.004 976.101 1000 972.801 1002.5 969.301C1003.6 967.701 1004.8 965.901 1006.4 964.701C1008.5 963.201 1011.1 962.501 1013.8 962.801C1017.4 963.201 1020.4 965.301 1022.8 967.701C1026.4 971.401 1029 975.801 1033.1 979.001C1034.8 980.401 1036.9 981.501 1038.1 983.301C1039.6 985.501 1039.6 988.101 1038.4 990.401C1036.7 993.401 1033.3 995.201 1029.8 996.501C1025 998.201 1019.9 998.901 1014.7 999.001C1008.6 999.001 1002.4 998.101 996.904 996.001Z"></path>
                     </g>
                     {/*КАРИЕС*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth41Diagnozis.culttab && !tooth41Diagnozis.abutment && !tooth41Diagnozis.implant && !tooth41Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth41Diagnozis.culttab && !tooth41Diagnozis.abutment && !tooth41Diagnozis.implant && !tooth41Diagnozis.shaper && !tooth41Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС C*/}
                         <g id="s_header_14_5" 
                             onClick={() => {
@@ -553,7 +553,7 @@ export default function Tooth41() {
                                 C1040,1157.8,1040.3,1165.2,1040.3,1172.7z"
                             />
                         </g>
-                        <g id="dentin_n_41" style={{visibility: !tooth41Diagnozis.culttab && !tooth41Diagnozis.abutment && !tooth41Diagnozis.implant && !tooth41Diagnozis.shaper && !tooth41Diagnozis.apex  ? 'inherit' : 'hidden'}}>
+                        <g id="dentin_n_42" style={{visibility: !tooth41Diagnozis.implant && !tooth41Diagnozis.abutment && !tooth41Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path id="dentin_n_41" className={`st10 change-color ${tooth41Diagnozis.change_color ? 'diagnoze' : ''}`}  
                                 d="M1039.3,1200.2c-0.9,14.5-2.4,29.1-3.9,43.6c-2,19.9-4.2,39.7-7.2,59.5
                                 c-2.4,15.4-5.1,30.7-8.9,45.6c-2,7.9-5.7,15.8-12.1,15.8c-0.9,0-1.8-0.2-2.6-0.5c0,0,0,0,0,0c-5.3-2.1-7.8-10.4-9-18.4
@@ -645,7 +645,7 @@ export default function Tooth41() {
                         <line className="st19" x1="988.2" y1="1317.3" x2="1027.6" y2="1323.7" />
                         <line className="st19" x1="987.2" y1="1341.3" x2="1026.6" y2="1347.7" />
                     </g>
-                    <g className="toutline" style={{visibility: !tooth41Diagnozis.culttab && !tooth41Diagnozis.abutment && !tooth41Diagnozis.implant && !tooth41Diagnozis.shaper && !tooth41Diagnozis.apex  ? 'inherit' : 'hidden'}}>
+                    <g className="toutline" style={{visibility: !tooth41Diagnozis.culttab && !tooth41Diagnozis.abutment && !tooth41Diagnozis.implant && !tooth41Diagnozis.shaper && !tooth41Diagnozis.apex  ? 'inherit' : 'hidden'}}>                        
                         <path className="st46" d="M1048.1,1128.9c0.4-2.1-0.6-4.2-2.5-5.2c-0.8-0.4-1.6-0.6-2.5-0.5l-9.4-0.1l-32.3-0.3
                             l-13.1-0.1c-1.5,0.4-2.8,1.3-3.8,2.5c-1.1,1.4-1.6,3.1-1.5,4.8c-1,17.1-0.4,34.3,1.7,51.4c0.8,6.4,1.8,12.8,3.6,19
                             c0.8,2.9,1.8,5.7,2.9,8.4c2.4,5.6,5.6,10.8,10.8,14.1c6.7,4.2,15.1,4.3,22,0.4c8.1-4.6,12.1-13.4,15-22.3c0.1-0.4,0.2-0.7,0.3-1.1
