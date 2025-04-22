@@ -486,10 +486,9 @@ const dispatch = useDispatch<any>();
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center) ||
                                         (tooth35Diagnozis.seal_right && !tooth35Diagnozis.seal_bottom ) || 
-                                        (tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_left) || 
-                                        (tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_left) 
+                                        (tooth35Diagnozis.seal_bottom && tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_right) || 
+                                        (tooth35Diagnozis.seal_bottom && !tooth35Diagnozis.seal_center && !tooth35Diagnozis.seal_right) 
                                     ) ? 5 : 0
                                 }}  
                                 d="M1431.5 992C1433.67 994.667 1440.4 1001.1 1450 1005.5" />

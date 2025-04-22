@@ -483,10 +483,9 @@ export default function Tooth34() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center) ||
-                                        (tooth34Diagnozis.seal_left && !tooth34Diagnozis.seal_bottom ) || 
-                                        (tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center && !tooth34Diagnozis.seal_left) || 
-                                        (tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center && !tooth34Diagnozis.seal_left) 
+                                        (tooth34Diagnozis.seal_right && !tooth34Diagnozis.seal_bottom ) || 
+                                        (tooth34Diagnozis.seal_bottom && tooth34Diagnozis.seal_center && !tooth34Diagnozis.seal_right) || 
+                                        (tooth34Diagnozis.seal_bottom && !tooth34Diagnozis.seal_center && !tooth34Diagnozis.seal_right) 
                                     ) ? 5 : 0
                                 }}
                                 d="M1333 997C1336 998.333 1343.6 1002.8 1350 1010"  />
