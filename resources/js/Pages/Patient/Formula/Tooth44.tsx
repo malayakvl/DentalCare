@@ -646,15 +646,6 @@ export default function Tooth44() {
                             />
                         </g>
                         <PeriodontitStage44 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="44"  style={{visibility:'hidden', opacity: 0}}>
-                            <circle className="st42" cx="752.6" cy="1360.7" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="44"  style={{visibility:'hidden', opacity: 0}}>
-                            <circle className="st42" cx="750.6" cy="1368.9" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="44"  style={{visibility:'hidden', opacity: 0}}>
-                            <circle className="st42" cx="748.9" cy="1379.2" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
