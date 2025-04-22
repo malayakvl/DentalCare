@@ -41,6 +41,7 @@ import {
     setZirconiaCrownColor,
     setDiagnosisClass
 } from '../../Redux/Formula'
+import PrimaryButton from '@/Components/Form/PrimaryButton';
 
 export default function index({ patientData }) {
     const [tab, setTab] = useState('history');
@@ -1241,8 +1242,19 @@ export default function index({ patientData }) {
                                             </div>
                                         </div>
                                     </div>
+                                    <div className="mt-[10px] mb-[10px] float-right">
+                                        <Link
+                                            className="btn-back"
+                                            title={msg.get('patient.back')}
+                                            href={`/patients`}
+                                        >
+                                            {msg.get('patient.back')}
+                                        </Link>
+                                        <PrimaryButton>{msg.get('patient.save')}</PrimaryButton>
+                                    </div>
                                 </div>
                                 <div className='clearfix' />
+                                
                             </div>
                         </div>
                     </div>
