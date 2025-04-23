@@ -48,7 +48,12 @@ const lngPatient = {
         "teeth.endo": "Endo",
         "teeth.destroy": "Ураження",
         "teeth.paradont": "Парадонт",
-        "teeth.construction":"Конструкції"
+        "teeth.construction":"Конструкції",
+        "tab.formula": "Зубна формула",
+        "tab.perio": "Періо карта",
+        "tab.stage": "Етап лікування",
+        "tab.test": "Пародонтальний скринінг-тест"
+
     }
 }
 export default lngPatient

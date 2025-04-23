@@ -5,7 +5,7 @@ import Lang from "lang.js";
 import lngPatient from "../../Lang/Patient/translation";
 import { useDispatch, useSelector } from "react-redux";
 import { appLangSelector } from "../../Redux/Layout/selectors";
-import { Link } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faPencil, faTrash, faCopy, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
@@ -14,9 +14,13 @@ import FormulaMilk from "./FormulaMilk/index";
 import { teethTypeSelector } from '../../Redux/Formula/selectors';
 import lngFormula from "../../Lang/Formula/translation";
 import { setPatientTab } from '../../Redux/Patient';
+import InputText from '@/Components/Form/InputText';
+import { createPatientTreatmentAction } from '@/Redux/Patient/actions';
+import PrimaryButton from '@/Components/Form/PrimaryButton';
+import { Button } from '@headlessui/react';
 
 export default function index({ patientData }) {
-    const [tab, setTab] = useState('history');
+    const [tab, setTab] = useState('formula');
     const appLang = useSelector(appLangSelector);
     const msg = new Lang({
         messages: lngPatient,
@@ -26,12 +30,17 @@ export default function index({ patientData }) {
         messages: lngFormula,
         locale: appLang,
     });
-    const teethType = useSelector(teethTypeSelector);
+    const [stageName, setStageName] = useState('');
     const dispatch = useDispatch<any>();
     
     const handleTabClick = (tabName) => {
         setTab(tabName);
     }
+
+    const submit = (e) => {
+        e.preventDefault();
+        router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
+    };
 
     return (
         <AuthenticatedLayout
@@ -89,73 +98,45 @@ export default function index({ patientData }) {
                                 </ul>
                             </div>
                         </div>
-                        {tab === 'history' && (
-                            <ul className='sub-tab text-right mt-5'>
-                                <li className='relative'>
-                                    <Link href="javascript:;" onClick={() => dispatch(setPatientTab('stage'))}>
-                                        <i className='icon-plan-treatment' />
-                                        <span className='inline-block ml-[35px]'>{msg.get("patient.tab.stage")}</span>
-                                    </Link>
-                                </li>
-                                <li className='relative'>
-                                    <Link href="javascript:;" onClick={() => dispatch(setPatientTab('formula'))}>
-                                        <i className='icon-formula' />
-                                        <span className='inline-block ml-[35px]'>{msg.get("patient.tab.formula")}</span>
-                                    </Link>
-                                </li>
-                                <li className='relative'>
-                                    <Link href="javascript:;" onClick={() => dispatch(setPatientTab('test'))}>
-                                        <i className='icon-psr' />
-                                        <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
-                                    </Link>
-                                </li>
-                                <li className='relative'>
-                                    <Link href="javascript:;" onClick={() => dispatch(setPatientTab('perio'))}>
-                                        <i className='icon-perio' />
-                                        <span className='inline-block ml-[35px]'>{msg.get("patient.tab.perio")}</span>
-                                    </Link>
-                                </li>
-                            </ul>
-                        )}
-                        <div className='mt-2'>
-                            <div className='inline w-full'>
-                                <h3 className='text-left inline-block w-[80%]'>Зубна формула</h3>
-                                <ul className='action-patient-icon inline-block w-[20%] text-right'>
-                                    <li>
-                                        <Link href={`patient/edit/`}>
-                                            <FontAwesomeIcon icon={faUserDoctor} className="mr-5" />
-                                        </Link>
-                                        <Link href={`/formula/edit/${patientData.id}`}>
-                                            <FontAwesomeIcon icon={faPencil} className="mr-5" />
-                                        </Link>
-                                        <Link href={`patient/edit/`}>
-                                            <FontAwesomeIcon icon={faCopy} className="mr-5" />
-                                        </Link>
-                                        <Link href={`patient/edit/`}>
-                                            <FontAwesomeIcon icon={faPrint} className="mr-5" />
-                                        </Link>
-                                        <Link href={`patient/edit/`}>
-                                            <FontAwesomeIcon icon={faTrash} className="mr-5" />
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='clearfix' />
-                            <div className='flex w-full'>
-                                <div className='w-2/3 bordered'>
-                                    {teethType === 'adult' && <Formula />}
-                                    {teethType != 'adult' && <FormulaMilk />}
+                        <div className="w-full bg-white border mt-10 patient-stage flex">
+                            <form onSubmit={submit} className="flex flex-row w-full" encType='multipart/form-data'>
+                                <div className="w-1/3">
+                                    <div className="mt-[-5px]">
+                                        <InputText
+                                            name={'stage_name'}
+                                            values={''}
+                                            onChange={(e) => {
+                                                setStageName(e.target.value)
+                                            }}
+                                            required
+                                            placeholder='Новий етап'
+                                            label={null}
+                                        /> 
+                                    </div>
                                 </div>
-                                <div className='w-1/3 bordered'>
-                                    <ul className="tabls-list">
-                                        <li className='active' onClick={() => {}}>{msg.get('patient.upper.jaw')}</li>
-                                        <li className='active'>{msg.get('patient.lower.jaw')}</li>
-                                        <li className='active'>{msg.get('patient.occlusion')}</li>
-                                        <li className='active'>{msg.get('patient.periodontal')}</li>
-                                        <li className='active'>{msg.get('patient.teeth')}</li>
+                                <div className="w-2/3">
+                                    <ul className='sub-tab text-right mt-1 mb-4 mt-[-10px]'>
+                                        <li className='relative'>
+                                            <button type="submit" onClick={() => setTab('formula')}>
+                                                <i className='icon-formula' />
+                                                <span className='inline-block ml-[35px]'>{msg.get("patient.tab.formula")}</span>
+                                            </button>
+                                        </li>
+                                        <li className='relative'>
+                                            <button type="submit" onClick={() => setTab('test')}>
+                                                <i className='icon-psr' />
+                                                <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
+                                            </button>
+                                        </li>
+                                        <li className='relative'>
+                                            <button type="submit" onClick={() => setTab('perio')}>
+                                                <i className='icon-psr' />
+                                                <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
+                                            </button>
+                                        </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>

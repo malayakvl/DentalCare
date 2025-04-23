@@ -9,6 +9,7 @@ use App\Models\Patient;
 use App\Models\Cabinet;
 use App\Models\Size;
 use App\Models\Store;
+use App\Models\PatientTreatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -118,6 +119,50 @@ class PatientController extends Controller
             }
             // return Redirect::route('patient.index');
         }
+    }
+
+    public function createTreatment(Request $request) {
+        if ($request->user()->can('patient-edit')) {
+            $patientTreatment = new PatientTreatment();
+            $patientTreatment->fill($request->all());
+            $patientTreatment->save();
+
+            if ($request->type === 'formula') {
+                $patientData = Patient::where('id', '=', $request->user_id)->first();
+
+                // return Inertia::render('Patient/EditFormula', [
+                //     'patientData' => $patientData
+                // ]);
+                return Redirect::route('patient.formula.edit', ['id' => $request->user_id]);
+                // return Inertia::render('Patient/EditFormula', [
+                //     'clinicData' => $clinicData,
+                //     'formData' => $formData,
+                //     'user_id' => $request->params['user_id']
+                // ]);
+            } else if ($request->type === 'treatment') {
+                $patientTreatment->type = 'treatment';
+            } else if ($request->type === 'stage') {
+                $patientTreatment->type = 'stage';
+            }
+            // $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
+            // $formData = new Patient();
+
+            // return Inertia::render('Patient/CreateTreatment', [
+            //     'clinicData' => $clinicData,
+            //     'formData' => $formData,
+            // ]);
+        }
+    }
+
+    /**
+     * view patient clinic card
+     */
+    public function view(Request $request, $id) {
+        $patientData = Patient::where('id', '=', $id)->first();
+
+        return Inertia::render('Patient/View', [
+            'patientData' => $patientData
+        ]);
     }
 
     /**

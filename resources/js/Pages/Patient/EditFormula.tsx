@@ -72,8 +72,6 @@ export default function index({ patientData }) {
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
 
-// console.log('CROWN COLOR', mceramicCrownColor);
-
     return (
         <AuthenticatedLayout
             header={
@@ -131,7 +129,7 @@ export default function index({ patientData }) {
                             </div>
                         </div>
                         {tab === 'history' && (
-                            <ul className='sub-tab'>
+                            <ul className="sub-tab text-right mt-5">
                                 <li className='relative'>
                                     <Link href="/">
                                         <i className='icon-plan-treatment' />
@@ -141,7 +139,7 @@ export default function index({ patientData }) {
                                 <li className='relative'>
                                     <Link href="/">
                                         <i className='icon-formula' />
-                                        <span className='inline-block ml-[35px]'>Зубна формула</span>
+                                        <span className='inline-block ml-[35px]'>{msgFormula.get("formula.tab")}</span>
                                     </Link>
                                 </li>
                                 <li className='relative'>
@@ -160,7 +158,7 @@ export default function index({ patientData }) {
                         )}
                         <div className='mt-2'>
                             <div className='inline w-full'>
-                                <h3 className='text-left inline-block w-[80%]'>Зубна формула</h3>
+                                <h3 className='text-left inline-block w-[80%]'>{msgFormula.get('formula.tab')}</h3>
                                 <ul className='action-patient-icon inline-block w-[20%] text-right'>
                                     <li>
                                         <Link href={`patient/edit/`}>

@@ -55,7 +55,7 @@ export default function List({listData, permissions}) {
                         <ul className="mt-5">
                         {listData?.map((item) => (
                             <li className="patient-item grid grid-cols-1 place-content-between" key={item.id}>
-                                <Link href={`/patient/cliniccard/${item.id}`}>
+                                <Link href={`/patient/view/${item.id}`}>
                                     <div className="inline-flex">
                                         {item.avatar ? (
                                             <img src={`/uploads/patients/${item.avatar}`} width="45" height="45" />
