@@ -43,7 +43,7 @@ import {
 } from '../../Redux/Formula'
 import PrimaryButton from '@/Components/Form/PrimaryButton';
 
-export default function index({ patientData }) {
+export default function index({ patientData, treatmentData, clinicData }) {
     const [tab, setTab] = useState('history');
     const appLang = useSelector(appLangSelector);
     const msg = new Lang({
@@ -54,6 +54,8 @@ export default function index({ patientData }) {
         messages: lngFormula,
         locale: appLang,
     });
+console.log('Stage Name', treatmentData.stage_name);    
+console.log('clinic data', clinicData);
     // const dispatch = useDispatch();
     const dispatch = useDispatch<any>();
     const teethType = useSelector(teethTypeSelector);
@@ -139,26 +141,26 @@ export default function index({ patientData }) {
                                 <li className='relative'>
                                     <Link href="/">
                                         <i className='icon-formula' />
-                                        <span className='inline-block ml-[35px]'>{msgFormula.get("formula.tab")}</span>
+                                        <span className='inline-block ml-[35px]'>{msg.get('patient.tab.formula')}</span>
                                     </Link>
                                 </li>
                                 <li className='relative'>
                                     <Link href="/">
                                         <i className='icon-psr' />
-                                        <span className='inline-block ml-[35px]'>Пародонтальний скринінг-тест</span>
+                                        <span className='inline-block ml-[35px]'>{msg.get('patient.tab.test')}</span>
                                     </Link>
                                 </li>
                                 <li className='relative'>
                                     <Link href="/">
                                         <i className='icon-perio' />
-                                        <span className='inline-block ml-[35px]'>Періо карта</span>
+                                        <span className='inline-block ml-[35px]'>{msg.get('patient.tab.perio')}</span>
                                     </Link>
                                 </li>
                             </ul>
                         )}
                         <div className='mt-2'>
                             <div className='inline w-full'>
-                                <h3 className='text-left inline-block w-[80%]'>{msgFormula.get('formula.tab')}</h3>
+                                <h3 className='text-left inline-block w-[80%]'>{treatmentData.stage_name}</h3>
                                 <ul className='action-patient-icon inline-block w-[20%] text-right'>
                                     <li>
                                         <Link href={`patient/edit/`}>

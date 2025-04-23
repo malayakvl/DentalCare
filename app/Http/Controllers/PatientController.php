@@ -127,30 +127,17 @@ class PatientController extends Controller
             $patientTreatment->fill($request->all());
             $patientTreatment->save();
 
-            if ($request->type === 'formula') {
-                $patientData = Patient::where('id', '=', $request->user_id)->first();
+            $patientData = Patient::where('id', '=', $request->user_id)->first();
+            $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
 
-                // return Inertia::render('Patient/EditFormula', [
-                //     'patientData' => $patientData
-                // ]);
-                return Redirect::route('patient.formula.edit', ['id' => $request->user_id]);
-                // return Inertia::render('Patient/EditFormula', [
-                //     'clinicData' => $clinicData,
-                //     'formData' => $formData,
-                //     'user_id' => $request->params['user_id']
-                // ]);
+            if ($request->type === 'formula') {
+                return Redirect::route('patient.formula.edit', ['id' => $patientTreatment->id]);
+            } else if ($request->type === 'perio') {
             } else if ($request->type === 'treatment') {
                 $patientTreatment->type = 'treatment';
             } else if ($request->type === 'stage') {
                 $patientTreatment->type = 'stage';
             }
-            // $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
-            // $formData = new Patient();
-
-            // return Inertia::render('Patient/CreateTreatment', [
-            //     'clinicData' => $clinicData,
-            //     'formData' => $formData,
-            // ]);
         }
     }
 
@@ -178,10 +165,14 @@ class PatientController extends Controller
 
 
     public function formulaEdit(Request $request, $id) {
-        $patientData = Patient::where('id', '=', $id)->first();
+        $patientTreatment = PatientTreatment::where('id', '=', $id)->first();
+        $patientData = Patient::where('id', '=', $patientTreatment->user_id)->first();
+        $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
 
         return Inertia::render('Patient/EditFormula', [
-            'patientData' => $patientData
+            'patientData' => $patientData,
+            'clinicData' => $clinicData,
+            'treatmentData' => $patientTreatment,
         ]);
     }
 

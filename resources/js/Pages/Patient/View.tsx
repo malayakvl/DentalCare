@@ -15,9 +15,6 @@ import { teethTypeSelector } from '../../Redux/Formula/selectors';
 import lngFormula from "../../Lang/Formula/translation";
 import { setPatientTab } from '../../Redux/Patient';
 import InputText from '@/Components/Form/InputText';
-import { createPatientTreatmentAction } from '@/Redux/Patient/actions';
-import PrimaryButton from '@/Components/Form/PrimaryButton';
-import { Button } from '@headlessui/react';
 
 export default function index({ patientData }) {
     const [tab, setTab] = useState('formula');
