@@ -44,23 +44,23 @@
     fill: none;
 }
 .caries-stroke {
-    stroke-width: 1;
+    stroke-width: 1 !important;
 }
 .caries-fill {
     fill: #606c80;
     opacity: 1;
 }
 .cervical-caries {
-    fill: #606c80;
-    opacity: 1;
+    fill: #606c80 !important;
+    opacity: 1 !important;
 }
 .cervical-caries-hueta {
     fill: #c21a79;
     opacity: 1;
 }
 .cervical-caries-stroke {
-    stroke: #606c80;
-    stroke-width: 6px;
+    stroke: #606c80 !important;
+    stroke-width: 6px !important;
     opacity: 1;
 }
 .tartar-part {
@@ -69,30 +69,29 @@
     opacity: 1;
 }
 .pulpit {
-    fill: #e80808;
+    fill: #e80808 !important;
 }
 .channel-not-sealed {
-    fill: #837272;
+    fill: #837272 !important;
 }
 .channel-top-sealed {
-    fill: #dd7d7d;
+    fill: #dd7d7d !important;
 }
 .channel-part-sealed {
-    fill: #dd7d7d;
+    fill: #dd7d7d !important;
 }
 .channel-part-sealed.top-sealed-part {
     fill: #181818;
 }
 .periodontit, .periodontit {
-    fill: #837272;
+    fill: #837272 !important;
 }
 .shaped-defect-stroke {
-    stroke: rgb(156, 156, 156);
-    stroke-width: 2px;
-    opacity: 1;
+    stroke: rgb(156, 156, 156) !important;
+    stroke-width: 2px !important;
+    opacity: 1 !important;
 }
 .seal-fill.blue {
-    // fill: #60a5fa;
     fill:rgb(152, 240, 183, 0.7) !important;
     opacity: 1;
 }
@@ -112,55 +111,55 @@
     fill: rgba(245, 165, 165, 0.7) !important;
 }
 .seal-cervical-stroke {
-    stroke: rgb(24, 22, 22);
-    stroke-width: 1px;
-    opacity: 1;
+    stroke: rgb(24, 22, 22)!important;
+    stroke-width: 1px!important;
+    opacity: 1 !important;
 }
 .vinir-fill.blue{
-    fill:rgba(180, 241, 178, 0.95);
+    fill:rgba(180, 241, 178, 0.95) !important;
 }
 .vinir-fill.yellow{
-    fill:rgba(241, 236, 110, 0.7);
-    stroke-width: 3;
-    stroke: rgb(81, 79, 72);
+    fill:rgba(241, 236, 110, 0.7) !important;
+    stroke-width: 3 !important;
+    stroke: rgb(81, 79, 72) !important;
 }
 .vinir-fill.pink{
-    fill:rgba(245, 165, 165, 0.7);
-    stroke-width: 5;
-    stroke: rgb(81, 79, 72);
+    fill:rgba(245, 165, 165, 0.7) ;
+    stroke-width: 5 !important;
+    stroke: rgb(81, 79, 72) !important;
 }
 .temporary-crown, .crown-fill {
-    fill: #c8cdcb;
+    fill: #c8cdcb !important;
 }
 .temporary-crown.blue {
-    fill: rgba(152, 240, 183, 0.95);
+    fill: rgba(152, 240, 183, 0.95) !important;
 }
 .temporary-crown.yellow {
-    fill: rgba(241, 236, 110, 0.7);
-    stroke-width: 5;
-    stroke: rgb(81, 79, 72);
+    fill: rgba(241, 236, 110, 0.7)!important;
+    stroke-width: 5 !important;
+    stroke: rgb(81, 79, 72) !important;
 }
 .crown-fill.yellow {
-    fill: rgba(241, 236, 110, 0.7);
-    stroke-width: 5;
-    stroke: rgb(81, 79, 72);
+    fill: rgba(241, 236, 110, 0.7) !important;
+    stroke-width: 5 !important;
+    stroke: rgb(81, 79, 72) !important;
 }
 .crown-fill.pink {
-    fill: rgba(245, 165, 165, 0.75);
-    stroke-width: 8;
-    stroke: rgb(81, 79, 72);
+    fill: rgba(245, 165, 165, 0.75) !important;
+    stroke-width: 8 !important;
+    stroke: rgb(81, 79, 72) !important;
 }
 .st60.blue {
-    fill:rgba(152, 240, 183, 0.95);
-    stroke-width: 1;
+    fill:rgba(152, 240, 183, 0.95)!important;
+    stroke-width: 1!important;
 }
 .st60.yellow {
-    fill:rgba(241, 236, 110, 0.7);
+    fill:rgba(241, 236, 110, 0.7)!important;
     stroke-width: 1;
 }
 .st60.pink {
-    fill:rgba(245, 165, 165, 0.75);
-    stroke-width: 1;
+    fill:rgba(245, 165, 165, 0.75)!important;
+    stroke-width: 1!important;
 }
 .num-active {
     font-weight: bold;

@@ -10,6 +10,8 @@ import { emptyProducersAutocompleteAction, findProducersAction } from "../../../
 import { useDispatch, useSelector } from "react-redux";
 import { userSearchResultsSelector } from "../../../Redux/Clinic/selectors";
 import InputSelect from "../../../Components/Form/InputSelect";
+import Tooth28 from "./Tooth28";
+import Tooth27 from "./Tooth27";
 
 import {
     getStatusesSelector,
@@ -79,7 +81,9 @@ export default function FormulaPerio() {
                 <path stroke="#cccccc40" d="M0 616 L2085 616" strokeWidth="2px"></path>
                 <path stroke="#cccccc40" d="M0 624 L2085 624" strokeWidth="2px"></path>
 
-                <g id="28" className="df-tooth-text" data-number="28">
+                <Tooth28 />
+                <Tooth27 />
+                {/* <g id="28" className="df-tooth-text" data-number="28">
                     <text transform="matrix(1 0 0 1 1995 340)" className="st3 st4 st5">28</text>
                 </g>
                 <g className="df-tooth top" style={{opacity: 1}} transform="matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 230 -206)"  opacity="1" data-type="intact" data-position="28">
@@ -253,9 +257,9 @@ export default function FormulaPerio() {
                             
                         </g>
                     </g>
-                </g>
+                </g> */}
 
-                <g id="27" className="df-tooth-text" data-number="27">
+                {/* <g id="27" className="df-tooth-text" data-number="27">
                     <text transform="matrix(1 0 0 1 1865 340)" className="st3 st4 st5">27</text>
                 </g>
 
@@ -458,7 +462,7 @@ export default function FormulaPerio() {
                 
             </g>
         </g>
-                </g>
+                </g> */}
                 
             </svg>
         </section>
