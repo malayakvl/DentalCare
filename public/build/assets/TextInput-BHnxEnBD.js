@@ -1,1 +1,0 @@
-import{r,j as e}from"./app-DUD9FxAe.js";const f=r.forwardRef(function({type:s="text",className:o="",isFocused:i=!1,...t},u){const n=r.useRef(null);return e.jsx("div",{children:e.jsx("input",{...t,type:s,className:"rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 "+o,ref:n})})});export{f as T};
