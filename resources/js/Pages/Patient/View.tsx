@@ -9,9 +9,6 @@ import { Link, router } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faPencil, faTrash, faCopy, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
-import Formula from "./Formula/index";
-import FormulaMilk from "./FormulaMilk/index";
-import { teethTypeSelector } from '../../Redux/Formula/selectors';
 import lngFormula from "../../Lang/Formula/translation";
 import { setPatientTab } from '../../Redux/Patient';
 import InputText from '@/Components/Form/InputText';
@@ -120,13 +117,13 @@ export default function index({ patientData }) {
                                             </button>
                                         </li>
                                         <li className='relative'>
-                                            <button type="submit" onClick={() => setTab('test')}>
-                                                <i className='icon-psr' />
-                                                <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
+                                            <button type="submit" onClick={() => setTab('perio')}>
+                                                <i className='icon-perio' />
+                                                <span className='inline-block ml-[35px]'>{msg.get("patient.tab.perio")}</span>
                                             </button>
                                         </li>
                                         <li className='relative'>
-                                            <button type="submit" onClick={() => setTab('perio')}>
+                                            <button type="submit" onClick={() => setTab('test')}>
                                                 <i className='icon-psr' />
                                                 <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
                                             </button>

@@ -6,7 +6,7 @@ import lngFormula from "../../Lang/Formula/translation";
 import lngPatient from "../../Lang/Patient/translation";
 import { useSelector, useDispatch } from "react-redux";
 import { appLangSelector } from "../../Redux/Layout/selectors";
-import { Link, router, useForm, usePage } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faFloppyDisk, faPencil, faTrash, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
@@ -54,9 +54,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
         messages: lngFormula,
         locale: appLang,
     });
-console.log('Stage Name', treatmentData.stage_name);    
-console.log('clinic data', clinicData);
-    // const dispatch = useDispatch();
+
     const dispatch = useDispatch<any>();
     const teethType = useSelector(teethTypeSelector);
     const handleTabClick = (tabName) => {

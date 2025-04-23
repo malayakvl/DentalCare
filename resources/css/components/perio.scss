@@ -1,0 +1,26 @@
+.perio-select {
+    font-size: 11px !important;
+    padding:0px !important;
+    max-width: 60px;
+    width: 60px;
+    border: none;
+}
+.perio-table {
+    width: 1180px !important;
+
+}
+.perio-table .tooth-img {
+    width: 1024px !important;
+}
+.perio-table td{
+    text-align: center;
+    // padding: 2px 5px;
+    border:solid 1px;
+    width: 60px !important;
+
+}
+.perio-table td.title{
+    text-align: left;
+    font-size: 12px;
+    width: 150px;
+}

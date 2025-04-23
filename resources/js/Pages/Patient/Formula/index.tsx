@@ -101,31 +101,16 @@ import Tooth16 from "./Tooth16";
 import Tooth17 from "./Tooth17";
 import Tooth18 from "./Tooth18";
 import {
-    allTeethSelector,
-    getDiagnosisSelector,
-    getSealColor1Selector,
-    getSealColor2Selector,
-    getSealColor3Selector,
-    getSubDiagnosisSelector,
-    getTeethDiagnozisSelector,
-    getSealServicalColorSelector,
-    getVinirColorSelector,
-    getCeramicCrownColorSelector,
-    getCeramicMCrownColorSelector,
-    getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector,
     getStatusesSelector,
     getActiveToothNumber
 } from "../../../Redux/Formula/selectors";
 
-export default function Formula({
-   className = '',
-}) {
+export default function Formula() {
     const toothActive = useSelector(getStatusesSelector);
     const activeNumber = useSelector(getActiveToothNumber);
 
     return (
-        <section className={className}>
+        <section>
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
                  y="0px" viewBox="0 0 2085 1602.9"  xmlSpace="preserve">
                 <MaxilaryLeft />
@@ -263,7 +248,7 @@ export default function Formula({
                     <path className="st35 st_pointers" d="M1100,739.2l4.3,15.9h-18.7l9.3-34.7 L1100,739.2" id="pointer_21" style={{opacity: toothActive.tooth21.active ? 1 : 0}} />
                 </g>
             </svg>
-            
+
         </section>
     );
 }
