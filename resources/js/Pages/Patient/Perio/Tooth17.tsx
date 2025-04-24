@@ -19,14 +19,14 @@ import {
 } from "../../../Redux/Formula/selectors";
 
 
-export default function Tooth17() {
+export default function Tooth17({className=''}) {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth18Diagnozis = teethDiagnozis.tooth18;
+    const tooth17Diagnozis = teethDiagnozis.tooth17;
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -42,7 +42,12 @@ export default function Tooth17() {
             <g id="17" className="df-tooth-text" data-number="17">
                 <text transform="matrix(1 0 0 1 175 340)" className="st3 st4 st5">17</text>
             </g>
-            <g className="df-tooth-perio" data-number="17" transform="matrix(0.6958441, -0.076167, 0.076167, 0.6958441 -111 -44)" opacity="1" data-type="intact">
+            <g className="df-tooth-perio" data-number="17" 
+                // transform={className === 'bottom' ? 'matrix(-0.6950482, 0.0831159, -0.0831159, -0.6950482 285 698)' : 'matrix(0.6950482, -0.0831159, 0.0831159, 0.6950482 -157 -44)'}
+                transform={className === 'bottom' ? 'matrix(-0.6950482, 0.0831159, -0.0831159, -0.6950482 505 698)' : 'matrix(0.6958441, -0.076167, 0.076167, 0.6958441 -111 -44)'}
+                // transform="matrix(0.6958441, -0.076167, 0.076167, 0.6958441 -111 -44)" 
+                opacity="1" data-type="intact"
+            >
         <g className="underlay" style={{visibility: "inherit"}}>
             <path className="st40" d="M364,271c0,0,6.9,35.5,2.1,54.2s-31.7,47.3-37.1,69.1c-3.9,15.9-6,47.1,1.2,67.9
             c3.1,9,11.4,18.1,12.6,26.5c2.3,16.6-3.1,24.6-5.4,40.5c-4,27.7-12.7,61-11.7,92.3c1.6,49.2-5.2,120.4,65.1,117

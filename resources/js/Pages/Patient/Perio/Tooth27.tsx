@@ -19,7 +19,7 @@ import {
 } from "../../../Redux/Formula/selectors";
 
 
-export default function Tooth27() {
+export default function Tooth27({className = ''}) {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -44,7 +44,9 @@ export default function Tooth27() {
                 </g>
 
                 <g className="df-tooth-perio" 
-                     transform="matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 756 -243)" opacity="1" data-type="intact" style={{opacity: 1, transition: 'opacity'}}>
+                    transform={className === 'bottom' ? 'matrix(-0.6978531, -0.05478109, 0.05478109, -0.6978531 3049 828)' : 'matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 756 -243)'}
+                    // transform="matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 756 -243)" 
+                >
         <g className="underlay">
             <path className="st40" d="M1734.1,269c0,0-6.9,35.5-2.1,54.2s30.7,47.3,36.1,69.1
             c3.9,15.9,3,47.1-4.2,67.9c-3.1,9-7.4,18.1-8.6,26.5c-2.3,16.6,3.1,24.6,5.4,40.5c4,27.7,12.7,61,11.7,92.3

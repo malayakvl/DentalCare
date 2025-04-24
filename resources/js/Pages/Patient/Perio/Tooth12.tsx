@@ -19,14 +19,14 @@ import {
 } from "../../../Redux/Formula/selectors";
 
 
-export default function Tooth12() {
+export default function Tooth12({className = ''}) {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth18Diagnozis = teethDiagnozis.tooth18;
+    const tooth12Diagnozis = teethDiagnozis.tooth12;
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -42,7 +42,10 @@ export default function Tooth12() {
             <g id="12" className="df-tooth-text" data-number="12">
                 <text transform="matrix(1 0 0 1 825 340)" className="st3 st4 st5">12</text>
             </g>
-            <g className="df-tooth-perio" data-number="12" transform="matrix(0.6921516, 0.1045275, -0.1045275, 0.6921516 267 -214)" opacity="1" data-type="intact">
+            <g className="df-tooth-perio" data-number="12" 
+                transform={className === 'bottom' ? 'matrix(-0.6921516, -0.1045275, 0.1045275, -0.6921516 1432 860)' : 'matrix(0.6921516, 0.1045275, -0.1045275, 0.6921516 267 -214)'}
+                // transform="matrix(0.6921516, 0.1045275, -0.1045275, 0.6921516 267 -214)"
+            >
         <g className="underlay" style={{visibility: "inherit"}}>
             <path className="st40" d="M870,307.9c0,0-1,25,2,59s5.5,72.9,5,88c-2,64,10.5,63.1,13,81
             c4,29-14,28.5-12,58.7c2,30.3-9,90.3,2,118.3s41,23,53,15c11.2-7.5,14-19,16-54s0-71,0-84s-13.6-27-12-45c2-22,13-23,12-66

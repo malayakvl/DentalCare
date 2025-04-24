@@ -19,14 +19,14 @@ import {
 } from "../../../Redux/Formula/selectors";
 
 
-export default function Tooth16() {
+export default function Tooth16({className = ''}) {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth18Diagnozis = teethDiagnozis.tooth18;
+    const tooth16Diagnozis = teethDiagnozis.tooth16;
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -36,13 +36,17 @@ export default function Tooth16() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-
+console.log('className', className);
     return (
         <>
             <g id="16" className="df-tooth-text" data-number="16">
                 <text transform="matrix(1 0 0 1 305 340)" className="st3 st4 st5">16</text>
             </g>
-            <g className="df-tooth-perio" data-number="16" transform="matrix(0.6998369, -0.01510264, 0.01510264, 0.6998369 -59 -89)" opacity="1" data-type="intact">
+            <g className="df-tooth-perio" data-number="16" 
+                transform={className === 'bottom' ? 'matrix(-0.6998369, 0.01510264, -0.01510264, -0.6998369 711 741)' : 'matrix(0.6998369, -0.01510264, 0.01510264, 0.6998369 -59 -89)'}
+                // transform="matrix(0.6998369, -0.01510264, 0.01510264, 0.6998369 -59 -89)"
+                 opacity="1" data-type="intact"
+            >
         <g className="underlay" style={{visibility: "inherit" }}>
             <path className="st40" d="M496.7,264.2c0,0-11.2,23.7-9.6,44.1c1.6,20.4,6.2,35.2,2.7,50.9
             c-3.5,15.7-24.5,35.9-27.9,65.9c-3.4,30,2.4,45.9,25.1,66.7c11.9,10.9-0.6,30.4-10.1,49c-8.6,16.8-13.4,38.3-18.7,56.1
