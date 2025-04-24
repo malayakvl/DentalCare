@@ -9,18 +9,25 @@
     width: 1180px !important;
 
 }
+.f-prerio {
+    // background:yellow;
+  max-height: 400px;
+}
 .perio-table .tooth-img {
     width: 1024px !important;
 }
 .perio-table td{
     text-align: center;
     // padding: 2px 5px;
-    border:solid 1px;
-    width: 60px !important;
+    border-left:solid 1px;
+    // border-bottom:solid 1px;
+    border-color: #e3e3e3;
+    width: 67px !important;
 
 }
 .perio-table td.title{
     text-align: left;
     font-size: 12px;
     width: 150px;
+    padding: 0px 10px;
 }

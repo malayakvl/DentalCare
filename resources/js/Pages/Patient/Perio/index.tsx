@@ -17,7 +17,9 @@ import {
 } from "../../../Redux/Formula/selectors";
 import MovePerio from './Move';
 import Furkacia from './Furkacia';
-import FormulaPerio from './FormulaPerio';
+import FormulaPerio1828 from './FormulaPerio1828';
+import FormulaPerio3848 from './FormulaPerio3848';
+
 
 export default function Formula() {
     const toothActive = useSelector(getStatusesSelector);
@@ -27,8 +29,8 @@ export default function Formula() {
         <div className="w-full scroll-x">
             <table className="table-auto perio-table">
                 <tbody>
-                {/* <tr>
-                    <td className="title"><span className="text-[14px]">Статус зуба</span></td>
+                <tr>
+                    <td className="title">Статус зуба</td>
                     <td>
                         <select className="perio-select" data-tooth="18">
                             <option value="other">Інший</option>
@@ -149,609 +151,125 @@ export default function Formula() {
                             <option value="pontic">Проміжна частина</option>
                         </select>
                     </td>
-                </tr> */}
-                {/* <tr>
-                    <td className="title"><span className="text-[14px]">Рухомість</span></td>
-                    <td style={{width: '60px'}}>
-                        <MovePerio />
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
                     </td>
                     <td>
-                        <MovePerio />
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
                     </td>
                     <td>
-                        <MovePerio />
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
                     </td>
                     <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                    <td>
-                        <MovePerio />
-                    </td>
-                </tr> */}
-                {/* <tr>
-                    <td className="title"><span className="text-[14px]">Фуркація</span></td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
-                    </td>
-                    <td>
-                        <Furkacia />
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
-                    <td className="title"><span className="text-[14px]">Кровоточивість</span></td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
+                    <td className="title">Кровоточивість</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td className="title"><span className="text-[14px]">Гноєтеча</span></td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
+                    <td className="title">Гноєтеча</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td className="title"><span className="text-[14px]">Зубні відкладення</span></td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
+                    <td className="title">Зубні відкладення</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td className="title"><span className="text-[14px]">Ясенний край</span></td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
+                    <td className="title">Глибина зонд-ння</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td className="title"><span className="text-[14px]">Глибина зондування</span></td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td className="title"><span className="text-[14px]">Вестибулярно</span></td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                    <td>
-                        <div className="flex flex-row">
-                            <Furkacia />
-                            <Furkacia />
-                            <Furkacia />
-                        </div>
-                    </td>
-                </tr> */}
-                <tr>
-                    <td className="title"></td>
+                    <td className="title">Ясений край</td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -772,10 +290,111 @@ export default function Formula() {
                 <tr>
                     <td className="title"><span className="text-[14px]">Вестибулярно</span></td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1024px'}}>
-                        <FormulaPerio />
+                        <FormulaPerio1828 />
                     </td>
                 </tr>
-                </tbody>
+                <tr>
+                    <td className="title">Кровоточивість</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Гноєтеча</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Зубні відкладення</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Глибина зонд-ння</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Ясений край</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title"><span className="text-[14px]">Вестибулярно</span></td>
+                    <td colSpan={16} style={{textAlign: 'center', width: '1024px'}}>
+                        <FormulaPerio3848 />
+                    </td>
+                </tr>
+            </tbody>
                 
             </table>
              
