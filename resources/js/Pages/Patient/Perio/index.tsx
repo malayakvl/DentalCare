@@ -19,6 +19,11 @@ import MovePerio from './Move';
 import Furkacia from './Furkacia';
 import FormulaPerio1828 from './FormulaPerio1828';
 import FormulaPerio3848 from './FormulaPerio3848';
+import DentalDeposits from './DentalDeposits';
+import Fertilizer from './Fertilizer';
+import Bleeding from './Bleeding';
+import Moving from './Moving';
+import DeepZond from './DeepZoond';
 
 
 export default function Formula() {
@@ -415,7 +420,7 @@ export default function Formula() {
                 </tr>
                 <tr>
                     <td className="title">Глибина зондування</td>
-                    <td></td>
+                    <td><DeepZond toothNum={48} /></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -453,64 +458,99 @@ export default function Formula() {
                 </tr>
                 <tr>
                     <td className="title">Зубні відкладення</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <DentalDeposits toothNum={48} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={47} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={46} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={45} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={44} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={43} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={42} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={41} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={31} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={32} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={33} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={34} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={35} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={36} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={37} />
+                    </td>
+                    <td>
+                        <DentalDeposits toothNum={38} />
+                    </td>
                 </tr>
                 <tr>
                     <td className="title">Гноєтеча</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><Fertilizer toothNum={48} /></td>
+                    <td><Fertilizer toothNum={47} /></td>
+                    <td><Fertilizer toothNum={46} /></td>
+                    <td><Fertilizer toothNum={45} /></td>
+                    <td><Fertilizer toothNum={44} /></td>
+                    <td><Fertilizer toothNum={43} /></td>
+                    <td><Fertilizer toothNum={42} /></td>
+                    <td><Fertilizer toothNum={41} /></td>
+                    <td><Fertilizer toothNum={31} /></td>
+                    <td><Fertilizer toothNum={32} /></td>
+                    <td><Fertilizer toothNum={33} /></td>
+                    <td><Fertilizer toothNum={34} /></td>
+                    <td><Fertilizer toothNum={35} /></td>
+                    <td><Fertilizer toothNum={36} /></td>
+                    <td><Fertilizer toothNum={37} /></td>
+                    <td><Fertilizer toothNum={38} /></td>
                 </tr>
                 <tr>
                     <td className="title">Кровоточивість</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><Bleeding toothNum={48} /></td>
+                    <td><Bleeding toothNum={47} /></td>
+                    <td><Bleeding toothNum={46} /></td>
+                    <td><Bleeding toothNum={45} /></td>
+                    <td><Bleeding toothNum={44} /></td>
+                    <td><Bleeding toothNum={43} /></td>
+                    <td><Bleeding toothNum={42} /></td>
+                    <td><Bleeding toothNum={41} /></td>
+                    <td><Bleeding toothNum={31} /></td>
+                    <td><Bleeding toothNum={32} /></td>
+                    <td><Bleeding toothNum={33} /></td>
+                    <td><Bleeding toothNum={34} /></td>
+                    <td><Bleeding toothNum={35} /></td>
+                    <td><Bleeding toothNum={36} /></td>
+                    <td><Bleeding toothNum={37} /></td>
+                    <td><Bleeding toothNum={38} /></td>
                 </tr>
                 
                 <tr>
                     <td className="title">Фуркація</td>
+                    <td><Furkacia toothNum={48} /></td>
+                    <td><Furkacia toothNum={47} /></td>
+                    <td><Furkacia toothNum={46} /></td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -521,31 +561,28 @@ export default function Formula() {
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><Furkacia toothNum={38} /></td>
+                    <td><Furkacia toothNum={38} /></td>
+                    <td><Furkacia toothNum={38} /></td>
                 </tr>
                 <tr>
                     <td className="title">Рухомість</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><Moving toothNum={48} /></td>
+                    <td><Moving toothNum={47} /></td>
+                    <td><Moving toothNum={46} /></td>
+                    <td><Moving toothNum={45} /></td>
+                    <td><Moving toothNum={44} /></td>
+                    <td><Moving toothNum={43} /></td>
+                    <td><Moving toothNum={42} /></td>
+                    <td><Moving toothNum={41} /></td>
+                    <td><Moving toothNum={31} /></td>
+                    <td><Moving toothNum={32} /></td>
+                    <td><Moving toothNum={33} /></td>
+                    <td><Moving toothNum={34} /></td>
+                    <td><Moving toothNum={35} /></td>
+                    <td><Moving toothNum={36} /></td>
+                    <td><Moving toothNum={37} /></td>
+                    <td><Moving toothNum={38} /></td>
                 </tr>
                 <tr>
                     <td className="title">Статус зуба</td>

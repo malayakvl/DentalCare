@@ -6,7 +6,7 @@ import {
 
 
 
-export default function Furkacia() {
+export default function Furkacia({toothNum}) {
     // const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     // const tooth11Diagnozis = teethDiagnozis.tooth11;
 
