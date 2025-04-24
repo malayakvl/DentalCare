@@ -22,8 +22,10 @@ import Tooth11 from "./Tooth11";
 import Tooth12 from "./Tooth12";
 import Tooth13 from "./Tooth13";
 import Tooth14 from "./Tooth14";
-// import Tooth14 from "./Tooth14";
-// import
+import Tooth15 from "./Tooth15";
+import Tooth16 from "./Tooth16";
+import Tooth17 from "./Tooth17";
+import Tooth18 from "./Tooth18";
 import {
     getStatusesSelector,
     getActiveToothNumber
@@ -104,6 +106,10 @@ export default function FormulaPerio() {
                 <Tooth12 />
                 <Tooth13 />
                 <Tooth14 />
+                <Tooth15 />
+                <Tooth16 />
+                <Tooth17 />
+                <Tooth18 />
                 {/* <g id="28" className="df-tooth-text" data-number="28">
                     <text transform="matrix(1 0 0 1 1995 340)" className="st3 st4 st5">28</text>
                 </g>
