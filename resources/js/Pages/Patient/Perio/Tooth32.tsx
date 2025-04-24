@@ -42,7 +42,10 @@ export default function Tooth32({className = ''}) {
             <g id="48" className="df-tooth-text" data-number="48">
                 <text transform="matrix(1 0 0 1 1213 340)" className="st3 st4 st5">32</text>
             </g>
-            <g className="df-tooth-perio" data-number="32" transform="matrix(-0.6992818, -0.03170713, 0.03170713, -0.6992818, 2000 1064)" opacity="1" data-type="intact">
+            <g className="df-tooth-perio" data-number="32" 
+                transform={className === 'bottom' ? 'matrix(0.6992818, 0.03170713, -0.03170713, 0.6992818, 466, -414)' : 'matrix(-0.6992818, -0.03170713, 0.03170713, -0.6992818, 2000 1064)'}
+                // transform="matrix(-0.6992818, -0.03170713, 0.03170713, -0.6992818, 2000 1064)"
+            >
         <g className="underlay" style={{visibility:"inherit"}}>
             <path className="st40" d="M1119,1202.9c0,0,2,48,5,71s6,60,11,77s14,29,25,28s15-12,17-30s2-66,2-90
             s2.7-79,3.3-98c1.7-62-17.3-79-16.3-107s15-43.5,15-67.2c0-23.8-0.6-158.8-2-173.8c-2-21-16-28-29-29s-34,4-36,38s0.8,161,1,167
