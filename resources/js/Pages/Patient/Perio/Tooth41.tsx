@@ -43,7 +43,7 @@ export default function Tooth41({className = ''}) {
                 <text transform="matrix(1 0 0 1 956 340)" className="st3 st4 st5">41</text>
             </g>
             <g className="df-tooth-perio" data-number="41" 
-                transform={className === 'bottom' ? 'matrix(0.69937, -0.02969792, 0.02969792, 0.69937 -190 -839)' : 'matrix(-0.69937, 0.02969792, -0.02969792, -0.69937 1724 1004)'}
+                transform={className === 'bottom' ? 'matrix(0.69937, -0.02969792, 0.02969792, 0.69937 236 -348)' : 'matrix(-0.69937, 0.02969792, -0.02969792, -0.69937 1724 1004)'}
 
                 // transform="matrix(-0.69937, 0.02969792, -0.02969792, -0.69937 1724 1004)"
             >

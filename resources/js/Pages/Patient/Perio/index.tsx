@@ -294,63 +294,6 @@ export default function Formula() {
                     </td>
                 </tr>
                 <tr>
-                    <td className="title">Кровоточивість</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td className="title">Гноєтеча</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td className="title">Зубні відкладення</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
                     <td className="title">Глибина зонд-ння</td>
                     <td></td>
                     <td></td>
@@ -389,11 +332,385 @@ export default function Formula() {
                     <td></td>
                 </tr>
                 <tr>
-                    <td className="title"><span className="text-[14px]">Вестибулярно</span></td>
+                    <td className="title">Зубні відкладення</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Гноєтеча</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Кровоточивість</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Фуркаці</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title"><span className="text-[14px]">Рухомість</span></td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1024px'}}>
                         <FormulaPerio3848 />
                     </td>
                 </tr>
+                <tr>
+                    <td className="title">Глибина зондування</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Ясений край</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Зубні відкладення</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Гноєтеча</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Кровоточивість</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                
+                <tr>
+                    <td className="title">Фуркація</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Рухомість</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td className="title">Статус зуба</td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select className="perio-select" data-tooth="18">
+                            <option value="other">Інший</option>
+                            <option value="intact">Наявний</option>
+                            <option value="empty">Відсутній</option>
+                            <option value="implant">Імплант</option>
+                            <option value="crown">Коронка</option>
+                            <option value="pontic">Проміжна частина</option>
+                        </select>
+                    </td>
+                </tr>
+
             </tbody>
                 
             </table>
