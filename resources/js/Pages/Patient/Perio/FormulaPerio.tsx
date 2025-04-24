@@ -12,7 +12,18 @@ import { userSearchResultsSelector } from "../../../Redux/Clinic/selectors";
 import InputSelect from "../../../Components/Form/InputSelect";
 import Tooth28 from "./Tooth28";
 import Tooth27 from "./Tooth27";
-
+import Tooth26 from "./Tooth26";
+import Tooth25 from "./Tooth25";
+import Tooth24 from "./Tooth24";
+import Tooth23 from "./Tooth23";
+import Tooth22 from "./Tooth22";
+import Tooth21 from "./Tooth21";
+import Tooth11 from "./Tooth11";
+import Tooth12 from "./Tooth12";
+import Tooth13 from "./Tooth13";
+import Tooth14 from "./Tooth14";
+// import Tooth14 from "./Tooth14";
+// import
 import {
     getStatusesSelector,
     getActiveToothNumber
@@ -83,6 +94,16 @@ export default function FormulaPerio() {
 
                 <Tooth28 />
                 <Tooth27 />
+                <Tooth26 />
+                <Tooth25 />
+                <Tooth24 />
+                <Tooth23 />
+                <Tooth22 />
+                <Tooth21 />
+                <Tooth11 />
+                <Tooth12 />
+                <Tooth13 />
+                <Tooth14 />
                 {/* <g id="28" className="df-tooth-text" data-number="28">
                     <text transform="matrix(1 0 0 1 1995 340)" className="st3 st4 st5">28</text>
                 </g>
