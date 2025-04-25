@@ -149,7 +149,7 @@ const dispatch = useDispatch<any>();
             <g id="35" className="df-tooth-text">
                 <text transform="matrix(1 0 0 1 1397.7461 842.0025)" className={`st3 st4 st5 ${toothActive.tooth35.active ? 'num-active' : ''}`}>35</text>
             </g>
-<g className={`f-tooth-active`}
+            <g className={`f-tooth-active`}
                 onMouseOver={() => {
                     (!toothActive && !allTeeth) && document.getElementById('45').classList.add('tooth-number-hover')
                 }}
@@ -598,7 +598,7 @@ const dispatch = useDispatch<any>();
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_35" style={{visibility: !tooth35Diagnozis.implant && !tooth35Diagnozis.apex && !tooth35Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_35" className="st9" 
+                            <path id="dentin_v_35" className={`st9 change-color ${tooth35Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M1455.1,1163.8c-0.4,4.8-0.7,9.6-0.9,14.3c-1.5,4-3.4,7.7-5.9,11.2
                                 c-3.8,5.3-8.7,9.7-14.7,12.3c-0.4,0.2-0.9,0.4-1.3,0.6c-5.1,2-10.6,2.6-16,2c-3-0.3-5.9-0.9-8.8-1.9c-7.9-2.6-14.9-7.2-20.7-13.1
                                 c-1.7-5.4-3.4-10.8-5.2-16.3c-0.5-5-0.7-10.1-0.6-15.1c0-8.4,0.8-16.8,2.1-25.2l27,0.9l28.6-8.2c3.4,5.7,6.4,11.6,9,17.6

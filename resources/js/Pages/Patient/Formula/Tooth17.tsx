@@ -310,7 +310,7 @@ export default function Tooth17() {
                     <g className="dentin">
                         {/* CHANGE COLOR/APEX/CULTTAB */}
                         <g style={{visibility: !tooth17Diagnozis.culttab && !tooth17Diagnozis.implant && !tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className={`st24 ${tooth17Diagnozis.apex ? 'apex' : ''}`} d="M335.5,607c1-3.9,3.3-7.6,4.4-11.5c2.8-9.6-1.1-20.5,5.2-29.3c4.8-6.8,13.7-10.4,23.8-11.8
+                            <path className={`st9 change-color ${tooth17Diagnozis.apex ? 'apex' : ''}`} d="M335.5,607c1-3.9,3.3-7.6,4.4-11.5c2.8-9.6-1.1-20.5,5.2-29.3c4.8-6.8,13.7-10.4,23.8-11.8
                                 c9.5-1.3,19.3-0.5,28.9-1.7c6.1-0.8,12.2-2.2,18.2-2.6c6.4-0.5,12.7,0.2,18.4,1.8c3.9,1.1,7.6,2.7,10.8,4.9
                                 c5.4,3.8,8.4,9.1,9.5,14.6c1.3,6.4,0.1,12.9-2.5,19.1c-3.8,9.3-10.5,17.8-15.1,26.9c-2.8,5.6-4.9,11.5-9.5,16.5
                                 c-4,4.4-9.9,7.8-16.8,8.7c-5.1,0.7-10.3,0-15.5-0.5c-6.5-0.6-13-0.7-19.5-1.1c-5.7-0.3-11.4-0.8-16.7-2.4
@@ -422,7 +422,7 @@ export default function Tooth17() {
                                 c-10.6,0.6-19.3,2.5-25.6,7c-1.9,1.3-3.6,2.9-5.1,4.7C351.4,587.6,348.5,599.2,350.5,608.4z" />
                             <path
                                 className={
-                                    `st7 caries-center
+                                    `st8 caries-center
                                     ${'caries-stroke'}
                                     ${teethDiagnozis.tooth17.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth17.seal_center ? `seal-fill ${teethDiagnozis.tooth17.seal_center_color}` : ''}
@@ -702,7 +702,7 @@ export default function Tooth17() {
                         </g>
                         {/* CHANGE COLOR */}
                         <g id="dentin_n_17" style={{visibility: !tooth17Diagnozis.implant && !tooth17Diagnozis.abutment && !tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className={`st10 change-color ${tooth17Diagnozis.change_color ? 'diagnoze' : ''}`} d="M462,339.2c-0.3,8.6-1.5,17.1-2.4,25.7c-0.6,6.5,0,13.1-0.2,19.7
+                            <path className={`st9 change-color ${tooth17Diagnozis.change_color ? 'diagnoze' : ''}`} d="M462,339.2c-0.3,8.6-1.5,17.1-2.4,25.7c-0.6,6.5,0,13.1-0.2,19.7
                                 c-0.1,3.3-0.1,6.7,0,10c0-1.4-0.1-2.8-0.1-4.1c-2.8-5.6-6.4-10.8-10.7-15.3c-6.5-6.7-14.4-11.9-23.1-15.3
                                 c-0.2-0.1-0.5-0.2-0.7-0.3c-9-3.5-18.6-5.1-28.2-5.8c-2.8-0.2-5.5-0.4-8.3-0.5c-8.8-0.3-17.6,0.1-26.3,1.1
                                 c-0.2,0.2-0.5,0.4-0.7,0.6c0.2-0.4,0.4-0.8,0.6-1.2c2.7-6,3.5-14.2,4.7-20.6c2.5-12.7,3-25.6,2.5-38.5c-0.4-10-1.4-19.9-4.3-29.6
@@ -712,7 +712,7 @@ export default function Tooth17() {
                                 c-0.3-7-0.4-14.5,5.3-19.4c1-0.9,2.2-1.6,3.6-2c1.7-0.5,3.5-0.6,5.1,0c2.4,0.8,4,2.7,5.3,4.6c3.2,4.7,4.8,10,6.2,15.3
                                 c3.1,12.3,4.6,24.9,6.2,37.5C460.8,315,462.4,327.1,462,339.2z"
                             />
-                            <path className={`st10 change-color ${tooth17Diagnozis?.change_color ? 'diagnoze' : ''}`} d="M405.9,312.3c2.3,4.6,4.7,9.2,7.8,13.3c1.7,2.2,3.5,4.3,5.6,6.1
+                            <path className={`st9 change-color ${tooth17Diagnozis?.change_color ? 'diagnoze' : ''}`} d="M405.9,312.3c2.3,4.6,4.7,9.2,7.8,13.3c1.7,2.2,3.5,4.3,5.6,6.1
                                 c1.3-2.5,2.3-5.2,3-7.9c1-3.8,1.5-7.7,1.9-11.6c0.7-6.2,1.4-12.5,1.7-18.8c0.5-11.2-0.2-22.4,0-33.6c0-2.2,0.1-4.4,0.7-6.6
                                 c0.4-1.6,1.1-3.1,2.1-4.4c-0.4-7.7-2.2-15.2-5.7-22.2c-1.1-2.2-2.6-4.4-4.9-5c-1.6-0.4-3.3,0.1-4.8,1c-3,1.9-4.7,5.4-5.6,8.9
                                 c-0.7,2.5-1,5.1-1.6,7.7c-1.2,5.5-3.3,10.6-4.9,16c-3.7,12-5.1,24.6-4.2,37.1C399.7,299.1,402.7,305.7,405.9,312.3z"

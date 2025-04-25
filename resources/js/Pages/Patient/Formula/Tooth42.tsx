@@ -544,7 +544,7 @@ export default function Tooth42() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_42" style={{visibility: !tooth42Diagnozis.implant && !tooth42Diagnozis.apex && !tooth42Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_42" className="st9" 
+                            <path id="dentin_v_42" className={`st9 change-color ${tooth42Diagnozis.change_color ? 'diagnoze' : ''}`}
                                 d="M975.2,1172.7c0,5.2-0.1,10.4-0.3,15.6c-0.7,18.5-2.5,37.1-4.5,55.6
                                 c-2.1,19.9-4.5,39.7-7.2,59.5c-2.1,15.4-4.5,30.8-8.9,45.6c-1.7,5.7-4.6,10.8-7.9,14.4c-0.1,0.1-0.3,0.3-0.4,0.4
                                 c0.1-0.1,0.3-0.3,0.4-0.4c3.3-3.5,6.2-8.7,7.9-14.4c4.4-14.8,6.8-30.2,8.9-45.6c2.7-19.8,5.1-39.6,7.2-59.5

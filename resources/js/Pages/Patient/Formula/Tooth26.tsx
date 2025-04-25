@@ -308,14 +308,14 @@ export default function Tooth26() {
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth26Diagnozis.culttab && !tooth26Diagnozis.implant && !tooth26Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
-                            <path className="st24" d="M1636,607.2c-1.5-3.5-3.3-6.9-4.8-10.3c-3.9-8.9-6.2-18.9-11.7-27.4
+                            <path className={`st24 change-color ${tooth26Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1636,607.2c-1.5-3.5-3.3-6.9-4.8-10.3c-3.9-8.9-6.2-18.9-11.7-27.4
                                 c-5.3-8.3-13.2-14.8-24.9-17.1c-9.5-1.9-19.5,0.1-29.4-0.3c-5.1-0.2-10.4-1-15.4-1.6c-17.3-2.3-35.1-1.8-44.5,9.5
                                 c-2.7,3.2-4,6.9-4.8,10.6c-1.6,7.2-1.4,14.4-0.4,21.6c1.4,10.4,4.2,20.9,9.2,30.6c3.9,7.4,9.1,14.4,17.7,18.9
                                 c7.3,3.8,16.2,5,24.9,4.2c4.9-0.5,9.7-1.7,14.7-1.6c8.6,0.1,16.3,3.9,24.7,5.2c5.3,0.9,10.8,0.8,16.1,0c5.6-0.8,11-2.2,15.9-4.5
                                 c5.4-2.6,9.9-6.3,12.6-10.8C1641.1,625.8,1639.8,616.1,1636,607.2z"
                             />
                         </g>
-                        <g className="hIntact hImplant hEmpty" style={{visibility: tooth26Diagnozis?.apex || tooth26Diagnozis.change_color ? 'inherit' : 'hidden'}}>
+                        <g className="dentin" style={{visibility: tooth26Diagnozis?.apex || tooth26Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth26Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth26Diagnozis?.apex ? 'apex' : ''}`} 
                                 d="M1635.6 607.2C1634.1 603.7 1632.3 600.3 1630.8 596.9C1626.91 588 1624.61 578 1619.11 569.5C1613.81 561.2 1605.92 554.7 1594.22 552.4C1584.73 550.5 1574.74 552.5 1564.84 552.1C1559.74 551.9 1554.45 551.1 1549.45 550.5C1532.16 548.2 1514.37 548.7 1504.97 560C1502.27 563.2 1500.98 566.9 1500.18 570.6C1498.58 577.8 1498.78 585 1499.78 592.2C1501.18 602.6 1503.97 613.1 1508.97 622.8C1512.87 630.2 1518.07 637.2 1526.66 641.7C1533.96 645.5 1542.85 646.7 1551.55 645.9C1556.45 645.4 1561.24 644.2 1566.24 644.3C1574.84 644.4 1582.53 648.2 1590.93 649.5C1596.22 650.4 1601.72 650.3 1607.02 649.5C1612.61 648.7 1618.01 647.3 1622.91 645C1628.31 642.4 1632.8 638.7 1635.5 634.2C1640.7 625.8 1639.4 616.1 1635.6 607.2Z"
                             />
@@ -649,7 +649,7 @@ export default function Tooth26() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_26" className="hRoot hImplant hEmpty" style={{visibility: !tooth26Diagnozis.implant && !tooth26Diagnozis.apex && !tooth26Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className="st9" d="M1606.9,448.9l-28-8.1l-29.3,12l-21.6-2.8l-18.3,13.1c-5.7-9.7-10.1-20-13-30.7
+                            <path className={`st9 change-color ${tooth26Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1606.9,448.9l-28-8.1l-29.3,12l-21.6-2.8l-18.3,13.1c-5.7-9.7-10.1-20-13-30.7
                                 c-2.2-8.1-3.6-16.3-4.9-24.5c0.1-0.6,0.1-1.2,0.2-1.8c6.7-7.1,14.7-13.1,23.9-17.9c1.8-0.9,3.5-1.8,5.3-2.6
                                 c15.3-6.9,32.4-10,49.4-9.4c4.5,0.2,9,0.6,13.5,1.3c9.9,1.5,19.4,4.4,28.1,8.4c0.1,0.1,0.1,0.2,0.2,0.2l0,0
                                 c1.2,3.7,2.2,7.4,3,11.1C1618.7,414.8,1615.1,432.8,1606.9,448.9z" 

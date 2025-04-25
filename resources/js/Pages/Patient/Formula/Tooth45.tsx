@@ -307,7 +307,7 @@ export default function Tooth45() {
                 </g>
                 <g id="T_45_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
-                    <g className="dentin">
+                    <g className="dentin"> 
                         <g style={{visibility: !tooth45Diagnozis.culttab && !tooth45Diagnozis.implant && !tooth45Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st9 change-color ${tooth45Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M644.6,978.7c-1.2,6.4,0.7,12.6,4.9,18c3.4,4.3,8.1,8.1,13.5,11.2
@@ -317,13 +317,13 @@ export default function Tooth45() {
                             />
                         </g>
                         <g style={{visibility: tooth45Diagnozis?.apex || tooth45Diagnozis.change_color ? 'inherit' : 'hidden'}}>
-                        <path className={`st9 change-color ${tooth45Diagnozis.change_color ? 'diagnoze' : ''}`} 
-                                d="M644.6 978.7C643.4 985.1 645.3 991.3 649.5 996.7C652.9 1001 657.6 1004.8 663 1007.9C670.6 1012.3 679.9 1015.7 689.7 1014.1C695 1013.2 699.3 1011 703.9 1009C707.8 1007.2 712.2 1005.6 715.8 1003.4C720 1000.9 723.1 997.8 724.9 994.3C726.9 990.4 727 986.2 726.4 982.1C725.4 975.2 722.4 968.9 718.4 963C715.5 958.7 712.2 954.6 708.2 950.6C705.6 947.9 702.5 945.3 698.5 943.5C693.5 941.3 687.6 940.6 681.9 940.7C676.9 940.8 672 941.5 667.5 943.3C662.1 945.5 657.9 948.9 655.4 952.8C653.1 956.4 652.1 960.3 650.6 964.1C648.5 969 645.5 973.5 644.6 978.7Z" style={{fill: 'rgb(248, 223, 168)'}}></path>
+                            <path className={`st9 change-color ${tooth45Diagnozis.change_color ? 'diagnoze' : ''}`} 
+                                d="M644.6 978.7C643.4 985.1 645.3 991.3 649.5 996.7C652.9 1001 657.6 1004.8 663 1007.9C670.6 1012.3 679.9 1015.7 689.7 1014.1C695 1013.2 699.3 1011 703.9 1009C707.8 1007.2 712.2 1005.6 715.8 1003.4C720 1000.9 723.1 997.8 724.9 994.3C726.9 990.4 727 986.2 726.4 982.1C725.4 975.2 722.4 968.9 718.4 963C715.5 958.7 712.2 954.6 708.2 950.6C705.6 947.9 702.5 945.3 698.5 943.5C693.5 941.3 687.6 940.6 681.9 940.7C676.9 940.8 672 941.5 667.5 943.3C662.1 945.5 657.9 948.9 655.4 952.8C653.1 956.4 652.1 960.3 650.6 964.1C648.5 969 645.5 973.5 644.6 978.7Z"></path>
                         </g>
                     </g>
-                    <g className="pulp">
+                    <g className="pulpitis-filling" style={{visibility: tooth45Diagnozis.change_color ? 'hidden' : 'inherit'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth45Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M676 979.5C676 972.044 680.5 964 684.5 964C688.5 964 693 971.544 693 979C693 986.456 688 991 684.5 991C681.5 991 676 986.956 676 979.5Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M676 979.5C676 972.044 680.5 964 684.5 964C688.5 964 693 971.544 693 979C693 986.456 688 991 684.5 991C681.5 991 676 986.956 676 979.5Z"></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}
@@ -612,7 +612,7 @@ export default function Tooth45() {
                             />
                         </g>
                         <g id="dentin_n_45" style={{visibility: !tooth45Diagnozis.implant && !tooth45Diagnozis.abutment && !tooth45Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_n_45" className={`st10 change-color ${tooth45Diagnozis.change_color ? 'diagnoze' : ''}`} 
+                            <path id="dentin_n_45" className={`st9 change-color ${tooth45Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M711.3,1189.2c-1,3.1-1.9,6.3-2.9,9.4c-3.2,10.7-6.4,21.4-10,32
                                 c-6.7,19.6-15,38.8-23.6,57.8c-6.2,13.8-12.6,27.7-21,40.5c-2.9,4.4-6.7,8.4-10.3,11.5c-3.3,2.8-7,4.7-11.3,3.5
                                 c-7.9-2.2-7.5-11.7-6.1-20c1.1-6.8,1.1-13.6,2-20.4c0.9-6.9,2.6-13.7,4.3-20.4c3.3-13.7,6.2-27.4,8.3-41.3

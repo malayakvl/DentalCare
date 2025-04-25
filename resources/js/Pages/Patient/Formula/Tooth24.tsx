@@ -656,7 +656,7 @@ export default function Tooth24() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_24" className="hRoot hImplant hEmpty" style={{visibility: !tooth24Diagnozis.implant && !tooth24Diagnozis.apex && !tooth24Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_24" className="st9" d="M1394.6,436c-0.5,12.9-3.9,25.5-9.9,37.2l-25-2.9l-25,5.6
+                            <path id="dentin_v_24" className={`st10 change-color ${tooth24Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1394.6,436c-0.5,12.9-3.9,25.5-9.9,37.2l-25-2.9l-25,5.6
                                 c-3.3-10.7-5.5-21.6-6.5-32.7c-0.6-6.8-0.7-13.6-0.5-20.4c0.7-3.8,1.4-7.6,2.1-11.4c3-4,6.5-7.6,10.4-10.9
                                 c3.7-3.1,7.7-5.8,12.3-7.2c0.5-0.2,1-0.3,1.6-0.4c2.6-0.6,5.2-0.8,7.8-0.7c2.4,0.1,4.8,0.5,7.1,1.2c8.8,2.5,16.3,8.5,21,16.4
                                 c1.6,2.8,2.9,5.7,4,8.7C1394.5,424.3,1394.8,430.2,1394.6,436z" 

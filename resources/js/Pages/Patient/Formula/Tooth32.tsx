@@ -539,7 +539,7 @@ export default function Tooth32() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_32" style={{visibility: !tooth32Diagnozis.implant && !tooth32Diagnozis.apex && !tooth32Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_x5F_v_x5F_32_1_" className="st9" d="M1172.6,1211.7c-2.3,5.4-5.5,10.3-10.4,13.5c-2,1.3-4.2,2.2-6.5,2.8
+                            <path id="dentin_x5F_v_x5F_32_1_" className={`st9 change-color ${tooth32Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1172.6,1211.7c-2.3,5.4-5.5,10.3-10.4,13.5c-2,1.3-4.2,2.2-6.5,2.8
                                 c-3.6,0.9-7.5,0.7-11.1-0.4c-1.5-0.5-3-1.1-4.4-1.9c-8.4-4.9-12.4-14.5-15.3-23.9c-0.4-1.4-0.9-2.8-1.3-4.2
                                 c0.9,15.4,2.4,30.9,4.1,46.4c2.1,19.9,4.6,39.7,7.2,59.5c2.1,15.4,4.5,30.8,8.9,45.6c1.7,5.7,4.6,10.8,7.9,14.4
                                 c2,2.1,4.2,3.6,6.7,3.9c-2.5-0.2-4.8-1.7-6.8-3.9c-3.3-3.5-6.2-8.7-7.9-14.4c-4.4-14.8-6.9-30.2-8.9-45.6

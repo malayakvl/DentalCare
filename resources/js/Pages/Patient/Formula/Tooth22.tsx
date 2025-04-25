@@ -548,7 +548,7 @@ export default function Tooth22() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_24" className="hRoot hImplant hEmpty" style={{visibility: !tooth22Diagnozis.implant && !tooth22Diagnozis.apex && !tooth22Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_22" className="st9" d="M1219.5,436.9c-0.8,7.4-2,14.7-3.7,21.9c-2.5,10.3-6,20.4-10.5,30.1l-1.1,1.5
+                            <path className={`st10 change-color ${tooth22Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1219.5,436.9c-0.8,7.4-2,14.7-3.7,21.9c-2.5,10.3-6,20.4-10.5,30.1l-1.1,1.5
                                 l-1.9,1.4l-38.5-5.2l-2.1-1l-1.7-2.4c-0.9-7.7-1.3-15.5-1.1-23.2c0.1-5.1,0.4-10.2,1.4-15.3c0.8-4,2-7.8,3.1-11.7v0
                                 c2-3.2,4.3-6.1,6.9-8.7c4.2-4.2,9.2-7.3,14.6-9.2c0.8-0.3,1.5-0.5,2.3-0.7c4.3-1.1,8.7-1.4,12.9-0.3c1.8,0.4,3.6,1.1,5.2,2
                                 c6.7,3.6,11,10.5,13.3,18C1219,434.9,1219.3,435.9,1219.5,436.9z" 
