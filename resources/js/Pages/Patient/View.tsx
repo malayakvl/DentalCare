@@ -123,7 +123,7 @@ export default function index({ patientData }) {
                                             </button>
                                         </li>
                                         <li className='relative'>
-                                            <button type="submit" onClick={() => setTab('test')}>
+                                            <button type="submit" onClick={() => setTab('psr')}>
                                                 <i className='icon-psr' />
                                                 <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
                                             </button>

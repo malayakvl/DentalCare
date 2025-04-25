@@ -42,6 +42,7 @@ import {
     setDiagnosisClass
 } from '../../Redux/Formula'
 import PrimaryButton from '@/Components/Form/PrimaryButton';
+import Details from './Partials/Details';
 
 export default function index({ patientData, treatmentData, clinicData }) {
     const [tab, setTab] = useState('history');
@@ -82,7 +83,8 @@ export default function index({ patientData, treatmentData, clinicData }) {
             <div className="py-0">
                 <div>
                     <div className="p-4 sm:p-8 mb-8 content-data bg-content">
-                        <div className="patient-view-border relative">
+                        <Details clinicData={clinicData} patientData={patientData} />
+                        {/* <div className="patient-view-border relative">
                             <div className='flex'>
                                 {patientData.avatar ? (
                                     <div className='profile-photo' style={{backgroundImage: `url(/uploads/patients/${patientData.avatar})`}} />
@@ -127,7 +129,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> */}
                         {tab === 'history' && (
                             <ul className="sub-tab text-right mt-5">
                                 <li className='relative'>

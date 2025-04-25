@@ -10,9 +10,8 @@ import { Link } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faFloppyDisk, faPencil, faTrash, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
-import Perio from "./Perio/index";
-import Formula from "./Formula/index";
-import FormulaMilk from "./FormulaMilk/index";
+import PSR from "./PSR/index";
+
 import {
     getDiagnosisSelector,
     getSealColor1Selector,
@@ -84,53 +83,6 @@ export default function index({ patientData, treatmentData, clinicData }) {
                 <div>
                     <div className="p-4 sm:p-8 mb-8 content-data bg-content">
                         <Details patientData={patientData} clinicData={clinicData} />
-
-                        {/* <div className="patient-view-border relative">
-                            <div className='flex'>
-                                {patientData.avatar ? (
-                                    <div className='profile-photo' style={{backgroundImage: `url(/uploads/patients/${patientData.avatar})`}} />
-                                ) : (
-                                    <div className='profile-photo' />
-                                )}
-                                <div className='parient-info'>
-                                    <b>{patientData.first_name} {patientData.last_name}</b>
-                                    <span className='block text-[11px]'>{patientData.phone}</span>
-                                </div>
-                            </div>
-                            <div className='icon-block'>
-                                <ul>
-                                    <li>
-                                        <Link href="/">
-                                            <FontAwesomeIcon icon={faUserPlus} className='mr-3' />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="">
-                                            <FontAwesomeIcon icon={faPencil} />
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='tabs-block'>
-                                <ul>
-                                    <li id="documents" className={tab === 'documents' ? 'active' : ''} onClick={() => handleTabClick('documents')}>
-                                        Документи
-                                    </li>
-                                    <li id="visits" className={tab === 'visits' ? 'active' : ''} onClick={() => handleTabClick('visits')}>
-                                        Візити
-                                    </li>
-                                    <li id="plans" className={tab === 'plans' ? 'active' : ''} onClick={() => handleTabClick('plans')}>
-                                        Плани лікування
-                                    </li>
-                                    <li id="history" className={tab === 'history' ? 'active' : ''} onClick={() => handleTabClick('history')}>
-                                        Історія лікування
-                                    </li>
-                                    <li id="finances" className={tab === 'finances' ? 'active' : ''} onClick={() => handleTabClick('finances')}>
-                                        Фінанси
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> */}
                         {tab === 'history' && (
                             <ul className="sub-tab text-right mt-5">
                                 <li className='relative'>
@@ -178,7 +130,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                             </div>
                             <div className='clearfix' />
                             <div className='flex w-full patient-content-border'>
-                                <Perio />
+                                <PSR />
                                 
                                 <div className='clearfix' />
                                 
