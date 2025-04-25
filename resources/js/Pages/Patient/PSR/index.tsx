@@ -14,6 +14,35 @@ import Tooth48 from './Tooth48';
 import Tooth47 from './Tooth47';
 import Tooth46 from './Tooth46';
 import Tooth45 from './Tooth45';
+import Tooth44 from './Tooth44';
+import Tooth43 from './Tooth43';
+import Tooth42 from './Tooth42';
+import Tooth41 from './Tooth41';
+import Tooth31 from './Tooth31';
+import Tooth32 from './Tooth32';
+import Tooth33 from './Tooth33';
+import Tooth34 from './Tooth34';
+import Tooth35 from './Tooth35';
+import Tooth36 from './Tooth36';
+import Tooth37 from './Tooth37';
+import Tooth38 from './Tooth38';
+import Tooth28 from './Tooth28';
+import Tooth27 from './Tooth27';
+import Tooth26 from './Tooth26';
+import Tooth25 from './Tooth25';
+import Tooth24 from './Tooth24';
+import Tooth23 from './Tooth23';
+import Tooth22 from './Tooth22';
+import Tooth21 from './Tooth21';
+import Tooth11 from './Tooth11';
+import Tooth12 from './Tooth12';
+import Tooth13 from './Tooth13';
+import Tooth14 from './Tooth14';
+import Tooth15 from './Tooth15';
+import Tooth16 from './Tooth16';
+import Tooth17 from './Tooth17';
+import Tooth18 from './Tooth18';
+// 
 import {
     getStatusesSelector,
     getActiveToothNumber
@@ -26,40 +55,62 @@ export default function PSR() {
 
     return (
         <div className="w-full scroll-x">
-            <section className="psr-jaw">
+            <section className="psr-jaw-up">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
-                    y="0px" viewBox="0 0 2085 1602.9"  xmlSpace="preserve">
-                <Tooth48 />
-                <Tooth47 />
-                <Tooth46 />
-                <Tooth45 />
-                
-                
-                {/* <Tooth47 />
-                <Tooth46 />
-                <Tooth45 />
-                <Tooth85 />
-                <Tooth44 />
-                <Tooth84 />
-                <Tooth43 />
-                <Tooth83 />
-                <Tooth42 />
-                <Tooth82 />
-                <Tooth41 />
-                <Tooth81 />
-                <Tooth31 />
-                <Tooth71 />
-                <Tooth32 />
-                <Tooth72 />
-                <Tooth33 />
-                <Tooth73 />
-                <Tooth34 />
-                <Tooth74 />
-                <Tooth35 />
-                <Tooth75 />
-                <Tooth36 />
-                <Tooth37 />
-                <Tooth38 /> */}
+                    y="0px" viewBox="0 0 2085 550"  xmlSpace="preserve">
+                    <Tooth28 />
+                    <Tooth27 />
+                    <Tooth26 />
+                    <Tooth25 />
+                    <Tooth24 />
+                    <Tooth23 />
+                    <Tooth22 />
+                    <Tooth21 />
+                    <Tooth11 />
+                    <Tooth12 />
+                    <Tooth13 />
+                    <Tooth14 />
+                    <Tooth15 />
+                    <Tooth16 />
+                    <Tooth17 />
+                    <Tooth18 />
+                    {/* <Tooth47 />
+                    <Tooth46 />
+                    <Tooth45 />
+                    <Tooth44 />
+                    <Tooth43 />
+                    <Tooth42 />
+                    <Tooth41 />
+                    <Tooth31 />
+                    <Tooth32 />
+                    <Tooth33 />
+                    <Tooth34 />
+                    <Tooth35 />
+                    <Tooth36 />
+                    <Tooth37 />
+                    <Tooth38 /> */}
+                </svg>
+            </section>
+            <div className="clearfix" />
+            <section className="psr-jaw-down">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
+                    y="0px" viewBox="0 1002.9 2085 550"  xmlSpace="preserve">
+                    <Tooth48 />
+                    <Tooth47 />
+                    <Tooth46 />
+                    <Tooth45 />
+                    <Tooth44 />
+                    <Tooth43 />
+                    <Tooth42 />
+                    <Tooth41 />
+                    <Tooth31 />
+                    <Tooth32 />
+                    <Tooth33 />
+                    <Tooth34 />
+                    <Tooth35 />
+                    <Tooth36 />
+                    <Tooth37 />
+                    <Tooth38 />
                  </svg>
             </section>
         </div>

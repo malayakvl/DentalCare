@@ -1,12 +1,21 @@
-.psr-jaw {
+.psr-jaw-up {
     width: 650px;
+    // height: 170px;
+    // border: solid 1px red;
+    // background: rgb(188, 223, 215);
+}
+.psr-jaw-down {
+    width: 650px;
+    // height: 170px;
+    // border: solid 1px blue;
+    // background: yellow;
 }
 .change-color-psr {
-    fill: #f87c7c;
-    stroke: #9E9E9E;
+    fill: #ffffff;
+    stroke: #322F2F;
 }
 .change-color-psr-up {
-    fill: #f87c7c;
-    stroke: #9E9E9E;
-    opacity: 0.5;
+    fill: #ffffff;
+    stroke: #e1e0e0;
+    // opacity: 0.5;
 }
