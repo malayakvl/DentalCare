@@ -571,7 +571,7 @@ export default function Tooth21() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_21" style={{visibility: !tooth21Diagnozis.implant && !tooth21Diagnozis.apex && !tooth21Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_21" className="st9" d="M1144,446.6c-0.5,14.5-2.3,29-5.5,43.1l-1.5,1.7l-2.4,1.6
+                            <path className={`st9 change-color ${tooth21Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1144,446.6c-0.5,14.5-2.3,29-5.5,43.1l-1.5,1.7l-2.4,1.6
                                 c-5.2,0.5-10.4,1-15.6,1.4c-17.7,1.3-35.4,1.8-53.1,1.4l-2.7-1.2l-2.2-2.9c-1.3-9.1-2.3-18.2-2.8-27.3c-0.5-7.7-0.7-15.4-0.2-23v0
                                 c3.9-9,9.5-17.3,16.9-23.8c4.8-4.1,10.2-7.4,16.1-9.7c0.9-0.4,1.9-0.7,2.9-1c6.3-2,12.9-2.7,19.2-1.5c2.6,0.5,5.1,1.4,7.4,2.6
                                 c8.3,4.3,13.6,12.4,17.3,20.9c2.6,5.8,4.5,11.9,6,18.1c0,0.1,0.1,0.2,0.1,0.4C1143.9,447.2,1144,446.9,1144,446.6z" 

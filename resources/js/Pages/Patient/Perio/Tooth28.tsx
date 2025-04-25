@@ -17,10 +17,9 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage18 from './periodontit18';
 
 
-export default function Tooth28() {
+export default function Tooth28({className = ''}) {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -43,7 +42,10 @@ export default function Tooth28() {
             <g id="28" className="df-tooth-text" data-number="28">
                 <text transform="matrix(1 0 0 1 1995 340)" className="st3 st4 st5">28</text>
             </g>
-            <g className="df-tooth top" style={{opacity: 1}} transform="matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 230 -206)"  opacity="1" data-type="intact" data-position="28">
+            <g className="df-tooth-perio" 
+                    transform={className === 'bottom' ? 'matrix(-0.6931834, -0.0974505, 0.0974505, -0.6931834 3249 897)' : 'matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 800 -243)'}
+                    // transform="matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 800 -243)"
+            >
                 <g className="underlay" >
                     <path className="st40" d="M1820.5,233.5c5-0.4,10.5,1.6,14.1,5c8.6,8.1,5.5,21,6.4,31.4
                     c1.8,20.4,12.5,37.4,23.1,54c10.5,16.3,18.8,43.3,18.5,63.4c-0.6,35-9,63.7-15.4,88.5c-6.4,24.8,2.4,64.9,6.7,85.7

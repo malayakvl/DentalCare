@@ -309,8 +309,8 @@ export default function tooth27() {
                 <g id="T_27_up" className="top-view" style={{visibility: tooth27Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <g className="dentin">
                         {/* CHANGE COLOR/APEX/CULTTAB */}
-                        <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth27Diagnozis.culttab && !tooth27Diagnozis.implant && !tooth27Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className="st24" d="M1762.6,607c-1-3.9-3.3-7.6-4.4-11.5c-2.8-9.6,1.1-20.5-5.2-29.3
+                        <g  style={{visibility: !tooth27Diagnozis.culttab && !tooth27Diagnozis.implant && !tooth27Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st9 change-color ${tooth27Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1762.6,607c-1-3.9-3.3-7.6-4.4-11.5c-2.8-9.6,1.1-20.5-5.2-29.3
                                 c-4.8-6.8-13.7-10.4-23.8-11.8c-9.5-1.3-19.3-0.5-28.9-1.7c-6.1-0.8-12.2-2.2-18.2-2.6c-6.4-0.5-12.7,0.2-18.4,1.8
                                 c-3.9,1.1-7.6,2.7-10.8,4.9c-5.4,3.8-8.4,9.1-9.5,14.6c-1.3,6.4-0.1,12.9,2.5,19.1c3.8,9.3,10.5,17.8,15.1,26.9
                                 c2.8,5.6,4.9,11.5,9.5,16.5c4,4.4,9.9,7.8,16.8,8.7c5.1,0.7,10.3,0,15.5-0.5c6.5-0.6,13-0.7,19.5-1.1c5.7-0.3,11.4-0.8,16.7-2.4
@@ -318,7 +318,7 @@ export default function tooth27() {
                             />
                         </g>
                         {/*CHANGE COLOR*/}
-                        <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth27Diagnozis?.apex || tooth27Diagnozis.change_color ? 'inherit' : 'hidden'}}>
+                        <g  style={{visibility: tooth27Diagnozis?.apex || tooth27Diagnozis.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth27Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth27Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M1762.6 606.999C1761.6 603.099 1759.3 599.399 1758.2 595.499C1755.4 585.899 1759.3 574.999 1753 566.199C1748.2 559.399 1739.3 555.799 1729.2 554.399C1719.7 553.099 1709.9 553.899 1700.3 552.699C1694.2 551.899 1688.1 550.499 1682.1 550.099C1675.7 549.599 1669.4 550.299 1663.7 551.899C1659.8 552.999 1656.1 554.599 1652.9 556.799C1647.5 560.599 1644.5 565.899 1643.4 571.399C1642.1 577.799 1643.3 584.299 1645.9 590.499C1649.7 599.799 1656.4 608.299 1661 617.399C1663.8 622.999 1665.9 628.899 1670.5 633.899C1674.5 638.299 1680.4 641.699 1687.3 642.599C1692.4 643.299 1697.6 642.599 1702.8 642.099C1709.3 641.499 1715.8 641.399 1722.3 640.999C1728 640.699 1733.7 640.199 1739 638.599C1755.8 633.899 1766.2 620.699 1762.6 606.999Z"
                             />
@@ -396,7 +396,7 @@ export default function tooth27() {
                                 c10.6,0.6,19.3,2.5,25.6,7c1.9,1.3,3.6,2.9,5.1,4.7C1746.6,587.6,1749.6,599.2,1747.5,608.4z"
                             />
                             <path className={
-                                    `st7 caries-center
+                                    `st8 caries-center
                                     ${'caries-stroke'}
                                     ${teethDiagnozis.tooth27.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth27.seal_center ? `seal-fill ${teethDiagnozis.tooth27.seal_center_color}` : ''}

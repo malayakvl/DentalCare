@@ -104,7 +104,7 @@ export default function index({ patientData }) {
                                     </Link>
                                 </li>
                                 <li className='relative'>
-                                    <Link href="javascript:;" onClick={() => dispatch(setPatientTab('test'))}>
+                                    <Link href="javascript:;" onClick={() => dispatch(setPatientTab('psr'))}>
                                         <i className='icon-psr' />
                                         <span className='inline-block ml-[35px]'>{msg.get("patient.tab.test")}</span>
                                     </Link>

@@ -568,7 +568,7 @@ export default function Tooth23() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_23" style={{visibility: !tooth23Diagnozis.implant && !tooth23Diagnozis.apex && !tooth23Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_23" className="st9" d="M1312.9,431.4c-0.2,6.4-0.3,12.9-2.4,19c-3.2,9.4-10.5,17-17.1,24.8
+                            <path id="dentin_v_23" className={`st10 change-color ${tooth23Diagnozis.change_color ? 'diagnoze' : ''}`} d="M1312.9,431.4c-0.2,6.4-0.3,12.9-2.4,19c-3.2,9.4-10.5,17-17.1,24.8
                                 c-4.8,5.7-9.4,11.7-16.4,14.9c-1.3,0.6-2.7,1.1-4,1.5c-1.4-0.4-2.7-1-4-1.6c-6.1-3.2-10-8.8-15.2-13c-6-4.8-13.8-7.9-18.2-14
                                 c-4.5-6.2-4.4-13.4-3.6-20.6c0.8-7.8,2.3-15.8,4.1-23.6c4.3-18.8,9.8-37.4,15-56c-4.9,17.5-10,34.9-14.2,52.5
                                 c4.7-6.5,10.5-12.4,16.8-17.7c3.7-3.1,7.6-6,12.2-7.5c1-0.3,2.1-0.6,3.1-0.8c2-0.4,4.1-0.5,6.2-0.3c4.8,0.3,9.4,1.7,13.6,3.9

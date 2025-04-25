@@ -539,7 +539,8 @@ export default function Tooth43() {
                     <g className="dentin">
                         <g id="dentin_v_43" style={{visibility: !tooth43Diagnozis.implant && !tooth43Diagnozis.apex && !tooth43Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path id="dentin_v_43"  
-                                className="st9" d="M903.2,1178.7c-0.4,7.9-0.9,15.9-1.7,23.8c-2.4,22.8-6.7,45.4-9.7,68.2
+                                className={`st9 change-color ${tooth43Diagnozis.change_color ? 'diagnoze' : ''}`}
+                                d="M903.2,1178.7c-0.4,7.9-0.9,15.9-1.7,23.8c-2.4,22.8-6.7,45.4-9.7,68.2
                                 c-1.5,11.6-2.7,23.2-3.6,34.8c-0.8,10.3-1.5,20.7-2.5,31c-1.5,15.4-3.6,30.7-8.3,45.5c-1.5,4.6-3.9,9.1-7.1,12.1
                                 c3.2-3,5.6-7.5,7-12.1c4.8-14.8,6.9-30.2,8.3-45.5c1-10.3,1.7-20.7,2.5-31c1-11.6,2.1-23.2,3.6-34.8c2.7-21,6.7-41.8,9.1-62.8
                                 c-3.2,6.2-6.7,12.2-10.8,17.9c-4,5.6-8.9,10.9-15.1,12.9c-1.5,0.5-3.1,0.8-4.7,0.9c-2.3,0.1-4.6-0.3-6.7-1.1

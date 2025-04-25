@@ -134,8 +134,8 @@ class PatientController extends Controller
                 return Redirect::route('patient.formula.edit', ['id' => $patientTreatment->id]);
             } else if ($request->type === 'perio') {
                 return Redirect::route('patient.perio.edit', ['id' => $patientTreatment->id]);
-            } else if ($request->type === 'treatment') {
-                $patientTreatment->type = 'treatment';
+            } else if ($request->type === 'psr') {
+                return Redirect::route('patient.psr.edit', ['id' => $patientTreatment->id]);
             } else if ($request->type === 'stage') {
                 $patientTreatment->type = 'stage';
             }
@@ -196,6 +196,25 @@ class PatientController extends Controller
         $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
 
         return Inertia::render('Patient/EditPerio', [
+            'patientData' => $patientData,
+            'clinicData' => $clinicData,
+            'treatmentData' => $patientTreatment,
+        ]);
+    }
+
+    /**
+     * view patient clinic card
+     * 
+     * @param Request $request
+     * @param int $id
+     * @return Response
+     */
+    public function psrEdit(Request $request, $id) {
+        $patientTreatment = PatientTreatment::where('id', '=', $id)->first();
+        $patientData = Patient::where('id', '=', $patientTreatment->user_id)->first();
+        $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
+
+        return Inertia::render('Patient/EditPSR', [
             'patientData' => $patientData,
             'clinicData' => $clinicData,
             'treatmentData' => $patientTreatment,

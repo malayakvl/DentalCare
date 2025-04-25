@@ -327,13 +327,13 @@ export default function Tooth18() {
                         </g>
                         <g className={`hIntact hImplant hEmpty`} style={{visibility: tooth18Diagnozis?.apex || tooth18Diagnozis?.change_color ? 'inherit' : 'hidden'}}>
                             <path
-                                className={`st24 change-color ${tooth18Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth18Diagnozis?.apex ? 'apex' : ''}`}
+                                className={`st9 change-color ${tooth18Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth18Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M227.9 595C229.6 586.4 234.4 578.8 242.9 573.2C252.9 566.5 266.3 563.9 279.6 562.9C290.8 562.1 302.7 562.6 310.5
                                 568.5C315.9 572.5 317.9 578.3 319.1 583.9C320.2 589.6 320.5 595.5 320.4 601.3C320.2 607 319.6 612.9 315.9 618C312 623.5
                                 305.2 627.4 297.6 630C274.1 638.1 246.2 633.7 233.4 617.6C227.9 610.9 226.3 602.9 227.9 595Z"
                             />
                             <path
-                                className={`st53 change-color ${tooth18Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth18Diagnozis?.apex ? 'apex' : ''}`}
+                                className={`st9 change-color ${tooth18Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth18Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M253.5 592.5C252.702 598.351 262.578 601.803 265.522 606.498C270.817 614.942 271.31 616.648 277.655 616.648C284
                                 616.648 285.001 608.387 289.37 602.535C293.739 596.683 300.642 596 299.285 589.473C296.899 578 284.525 584.201
                                 275 585C265.621 585.788 255 581.5 253.5 592.5Z"

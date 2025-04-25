@@ -668,7 +668,7 @@ export default function Tooth14() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_14" style={{visibility: !tooth14Diagnozis.implant && !tooth14Diagnozis.apex && !tooth14Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_14" className="st9" d="M769.8,443.2c-1,11.1-3.2,22-6.5,32.7l-25-5.6l-25,2.9
+                            <path id="dentin_v_14" className={`st10 change-color ${tooth14Diagnozis.change_color ? 'diagnoze' : ''}`} d="M769.8,443.2c-1,11.1-3.2,22-6.5,32.7l-25-5.6l-25,2.9
                                 c-6-11.7-9.3-24.3-9.8-37.2c-0.2-5.9,0.1-11.7,0.4-17.6c1.1-3,2.4-5.9,4-8.7c4.7-7.9,12.1-13.9,21-16.4c2.3-0.6,4.7-1,7.1-1.2
                                 c2.7-0.1,5.3,0.1,7.9,0.7c0.5,0.1,1,0.3,1.6,0.4c4.7,1.4,8.7,4.2,12.3,7.2c3.9,3.3,7.4,6.9,10.4,10.9c-0.3-1.9-0.7-3.8-1-5.6
                                 c1.1,5.7,2.1,11.3,3.1,17C770.5,429.7,770.4,436.5,769.8,443.2z" 
