@@ -74,24 +74,38 @@ export default function PSR() {
                     <Tooth16 />
                     <Tooth17 />
                     <Tooth18 />
-                    {/* <Tooth47 />
-                    <Tooth46 />
-                    <Tooth45 />
-                    <Tooth44 />
-                    <Tooth43 />
-                    <Tooth42 />
-                    <Tooth41 />
-                    <Tooth31 />
-                    <Tooth32 />
-                    <Tooth33 />
-                    <Tooth34 />
-                    <Tooth35 />
-                    <Tooth36 />
-                    <Tooth37 />
-                    <Tooth38 /> */}
                 </svg>
             </section>
             <div className="clearfix" />
+            <div className="flex flex-row psr-b-inputs" style={{margin: '15px 0', height: '32px'}}>
+                <div style={{maxWidth: '450px', margin: 'auto'}} className=" flex flex-row max-w-[650px]">
+                    <div className="text-center mr-[60px]">
+                        <input type="text" className="psr" data-position="t14_17" />
+                    </div>
+                    <div className="text-center mr-[60px]">
+                        <input type="text" className="psr" data-position="t13_23" />
+                    </div>
+                    <div className="text-center">
+                        <input type="text" className="psr" data-position="t24_27" />
+                    </div>
+                </div>
+                
+            </div>
+            <div className='clearfix' />
+            <div className="flex flex-row psr-b-inputs" style={{margin: '15px 0', height: '32px'}}>
+                <div style={{maxWidth: '450px', margin: 'auto'}} className=" flex flex-row max-w-[650px]">
+                    <div className="text-center mr-[60px]">
+                        <input type="text" className="psr" data-position="t14_17" />
+                    </div>
+                    <div className="text-center mr-[60px]">
+                        <input type="text" className="psr" data-position="t13_23" />
+                    </div>
+                    <div className="text-center">
+                        <input type="text" className="psr" data-position="t24_27" />
+                    </div>
+                </div>
+            </div>
+
             <section className="psr-jaw-down">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
                     y="0px" viewBox="0 1002.9 2085 550"  xmlSpace="preserve">
