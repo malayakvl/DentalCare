@@ -750,7 +750,7 @@ export default function Tooth46() {
                         <line className="st19" x1="495.7" y1="1274.4" x2="557.3" y2="1297.9" />
                         <line className="st19" x1="492.7" y1="1293.4" x2="554.3" y2="1316.9" />
                     </g>
-                    <g style={{visibility: !tooth46Diagnozis.culttab && !tooth46Diagnozis.abutment && !tooth46Diagnozis.implant && !tooth46Diagnozis.shaper && !tooth46Diagnozis.apex  ? 'inherit' : 'hidden'}}>
+                    <g className="toutline" style={{visibility: !tooth46Diagnozis.culttab && !tooth46Diagnozis.abutment && !tooth46Diagnozis.implant && !tooth46Diagnozis.shaper && !tooth46Diagnozis.apex  ? 'inherit' : 'hidden'}}>
                         <path className="st46" d="M638,1131.5c-0.9-4.4-2.3-8.8-4.2-12.9c-2.4-5.3-5.5-10.3-9.5-14.5
                             c-2.8-2.9-6-5.5-9.5-7.5l-6.8-0.9c-1.4,1.1-2.8,2.2-4.2,3.3c-3,2.4-6.1,4.8-9.1,7.2c-4.5,3.5-8.9,7-13.4,10.5l-6.2,8.8l-0.3,8.2
                             l3.5,6.2l-4.4,12.5l-1.6-0.3l3.8-12l-3.3-4.9l0.5-10.7l4.5-6.8l-1-3.6l-26.9-17.5l-7.1-0.4c-5,2-9.9,4.3-14.6,6.9

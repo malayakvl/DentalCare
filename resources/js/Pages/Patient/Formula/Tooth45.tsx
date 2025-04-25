@@ -605,7 +605,7 @@ export default function Tooth45() {
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_45" style={{visibility: !tooth45Diagnozis.implant && !tooth45Diagnozis.apex && !tooth45Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_45" className="st9" d="M717.1,1157.8c0,5-0.2,10.1-0.6,15.1c-2.8,8.6-5.5,17.2-8.1,25.8
+                            <path id="dentin_v_45" className={`st9 change-color ${tooth45Diagnozis.change_color ? 'diagnoze' : ''}`} d="M717.1,1157.8c0,5-0.2,10.1-0.6,15.1c-2.8,8.6-5.5,17.2-8.1,25.8
                                 c-0.8,2.7-1.6,5.3-2.4,8c0.8-2.7,1.6-5.3,2.4-8c1-3.2,1.9-6.3,2.9-9.4c-5.8,5.9-12.8,10.5-20.7,13.1c-2.9,0.9-5.8,1.6-8.8,1.9
                                 c-5.4,0.6-10.9,0-16-2c-0.5-0.2-0.9-0.4-1.3-0.6c-5.9-2.6-10.9-7-14.6-12.3c-2.5-3.5-4.4-7.3-5.9-11.2c-0.2-4.8-0.5-9.6-0.9-14.3
                                 c2-7.1,4.5-14.1,7.5-20.9c2.6-6,5.6-11.9,9-17.6l28.6,8.2l27-0.9C716.3,1141,717,1149.4,717.1,1157.8z"
