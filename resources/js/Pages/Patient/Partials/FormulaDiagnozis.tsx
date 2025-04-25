@@ -58,7 +58,7 @@ export default function FormulaDiagnozis() {
                 <li className='flex'>
                     <div className="min-w-[70px]">
                         <i className='icon-tooth float-left' />
-                        <span className="inline-block text-[14px] float-left">{num}</span>:
+                        <span className="descr-d"><b>{num}:</b></span>
                     </div>
                     <div className="flex flex-wrap">
                         {Object.keys(teethDiagnozis[`tooth${num}`]).map((_v, _k) => (
