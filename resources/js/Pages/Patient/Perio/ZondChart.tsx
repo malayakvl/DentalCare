@@ -36,9 +36,14 @@ ChartJS.register(
 );
 
 export default function ZondChart() {
+    const zondData18 = useSelector(getPerioZond18Selector);
+    const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const newZondData = useSelector(getPerioZondDataSelector);
+    const psrChange = useSelector(getPsrChangeSelector);
+    // const diagnoze = useSelector(getDiagnosisSelector);
+    const [chartLineValues, setChartLineValues] = useState(newZondData);
 
-
+console.log('DIAGNOZE', psrChange)    
     const options = {
         scales: {
         x: {
@@ -66,13 +71,17 @@ export default function ZondChart() {
         },
     };
 
+    useEffect(() => {
+        // console.log('NZD:', psrChange)
+    }, [newZondData, teethDiagnozis, psrChange])
+
     const chartData = {
         labels: ['T1', 'T2','T3','T4','T5','T6','T7', 'T8', 'T9','T10','T11','T12','T13','T4', 'T15', 'T16'],
         datasets: [
             {
                 type: 'line',
                 label: '',
-                data: newZondData,
+                data: chartLineValues,
                 fill: true,
                 borderColor: 'rgb(8, 84, 17)',
                 borderWidth: 1,

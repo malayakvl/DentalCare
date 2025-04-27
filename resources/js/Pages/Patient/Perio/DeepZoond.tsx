@@ -31,9 +31,9 @@ export default function DeepZond({toothNum}) {
         <>
             <div className="col-xs-12 action-zone-v" data-zone="22">
                 <input 
+                    // value={value}
                     onChange={(e) => {
                         e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
-                        const _pData = perioData[toothNum];
                         teethDiagnozis[`tooth${toothNum}`].psr1 = parseInt(e.target.value);
                         dispatch(setToothDiagnoze(teethDiagnozis));
                         dispatch(setPsrChange(!psrChange));
