@@ -40,3 +40,4 @@ export const setNewToothActive = createAction('formula/SET_NEW_TOOTH_ACTIVE');
 export const setDisactiveAll = createAction('formula/ALL_TEETH_DISACTIVE');
 export const setSelectedToothNumber = createAction('formula/SET_TOOTH_NUMBER');
 export const setPsrChange = createAction('formula/SET_PSRCHANGE');
+export const setPerioZond1828VestData = createAction('formula/SET_PERIO1828_VEST_ZOND_DATA');
