@@ -7,6 +7,7 @@ import {
     setTooth16Active,
     setTooth28Active,
     setToothDiagnoze,
+    setPerioDeepZond,
     setActiveToothName,
     setDiagnosis,
     setDiagnosisClass,
@@ -22,7 +23,9 @@ import {
     setZirconiaCrownColor,
     setNewToothActive,
     setDisactiveAll,
-    setSelectedToothNumber
+    setSelectedToothNumber,
+    setDeepZondData,
+    setPsrChange
 } from "./actions";
 
 const initialState = {
@@ -46,6 +49,7 @@ const initialState = {
     tooth17: false,
     active_tooth: '',
     selected_tooth_number: '',
+    psrChange: false,
     teethStatuses: {
         tooth18: {active: false}, 
         tooth17: {active: false}, 
@@ -85,7 +89,9 @@ const initialState = {
             active: false,
             change_color: false,
             fissure: false,
-
+            psr1: 0,
+            psr2: 0,
+            psr3: 0,
             // caries vars
             caries: false,
             caries_top: false,
@@ -2546,6 +2552,10 @@ const initialState = {
             parodontit_stage_all: false
         },
     },
+    teethPerioZond: {
+        18: [0, 0, 0]
+    },
+    perioZondData: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
 }
 
@@ -2565,24 +2575,6 @@ const ACTION_HANDLERS = {
             allTeeth: action.payload
         })
     },
-    // [setTooth18Active.toString()]: {
-    //     next: (state, action) => ({
-    //         ...state,
-    //         tooth18: action.payload
-    //     })
-    // },
-    // [setTooth17Active.toString()]: {
-    //     next: (state, action) => ({
-    //         ...state,
-    //         tooth17: action.payload
-    //     })
-    // },
-    // [setTooth16Active.toString()]: {
-    //     next: (state, action) => ({
-    //         ...state,
-    //         tooth16: action.payload
-    //     })
-    // },
     [setActiveToothName.toString()]: {
         next: (state, action) => ({
             ...state,
@@ -2712,7 +2704,24 @@ const ACTION_HANDLERS = {
             selected_tooth_number: action.payload
         })
     },
-    
+    [setPerioDeepZond.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            teethPerioZond: action.payload
+        })
+    },
+    [setDeepZondData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            perioZondData: action.payload
+        })
+    },
+    [setPsrChange.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            psrChange: action.payload
+        })
+    },
 }
 
 export {
@@ -2723,6 +2732,7 @@ export {
     setTooth17Active,
     setTooth16Active,
     setToothDiagnoze,
+    setPerioDeepZond,
     setDiagnosis,
     setDiagnosisClass,
     setSubDiagnosis,
@@ -2738,7 +2748,9 @@ export {
     setActiveToothName,
     setNewToothActive,
     setDisactiveAll,
-    setSelectedToothNumber
+    setSelectedToothNumber,
+    setDeepZondData,
+    setPsrChange
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);

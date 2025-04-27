@@ -12,7 +12,7 @@ export default function Moving({toothNum}) {
 
     return ( 
         <>
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style={{width: '100%', height: '20px'}} xml:space="preserve">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style={{width: '100%', height: '20px'}} xmlSpace="preserve">
                 <g className="mobility">
                     <path d="M 0 10 L 100 10 L 100 90 L 0 90 Z" fill="rgba(255, 255, 255, 0)"></path>
                     <path className="level1" d="M 0 25 L 0 75" stroke="rgba(200, 200, 200, 0.9)" strokeWidth="10px"></path>

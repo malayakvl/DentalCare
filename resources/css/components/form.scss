@@ -220,10 +220,13 @@ input[type="file"]::file-selector-button {
     background-size: cover;
     background-position-x: center;
 }
-.file-preview {
-    // border: solid 1px;
-}
+
 .upload-patient-btn-block {
     // border: solid 1px;
     display: inline-block;
+}
+[type="text"]:focus,[type="text"]:active  {
+    outline: none !important;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: #fff !important
 }
