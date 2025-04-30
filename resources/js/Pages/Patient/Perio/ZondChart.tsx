@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { setNewToothActive, setSubDiagnosis, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import {
     getDiagnosisSelector,
+    getPerioZond1828OralDataSelector,
+    getPerioZond1828VestDataSelector,
     getPerioZond18Selector,
-    getPerioZondDataSelector,
     getPerioZondSelector,
     getPsrChangeSelector,
     getTeethDiagnozisSelector
@@ -38,50 +39,58 @@ ChartJS.register(
 export default function ZondChart() {
     const zondData18 = useSelector(getPerioZond18Selector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const newZondData = useSelector(getPerioZondDataSelector);
+    const newZondData = useSelector(getPerioZond1828VestDataSelector);
+    const zond1828VestData = useSelector(getPerioZond1828VestDataSelector);
     const psrChange = useSelector(getPsrChangeSelector);
     // const diagnoze = useSelector(getDiagnosisSelector);
     const [chartLineValues, setChartLineValues] = useState(newZondData);
 
-console.log('DIAGNOZE', psrChange)    
     const options = {
+        layout: {
+            padding: 0
+        },
+        alignToPixels: true,
         scales: {
-        x: {
-            ticks: {
-            display: false, // скрыть подписи на оси X
+            x: {
+                ticks: {
+                display: false, // скрыть подписи на оси X
+                },
+                title: {
+                display: false, // скрыть название оси X
+                },
+                grid: {
+                    display: false
+                }
             },
-            title: {
-            display: false, // скрыть название оси X
+            y: {
+                ticks: {
+                    display: false, // скрыть подписи на оси Y
+                    stepSize: 20
+                },
+                title: {
+                    display: false, // скрыть название оси Y
+                },
+                grid: {
+                    display: false
+                },
+                
             },
-            grid: {
-                display: false
-            }
-        },
-        y: {
-            ticks: {
-            display: false, // скрыть подписи на оси Y
-            },
-            title: {
-            display: false, // скрыть название оси Y
-            },
-            grid: {
-                display: false
-            }
-        },
         },
     };
 
     useEffect(() => {
-        // console.log('NZD:', psrChange)
+        console.log('NZD:', newZondData)
     }, [newZondData, teethDiagnozis, psrChange])
 
     const chartData = {
-        labels: ['T1', 'T2','T3','T4','T5','T6','T7', 'T8', 'T9','T10','T11','T12','T13','T4', 'T15', 'T16'],
+        // labels: [1,2,3,4,5],
+        labels: [0,1,2,3,4,5,6,7,8,9,20,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55],
+        legend: {display: false},
         datasets: [
             {
-                type: 'line',
+                type: "line",
                 label: '',
-                data: chartLineValues,
+                data: zond1828VestData,
                 fill: true,
                 borderColor: 'rgb(8, 84, 17)',
                 borderWidth: 1,
@@ -91,12 +100,22 @@ console.log('DIAGNOZE', psrChange)
             {
                 type: 'bar',
                 label: '',
-                data: [1, 3, 0, 18, 1, 1, 5, 5, 9, 0, 1, 6, 5, 4, 2, 0],
+                data: zond1828VestData,
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)',
+                  ],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(75, 192, 192)',
+                    'rgb(153, 102, 255)',
+                  ],                  
                 fill: true,
-                borderColor: 'rgb(8, 84, 17)',
+                // borderColor: 'rgb(8, 84, 17)',
                 borderWidth: 1,
-                backgroundColor: 'rgba(197, 54, 54, 0.4)',
-                barThickness: 1,
+                // backgroundColor: 'rgba(197, 54, 54, 0.4)',
+                barThickness: 3,
                 tension: 0.1
             },
         ],
@@ -106,8 +125,8 @@ console.log('DIAGNOZE', psrChange)
 
     return (
         <>
-            <div style={{width: '1154px'}} className='chart-perio-top-1'>
-                <Line data={chartData} options={options} height={32} />
+            <div style={{width: '1200px'}} className='chart-perio-top-1'>
+                <Line data={chartData} options={options} height={32}  />
             </div>
         </>
     )

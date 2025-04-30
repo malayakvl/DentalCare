@@ -25,7 +25,8 @@ import {
     setDisactiveAll,
     setSelectedToothNumber,
     setDeepZondData,
-    setPsrChange
+    setPsrChange,
+    setPerioZond1828VestData
 } from "./actions";
 
 const initialState = {
@@ -2555,7 +2556,9 @@ const initialState = {
     teethPerioZond: {
         18: [0, 0, 0]
     },
-    perioZondData: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    // perioZondDataVest1828: [0,1,4,5,2.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    perioZondDataVest1828: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    perioZondDataOral1828: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     
 }
 
@@ -2716,6 +2719,12 @@ const ACTION_HANDLERS = {
             perioZondData: action.payload
         })
     },
+    [setPerioZond1828VestData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            perioZondDataVest1828: action.payload
+        })
+    },
     [setPsrChange.toString()]: {
         next: (state, action) => ({
             ...state,
@@ -2750,7 +2759,8 @@ export {
     setDisactiveAll,
     setSelectedToothNumber,
     setDeepZondData,
-    setPsrChange
+    setPsrChange,
+    setPerioZond1828VestData
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);

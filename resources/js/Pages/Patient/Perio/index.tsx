@@ -20,7 +20,6 @@ import {
     getActiveToothNumber,
     getPerioZond18Selector,
     getPerioZondSelector,
-    getPerioZondDataSelector,
     getTeethDiagnozisSelector
 } from "../../../Redux/Formula/selectors";
 import MovePerio from './Move';
@@ -50,12 +49,12 @@ Filler
 export default function Index() {
     const toothActive = useSelector(getStatusesSelector);
     const activeNumber = useSelector(getActiveToothNumber);
-    const zondData = useSelector(getPerioZondDataSelector);
+    // const zondData = useSelector(getPerioZondDataSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-console.log('SELECTOR DATA', teethDiagnozis);    
-    useEffect(() => {
-        console.log('ZOND DATA1', zondData)
-    }, [zondData])
+
+    // useEffect(() => {
+    //     console.log('ZOND DATA1', zondData)
+    // }, [zondData])
 
     const chartData = {
         labels: ['T1', 'T2','T3','T4','T5','T6','T7', 'T8', 'T9','T10','T11','T12','T13','T4', 'T15', 'T16'],
@@ -432,23 +431,23 @@ console.log('SELECTOR DATA', teethDiagnozis);
                     <td><DeepZond toothNum={38} /></td>
                 </tr>
                 <tr>
-                    <td className="title">Глибина зондування</td>
-                    <td><DeepZond toothNum={18} /></td>
-                    <td><DeepZond toothNum={47} /></td>
-                    <td><DeepZond toothNum={46} /></td>
-                    <td><DeepZond toothNum={45} /></td>
-                    <td><DeepZond toothNum={44} /></td>
-                    <td><DeepZond toothNum={43} /></td>
-                    <td><DeepZond toothNum={42} /></td>
-                    <td><DeepZond toothNum={41} /></td>
-                    <td><DeepZond toothNum={31} /></td>
-                    <td><DeepZond toothNum={32} /></td>
-                    <td><DeepZond toothNum={33} /></td>
-                    <td><DeepZond toothNum={34} /></td>
-                    <td><DeepZond toothNum={35} /></td>
-                    <td><DeepZond toothNum={36} /></td>
-                    <td><DeepZond toothNum={37} /></td>
-                    <td><DeepZond toothNum={38} /></td>
+                    <td className="title">Глибина зондування1</td>
+                    <td><DeepZond toothNum={18} type={'vest'} /></td>
+                    <td><DeepZond toothNum={47} type={'vest'} /></td>
+                    <td><DeepZond toothNum={46} type={'vest'} /></td>
+                    <td><DeepZond toothNum={45} type={'vest'} /></td>
+                    <td><DeepZond toothNum={44} type={'vest'} /></td>
+                    <td><DeepZond toothNum={43} type={'vest'} /></td>
+                    <td><DeepZond toothNum={42} type={'vest'} /></td>
+                    <td><DeepZond toothNum={41} type={'vest'} /></td>
+                    <td><DeepZond toothNum={31} type={'vest'} /></td>
+                    <td><DeepZond toothNum={32} type={'vest'} /></td>
+                    <td><DeepZond toothNum={33} type={'vest'} /></td>
+                    <td><DeepZond toothNum={34} type={'vest'} /></td>
+                    <td><DeepZond toothNum={35} type={'vest'} /></td>
+                    <td><DeepZond toothNum={36} type={'vest'} /></td>
+                    <td><DeepZond toothNum={37} type={'vest'} /></td>
+                    <td><DeepZond toothNum={38} type={'vest'} /></td>
                 </tr>
                 <tr>
                     <td className="title">Вестибулярно</td>

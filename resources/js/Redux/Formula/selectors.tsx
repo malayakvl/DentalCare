@@ -45,6 +45,7 @@ export const getPeriodontitStage28Selector = (state) => state.formula.teethDiagn
 export const getActiveToothNumber = (state) => state.formula.selected_tooth_number;
 export const getPerioZond18Selector = (state) => state.formula.tooth18.psr1;
 export const getPerioZondSelector = (state) => state.formula.teethPerioZond;
-export const getPerioZondDataSelector = (state) => state.formula.perioZondData;
+export const getPerioZond1828VestDataSelector = (state) => state.formula.perioZondDataVest1828;
+export const getPerioZond1828OralDataSelector = (state) => state.formula.perioZondDataOral1828;
 export const getPsrChangeSelector = (state) => state.formula.psrChange;
 
