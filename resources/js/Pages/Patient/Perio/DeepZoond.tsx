@@ -35,13 +35,23 @@ export default function DeepZond({toothNum,type = 'vest'}) {
                 <input 
                     // value={value}
                     onChange={(e) => {
+                        console.log(toothNum)
                         e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
-                        if ((toothNum >=18 && toothNum <= 28) && type === 'vest') {
+                        if (((toothNum >=11 && toothNum <= 18) || (toothNum >=21 && toothNum <= 28)) && type === 'vest') {
                             const _pDataVestNew = zond1828VestData;
-                            _pDataVestNew[toothNum - 17] = parseInt(e.target.value);
+                            console.log((toothNum+1) - toothNum);
+                            _pDataVestNew[(18-toothNum)*4 +1] = parseInt(e.target.value);
                             dispatch(setPerioZond1828VestData(_pDataVestNew));
                             dispatch(setPsrChange(!psrChange));
                             console.log(type, _pDataVestNew);
+                            // перерасчет медиани
+                            if (toothNum != 18) {
+                                console.log(`Tooth ${toothNum} current val:`, _pDataVestNew[(18-toothNum)*4 +1]) 
+                                console.log(`Tooth ${toothNum} prev third val:`, _pDataVestNew[(18-toothNum)*4 -1]) 
+                                console.log(`Tooth ${toothNum} mediana val:`, (_pDataVestNew[(18-toothNum)*4 +1] + _pDataVestNew[(18-toothNum)*4 -1])/2)    
+                                console.log(`Mediana index`, (18-toothNum)*4)
+                                _pDataVestNew[(18-toothNum)*4] = (_pDataVestNew[(18-toothNum)*4 +1] + _pDataVestNew[(18-toothNum)*4 -1])/2;
+                            }
                         }
                         // console.log(toothNum, zondData);
 
@@ -58,9 +68,10 @@ export default function DeepZond({toothNum,type = 'vest'}) {
                 <input 
                     onChange={(e) => {
                         e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
-                        if ((toothNum >=18 && toothNum <= 28) && type === 'vest') {
+                        if (((toothNum >=11 && toothNum <= 18) || (toothNum >=21 && toothNum <= 28)) && type === 'vest') {
                             const _pDataVestNew = zond1828VestData;
-                            _pDataVestNew[toothNum - 16] = parseInt(e.target.value);
+                            _pDataVestNew[(18-toothNum)*4 +2] = parseInt(e.target.value);
+                            // _pDataVestNew[toothNum - 16] = parseInt(e.target.value);
                             dispatch(setPerioZond1828VestData(_pDataVestNew));
                             dispatch(setPsrChange(!psrChange));
                             console.log(type, _pDataVestNew);
@@ -78,12 +89,16 @@ export default function DeepZond({toothNum,type = 'vest'}) {
                 <input 
                     onChange={(e) => {
                         e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
-                        if ((toothNum >=18 && toothNum <= 28) && type === 'vest') {
+                        if (((toothNum >=11 && toothNum <= 18) || (toothNum >=21 && toothNum <= 28)) && type === 'vest') {
                             const _pDataVestNew = zond1828VestData;
-                            _pDataVestNew[toothNum - 14] = 2.5;
-                            _pDataVestNew[toothNum - 15] = parseInt(e.target.value);
+                            // _pDataVestNew[(18-toothNum)*4 +3] = parseInt(e.target.value);
+                            // _pDataVestNew[(18-toothNum)*4 +4] = (_pDataVestNew[(18-toothNum)*4 +3] + _pDataVestNew[(18-toothNum)*4 +5])/2;
+                            // _pDataVestNew[toothNum - 15] = parseInt(e.target.value);
                             dispatch(setPerioZond1828VestData(_pDataVestNew));
                             dispatch(setPsrChange(!psrChange));
+                            _pDataVestNew[(18-toothNum)*4 +3] = parseInt(e.target.value);
+                            _pDataVestNew[(18-toothNum)*4 +4] = (_pDataVestNew[(18-toothNum)*4 +3] + _pDataVestNew[(18-toothNum)*4 +5])/2;
+                            console.log(`FLOAT BETWeeN ${toothNum}`, (18-toothNum)*4 +3, (18-toothNum)*4 +5)
                             console.log(type, _pDataVestNew);
                         }
                         // teethDiagnozis[`tooth${toothNum}`].psr3 = parseInt(e.target.value);

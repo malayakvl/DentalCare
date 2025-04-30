@@ -431,15 +431,15 @@ export default function Index() {
                     <td><DeepZond toothNum={38} /></td>
                 </tr>
                 <tr>
-                    <td className="title">Глибина зондування1</td>
+                    <td className="title">Глибина зондування</td>
                     <td><DeepZond toothNum={18} type={'vest'} /></td>
-                    <td><DeepZond toothNum={47} type={'vest'} /></td>
-                    <td><DeepZond toothNum={46} type={'vest'} /></td>
-                    <td><DeepZond toothNum={45} type={'vest'} /></td>
-                    <td><DeepZond toothNum={44} type={'vest'} /></td>
-                    <td><DeepZond toothNum={43} type={'vest'} /></td>
-                    <td><DeepZond toothNum={42} type={'vest'} /></td>
-                    <td><DeepZond toothNum={41} type={'vest'} /></td>
+                    <td><DeepZond toothNum={17} type={'vest'} /></td>
+                    <td><DeepZond toothNum={16} type={'vest'} /></td>
+                    <td><DeepZond toothNum={15} type={'vest'} /></td>
+                    <td><DeepZond toothNum={14} type={'vest'} /></td>
+                    <td><DeepZond toothNum={13} type={'vest'} /></td>
+                    <td><DeepZond toothNum={12} type={'vest'} /></td>
+                    <td><DeepZond toothNum={11} type={'vest'} /></td>
                     <td><DeepZond toothNum={31} type={'vest'} /></td>
                     <td><DeepZond toothNum={32} type={'vest'} /></td>
                     <td><DeepZond toothNum={33} type={'vest'} /></td>

@@ -39,7 +39,7 @@ export default function FormulaPerio1828() {
         <section className="f-prerio">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"
                  y="0px" viewBox="0 0 2085 1602.9"  xmlSpace="preserve" width={'100%'}>
-                <path stroke="#cccccccc" d="M129 10 L129 640" strokeWidth="2px"></path>
+                {/* <path stroke="#cccccccc" d="M129 10 L129 640" strokeWidth="2px"></path>
                 <path stroke="#cccccccc" d="M259.5 10 L259.5 640" strokeWidth="2px"></path>
                 <path stroke="#cccccccc" d="M390 10 L390 640" strokeWidth="2px"></path>
                 <path stroke="#cccccccc" d="M520.5 10 L520.5 640" strokeWidth="2px"></path>
@@ -93,7 +93,7 @@ export default function FormulaPerio1828() {
                 <path stroke="#cccccc40" d="M0 600 L2085 600" strokeWidth="2px"></path>
                 <path stroke="#cccccc40" d="M0 608 L2085 608" strokeWidth="2px"></path>
                 <path stroke="#cccccc40" d="M0 616 L2085 616" strokeWidth="2px"></path>
-                <path stroke="#cccccc40" d="M0 624 L2085 624" strokeWidth="2px"></path>
+                <path stroke="#cccccc40" d="M0 624 L2085 624" strokeWidth="2px"></path> */}
 
                 <Tooth28 />
                 <Tooth27 />

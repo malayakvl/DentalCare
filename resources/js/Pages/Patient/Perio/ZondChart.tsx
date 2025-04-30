@@ -49,29 +49,50 @@ export default function ZondChart() {
         layout: {
             padding: 0
         },
+        maintainAspectRatio: false,
+        plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        let label = context.dataset.label || '';
+console.log(context.dataset.label);
+                        // if (label) {
+                        //     label = 'AAA: ';
+                        // }
+                        if (context.parsed.y !== null) {
+                            label = 'ГЗ:' + context.parsed.y;
+                        }
+                        return label;
+                    }
+                }
+            }
+        },
         alignToPixels: true,
         scales: {
             x: {
                 ticks: {
-                display: false, // скрыть подписи на оси X
+                    display: false, // скрыть подписи на оси X
                 },
                 title: {
-                display: false, // скрыть название оси X
+                    display: false, // скрыть название оси X
                 },
                 grid: {
-                    display: false
+                    display: true
                 }
             },
             y: {
                 ticks: {
                     display: false, // скрыть подписи на оси Y
-                    stepSize: 20
+                    stepSize: 24
                 },
                 title: {
                     display: false, // скрыть название оси Y
                 },
                 grid: {
-                    display: false
+                    display: true
                 },
                 
             },
@@ -82,9 +103,48 @@ export default function ZondChart() {
         console.log('NZD:', newZondData)
     }, [newZondData, teethDiagnozis, psrChange])
 
+    const getData = (data) => {
+        var dataSize = Math.round(Math.random() * 100);
+        var evenBackgroundColor = 'rgba(255, 99, 132, 0.2)';
+        var evenBorderColor = 'rgba(255,99,132,1)';
+        var oddBackgroundColor = 'rgba(75, 192, 192, 0.2)';
+        var oddBorderColor = 'rgba(153, 102, 255, 1)';
+      
+        var labels = [];
+      console.log('Data', data)
+        var scoreData = {
+          label: 'Mid-Term Exam 1',
+          data: [],
+          backgroundColor: [],
+          borderColor: [],
+          borderWidth: 1,
+          hoverBackgroundColor: 'rgba(200, 200, 200, 1)',
+          hoverBorderColor: 'rgba(200, 200, 200, 1)',
+        };
+      
+        for (var i = 0; i < dataSize; i++) {
+        //   scoreData.data.push(window.randomScalingFactor());
+          labels.push("Score " + (i + 1));
+      
+          if (i % 2 === 0) {
+            scoreData.backgroundColor.push(evenBackgroundColor);
+            scoreData.borderColor.push(evenBorderColor);
+          } else {
+            scoreData.backgroundColor.push(oddBackgroundColor);
+            scoreData.borderColor.push(oddBorderColor);
+          }
+        }
+      
+        return {
+          labels: labels,
+          datasets: [scoreData],
+        };
+      };
+
     const chartData = {
         // labels: [1,2,3,4,5],
-        labels: [0,1,2,3,4,5,6,7,8,9,20,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55],
+        // labels: ['','','', '','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','', ''],
+        labels: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
         legend: {display: false},
         datasets: [
             {
@@ -97,27 +157,27 @@ export default function ZondChart() {
                 backgroundColor: 'rgba(197, 54, 54, 0.4)',
                 tension: 0.1
             },
-            {
-                type: 'bar',
-                label: '',
-                data: zond1828VestData,
-                borderColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(75, 192, 192)',
-                    'rgb(153, 102, 255)',
-                  ],
-                backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(75, 192, 192)',
-                    'rgb(153, 102, 255)',
-                  ],                  
-                fill: true,
-                // borderColor: 'rgb(8, 84, 17)',
-                borderWidth: 1,
-                // backgroundColor: 'rgba(197, 54, 54, 0.4)',
-                barThickness: 3,
-                tension: 0.1
-            },
+                {
+                    type: 'bar',
+                    label: '',
+                    data: zond1828VestData,
+                    borderColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(75, 192, 192)',
+                        'rgb(153, 102, 255)',
+                      ],
+                    backgroundColor: [
+                        'rgb(255, 99, 132)',
+                        'rgb(75, 192, 192)',
+                        'rgb(153, 102, 255)',
+                      ],                  
+                    fill: true,
+                    // borderColor: 'rgb(8, 84, 17)',
+                    borderWidth: 1,
+                    // backgroundColor: 'rgba(197, 54, 54, 0.4)',
+                    barThickness: 3,
+                    tension: 0.1
+                },
         ],
     };
        
@@ -125,7 +185,7 @@ export default function ZondChart() {
 
     return (
         <>
-            <div style={{width: '1200px'}} className='chart-perio-top-1'>
+            <div style={{width: '1200px', height: '60px'}} className='chart-perio-top-1'>
                 <Line data={chartData} options={options} height={32}  />
             </div>
         </>
