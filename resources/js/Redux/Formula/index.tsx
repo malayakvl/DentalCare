@@ -26,7 +26,12 @@ import {
     setSelectedToothNumber,
     setDeepZondData,
     setPsrChange,
-    setPerioZond1828VestData
+    setPerioZond1828VestData,
+    setPerioYasen1828VestData,
+    setPerioZ1828VData,
+    setPerioYK1828VData,
+    setPZondChartUp,
+    setPKrayChartUp
 } from "./actions";
 
 const initialState = {
@@ -2556,9 +2561,24 @@ const initialState = {
     teethPerioZond: {
         18: [0, 0, 0]
     },
-    // perioZondDataVest1828: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-    perioZondDataVest1828: [0,1,4,5,3,1,3,2,2,1,2,11,6,1,7,5,3,4,1,5,5,6,7,10,1,1.5,3,3,2,1,2,3,4,1,2.5,4,1,6,6.5,7,4,3,2.5,2,1,8,8.5,9,4,2,2.5,3,2,11,7,3,5,8,5.5,3,1,4,4,4,1,2,0],
-    perioZondDataOral1828: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    
+    // perioYasenKrayVest1828: [0,-5,-4,-5,-3,-1,-3,-2,-2,-2,-1,-1,-1,-1,-7,-5,-6,-6,-6,-1,-1,-1,-3,-6,-5,-4,-1,0,-2,-2,-5,-4,-5,-6,-3,-2,-2,-2,-3,-4,-5,-6,-5,-7,-4,-1,-6,-3,-2,-1,-1,-2,-3,-4,-3,-9,-5,-1,-1,-5,-4,-3,-2,-1],
+    // perioYasenKrayVest1828: [0,5,4,5,3,1,3,2,2,2,1,1,1,1,7,5,6,6,6,1,1,1,3,6,5,4,1,0,2,2,5,4,5,6,3,2,2,2,3,4,5,6,5,7,4,1,6,3,2,1,1,2,3,4,3,9,5,1,1,5,4,3,2,1],
+    // perioYasenKrayOral1828: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+
+    perioZVData1828: ['','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    perioYKVData1828: ['','','',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    // perioYKVData1828: [9,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    
+    // perioZVResult1828: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0],
+    // perioYKVResult1828: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,],
+    
+    // perioZondDataVest1828: [0,0,0,5,2.5,5,19,1,0,0,0,11,6,1,7,5,5,5,6,1,6,11,3,6,5,4,1,10,6,2,5,4,5,6,1,1,3,5,11,3,2,1,7,0,4,8,1,1,1,1,5,9,6,3,2,2,4,4,1,9,6,3,12,1],
+    // perioZondDataVest1828: [0,1,4,5,3,1,3,2,2,2,1,11,6,1,7,5,5,5,6,1,6,11,3,6,5,4,1,10,6,2,5,4,5,6,1,1,3,5,11,3,2,1,7,0,4,8,1,1,1,1,5,9,6,3,2,2,4,4,1,9,6,3,12,1],
+    // perioZondDataOral1828: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+
+    pZondChartUp: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pKrayChartUp: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0]
     
 }
 
@@ -2719,16 +2739,48 @@ const ACTION_HANDLERS = {
             perioZondData: action.payload
         })
     },
-    [setPerioZond1828VestData.toString()]: {
-        next: (state, action) => ({
-            ...state,
-            perioZondDataVest1828: action.payload
-        })
-    },
+    // [setPerioZond1828VestData.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         perioZondDataVest1828: action.payload
+    //     })
+    // },
+    // [setPerioYasen1828VestData.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         perioYasenKrayVest1828: action.payload
+    //     })
+    // },
+    // [setPerioZ1828VData.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         perioZVData1828: action.payload
+    //     })
+    // },
+    // [setPerioYK1828VData.toString()]: {
+    //     next: (state, action) => ({
+    //         ...state,
+    //         perioYKVData1828: action.payload
+    //     })
+    // },
+
     [setPsrChange.toString()]: {
         next: (state, action) => ({
             ...state,
             psrChange: action.payload
+        })
+    },
+    
+    [setPZondChartUp.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pZondChartUp: action.payload
+        })
+    },
+    [setPKrayChartUp.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pKrayChartUp: action.payload
         })
     },
 }
@@ -2760,7 +2812,13 @@ export {
     setSelectedToothNumber,
     setDeepZondData,
     setPsrChange,
-    setPerioZond1828VestData
+    setPerioZond1828VestData,
+    setPerioYasen1828VestData,
+    setPerioZ1828VData,
+    setPerioYK1828VData,
+
+    setPZondChartUp,
+    setPKrayChartUp
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);

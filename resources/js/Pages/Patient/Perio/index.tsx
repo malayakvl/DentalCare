@@ -31,7 +31,12 @@ import Fertilizer from './Fertilizer';
 import Bleeding from './Bleeding';
 import Moving from './Moving';
 import DeepZond from './DeepZoond';
+import DeepZondNew from './DeepZoondNew';
+import YasenKray from './YasenKray'
 import ZondChart from './ZondChart';
+import YasenKrayNew from './YasenKrayNew';
+import YasenChart from './YasenChart';
+import IntersectChart from './IntersectChart'
 
 ChartJS.register(
 CategoryScale,
@@ -56,68 +61,67 @@ export default function Index() {
     //     console.log('ZOND DATA1', zondData)
     // }, [zondData])
 
-    const chartData = {
-        labels: ['T1', 'T2','T3','T4','T5','T6','T7', 'T8', 'T9','T10','T11','T12','T13','T4', 'T15', 'T16'],
-        datasets: [
-            {
-                type: 'line',
-                label: '',
-                data: [1, 3, 0, 18, 1, 1, 5, 5, 9, 0, 1, 6, 5, 4, 2, -2],
-                fill: true,
-                borderColor: 'rgb(8, 84, 17)',
-                borderWidth: 1,
-                backgroundColor: 'rgba(197, 54, 54, 0.4)',
-                tension: 0.1
-            },
-            {
-                type: 'bar',
-                label: '',
-                data: [1, 3, 0, 18, 1, 1, 5, 5, 9, 0, 1, 6, 5, 4, 2, 0],
-                fill: true,
-                borderColor: 'rgb(8, 84, 17)',
-                borderWidth: 1,
-                backgroundColor: 'rgba(197, 54, 54, 0.4)',
-                barThickness: 1,
-                tension: 0.1
-            },
-        ],
-      };
+    // const chartData = {
+    //     labels: ['T1', 'T2','T3','T4','T5','T6','T7', 'T8', 'T9','T10','T11','T12','T13','T4', 'T15', 'T16'],
+    //     datasets: [
+    //         {
+    //             type: 'line',
+    //             label: '',
+    //             data: [1, 3, 0, 18, 1, 1, 5, 5, 9, 0, 1, 6, 5, 4, 2, -2],
+    //             fill: true,
+    //             borderColor: 'rgb(8, 84, 17)',
+    //             borderWidth: 1,
+    //             backgroundColor: 'rgba(197, 54, 54, 0.4)',
+    //             tension: 0.1
+    //         },
+    //         {
+    //             type: 'bar',
+    //             label: '',
+    //             data: [1, 3, 0, 18, 1, 1, 5, 5, 9, 0, 1, 6, 5, 4, 2, 0],
+    //             fill: true,
+    //             borderColor: 'rgb(174, 7, 7)',
+    //             borderWidth: 3,
+    //             backgroundColor: 'rgba(197, 54, 54, 0.4)',
+    //             barThickness: 1,
+    //             tension: 0.1
+    //         },
+    //     ],
+    //   };
            
-      const options = {
-        scales: {
-          x: {
-            ticks: {
-              display: false, // скрыть подписи на оси X
-            },
-            title: {
-              display: false, // скрыть название оси X
-            },
-            grid: {
-                display: false
-            }
-          },
-          y: {
-            ticks: {
-              display: false, // скрыть подписи на оси Y
-            },
-            title: {
-              display: false, // скрыть название оси Y
-            },
-            grid: {
-                display: false
-            }
-          },
-        },
-      };
+    //   const options = {
+    //     scales: {
+    //       x: {
+    //         ticks: {
+    //           display: false, // скрыть подписи на оси X
+    //         },
+    //         title: {
+    //           display: false, // скрыть название оси X
+    //         },
+    //         grid: {
+    //             display: false
+    //         }
+    //       },
+    //       y: {
+    //         ticks: {
+    //           display: false, // скрыть подписи на оси Y
+    //         },
+    //         title: {
+    //           display: false, // скрыть название оси Y
+    //         },
+    //         grid: {
+    //             display: false
+    //         }
+    //       },
+    //     },
+    //   };
     return (
         <div className="w-full scroll-x">
             <div className='relative'>
-                <ZondChart />
-                {/* <div style={{width: '1154px'}} className='chart-perio-top-1'>
-                    <Line data={chartData} options={options} height={32} />
-                </div> */}
+                {/* <ZondChart /> */}
     
-                            
+                {/* <YasenChart />*/}
+
+                <IntersectChart />
             </div>
             <table className="table-auto perio-table">
                 <tbody>
@@ -413,41 +417,177 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Ясений край</td>
-                    <td><DeepZond toothNum={48} /></td>
-                    <td><DeepZond toothNum={47} /></td>
-                    <td><DeepZond toothNum={46} /></td>
-                    <td><DeepZond toothNum={45} /></td>
-                    <td><DeepZond toothNum={44} /></td>
-                    <td><DeepZond toothNum={43} /></td>
-                    <td><DeepZond toothNum={42} /></td>
-                    <td><DeepZond toothNum={41} /></td>
-                    <td><DeepZond toothNum={31} /></td>
-                    <td><DeepZond toothNum={32} /></td>
-                    <td><DeepZond toothNum={33} /></td>
-                    <td><DeepZond toothNum={34} /></td>
-                    <td><DeepZond toothNum={35} /></td>
-                    <td><DeepZond toothNum={36} /></td>
-                    <td><DeepZond toothNum={37} /></td>
-                    <td><DeepZond toothNum={38} /></td>
+                    <td>
+                        <div className="col-xs-12 action-zone-v">
+                            <YasenKrayNew type={'vest'} idx={0} />
+                            <YasenKrayNew type={'vest'} idx={1} />
+                            <YasenKrayNew type={'vest'} idx={2} />
+                        </div>
+                    </td>
+                    <td>
+                        <div className="col-xs-12 action-zone-v">
+                            <YasenKrayNew type={'vest'} idx={3} />
+                            <YasenKrayNew type={'vest'} idx={4} />
+                            <YasenKrayNew type={'vest'} idx={5} />
+                        </div>
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={6} />
+                        <YasenKrayNew type={'vest'} idx={7} />
+                        <YasenKrayNew type={'vest'} idx={8} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={9} />
+                        <YasenKrayNew type={'vest'} idx={10} />
+                        <YasenKrayNew type={'vest'} idx={11} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={12} />
+                        <YasenKrayNew type={'vest'} idx={13} />
+                        <YasenKrayNew type={'vest'} idx={14} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={15} />
+                        <YasenKrayNew type={'vest'} idx={16} />
+                        <YasenKrayNew type={'vest'} idx={17} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={18} />
+                        <YasenKrayNew type={'vest'} idx={19} />
+                        <YasenKrayNew type={'vest'} idx={20} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={21} />
+                        <YasenKrayNew type={'vest'} idx={22} />
+                        <YasenKrayNew type={'vest'} idx={23} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={24} />
+                        <YasenKrayNew type={'vest'} idx={25} />
+                        <YasenKrayNew type={'vest'} idx={26} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={27} />
+                        <YasenKrayNew type={'vest'} idx={28} />
+                        <YasenKrayNew type={'vest'} idx={29} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={30} />
+                        <YasenKrayNew type={'vest'} idx={31} />
+                        <YasenKrayNew type={'vest'} idx={32} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={33} />
+                        <YasenKrayNew type={'vest'} idx={34} />
+                        <YasenKrayNew type={'vest'} idx={35} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={36} />
+                        <YasenKrayNew type={'vest'} idx={37} />
+                        <YasenKrayNew type={'vest'} idx={38} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={39} />
+                        <YasenKrayNew type={'vest'} idx={40} />
+                        <YasenKrayNew type={'vest'} idx={41} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={42} />
+                        <YasenKrayNew type={'vest'} idx={43} />
+                        <YasenKrayNew type={'vest'} idx={44} />
+                    </td>
+                    <td>
+                        <YasenKrayNew type={'vest'} idx={45} />
+                        <YasenKrayNew type={'vest'} idx={46} />
+                        <YasenKrayNew type={'vest'} idx={47} />
+                    </td>
                 </tr>
                 <tr>
                     <td className="title">Глибина зондування</td>
-                    <td><DeepZond toothNum={18} type={'vest'} /></td>
-                    <td><DeepZond toothNum={17} type={'vest'} /></td>
-                    <td><DeepZond toothNum={16} type={'vest'} /></td>
-                    <td><DeepZond toothNum={15} type={'vest'} /></td>
-                    <td><DeepZond toothNum={14} type={'vest'} /></td>
-                    <td><DeepZond toothNum={13} type={'vest'} /></td>
-                    <td><DeepZond toothNum={12} type={'vest'} /></td>
-                    <td><DeepZond toothNum={11} type={'vest'} /></td>
-                    <td><DeepZond toothNum={31} type={'vest'} /></td>
-                    <td><DeepZond toothNum={32} type={'vest'} /></td>
-                    <td><DeepZond toothNum={33} type={'vest'} /></td>
-                    <td><DeepZond toothNum={34} type={'vest'} /></td>
-                    <td><DeepZond toothNum={35} type={'vest'} /></td>
-                    <td><DeepZond toothNum={36} type={'vest'} /></td>
-                    <td><DeepZond toothNum={37} type={'vest'} /></td>
-                    <td><DeepZond toothNum={38} type={'vest'} /></td>
+                    <td>
+                        <div className="col-xs-12 action-zone-v">
+                            <DeepZondNew type={'vest'} idx={0} />
+                            <DeepZondNew type={'vest'} idx={1} />
+                            <DeepZondNew type={'vest'} idx={2} />
+                        </div>
+                    </td>
+                    <td>
+                        <div className="col-xs-12 action-zone-v">
+                            <DeepZondNew type={'vest'} idx={3} />
+                            <DeepZondNew type={'vest'} idx={4} />
+                            <DeepZondNew type={'vest'} idx={5} />
+                        </div>
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={6} />
+                        <DeepZondNew type={'vest'} idx={7} />
+                        <DeepZondNew type={'vest'} idx={8} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={9} />
+                        <DeepZondNew type={'vest'} idx={10} />
+                        <DeepZondNew type={'vest'} idx={11} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={12} />
+                        <DeepZondNew type={'vest'} idx={13} />
+                        <DeepZondNew type={'vest'} idx={14} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={15} />
+                        <DeepZondNew type={'vest'} idx={16} />
+                        <DeepZondNew type={'vest'} idx={17} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={18} />
+                        <DeepZondNew type={'vest'} idx={19} />
+                        <DeepZondNew type={'vest'} idx={20} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={21} />
+                        <DeepZondNew type={'vest'} idx={22} />
+                        <DeepZondNew type={'vest'} idx={23} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={24} />
+                        <DeepZondNew type={'vest'} idx={25} />
+                        <DeepZondNew type={'vest'} idx={26} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={27} />
+                        <DeepZondNew type={'vest'} idx={28} />
+                        <DeepZondNew type={'vest'} idx={29} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={30} />
+                        <DeepZondNew type={'vest'} idx={31} />
+                        <DeepZondNew type={'vest'} idx={32} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={33} />
+                        <DeepZondNew type={'vest'} idx={34} />
+                        <DeepZondNew type={'vest'} idx={35} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={36} />
+                        <DeepZondNew type={'vest'} idx={37} />
+                        <DeepZondNew type={'vest'} idx={38} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={39} />
+                        <DeepZondNew type={'vest'} idx={40} />
+                        <DeepZondNew type={'vest'} idx={41} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={42} />
+                        <DeepZondNew type={'vest'} idx={43} />
+                        <DeepZondNew type={'vest'} idx={44} />
+                    </td>
+                    <td>
+                        <DeepZondNew type={'vest'} idx={45} />
+                        <DeepZondNew type={'vest'} idx={46} />
+                        <DeepZondNew type={'vest'} idx={47} />
+                    </td>
                 </tr>
                 <tr>
                     <td className="title">Вестибулярно</td>
@@ -462,7 +602,8 @@ export default function Index() {
                         <FormulaPerio1828 />
                     </td>
                 </tr>
-                <tr>
+                <tr><td colSpan={17} style={{height: '40px'}}></td></tr>
+                {/* <tr>
                     <td className="title">Глибина зондування</td>
                     <td><DeepZond toothNum={48} /></td>
                     <td><DeepZond toothNum={47} /></td>
@@ -480,8 +621,8 @@ export default function Index() {
                     <td><DeepZond toothNum={36} /></td>
                     <td><DeepZond toothNum={37} /></td>
                     <td><DeepZond toothNum={38} /></td>
-                </tr>
-                <tr>
+                </tr> */}
+                {/* <tr>
                     <td className="title">Ясений край</td>
                     <td><DeepZond toothNum={48} /></td>
                     <td><DeepZond toothNum={47} /></td>
@@ -499,7 +640,7 @@ export default function Index() {
                     <td><DeepZond toothNum={36} /></td>
                     <td><DeepZond toothNum={37} /></td>
                     <td><DeepZond toothNum={38} /></td>
-                </tr>
+                </tr> */}
                 <tr style={{paddingTop: '10px'}}>
                     <td style={{paddingTop: '10px'}} className="title">Зубні відкладення</td>
                     <td style={{paddingTop: '10px'}}>

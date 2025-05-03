@@ -7,6 +7,7 @@ import {
     getPerioYasen1828VestDataSelector,
     getPerioZond1828VestDataSelector,
     chartZondUpSelector,
+    chartKrayUpSelector,
 } from "../../../Redux/Formula/selectors";
 import {
     Chart as ChartJS,
@@ -34,9 +35,9 @@ ChartJS.register(
     Filler
 );
 
-export default function ZondChart() {
+export default function IntersectChart() {
     const zond1828VestData = useSelector(chartZondUpSelector);
-    const yasen1828VestData = useSelector(getPerioYasen1828VestDataSelector);
+    const yasen1828VestData = useSelector(chartKrayUpSelector);
 
     const zv1828Data = useSelector(getPerioZ1828VDataSelector);
     const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
@@ -107,51 +108,35 @@ export default function ZondChart() {
     // useEffect(() => {
     //     console.log('change');
     // }, [zond1828VestDataNew])
+    // console.log('GLYB ZOND:', zond1828VestData)
+    // console.log('YASEN KRAY:', yasen1828VestData)
 
-    const chartData = {
+    const data = {
         labels: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
-        legend: {display: false},
         datasets: [
-            {
-                type: "line" as const,
-                label: '',
-                data: zond1828VestData,
-                pointRadius: 1,
-                fill: true,
-                borderColor: 'rgb(219, 14, 79)',
-                borderWidth: 2,
-                // backgroundColor: 'transparent',
-                backgroundColor: 'rgba(197, 54, 54, 0.4)',
-                tension: 0.1
-            },
-                // {
-                //     type: 'bar',
-                //     label: '',
-                //     data: zond1828VestData,
-                //     borderColor: [
-                //         'rgb(255, 99, 132)',
-                //         'rgb(75, 192, 192)',
-                //         'rgb(153, 102, 255)',
-                //       ],
-                //     backgroundColor: [
-                //         'rgb(255, 99, 132)',
-                //         'rgb(75, 192, 192)',
-                //         'rgb(153, 102, 255)',
-                //       ],                  
-                //     fill: true,
-                //     // borderColor: 'rgb(8, 84, 17)',
-                //     borderWidth: 1,
-                //     // backgroundColor: 'rgba(197, 54, 54, 0.4)',
-                //     barThickness: 3,
-                //     tension: 0.1
-                // },
-        ],
+          {
+            label: 'Глибина зондування',
+            pointRadius: 2,
+            borderWidth: 2,
+            data: zond1828VestData,
+            borderColor: 'blue',
+            fill: 'rgba(153, 102, 255, 0.4)' // или target: 'Линия B'
+          },
+          {
+            label: 'Ясений край',
+            pointRadius: 2,
+            borderWidth: 2,
+            data: yasen1828VestData,
+            borderColor: 'red',
+            fill: '-1' // заполняет между этой и предыдущей линией
+          }
+        ]
     };
        
     return (
         <>
-            <div style={{width: '1195px', height: '60px'}} className='chart-perio-top-1'>
-                <Line data={chartData} options={options} height={32}  />
+            <div style={{width: '1195px', height: '100px'}} className='chart-intersect-up'>
+                <Line data={data} options={options} height={100}  />
             </div>
         </>
     )

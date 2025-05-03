@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 import {
-    getPerioZ1828VDataSelector,
-    getPerioYK1828VDataSelector,
-
+    chartZondUpSelector,
     getPerioYasen1828VestDataSelector,
     getPerioZond1828VestDataSelector,
-    chartZondUpSelector,
-} from "../../../Redux/Formula/selectors";
+} from "../../../../Redux/Formula/selectors";
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -37,9 +34,6 @@ ChartJS.register(
 export default function ZondChart() {
     const zond1828VestData = useSelector(chartZondUpSelector);
     const yasen1828VestData = useSelector(getPerioYasen1828VestDataSelector);
-
-    const zv1828Data = useSelector(getPerioZ1828VDataSelector);
-    const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
 
     const options = {
         layout: {
@@ -90,36 +84,29 @@ export default function ZondChart() {
         },
     };
 
-    // const calculateData =() => {
-    //     const preparedzondData = [];
-    //     preparedzondData.push(0);
-    //     preparedzondData.push(0);
-    //     // for (var i = 0; i< zond1828VestDataNew.length; i++) {
-    //     //     console.log(i, zond1828VestDataNew[i]);
-
-    //     //     // preparedzondData.push(zond1828VestData[i] + yasen1828VestData[i]);
-    //     // }
-    //     // console.log(preparedzondData);
-    //     return preparedzondData;
-    //     // return zond1828VestData;
-    // }
-
-    // useEffect(() => {
-    //     console.log('change');
-    // }, [zond1828VestDataNew])
-
+    const calculateData =() => {
+        const preparedzondData = [];
+        preparedzondData.push(0);
+        for (var i = 1; i< zond1828VestData.length; i++) {
+            preparedzondData.push(zond1828VestData[i] + yasen1828VestData[i]);
+        }
+        console.log(preparedzondData);
+        return preparedzondData;
+        // return zond1828VestData;
+    }
+console.log(zond1828VestData);
     const chartData = {
         labels: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
         legend: {display: false},
         datasets: [
             {
-                type: "line" as const,
+                type: "line",
                 label: '',
                 data: zond1828VestData,
                 pointRadius: 1,
                 fill: true,
-                borderColor: 'rgb(219, 14, 79)',
-                borderWidth: 2,
+                borderColor: 'rgb(8, 84, 17)',
+                borderWidth: 1,
                 // backgroundColor: 'transparent',
                 backgroundColor: 'rgba(197, 54, 54, 0.4)',
                 tension: 0.1
@@ -150,7 +137,7 @@ export default function ZondChart() {
        
     return (
         <>
-            <div style={{width: '1195px', height: '60px'}} className='chart-perio-top-1'>
+            <div style={{width: '1190px', height: '60px'}} className='chart-perio-top-1'>
                 <Line data={chartData} options={options} height={32}  />
             </div>
         </>

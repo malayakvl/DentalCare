@@ -41,3 +41,10 @@ export const setDisactiveAll = createAction('formula/ALL_TEETH_DISACTIVE');
 export const setSelectedToothNumber = createAction('formula/SET_TOOTH_NUMBER');
 export const setPsrChange = createAction('formula/SET_PSRCHANGE');
 export const setPerioZond1828VestData = createAction('formula/SET_PERIO1828_VEST_ZOND_DATA');
+export const setPerioYasen1828VestData = createAction('formula/SET_PERIO1828_VEST_YASEN_DATA');
+
+export const setPerioZ1828VData = createAction('formula/SET_PERIO1828_VEST_NEWZOND_DATA');
+export const setPerioYK1828VData = createAction('formula/SET_PERIO1828_VEST_NEWASEN_DATA');
+
+export const setPZondChartUp = createAction('formula/SET_PERIOZOND1828_VEST_DATA');
+export const setPKrayChartUp = createAction('formula/SET_PERIOKRAY1828_VEST_DATA');
