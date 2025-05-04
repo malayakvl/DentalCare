@@ -60,3 +60,5 @@ export const getPerioYK1828VDataSelector = (state) => state.formula.perioYKVData
 
 export const chartZondUpSelector = (state) => state.formula.pZondChartUp;
 export const chartKrayUpSelector = (state) => state.formula.pKrayChartUp;
+export const chartBarUpSelector = (state) => state.formula.pBarUp;
+

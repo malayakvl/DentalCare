@@ -48,3 +48,4 @@ export const setPerioYK1828VData = createAction('formula/SET_PERIO1828_VEST_NEWA
 
 export const setPZondChartUp = createAction('formula/SET_PERIOZOND1828_VEST_DATA');
 export const setPKrayChartUp = createAction('formula/SET_PERIOKRAY1828_VEST_DATA');
+export const setPBarChartUp = createAction('formula/SET_PERIOBAR1828_VEST_DATA');

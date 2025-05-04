@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 import {
-    getPerioZ1828VDataSelector,
-    getPerioYK1828VDataSelector,
-
-    getPerioYasen1828VestDataSelector,
-    getPerioZond1828VestDataSelector,
-    chartZondUpSelector,
     chartKrayUpSelector,
-    chartBarUpSelector,
+    getPerioYasen1828VestDataSelector,
 } from "../../../Redux/Formula/selectors";
 import {
     Chart as ChartJS,
@@ -36,13 +30,8 @@ ChartJS.register(
     Filler
 );
 
-export default function IntersectChart() {
-    const zond1828VestData = useSelector(chartZondUpSelector);
+export default function YasenChart() {
     const yasen1828VestData = useSelector(chartKrayUpSelector);
-    const bar1828VestData = useSelector(chartBarUpSelector);
-
-    // const zv1828Data = useSelector(getPerioZ1828VDataSelector);
-    // const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
 
     const options = {
         layout: {
@@ -58,7 +47,7 @@ export default function IntersectChart() {
                     label: function(context) {
                         let label = context.dataset.label || '';
                         if (context.parsed.y !== null) {
-                            label = 'ГЗ:' + context.parsed.x+' ЯК: '+context.parsed.y;
+                            label = 'ЯК:' + context.parsed.y;
                         }
                         return label;
                     }
@@ -88,49 +77,54 @@ export default function IntersectChart() {
                 grid: {
                     display: false
                 },
-                min: -10,
-                max:10
+                
             },
         },
     };
 
-    const data = {
+    const chartData = {
         labels: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+        legend: {display: false},
         datasets: [
-          {
-            label: 'Глибина зондування',
-            pointRadius: 0,
-            borderWidth: 2,
-            data: zond1828VestData,
-            borderColor: 'blue',
-            fill: 'rgba(243, 128, 153, 0.4)' // или target: 'Линия B'
-          },
-          {
-            label: 'Ясений край',
-            pointRadius: 0,
-            borderWidth: 2,
-            data: yasen1828VestData,
-            borderColor: 'red',
-            fill: '-1' // заполняет между этой и предыдущей линией
-          },
-          {
-            type: 'bar',
-            options: {
-                barPercentage: 1
+            {
+                type: "line",
+                label: '',
+                data: yasen1828VestData,
+                fill: true,
+                pointRadius: 1,
+                borderColor: 'rgb(153, 102, 255)',
+                backgroundColor: 'rgba(153, 102, 255, 0.4)',
+                borderWidth: 2,
+                tension: 0.1
             },
-            backgroundColor: 'green',
-            barThickness: 1,
-            with: 2,
-            data: bar1828VestData,
-          }
-        ]
+                // {
+                //     type: 'bar',
+                //     label: '',
+                //     data: yasen1828VestData,
+                //     borderColor: [
+                //         'rgb(255, 99, 132)',
+                //         'rgb(75, 192, 192)',
+                //         'rgb(153, 102, 255)',
+                //       ],
+                //     backgroundColor: [
+                //         'rgb(255, 99, 132)',
+                //         'rgb(75, 192, 192)',
+                //         'rgb(153, 102, 255)',
+                //       ],                  
+                //     fill: true,
+                //     // borderColor: 'rgb(8, 84, 17)',
+                //     borderWidth: 1,
+                //     // backgroundColor: 'rgba(197, 54, 54, 0.4)',
+                //     barThickness: 3,
+                //     tension: 0.1
+                // },
+        ],
     };
-   
        
     return (
         <>
-            <div style={{width: '1195px', height: '100px'}} className='chart-intersect-up'>
-                <Line data={data} options={options} height={100}  />
+            <div style={{width: '1195px', height: '60px'}} className='chart-yasen-top-1'>
+                <Line data={chartData} options={options} height={32}  />
             </div>
         </>
     )

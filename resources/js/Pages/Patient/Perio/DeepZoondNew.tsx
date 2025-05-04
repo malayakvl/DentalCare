@@ -8,14 +8,16 @@ import {
     getPerioZond1828OralDataSelector,
     getPerioZond1828VestDataSelector,
     getPsrChangeSelector,
+    chartKrayUpSelector,
 } from "../../../Redux/Formula/selectors";
-import { setPerioZond1828VestData, setPerioZ1828VData, setPsrChange, setPZondChartUp, setPKrayChartUp } from "../../../Redux/Formula";
+import { setPerioZond1828VestData, setPerioZ1828VData, setPsrChange, setPZondChartUp, setPKrayChartUp, setPBarChartUp } from "../../../Redux/Formula";
 
 
 export default function DeepZondNew({type = 'vest', idx = 0}) {
     const dispatch = useDispatch<any>();
     // const perioData = useSelector(getPerioZondSelector);
     const zond1828VestData = useSelector(getPerioZond1828VestDataSelector);
+    const yasen1828VestData = useSelector(chartKrayUpSelector);
 
     const zv1828Data = useSelector(getPerioZ1828VDataSelector);
     const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
@@ -57,7 +59,6 @@ export default function DeepZondNew({type = 'vest', idx = 0}) {
         for (let i = 0; i < arrYasen.length; i++) {
             const zondVal = isNaN(parseInt(arrZond[i])) ? 0 : parseInt(arrZond[i]);
             const yasenVal = isNaN(parseInt(arrYasen[i])) ? 0 : parseInt(arrYasen[i]);
-            // _calcArr.push( yasenVal > zondVal  ? - yasenVal);
             _calcArr.push( yasenVal > zondVal  ? -1*zondVal : zondVal);
         }
         // формируем новие значения для графика
@@ -74,30 +75,19 @@ export default function DeepZondNew({type = 'vest', idx = 0}) {
         resultZond.unshift(0);
         resultZond.push(0);
         dispatch(setPZondChartUp(resultZond));
-
-
-
-        // for (let i = 0; i < _tmpCalc.length; i++) {
-        //     result.push(_tmpCalc[i]);
-        //     // После каждого третьего элемента (индекс 2, 5, 8, ...)
-        //     if ((i + 1) % 3 === 0 && i + 1 < _tmpCalc.length) {
-        //       let avg = (_tmpCalc[i] + _tmpCalc[i + 1]) / 2;
-        //       result.push(avg);
-        //     }
-        // }
-        // for (let i = 0; i < arr.length; i++) {
-        //   result.push(arr[i]);
         
-        //   // После каждого третьего элемента (индекс 2, 5, 8, ...)
-        //   if ((i + 1) % 3 === 0 && i + 1 < arr.length) {
-        //     let avg = (arr[i] + arr[i + 1]) / 2;
-        //     result.push(avg);
-        //   }
-        // }
-        // result.unshift(0);
-        // result.push(0);
-
-        // dispatch(setPZondChartUp(result));
+        // prepare bar chart data
+        const resultBar = [];
+        for (let i = 1; i < resultZond.length - 1; i++) {
+            if (i%4 === 0) {
+                resultBar.push([0, 0]);
+            } else {
+                resultBar.push([resultZond[i], yasen1828VestData[i]]);
+            }
+        }
+        resultBar.unshift([0,0]);
+        resultZond.push([0,0]);
+        dispatch(setPBarChartUp(resultBar));
     }
 
     return ( 

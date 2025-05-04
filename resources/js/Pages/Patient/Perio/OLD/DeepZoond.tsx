@@ -8,8 +8,8 @@ import {
     getPerioZond1828OralDataSelector,
     getPerioZond1828VestDataSelector,
     getPsrChangeSelector,
-} from "../../../Redux/Formula/selectors";
-import { setPerioZond1828VestData, setPerioZ1828VData, setPsrChange } from "../../../Redux/Formula";
+} from "../../../../Redux/Formula/selectors";
+import { setPerioZond1828VestData, setPerioZ1828VData, setPsrChange } from "../../../../Redux/Formula";
 
 
 export default function DeepZond({toothNum,type = 'vest', idx = 0}) {

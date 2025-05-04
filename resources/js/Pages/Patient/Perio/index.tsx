@@ -30,12 +30,8 @@ import DentalDeposits from './DentalDeposits';
 import Fertilizer from './Fertilizer';
 import Bleeding from './Bleeding';
 import Moving from './Moving';
-import DeepZond from './DeepZoond';
 import DeepZondNew from './DeepZoondNew';
-import YasenKray from './YasenKray'
-import ZondChart from './ZondChart';
 import YasenKrayNew from './YasenKrayNew';
-import YasenChart from './YasenChart';
 import IntersectChart from './IntersectChart'
 
 ChartJS.register(
@@ -775,7 +771,7 @@ export default function Index() {
                         <FormulaPerio3848 />
                     </td>
                 </tr>
-                <tr>
+                {/* <tr>
                     <td className="title">Глибина зондування</td>
                     <td><DeepZond toothNum={48} /></td>
                     <td><DeepZond toothNum={47} /></td>
@@ -812,7 +808,7 @@ export default function Index() {
                     <td><DeepZond toothNum={36} /></td>
                     <td><DeepZond toothNum={37} /></td>
                     <td><DeepZond toothNum={38} /></td>
-                </tr>
+                </tr> */}
                 <tr style={{paddingTop: '10px'}}>
                     <td style={{paddingTop: '10px'}} className="title">Зубні відкладення</td>
                     <td style={{paddingTop: '10px'}}>

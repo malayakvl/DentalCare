@@ -9,7 +9,7 @@ import {
     getPerioZond1828VestDataSelector,
     getPsrChangeSelector,
 } from "../../../Redux/Formula/selectors";
-import { setPerioZond1828VestData, setPerioZ1828VData, setPsrChange, setPZondChartUp, setPerioYK1828VData, setPKrayChartUp } from "../../../Redux/Formula";
+import { setPerioZond1828VestData, setPerioZ1828VData, setPsrChange, setPZondChartUp, setPerioYK1828VData, setPKrayChartUp, setPBarChartUp } from "../../../Redux/Formula";
 
 
 export default function YasenKrayNew({type = 'vest', idx = 0}) {
@@ -71,6 +71,19 @@ export default function YasenKrayNew({type = 'vest', idx = 0}) {
         resultZond.unshift(0);
         resultZond.push(0);
         dispatch(setPZondChartUp(resultZond));
+        
+        // prepare bar chart data
+        const resultBar = [];
+        for (let i = 1; i < resultZond.length - 1; i++) {
+            if (i%4 === 0) {
+                resultBar.push([0, 0]);
+            } else {
+                resultBar.push([result[i], resultZond[i]]);
+            }
+        }
+        resultBar.unshift([0,0]);
+        resultZond.push([0,0]);
+        dispatch(setPBarChartUp(resultBar));
     }
 
     return ( 
