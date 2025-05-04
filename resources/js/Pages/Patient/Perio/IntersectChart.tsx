@@ -65,7 +65,7 @@ export default function IntersectChart() {
                 }
             }
         },
-        alignToPixels: true,
+        alignToPixels: false,
         scales: {
             x: {
                 ticks: {
@@ -129,7 +129,7 @@ export default function IntersectChart() {
        
     return (
         <>
-            <div style={{width: '1195px', height: '100px', border: 'solid 1px'}} className='chart-intersect-up'>
+            <div style={{width: '1215px', height: '100px'}} className='chart-intersect-up'>
                 <Line data={data} options={options} height={100}  />
             </div>
         </>
