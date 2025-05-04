@@ -88,8 +88,8 @@ export default function IntersectChart() {
                 grid: {
                     display: false
                 },
-                min: -10,
-                max:10
+                min: -19,
+                max:19
             },
         },
     };
@@ -129,7 +129,7 @@ export default function IntersectChart() {
        
     return (
         <>
-            <div style={{width: '1195px', height: '100px'}} className='chart-intersect-up'>
+            <div style={{width: '1195px', height: '100px', border: 'solid 1px'}} className='chart-intersect-up'>
                 <Line data={data} options={options} height={100}  />
             </div>
         </>
