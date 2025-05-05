@@ -53,6 +53,9 @@ export const getPerioYasen1828OralDataSelector = (state) => state.formula.perioY
 // selector for perio chart
 export const chartZ1828VSelector = (state) => state.formula.perioZVResult1828;
 export const chartYK1828VSelector = (state) => state.formula.perioYKVResult1828;
+export const chartZ1828OSelector = (state) => state.formula.perioZOResult1828;
+export const chartYK1828OSelector = (state) => state.formula.perioYKOResult1828;
+
 
 // chart variables
 export const getPerioZ1828VDataSelector = (state) => state.formula.perioZVData1828;
@@ -62,3 +65,9 @@ export const chartZondUpSelector = (state) => state.formula.pZondChartUp;
 export const chartKrayUpSelector = (state) => state.formula.pKrayChartUp;
 export const chartBarUpSelector = (state) => state.formula.pBarUp;
 
+export const getPerioZ1828ODataSelector = (state) => state.formula.perioZOData1828;
+export const getPerioYK1828ODataSelector = (state) => state.formula.perioYKOData1828;
+
+export const chartZondDownSelector = (state) => state.formula.pZondChartDown;
+export const chartKrayDownSelector = (state) => state.formula.pKrayChartDown;
+export const chartBarDownSelector = (state) => state.formula.pBarDown;

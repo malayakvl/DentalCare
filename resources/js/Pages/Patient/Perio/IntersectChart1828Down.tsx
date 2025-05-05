@@ -9,6 +9,9 @@ import {
     chartZondUpSelector,
     chartKrayUpSelector,
     chartBarUpSelector,
+    chartZondDownSelector,
+    chartKrayDownSelector,
+    chartBarDownSelector,
 } from "../../../Redux/Formula/selectors";
 import {
     Chart as ChartJS,
@@ -36,10 +39,10 @@ ChartJS.register(
     Filler
 );
 
-export default function IntersectChart() {
-    const zond1828VestData = useSelector(chartZondUpSelector);
-    const yasen1828VestData = useSelector(chartKrayUpSelector);
-    const bar1828VestData = useSelector(chartBarUpSelector);
+export default function IntersectChart1828Down() {
+    const zond1828VestData = useSelector(chartZondDownSelector);
+    const yasen1828VestData = useSelector(chartKrayDownSelector);
+    const bar1828VestData = useSelector(chartBarDownSelector);
 
     // const zv1828Data = useSelector(getPerioZ1828VDataSelector);
     // const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
@@ -129,7 +132,7 @@ export default function IntersectChart() {
        
     return (
         <>
-            <div style={{width: '1215px', height: '100px'}} className='chart-intersect-up'>
+            <div style={{width: '1215px', height: '100px'}} className='chart-intersect-down'>
                 <Line data={data} options={options} height={100}  />
             </div>
         </>

@@ -223,6 +223,15 @@
 }
 .chart-intersect-up {
     position: absolute;
-    top: 259px;
-    left: 130px;
+    // top: 259px;
+    // left: 130px;
+    top: 50px;
+    left: 0;
+}
+.chart-intersect-down {
+    position: absolute;
+    // top: 259px;
+    // left: 130px;
+    bottom: -5px;
+    left: 0;
 }

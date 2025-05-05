@@ -32,16 +32,17 @@ import Bleeding from './Bleeding';
 import Moving from './Moving';
 import DeepZond from './DeepZoond';
 import YasenKray from './YasenKray';
-import IntersectChart from './IntersectChart'
+import IntersectChart1828Up from './IntersectChart1828Up'
+import IntersectChart1828Down from './IntersectChart1828Down'
 
 
 
 export default function Index() {
     return (
         <div className="w-full scroll-x">
-            <div className='relative'>
-                <IntersectChart />
-            </div>
+            {/* <div className='relative'>
+                <IntersectChart1828Down />
+            </div> */}
             <table className="table-auto perio-table">
                 <tbody>
                 <tr>
@@ -511,48 +512,192 @@ export default function Index() {
                 <tr>
                     <td className="title">Вестибулярно</td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1050px', borderRight: 'none', borderLeft: 'none'}}>
+                        <div className='relative'>
+                            <IntersectChart1828Up />
+                        </div>
                         <FormulaPerio1828 />
+                        <div className='relative'>
+                            <IntersectChart1828Down />
+                        </div>
                     </td>
                 </tr>
                 <tr><td colSpan={17} style={{height: '40px'}}></td></tr>
-                {/* <tr>
+                <tr>
                     <td className="title">Глибина зондування</td>
-                    <td><DeepZond toothNum={48} /></td>
-                    <td><DeepZond toothNum={47} /></td>
-                    <td><DeepZond toothNum={46} /></td>
-                    <td><DeepZond toothNum={45} /></td>
-                    <td><DeepZond toothNum={44} /></td>
-                    <td><DeepZond toothNum={43} /></td>
-                    <td><DeepZond toothNum={42} /></td>
-                    <td><DeepZond toothNum={41} /></td>
-                    <td><DeepZond toothNum={31} /></td>
-                    <td><DeepZond toothNum={32} /></td>
-                    <td><DeepZond toothNum={33} /></td>
-                    <td><DeepZond toothNum={34} /></td>
-                    <td><DeepZond toothNum={35} /></td>
-                    <td><DeepZond toothNum={36} /></td>
-                    <td><DeepZond toothNum={37} /></td>
-                    <td><DeepZond toothNum={38} /></td>
-                </tr> */}
-                {/* <tr>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}>
+                        <div className="col-xs-12 action-zone-v">
+                            <DeepZond type={'oral'} idx={0} />
+                            <DeepZond type={'oral'} idx={1} />
+                            <DeepZond type={'oral'} idx={2} />
+                        </div>
+                    </td>
+                    <td>
+                        <div className="col-xs-12 action-zone-v">
+                            <DeepZond type={'oral'} idx={3} />
+                            <DeepZond type={'oral'} idx={4} />
+                            <DeepZond type={'oral'} idx={5} />
+                        </div>
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={6} />
+                        <DeepZond type={'oral'} idx={7} />
+                        <DeepZond type={'oral'} idx={8} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={9} />
+                        <DeepZond type={'oral'} idx={10} />
+                        <DeepZond type={'oral'} idx={11} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={12} />
+                        <DeepZond type={'oral'} idx={13} />
+                        <DeepZond type={'oral'} idx={14} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={15} />
+                        <DeepZond type={'oral'} idx={16} />
+                        <DeepZond type={'oral'} idx={17} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={18} />
+                        <DeepZond type={'oral'} idx={19} />
+                        <DeepZond type={'oral'} idx={20} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={21} />
+                        <DeepZond type={'oral'} idx={22} />
+                        <DeepZond type={'oral'} idx={23} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={24} />
+                        <DeepZond type={'oral'} idx={25} />
+                        <DeepZond type={'oral'} idx={26} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={27} />
+                        <DeepZond type={'oral'} idx={28} />
+                        <DeepZond type={'oral'} idx={29} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={30} />
+                        <DeepZond type={'oral'} idx={31} />
+                        <DeepZond type={'oral'} idx={32} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={33} />
+                        <DeepZond type={'oral'} idx={34} />
+                        <DeepZond type={'oral'} idx={35} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={36} />
+                        <DeepZond type={'oral'} idx={37} />
+                        <DeepZond type={'oral'} idx={38} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={39} />
+                        <DeepZond type={'oral'} idx={40} />
+                        <DeepZond type={'oral'} idx={41} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={42} />
+                        <DeepZond type={'oral'} idx={43} />
+                        <DeepZond type={'oral'} idx={44} />
+                    </td>
+                    <td>
+                        <DeepZond type={'oral'} idx={45} />
+                        <DeepZond type={'oral'} idx={46} />
+                        <DeepZond type={'oral'} idx={47} />
+                    </td>
+                </tr>
+                
+                <tr>
                     <td className="title">Ясений край</td>
-                    <td><DeepZond toothNum={48} /></td>
-                    <td><DeepZond toothNum={47} /></td>
-                    <td><DeepZond toothNum={46} /></td>
-                    <td><DeepZond toothNum={45} /></td>
-                    <td><DeepZond toothNum={44} /></td>
-                    <td><DeepZond toothNum={43} /></td>
-                    <td><DeepZond toothNum={42} /></td>
-                    <td><DeepZond toothNum={41} /></td>
-                    <td><DeepZond toothNum={31} /></td>
-                    <td><DeepZond toothNum={32} /></td>
-                    <td><DeepZond toothNum={33} /></td>
-                    <td><DeepZond toothNum={34} /></td>
-                    <td><DeepZond toothNum={35} /></td>
-                    <td><DeepZond toothNum={36} /></td>
-                    <td><DeepZond toothNum={37} /></td>
-                    <td><DeepZond toothNum={38} /></td>
-                </tr> */}
+                    <td style={{borderLeft: 'none', borderRight: 'none'}}>
+                        <div className="col-xs-12 action-zone-v">
+                            <YasenKray type={'oral'} idx={0} />
+                            <YasenKray type={'oral'} idx={1} />
+                            <YasenKray type={'oral'} idx={2} />
+                        </div>
+                    </td>
+                    <td>
+                        <div className="col-xs-12 action-zone-v">
+                            <YasenKray type={'oral'} idx={3} />
+                            <YasenKray type={'oral'} idx={4} />
+                            <YasenKray type={'oral'} idx={5} />
+                        </div>
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={6} />
+                        <YasenKray type={'oral'} idx={7} />
+                        <YasenKray type={'oral'} idx={8} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={9} />
+                        <YasenKray type={'oral'} idx={10} />
+                        <YasenKray type={'oral'} idx={11} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={12} />
+                        <YasenKray type={'oral'} idx={13} />
+                        <YasenKray type={'oral'} idx={14} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={15} />
+                        <YasenKray type={'oral'} idx={16} />
+                        <YasenKray type={'oral'} idx={17} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={18} />
+                        <YasenKray type={'oral'} idx={19} />
+                        <YasenKray type={'oral'} idx={20} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={21} />
+                        <YasenKray type={'oral'} idx={22} />
+                        <YasenKray type={'oral'} idx={23} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={24} />
+                        <YasenKray type={'oral'} idx={25} />
+                        <YasenKray type={'oral'} idx={26} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={27} />
+                        <YasenKray type={'oral'} idx={28} />
+                        <YasenKray type={'oral'} idx={29} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={30} />
+                        <YasenKray type={'oral'} idx={31} />
+                        <YasenKray type={'oral'} idx={32} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={33} />
+                        <YasenKray type={'oral'} idx={34} />
+                        <YasenKray type={'oral'} idx={35} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={36} />
+                        <YasenKray type={'oral'} idx={37} />
+                        <YasenKray type={'oral'} idx={38} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={39} />
+                        <YasenKray type={'oral'} idx={40} />
+                        <YasenKray type={'oral'} idx={41} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={42} />
+                        <YasenKray type={'oral'} idx={43} />
+                        <YasenKray type={'oral'} idx={44} />
+                    </td>
+                    <td>
+                        <YasenKray type={'oral'} idx={45} />
+                        <YasenKray type={'oral'} idx={46} />
+                        <YasenKray type={'oral'} idx={47} />
+                    </td>
+                </tr>
+                
                 <tr style={{paddingTop: '10px'}}>
                     <td style={{paddingTop: '10px'}} className="title">Зубні відкладення</td>
                     <td style={{paddingTop: '10px'}}>
