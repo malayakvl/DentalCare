@@ -7,6 +7,7 @@ import {
     setTooth16Active,
     setTooth28Active,
     setToothDiagnoze,
+    setPerioDeepZond,
     setActiveToothName,
     setDiagnosis,
     setDiagnosisClass,
@@ -22,7 +23,24 @@ import {
     setZirconiaCrownColor,
     setNewToothActive,
     setDisactiveAll,
-    setSelectedToothNumber
+    setSelectedToothNumber,
+    setDeepZondData,
+    setPsrChange,
+
+    setPerioZ1828VestData,
+    setPerioYK1828VestData,
+    setPZondChartUp,
+    setPKrayChartUp,
+    setPBarChartUp,
+
+    setPerioZ1828OralData,
+    setPerioYK1828OralData,
+    setPZondChartDown,
+    setPKrayChartDown,
+    setPBarChartDown,
+
+    checkAction
+    
 } from "./actions";
 
 const initialState = {
@@ -46,6 +64,7 @@ const initialState = {
     tooth17: false,
     active_tooth: '',
     selected_tooth_number: '',
+    psrChange: false,
     teethStatuses: {
         tooth18: {active: false}, 
         tooth17: {active: false}, 
@@ -85,7 +104,9 @@ const initialState = {
             active: false,
             change_color: false,
             fissure: false,
-
+            psr1: 0,
+            psr2: 0,
+            psr3: 0,
             // caries vars
             caries: false,
             caries_top: false,
@@ -2546,7 +2567,31 @@ const initialState = {
             parodontit_stage_all: false
         },
     },
-    
+    // perio chart vest 1828
+    vest1828Zond:  ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    vest1828Yasn: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    pZondChartUp: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pKrayChartUp: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pBarUp: [0, [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], 0],
+    // perio chart oral 1828
+    oral1828Zond:  ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    oral1828Yasn: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    pZondChartDown: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pKrayChartDown: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pBarDown: [0, [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], 0],
+
+    // perio chart vest 4838
+    vest4838Zond:  ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    vest4838Yasn: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    pZondChart2Up: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pKrayChart2Up: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pBar2Up: [0, [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], 0],
+    // perio chart oral 4838
+    oral4838Zond:  ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    oral4838Yasn: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
+    pZondChart2Down: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pKrayChart2Down: [0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0, 0,0,0, 0,0,0, 0,0,0, 0],
+    pBar2Down: [0, [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], 0],
 }
 
 // ------------------------------------
@@ -2565,24 +2610,6 @@ const ACTION_HANDLERS = {
             allTeeth: action.payload
         })
     },
-    // [setTooth18Active.toString()]: {
-    //     next: (state, action) => ({
-    //         ...state,
-    //         tooth18: action.payload
-    //     })
-    // },
-    // [setTooth17Active.toString()]: {
-    //     next: (state, action) => ({
-    //         ...state,
-    //         tooth17: action.payload
-    //     })
-    // },
-    // [setTooth16Active.toString()]: {
-    //     next: (state, action) => ({
-    //         ...state,
-    //         tooth16: action.payload
-    //     })
-    // },
     [setActiveToothName.toString()]: {
         next: (state, action) => ({
             ...state,
@@ -2712,7 +2739,86 @@ const ACTION_HANDLERS = {
             selected_tooth_number: action.payload
         })
     },
+    [setPerioDeepZond.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            teethPerioZond: action.payload
+        })
+    },
+    [setDeepZondData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            perioZondData: action.payload
+        })
+    },
+    [setPsrChange.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            psrChange: action.payload
+        })
+    },
     
+    [setPerioZ1828VestData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            vest1828Zond: action.payload
+        })
+    },
+    [setPerioYK1828VestData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            vest1828Yasn: action.payload
+        })
+    },
+    [setPZondChartUp.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pZondChartUp: action.payload
+        })
+    },
+    [setPKrayChartUp.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pKrayChartUp: action.payload
+        })
+    },
+    [setPBarChartUp.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pBarUp: action.payload
+        })
+    },
+
+    [setPerioZ1828OralData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            oral1828Zond: action.payload
+        })
+    },
+    [setPerioYK1828OralData.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            oral1828Yasn: action.payload
+        })
+    },
+    [setPZondChartDown.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pZondChartDown: action.payload
+        })
+    },
+    [setPKrayChartDown.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pKrayChartDown: action.payload
+        })
+    },
+    [setPBarChartDown.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pBarDown: action.payload
+        })
+    },
 }
 
 export {
@@ -2723,6 +2829,7 @@ export {
     setTooth17Active,
     setTooth16Active,
     setToothDiagnoze,
+    setPerioDeepZond,
     setDiagnosis,
     setDiagnosisClass,
     setSubDiagnosis,
@@ -2738,7 +2845,24 @@ export {
     setActiveToothName,
     setNewToothActive,
     setDisactiveAll,
-    setSelectedToothNumber
+    setSelectedToothNumber,
+    setDeepZondData,
+    setPsrChange,
+    
+    setPerioZ1828VestData,
+    setPerioYK1828VestData,
+    setPZondChartUp,
+    setPKrayChartUp,
+    setPBarChartUp,
+
+    setPerioZ1828OralData,
+    setPerioYK1828OralData,
+    setPZondChartDown,
+    setPKrayChartDown,
+    setPBarChartDown,
+
+    checkAction
+
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);

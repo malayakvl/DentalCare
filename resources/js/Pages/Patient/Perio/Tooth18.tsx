@@ -36,7 +36,6 @@ export default function Tooth18({className=''}) {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-
     return (
         <>
             <g id="18" className="df-tooth-text" data-number="18">

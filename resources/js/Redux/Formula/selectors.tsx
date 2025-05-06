@@ -43,4 +43,31 @@ export const getPeriodontitStage26Selector = (state) => state.formula.teethDiagn
 export const getPeriodontitStage27Selector = (state) => state.formula.teethDiagnozes.tooth27.periodontit_stage;
 export const getPeriodontitStage28Selector = (state) => state.formula.teethDiagnozes.tooth28.periodontit_stage;
 export const getActiveToothNumber = (state) => state.formula.selected_tooth_number;
+export const getPerioZond18Selector = (state) => state.formula.tooth18.psr1;
+export const getPerioZondSelector = (state) => state.formula.teethPerioZond;
+export const getPerioZond1828VestDataSelector = (state) => state.formula.perioZondDataVest1828;
+export const getPerioZond1828OralDataSelector = (state) => state.formula.perioZondDataOral1828;
+export const getPsrChangeSelector = (state) => state.formula.psrChange;
+export const getPerioYasen1828VestDataSelector = (state) => state.formula.perioYasenKrayVest1828;
+export const getPerioYasen1828OralDataSelector = (state) => state.formula.perioYasenKrayVest1828;
+// selector for perio chart
+export const chartZ1828VSelector = (state) => state.formula.perioZVResult1828;
+export const chartYK1828VSelector = (state) => state.formula.perioYKVResult1828;
+export const chartZ1828OSelector = (state) => state.formula.perioZOResult1828;
+export const chartYK1828OSelector = (state) => state.formula.perioYKOResult1828;
 
+
+// chart variables
+export const getPerioZ1828VDataSelector = (state) => state.formula.vest1828Zond;
+export const getPerioYK1828VDataSelector = (state) => state.formula.vest1828Yasn;
+
+export const chartZondUpSelector = (state) => state.formula.pZondChartUp;
+export const chartKrayUpSelector = (state) => state.formula.pKrayChartUp;
+export const chartBarUpSelector = (state) => state.formula.pBarUp;
+
+export const getPerioZ1828ODataSelector = (state) => state.formula.oral1828Zond;
+export const getPerioYK1828ODataSelector = (state) => state.formula.oral1828Yasn;
+
+export const chartZondDownSelector = (state) => state.formula.pZondChartDown;
+export const chartKrayDownSelector = (state) => state.formula.pKrayChartDown;
+export const chartBarDownSelector = (state) => state.formula.pBarDown;

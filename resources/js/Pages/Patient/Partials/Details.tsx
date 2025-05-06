@@ -46,8 +46,8 @@ export default function Details({
                         <div className='profile-photo' />
                     )}
                     <div className='parient-info'>
-                        <b>{patientData.first_name} {patientData.last_name}</b>
-                        <span className='block text-[11px]'>{patientData.phone}</span>
+                        <b className="text-purple-700">{patientData.first_name} {patientData.last_name}</b>
+                        <span className='block text-[12px] mt-[5]'>{patientData.phone}</span>
                     </div>
                 </div>
                 <div className='icon-block'>

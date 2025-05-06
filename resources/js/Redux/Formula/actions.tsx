@@ -21,6 +21,8 @@ export const setTooth26Active = createAction('formula/SET_TOOTH26_ACTIVE');
 export const setTooth27Active = createAction('formula/SET_TOOTH27_ACTIVE');
 export const setTooth28Active = createAction('formula/SET_TOOTH28_ACTIVE');
 export const setToothDiagnoze = createAction('formula/SET_TOOTH_DIAGNOZE');
+export const setPerioDeepZond = createAction('formula/SET_PERIO_ZOND');
+export const setDeepZondData = createAction('formula/SET_PERIO_ZOND_DATA');
 export const setActiveToothName = createAction('formula/SET_ACTIVE_TOOTH_NUBER');
 export const setDiagnosis = createAction('formula/SET_DAGNOSIS');
 export const setDiagnosisClass = createAction('formula/SET_DAGNOSIS_CLASS');
@@ -37,3 +39,22 @@ export const setZirconiaCrownColor = createAction('formula/SET_ZIRCONIACROWNCOLO
 export const setNewToothActive = createAction('formula/SET_NEW_TOOTH_ACTIVE');
 export const setDisactiveAll = createAction('formula/ALL_TEETH_DISACTIVE');
 export const setSelectedToothNumber = createAction('formula/SET_TOOTH_NUMBER');
+export const setPsrChange = createAction('formula/SET_PSRCHANGE');
+export const setPerioZond1828VestData = createAction('formula/SET_PERIO1828_VEST_ZOND_DATA');
+export const setPerioYasen1828VestData = createAction('formula/SET_PERIO1828_VEST_YASEN_DATA');
+
+export const setPerioZ1828VestData = createAction('formula/SET_1828VEST_ZONDDATA');
+export const setPerioYK1828VestData = createAction('formula/SET_1828VEST_YASNDATA');
+
+export const setPZondChartUp = createAction('formula/SET_PERIOZOND1828_VEST_DATA');
+export const setPKrayChartUp = createAction('formula/SET_PERIOKRAY1828_VEST_DATA');
+export const setPBarChartUp = createAction('formula/SET_PERIOBAR1828_VEST_DATA');
+
+export const setPerioZ1828OralData = createAction('formula/SET_1828ORAL_ZONDDATA');
+export const setPerioYK1828OralData = createAction('formula/SET_1828ORAL_YASNDATA');
+
+export const setPZondChartDown = createAction('formula/SET_PERIOZOND1828_ORAL_DATA');
+export const setPKrayChartDown = createAction('formula/SET_PERIOKRAY1828_ORAL_DATA');
+export const setPBarChartDown = createAction('formula/SET_PERIOBAR1828_ORAL_DATA');
+
+export const checkAction = createAction('formula/CHECK_VALUES');

@@ -31,6 +31,9 @@ export default {
             },
             blue: {
                 100: '#3ce4f0'
+            },
+            fukcia: {
+                100: '#f76ab0'
             }
         }
     },

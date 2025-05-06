@@ -37,7 +37,7 @@ export default function Tooth18() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-
+console.log(teethDiagnozis)
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
             if (toothPart === 'bottom') {

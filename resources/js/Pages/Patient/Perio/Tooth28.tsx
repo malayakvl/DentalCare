@@ -76,16 +76,16 @@ export default function Tooth28({className = ''}) {
                         <g className="hEmpty hRoot hImplant pulpitis-pfilling" data-position="28" >
                             <path className="st22 target" d="M1841.8,379c-5.7-2.8-12.3-3.6-18.6-2.4c-7.1,1.3-13.3,5.1-17.4,10.5
                         c4.4-14.5,6.9-29.5,7.5-44.5c0,0,0,0,0,0l0,0c0,0,0.1,0,0.1,0c2-0.6,3.9-1.1,5.9-1.6c3.8-0.9,7.5-1.7,11.4-2.3
-                        C1835.1,351.9,1838.8,365.3,1841.8,379z" style={{fill: 'rgb(254, 246, 249);'}}></path>
+                        C1835.1,351.9,1838.8,365.3,1841.8,379z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
                         <g className="hEmpty hImplant pulpitis-pfilling" data-position="28" >
                             <path className="st22 target" d="M1830.8,338.5c-3.8,0.6-7.6,1.4-11.4,2.3c-2,0.5-4,1-6,1.6v-0.1c0.2-4,0.2-8,0.1-12
                         c-0.4-11.6-1.8-23.4-1.7-35c1.1-0.1,2.2-0.2,3.5-0.3c0.8,0,1.7-0.1,2.5-0.1c2.1,12.5,6.8,25.2,11.1,37.5
-                        C1829.4,334.4,1830.1,336.4,1830.8,338.5C1830.8,338.5,1830.8,338.5,1830.8,338.5z" style={{fill: 'rgb(254, 246, 249);'}}></path>
+                        C1829.4,334.4,1830.1,336.4,1830.8,338.5C1830.8,338.5,1830.8,338.5,1830.8,338.5z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
                         <g className="hEmpty hImplant pulpitis-pfilling" data-position="28" >
                             <path className="st22 target part" d="M1819.9,264c-3.9,10.1-4,20.5-2.3,30.9c-0.8,0-1.6,0.1-2.5,0.1
-                        c-1.2,0.1-2.4,0.2-3.5,0.3c0.1-9.9,1.3-19.7,5.4-29c3.1-7.1,7.8-13.6,13.8-19.1C1826,252.1,1822.3,257.8,1819.9,264z" style={{fill: 'rgb(254, 246, 249);'}}></path>
+                        c-1.2,0.1-2.4,0.2-3.5,0.3c0.1-9.9,1.3-19.7,5.4-29c3.1-7.1,7.8-13.6,13.8-19.1C1826,252.1,1822.3,257.8,1819.9,264z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
                         <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="28"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="1836.5" cy="242.8" r="8.2"></circle>
@@ -193,11 +193,11 @@ export default function Tooth28({className = ''}) {
                         c-8.6,4.9-16.1,11.7-21.8,19.8C1771.7,371.9,1771.4,373.6,1771.2,375.3z" style={{fill: 'none'}}></path>
                         </g>
                         <g className="with">
-                            <path className="st54" areas="28_2 28_5" d="M1861.5 380.999C1861.59 386.832 1861.81 401.599 1862 413.999"></path>
-                            <path className="st54" areas="28_1 28_2" d="M1861.5 380.999C1861.67 375.499 1863.7 363.799 1870.5 360.999"></path>
-                            <path className="st54" areas="28_1 28_5" d="M1861.5 380.999C1845.5 372.5 1805.8 379.999 1791 395.999"></path>
-                            <path className="st54" areas="28_1 28_4" d="M1791 395.999C1791 390.832 1788.1 379.699 1776.5 376.499"></path>
-                            <path className="st54" areas="28_4 28_5" d="M1791 395.999L1797 430.999"></path>
+                            <path className="st54" d="M1861.5 380.999C1861.59 386.832 1861.81 401.599 1862 413.999"></path>
+                            <path className="st54" d="M1861.5 380.999C1861.67 375.499 1863.7 363.799 1870.5 360.999"></path>
+                            <path className="st54" d="M1861.5 380.999C1845.5 372.5 1805.8 379.999 1791 395.999"></path>
+                            <path className="st54" d="M1791 395.999C1791 390.832 1788.1 379.699 1776.5 376.499"></path>
+                            <path className="st54" d="M1791 395.999L1797 430.999"></path>
                         </g>
                     </g>
                     <g className="hEmpty hImplant hRoot" >
