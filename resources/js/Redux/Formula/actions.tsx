@@ -43,16 +43,18 @@ export const setPsrChange = createAction('formula/SET_PSRCHANGE');
 export const setPerioZond1828VestData = createAction('formula/SET_PERIO1828_VEST_ZOND_DATA');
 export const setPerioYasen1828VestData = createAction('formula/SET_PERIO1828_VEST_YASEN_DATA');
 
-export const setPerioZ1828VData = createAction('formula/SET_PERIO1828_VEST_NEWZOND_DATA');
-export const setPerioYK1828VData = createAction('formula/SET_PERIO1828_VEST_NEWASEN_DATA');
+export const setPerioZ1828VestData = createAction('formula/SET_1828VEST_ZONDDATA');
+export const setPerioYK1828VestData = createAction('formula/SET_1828VEST_YASNDATA');
 
 export const setPZondChartUp = createAction('formula/SET_PERIOZOND1828_VEST_DATA');
 export const setPKrayChartUp = createAction('formula/SET_PERIOKRAY1828_VEST_DATA');
 export const setPBarChartUp = createAction('formula/SET_PERIOBAR1828_VEST_DATA');
 
-export const setPerioZ1828OData = createAction('formula/SET_PERIO1828_ORAL_NEWZOND_DATA');
-export const setPerioYK1828OData = createAction('formula/SET_PERIO1828_ORAL_NEWASEN_DATA');
+export const setPerioZ1828OralData = createAction('formula/SET_1828ORAL_ZONDDATA');
+export const setPerioYK1828OralData = createAction('formula/SET_1828ORAL_YASNDATA');
 
 export const setPZondChartDown = createAction('formula/SET_PERIOZOND1828_ORAL_DATA');
 export const setPKrayChartDown = createAction('formula/SET_PERIOKRAY1828_ORAL_DATA');
 export const setPBarChartDown = createAction('formula/SET_PERIOBAR1828_ORAL_DATA');
+
+export const checkAction = createAction('formula/CHECK_VALUES');

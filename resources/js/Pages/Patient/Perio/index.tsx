@@ -34,10 +34,16 @@ import DeepZond from './DeepZoond';
 import YasenKray from './YasenKray';
 import IntersectChart1828Up from './IntersectChart1828Up'
 import IntersectChart1828Down from './IntersectChart1828Down'
-
+import { checkAction } from '@/Redux/Formula';
 
 
 export default function Index() {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(checkAction());
+    })
+    
+
     return (
         <div className="w-full scroll-x">
             {/* <div className='relative'>
@@ -510,7 +516,7 @@ export default function Index() {
                     </td>
                 </tr>
                 <tr>
-                    <td className="title">Вестибулярно</td>
+                    <td className="title" style={{backgroundColor: 'pink'}}>Вестибулярно/Орально</td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1050px', borderRight: 'none', borderLeft: 'none'}}>
                         <div className='relative'>
                             <IntersectChart1828Up />
@@ -523,7 +529,7 @@ export default function Index() {
                 </tr>
                 <tr><td colSpan={17} style={{height: '40px'}}></td></tr>
                 <tr>
-                    <td className="title">Глибина зондування</td>
+                    <td className="title">ГЗ Down</td>
                     <td style={{borderRight: 'none', borderLeft: 'none'}}>
                         <div className="col-xs-12 action-zone-v">
                             <DeepZond type={'oral'} idx={0} />
@@ -611,7 +617,7 @@ export default function Index() {
                 </tr>
                 
                 <tr>
-                    <td className="title">Ясений край</td>
+                    <td className="title">Ясений край Down</td>
                     <td style={{borderLeft: 'none', borderRight: 'none'}}>
                         <div className="col-xs-12 action-zone-v">
                             <YasenKray type={'oral'} idx={0} />
@@ -827,7 +833,7 @@ export default function Index() {
                     <td><Moving toothNum={38} /></td>
                 </tr>
                 <tr>
-                    <td className="title">Вестибулярно</td>
+                    <td className="title" style={{backgroundColor: 'yellow'}}>Вестибулярно/Орально</td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1024px'}}>
                         <FormulaPerio3848 />
                     </td>

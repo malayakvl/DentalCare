@@ -58,15 +58,15 @@ export const chartYK1828OSelector = (state) => state.formula.perioYKOResult1828;
 
 
 // chart variables
-export const getPerioZ1828VDataSelector = (state) => state.formula.perioZVData1828;
-export const getPerioYK1828VDataSelector = (state) => state.formula.perioYKVData1828;
+export const getPerioZ1828VDataSelector = (state) => state.formula.vest1828Zond;
+export const getPerioYK1828VDataSelector = (state) => state.formula.vest1828Yasn;
 
 export const chartZondUpSelector = (state) => state.formula.pZondChartUp;
 export const chartKrayUpSelector = (state) => state.formula.pKrayChartUp;
 export const chartBarUpSelector = (state) => state.formula.pBarUp;
 
-export const getPerioZ1828ODataSelector = (state) => state.formula.perioZOData1828;
-export const getPerioYK1828ODataSelector = (state) => state.formula.perioYKOData1828;
+export const getPerioZ1828ODataSelector = (state) => state.formula.oral1828Zond;
+export const getPerioYK1828ODataSelector = (state) => state.formula.oral1828Yasn;
 
 export const chartZondDownSelector = (state) => state.formula.pZondChartDown;
 export const chartKrayDownSelector = (state) => state.formula.pKrayChartDown;
