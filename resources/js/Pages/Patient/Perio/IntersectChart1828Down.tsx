@@ -1,14 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 import {
-    getPerioZ1828VDataSelector,
-    getPerioYK1828VDataSelector,
-
-    getPerioYasen1828VestDataSelector,
-    getPerioZond1828VestDataSelector,
-    chartZondUpSelector,
-    chartKrayUpSelector,
-    chartBarUpSelector,
     chartZondDownSelector,
     chartKrayDownSelector,
     chartBarDownSelector,

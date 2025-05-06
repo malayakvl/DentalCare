@@ -29,15 +29,15 @@ import {
 
     setPerioZ1828VestData,
     setPerioYK1828VestData,
-    setPZondChartUp,
-    setPKrayChartUp,
-    setPBarChartUp,
+    setPZondChart1828Up,
+    setPKrayChart1828Up,
+    setPBarChart1828Up,
 
     setPerioZ1828OralData,
     setPerioYK1828OralData,
-    setPZondChartDown,
-    setPKrayChartDown,
-    setPBarChartDown,
+    setPZondChart1828Down,
+    setPKrayChart1828Down,
+    setPBarChart1828Down,
 
     checkAction
     
@@ -2770,19 +2770,19 @@ const ACTION_HANDLERS = {
             vest1828Yasn: action.payload
         })
     },
-    [setPZondChartUp.toString()]: {
+    [setPZondChart1828Up.toString()]: {
         next: (state, action) => ({
             ...state,
             pZondChartUp: action.payload
         })
     },
-    [setPKrayChartUp.toString()]: {
+    [setPKrayChart1828Up.toString()]: {
         next: (state, action) => ({
             ...state,
             pKrayChartUp: action.payload
         })
     },
-    [setPBarChartUp.toString()]: {
+    [setPBarChart1828Up.toString()]: {
         next: (state, action) => ({
             ...state,
             pBarUp: action.payload
@@ -2801,19 +2801,19 @@ const ACTION_HANDLERS = {
             oral1828Yasn: action.payload
         })
     },
-    [setPZondChartDown.toString()]: {
+    [setPZondChart1828Down.toString()]: {
         next: (state, action) => ({
             ...state,
             pZondChartDown: action.payload
         })
     },
-    [setPKrayChartDown.toString()]: {
+    [setPKrayChart1828Down.toString()]: {
         next: (state, action) => ({
             ...state,
             pKrayChartDown: action.payload
         })
     },
-    [setPBarChartDown.toString()]: {
+    [setPBarChart1828Down.toString()]: {
         next: (state, action) => ({
             ...state,
             pBarDown: action.payload
@@ -2851,15 +2851,15 @@ export {
     
     setPerioZ1828VestData,
     setPerioYK1828VestData,
-    setPZondChartUp,
-    setPKrayChartUp,
-    setPBarChartUp,
+    setPZondChart1828Up,
+    setPKrayChart1828Up,
+    setPBarChart1828Up,
 
     setPerioZ1828OralData,
     setPerioYK1828OralData,
-    setPZondChartDown,
-    setPKrayChartDown,
-    setPBarChartDown,
+    setPZondChart1828Down,
+    setPKrayChart1828Down,
+    setPBarChart1828Down,
 
     checkAction
 

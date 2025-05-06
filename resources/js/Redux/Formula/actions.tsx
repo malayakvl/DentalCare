@@ -40,21 +40,28 @@ export const setNewToothActive = createAction('formula/SET_NEW_TOOTH_ACTIVE');
 export const setDisactiveAll = createAction('formula/ALL_TEETH_DISACTIVE');
 export const setSelectedToothNumber = createAction('formula/SET_TOOTH_NUMBER');
 export const setPsrChange = createAction('formula/SET_PSRCHANGE');
-export const setPerioZond1828VestData = createAction('formula/SET_PERIO1828_VEST_ZOND_DATA');
-export const setPerioYasen1828VestData = createAction('formula/SET_PERIO1828_VEST_YASEN_DATA');
-
+// 1828 actions
 export const setPerioZ1828VestData = createAction('formula/SET_1828VEST_ZONDDATA');
 export const setPerioYK1828VestData = createAction('formula/SET_1828VEST_YASNDATA');
-
-export const setPZondChartUp = createAction('formula/SET_PERIOZOND1828_VEST_DATA');
-export const setPKrayChartUp = createAction('formula/SET_PERIOKRAY1828_VEST_DATA');
-export const setPBarChartUp = createAction('formula/SET_PERIOBAR1828_VEST_DATA');
-
 export const setPerioZ1828OralData = createAction('formula/SET_1828ORAL_ZONDDATA');
 export const setPerioYK1828OralData = createAction('formula/SET_1828ORAL_YASNDATA');
 
-export const setPZondChartDown = createAction('formula/SET_PERIOZOND1828_ORAL_DATA');
-export const setPKrayChartDown = createAction('formula/SET_PERIOKRAY1828_ORAL_DATA');
-export const setPBarChartDown = createAction('formula/SET_PERIOBAR1828_ORAL_DATA');
+export const setPZondChart1828Up = createAction('formula/SET_PERIOZOND1828_VEST_DATA');
+export const setPKrayChart1828Up = createAction('formula/SET_PERIOKRAY1828_VEST_DATA');
+export const setPBarChart1828Up = createAction('formula/SET_PERIOBAR1828_VEST_DATA');
+export const setPZondChart1828Down = createAction('formula/SET_PERIOZOND1828_ORAL_DATA');
+export const setPKrayChart1828Down = createAction('formula/SET_PERIOKRAY1828_ORAL_DATA');
+export const setPBarChart1828Down = createAction('formula/SET_PERIOBAR1828_ORAL_DATA');
+// 4838 actions
+export const setPerioZ4838VestData = createAction('formula/SET_4838VEST_ZONDDATA');
+export const setPerioYK4838VestData = createAction('formula/SET_4838VEST_YASNDATA');
+export const setPerioZ4838OralData = createAction('formula/SET_4838ORAL_ZONDDATA');
+export const setPerioYK4838OralData = createAction('formula/SET_4838ORAL_YASNDATA');
 
+export const setPZondChart4838Up = createAction('formula/SET_PERIOZOND4838_VEST_DATA');
+export const setPKrayChart4838Up = createAction('formula/SET_PERIOKRAY4838_VEST_DATA');
+export const setPBarChar4838tUp = createAction('formula/SET_PERIOBAR4838_VEST_DATA');
+export const setPZondChart4838Down = createAction('formula/SET_PERIOZOND4838_ORAL_DATA');
+export const setPKrayChart4838Down = createAction('formula/SET_PERIOKRAY4838_ORAL_DATA');
+export const setPBarChart4838Down = createAction('formula/SET_PERIOBAR4838_ORAL_DATA');
 export const checkAction = createAction('formula/CHECK_VALUES');

@@ -9,13 +9,13 @@ import {
     getPerioYK1828ODataSelector,
 } from "../../../Redux/Formula/selectors";
 import { 
-    setPZondChartUp, 
-    setPBarChartUp, 
-    setPZondChartDown, 
-    setPBarChartDown, 
+    setPZondChart1828Up, 
+    setPBarChart1828Up, 
+    setPZondChart1828Down, 
+    setPBarChart1828Down, 
     setPerioZ1828OralData, 
 } from "../../../Redux/Formula";
-import { setPerioZ1828VestData, setPKrayChartDown, setPKrayChartUp } from '@/Redux/Formula/actions';
+import { setPerioZ1828VestData, setPKrayChart1828Down, setPKrayChart1828Up } from '@/Redux/Formula/actions';
 
 
 export default function DeepZond({type = 'vest', idx = 0}) {
@@ -77,13 +77,13 @@ export default function DeepZond({type = 'vest', idx = 0}) {
         chartBar.push([0, 0]);
 
         if (type === 'vest') {
-            dispatch(setPKrayChartUp(chartnNewYasn));
-            dispatch(setPZondChartUp(chartNewZond));
-            dispatch(setPBarChartUp(chartBar));
+            dispatch(setPKrayChart1828Up(chartnNewYasn));
+            dispatch(setPZondChart1828Up(chartNewZond));
+            dispatch(setPBarChart1828Up(chartBar));
         } else {
-            dispatch(setPKrayChartDown(chartnNewYasn));
-            dispatch(setPZondChartDown(chartNewZond));
-            dispatch(setPBarChartDown(chartBar));
+            dispatch(setPKrayChart1828Down(chartnNewYasn));
+            dispatch(setPZondChart1828Down(chartNewZond));
+            dispatch(setPBarChart1828Down(chartBar));
         }
     }
     
@@ -130,7 +130,7 @@ export default function DeepZond({type = 'vest', idx = 0}) {
             }
             resultZond.unshift(0);
             resultZond.push(0);
-            dispatch(setPZondChartUp(resultZond));
+            dispatch(setPZondChart1828Up(resultZond));
 
             // prepare bar chart data
             const resultBar = [];
@@ -143,7 +143,7 @@ export default function DeepZond({type = 'vest', idx = 0}) {
             }
             resultBar.unshift([0,0]);
             resultZond.push([0,0]);
-            dispatch(setPBarChartUp(resultBar));
+            dispatch(setPBarChart1828Up(resultBar));
         } else {
             // пересчитиваем глибину зондування
             for (let i = 0; i < arrOZond.length; i++) {
@@ -187,7 +187,7 @@ export default function DeepZond({type = 'vest', idx = 0}) {
             // for (let i = 0; i < resultZond.length -1; i++) {
             //     resultZond[i] = -1*resultZond[i];
             // }
-            // dispatch(setPZondChartDown(resultZond));
+            // dispatch(setPZondChart1828Down(resultZond));
             // console.log('ORAL', resultZond)            
 
             // // prepare bar chart data
@@ -201,7 +201,7 @@ export default function DeepZond({type = 'vest', idx = 0}) {
             // }
             // resultBar.unshift([0,0]);
             // resultZond.push([0,0]);
-            // dispatch(setPBarChartDown(resultBar));
+            // dispatch(setPBarChart1828Down(resultBar));
         }
         
     }
