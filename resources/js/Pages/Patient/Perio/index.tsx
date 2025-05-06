@@ -619,7 +619,7 @@ export default function Index() {
                 </tr>
                 
                 <tr>
-                    <td className="title">Ясений край Down</td>
+                    <td className="title">Ясений край</td>
                     <td style={{borderLeft: 'none', borderRight: 'none'}}>
                         <div className="col-xs-12 action-zone-v">
                             <YasenKray type={'oral'} idx={0} />
