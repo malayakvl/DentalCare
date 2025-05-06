@@ -516,7 +516,9 @@ export default function Index() {
                     </td>
                 </tr>
                 <tr>
-                    <td className="title" style={{backgroundColor: 'pink'}}>Вестибулярно/Орально</td>
+                    <td className="title" style={{backgroundColor: 'none'}}>
+                        <span style={{display: 'block', marginTop: '50px'}}>Вестибулярно/Орально</span>
+                    </td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1050px', borderRight: 'none', borderLeft: 'none'}}>
                         <div className='relative'>
                             <IntersectChart1828Up />
@@ -529,7 +531,7 @@ export default function Index() {
                 </tr>
                 <tr><td colSpan={17} style={{height: '40px'}}></td></tr>
                 <tr>
-                    <td className="title">ГЗ Down</td>
+                    <td className="title">Глибина зондування</td>
                     <td style={{borderRight: 'none', borderLeft: 'none'}}>
                         <div className="col-xs-12 action-zone-v">
                             <DeepZond type={'oral'} idx={0} />
@@ -833,7 +835,9 @@ export default function Index() {
                     <td><Moving toothNum={38} /></td>
                 </tr>
                 <tr>
-                    <td className="title" style={{backgroundColor: 'yellow'}}>Вестибулярно/Орально</td>
+                    <td className="title" style={{backgroundColor: 'none'}}>
+                        <span style={{display: 'block', marginTop: '50px'}}>Вестибулярно/Орально</span>
+                    </td>
                     <td colSpan={16} style={{textAlign: 'center', width: '1024px'}}>
                         <FormulaPerio3848 />
                     </td>
