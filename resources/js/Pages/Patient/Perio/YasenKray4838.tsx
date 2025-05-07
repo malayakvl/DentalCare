@@ -36,7 +36,9 @@ export default function YasenKray4838({ type = 'vest', idx = 0 }) {
         let sumZond = 0;
         
         if (type === 'vest') {
-            sumZond = arrZond.reduce((accumulator, currentValue) => accumulator + !isNaN(parseInt(currentValue)) ? parseInt(currentValue) : 0);
+            arrZond.forEach( num => {
+                sumZond += !isNaN(parseInt(num)) ? parseInt(num) : 0;
+            })
             for (let i = 0; i < arrYasen.length; i++) {
                 const zondVal = !isNaN(parseInt(arrZond[i])) ? parseInt(arrZond[i]) : 0;
                 const yasnVal = !isNaN(parseInt(arrYasen[i])) ? parseInt(arrYasen[i]) : 0;
@@ -48,7 +50,9 @@ export default function YasenKray4838({ type = 'vest', idx = 0 }) {
                 }
             }
         } else {
-            sumZond = arrZondOral.reduce((accumulator, currentValue) => accumulator + !isNaN(parseInt(currentValue)) ? parseInt(currentValue) : 0);
+            arrZondOral.forEach( num => {
+                sumZond += !isNaN(parseInt(num)) ? parseInt(num) : 0;
+            })
             for (let i = 0; i < arrYasenOral.length; i++) {
                 const zondVal = !isNaN(parseInt(arrZondOral[i])) ? parseInt(arrZondOral[i]) : 0;
                 const yasnVal = !isNaN(parseInt(arrYasenOral[i])) ? parseInt(arrYasenOral[i]) : 0;
@@ -61,7 +65,6 @@ export default function YasenKray4838({ type = 'vest', idx = 0 }) {
             }
         }
         // calculate values for zond/yasen chart
-        console.log('ZOND SUM', sumZond);
         const chartBar = [];
         for (let i = 0; i < resNewZond.length; i++) {
             chartNewZond.push(!isNaN(parseInt(resNewZond[i])) ? parseInt(resNewZond[i]) : 0);

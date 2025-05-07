@@ -42,7 +42,6 @@ export default function DeepZond1828({type = 'vest', idx = 0}) {
             for (let i = 0; i < arrYasen.length; i++) {
                 const zondVal = !isNaN(parseInt(arrZond[i])) ? parseInt(arrZond[i]) : 0;
                 const yasnVal = !isNaN(parseInt(arrYasen[i])) ? parseInt(arrYasen[i]) : 0;
-                console.log(zondVal, yasnVal)
                 resNewYasn.push(-1*yasnVal);
                 resNewZond.push(-1*(yasnVal - zondVal));
             }
@@ -101,7 +100,6 @@ export default function DeepZond1828({type = 'vest', idx = 0}) {
                     const _pZData = zo1828Data;
                     
                     _pZData[idx] = parseInt(e.target.value);
-                    console.log(_pZData);
                     setValue(parseInt(e.target.value));
                     e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
                     dispatch(setPerioZ1828OralData(_pZData));

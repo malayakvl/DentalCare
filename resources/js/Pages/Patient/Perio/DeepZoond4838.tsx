@@ -74,14 +74,11 @@ export default function DeepZond4838({type = 'vest', idx = 0}) {
         chartBar.unshift(0);
         chartBar.push([0, 0]);
 
-        // console.log('Bar', chartBar)
-
         if (type === 'vest') {
             dispatch(setPKrayChart4838Up(chartnNewYasn));
             dispatch(setPZondChart4838Up(chartNewZond));
             dispatch(setPBarChart4838Up(chartBar));
         } else {
-            console.log('here', chartNewZond)
             dispatch(setPKrayChart4838Down(chartnNewYasn));
             dispatch(setPZondChart4838Down(chartNewZond));
             dispatch(setPBarChart4838Down(chartBar));
@@ -101,7 +98,6 @@ export default function DeepZond4838({type = 'vest', idx = 0}) {
                 } else {
                     const _pZData = zo4838Data;
                     _pZData[idx] = parseInt(e.target.value);
-                    console.log(_pZData);
                     setValue(parseInt(e.target.value));
                     e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
                     dispatch(setPerioZ4838OralData(_pZData));

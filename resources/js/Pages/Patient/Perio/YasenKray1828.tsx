@@ -34,9 +34,8 @@ export default function YasenKray1828({ type = 'vest', idx = 0 }) {
         const chartnNewYasn = [];
         const chartNewZond = [];
         let sumZond = 0;
-        
         if (type === 'vest') {
-            arrZondOral.forEach( num => {
+            arrZond.forEach( num => {
                 sumZond += !isNaN(parseInt(num)) ? parseInt(num) : 0;
             })
             for (let i = 0; i < arrYasen.length; i++) {
@@ -107,7 +106,6 @@ export default function YasenKray1828({ type = 'vest', idx = 0 }) {
                     const _pZData = ykv1828Data;
                     _pZData[idx] = parseInt(e.target.value);
                     setValue(parseInt(e.target.value));
-                    console.log(_pZData)
                     dispatch(setPerioYK1828VestData(_pZData));
                 } else {
                     const _pZData = yko1828Data;
