@@ -706,7 +706,7 @@ export default function Index() {
                 
                 <tr style={{paddingTop: '10px'}}>
                     <td style={{paddingTop: '10px'}} className="title">Зубні відкладення</td>
-                    <td style={{paddingTop: '10px'}}>
+                    <td style={{paddingTop: '10px', borderLeft: 'none', borderRight: 'none'}}>
                         <DentalDeposits toothNum={48} />
                     </td>
                     <td style={{paddingTop: '10px'}}>
@@ -757,7 +757,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Гноєтеча</td>
-                    <td><Fertilizer toothNum={48} /></td>
+                    <td style={{borderLeft: 'none', borderRight: 'none'}}><Fertilizer toothNum={48} /></td>
                     <td><Fertilizer toothNum={47} /></td>
                     <td><Fertilizer toothNum={46} /></td>
                     <td><Fertilizer toothNum={45} /></td>
@@ -776,7 +776,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Кровоточивість</td>
-                    <td><Bleeding toothNum={48} /></td>
+                    <td style={{borderLeft: 'none', borderRight: 'none'}}><Bleeding toothNum={48} /></td>
                     <td><Bleeding toothNum={47} /></td>
                     <td><Bleeding toothNum={46} /></td>
                     <td><Bleeding toothNum={45} /></td>
@@ -795,7 +795,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Фуркація</td>
-                    <td><Furkacia toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Furkacia toothNum={48} /></td>
                     <td><Furkacia toothNum={47} /></td>
                     <td><Furkacia toothNum={46} /></td>
                     <td></td>
@@ -812,10 +812,12 @@ export default function Index() {
                     <td><Furkacia toothNum={38} /></td>
                     <td><Furkacia toothNum={38} /></td>
                 </tr>
-                <tr><td colSpan={17} style={{paddingTop: '20px'}}>Bottom teeth</td></tr>
+                <tr><td colSpan={17} style={{paddingTop: '20px', paddingBottom: '20px', borderLeft: 'none', borderRight: 'none'}}></td></tr>
+                <tr><td colSpan={17} style={{paddingTop: '1px', paddingBottom: '1px',backgroundColor: '#cdcdcd'}}></td></tr>
+                <tr><td colSpan={17} style={{paddingTop: '20px', paddingBottom: '20px', borderLeft: 'none', borderRight: 'none'}}></td></tr>
                 <tr>
                     <td className="title">Фуркація</td>
-                    <td><Furkacia toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Furkacia toothNum={48} /></td>
                     <td><Furkacia toothNum={47} /></td>
                     <td><Furkacia toothNum={46} /></td>
                     <td></td>
@@ -834,7 +836,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Кровоточивість</td>
-                    <td><Bleeding toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Bleeding toothNum={48} /></td>
                     <td><Bleeding toothNum={47} /></td>
                     <td><Bleeding toothNum={46} /></td>
                     <td><Bleeding toothNum={45} /></td>
@@ -853,7 +855,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Гноєтеча</td>
-                    <td><Fertilizer toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Fertilizer toothNum={48} /></td>
                     <td><Fertilizer toothNum={47} /></td>
                     <td><Fertilizer toothNum={46} /></td>
                     <td><Fertilizer toothNum={45} /></td>
@@ -872,7 +874,7 @@ export default function Index() {
                 </tr>
                 <tr style={{paddingTop: '10px'}}>
                     <td style={{paddingTop: '10px'}} className="title">Зубні відкладення</td>
-                    <td style={{paddingTop: '10px'}}>
+                    <td style={{paddingTop: '10px', borderLeft: 'none', borderRight: 'none'}}>
                         <DentalDeposits toothNum={48} />
                     </td>
                     <td style={{paddingTop: '10px'}}>
@@ -922,7 +924,7 @@ export default function Index() {
                     </td>
                 </tr>
                 <tr>
-                    <td className="title">Ясений край 4838</td>
+                    <td className="title">Ясений край</td>
                     <td style={{borderLeft: 'none', borderRight: 'none'}}>
                         <YasenKray4838 type={'vest'} idx={0} />
                         <YasenKray4838 type={'vest'} idx={1} />
@@ -1005,7 +1007,7 @@ export default function Index() {
                     </td>
                 </tr>
                 <tr>
-                    <td className="title">Глибина зондування 4838</td>
+                    <td className="title">Глибина зондування</td>
                     <td style={{borderRight: 'none', borderLeft: 'none'}}>
                         <DeepZond4838 type={'vest'} idx={0} />
                         <DeepZond4838 type={'vest'} idx={1} />
@@ -1091,7 +1093,7 @@ export default function Index() {
                     <td className="title" style={{backgroundColor: 'none'}}>
                         <span style={{display: 'block', marginTop: '50px'}}>Вестибулярно/Орально</span>
                     </td>
-                    <td colSpan={16} style={{textAlign: 'center', width: '1024px'}}>
+                    <td colSpan={16} style={{textAlign: 'center', width: '1024px', borderLeft: 'none', borderRight: 'none'}}>
                         <div className='relative'>
                             <IntersectChart4838Up />
                         </div>
@@ -1101,8 +1103,9 @@ export default function Index() {
                         </div>
                     </td>
                 </tr>
+                <tr><td colSpan={17} style={{height: '40px', borderLeft: 'none', borderRight: 'none'}}></td></tr>
                 <tr>
-                    <td className="title">Глибина зондуванняB2</td>
+                    <td className="title">Глибина зондування</td>
                     <td style={{borderRight: 'none', borderLeft: 'none'}}>
                         <DeepZond4838 type={'oral'} idx={0} />
                         <DeepZond4838 type={'oral'} idx={1} />
@@ -1185,7 +1188,7 @@ export default function Index() {
                     </td>
                 </tr>
                 <tr>
-                    <td className="title">Ясений крайB2</td>
+                    <td className="title">Ясений край</td>
                     <td style={{borderLeft: 'none', borderRight: 'none'}}>
                         <YasenKray4838 type={'oral'} idx={0} />
                         <YasenKray4838 type={'oral'} idx={1} />
@@ -1269,7 +1272,7 @@ export default function Index() {
                 </tr>
                 <tr style={{paddingTop: '10px'}}>
                     <td style={{paddingTop: '10px'}} className="title">Зубні відкладення</td>
-                    <td style={{paddingTop: '10px'}}>
+                    <td style={{paddingTop: '10px', borderLeft: 'none', borderRight: 'none'}}>
                         <DentalDeposits toothNum={48} />
                     </td>
                     <td style={{paddingTop: '10px'}}>
@@ -1320,7 +1323,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Гноєтеча</td>
-                    <td><Fertilizer toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Fertilizer toothNum={48} /></td>
                     <td><Fertilizer toothNum={47} /></td>
                     <td><Fertilizer toothNum={46} /></td>
                     <td><Fertilizer toothNum={45} /></td>
@@ -1339,7 +1342,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Кровоточивість</td>
-                    <td><Bleeding toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Bleeding toothNum={48} /></td>
                     <td><Bleeding toothNum={47} /></td>
                     <td><Bleeding toothNum={46} /></td>
                     <td><Bleeding toothNum={45} /></td>
@@ -1359,7 +1362,7 @@ export default function Index() {
                 
                 <tr>
                     <td className="title">Фуркація</td>
-                    <td><Furkacia toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Furkacia toothNum={48} /></td>
                     <td><Furkacia toothNum={47} /></td>
                     <td><Furkacia toothNum={46} /></td>
                     <td></td>
@@ -1378,7 +1381,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Рухомість</td>
-                    <td><Moving toothNum={48} /></td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}><Moving toothNum={48} /></td>
                     <td><Moving toothNum={47} /></td>
                     <td><Moving toothNum={46} /></td>
                     <td><Moving toothNum={45} /></td>
@@ -1397,7 +1400,7 @@ export default function Index() {
                 </tr>
                 <tr>
                     <td className="title">Статус зуба</td>
-                    <td>
+                    <td style={{borderRight: 'none', borderLeft: 'none'}}>
                         <select className="perio-select" data-tooth="18">
                             <option value="other">Інший</option>
                             <option value="intact">Наявний</option>
