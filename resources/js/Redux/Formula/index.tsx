@@ -27,6 +27,7 @@ import {
     setDeepZondData,
     setPsrChange,
 
+    // 1828
     setPerioZ1828VestData,
     setPerioYK1828VestData,
     setPZondChart1828Up,
@@ -38,6 +39,19 @@ import {
     setPZondChart1828Down,
     setPKrayChart1828Down,
     setPBarChart1828Down,
+
+    // 4838
+    setPerioZ4838VestData,
+    setPerioYK4838VestData,
+    setPZondChart4838Up,
+    setPKrayChart4838Up,
+    setPBarChart4838Up,
+
+    setPerioZ4838OralData,
+    setPerioYK4838OralData,
+    setPZondChart4838Down,
+    setPKrayChart4838Down,
+    setPBarChart4838Down,
 
     checkAction
     
@@ -2819,6 +2833,43 @@ const ACTION_HANDLERS = {
             pBarDown: action.payload
         })
     },
+
+    [setPZondChart4838Up.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pZondChart2Up: action.payload
+        })
+    },
+    [setPBarChart4838Up.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pBar2Up: action.payload
+        })
+    },
+    [setPZondChart4838Down.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pZondChart2Down: action.payload
+        })
+    },
+    [setPBarChart4838Down.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pBar2Down: action.payload
+        })
+    },
+    [setPKrayChart4838Down.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pKrayChart2Down: action.payload
+        })
+    },
+    [setPKrayChart4838Up.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            pKrayChart2Up: action.payload
+        })
+    },
 }
 
 export {
@@ -2860,6 +2911,18 @@ export {
     setPZondChart1828Down,
     setPKrayChart1828Down,
     setPBarChart1828Down,
+
+    setPerioZ4838VestData,
+    setPerioYK4838VestData,
+    setPZondChart4838Up,
+    setPKrayChart4838Up,
+    setPBarChart4838Up,
+
+    setPerioZ4838OralData,
+    setPerioYK4838OralData,
+    setPZondChart4838Down,
+    setPKrayChart4838Down,
+    setPBarChart4838Down,
 
     checkAction
 
