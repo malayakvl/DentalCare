@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import {
-    chartZondUpSelector,
-    chartKrayUpSelector,
-    chartBarUpSelector,
+    chartZondUp2Selector,
+    chartKrayUp2Selector,
+    chartBarUp2Selector,
 } from "../../../Redux/Formula/selectors";
 import {
     Chart as ChartJS,
@@ -31,11 +31,10 @@ ChartJS.register(
     Filler
 );
 
-export default function IntersectChart1828Up() {
-    const zond1828VestData = useSelector(chartZondUpSelector);
-    const yasen1828VestData = useSelector(chartKrayUpSelector);
-    const bar1828VestData = useSelector(chartBarUpSelector);
-
+export default function IntersectChart4838Up() {
+    const zond1828VestData = useSelector(chartZondUp2Selector);
+    const yasen1828VestData = useSelector(chartKrayUp2Selector);
+    const bar1828VestData = useSelector(chartBarUp2Selector);
     // const zv1828Data = useSelector(getPerioZ1828VDataSelector);
     // const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
 

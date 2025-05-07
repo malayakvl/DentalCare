@@ -4,25 +4,30 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     getPerioZ1828VDataSelector,
     getPerioYK1828VDataSelector,
+    chartKrayUpSelector,
     getPerioZ1828ODataSelector,
     getPerioYK1828ODataSelector,
 } from "../../../Redux/Formula/selectors";
-import { setPZondChartUp, setPKrayChartUp, setPBarChartUp, setPKrayChartDown, setPZondChartDown, setPBarChartDown, setPerioZ1828VestData, setPerioZ1828OralData, setPerioYK1828VestData, setPerioYK1828OralData } from "../../../Redux/Formula";
+import { 
+    setPZondChart1828Up, 
+    setPBarChart1828Up, 
+    setPZondChart1828Down, 
+    setPBarChart1828Down, 
+    setPerioZ1828OralData, 
+} from "../../../Redux/Formula";
+import { setPerioZ1828VestData, setPKrayChart1828Down, setPKrayChart1828Up } from '@/Redux/Formula/actions';
 
 
-export default function YasenKray({ type = 'vest', idx = 0 }) {
+export default function DeepZond1828({type = 'vest', idx = 0}) {
     const dispatch = useDispatch<any>();
+    const yasen1828VestData = useSelector(chartKrayUpSelector);
 
     const zv1828Data = useSelector(getPerioZ1828VDataSelector);
     const ykv1828Data = useSelector(getPerioYK1828VDataSelector);
     const zo1828Data = useSelector(getPerioZ1828ODataSelector);
     const yko1828Data = useSelector(getPerioYK1828ODataSelector);
 
-    const [value, setValue] = useState(type === 'vest' ? ykv1828Data[idx] : yko1828Data[idx]);
-
-    const inputStyle = {
-        color: Number(value) > 5 ? 'red' : Number(value) === 5 ? 'blue' : 'green' // если больше 5 — красный, иначе черный
-    };
+    const [value, setValue] = useState(type === 'vest' ? zv1828Data[idx] : zo1828Data[idx]);
 
     const recalcSlice = (type) => {
         let arrYasen = ykv1828Data;
@@ -49,7 +54,7 @@ export default function YasenKray({ type = 'vest', idx = 0 }) {
                 resNewZond.push(yasnVal - zondVal);
             }
         }
-        // calculate values for zond/yasen chart
+        // calculate values for zond/yasen/bar chart
         const chartBar = [];
         for (let i = 0; i < resNewZond.length; i++) {
             chartNewZond.push(!isNaN(parseInt(resNewZond[i])) ? parseInt(resNewZond[i]) : 0);
@@ -61,6 +66,7 @@ export default function YasenKray({ type = 'vest', idx = 0 }) {
                 chartNewZond.push(avgZond);
                 let avgYasn = (resNewYasn[i] + resNewYasn[i + 1]) / 2;
                 chartnNewYasn.push(avgYasn);
+                chartBar.push([0, 0])
             }
         }
         chartNewZond.unshift(0);
@@ -71,38 +77,44 @@ export default function YasenKray({ type = 'vest', idx = 0 }) {
         chartBar.push([0, 0]);
 
         if (type === 'vest') {
-            dispatch(setPKrayChartUp(chartnNewYasn));
-            dispatch(setPZondChartUp(chartNewZond));
-            dispatch(setPBarChartUp(chartBar));
+            dispatch(setPKrayChart1828Up(chartnNewYasn));
+            dispatch(setPZondChart1828Up(chartNewZond));
+            dispatch(setPBarChart1828Up(chartBar));
         } else {
-            dispatch(setPKrayChartDown(chartnNewYasn));
-            dispatch(setPZondChartDown(chartNewZond));
-            dispatch(setPBarChartDown(chartBar));
+            dispatch(setPKrayChart1828Down(chartnNewYasn));
+            dispatch(setPZondChart1828Down(chartNewZond));
+            dispatch(setPBarChart1828Down(chartBar));
         }
     }
+    
 
-    return (
-        <input
+    return ( 
+        <input 
             onChange={(e) => {
                 if (type === 'vest') {
-                    const _pZData = ykv1828Data;
+                    const _pZData = zv1828Data;
                     _pZData[idx] = parseInt(e.target.value);
                     setValue(parseInt(e.target.value));
-                    console.log(_pZData)
-                    dispatch(setPerioYK1828VestData(_pZData));
+                    e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
+                    dispatch(setPerioZ1828VestData(_pZData));
                 } else {
-                    const _pZData = yko1828Data;
+                    const _pZData = zo1828Data;
+                    
                     _pZData[idx] = parseInt(e.target.value);
+                    console.log(_pZData);
                     setValue(parseInt(e.target.value));
-                    dispatch(setPerioYK1828OralData(_pZData));
+                    e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
+                    dispatch(setPerioZ1828OralData(_pZData));
                 }
-                e.target.style.color = Number(e.target.value) > 5 ? 'red' : Number(e.target.value) === 5 ? 'blue' : 'green';
+                
                 recalcSlice(type);
             }}
-            className="psr-input bottom focus:outline-hidden"
-            value={isNaN(value) ? '' : value}
-            maxLength={1}
-            type="text"
+            className="psr-input bottom focus:outline-hidden" 
+            value={value}
+            maxLength={2}
+            max={19}
+            min={0}
+            type="text" 
         />
     )
 }

@@ -1,14 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from "react-redux";
 import {
-    getPerioZ1828VDataSelector,
-    getPerioYK1828VDataSelector,
-
-    getPerioYasen1828VestDataSelector,
-    getPerioZond1828VestDataSelector,
-    chartZondUpSelector,
-    chartKrayUpSelector,
-    chartBarUpSelector,
     chartZondDownSelector,
     chartKrayDownSelector,
     chartBarDownSelector,
@@ -105,7 +97,7 @@ export default function IntersectChart1828Down() {
             pointRadius: 0,
             borderWidth: 2,
             data: zond1828VestData,
-            borderColor: 'blue',
+            borderColor: 'red',
             fill: 'rgba(243, 128, 153, 0.4)' // или target: 'Линия B'
           },
           {
@@ -113,7 +105,7 @@ export default function IntersectChart1828Down() {
             pointRadius: 0,
             borderWidth: 2,
             data: yasen1828VestData,
-            borderColor: 'red',
+            borderColor: 'blue',
             fill: '-1' // заполняет между этой и предыдущей линией
           },
           {
