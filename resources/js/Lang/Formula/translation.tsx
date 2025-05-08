@@ -47,7 +47,15 @@ const lngPatient = {
         "cult.tab": "Культьова вкладка",
         "abutment": "Абатмент",
         "shaper": "Формувач",
-        "implant": "Імплант"
+        "implant": "Імплант",
+        "bleeding": "Кровоточивість",
+        "moving": "Рухомість",
+        "furkacia": "Фуркація",
+        "fertilizer": "Гноєтеча",
+        "depozit": "Зубні відкладення",
+        "yasn": "Ясений край",
+        "zond": "Глибина зондування",
+        "teeth.status": "Статус зуба"
         
     }
 }
