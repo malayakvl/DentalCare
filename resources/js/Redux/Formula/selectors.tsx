@@ -86,3 +86,5 @@ export const getPerioYK4838ODataSelector = (state) => state.formula.oral4838Yasn
 export const chartZondDown2Selector = (state) => state.formula.pZondChart2Down;
 export const chartKrayDown2Selector = (state) => state.formula.pKrayChart2Down;
 export const chartBarDown2Selector = (state) => state.formula.pBar2Down;
+
+export const perioDiagnozisSelector = (state) => state.formula.teethDiagnozesPerio;

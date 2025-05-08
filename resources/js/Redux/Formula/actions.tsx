@@ -21,6 +21,7 @@ export const setTooth26Active = createAction('formula/SET_TOOTH26_ACTIVE');
 export const setTooth27Active = createAction('formula/SET_TOOTH27_ACTIVE');
 export const setTooth28Active = createAction('formula/SET_TOOTH28_ACTIVE');
 export const setToothDiagnoze = createAction('formula/SET_TOOTH_DIAGNOZE');
+export const setPerioDiagnoze = createAction('formula/SET_PERIO_DIAGNOZIS');
 export const setPerioDeepZond = createAction('formula/SET_PERIO_ZOND');
 export const setDeepZondData = createAction('formula/SET_PERIO_ZOND_DATA');
 export const setActiveToothName = createAction('formula/SET_ACTIVE_TOOTH_NUBER');

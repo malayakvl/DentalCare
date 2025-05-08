@@ -7,6 +7,7 @@ import {
     setTooth16Active,
     setTooth28Active,
     setToothDiagnoze,
+    setPerioDiagnoze,
     setPerioDeepZond,
     setActiveToothName,
     setDiagnosis,
@@ -2581,6 +2582,27 @@ const initialState = {
             parodontit_stage_all: false
         },
     },
+    teethDiagnozesPerio: {
+        tooth48: {
+            moving_st1: false,
+            moving_st2: false,
+            moving_st3: false,
+            furkacia: false,
+            bleeding_vest_st1: false,
+            bleeding_vest_st2: false,
+            bleeding_vest_st3: false,
+            bleeding_oral_st1: false,
+            bleeding_oral_st2: false,
+            bleeding_oral_st3: false,
+            depozit: ''
+        },
+        tooth18: {
+            moving: '',
+            furkacia: '',
+            bleeding: '',
+            depozit: ''
+        } 
+    },
     // perio chart vest 1828
     vest1828Zond:  ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
     vest1828Yasn: ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''],
@@ -2870,6 +2892,13 @@ const ACTION_HANDLERS = {
             pKrayChart2Up: action.payload
         })
     },
+
+    [setPerioDiagnoze.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            teethDiagnozesPerio: action.payload
+        })
+    },
 }
 
 export {
@@ -2880,6 +2909,7 @@ export {
     setTooth17Active,
     setTooth16Active,
     setToothDiagnoze,
+    setPerioDiagnoze,
     setPerioDeepZond,
     setDiagnosis,
     setDiagnosisClass,
@@ -2923,6 +2953,8 @@ export {
     setPZondChart4838Down,
     setPKrayChart4838Down,
     setPBarChart4838Down,
+
+
 
     checkAction
 

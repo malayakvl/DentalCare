@@ -41,7 +41,7 @@ import {
     setZirconiaCrownColor,
     setDiagnosisClass
 } from '../../Redux/Formula'
-import PrimaryButton from '@/Components/Form/PrimaryButton';
+import PrimaryButton from '../../Components/Form/PrimaryButton';
 import Details from './Partials/Details';
 
 export default function index({ patientData, treatmentData, clinicData }) {
