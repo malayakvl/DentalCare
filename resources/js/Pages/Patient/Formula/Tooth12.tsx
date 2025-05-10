@@ -15,7 +15,8 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage12 from './periodontit12';
 
@@ -37,6 +38,7 @@ export default function Tooth12() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -149,7 +151,7 @@ export default function Tooth12() {
             <g id="12" className="df-tooth-text" style={{opacity: 1}}>
                 <text transform="matrix(1 0 0 1 889.209 716.1968)" className={`st3 st4 st5 ${toothActive.tooth12.active ? 'num-active' : ''}`}>12</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g className={`f-tooth-init ${(teethDiagnozis.tooth12.show && !teethDiagnozis.tooth12.absent)  ? 'f-tooth-active' : ''}`}
                 onMouseOver={() => {
                     (!toothActive && !allTeeth) && document.getElementById('12').classList.add('tooth-number-hover')
                 }}

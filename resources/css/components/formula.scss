@@ -422,9 +422,7 @@
 
     }
 }
-.f-tooth-active {
-    opacity: 1 !important;
-}
+
 .df-tooth-perio {
     opacity: 1;
     // transform: matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 230 -206) !important;
@@ -504,5 +502,17 @@ stroke-width: 1.0846;
 fill: #e8e8e8;
 
 }
-  
+.f-tooth-active {
+    opacity: 1 !important;
+}
+.f-tooth-init {
+    opacity: 0;
+}
+.f-tooth-init:hover {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
 
