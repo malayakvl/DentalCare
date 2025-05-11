@@ -67,7 +67,7 @@ export const setPZondChart4838Down = createAction('formula/SET_PERIOZOND4838_ORA
 export const setPKrayChart4838Down = createAction('formula/SET_PERIOKRAY4838_ORAL_DATA');
 export const setPBarChart4838Down = createAction('formula/SET_PERIOBAR4838_ORAL_DATA');
 
-export const setMilkSchema = createAction('formula/SET_MILK_SCHEMA');
+export const setSchema = createAction('formula/SET_SCHEMA');
 export const showAllAdult = createAction('formula/SHOW_ALL_ADULT');
 export const showAllChild = createAction('formula/SHOW_ALL_CHILD');
 

@@ -16,7 +16,8 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     getStatusesSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    teethTypeSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage17 from './periodontit17';
 
@@ -38,6 +39,7 @@ export default function Tooth17() {
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -148,7 +150,7 @@ export default function Tooth17() {
     
     return (
         <>
-            <g id="17" className={`tooth-number-active`}>
+            <g id="17" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${toothActive.tooth17.active ? 'num-active' : ''}`}>17</text>
             </g>
             <g className={`f-tooth-init ${(teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''}`}

@@ -93,7 +93,8 @@ import Tooth18 from "./Tooth18";
 import {
     getStatusesSelector,
     getActiveToothNumber,
-    teethTypeSelector
+    teethTypeSelector,
+    getTeethDiagnozisSelector
 } from "../../../Redux/Formula/selectors";
 import FormulaDiagnozis from "../Partials/FormulaDiagnozis";
 
@@ -101,7 +102,8 @@ export default function Formula() {
     const toothActive = useSelector(getStatusesSelector);
     const activeNumber = useSelector(getActiveToothNumber);
     const teethType = useSelector(teethTypeSelector);
-console.log('TYPE', teethType)
+    const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
+    
     return (
         <>
             <section style={{backgroundColor: 'yellow'}}>
@@ -195,8 +197,19 @@ console.log('TYPE', teethType)
                     <Tooth62 />
                     <Tooth21 />
                     <Tooth61 />
-                    <Tooth11 />
                     <Tooth51 />
+                    <Tooth11 />
+                    {/* {(teethType === 'child') ? (
+                        <>
+                            <Tooth51 />
+                            <Tooth11 />
+                        </>
+                    ) : (
+                        <>
+                            <Tooth11 />
+                            <Tooth51 />
+                        </>
+                    )} */}
                     <Tooth12 />
                     <Tooth52 />
                     <Tooth13 />

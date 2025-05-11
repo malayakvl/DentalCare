@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber } from '../../../Redux/Formula';
+import { setSelectedToothNumber, setToothDiagnoze } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -18,7 +18,7 @@ import {
     getStatusesSelector,
     allTeethChildSelector,
     allTeethAdultSelector,
-    show55Selector
+    teethTypeSelector
 } from "../../../Redux/Formula/selectors";
 
 export default function Tooth51() {
@@ -40,22 +40,57 @@ export default function Tooth51() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const showChildStatus = useSelector(allTeethChildSelector);
     const showAdultStatus = useSelector(allTeethAdultSelector);
-    const show55 = useSelector(show55Selector);
+    const teethType = useSelector(teethTypeSelector);
 
     return (
         <>
-            <g id="51" className={`tooth-number-active`}>
+            <g id="51" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 981.6768 716.1968)" className={`st3 st4 st5 ${toothActive.tooth51.active ? 'num-active' : ''}`}>51</text>
             </g>
-            <g className={`f-tooth-init ${(teethDiagnozis.tooth51.show && !teethDiagnozis.tooth51.absent)  ? 'f-tooth-active' : ''}`}
-               onMouseOver={() => {
-                   (!toothActive && !allTeeth) && document.getElementById('51').classList.add('tooth-number-hover')
-               }}
-               onMouseLeave={() => {
+            <g id="TH-51" className={`f-tooth-init-milk ${(teethDiagnozis.tooth51.show && !teethDiagnozis.tooth51.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+                onMouseOver={() => {
+                    if (teethType === 'child') {
+                        document.getElementById('TH-51').style.opacity = 1
+                    } else {
+                        if (!teethDiagnozis.tooth51.show) {
+                            document.getElementById('TH-11').style.visibility = 'inherit'
+                            document.getElementById('TH-51').style.visibility = 'hidden'
+                        } else {
+                            document.getElementById('TH-11').style.visibility = 'inherit'
+                            document.getElementById('TH-51').style.visibility = 'hidden'
+                        }
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('51').classList.add('tooth-number-hover')
+                }}
+                onMouseLeave={() => {
+                    if (teethType === 'child' && !teethDiagnozis.tooth51.show) {
+                        document.getElementById('TH-51').style.opacity = 0
+                    }
+                    if (teethDiagnozis.tooth51.show && teethType === 'adult') {
+                        document.getElementById('TH-11').style.visibility = 'hidden'
+                        document.getElementById('TH-51').style.visibility = 'inherit'
+                    }
+                    if (teethDiagnozis.tooth11.show && !teethDiagnozis.tooth11.absent && teethType === 'child') {
+                        document.getElementById('TH-11').style.visibility = 'inherit'
+                        document.getElementById('TH-51').style.visibility = 'hidden'
+                    }
                    (!toothActive && !allTeeth) && document.getElementById('51').classList.remove('tooth-number-hover')
-               }}
+                }}
                onClick={() => {
-                   dispatch(setSelectedToothNumber(51));
+                    // 
+                    dispatch(setSelectedToothNumber(51));
+                    // effects block
+                    if (teethType === 'child' && teethDiagnozis.tooth11.show) {
+                        teethDiagnozis.tooth11.show = false;
+                        teethDiagnozis.tooth51.show = true;
+                    } else if (teethType === 'child' && !teethDiagnozis.tooth11.show) {
+                        teethDiagnozis.tooth11.show = false;
+                        teethDiagnozis.tooth51.show = true;
+                    } else {
+                        teethDiagnozis.tooth11.show = true;
+                        teethDiagnozis.tooth51.show = false;
+                    }
+                    dispatch(setToothDiagnoze(teethDiagnozis));
                }}
             >
                 <g className="underlay" style={{visibility:'inherit'}}>
@@ -64,7 +99,7 @@ export default function Tooth51() {
                     c21-1.4,32-23,35-41s9-92,8-104s-13-29-12-40s11-17,12-50s-3-71-6-91s-15-83-18-98c-5-24.9-12.1-50-20.1-74
                     c-4.2-12.6-17.2-22.4-30.5-14.7C964.4,232,960.9,245.1,958,255.9z"></path>
                 </g>
-                <g className="top-view" transform="matrix(0.55 0 0 0.55 0 0)" default-matrix="matrix(0.55, 0, 0, 0.55, 0, 0)" style={{visibility:'inherit'}}>
+                <g className="top-view" transform="matrix(0.55 0 0 0.55 0 0)" default-matrix="matrix(0.55, 0, 0, 0.55, 0, 0)" style={{visibility:'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 24, 17)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility:'inherit'}}>
                             <path className="st24" d="M960.3,597.9c-2-5.8,4.6-9.9,13.4-11.6c9.3-1.8,20-1.4,30.7-1.1c8.9,0.3,17.8,0.7,25,3.2
@@ -175,7 +210,7 @@ export default function Tooth51() {
                         C1043.7,604.3,1051,597.1,1048.2,588.7z"></path>
                     </g>
                 </g>
-                <g className="common-view" transform="matrix(0.55 0 0 0.55 0 15)" default-matrix="matrix(0.55, 0, 0, 0.55, 0, 15)" style={{visibility:'inherit'}}>
+                <g className="common-view" style={{visibility:'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 22, 103)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility:'inherit'}}>
                             <path className="st9" d="M1039.9,464.5c-0.6,9.1-1.5,18.2-2.8,27.3l-2.2,2.9l-2.7,1.2

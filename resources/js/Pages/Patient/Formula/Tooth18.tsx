@@ -17,11 +17,9 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    t18ShowSelector,
     allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage18 from './periodontit18';
-import { useState, useEffect } from 'react';
 
 export default function Tooth18() {
     const dispatch = useDispatch<any>();
@@ -149,13 +147,9 @@ export default function Tooth18() {
         }
     }
 
-    // useEffect(() => {
-    //     console.log(teethType, '18')
-    // }, [teethType])
-
     return (
         <>
-            <g id="18" className={`tooth-number-active`}>
+            <g id="18" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 247 717)" className={`st3 st4 st5 ${toothActive.tooth18.active ? 'num-active' : ''}`}>18</text>
             </g>
             <g className={`f-tooth-init ${(teethDiagnozis.tooth18.show && !teethDiagnozis.tooth18.absent)  ? 'f-tooth-active' : ''}`}
@@ -166,6 +160,7 @@ export default function Tooth18() {
                     (!toothActive && !allTeeth) && document.getElementById('18').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    alert(1)
                     dispatch(setSelectedToothNumber(18));
                     if (toothActive.tooth18.active) {
                         dispatch(setNewToothActive({tooth18: {active: true}}))

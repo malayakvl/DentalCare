@@ -54,7 +54,7 @@ import {
     setPKrayChart4838Down,
     setPBarChart4838Down,
 
-    setMilkSchema,
+    setSchema,
     showAllAdult,
     showAllChild,
 
@@ -64,6 +64,7 @@ import {
 
 const initialState = {
     teethType: "adult",
+    schemaType: "adult",
     totalPrice: 0,
     curreny: "",
     diagnosis: "",
@@ -4250,6 +4251,12 @@ const initialState = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
+    [setSchema.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            schemaType: action.payload
+        })
+    },
     [setTeethType.toString()]: {
         next: (state, action) => ({
             ...state,
@@ -4382,6 +4389,26 @@ const ACTION_HANDLERS = {
                 tooth36: {active: false},
                 tooth37: {active: false},
                 tooth38: {active: false},
+                tooth55: {active: false},
+                tooth54: {active: false},
+                tooth53: {active: false},
+                tooth52: {active: false},
+                tooth51: {active: false},
+                tooth65: {active: false},
+                tooth64: {active: false},
+                tooth63: {active: false},
+                tooth62: {active: false},
+                tooth61: {active: false},
+                tooth85: {active: false},
+                tooth84: {active: false},
+                tooth83: {active: false},
+                tooth82: {active: false},
+                tooth81: {active: false},
+                tooth71: {active: false},
+                tooth72: {active: false},
+                tooth73: {active: false},
+                tooth74: {active: false},
+                tooth75: {active: false},
             }
         })
     },
@@ -4583,7 +4610,7 @@ export {
     setPKrayChart4838Down,
     setPBarChart4838Down,
 
-    setMilkSchema,
+    setSchema,
     showAllAdult,
     showAllChild,
 

@@ -85,6 +85,21 @@ export default function index({ patientData, treatmentData, clinicData }) {
                     tData[`tooth${i}`].show = true;
                 }
             }
+            for (let i=21; i<= 28; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=51; i<= 55; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=51; i<= 55; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
             dispatch(setToothDiagnoze(tData));
         } else {
             dispatch(showAllAdult(false));
@@ -176,7 +191,29 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         <div className={`flex`}>
                                                             <span
                                                                 className={`diagnoze-title flex-initial cursor-pointer ${teethType === 'adult' ? 'active': ''}`}
-                                                                onClick={() => dispatch(setTeethType('adult'))}
+                                                                onClick={() => {
+                                                                    dispatch(setTeethType('adult'));
+                                                                    if (!tData.tooth51.show) {
+                                                                        document.getElementById('TH-11').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-51').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth52.show) {
+                                                                        document.getElementById('TH-12').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-52').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth53.show) {
+                                                                        document.getElementById('TH-13').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-53').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth54.show) {
+                                                                        document.getElementById('TH-14').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-54').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth55.show) {
+                                                                        document.getElementById('TH-15').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-55').style.visibility = 'hidden'
+                                                                    } 
+                                                                }}
                                                             >
                                                                 {msgFormula.get('formula.stable')}
                                                             </span>

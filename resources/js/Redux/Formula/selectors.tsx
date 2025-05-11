@@ -89,7 +89,5 @@ export const chartBarDown2Selector = (state) => state.formula.pBar2Down;
 
 export const perioDiagnozisSelector = (state) => state.formula.teethDiagnozesPerio;
 
-export const t18ShowSelector = (state) => state.formula.teethDiagnozes.tooth18.show;
 export const allTeethAdultSelector = (state) => state.formula.allTeethAdult;
 export const allTeethChildSelector = (state) => state.formula.allTeethChild;
-export const show55Selector = (state) => state.formula.teethDiagnozes.tooth55.show;
