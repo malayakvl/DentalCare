@@ -102,9 +102,15 @@ export default function index({ patientData, treatmentData, clinicData }) {
             }
             dispatch(setToothDiagnoze(tData));
         } else {
+            console.log('===')
             dispatch(showAllAdult(false));
             dispatch(showAllChild(true));
             for (let i=11; i<= 18; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=21; i<= 28; i++) {
                 if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
                     tData[`tooth${i}`].show = false;
                 }
@@ -114,6 +120,12 @@ export default function index({ patientData, treatmentData, clinicData }) {
                     tData[`tooth${i}`].show = true;
                 }
             }
+            for (let i=61; i<= 65; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            console.log('EBALA')
             dispatch(setToothDiagnoze(tData));
         }
     }
@@ -196,6 +208,10 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                                     if (!tData.tooth51.show) {
                                                                         document.getElementById('TH-11').style.visibility = 'inherit'
                                                                         document.getElementById('TH-51').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth61.show) {
+                                                                        document.getElementById('TH-21').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-61').style.visibility = 'hidden'
                                                                     }
                                                                     if (!tData.tooth52.show) {
                                                                         document.getElementById('TH-12').style.visibility = 'inherit'

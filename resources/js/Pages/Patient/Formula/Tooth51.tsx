@@ -28,7 +28,7 @@ export default function Tooth51() {
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth18Diagnozis = teethDiagnozis.tooth18;
+    const tooth51Diagnozis = teethDiagnozis.tooth51;
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -99,7 +99,7 @@ export default function Tooth51() {
                     c21-1.4,32-23,35-41s9-92,8-104s-13-29-12-40s11-17,12-50s-3-71-6-91s-15-83-18-98c-5-24.9-12.1-50-20.1-74
                     c-4.2-12.6-17.2-22.4-30.5-14.7C964.4,232,960.9,245.1,958,255.9z"></path>
                 </g>
-                <g className="top-view" transform="matrix(0.55 0 0 0.55 0 0)" default-matrix="matrix(0.55, 0, 0, 0.55, 0, 0)" style={{visibility:'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 24, 17)'}}>
+                <g className="top-view" style={{visibility:'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 24, 17)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility:'inherit'}}>
                             <path className="st24" d="M960.3,597.9c-2-5.8,4.6-9.9,13.4-11.6c9.3-1.8,20-1.4,30.7-1.1c8.9,0.3,17.8,0.7,25,3.2
