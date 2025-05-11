@@ -153,8 +153,16 @@ export default function Tooth17() {
             <g id="17" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${toothActive.tooth17.active ? 'num-active' : ''}`}>17</text>
             </g>
-            <g className={`f-tooth-init ${(teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''}`}
+            <g id="TH-17" className={`f-tooth-init ${(teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth17.show) {
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-17').style.visibility = 'inherit'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent && teethType === 'child') {
+                        document.getElementById('TH-17').style.visibility = 'hidden'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('17').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
