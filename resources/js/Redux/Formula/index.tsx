@@ -128,6 +128,7 @@ const initialState = {
         tooth62: {active: false},
         tooth63: {active: false},
         tooth64: {active: false},
+        tooth65: {active: false},
         tooth85: {active: false},
         tooth84: {active: false},
         tooth83: {active: false},

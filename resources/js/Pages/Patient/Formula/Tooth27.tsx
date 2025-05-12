@@ -148,46 +148,40 @@ export default function Tooth27() {
 
     return (
         <>
-            <g id="27" className="df-tooth-text" style={{opacity: 1}}>
+            <g id="27" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1690.5684 716.1968)" className={`st3 st4 st5 ${toothActive.tooth17.active ? 'num-active' : ''}`}>27</text>
             </g>
             <g id="TH-27" className={`f-tooth-init ${(teethDiagnozis.tooth27.show && !teethDiagnozis.tooth27.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
                     if (!teethDiagnozis.tooth27.show) {
-                        if (teethType === 'child') {
-                            document.getElementById('TH-27').style.visibility = 'hidden'
-                            document.getElementById('TH-67').style.visibility = 'inherit'
-                        }
                         if (teethType === 'adult') {
                             document.getElementById('TH-27').style.visibility = 'inherit'
-                            document.getElementById('TH-67').style.visibility = 'hidden'
                         }
                     } 
-                    if (teethDiagnozis.tooth27.show && !teethDiagnozis.tooth27.absent && teethType === 'child') {
+                    if (teethDiagnozis.tooth27.show && !teethDiagnozis.tooth28.absent && teethType === 'child') {
                         document.getElementById('TH-27').style.visibility = 'hidden'
-                        document.getElementById('TH-67').style.visibility = 'inherit'
                     }
                     (!toothActive && !allTeeth) && document.getElementById('27').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    if (teethDiagnozis.tooth67.show && !teethDiagnozis.tooth67.absent && teethType === 'adult') {
-                        document.getElementById('TH-27').style.visibility = 'hidden'
-                        document.getElementById('TH-67').style.visibility = 'inherit'
-                    }
+                    // if (teethDiagnozis.tooth67.show && !teethDiagnozis.tooth67.absent && teethType === 'adult') {
+                    //     document.getElementById('TH-27').style.visibility = 'hidden'
+                    //     document.getElementById('TH-67').style.visibility = 'inherit'
+                    // }
                     (!toothActive && !allTeeth) && document.getElementById('27').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
                     // effects block
-                    if (teethType === 'adult' && !teethDiagnozis.tooth27.show) {
-                        teethDiagnozis.tooth27.show = true;
-                        teethDiagnozis.tooth67.show = false;
-                    }
-                    if (toothActive.tooth27.active) {
-                        dispatch(setNewToothActive({tooth27: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth27: {active: true}}))
-                    }
+                    // if (teethType === 'adult' && !teethDiagnozis.tooth27.show) {
+                    //     teethDiagnozis.tooth27.show = true;
+                    //     teethDiagnozis.tooth67.show = false;
+                    // }
+                    // if (toothActive.tooth27.active) {
+                    //     dispatch(setNewToothActive({tooth27: {active: true}}))
+                    // } else {
+                    //     dispatch(setDisactiveAll());
+                    //     dispatch(setNewToothActive({tooth27: {active: true}}))
+                    // }
 
                     dispatch(setSelectedToothNumber(27));
                     

@@ -1,55 +1,366 @@
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm } from '@inertiajs/react';
-import React, { useEffect, useState } from 'react';
-import { appLangSelector } from "../../../Redux/Layout/selectors";
-import Lang from "lang.js";
-import lngMaterial from "../../../Lang/Material/translation";
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { setSelectedToothNumber, setToothDiagnoze } from '../../../Redux/Formula';
+import {
+    allTeethSelector,
+    getDiagnosisSelector,
+    getSealColor1Selector,
+    getSealColor2Selector,
+    getSealColor3Selector,
+    getSubDiagnosisSelector,
+    getTeethDiagnozisSelector,
+    getSealServicalColorSelector,
+    getVinirColorSelector,
+    getCeramicCrownColorSelector,
+    getCeramicMCrownColorSelector,
+    getMetalicCrownColorSelector,
+    getZirconiaCrownColorSelector,
+    getStatusesSelector,
+    allTeethChildSelector,
+    allTeethAdultSelector,
+    teethTypeSelector
+} from "../../../Redux/Formula/selectors";
 
+export default function tooth65() {
+    const dispatch = useDispatch<any>();
+    const toothActive = useSelector(getStatusesSelector);
+    const allTeeth = useSelector(allTeethSelector);
+    const diagnozis = useSelector(getDiagnosisSelector);
+    const subDiagnozis = useSelector(getSubDiagnosisSelector);
+    const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
+    const tooth65Diagnozis = teethDiagnozis.tooth65;
+    const sealColor1 = useSelector(getSealColor1Selector);
+    const sealColor2 = useSelector(getSealColor2Selector);
+    const sealColor3 = useSelector(getSealColor3Selector);
+    const wsDefectColor = useSelector(getSealServicalColorSelector);
+    const vinirColor = useSelector(getVinirColorSelector);
+    const ceramicCrownColor = useSelector(getCeramicCrownColorSelector);
+    const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
+    const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
+    const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showChildStatus = useSelector(allTeethChildSelector);
+    const showAdultStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
 
-export default function Tooth65({
-  className = '',
-}) {
-    const appLang = useSelector(appLangSelector);
-    const msg = new Lang({
-        messages: lngMaterial,
-        locale: appLang,
-    });
-    const dispatch = useDispatch();
+    const setColordedPart = (diagnozis, toothPart = '') => {
+        if (diagnozis === 'caries') {
+            if (toothPart === 'bottom') {
+                teethDiagnozis.tooth65.caries_bottom = !teethDiagnozis.tooth65.caries_bottom;
+            }
+            if (toothPart === 'center') {
+                teethDiagnozis.tooth65.caries_center = !teethDiagnozis.tooth65.caries_center;
+            }
+            if (toothPart === 'left') {
+                teethDiagnozis.tooth65.caries_left = !teethDiagnozis.tooth65.caries_left;
+            }
+            if (toothPart === 'right') {
+                teethDiagnozis.tooth65.caries_right = !teethDiagnozis.tooth65.caries_right;
+            }
+            if (toothPart === 'top') {
+                teethDiagnozis.tooth65.caries_top = !teethDiagnozis.tooth65.caries_top;
+            }
+            dispatch(setToothDiagnoze(teethDiagnozis));
+        }
+        if (diagnozis === 'seal') {
+            if (toothPart === 'center') {
+                if (teethDiagnozis.tooth65.seal_center_color != sealColor1 && sealColor1 != '') {
+                    teethDiagnozis.tooth65.seal_center_color = sealColor1;
+                    teethDiagnozis.tooth65.seal_center = true;
+                } else if (teethDiagnozis.tooth65.seal_center_color != sealColor2 && sealColor2 != '') {
+                    teethDiagnozis.tooth65.seal_center_color = sealColor2;
+                    teethDiagnozis.tooth65.seal_center = true;
+                } else if (teethDiagnozis.tooth65.seal_center_color != sealColor3 && sealColor3 != '') {
+                    teethDiagnozis.tooth65.seal_center_color = sealColor3;
+                    teethDiagnozis.tooth65.seal_center = true;
+                } else {
+                    teethDiagnozis.tooth65.seal_center = !teethDiagnozis.tooth65.seal_center;
+                }
+                dispatch(setToothDiagnoze(teethDiagnozis));
+            }
+            if (toothPart === 'bottom') {
+                if (teethDiagnozis.tooth65.seal_bottom_color != sealColor1 && sealColor1 != '') {
+                    teethDiagnozis.tooth65.seal_bottom_color = sealColor1;
+                    teethDiagnozis.tooth65.seal_bottom = true;
+                } else if (teethDiagnozis.tooth65.seal_bottom_color != sealColor2 && sealColor2 != '') {
+                    teethDiagnozis.tooth65.seal_bottom_color = sealColor2;
+                    teethDiagnozis.tooth65.seal_bottom = true;
+                } else if (teethDiagnozis.tooth65.seal_bottom_color != sealColor3 && sealColor3 != '') {
+                    teethDiagnozis.tooth65.seal_bottom_color = sealColor3;
+                    teethDiagnozis.tooth65.seal_bottom = true;
+                } else {
+                    teethDiagnozis.tooth65.seal_bottom = !teethDiagnozis.tooth65.seal_bottom;
+                }
+                dispatch(setToothDiagnoze(teethDiagnozis));
+            }
+            if (toothPart === 'left') {
+                if (teethDiagnozis.tooth65.seal_left_color != sealColor1 && sealColor1 != '') {
+                    teethDiagnozis.tooth65.seal_left_color = sealColor1;
+                    teethDiagnozis.tooth65.seal_left = true;
+                } else if (teethDiagnozis.tooth65.seal_left_color != sealColor2 && sealColor2 != '') {
+                    teethDiagnozis.tooth65.seal_left_color = sealColor2;
+                    teethDiagnozis.tooth65.seal_left = true;
+                } else if (teethDiagnozis.tooth65.seal_left_color != sealColor3 && sealColor3 != '') {
+                    teethDiagnozis.tooth65.seal_left_color = sealColor3;
+                    teethDiagnozis.tooth65.seal_left = true;
+                } else {
+                    teethDiagnozis.tooth65.seal_left = !teethDiagnozis.tooth65.seal_left;
+                }
+                dispatch(setToothDiagnoze(teethDiagnozis));
+            }
+            if (toothPart === 'right') {
+                if (teethDiagnozis.tooth65.seal_right_color != sealColor1 && sealColor1 != '') {
+                    teethDiagnozis.tooth65.seal_right_color = sealColor1;
+                    teethDiagnozis.tooth65.seal_right = true;
+                } else if (teethDiagnozis.tooth65.seal_right_color != sealColor2 && sealColor2 != '') {
+                    teethDiagnozis.tooth65.seal_right_color = sealColor2;
+                    teethDiagnozis.tooth65.seal_right = true;
+                } else if (teethDiagnozis.tooth65.seal_right_color != sealColor3 && sealColor3 != '') {
+                    teethDiagnozis.tooth65.seal_right_color = sealColor3;
+                    teethDiagnozis.tooth65.seal_right = true;
+                } else {
+                    teethDiagnozis.tooth65.seal_right = !teethDiagnozis.tooth65.seal_right;
+                }
+                dispatch(setToothDiagnoze(teethDiagnozis));
+            }
+            if (toothPart === 'top') {
+                if (teethDiagnozis.tooth65.seal_top_color != sealColor1 && sealColor1 != '') {
+                    teethDiagnozis.tooth65.seal_top_color = sealColor1;
+                    teethDiagnozis.tooth65.seal_top = true;
+                } else if (teethDiagnozis.tooth65.seal_top_color != sealColor2 && sealColor2 != '') {
+                    teethDiagnozis.tooth65.seal_top_color = sealColor2;
+                    teethDiagnozis.tooth65.seal_top = true;
+                } else if (teethDiagnozis.tooth65.seal_top_color != sealColor3 && sealColor3 != '') {
+                    teethDiagnozis.tooth65.seal_top_color = sealColor3;
+                    teethDiagnozis.tooth65.seal_top = true;
+                } else {
+                    teethDiagnozis.tooth65.seal_top = !teethDiagnozis.tooth65.seal_top;
+                }
+            }
+            dispatch(setToothDiagnoze(teethDiagnozis));
+        }
+        if (diagnozis === 'wedge_shaped_defect') {
+            if (teethDiagnozis.tooth65.wedge_shaped_defect_color != wsDefectColor && wsDefectColor != '') {
+                teethDiagnozis.tooth65.wedge_shaped_defect_color = wsDefectColor;
+            } else {
+                teethDiagnozis.tooth65.wedge_shaped_defect_color = !teethDiagnozis.tooth65.wedge_shaped_defect_color;
+            }
+            dispatch(setToothDiagnoze(teethDiagnozis));
+        }
+    }
 
     return (
         <>
-            <g id="65" className="df-tooth-text milk" datanumber="65" data-main-number="25" style={{opacity: 0}}>
-                <text transform="matrix(1 0 0 1 1435.5684 716.1968)" className="st3 st4 st5">65</text>
+            <g id="65" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
+                <text transform="matrix(1 0 0 1 1435.5684 716.1968)" className={`st3 st4 st5 ${toothActive.tooth65.active ? 'num-active' : ''}`}>65</text>
             </g>
-            <g className="df-tooth top milk" datanumber="65" data-main-number="25" opacity="0" style={{opacity: 0, transition: 'opacity', transform: 'matrix(1, 0, 0, 1, 0, 0)'}} data-type="hidden">
-                <g className="underlay" style={{visibility: 'hidden', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+            <g id="TH-65" className={`f-tooth-init-milk ${(teethDiagnozis.tooth65.show && !teethDiagnozis.tooth65.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+                onMouseOver={() => {
+                    if (teethType === 'child') {
+                        document.getElementById('TH-65').style.opacity = 1
+                    } else {
+                        if (!teethDiagnozis.tooth65.show) {
+                            document.getElementById('TH-25').style.visibility = 'inherit'
+                            document.getElementById('TH-65').style.visibility = 'hidden'
+                        } else {
+                            document.getElementById('TH-25').style.visibility = 'inherit'
+                            document.getElementById('TH-65').style.visibility = 'hidden'
+                        }
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('65').classList.add('tooth-number-hover')
+                }}
+                onMouseLeave={() => {
+                    if (teethType === 'child' && !teethDiagnozis.tooth65.show) {
+                        document.getElementById('TH-65').style.opacity = 0
+                    }
+                    if (teethDiagnozis.tooth65.show && teethType === 'adult') {
+                        document.getElementById('TH-25').style.visibility = 'hidden'
+                        document.getElementById('TH-65').style.visibility = 'inherit'
+                    }
+                    if (teethDiagnozis.tooth65.show && !teethDiagnozis.tooth65.absent && teethType === 'child') {
+                        document.getElementById('TH-65').style.visibility = 'inherit'
+                        document.getElementById('TH-25').style.visibility = 'hidden'
+                    }
+                   (!toothActive && !allTeeth) && document.getElementById('65').classList.remove('tooth-number-hover')
+                }}
+               onClick={() => {
+                    // 
+                    dispatch(setSelectedToothNumber(65));
+                    // effects block
+                    if (teethType === 'child' && teethDiagnozis.tooth65.show) {
+                        teethDiagnozis.tooth65.show = false;
+                        teethDiagnozis.tooth65.show = true;
+                    } else if (teethType === 'child' && !teethDiagnozis.tooth65.show) {
+                        teethDiagnozis.tooth65.show = false;
+                        teethDiagnozis.tooth65.show = true;
+                    } else {
+                        teethDiagnozis.tooth65.show = true;
+                        teethDiagnozis.tooth65.show = false;
+                    }
+                    dispatch(setToothDiagnoze(teethDiagnozis));
+                    if (diagnozis) {
+                        if (diagnozis === 'change_color')
+                            teethDiagnozis.tooth65.change_color = !teethDiagnozis.tooth65.change_color;
+                        else if (diagnozis === 'fissure')
+                            teethDiagnozis.tooth65.fissure = !teethDiagnozis.tooth65.fissure;
+                        else if (diagnozis === 'caries')
+                            teethDiagnozis.tooth65.caries = !teethDiagnozis.tooth65.caries;
+                        else if (diagnozis === 'cervical_caries')
+                            teethDiagnozis.tooth65.cervical_caries = !teethDiagnozis.tooth65.cervical_caries;
+                        else if (diagnozis === 'wedge_shaped_defect')
+                            teethDiagnozis.tooth65.wedge_shaped_defect = !teethDiagnozis.tooth65.wedge_shaped_defect;
+                        else if (diagnozis === 'tartar')
+                            teethDiagnozis.tooth65.tartar = !teethDiagnozis.tooth65.tartar;
+                        else if (diagnozis === 'pulpit') {
+                            teethDiagnozis.tooth65.pulpit = !teethDiagnozis.tooth65.pulpit;
+                            teethDiagnozis.tooth65.channel_class = teethDiagnozis.tooth65.pulpit ? 'pulpit' : ''
+                        } else if (diagnozis === 'channel_not_sealed') {
+                            teethDiagnozis.tooth65.channel_not_sealed = !teethDiagnozis.tooth65.channel_not_sealed;
+                            teethDiagnozis.tooth65.channel_class = teethDiagnozis.tooth65.channel_not_sealed ? 'channel-not-sealed' : '';
+                        } else if (diagnozis === 'channel_top_sealed') {
+                            teethDiagnozis.tooth65.channel_top_sealed = !teethDiagnozis.tooth65.channel_top_sealed;
+                            teethDiagnozis.tooth65.channel_class = teethDiagnozis.tooth65.channel_top_sealed ? 'channel-top-sealed' : '';
+                        } else if (diagnozis === 'channel_part_sealed') {
+                            teethDiagnozis.tooth65.channel_part_sealed = !teethDiagnozis.tooth65.channel_part_sealed;
+                            teethDiagnozis.tooth65.channel_class = teethDiagnozis.tooth65.channel_part_sealed ? 'channel-part-sealed' : '';
+                        } else if (diagnozis === 'periodontit') {
+                            if (teethDiagnozis.tooth65.periodontit_stage !== subDiagnozis) {
+                                teethDiagnozis.tooth65.periodontit_stage = subDiagnozis
+                                teethDiagnozis.tooth65.periodontit = true;
+                            } else {
+                                teethDiagnozis.tooth65.periodontit = !teethDiagnozis.tooth65.periodontit;
+                            }
+                            teethDiagnozis.tooth65.channel_class = teethDiagnozis.tooth65.periodontit ? 'periodontit' : '';
+                            if (!teethDiagnozis.tooth65.periodontit) dispatch(setSubDiagnosis(''));
+                        } else if (diagnozis === 'seal') {
+                            teethDiagnozis.tooth65.seal = !teethDiagnozis.tooth65.seal;
+                        } else if (diagnozis === 'seal_cervical') {
+                            if (!teethDiagnozis.tooth65.seal_cervical && teethDiagnozis.tooth65.seal_cervical_color === "") {
+                                teethDiagnozis.tooth65.seal_cervical = true;
+                                teethDiagnozis.tooth65.seal_cervical_color = wsDefectColor;
+                            } else if (teethDiagnozis.tooth65.seal_cervical && teethDiagnozis.tooth65.seal_cervical_color != wsDefectColor) {
+                                teethDiagnozis.tooth65.seal_cervical_color = wsDefectColor;
+                            } else {
+                                teethDiagnozis.tooth65.seal_cervical = false;
+                                teethDiagnozis.tooth65.seal_cervical_color = "";
+                            }
+                        } else if (diagnozis === 'vinir') {
+                            if (!teethDiagnozis.tooth65.vinir && teethDiagnozis.tooth65.vinir_color === "") {
+                                teethDiagnozis.tooth65.vinir = true;
+                                teethDiagnozis.tooth65.vinir_color = vinirColor;
+                            } else if (teethDiagnozis.tooth65.vinir && teethDiagnozis.tooth65.vinir_color != vinirColor) {
+                                teethDiagnozis.tooth65.vinir_color = vinirColor;
+                            } else {
+                                teethDiagnozis.tooth65.vinir = false;
+                                teethDiagnozis.tooth65.vinir_color = "";
+                            }
+                        } else if (diagnozis === 'temporary_crown') {
+                            teethDiagnozis.tooth65.temporary_crown = !teethDiagnozis.tooth65.temporary_crown;
+                        } else if (diagnozis === 'ceramic_crown') {
+                            if (!teethDiagnozis.tooth65.ceramic_crown && teethDiagnozis.tooth65.ceramic_crown_color === "") {
+                                teethDiagnozis.tooth65.ceramic_crown = true;
+                                teethDiagnozis.tooth65.ceramic_crown_color = ceramicCrownColor;
+                            } else if (teethDiagnozis.tooth65.ceramic_crown && teethDiagnozis.tooth65.ceramic_crown_color != ceramicCrownColor) {
+                                teethDiagnozis.tooth65.ceramic_crown_color = ceramicCrownColor;
+                            } else {
+                                teethDiagnozis.tooth65.ceramic_crown = false;
+                                teethDiagnozis.tooth65.ceramic_crown_color = "";
+                            }
+                        } else if (diagnozis === 'mceramic_crown') {
+                            if (!teethDiagnozis.tooth65.mceramic_crown && teethDiagnozis.tooth65.mceramic_crown_color === "") {
+                                teethDiagnozis.tooth65.mceramic_crown = true;
+                                teethDiagnozis.tooth65.mceramic_crown_color = mceramicCrownColor;
+                            } else if (teethDiagnozis.tooth65.mceramic_crown && teethDiagnozis.tooth65.mceramic_crown_color != mceramicCrownColor) {
+                                teethDiagnozis.tooth65.mceramic_crown_color = mceramicCrownColor;
+                            } else {
+                                teethDiagnozis.tooth65.mceramic_crown = false;
+                                teethDiagnozis.tooth65.mceramic_crown_color = "";
+                            }
+                        } else if (diagnozis === 'metalic_crown') {
+                            if (!teethDiagnozis.tooth65.metalic_crown && teethDiagnozis.tooth65.metalic_crown_color === "") {
+                                teethDiagnozis.tooth65.metalic_crown = true;
+                                teethDiagnozis.tooth65.metalic_crown_color = metalicCrownColor;
+                            } else if (teethDiagnozis.tooth65.metalic_crown && teethDiagnozis.tooth65.metalic_crown_color != metalicCrownColor) {
+                                teethDiagnozis.tooth65.mceramic_crown_color = metalicCrownColor;
+                            } else {
+                                teethDiagnozis.tooth65.metalic_crown = false;
+                                teethDiagnozis.tooth65.metalic_crown_color = "";
+                            }
+                        } else if (diagnozis === 'zirconia_crown') {
+                            if (!teethDiagnozis.tooth65.zirconia_crown && teethDiagnozis.tooth65.zirconia_crown_color === "") {
+                                teethDiagnozis.tooth65.zirconia_crown = true;
+                                teethDiagnozis.tooth65.zirconia_crown_color = zirconiaCrownColor;
+                            } else if (teethDiagnozis.tooth65.zirconia_crown && teethDiagnozis.tooth65.zirconia_crown_color != zirconiaCrownColor) {
+                                teethDiagnozis.tooth65.zirconia_crown_color = zirconiaCrownColor;
+                            } else {
+                                teethDiagnozis.tooth65.zirconia_crown = false;
+                                teethDiagnozis.tooth65.zirconia_crown_color = "";
+                            }
+                        } else if (diagnozis === 'pin') {
+                            teethDiagnozis.tooth65.pin = !teethDiagnozis.tooth65.pin;
+                        } else if (diagnozis === 'culttab') {
+                            teethDiagnozis.tooth65.culttab = !teethDiagnozis.tooth65.culttab;
+                        } else if (diagnozis === 'abutment') {
+                            teethDiagnozis.tooth65.abutment = !teethDiagnozis.tooth65.abutment;
+                        } else if (diagnozis === 'shaper') {
+                            teethDiagnozis.tooth65.shaper = !teethDiagnozis.tooth65.shaper;
+                        } else if (diagnozis === 'implant') {
+                            teethDiagnozis.tooth65.implant = !teethDiagnozis.tooth65.implant;
+                        } else if (diagnozis === 'apex') {
+                            teethDiagnozis.tooth65.apex = !teethDiagnozis.tooth65.apex;
+                        } else if (diagnozis === 'absent') {
+                            teethDiagnozis.tooth65.absent = !teethDiagnozis.tooth65.absent;
+                        } else if (diagnozis === 'cervical_caries') {
+                            teethDiagnozis.tooth65.cervical_caries = !teethDiagnozis.tooth65.cervical_caries;
+                        } else if (diagnozis === 'caries') {
+                            teethDiagnozis.tooth65.caries = !teethDiagnozis.tooth65.caries;
+                        } else if (diagnozis === 'parodontit') {
+                            if (teethDiagnozis.tooth65.parodontit) {
+                                if (teethDiagnozis.tooth65.parodontit_stage === subDiagnozis) {
+                                    teethDiagnozis.tooth65.parodontit = false;
+                                    teethDiagnozis.tooth65.active = false;
+                                } else {
+                                    teethDiagnozis.tooth65.parodontit = true;
+                                    teethDiagnozis.tooth65.parodontit_stage = subDiagnozis
+                                }
+                            } else {
+                                teethDiagnozis.tooth65.parodontit = true;
+                                teethDiagnozis.tooth65.parodontit_stage = subDiagnozis;
+                                teethDiagnozis.tooth65.active = true;
+                            }
+                        }
+                        dispatch(setToothDiagnoze(teethDiagnozis))
+                    }
+               }}
+            >
+                <g className="underlay" style={{visibility: "inherit"}}>
                     <path className="st40" d="M1426,248.9c0,0-7,25-11,48s-11,92-12,105s-0.3,37.5-0.2,49.7
-            s6.2,31.3,11.2,43.3s8,25,0,39s-12.9,31.5-10.4,58.2c2.4,26.8,2.4,107.8,8.4,122.8s19,25,38,22s30-13,32-38s10.5-92,9-112
-            c-3-40-17-52-16-74c1.3-28,15-31,15-59c0-14-4-44-6-59s-9-57-10-68s-4-67-5-80s0-32-16-34S1429,238.9,1426,248.9z"></path>
+                        s6.2,31.3,11.2,43.3s8,25,0,39s-12.9,31.5-10.4,58.2c2.4,26.8,2.4,107.8,8.4,122.8s19,25,38,22s30-13,32-38s10.5-92,9-112
+                        c-3-40-17-52-16-74c1.3-28,15-31,15-59c0-14-4-44-6-59s-9-57-10-68s-4-67-5-80s0-32-16-34S1429,238.9,1426,248.9z"
+                    />
                 </g>
-                <g className="top-view" transform="matrix(0.55 0 0 0.55 -255 0)" default-matrix="matrix(0.55, 0, 0, 0.55, -255, 0)" style={{visibility: 'hidden', transform: 'matrix(0.55, 0, 0, 0.55, -255, 0)'}}>
-                    <g className="dentin" >
-                        <g className="hEmpty hRoot hImplant" style={{visibility: 'hidden'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55,  -212, 31)'}}>
+                    <g className="dentin">
+                        <g className="hEmpty hRoot hImplant" style={{visibility: "inherit"}}>
                             <path className="st24" d="M1762.6,607c-1-3.9-3.3-7.6-4.4-11.5c-2.8-9.6,1.1-20.5-5.2-29.3
                     c-4.8-6.8-13.7-10.4-23.8-11.8c-9.5-1.3-19.3-0.5-28.9-1.7c-6.1-0.8-12.2-2.2-18.2-2.6c-6.4-0.5-12.7,0.2-18.4,1.8
                     c-3.9,1.1-7.6,2.7-10.8,4.9c-5.4,3.8-8.4,9.1-9.5,14.6c-1.3,6.4-0.1,12.9,2.5,19.1c3.8,9.3,10.5,17.8,15.1,26.9
                     c2.8,5.6,4.9,11.5,9.5,16.5c4,4.4,9.9,7.8,16.8,8.7c5.1,0.7,10.3,0,15.5-0.5c6.5-0.6,13-0.7,19.5-1.1c5.7-0.3,11.4-0.8,16.7-2.4
-                    C1755.8,633.9,1766.2,620.7,1762.6,607z" style={{fill: 'rgb(248, 223, 168)'}}></path>
+                    C1755.8,633.9,1766.2,620.7,1762.6,607z"
+                            />
                         </g>
-                        <g className="hIntact hImplant hEmpty" style={{visibility: 'hidden'}}>
+                        <g className="hIntact hImplant hEmpty" style={{visibility: "hidden"}}>
                             <path className="st24" d="M1762.6 606.999C1761.6 603.099 1759.3 599.399 1758.2 595.499C1755.4 585.899 1759.3 574.999 1753 566.199C1748.2 559.399 1739.3 555.799 1729.2 554.399C1719.7 553.099 1709.9 553.899 1700.3 552.699C1694.2 551.899 1688.1 550.499 1682.1 550.099C1675.7 549.599 1669.4 550.299 1663.7 551.899C1659.8 552.999 1656.1 554.599 1652.9 556.799C1647.5 560.599 1644.5 565.899 1643.4 571.399C1642.1 577.799 1643.3 584.299 1645.9 590.499C1649.7 599.799 1656.4 608.299 1661 617.399C1663.8 622.999 1665.9 628.899 1670.5 633.899C1674.5 638.299 1680.4 641.699 1687.3 642.599C1692.4 643.299 1697.6 642.599 1702.8 642.099C1709.3 641.499 1715.8 641.399 1722.3 640.999C1728 640.699 1733.7 640.199 1739 638.599C1755.8 633.899 1766.2 620.699 1762.6 606.999Z" style={{fill: 'rgb(248, 223, 168)'}}></path>
                             <path className="st53" d="M1733.38 595.522C1732.45 610.7 1725.5 618.5 1717.5 618.5C1707 618.5 1674 606.5 1674 591C1674 584 1677.08 579.022 1701.38 579.022C1725.69 579.022 1734.32 580.345 1733.38 595.522Z" style={{fill: 'rgb(248, 223, 168)'}}></path>
                         </g>
                     </g>
-                    <g className="pulp"  >
+                    <g className="pulp">
                         <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'hidden'}}>
                             <ellipse className="st22 target" cx="1682.1" cy="591.727" rx="8.62899" ry="5.75303" transform="rotate(-90.9902 1682.1 591.727)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
                             <ellipse className="st22 target" cx="1724.62" cy="590.464" rx="7.75725" ry="7.03431" transform="rotate(-130.036 1724.62 590.464)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
                             <ellipse className="st22 target" cx="1716.78" cy="609.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 1716.78 609.499)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
                         </g>
                     </g>
-                    <g className="implant hEmpty hIntact hRoot" style={{visibility: 'hidden'}}>
+                    <g className="implant hEmpty hIntact hRoot" style={{visibility: "hidden"}}>
                         <circle className="st48" cx="1706.5" cy="597.5" r="26.5"></circle>
                         <g className="st27">
                             <mask id="implant_65" className="st49">
@@ -77,59 +388,70 @@ export default function Tooth65({
                         <path className="st47" d="M1762.52 607C1761.52 603.1 1759.22 599.4 1758.12 595.5C1755.32 585.9 1759.22 575 1752.92 566.2C1748.12 559.4 1739.22 555.8 1729.12 554.4C1719.62 553.1 1709.82 553.9 1700.22 552.7C1694.12 551.9 1688.02 550.499 1682.02 550.099C1675.62 549.599 1669.32 550.3 1663.62 551.9C1659.72 553 1656.02 554.6 1652.82 556.8C1647.42 560.6 1644.42 565.9 1643.32 571.4C1642.02 577.8 1643.22 584.3 1645.82 590.5C1649.62 599.8 1656.32 608.3 1660.92 617.4C1663.72 623 1665.82 628.9 1670.42 633.9C1674.42 638.3 1680.32 641.699 1687.22 642.599C1692.32 643.299 1697.52 642.599 1702.72 642.099C1709.22 641.499 1715.72 641.4 1722.22 641C1727.92 640.7 1733.62 640.199 1738.92 638.599C1755.72 633.899 1766.12 620.7 1762.52 607Z"></path>
                         <path className="st47" d="M1745.51 604.127C1744.79 601.316 1743.15 598.649 1742.37 595.838C1740.37 588.919 1743.15 581.062 1738.65 574.719C1735.23 569.818 1728.87 567.223 1721.66 566.214C1714.88 565.277 1707.88 565.854 1701.02 564.989C1696.67 564.412 1692.31 563.403 1688.03 563.115C1683.46 562.754 1678.96 563.259 1674.89 564.412C1672.1 565.205 1669.46 566.358 1667.18 567.944C1663.32 570.683 1661.18 574.503 1660.39 578.467C1659.47 583.08 1660.32 587.765 1662.18 592.234C1664.89 598.938 1669.68 605.064 1672.96 611.623C1674.96 615.66 1676.46 619.912 1679.74 623.516C1682.6 626.688 1686.81 629.139 1691.74 629.787C1695.38 630.292 1699.1 629.787 1702.81 629.427C1707.45 628.994 1712.09 628.922 1716.73 628.634C1720.8 628.418 1724.87 628.057 1728.66 626.904C1740.65 623.516 1748.08 614.002 1745.51 604.127Z"></path>
                     </g>
-                    <g className="hRoot hImplant hEmpty" style={{visibility: 'hidden'}}>
+                    <g className="hRoot hImplant hEmpty" style={{visibility: "inherit"}}>
                         <path className="st46" d="M1771.1,609.2c-1.2-5.5-3.7-10.6-5-16.1c-3.2-13.5,1.4-28.7-5.7-41.1
-                c-0.1-0.3-0.3-0.5-0.5-0.8c-5.6-9-15.6-13.8-26.8-15.6c-10.9-1.8-22.2-0.6-33.3-2.2c-7-1-14-2.9-21-3.5
-                c-7.3-0.6-14.6,0.4-21.3,2.7c-4.6,1.6-8.8,3.8-12.5,7c-5.3,4.5-8.6,10.6-10.4,17.1c-0.3,1.2-0.6,2.4-0.8,3.5
-                c-1.6,9-0.2,18.1,2.7,26.8c4.3,13,11.9,24.9,17.2,37.6c2.1,5.2,3.9,10.5,6.3,15.5c1.3,2.6,2.7,5.2,4.5,7.6
-                c4.6,6.1,11.3,10.8,19.2,12.1c5.9,1,11.9-0.1,17.9-0.8c7.5-0.9,15-1.2,22.5-1.8c6.6-0.5,13.1-1.3,19.3-3.4
-                c8.1-2.8,14.8-7.6,19.8-13.6C1770.2,631.6,1773.4,620.5,1771.1,609.2z"></path>
+                            c-0.1-0.3-0.3-0.5-0.5-0.8c-5.6-9-15.6-13.8-26.8-15.6c-10.9-1.8-22.2-0.6-33.3-2.2c-7-1-14-2.9-21-3.5
+                            c-7.3-0.6-14.6,0.4-21.3,2.7c-4.6,1.6-8.8,3.8-12.5,7c-5.3,4.5-8.6,10.6-10.4,17.1c-0.3,1.2-0.6,2.4-0.8,3.5
+                            c-1.6,9-0.2,18.1,2.7,26.8c4.3,13,11.9,24.9,17.2,37.6c2.1,5.2,3.9,10.5,6.3,15.5c1.3,2.6,2.7,5.2,4.5,7.6
+                            c4.6,6.1,11.3,10.8,19.2,12.1c5.9,1,11.9-0.1,17.9-0.8c7.5-0.9,15-1.2,22.5-1.8c6.6-0.5,13.1-1.3,19.3-3.4
+                            c8.1-2.8,14.8-7.6,19.8-13.6C1770.2,631.6,1773.4,620.5,1771.1,609.2z"
+                        />
                     </g>
-                    <g className="tartar hImplant hEmpty"  style={{visibility: 'hidden', opacity: 0}}>
+                    <g className="tartar hImplant hEmpty"  style={{visibility: "inherit", opacity: 0}}>
                         <path className="st61 level2" d="M1772.25 611.115C1771.08 605.16 1771.38 600.51 1770.1 594.555C1769.39 591.383 1769.05 587.118 1768.87 583.813C1768.67 580.124 1769.77 576.385 1769.71 572.669C1769.65 568.703 1768.42 564.763 1767.86 560.938C1767.24 556.717 1765.19 551.636 1763.09 547.814C1761.32 544.544 1757.99 541.759 1755.38 539.41C1752.67 536.975 1748.56 534.836 1745.17 533.288C1743.51 532.53 1741.78 532.105 1740 531.798C1737.79 531.418 1735.5 532.394 1733.15 531.969C1729.5 531.318 1725.81 528.666 1722.11 528.484C1720.12 528.386 1718.13 527.42 1716.14 527.64C1713.97 527.879 1711.8 529.307 1709.63 529.202C1706.18 529.033 1702.74 527.585 1699.31 527.027C1695.88 526.44 1692.45 526.813 1689.03 526.074C1685.33 525.276 1681.65 523.374 1678.01 523.057C1675.33 522.784 1672.67 523.535 1670.04 524.372C1665.63 525.784 1660.45 525.522 1656.47 526.979C1651.9 528.658 1646.49 531.101 1642.74 534.461C1640.11 536.877 1638.13 539.689 1636.43 542.756C1635.36 544.687 1634.16 546.718 1633.19 548.814C1632.01 551.386 1633.12 554.054 1632.7 556.755C1632.27 559.51 1630.99 562.278 1631 565.044C1631.01 567.591 1632.27 570.136 1632.6 572.669C1631.77 574.633 1633.2 576.59 1633.63 578.534C1634.17 581.02 1634.85 583.485 1635.63 585.92C1636.15 587.579 1635.63 589.222 1636.23 590.851C1637.85 595.226 1640.82 599.505 1642.8 603.755C1643.94 606.214 1644.02 608.663 1645.19 611.115L1645.2 611.137C1646.07 612.974 1646.94 614.813 1648.87 616.658C1650.44 620.069 1650.87 623.503 1652.22 626.996C1652.99 629.007 1652.8 631.043 1653.53 633.081C1654.47 635.698 1656.41 638.318 1657.46 640.89C1659.07 644.83 1659.85 648.658 1662.34 652.191C1664.63 655.472 1669.53 658.388 1672.76 660.674C1674.41 661.843 1676.16 664.021 1678.01 664.824C1679.94 665.667 1681.98 665.116 1684.1 665.476C1686.98 665.992 1689.89 667.183 1692.82 666.976C1695.95 666.756 1699.1 665.107 1702.24 664.712C1703.98 664.503 1705.72 664.333 1707.46 664.189C1709.45 664.024 1711.44 665.065 1713.43 664.945C1717.31 664.709 1721.19 663.344 1725.07 663.033C1726.98 662.902 1728.89 663.121 1730.78 663.235C1732.24 663.321 1733.68 662.172 1735.12 661.928C1736.76 661.647 1738.39 662.477 1740 662.049C1741.56 661.633 1743.11 661.137 1744.62 660.541C1746.2 659.963 1747.74 658.128 1749.22 657.388C1751.02 656.489 1752.74 654.303 1754.38 653.185C1756.79 651.54 1760.09 650.844 1762.09 648.787C1764.43 646.39 1766.39 643.566 1768.1 640.717C1769.58 638.25 1770.81 635.807 1771.76 633.081C1772.94 629.707 1772.61 627.164 1772.88 623.524C1773.02 621.592 1773.12 618.634 1772.99 616.658C1772.87 614.822 1772.62 612.972 1772.25 611.115ZM1758.2 595.501C1759.3 599.401 1761.6 603.101 1762.6 607.001C1766.2 620.701 1755.8 633.9 1739 638.6C1733.7 640.2 1728 640.7 1722.3 641C1715.8 641.4 1709.3 641.5 1702.8 642.1C1697.6 642.6 1692.4 643.3 1687.3 642.6C1680.4 641.7 1674.5 638.301 1670.5 633.901C1665.9 628.901 1663.8 623.001 1661 617.401C1656.4 608.301 1649.7 599.801 1645.9 590.501C1643.3 584.301 1642.1 577.801 1643.4 571.401C1644.5 565.901 1647.5 560.6 1652.9 556.8C1656.1 554.6 1659.8 553.001 1663.7 551.901C1669.4 550.301 1675.7 549.6 1682.1 550.1C1688.1 550.5 1694.2 551.901 1700.3 552.701C1709.9 553.901 1719.7 553.101 1729.2 554.401C1739.3 555.801 1748.2 559.401 1753 566.201C1759.3 575.001 1755.4 585.901 1758.2 595.501Z"></path>
                         <path className="st61 level1 hRoot" d="M1772.25 611.115C1771.08 605.16 1771.38 600.51 1770.1 594.555C1769.39 591.383 1769.05 587.118 1768.87 583.813C1768.67 580.124 1769.77 576.385 1769.71 572.669C1769.65 568.703 1768.42 564.763 1767.86 560.938C1767.24 556.717 1765.19 551.636 1763.09 547.814C1761.32 544.544 1757.99 541.759 1755.38 539.41C1752.67 536.975 1748.56 534.836 1745.17 533.288C1743.51 532.53 1741.78 532.105 1740 531.798C1737.79 531.418 1735.5 532.394 1733.15 531.969C1729.5 531.318 1725.81 528.666 1722.11 528.484C1720.12 528.386 1718.13 527.42 1716.14 527.64C1713.97 527.879 1711.8 529.307 1709.63 529.202C1706.18 529.033 1702.74 527.585 1699.31 527.027C1695.88 526.44 1692.45 526.813 1689.03 526.074C1685.33 525.276 1681.65 523.374 1678.01 523.057C1675.33 522.784 1672.67 523.535 1670.04 524.372C1665.63 525.784 1660.45 525.522 1656.47 526.979C1651.9 528.658 1646.49 531.101 1642.74 534.461C1640.11 536.877 1638.13 539.689 1636.43 542.756C1635.36 544.687 1634.16 546.718 1633.19 548.814C1632.01 551.386 1633.12 554.054 1632.7 556.755C1632.27 559.51 1630.99 562.278 1631 565.044C1631.01 567.591 1632.27 570.136 1632.6 572.669C1631.77 574.633 1633.2 576.59 1633.63 578.534C1634.17 581.02 1634.85 583.485 1635.63 585.92C1636.15 587.579 1635.63 589.222 1636.23 590.851C1637.85 595.226 1640.82 599.505 1642.8 603.755C1643.94 606.214 1644.02 608.663 1645.19 611.115L1645.2 611.137C1646.07 612.974 1646.94 614.813 1648.87 616.658C1650.44 620.069 1650.87 623.503 1652.22 626.996C1652.99 629.007 1652.8 631.043 1653.53 633.081C1654.47 635.698 1656.41 638.318 1657.46 640.89C1659.07 644.83 1659.85 648.658 1662.34 652.191C1664.63 655.472 1669.53 658.388 1672.76 660.674C1674.41 661.843 1676.16 664.021 1678.01 664.824C1679.94 665.667 1681.98 665.116 1684.1 665.476C1686.98 665.992 1689.89 667.183 1692.82 666.976C1695.95 666.756 1699.1 665.107 1702.24 664.712C1703.98 664.503 1705.72 664.333 1707.46 664.189C1709.45 664.024 1711.44 665.065 1713.43 664.945C1717.31 664.709 1721.19 663.344 1725.07 663.033C1726.98 662.902 1728.89 663.121 1730.78 663.235C1732.24 663.321 1733.68 662.172 1735.12 661.928C1736.76 661.647 1738.39 662.477 1740 662.049C1741.56 661.633 1743.11 661.137 1744.62 660.541C1746.2 659.963 1747.74 658.128 1749.22 657.388C1751.02 656.489 1752.74 654.303 1754.38 653.185C1756.79 651.54 1760.09 650.844 1762.09 648.787C1764.43 646.39 1766.39 643.566 1768.1 640.717C1769.58 638.25 1770.81 635.807 1771.76 633.081C1772.94 629.707 1772.61 627.164 1772.88 623.524C1773.02 621.592 1773.12 618.634 1772.99 616.658C1772.87 614.822 1772.62 612.972 1772.25 611.115ZM1758.2 595.501C1759.3 599.401 1761.6 603.101 1762.6 607.001C1766.2 620.701 1755.8 633.9 1739 638.6C1733.7 640.2 1728 640.7 1722.3 641C1715.8 641.4 1709.3 641.5 1702.8 642.1C1697.6 642.6 1692.4 643.3 1687.3 642.6C1680.4 641.7 1674.5 638.301 1670.5 633.901C1665.9 628.901 1663.8 623.001 1661 617.401C1656.4 608.301 1649.7 599.801 1645.9 590.501C1643.3 584.301 1642.1 577.801 1643.4 571.401C1644.5 565.901 1647.5 560.6 1652.9 556.8C1656.1 554.6 1659.8 553.001 1663.7 551.901C1669.4 550.301 1675.7 549.6 1682.1 550.1C1688.1 550.5 1694.2 551.901 1700.3 552.701C1709.9 553.901 1719.7 553.101 1729.2 554.401C1739.3 555.801 1748.2 559.401 1753 566.201C1759.3 575.001 1755.4 585.901 1758.2 595.501Z" style={{visibility: 'inherit'}}></path>
                         <path className="st61 level1" d="M1650.08 610.274C1649.01 608.184 1648.93 606.096 1647.88 604C1646.06 600.377 1643.32 596.729 1641.83 593C1641.27 591.611 1641.75 590.211 1641.27 588.796C1640.55 586.72 1639.92 584.619 1639.42 582.5C1639.03 580.842 1637.71 579.174 1638.48 577.5C1638.17 575.34 1637.01 573.171 1637 571C1636.99 568.642 1638.17 566.282 1638.57 563.933C1638.95 561.631 1638.85 559.356 1639.95 557.164C1640.84 555.377 1642.87 553.646 1643.85 552C1645.42 549.386 1645.4 546.988 1647.82 544.928C1651.28 542.065 1656.27 539.982 1660.48 538.55C1664.22 537.285 1668.91 537.535 1673 536.328C1675.42 535.614 1677.87 534.974 1680.34 535.207C1683.7 535.477 1687.09 537.098 1690.5 537.779C1693.65 538.409 1696.82 538.091 1699.99 538.591C1703.14 539.067 1706.32 540.301 1709.5 540.445C1711.5 540.535 1713.5 539.318 1715.5 539.114C1717.34 538.926 1719.17 539.75 1721 539.833C1724.42 539.988 1727.82 542.249 1731.18 542.804C1733.35 543.166 1735.46 542.334 1737.5 542.659C1739.14 542.92 1740.73 543.282 1742.26 543.928C1745.39 545.249 1748.25 547.924 1750.76 550C1753.17 552.002 1756.24 554.377 1757.87 557.164C1759.8 560.422 1759.85 563.901 1760.42 567.5C1760.94 570.76 1762.07 574.119 1762.13 577.5C1762.18 580.668 1761.17 583.855 1761.35 587C1761.51 589.817 1761.83 592.601 1762.48 595.305C1763.67 600.381 1766.15 605.198 1767.23 610.274C1767.58 611.857 1767.8 613.435 1767.92 615C1768.04 616.684 1767.03 618.353 1766.89 620C1766.64 623.103 1766.95 626.124 1765.86 629C1764.98 631.324 1763.85 632.553 1762.48 634.657C1760.91 637.085 1760.02 640.345 1757.87 642.389C1756.02 644.142 1752.98 644.736 1750.76 646.138C1749.25 647.091 1747.66 648.955 1746 649.721C1744.63 650.352 1743.22 651.916 1741.76 652.409C1740.36 652.917 1738.94 653.34 1737.5 653.695C1736.02 654.059 1734.52 653.352 1733 653.591C1731.68 653.8 1730.34 654.779 1729 654.705C1727.25 654.609 1725.49 654.421 1723.73 654.533C1720.16 654.798 1716.58 655.962 1713 656.163C1711.17 656.265 1709.33 655.378 1707.5 655.518C1705.89 655.641 1704.29 655.786 1702.69 655.965C1699.79 656.301 1696.89 657.707 1694 657.895C1691.3 658.071 1688.62 657.056 1685.95 656.615C1684 656.309 1682.13 656.778 1680.34 656.06C1678.64 655.375 1677.02 653.519 1675.5 652.522C1672.53 650.574 1668.93 648.087 1666.82 645.291C1664.52 642.279 1663.8 639.016 1662.32 635.657C1661.35 633.465 1660.48 631.231 1659.62 629C1658.95 627.263 1657.28 625.527 1656.57 623.812C1655.32 620.835 1654.93 617.907 1653.48 615C1651.7 613.426 1650.89 611.859 1650.09 610.293M1650.08 610.274L1650.09 610.293M1650.08 610.274C1650.08 610.281 1650.09 610.287 1650.09 610.293M1762.6 607C1761.6 603.1 1759.3 599.4 1758.2 595.5C1755.4 585.9 1759.3 575 1753 566.2C1748.2 559.4 1739.3 555.8 1729.2 554.4C1719.7 553.1 1709.9 553.9 1700.3 552.7C1694.2 551.9 1688.1 550.5 1682.1 550.1C1675.7 549.6 1669.4 550.3 1663.7 551.9C1659.8 553 1656.1 554.6 1652.9 556.8C1647.5 560.6 1644.5 565.9 1643.4 571.4C1642.1 577.8 1643.3 584.3 1645.9 590.5C1649.7 599.8 1656.4 608.3 1661 617.4C1663.8 623 1665.9 628.9 1670.5 633.9C1674.5 638.3 1680.4 641.7 1687.3 642.6C1692.4 643.3 1697.6 642.6 1702.8 642.1C1709.3 641.5 1715.8 641.4 1722.3 641C1728 640.7 1733.7 640.2 1739 638.6C1755.8 633.9 1766.2 620.7 1762.6 607Z"></path>
                     </g>
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: 'hidden'}}>
+                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: "inherit"}}>
                         <g id="s_header_65_5" className="caries-filling" dataposition="65_5">
                             <path className="st7" d="M1747.5,608.4c-0.6,2.8-1.7,5.8-3.5,8.6c-4.2,6.6-12.3,12.4-27.7,12.4c-21.1,0-27.9-7.4-33.1-13.3
-                    c-0.2-0.2-0.4-0.4-0.6-0.6c-5.2-6.1-6.8-19.6-9.9-28.7c-0.9-2.5-1.3-4.8-1.3-7c0.1-5.9,3.4-10.4,11-11.7c10.4-1.8,27.1,0,27.1,0
-                    c10.6,0.6,19.3,2.5,25.6,7c1.9,1.3,3.6,2.9,5.1,4.7C1746.6,587.6,1749.6,599.2,1747.5,608.4z"></path>
+                                c-0.2-0.2-0.4-0.4-0.6-0.6c-5.2-6.1-6.8-19.6-9.9-28.7c-0.9-2.5-1.3-4.8-1.3-7c0.1-5.9,3.4-10.4,11-11.7c10.4-1.8,27.1,0,27.1,0
+                                c10.6,0.6,19.3,2.5,25.6,7c1.9,1.3,3.6,2.9,5.1,4.7C1746.6,587.6,1749.6,599.2,1747.5,608.4z"
+                            />
                             <path className="st8 target" d="M1747.5,608.4c-0.6,2.8-1.7,5.8-3.5,8.6c-4.2,6.6-12.3,12.4-27.7,12.4c-21.1,0-27.9-7.4-33.1-13.3
-                    c-0.2-0.2-0.4-0.4-0.6-0.6c-5.2-6.1-6.8-19.6-9.9-28.7c-0.9-2.5-1.3-4.8-1.3-7c0.1-5.9,3.4-10.4,11-11.7c10.4-1.8,27.1,0,27.1,0
-                    c10.6,0.6,19.3,2.5,25.6,7c1.9,1.3,3.6,2.9,5.1,4.7C1746.6,587.6,1749.6,599.2,1747.5,608.4z" style={{fill: 'none', strokeWidth: 0}} ></path>
+                                c-0.2-0.2-0.4-0.4-0.6-0.6c-5.2-6.1-6.8-19.6-9.9-28.7c-0.9-2.5-1.3-4.8-1.3-7c0.1-5.9,3.4-10.4,11-11.7c10.4-1.8,27.1,0,27.1,0
+                                c10.6,0.6,19.3,2.5,25.6,7c1.9,1.3,3.6,2.9,5.1,4.7C1746.6,587.6,1749.6,599.2,1747.5,608.4z"
+                            />
                         </g>
                         <g id="s_header_65_4" className="caries-filling" dataposition="65_4">
                             <path className="st7" d="M1683.3,616.1c-3.8,5.3-11.4,14.7-23.4,24.1c-2.4-5-4.2-10.3-6.3-15.5c-5.2-12.7-12.8-24.5-17.2-37.6
-                    c-2.9-8.7-4.3-17.8-2.7-26.8c0.2-1.2,0.5-2.4,0.8-3.5c7.8,4.2,26.2,14.3,37,23.1c0,2.2,0.4,4.6,1.3,7c3.2,9,4.7,22.6,9.9,28.7
-                    C1682.9,615.6,1683.1,615.8,1683.3,616.1z"></path>
+                                c-2.9-8.7-4.3-17.8-2.7-26.8c0.2-1.2,0.5-2.4,0.8-3.5c7.8,4.2,26.2,14.3,37,23.1c0,2.2,0.4,4.6,1.3,7c3.2,9,4.7,22.6,9.9,28.7
+                                C1682.9,615.6,1683.1,615.8,1683.3,616.1z"
+                            />
                             <path className="st8 target" d="M1683.3,616.1c-3.8,5.3-11.4,14.7-23.4,24.1c-2.4-5-4.2-10.3-6.3-15.5c-5.2-12.7-12.8-24.5-17.2-37.6
-                    c-2.9-8.7-4.3-17.8-2.7-26.8c0.2-1.2,0.5-2.4,0.8-3.5c7.8,4.2,26.2,14.3,37,23.1c0,2.2,0.4,4.6,1.3,7c3.2,9,4.7,22.6,9.9,28.7
-                    C1682.9,615.6,1683.1,615.8,1683.3,616.1z" style={{fill: 'none', strokeWidth: 0}} ></path>
+                                c-2.9-8.7-4.3-17.8-2.7-26.8c0.2-1.2,0.5-2.4,0.8-3.5c7.8,4.2,26.2,14.3,37,23.1c0,2.2,0.4,4.6,1.3,7c3.2,9,4.7,22.6,9.9,28.7
+                                C1682.9,615.6,1683.1,615.8,1683.3,616.1z" 
+                            />
                         </g>
                         <g id="s_header_65_3" className="caries-filling" dataposition="65_3">
                             <path className="st7" d="M1763.1,640.3c-4.9,6-11.7,10.8-19.8,13.6c-6.2,2.2-12.8,2.9-19.3,3.4c-7.5,0.6-15,0.9-22.5,1.8
-                    c-6,0.7-12,1.8-17.9,0.8c-7.9-1.3-14.6-6-19.2-12.1c-1.8-2.4-3.3-5-4.5-7.6c12-9.4,19.6-18.8,23.4-24.1c5.1,6,11.9,13.3,33.1,13.3
-                    c15.3,0,23.4-5.8,27.7-12.4C1746.8,621.7,1752.4,629.5,1763.1,640.3z"></path>
+                                c-6,0.7-12,1.8-17.9,0.8c-7.9-1.3-14.6-6-19.2-12.1c-1.8-2.4-3.3-5-4.5-7.6c12-9.4,19.6-18.8,23.4-24.1c5.1,6,11.9,13.3,33.1,13.3
+                                c15.3,0,23.4-5.8,27.7-12.4C1746.8,621.7,1752.4,629.5,1763.1,640.3z"
+                            />
                             <path className="st8 target" d="M1763.1,640.3c-4.9,6-11.7,10.8-19.8,13.6c-6.2,2.2-12.8,2.9-19.3,3.4c-7.5,0.6-15,0.9-22.5,1.8
-                    c-6,0.7-12,1.8-17.9,0.8c-7.9-1.3-14.6-6-19.2-12.1c-1.8-2.4-3.3-5-4.5-7.6c12-9.4,19.6-18.8,23.4-24.1c5.1,6,11.9,13.3,33.1,13.3
-                    c15.3,0,23.4-5.8,27.7-12.4C1746.8,621.7,1752.4,629.5,1763.1,640.3z" style={{fill: 'none', strokeWidth: 0}} ></path>
+                                c-6,0.7-12,1.8-17.9,0.8c-7.9-1.3-14.6-6-19.2-12.1c-1.8-2.4-3.3-5-4.5-7.6c12-9.4,19.6-18.8,23.4-24.1c5.1,6,11.9,13.3,33.1,13.3
+                                c15.3,0,23.4-5.8,27.7-12.4C1746.8,621.7,1752.4,629.5,1763.1,640.3z"
+                            />
                         </g>
                         <g id="s_header_65_2" className="caries-filling" dataposition="65_2">
                             <path className="st7" d="M1763.1,640.3c-10.7-10.7-16.3-18.6-19.1-23.2c1.8-2.8,2.9-5.8,3.5-8.6c2-9.2-0.9-20.8-7.2-28.7
-                    c-1.5-1.8-3.2-3.4-5.1-4.7c9.6-11.7,19.5-19.8,24.7-23.8c0.2,0.3,0.3,0.5,0.5,0.8c7.1,12.4,2.5,27.6,5.7,41.1
-                    c1.3,5.5,3.9,10.6,5,16.1C1773.4,620.5,1770.2,631.6,1763.1,640.3z"></path>
+                                c-1.5-1.8-3.2-3.4-5.1-4.7c9.6-11.7,19.5-19.8,24.7-23.8c0.2,0.3,0.3,0.5,0.5,0.8c7.1,12.4,2.5,27.6,5.7,41.1
+                                c1.3,5.5,3.9,10.6,5,16.1C1773.4,620.5,1770.2,631.6,1763.1,640.3z"
+                            />
                             <path className="st8 target" d="M1763.1,640.3c-10.7-10.7-16.3-18.6-19.1-23.2c1.8-2.8,2.9-5.8,3.5-8.6c2-9.2-0.9-20.8-7.2-28.7
-                    c-1.5-1.8-3.2-3.4-5.1-4.7c9.6-11.7,19.5-19.8,24.7-23.8c0.2,0.3,0.3,0.5,0.5,0.8c7.1,12.4,2.5,27.6,5.7,41.1
-                    c1.3,5.5,3.9,10.6,5,16.1C1773.4,620.5,1770.2,631.6,1763.1,640.3z" style={{fill: 'none', strokeWidth: 0}} ></path>
+                                c-1.5-1.8-3.2-3.4-5.1-4.7c9.6-11.7,19.5-19.8,24.7-23.8c0.2,0.3,0.3,0.5,0.5,0.8c7.1,12.4,2.5,27.6,5.7,41.1
+                                c1.3,5.5,3.9,10.6,5,16.1C1773.4,620.5,1770.2,631.6,1763.1,640.3z"
+                            />
                         </g>
                         <g id="s_header_65_1" className="caries-filling" dataposition="65_1">
                             <path className="st7" d="M1759.9,551.2c-5.2,3.9-15,12.1-24.7,23.8c-6.3-4.4-15-6.4-25.6-7c0,0-16.7-1.8-27.1,0
-                    c-7.5,1.3-10.9,5.9-11,11.7c-10.8-8.7-29.2-18.9-37-23.1c1.7-6.5,5.1-12.6,10.4-17.1c3.7-3.2,8-5.4,12.5-7
-                    c6.7-2.3,14-3.3,21.3-2.7c7,0.6,14,2.5,21,3.5c11.1,1.6,22.4,0.4,33.3,2.2C1744.3,537.5,1754.3,542.2,1759.9,551.2z"></path>
+                                c-7.5,1.3-10.9,5.9-11,11.7c-10.8-8.7-29.2-18.9-37-23.1c1.7-6.5,5.1-12.6,10.4-17.1c3.7-3.2,8-5.4,12.5-7
+                                c6.7-2.3,14-3.3,21.3-2.7c7,0.6,14,2.5,21,3.5c11.1,1.6,22.4,0.4,33.3,2.2C1744.3,537.5,1754.3,542.2,1759.9,551.2z"
+                            />
                             <path className="st8 target" d="M1759.9,551.2c-5.2,3.9-15,12.1-24.7,23.8c-6.3-4.4-15-6.4-25.6-7c0,0-16.7-1.8-27.1,0
-                    c-7.5,1.3-10.9,5.9-11,11.7c-10.8-8.7-29.2-18.9-37-23.1c1.7-6.5,5.1-12.6,10.4-17.1c3.7-3.2,8-5.4,12.5-7
-                    c6.7-2.3,14-3.3,21.3-2.7c7,0.6,14,2.5,21,3.5c11.1,1.6,22.4,0.4,33.3,2.2C1744.3,537.5,1754.3,542.2,1759.9,551.2z" style={{fill: 'none', strokeWidth: 0}} ></path>
+                                c-7.5,1.3-10.9,5.9-11,11.7c-10.8-8.7-29.2-18.9-37-23.1c1.7-6.5,5.1-12.6,10.4-17.1c3.7-3.2,8-5.4,12.5-7
+                                c6.7-2.3,14-3.3,21.3-2.7c7,0.6,14,2.5,21,3.5c11.1,1.6,22.4,0.4,33.3,2.2C1744.3,537.5,1754.3,542.2,1759.9,551.2z"
+                            />
                         </g>
                         <g className="with">
                             <path className="st54" areas="65_2 65_3" d="M1760 636C1755.29 632.893 1744.51 622.629 1741 618" style={{stroke: 'rgb(81, 79, 72)', strokeWidth: 0}}></path>
@@ -142,7 +464,7 @@ export default function Tooth65({
                             <path className="st54" areas="65_3 65_5" d="M1741.5 618.5C1732.5 627 1697.7 629.7 1682.5 616.5" style={{stroke: 'rgb(81, 79, 72)', strokeWidth: 0}}></path>
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'hidden'}}>
+                    <g className="hEmpty hImplant hRoot" style={{visibility: "inherit"}}>
                         <g className="vinir"  style={{visibility: 'hidden', opacity: 0}}>
                             <path className="st55" d="M1760.4 551.999C1760.3 551.699 1760.1 551.499 1759.9 551.199C1754.3 542.199 1744.3 537.399 1733.1 535.599C1722.2 533.799 1710.9 534.999 1699.8 533.399C1692.8 532.399 1685.8 530.499 1678.8 529.899C1671.5 529.299 1664.2 530.299 1657.5 532.599C1652.9 534.199 1648.7 536.399 1645 539.599C1639.7 544.099 1636.4 550.199 1634.6 556.699C1634.3 557.899 1634 559.099 1633.8 560.199C1632.2 569.199 1633.6 578.299 1636.5 586.999C1637.17 589.024 1637.92 591.022 1638.73 593C1641.53 592.801 1647.1 591.663 1646.98 588.702C1646.94 588.563 1646.89 588.424 1646.84 588.285C1644.4 580.95 1643.22 573.278 1644.57 565.69C1644.74 564.762 1644.99 563.751 1645.24 562.739C1646.76 557.259 1649.54 552.116 1654.01 548.322C1657.13 545.624 1660.68 543.769 1664.56 542.42C1670.21 540.481 1676.37 539.638 1682.52 540.144C1688.43 540.65 1694.33 542.252 1700.24 543.095C1709.6 544.444 1719.13 543.432 1728.33 544.95C1737.77 546.467 1746.21 550.514 1750.93 558.102C1751.1 558.355 1751.27 558.523 1751.35 558.776C1756.49 567.745 1754.36 578.452 1755.36 588.5C1756.45 591.7 1762.96 592.84 1766.08 593.01C1762.92 579.532 1767.48 564.372 1760.4 551.999Z"></path>
                             <path className="st55" d="M1766.1 593.099C1766.09 593.07 1766.09 593.04 1766.08 593.01M1766.08 593.01C1762.92 579.532 1767.48 564.372 1760.4 551.999C1760.3 551.699 1760.1 551.499 1759.9 551.199C1754.3 542.199 1744.3 537.399 1733.1 535.599C1722.2 533.799 1710.9 534.999 1699.8 533.399C1692.8 532.399 1685.8 530.499 1678.8 529.899C1671.5 529.299 1664.2 530.299 1657.5 532.599C1652.9 534.199 1648.7 536.399 1645 539.599C1639.7 544.099 1636.4 550.199 1634.6 556.699C1634.3 557.899 1634 559.099 1633.8 560.199C1632.2 569.199 1633.6 578.299 1636.5 586.999C1637.17 589.024 1637.92 591.022 1638.73 593C1641.53 592.801 1647.1 591.663 1646.98 588.702C1646.94 588.563 1646.89 588.424 1646.84 588.285C1644.4 580.95 1643.22 573.278 1644.57 565.69C1644.74 564.762 1644.99 563.751 1645.24 562.739C1646.76 557.259 1649.54 552.116 1654.01 548.322C1657.13 545.624 1660.68 543.769 1664.56 542.42C1670.21 540.481 1676.37 539.638 1682.52 540.144C1688.43 540.65 1694.33 542.252 1700.24 543.095C1709.6 544.444 1719.13 543.432 1728.33 544.95C1737.77 546.467 1746.21 550.514 1750.93 558.102C1751.1 558.355 1751.27 558.523 1751.35 558.776C1756.49 567.745 1754.36 578.452 1755.36 588.5C1756.45 591.7 1762.96 592.84 1766.08 593.01Z"></path>
@@ -150,129 +472,142 @@ export default function Tooth65({
                     </g>
                     <g className="crown"  style={{visibility: 'hidden', opacity: 0}}>
                         <path className="st46 target" d="M1771.1,609.2c-1.2-5.5-3.7-10.6-5-16.1c-3.2-13.5,1.4-28.7-5.7-41.1
-                c-0.1-0.3-0.3-0.5-0.5-0.8c-5.6-9-15.6-13.8-26.8-15.6c-10.9-1.8-22.2-0.6-33.3-2.2c-7-1-14-2.9-21-3.5
-                c-7.3-0.6-14.6,0.4-21.3,2.7c-4.6,1.6-8.8,3.8-12.5,7c-5.3,4.5-8.6,10.6-10.4,17.1c-0.3,1.2-0.6,2.4-0.8,3.5
-                c-1.6,9-0.2,18.1,2.7,26.8c4.3,13,11.9,24.9,17.2,37.6c2.1,5.2,3.9,10.5,6.3,15.5c1.3,2.6,2.7,5.2,4.5,7.6
-                c4.6,6.1,11.3,10.8,19.2,12.1c5.9,1,11.9-0.1,17.9-0.8c7.5-0.9,15-1.2,22.5-1.8c6.6-0.5,13.1-1.3,19.3-3.4
-                c8.1-2.8,14.8-7.6,19.8-13.6C1770.2,631.6,1773.4,620.5,1771.1,609.2z"></path>
+                            c-0.1-0.3-0.3-0.5-0.5-0.8c-5.6-9-15.6-13.8-26.8-15.6c-10.9-1.8-22.2-0.6-33.3-2.2c-7-1-14-2.9-21-3.5
+                            c-7.3-0.6-14.6,0.4-21.3,2.7c-4.6,1.6-8.8,3.8-12.5,7c-5.3,4.5-8.6,10.6-10.4,17.1c-0.3,1.2-0.6,2.4-0.8,3.5
+                            c-1.6,9-0.2,18.1,2.7,26.8c4.3,13,11.9,24.9,17.2,37.6c2.1,5.2,3.9,10.5,6.3,15.5c1.3,2.6,2.7,5.2,4.5,7.6
+                            c4.6,6.1,11.3,10.8,19.2,12.1c5.9,1,11.9-0.1,17.9-0.8c7.5-0.9,15-1.2,22.5-1.8c6.6-0.5,13.1-1.3,19.3-3.4
+                            c8.1-2.8,14.8-7.6,19.8-13.6C1770.2,631.6,1773.4,620.5,1771.1,609.2z"
+                        />
                         <path className="st3 fissure" d="M1746.7,592.7c-0.6-0.7-1.3-1.5-1.7-2.3c-1-2-0.5-4.4,1.2-5.8l-0.7-0.8c-2.2,1.8-2.8,4.7-1.5,7.2
-                c0.5,0.9,1.2,1.7,1.8,2.5c1.5,1.8,2.4,3,1.6,4.5c-0.8,1.5-2.7,1.5-4.8,1.5l-0.2,0c-4.2-0.1-8.7,0.9-13.1,1.9
-                c-0.8,0.2-1.5,0.3-2.3,0.5c-3.4,0.8-6.9,1.6-10.2,2.5c-1.4,0.3-2.8,0.7-4.1,1c-2.2-2.7-4.7-5.1-7.4-7.3l-1-0.8
-                c-4-3.1-8.2-6.3-7.4-11c0.5-2.9,3-4.7,5.6-6.6c0.9-0.6,1.8-1.3,2.6-2c5-4.3,7.3-10.5,6.1-16.8l-1.1,0.2
-                c1.1,5.8-1.1,11.7-5.8,15.7c-0.8,0.7-1.7,1.3-2.6,2c-2.7,2-5.5,4-6.1,7.3c-0.9,5.3,3.7,8.9,7.8,12l1,0.8c2.7,2.1,5.2,4.5,7.3,7.1
-                c-0.1,0.2-0.3,0.3-0.4,0.5c-6,7.2-10.1,15.7-11.9,24.6l1.1,0.2c1.8-8.8,5.9-17.1,11.7-24.1c0.2-0.3,0.5-0.6,0.7-0.9
-                c1.4-0.3,2.8-0.7,4.1-1c3.3-0.8,6.8-1.7,10.2-2.4c0.7-0.2,1.5-0.3,2.3-0.5c4.3-1,8.7-2,12.8-1.9l0.2,0c2.3,0,4.6,0.1,5.7-2
-                C1749.7,596.2,1748.1,594.4,1746.7,592.7z"></path>
+                            c0.5,0.9,1.2,1.7,1.8,2.5c1.5,1.8,2.4,3,1.6,4.5c-0.8,1.5-2.7,1.5-4.8,1.5l-0.2,0c-4.2-0.1-8.7,0.9-13.1,1.9
+                            c-0.8,0.2-1.5,0.3-2.3,0.5c-3.4,0.8-6.9,1.6-10.2,2.5c-1.4,0.3-2.8,0.7-4.1,1c-2.2-2.7-4.7-5.1-7.4-7.3l-1-0.8
+                            c-4-3.1-8.2-6.3-7.4-11c0.5-2.9,3-4.7,5.6-6.6c0.9-0.6,1.8-1.3,2.6-2c5-4.3,7.3-10.5,6.1-16.8l-1.1,0.2
+                            c1.1,5.8-1.1,11.7-5.8,15.7c-0.8,0.7-1.7,1.3-2.6,2c-2.7,2-5.5,4-6.1,7.3c-0.9,5.3,3.7,8.9,7.8,12l1,0.8c2.7,2.1,5.2,4.5,7.3,7.1
+                            c-0.1,0.2-0.3,0.3-0.4,0.5c-6,7.2-10.1,15.7-11.9,24.6l1.1,0.2c1.8-8.8,5.9-17.1,11.7-24.1c0.2-0.3,0.5-0.6,0.7-0.9
+                            c1.4-0.3,2.8-0.7,4.1-1c3.3-0.8,6.8-1.7,10.2-2.4c0.7-0.2,1.5-0.3,2.3-0.5c4.3-1,8.7-2,12.8-1.9l0.2,0c2.3,0,4.6,0.1,5.7-2
+                            C1749.7,596.2,1748.1,594.4,1746.7,592.7z"
+                        />
                         <path className="st3 fissure" d="M1674.6,595.5l-0.4,0.2c-3,1.4-6.1,2.8-9.3,2.1c-2-0.4-3.5-1.7-5.2-2.9c-1.7-1.3-3.4-2.7-5.7-3.1l-0.2,1.1
-                c2,0.4,3.6,1.7,5.2,2.9c1.7,1.3,3.4,2.6,5.6,3.1c0.7,0.1,1.3,0.2,2,0.2c2.8,0,5.4-1.2,8-2.4l0.4-0.2c3.4-1.6,7.1-3,11.3-4.3
-                l-0.3-1C1681.8,592.5,1678.1,593.9,1674.6,595.5z"></path>
+                            c2,0.4,3.6,1.7,5.2,2.9c1.7,1.3,3.4,2.6,5.6,3.1c0.7,0.1,1.3,0.2,2,0.2c2.8,0,5.4-1.2,8-2.4l0.4-0.2c3.4-1.6,7.1-3,11.3-4.3
+                            l-0.3-1C1681.8,592.5,1678.1,593.9,1674.6,595.5z"
+                        />
                     </g>
-                    <g className="fissures hEmpty hRoot hImplant" style={{visibility: 'hidden'}} >
+                    <g className="fissures hEmpty hRoot hImplant" style={{visibility: "inherit"}}>
                         <path className="st3 fissure" d="M1746.7,592.7c-0.6-0.7-1.3-1.5-1.7-2.3c-1-2-0.5-4.4,1.2-5.8l-0.7-0.8c-2.2,1.8-2.8,4.7-1.5,7.2
-                c0.5,0.9,1.2,1.7,1.8,2.5c1.5,1.8,2.4,3,1.6,4.5c-0.8,1.5-2.7,1.5-4.8,1.5l-0.2,0c-4.2-0.1-8.7,0.9-13.1,1.9
-                c-0.8,0.2-1.5,0.3-2.3,0.5c-3.4,0.8-6.9,1.6-10.2,2.5c-1.4,0.3-2.8,0.7-4.1,1c-2.2-2.7-4.7-5.1-7.4-7.3l-1-0.8
-                c-4-3.1-8.2-6.3-7.4-11c0.5-2.9,3-4.7,5.6-6.6c0.9-0.6,1.8-1.3,2.6-2c5-4.3,7.3-10.5,6.1-16.8l-1.1,0.2
-                c1.1,5.8-1.1,11.7-5.8,15.7c-0.8,0.7-1.7,1.3-2.6,2c-2.7,2-5.5,4-6.1,7.3c-0.9,5.3,3.7,8.9,7.8,12l1,0.8c2.7,2.1,5.2,4.5,7.3,7.1
-                c-0.1,0.2-0.3,0.3-0.4,0.5c-6,7.2-10.1,15.7-11.9,24.6l1.1,0.2c1.8-8.8,5.9-17.1,11.7-24.1c0.2-0.3,0.5-0.6,0.7-0.9
-                c1.4-0.3,2.8-0.7,4.1-1c3.3-0.8,6.8-1.7,10.2-2.4c0.7-0.2,1.5-0.3,2.3-0.5c4.3-1,8.7-2,12.8-1.9l0.2,0c2.3,0,4.6,0.1,5.7-2
-                C1749.7,596.2,1748.1,594.4,1746.7,592.7z" style={{stroke: 'none'}}></path>
+                            c0.5,0.9,1.2,1.7,1.8,2.5c1.5,1.8,2.4,3,1.6,4.5c-0.8,1.5-2.7,1.5-4.8,1.5l-0.2,0c-4.2-0.1-8.7,0.9-13.1,1.9
+                            c-0.8,0.2-1.5,0.3-2.3,0.5c-3.4,0.8-6.9,1.6-10.2,2.5c-1.4,0.3-2.8,0.7-4.1,1c-2.2-2.7-4.7-5.1-7.4-7.3l-1-0.8
+                            c-4-3.1-8.2-6.3-7.4-11c0.5-2.9,3-4.7,5.6-6.6c0.9-0.6,1.8-1.3,2.6-2c5-4.3,7.3-10.5,6.1-16.8l-1.1,0.2
+                            c1.1,5.8-1.1,11.7-5.8,15.7c-0.8,0.7-1.7,1.3-2.6,2c-2.7,2-5.5,4-6.1,7.3c-0.9,5.3,3.7,8.9,7.8,12l1,0.8c2.7,2.1,5.2,4.5,7.3,7.1
+                            c-0.1,0.2-0.3,0.3-0.4,0.5c-6,7.2-10.1,15.7-11.9,24.6l1.1,0.2c1.8-8.8,5.9-17.1,11.7-24.1c0.2-0.3,0.5-0.6,0.7-0.9
+                            c1.4-0.3,2.8-0.7,4.1-1c3.3-0.8,6.8-1.7,10.2-2.4c0.7-0.2,1.5-0.3,2.3-0.5c4.3-1,8.7-2,12.8-1.9l0.2,0c2.3,0,4.6,0.1,5.7-2
+                            C1749.7,596.2,1748.1,594.4,1746.7,592.7z"
+                        />
                         <path className="st3 fissure" d="M1674.6,595.5l-0.4,0.2c-3,1.4-6.1,2.8-9.3,2.1c-2-0.4-3.5-1.7-5.2-2.9c-1.7-1.3-3.4-2.7-5.7-3.1l-0.2,1.1
-                c2,0.4,3.6,1.7,5.2,2.9c1.7,1.3,3.4,2.6,5.6,3.1c0.7,0.1,1.3,0.2,2,0.2c2.8,0,5.4-1.2,8-2.4l0.4-0.2c3.4-1.6,7.1-3,11.3-4.3
-                l-0.3-1C1681.8,592.5,1678.1,593.9,1674.6,595.5z" style={{stroke: 'none'}}></path>
+                            c2,0.4,3.6,1.7,5.2,2.9c1.7,1.3,3.4,2.6,5.6,3.1c0.7,0.1,1.3,0.2,2,0.2c2.8,0,5.4-1.2,8-2.4l0.4-0.2c3.4-1.6,7.1-3,11.3-4.3
+                            l-0.3-1C1681.8,592.5,1678.1,593.9,1674.6,595.5z" 
+                        />
                     </g>
                 </g>
-                <g className="common-view" transform="matrix(0.55 0 0 0.55 -255 50)" default-matrix="matrix(0.55, 0, 0, 0.55, -255, 50)" style={{visibility: 'hidden', transform: 'matrix(0.55, 0, 0, 0.55, -255, 50)'}}>
-                    <g className="dentin" >
-                        <g className="hRoot hImplant hEmpty" style={{visibility: 'hidden'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -212, 99)'}}>
+                    <g className="dentin">
+                        <g className="hRoot hImplant hEmpty" style={{visibility: "inherit"}}>
                             <path className="st9" d="M1760.3,401.5c-0.1,10.4-3.5,20.7-9.7,29.7l-33.3-6.7l-33.6,10.1l-14.2,14.8
-                c-10-6.6-18.1-15.1-23.6-24.9c-3.3-5.9-5.6-12.2-6.8-18.7c-0.3-4.2-0.4-9-0.4-13.9c0-0.5,0-1,0-1.5c2.8-5.6,6.4-10.8,10.7-15.3
-                c6.5-6.7,14.4-11.9,23.1-15.3c0.2-0.1,0.5-0.2,0.7-0.3c9-3.5,18.6-5.1,28.2-5.8c2.8-0.2,5.5-0.4,8.3-0.5
-                c8.8-0.3,17.6,0.1,26.3,1.1c0.3,0.2,0.6,0.5,0.8,0.8c3.9,6.7,10,12.9,15.7,18.5C1757.8,382.2,1760.4,391.7,1760.3,401.5z" style={{fill: 'rgb(253,222,136)'}}></path>
+                                c-10-6.6-18.1-15.1-23.6-24.9c-3.3-5.9-5.6-12.2-6.8-18.7c-0.3-4.2-0.4-9-0.4-13.9c0-0.5,0-1,0-1.5c2.8-5.6,6.4-10.8,10.7-15.3
+                                c6.5-6.7,14.4-11.9,23.1-15.3c0.2-0.1,0.5-0.2,0.7-0.3c9-3.5,18.6-5.1,28.2-5.8c2.8-0.2,5.5-0.4,8.3-0.5
+                                c8.8-0.3,17.6,0.1,26.3,1.1c0.3,0.2,0.6,0.5,0.8,0.8c3.9,6.7,10,12.9,15.7,18.5C1757.8,382.2,1760.4,391.7,1760.3,401.5z"
+                            />
                         </g>
-                        <g className="hImplant hEmpty" style={{visibility: 'hidden'}}>
+                        <g className="hImplant hEmpty" style={{visibility: "inherit"}}>
                             <path className="st10" d="M1736.8,355.1c-0.3-0.3-0.6-0.5-0.8-0.8c-8.7-1.1-17.5-1.4-26.3-1.1c-2.8,0.1-5.6,0.2-8.3,0.5
-                c-9.6,0.8-19.2,2.4-28.2,5.8c-0.2,0.1-0.5,0.2-0.7,0.3c-8.7,3.4-16.6,8.6-23.1,15.3c-4.3,4.5-7.9,9.7-10.7,15.3c0,0.5,0,1,0,1.5
-                c0-2.5,0-5-0.1-7.4c-0.1-6.6,0.5-13.1-0.2-19.7c-0.8-8.6-2.1-17.1-2.4-25.7c-0.4-12.1,1.3-24.2,2.8-36.2
-                c1.6-12.6,3.1-25.1,6.2-37.5c1.3-5.3,3-10.6,6.2-15.3c1.3-1.9,2.9-3.8,5.3-4.6c1.7-0.5,3.5-0.5,5.1,0c1.4,0.4,2.5,1.2,3.6,2
-                c5.8,4.9,5.7,12.4,5.3,19.4c-0.5,10.5-0.6,21.2,0,31.6c0.3,5.6,0.9,11.1,1.6,16.8c0.5,4.7,1.1,9.4,3.1,13.7
-                c0.3,0.6,0.6,1.2,0.9,1.8c0.7,1.2,1.5,2.3,2.4,3.3c2.2-1.8,4.2-3.8,6-6c2.7-3.2,4.9-6.8,6.9-10.4c1.4-2.6,2.6-5.3,3.8-8
-                c3.3-7.5,6.2-15.2,8.8-22.9c2.8-8.4,5.1-16.9,7.4-25.4c1.6-5.9,3.3-11.9,7.8-16.5c1.7-1.7,3.8-3.1,6.4-3.3c3.4-0.2,6.3,1.9,8,4.5
-                c1,1.5,1.6,3,1.9,4.7c0.9,4.7-0.9,9.4-2.3,14c-2.9,9.7-3.9,19.7-4.3,29.6c-0.5,12.9,0,25.8,2.5,38.5c1.3,6.3,1,12.6,3.7,18.6
-                C1735.7,352.9,1736.2,354,1736.8,355.1z" style={{fill: 'rgb(253,222,136)'}}></path>
+                                c-9.6,0.8-19.2,2.4-28.2,5.8c-0.2,0.1-0.5,0.2-0.7,0.3c-8.7,3.4-16.6,8.6-23.1,15.3c-4.3,4.5-7.9,9.7-10.7,15.3c0,0.5,0,1,0,1.5
+                                c0-2.5,0-5-0.1-7.4c-0.1-6.6,0.5-13.1-0.2-19.7c-0.8-8.6-2.1-17.1-2.4-25.7c-0.4-12.1,1.3-24.2,2.8-36.2
+                                c1.6-12.6,3.1-25.1,6.2-37.5c1.3-5.3,3-10.6,6.2-15.3c1.3-1.9,2.9-3.8,5.3-4.6c1.7-0.5,3.5-0.5,5.1,0c1.4,0.4,2.5,1.2,3.6,2
+                                c5.8,4.9,5.7,12.4,5.3,19.4c-0.5,10.5-0.6,21.2,0,31.6c0.3,5.6,0.9,11.1,1.6,16.8c0.5,4.7,1.1,9.4,3.1,13.7
+                                c0.3,0.6,0.6,1.2,0.9,1.8c0.7,1.2,1.5,2.3,2.4,3.3c2.2-1.8,4.2-3.8,6-6c2.7-3.2,4.9-6.8,6.9-10.4c1.4-2.6,2.6-5.3,3.8-8
+                                c3.3-7.5,6.2-15.2,8.8-22.9c2.8-8.4,5.1-16.9,7.4-25.4c1.6-5.9,3.3-11.9,7.8-16.5c1.7-1.7,3.8-3.1,6.4-3.3c3.4-0.2,6.3,1.9,8,4.5
+                                c1,1.5,1.6,3,1.9,4.7c0.9,4.7-0.9,9.4-2.3,14c-2.9,9.7-3.9,19.7-4.3,29.6c-0.5,12.9,0,25.8,2.5,38.5c1.3,6.3,1,12.6,3.7,18.6
+                                C1735.7,352.9,1736.2,354,1736.8,355.1z"
+                            />
                             <path className="st10" d="M1672.2,259.9c0.1,11.2-0.6,22.4,0,33.6c0.3,6.3,0.9,12.5,1.7,18.8
-                c0.5,3.9,0.9,7.8,1.9,11.6c0.7,2.7,1.7,5.4,3,7.9c2-1.9,3.9-3.9,5.6-6.1c3.1-4.1,5.6-8.7,7.8-13.3c3.2-6.5,6.2-13.2,8.9-20
-                c0.9-12.5-0.5-25.1-4.2-37.1c-1.6-5.3-3.7-10.5-4.9-16c-0.5-2.6-0.9-5.2-1.6-7.7c-0.9-3.5-2.6-6.9-5.7-8.9
-                c-1.4-0.9-3.1-1.4-4.8-1c-2.3,0.6-3.8,2.8-4.9,5c-3.4,7-5.2,14.6-5.7,22.2c0.9,1.3,1.6,2.8,2.1,4.4
-                C1672.1,255.5,1672.2,257.7,1672.2,259.9z" style={{fill: 'rgb(253,222,136)'}}></path>
+                                c0.5,3.9,0.9,7.8,1.9,11.6c0.7,2.7,1.7,5.4,3,7.9c2-1.9,3.9-3.9,5.6-6.1c3.1-4.1,5.6-8.7,7.8-13.3c3.2-6.5,6.2-13.2,8.9-20
+                                c0.9-12.5-0.5-25.1-4.2-37.1c-1.6-5.3-3.7-10.5-4.9-16c-0.5-2.6-0.9-5.2-1.6-7.7c-0.9-3.5-2.6-6.9-5.7-8.9
+                                c-1.4-0.9-3.1-1.4-4.8-1c-2.3,0.6-3.8,2.8-4.9,5c-3.4,7-5.2,14.6-5.7,22.2c0.9,1.3,1.6,2.8,2.1,4.4
+                                C1672.1,255.5,1672.2,257.7,1672.2,259.9z"
+                            />
                         </g>
                     </g>
-                    <g className="pulp"  >
-                        <g className="hEmpty hRoot hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'hidden'}}>
+                    <g className="pulp">
+                        <g className="hEmpty hRoot hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'inherit'}}>
                             <path className="st22 target" d="M1719.1,399.8c-5.9-4.1-13.5-5.7-20.8-4.4c-8.6,1.5-15.8,6.8-19.3,14.1
-                c-2.9-5.3-4.6-11-5.1-16.9c-0.7-7.7,0.8-15.4,0.3-23.1c-0.2-3.3-0.9-6.5-1.7-9.7c0.2-0.1,0.5-0.2,0.7-0.3l0,0
-                c2.2-0.9,4.5-1.6,6.9-2.3c1-0.3,2-0.5,3.1-0.8c6-1.5,12.1-2.3,18.3-2.8c1.2-0.1,2.3-0.2,3.5-0.2c0.9-0.1,1.8-0.1,2.7-0.1
-                c0.6,0,1.2,0,1.8-0.1c0.1,0,0.2,0,0.3,0c0.3,7.2,1,14.4,3.5,21.2c1.6,4.4,3.9,8.5,5.2,13C1719.6,391.5,1719.8,395.7,1719.1,399.8z
-                " style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                c-2.9-5.3-4.6-11-5.1-16.9c-0.7-7.7,0.8-15.4,0.3-23.1c-0.2-3.3-0.9-6.5-1.7-9.7c0.2-0.1,0.5-0.2,0.7-0.3l0,0
+                                c2.2-0.9,4.5-1.6,6.9-2.3c1-0.3,2-0.5,3.1-0.8c6-1.5,12.1-2.3,18.3-2.8c1.2-0.1,2.3-0.2,3.5-0.2c0.9-0.1,1.8-0.1,2.7-0.1
+                                c0.6,0,1.2,0,1.8-0.1c0.1,0,0.2,0,0.3,0c0.3,7.2,1,14.4,3.5,21.2c1.6,4.4,3.9,8.5,5.2,13C1719.6,391.5,1719.8,395.7,1719.1,399.8z" 
+                            />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'hidden'}}>
+                        <g className="hEmpty hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'inherit'}}>
                             <path className="st22 target" d="M1713.2,298c-3.1,17.7-4.2,35.6-3.6,53.5c0,0.6,0,1.2,0.1,1.7c-0.1,0-0.2,0-0.3,0
-                c-0.6,0-1.2,0-1.8,0.1c-0.9,0-1.8,0.1-2.7,0.1c-1.2,0.1-2.3,0.2-3.5,0.2c-6.2,0.5-12.3,1.3-18.3,2.8c-1,0.2-2,0.5-3.1,0.8
-                c-2.3,0.7-4.6,1.4-6.8,2.3l0,0c-0.2,0.1-0.5,0.2-0.7,0.3c-2.1-7.9-5.7-15.5-8.6-23.2c-4.2-11-7.1-22.3-8.5-33.9
-                c-0.1-1.1-0.2-2.1-0.3-3.2c0.6-0.4,1.3-0.9,2-1.3c1.6,14,5.4,27.8,11.6,40.9c1.3,2.7,2.8,5.4,4.8,7.6c0.7-5.9,1.3-11.7,1.9-17.6
-                c0,0,0,0,0,0c0.2-1.8,0.4-3.6,0.5-5.5c1-10.8,1.9-21.5,2.7-32.3c2.5-0.3,5.1-0.4,8-0.4c0.3,0,0.6,0,0.9,0c1,8,2.2,15.9,3.6,23.9v0
-                c0.2,1,0.3,2,0.5,3c1.3,7.7,2.8,15.4,4.3,23.1c0.9-2,1.6-4.2,2.2-6.3c4.1-14,8.6-28,12.8-42.1c1.2,0.1,2.3,0.3,3.5,0.4
-                C1713.9,294.7,1713.5,296.3,1713.2,298z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                c-0.6,0-1.2,0-1.8,0.1c-0.9,0-1.8,0.1-2.7,0.1c-1.2,0.1-2.3,0.2-3.5,0.2c-6.2,0.5-12.3,1.3-18.3,2.8c-1,0.2-2,0.5-3.1,0.8
+                                c-2.3,0.7-4.6,1.4-6.8,2.3l0,0c-0.2,0.1-0.5,0.2-0.7,0.3c-2.1-7.9-5.7-15.5-8.6-23.2c-4.2-11-7.1-22.3-8.5-33.9
+                                c-0.1-1.1-0.2-2.1-0.3-3.2c0.6-0.4,1.3-0.9,2-1.3c1.6,14,5.4,27.8,11.6,40.9c1.3,2.7,2.8,5.4,4.8,7.6c0.7-5.9,1.3-11.7,1.9-17.6
+                                c0,0,0,0,0,0c0.2-1.8,0.4-3.6,0.5-5.5c1-10.8,1.9-21.5,2.7-32.3c2.5-0.3,5.1-0.4,8-0.4c0.3,0,0.6,0,0.9,0c1,8,2.2,15.9,3.6,23.9v0
+                                c0.2,1,0.3,2,0.5,3c1.3,7.7,2.8,15.4,4.3,23.1c0.9-2,1.6-4.2,2.2-6.3c4.1-14,8.6-28,12.8-42.1c1.2,0.1,2.3,0.3,3.5,0.4
+                                C1713.9,294.7,1713.5,296.3,1713.2,298z"
+                            />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'hidden'}}>
+                        <g className="hEmpty hImplant pulpitis-pfilling" dataposition="65" style={{visibility: 'inherit'}}>
                             <path className="st22 target part" d="M1655,299.5c0.6-0.4,1.3-0.9,2-1.3c-1.9-17-0.5-34.2,4.3-50.9C1655.6,264.1,1653.4,281.9,1655,299.5z" style={{fill: 'rgb(254, 246, 249)'}}></path>
                             <path className="st22 target part" d="M1681.6,222c-0.5,21.9-1.4,43.8-2.9,65.6c-0.1,1.2-0.2,2.5-0.3,3.7c2.5-0.3,5.1-0.4,8-0.4
-                c0.3,0,0.6,0,0.9,0c-0.4-3.2-0.8-6.4-1.2-9.6C1683.8,261.6,1682.3,241.8,1681.6,222z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                c0.3,0,0.6,0,0.9,0c-0.4-3.2-0.8-6.4-1.2-9.6C1683.8,261.6,1682.3,241.8,1681.6,222z"
+                            />
                             <path className="st22 target part" d="M1718.7,266.9c-2.8,7.5-4.9,15.1-7.1,22.8c-0.3,1-0.6,1.9-0.9,2.9c1.2,0.1,2.3,0.3,3.5,0.4
-                c3.4-17.1,8.8-33.9,15.9-49.9C1725.5,250.7,1721.7,258.7,1718.7,266.9z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                                c3.4-17.1,8.8-33.9,15.9-49.9C1725.5,250.7,1721.7,258.7,1718.7,266.9z"
+                            />
                         </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'hidden', opacity: 0}}>
+                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="1735.3" cy="237.3" r="8.2"></circle>
                             <circle className="st42" cx="1684.2" cy="215" r="8.2"></circle>
                             <circle className="st42" cx="1665.1" cy="239.6" r="8.2"></circle>
                         </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'hidden', opacity: 0}}>
+                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="1734.2" cy="229.2" r="17.5"></circle>
                             <circle className="st42" cx="1681.8" cy="206.8" r="17.5"></circle>
                             <circle className="st42" cx="1662.3" cy="231.3" r="17.5"></circle>
                         </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'hidden', opacity: 0}}>
+                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'hiinheritdden', opacity: 0}}>
                             <circle className="st42" cx="1664.3" cy="218.8" r="30"></circle>
                             <circle className="st42" cx="1685.5" cy="194.1" r="30"></circle>
                             <circle className="st42" cx="1734.2" cy="215.8" r="30"></circle>
                         </g>
                     </g>
-                    <g className="pin hEmpty hImplant"  style={{visibility: 'hidden', opacity: 0}}>
+                    <g className="pin hEmpty hImplant"  style={{visibility: "inherit", opacity: 0}}>
                         <path className="st56 hIntact" d="M1760 401.5C1759.9 411.9 1756.5 422.2 1750.3 431.2L1717 424.5L1683.4 434.6L1669.2 449.4C1659.2 442.8 1651.1 434.3 1645.6 424.5C1642.3 418.6 1640 412.3 1638.8 405.8C1638.5 401.6 1638.4 396.8 1638.4 391.9V391.7C1638.4 391.3 1638.4 390.8 1638.5 390.4C1638.6 390.2 1638.7 390.1 1638.8 389.9C1639 389.5 1639.1 389.2 1639.3 388.9C1639.5 388.6 1639.7 388.2 1639.8 387.9C1640 387.5 1640.2 387.2 1640.4 386.9C1640.6 386.5 1640.8 386.2 1641 385.9C1641.3 385.4 1641.6 384.9 1641.9 384.5C1642.3 383.9 1642.7 383.2 1643.2 382.6C1645 380.1 1647 377.6 1649.1 375.4C1649.5 375 1649.9 374.5 1650.4 374.1C1650.8 373.7 1651.3 373.3 1651.7 372.9C1652.1 372.5 1652.6 372.1 1653 371.7C1654.3 370.5 1655.8 369.4 1657.2 368.4C1657.7 368 1658.2 367.7 1658.7 367.4C1659.2 367.1 1659.7 366.7 1660.2 366.4C1660.7 366.1 1661.2 365.8 1661.7 365.4C1662.2 365.1 1662.7 364.8 1663.2 364.5C1663.7 364.2 1664.2 363.9 1664.8 363.6C1665.3 363.4 1665.7 363.1 1666.2 362.9C1666.6 362.7 1667.1 362.5 1667.5 362.3C1668 362.1 1668.5 361.8 1669 361.6C1669.4 361.4 1669.8 361.2 1670.2 361C1670.7 360.8 1671.3 360.5 1671.9 360.3C1672 360.3 1672.1 360.2 1672.2 360.2C1672.3 360.1 1672.4 360.1 1672.6 360.1C1672.7 360.1 1672.8 360 1673 360C1673.4 359.9 1673.8 359.7 1674.2 359.6C1674.4 359.5 1674.5 359.5 1674.7 359.4C1675 359.3 1675.3 359.2 1675.5 359.1C1675.8 359 1676.1 358.9 1676.4 358.8C1676.6 358.7 1676.8 358.7 1677 358.6C1677.2 358.5 1677.4 358.5 1677.6 358.4C1677.8 358.3 1678 358.3 1678.3 358.2C1678.7 358.1 1679.2 357.9 1679.6 357.8C1679.8 357.8 1679.9 357.7 1680.1 357.7C1680.6 357.6 1681 357.5 1681.4 357.3C1681.8 357.2 1682.3 357.1 1682.7 357H1682.8C1683.5 356.8 1684.2 356.7 1684.9 356.5C1684.9 356.5 1684.9 356.5 1685 356.5C1685.7 356.3 1686.5 356.2 1687.2 356C1688 355.9 1688.7 355.7 1689.5 355.6C1690.1 355.5 1690.8 355.4 1691.4 355.3C1691.4 355.3 1691.4 355.3 1691.5 355.3C1691.8 355.3 1692.1 355.2 1692.5 355.2H1692.6C1693.1 355.1 1693.6 355.1 1694.1 355C1694.7 354.9 1695.3 354.8 1696 354.8C1696.6 354.7 1697.2 354.7 1697.8 354.6H1697.9C1698.4 354.6 1698.8 354.5 1699.3 354.5C1699.9 354.4 1700.5 354.4 1701.1 354.3C1701.5 354.3 1702 354.2 1702.4 354.2C1702.7 354.2 1703 354.2 1703.3 354.1C1703.7 354.1 1704.1 354.1 1704.6 354C1705.5 353.9 1706.4 353.9 1707.3 353.9C1707.8 353.9 1708.4 353.9 1708.9 353.8C1709.1 353.8 1709.2 353.8 1709.3 353.8C1718.1 353.5 1726.9 353.9 1735.6 354.9C1735.7 355 1735.9 355.1 1736 355.3C1736.1 355.4 1736.1 355.4 1736.2 355.5C1736.3 355.6 1736.3 355.6 1736.4 355.7C1740.3 362.4 1746.4 368.6 1752.1 374.2C1757.4 382.2 1760.1 391.8 1760 401.5Z" style={{visibility: 'inherit'}}></path>
                         <path className="st57" d="M1708.9 426.999L1683.6 434.599L1683.1 435.199C1682.9 415.299 1682.1 370.699 1681.3 331.599C1681.3 330.799 1681.3 329.999 1681.3 329.199C1680.6 292.299 1680 260.999 1680 260.999C1680.1 259.999 1680.9 259.199 1682 259.199C1683 259.199 1683.8 259.899 1683.9 260.899L1691.7 313.199V313.299L1692.1 316.299V316.399L1697.8 353.999C1697.9 354.999 1705 401.299 1708.9 426.999Z"></path>
                     </g>
                     <g className="stump hEmpty hIntact hImplant"  style={{visibility: 'hidden', opacity: 0}}>
                         <path className="st14" d="M1697.8,354c-0.6,0.1-1.2,0.1-1.8,0.2c-0.6,0.1-1.2,0.1-1.9,0.2c-0.5,0.1-1,0.1-1.5,0.2c0,0-0.1,0-0.1,0
-            c-0.3,0-0.6,0.1-1,0.1c0,0,0,0-0.1,0c-0.6,0.1-1.3,0.2-1.9,0.3c-0.8,0.1-1.5,0.3-2.3,0.4c-0.7,0.1-1.5,0.3-2.2,0.5
-            c0,0-0.1,0-0.1,0c-0.7,0.2-1.4,0.3-2.1,0.5c0,0-0.1,0-0.1,0c0,0,0,0,0,0c-0.5,0.1-0.9,0.2-1.3,0.3c-0.5,0.1-0.9,0.2-1.3,0.4
-            c-0.2,0-0.3,0.1-0.5,0.1c-0.4,0.1-0.9,0.2-1.3,0.4c-0.2,0.1-0.4,0.1-0.7,0.2c-0.2,0.1-0.4,0.1-0.6,0.2c-0.2,0.1-0.4,0.1-0.6,0.2
-            c-0.3,0.1-0.6,0.2-0.9,0.3c-0.3,0.1-0.6,0.2-0.8,0.3c0,0,0,0,0,0c-0.2,0.1-0.3,0.1-0.5,0.2c-0.4,0.1-0.8,0.3-1.2,0.4l0,0
-            c-0.1,0-0.2,0.1-0.4,0.1c-0.1,0-0.2,0.1-0.4,0.1c-0.1,0-0.2,0.1-0.3,0.1l8.1-99c0.1-1,0.9-1.8,2-1.8h0c1,0,1.8,0.7,1.9,1.7
-            L1697.8,354z"></path>
+                            c-0.3,0-0.6,0.1-1,0.1c0,0,0,0-0.1,0c-0.6,0.1-1.3,0.2-1.9,0.3c-0.8,0.1-1.5,0.3-2.3,0.4c-0.7,0.1-1.5,0.3-2.2,0.5
+                            c0,0-0.1,0-0.1,0c-0.7,0.2-1.4,0.3-2.1,0.5c0,0-0.1,0-0.1,0c0,0,0,0,0,0c-0.5,0.1-0.9,0.2-1.3,0.3c-0.5,0.1-0.9,0.2-1.3,0.4
+                            c-0.2,0-0.3,0.1-0.5,0.1c-0.4,0.1-0.9,0.2-1.3,0.4c-0.2,0.1-0.4,0.1-0.7,0.2c-0.2,0.1-0.4,0.1-0.6,0.2c-0.2,0.1-0.4,0.1-0.6,0.2
+                            c-0.3,0.1-0.6,0.2-0.9,0.3c-0.3,0.1-0.6,0.2-0.8,0.3c0,0,0,0,0,0c-0.2,0.1-0.3,0.1-0.5,0.2c-0.4,0.1-0.8,0.3-1.2,0.4l0,0
+                            c-0.1,0-0.2,0.1-0.4,0.1c-0.1,0-0.2,0.1-0.4,0.1c-0.1,0-0.2,0.1-0.3,0.1l8.1-99c0.1-1,0.9-1.8,2-1.8h0c1,0,1.8,0.7,1.9,1.7
+                            L1697.8,354z"
+                        />
                         <path className="st15" d="M1760,401.5c-0.1,10.4-3.5,20.7-9.7,29.7l-33.3-6.7l-33.6,10.1l-14.2,14.8c-10-6.6-18.1-15.1-23.6-24.9
-            c-3.3-5.9-5.6-12.2-6.8-18.7c-0.3-4.2-0.4-9-0.4-13.9v-0.2c0-0.4,0-0.9,0.1-1.3c0.1-0.2,0.2-0.3,0.3-0.5c0.2-0.4,0.3-0.7,0.5-1
-            c0.2-0.3,0.4-0.7,0.5-1c0.2-0.4,0.4-0.7,0.6-1c0.2-0.4,0.4-0.7,0.6-1c0.3-0.5,0.6-1,0.9-1.4c0.4-0.6,0.8-1.3,1.3-1.9
-            c1.8-2.5,3.8-5,5.9-7.2c0.4-0.4,0.8-0.9,1.3-1.3c0.4-0.4,0.9-0.8,1.3-1.2c0.4-0.4,0.9-0.8,1.3-1.2c1.3-1.2,2.8-2.3,4.2-3.3
-            c0.5-0.4,1-0.7,1.5-1c0.5-0.3,1-0.7,1.5-1s1-0.6,1.5-1c0,0,0,0,0,0c0.5-0.3,1-0.6,1.5-0.9c0.5-0.3,1-0.6,1.6-0.9
-            c0.5-0.2,0.9-0.5,1.4-0.7c0.4-0.2,0.9-0.4,1.3-0.6c0.5-0.2,1-0.5,1.5-0.7c0.4-0.2,0.8-0.4,1.2-0.6c0.5-0.2,1.1-0.5,1.7-0.7
-            c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.4-0.1c0.1,0,0.2-0.1,0.4-0.1l0,0c0.4-0.1,0.8-0.3,1.2-0.4c0.2-0.1,0.3-0.1,0.5-0.2
-            c0,0,0,0,0,0c0.3-0.1,0.6-0.2,0.8-0.3c0.3-0.1,0.6-0.2,0.9-0.3c0.2-0.1,0.4-0.1,0.6-0.2c0.2-0.1,0.4-0.1,0.6-0.2
-            c0.2-0.1,0.4-0.1,0.7-0.2c0.4-0.1,0.9-0.3,1.3-0.4c0.2,0,0.3-0.1,0.5-0.1c0.5-0.1,0.9-0.2,1.3-0.4c0.4-0.1,0.9-0.2,1.3-0.3
-            c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.7-0.2,1.4-0.3,2.1-0.5c0,0,0,0,0.1,0c0.7-0.2,1.5-0.3,2.2-0.5c0.8-0.1,1.5-0.3,2.3-0.4
-            c0.6-0.1,1.3-0.2,1.9-0.3c0,0,0,0,0.1,0c0.3,0,0.6-0.1,1-0.1c0,0,0.1,0,0.1,0c0.5-0.1,1-0.1,1.5-0.2c0.6-0.1,1.2-0.2,1.9-0.2
-            c0.6-0.1,1.2-0.1,1.8-0.2c0,0,0.1,0,0.1,0c0.5,0,0.9-0.1,1.4-0.1c0.6-0.1,1.2-0.1,1.8-0.2c0.4,0,0.9-0.1,1.3-0.1
-            c0.3,0,0.6,0,0.9-0.1c0.4,0,0.8,0,1.3-0.1c0.9-0.1,1.8-0.1,2.7-0.1c0.5,0,1.1,0,1.6-0.1c0.2,0,0.3,0,0.4,0h0
-            c8.8-0.3,17.6,0.1,26.3,1.1c0.1,0.1,0.3,0.2,0.4,0.4c0.1,0.1,0.1,0.1,0.2,0.2c0.1,0.1,0.1,0.1,0.2,0.2l0,0
-            c3.9,6.7,10,12.9,15.7,18.5C1757.4,382.2,1760.1,391.8,1760,401.5z"></path>
+                            c-3.3-5.9-5.6-12.2-6.8-18.7c-0.3-4.2-0.4-9-0.4-13.9v-0.2c0-0.4,0-0.9,0.1-1.3c0.1-0.2,0.2-0.3,0.3-0.5c0.2-0.4,0.3-0.7,0.5-1
+                            c0.2-0.3,0.4-0.7,0.5-1c0.2-0.4,0.4-0.7,0.6-1c0.2-0.4,0.4-0.7,0.6-1c0.3-0.5,0.6-1,0.9-1.4c0.4-0.6,0.8-1.3,1.3-1.9
+                            c1.8-2.5,3.8-5,5.9-7.2c0.4-0.4,0.8-0.9,1.3-1.3c0.4-0.4,0.9-0.8,1.3-1.2c0.4-0.4,0.9-0.8,1.3-1.2c1.3-1.2,2.8-2.3,4.2-3.3
+                            c0.5-0.4,1-0.7,1.5-1c0.5-0.3,1-0.7,1.5-1s1-0.6,1.5-1c0,0,0,0,0,0c0.5-0.3,1-0.6,1.5-0.9c0.5-0.3,1-0.6,1.6-0.9
+                            c0.5-0.2,0.9-0.5,1.4-0.7c0.4-0.2,0.9-0.4,1.3-0.6c0.5-0.2,1-0.5,1.5-0.7c0.4-0.2,0.8-0.4,1.2-0.6c0.5-0.2,1.1-0.5,1.7-0.7
+                            c0.1,0,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.1,0.4-0.1c0.1,0,0.2-0.1,0.4-0.1l0,0c0.4-0.1,0.8-0.3,1.2-0.4c0.2-0.1,0.3-0.1,0.5-0.2
+                            c0,0,0,0,0,0c0.3-0.1,0.6-0.2,0.8-0.3c0.3-0.1,0.6-0.2,0.9-0.3c0.2-0.1,0.4-0.1,0.6-0.2c0.2-0.1,0.4-0.1,0.6-0.2
+                            c0.2-0.1,0.4-0.1,0.7-0.2c0.4-0.1,0.9-0.3,1.3-0.4c0.2,0,0.3-0.1,0.5-0.1c0.5-0.1,0.9-0.2,1.3-0.4c0.4-0.1,0.9-0.2,1.3-0.3
+                            c0,0,0,0,0,0c0,0,0.1,0,0.1,0c0.7-0.2,1.4-0.3,2.1-0.5c0,0,0,0,0.1,0c0.7-0.2,1.5-0.3,2.2-0.5c0.8-0.1,1.5-0.3,2.3-0.4
+                            c0.6-0.1,1.3-0.2,1.9-0.3c0,0,0,0,0.1,0c0.3,0,0.6-0.1,1-0.1c0,0,0.1,0,0.1,0c0.5-0.1,1-0.1,1.5-0.2c0.6-0.1,1.2-0.2,1.9-0.2
+                            c0.6-0.1,1.2-0.1,1.8-0.2c0,0,0.1,0,0.1,0c0.5,0,0.9-0.1,1.4-0.1c0.6-0.1,1.2-0.1,1.8-0.2c0.4,0,0.9-0.1,1.3-0.1
+                            c0.3,0,0.6,0,0.9-0.1c0.4,0,0.8,0,1.3-0.1c0.9-0.1,1.8-0.1,2.7-0.1c0.5,0,1.1,0,1.6-0.1c0.2,0,0.3,0,0.4,0h0
+                            c8.8-0.3,17.6,0.1,26.3,1.1c0.1,0.1,0.3,0.2,0.4,0.4c0.1,0.1,0.1,0.1,0.2,0.2c0.1,0.1,0.1,0.1,0.2,0.2l0,0
+                            c3.9,6.7,10,12.9,15.7,18.5C1757.4,382.2,1760.1,391.8,1760,401.5z"
+                        />
                     </g>
                     <g className="abutment hEmpty hIntact hRoot"  style={{visibility: 'hidden', opacity: 0}}>
                         <path className="st16" d="M1654.3,370.5c5.6-4.7,12-8.3,18.8-11c9-3.5,18.6-5.1,28.2-5.9c11.1-0.9,23.1-0.2,34.2,1l-32-14.1
@@ -287,23 +622,24 @@ export default function Tooth65({
                     </g>
                     <g className="implant hEmpty hIntact hRoot" style={{visibility: 'hidden'}}>
                         <path className="st18" d="M1661.9,349.9l52.1-7.5c-3.1-15.8-6.9-31.4-11.5-46.9c-4.5-15.1-9.7-30.2-15.6-45c-4.1-3-9.9-4.4-15.6-3.5
-                c-6.4,1-11.9,4.6-14.9,9.4c-0.8,15-0.8,30,0,45C1657.2,317.6,1659.1,333.8,1661.9,349.9z"></path>
+                            c-6.4,1-11.9,4.6-14.9,9.4c-0.8,15-0.8,30,0,45C1657.2,317.6,1659.1,333.8,1661.9,349.9z"></path>
                         <line className="st19" x1="1654.6" y1="333.6" x2="1716.6" y2="333.5"></line>
                         <line className="st19" x1="1651.1" y1="315.6" x2="1713.1" y2="315.5"></line>
                         <line className="st19" x1="1648.8" y1="297.4" x2="1710.9" y2="297.3"></line>
                         <line className="st19" x1="1645.3" y1="279.4" x2="1707.4" y2="279.3"></line>
                         <line className="st19" x1="1641.8" y1="261.3" x2="1703.9" y2="261.3"></line>
                     </g>
-                    <g className="hRoot hImplant hEmpty" style={{visibility: 'hidden'}}>
+                    <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                         <path className="st46" d="M1768.7,393.4c-1.4-4.2-4-7.8-6.8-11.3c-7.8-10-16.4-19.2-25.8-27.7
                 c-0.1,0-0.1-0.1-0.1-0.1c-11.5-1.4-23.1-1.6-34.6-0.7c-9.6,0.8-19.2,2.4-28.2,5.8c-9,3.5-17.2,8.7-23.8,15.6
                 c-4.3,4.5-7.9,9.7-10.7,15.3c0,0.4,0,0.8,0,1.2c-0.2,5.4-0.5,10.7-0.9,16.1c-0.4,5.8-1,11.6-0.9,17.4c0.1,6.8,1.2,13.5,3.2,20
                 c0.8,1.4,1.7,2.8,2.7,4.1c5.8,7.9,14.2,13.3,23.4,16.9c4.2,1.7,8.6,2.9,13,3.8l5.4-1c0.4-1.9,1.3-3.8,2.6-5.3
                 c0.2-0.2,0.4-0.5,0.6-0.7c6.1-6.7,18-7,21.6-15.8c1.3-3.2,1-6.9,0-10.2c-0.7-2.4-1.6-4.7-2.8-6.9l1.9,0.1c0.7,2.7,1.8,5.4,3.1,7.8
                 c1.9,3.6,4.5,6.9,8.1,8.7c5.9,3,12.7,1.4,19.2,1.9c4.1,0.3,8.1,1.5,11.8,3.5l2.1-0.8l2.9-1.1c8.4-9.4,13.4-21.4,14.3-34
-                c0.1-2.1,0.2-4.1,0.2-6.2C1770.2,404.3,1770.5,398.7,1768.7,393.4z"></path>
+                c0.1-2.1,0.2-4.1,0.2-6.2C1770.2,404.3,1770.5,398.7,1768.7,393.4z"
+                        />
                     </g>
-                    <g className="wedge-shaped hRoot hImplant hEmpty" style={{visibility: 'hidden'}} type="" >
+                    <g className="wedge-shaped hRoot hImplant hEmpty" style={{visibility: "inherit"}}>
                         <path className="st7 st59" d="M1761.9 382.099C1764.7 385.599 1767.3 389.199 1768.7 393.399C1770.28 398.038 1770.24 402.906 1770.21 407.735C1770.21 408.424 1770.2 409.113 1770.2 409.799C1770.2 411.809 1770.11 413.727 1770.02 415.729L1770 415.999C1769.1 428.599 1764.1 440.599 1755.7 449.999L1752.8 451.099L1750.7 451.899C1747 449.899 1743 448.699 1738.9 448.399C1736.86 448.242 1734.79 448.292 1732.73 448.342C1728.22 448.45 1723.75 448.558 1719.7 446.499C1716.1 444.699 1713.5 441.399 1711.6 437.799C1710.3 435.399 1709.2 432.699 1708.5 429.999L1706.6 429.899C1707.8 432.099 1708.7 434.399 1709.4 436.799C1710.4 440.099 1710.7 443.799 1709.4 446.999C1707.33 452.068 1702.5 454.317 1697.61 456.593C1694.02 458.269 1690.39 459.959 1687.8 462.799C1687.7 462.899 1687.6 463.024 1687.5 463.149C1687.4 463.274 1687.3 463.399 1687.2 463.499C1685.9 464.999 1685 466.899 1684.6 468.799L1679.2 469.799C1674.8 468.899 1670.4 467.699 1666.2 465.999C1657 462.399 1648.6 456.999 1642.8 449.099C1641.8 447.799 1640.9 446.399 1640.1 444.999C1638.1 438.499 1637 431.799 1636.9 424.999C1636.82 420.488 1637.17 415.977 1637.52 411.466C1637.62 410.177 1637.71 408.888 1637.8 407.599C1638.2 402.199 1638.5 396.899 1638.7 391.499V390.299C1641.5 384.699 1645.1 379.499 1649.4 374.999C1656 368.099 1664.2 362.899 1673.2 359.399C1682.2 355.999 1691.8 354.399 1701.4 353.599C1712.9 352.699 1724.5 352.899 1736 354.299C1736 354.299 1736 354.399 1736.1 354.399C1745.5 362.899 1754.1 372.099 1761.9 382.099ZM1700.89 358.256C1692.66 358.946 1684.44 360.327 1676.73 363.261C1669.02 366.282 1661.99 370.77 1656.34 376.724C1651.54 381.783 1648.18 386.118 1647.24 392.537C1647.05 393.797 1648.19 394.805 1649.44 394.598L1745.57 378.773C1747.09 378.523 1747.77 376.713 1746.77 375.537C1739.56 367.049 1735.18 363.321 1727.92 360.962C1721.37 358.836 1711.9 357.388 1700.89 358.256Z"></path>
                         <path className="st7 target" d="M1676.73 363.261C1684.44 360.327 1692.66 358.946 1700.89 358.256C1711.9 357.388 1721.37 358.836 1727.92 360.962C1735.18 363.321 1739.56 367.049 1746.77 375.537C1747.77 376.713 1747.09 378.523 1745.57 378.773L1649.44 394.598C1648.19 394.805 1647.05 393.797 1647.24 392.537C1648.18 386.118 1651.54 381.783 1656.34 376.724C1661.99 370.77 1669.02 366.282 1676.73 363.261Z" style={{fill: 'rgb(255, 255, 255)', opacity: 0.7}}></path>
                         <path className="st60 target stroke" d="M1676.73 363.261C1684.44 360.327 1692.66 358.946 1700.89 358.256C1711.9 357.388 1721.37 358.836 1727.92 360.962C1735.18 363.321 1739.56 367.049 1746.77 375.537C1747.77 376.713 1747.09 378.523 1745.57 378.773L1649.44 394.598C1648.19 394.805 1647.05 393.797 1647.24 392.537C1648.18 386.118 1651.54 381.783 1656.34 376.724C1661.99 370.77 1669.02 366.282 1676.73 363.261Z" style={{opacity: 0, stroke: 'rgb(156, 156, 156)', strokeWidth: 2}}></path>

@@ -199,17 +199,6 @@ export default function Formula() {
                     <Tooth61 />
                     <Tooth51 />
                     <Tooth11 />
-                    {/* {(teethType === 'child') ? (
-                        <>
-                            <Tooth51 />
-                            <Tooth11 />
-                        </>
-                    ) : (
-                        <>
-                            <Tooth11 />
-                            <Tooth51 />
-                        </>
-                    )} */}
                     <Tooth12 />
                     <Tooth52 />
                     <Tooth13 />
