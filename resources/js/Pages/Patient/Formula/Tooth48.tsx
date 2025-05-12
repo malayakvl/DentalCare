@@ -15,10 +15,11 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    teethTypeSelector,
+    allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage48 from './periodontit48';
-
 
 export default function Tooth48() {
     const dispatch = useDispatch<any>();
@@ -37,6 +38,8 @@ export default function Tooth48() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const teethType = useSelector(teethTypeSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -150,8 +153,16 @@ export default function Tooth48() {
             <g id="48" className="df-tooth-text">
                 <text transform="matrix(1 0 0 1 247.1699 842.0025)" className={`st3 st4 st5 ${toothActive.tooth48.active ? 'num-active' : ''}`}>48</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-48" className={`f-tooth-init ${(teethDiagnozis.tooth48.show && !teethDiagnozis.tooth48.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth48.show) {
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-48').style.visibility = 'inherit'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth48.show && !teethDiagnozis.tooth48.absent && teethType === 'child') {
+                        document.getElementById('TH-48').style.visibility = 'hidden'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('48').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {

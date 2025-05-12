@@ -15,7 +15,9 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    teethTypeSelector,
+    allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage47 from './periodontit47';
 
@@ -38,6 +40,8 @@ export default function Tooth47() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const teethType = useSelector(teethTypeSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -150,15 +154,23 @@ export default function Tooth47() {
             <g id="47" className="df-tooth-text">
                 <text transform="matrix(1 0 0 1 388.1582 842.0025)"  className={`st3 st4 st5 ${toothActive.tooth47.active ? 'num-active' : ''}`}>47</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-47" className={`f-tooth-init ${(teethDiagnozis.tooth47.show && !teethDiagnozis.tooth47.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('48').classList.add('tooth-number-hover')
+                    if (!teethDiagnozis.tooth47.show) {
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-47').style.visibility = 'inherit'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth47.show && !teethDiagnozis.tooth47.absent && teethType === 'child') {
+                        document.getElementById('TH-47').style.visibility = 'hidden'
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('47').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('48').classList.remove('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('47').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(48));
+                    dispatch(setSelectedToothNumber(47));
                     if (toothActive.tooth47.active) {
                         dispatch(setNewToothActive({tooth47: {active: true}}))
                     } else {

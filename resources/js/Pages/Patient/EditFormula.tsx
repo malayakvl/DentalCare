@@ -85,11 +85,22 @@ export default function index({ patientData, treatmentData, clinicData }) {
                     tData[`tooth${i}`].show = true;
                 }
             }
+            for (let i=41; i<= 48; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
             for (let i=21; i<= 28; i++) {
                 if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
                     tData[`tooth${i}`].show = true;
                 }
             }
+            for (let i=31; i<= 38; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            
             for (let i=51; i<= 55; i++) {
                 if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
                     tData[`tooth${i}`].show = false;

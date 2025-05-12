@@ -15,7 +15,9 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    teethTypeSelector,
+    allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage46 from './periodontit46';
 import PeriodontitStage36 from './periodontit36';
@@ -38,6 +40,8 @@ export default function Tooth36() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const teethType = useSelector(teethTypeSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -150,12 +154,12 @@ export default function Tooth36() {
             <g id="36" className="df-tooth-text">
                 <text transform="matrix(1 0 0 1 1514.875 842.0025)" className={`st3 st4 st5 ${toothActive.tooth36.active ? 'num-active' : ''}`}>36</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-36" className={`f-tooth-init ${(teethDiagnozis.tooth36.show && !teethDiagnozis.tooth36.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.add('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('36').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
+                    (!toothActive && !allTeeth) && document.getElementById('36').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
                     dispatch(setSelectedToothNumber(36));

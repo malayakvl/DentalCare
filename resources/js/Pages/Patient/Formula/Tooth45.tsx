@@ -15,7 +15,9 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    teethTypeSelector,
+    allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage45 from './periodontit45';
 
@@ -37,6 +39,8 @@ export default function Tooth45() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const teethType = useSelector(teethTypeSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -150,8 +154,16 @@ export default function Tooth45() {
             <g id="45" className="df-tooth-text">
                 <text transform="matrix(1 0 0 1 659.2891 842.0025)" className={`st3 st4 st5 ${toothActive.tooth45.active ? 'num-active' : ''}`}>45</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-45" className={`f-tooth-init ${(teethDiagnozis.tooth45.show && !teethDiagnozis.tooth45.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth45.show) {
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-45').style.visibility = 'inherit'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth45.show && !teethDiagnozis.tooth45.absent && teethType === 'child') {
+                        document.getElementById('TH-45').style.visibility = 'hidden'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('45').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
