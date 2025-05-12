@@ -149,7 +149,7 @@ export default function Tooth33() {
     }
     return (
         <>
-            <g id="33" className="df-tooth-text">
+            <g id="33" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1204.7012 842.0025)" className={`st3 st4 st5 ${toothActive.tooth33.active ? 'num-active' : ''}`}>33</text>
             </g>
             <g id="TH-33" className={`f-tooth-init ${(teethDiagnozis.tooth33.show && !teethDiagnozis.tooth33.absent)  ? 'f-tooth-active' : ''} ${teethType}`}

@@ -150,7 +150,7 @@ const dispatch = useDispatch<any>();
 
     return (
         <>
-            <g id="35" className="df-tooth-text">
+            <g id="35" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1397.7461 842.0025)" className={`st3 st4 st5 ${toothActive.tooth35.active ? 'num-active' : ''}`}>35</text>
             </g>
             <g id="TH-35" className={`f-tooth-init ${(teethDiagnozis.tooth35.show && !teethDiagnozis.tooth35.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
