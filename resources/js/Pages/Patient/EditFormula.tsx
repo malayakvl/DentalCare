@@ -102,7 +102,6 @@ export default function index({ patientData, treatmentData, clinicData }) {
             }
             dispatch(setToothDiagnoze(tData));
         } else {
-            console.log('===')
             dispatch(showAllAdult(false));
             dispatch(showAllChild(true));
             for (let i=11; i<= 18; i++) {

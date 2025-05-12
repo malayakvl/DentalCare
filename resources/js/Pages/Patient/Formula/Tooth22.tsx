@@ -16,12 +16,13 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     getStatusesSelector,
+    allTeethAdultSelector,
     teethTypeSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage22 from './periodontit22';
+import PeriodontitStage12 from './periodontit12';
 
 
-export default function Tooth22() {
+export default function Tooth12() {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -38,6 +39,7 @@ export default function Tooth22() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -621,7 +623,7 @@ export default function Tooth22() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <PeriodontitStage22 />
+                        {/* <PeriodontitStage22 /> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

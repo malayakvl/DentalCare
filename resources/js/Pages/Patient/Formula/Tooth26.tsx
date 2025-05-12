@@ -1,6 +1,6 @@
 import React from 'react';
+import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, settooth26Active } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -15,10 +15,10 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    allTeethAdultSelector, teethTypeSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage26 from './periodontit26';
-
 
 export default function Tooth26() {
     const dispatch = useDispatch<any>();
@@ -37,6 +37,8 @@ export default function Tooth26() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -149,15 +151,45 @@ export default function Tooth26() {
             <g id="26" className="df-tooth-text" style={{opacity: 1}}>
                 <text transform="matrix(1 0 0 1 1549.5791 716.1968)" className={`st3 st4 st5 ${toothActive.tooth26.active ? 'num-active' : ''}`}>26</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-26" className={`f-tooth-init ${(teethDiagnozis.tooth26.show && !teethDiagnozis.tooth26.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth26.show) {
+                        if (teethType === 'child') {
+                            document.getElementById('TH-26').style.visibility = 'hidden'
+                            document.getElementById('TH-66').style.visibility = 'inherit'
+                        }
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-26').style.visibility = 'inherit'
+                            document.getElementById('TH-66').style.visibility = 'hidden'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth26.show && !teethDiagnozis.tooth26.absent && teethType === 'child') {
+                        document.getElementById('TH-26').style.visibility = 'hidden'
+                        document.getElementById('TH-66').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('16').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
+                    if (teethDiagnozis.tooth66.show && !teethDiagnozis.tooth66.absent && teethType === 'adult') {
+                        document.getElementById('TH-26').style.visibility = 'hidden'
+                        document.getElementById('TH-66').style.visibility = 'inherit'
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('26').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(16));
+                    // effects block
+                    if (teethType === 'adult' && !teethDiagnozis.tooth26.show) {
+                        teethDiagnozis.tooth26.show = true;
+                        teethDiagnozis.tooth66.show = false;
+                    }
+                    if (toothActive.tooth26.active) {
+                        dispatch(setNewToothActive({tooth26: {active: true}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth26: {active: true}}))
+                    }
+
+                    dispatch(setSelectedToothNumber(26));
                     if (toothActive.tooth26.active) {
                         dispatch(setNewToothActive({tooth26: {active: true}}))
                     } else {
@@ -715,6 +747,7 @@ export default function Tooth26() {
                                 c1.3,0.2,2.5,0.5,3.6,0.7c0.1-0.4,0.2-0.9,0.3-1.3C1591.7,304.5,1592.4,293.9,1591.9,283.3z" 
                             />
                         </g>
+                        {/* Отростки пульпита */}
                         <PeriodontitStage26 />
                     </g>
                     {/*PIN*/}

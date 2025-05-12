@@ -1,6 +1,6 @@
 import React from 'react';
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from"react-redux";
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -16,13 +16,13 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     getStatusesSelector,
+    allTeethAdultSelector,
     teethTypeSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage21 from './periodontit21';
+import PeriodontitStage11 from './periodontit11';
 
 
-
-export default function Tooth21() {
+export default function Tooth11() {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -39,7 +39,8 @@ export default function Tooth21() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const teethType = useSelector(teethTypeSelector); 
+    const showStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -647,7 +648,7 @@ export default function Tooth21() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        < PeriodontitStage21 />
+                        {/* < PeriodontitStage21 /> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth21Diagnozis.pin ? 1 : 0
