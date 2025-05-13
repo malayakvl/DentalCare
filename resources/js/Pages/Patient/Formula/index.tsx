@@ -1,15 +1,5 @@
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm } from '@inertiajs/react';
-import React, { useEffect, useState } from 'react';
-import { appLangSelector } from "../../../Redux/Layout/selectors";
-import Lang from "lang.js";
-import lngMaterial from "../../../Lang/Material/translation";
-import InputText from "../../../Components/Form/InputText";
-import InputTreeSelect from "../../../Components/Form/InputTreeSelect";
-import { emptyProducersAutocompleteAction, findProducersAction } from "../../../Redux/Clinic";
-import { useDispatch, useSelector } from "react-redux";
-import { userSearchResultsSelector } from "../../../Redux/Clinic/selectors";
-import InputSelect from "../../../Components/Form/InputSelect";
+import React from 'react';
+import { useSelector } from "react-redux";
 import MaxilaryLeft from "./MaxilaryLeft";
 import MaxilaryRight from "./MaxilaryRight";
 import Bone31 from "./Bone31";
@@ -102,14 +92,18 @@ import Tooth17 from "./Tooth17";
 import Tooth18 from "./Tooth18";
 import {
     getStatusesSelector,
-    getActiveToothNumber
+    getActiveToothNumber,
+    teethTypeSelector,
+    getTeethDiagnozisSelector
 } from "../../../Redux/Formula/selectors";
 import FormulaDiagnozis from "../Partials/FormulaDiagnozis";
 
 export default function Formula() {
     const toothActive = useSelector(getStatusesSelector);
     const activeNumber = useSelector(getActiveToothNumber);
-
+    const teethType = useSelector(teethTypeSelector);
+    const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
+    
     return (
         <>
             <section>
@@ -162,6 +156,7 @@ export default function Formula() {
                     <BoneLL />
                     <BoneRR />
 
+        
                     <Tooth48 />
                     <Tooth47 />
                     <Tooth46 />
@@ -202,8 +197,8 @@ export default function Formula() {
                     <Tooth62 />
                     <Tooth21 />
                     <Tooth61 />
-                    <Tooth11 />
                     <Tooth51 />
+                    <Tooth11 />
                     <Tooth12 />
                     <Tooth52 />
                     <Tooth13 />

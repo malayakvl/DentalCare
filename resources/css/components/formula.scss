@@ -422,9 +422,7 @@
 
     }
 }
-.f-tooth-active {
-    opacity: 1 !important;
-}
+
 .df-tooth-perio {
     opacity: 1;
     // transform: matrix(0.6931834, 0.0974505, -0.0974505, 0.6931834 230 -206) !important;
@@ -504,5 +502,58 @@ stroke-width: 1.0846;
 fill: #e8e8e8;
 
 }
-  
+.f-tooth-active {
+    opacity: 1 !important;
+}
+.active-milk {
+    opacity: 1 !important;
+}
+// .w-adult {
+//     opacity: 1 !important;
 
+//     &:hover {
+//         opacity: 0.4;
+//     }
+// }
+
+.f-tooth-init, .f-tooth-init-milk {
+    opacity: 0;
+}
+.f-tooth-init.child:hover {
+    visibility: hidden;
+
+    // .f-tooth-init-milk {
+    //     opacity: 1 !important; 
+    // }
+}
+.f-tooth-init.child:hover f-tooth-init-milk.child {
+    opacity: 1;
+    // transition: opacity .5s ease-out;
+    // -moz-transition: opacity .5s ease-out;
+    // -webkit-transition: opacity .5s ease-out;
+    // -o-transition: opacity .5s ease-out;
+}
+
+.f-tooth-init.adult:hover {
+    opacity: 1;
+    // transition: opacity .5s ease-out;
+    // -moz-transition: opacity .5s ease-out;
+    // -webkit-transition: opacity .5s ease-out;
+    // -o-transition: opacity .5s ease-out;
+}
+.f-tooth-init-milk.child:hover {
+    opacity: 1;
+    // transition: opacity .5s ease-out;
+    // -moz-transition: opacity .5s ease-out;
+    // -webkit-transition: opacity .5s ease-out;
+    // -o-transition: opacity .5s ease-out;
+}
+.hide-number {
+    display: none;
+}
+.dis-milk:hover {
+    opacity: 0;
+}
+.dis-hover:hover {
+    opacity: 0;
+}

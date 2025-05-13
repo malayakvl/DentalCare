@@ -1,6 +1,6 @@
 import React from 'react';
 import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from"react-redux";
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -15,13 +15,14 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    allTeethAdultSelector,
+    teethTypeSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage21 from './periodontit21';
+import PeriodontitStage11 from './periodontit11';
 
 
-
-export default function Tooth21() {
+export default function Tooth11() {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -38,6 +39,8 @@ export default function Tooth21() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -147,17 +150,47 @@ export default function Tooth21() {
     
     return (
         <>
-            <g id="21" className="df-tooth-text" style={{opacity: 1}}>
+            <g id="21" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1076.7275 716.1968)" className={`st3 st4 st5 ${toothActive.tooth21.active ? 'num-active' : ''}`}>21</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-21" className={`f-tooth-init ${(teethDiagnozis.tooth21.show && !teethDiagnozis.tooth21.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth21.show) {
+                        if (teethType === 'child') {
+                            document.getElementById('TH-21').style.visibility = 'hidden'
+                            document.getElementById('TH-61').style.visibility = 'inherit'
+                        }
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-21').style.visibility = 'inherit'
+                            document.getElementById('TH-61').style.visibility = 'hidden'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth21.show && !teethDiagnozis.tooth21.absent && teethType === 'child') {
+                        document.getElementById('TH-21').style.visibility = 'hidden'
+                        document.getElementById('TH-61').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('21').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
+                    if (teethDiagnozis.tooth61.show && !teethDiagnozis.tooth61.absent && teethType === 'adult') {
+                        document.getElementById('TH-21').style.visibility = 'hidden'
+                        document.getElementById('TH-61').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('21').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    // effects block
+                    if (teethType === 'adult' && !teethDiagnozis.tooth21.show) {
+                        teethDiagnozis.tooth21.show = true;
+                        teethDiagnozis.tooth61.show = false;
+                    }
+                    if (toothActive.tooth21.active) {
+                        dispatch(setNewToothActive({tooth21: {active: true}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth21: {active: true}}))
+                    }
+
                     dispatch(setSelectedToothNumber(21));
                     if (toothActive.tooth21.active) {
                         dispatch(setNewToothActive({tooth21: {active: true}}))
@@ -615,7 +648,7 @@ export default function Tooth21() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        < PeriodontitStage21 />
+                        {/* < PeriodontitStage21 /> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth21Diagnozis.pin ? 1 : 0

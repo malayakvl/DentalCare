@@ -55,7 +55,8 @@ const lngPatient = {
         "depozit": "Зубні відкладення",
         "yasn": "Ясений край",
         "zond": "Глибина зондування",
-        "teeth.status": "Статус зуба"
+        "teeth.status": "Статус зуба",
+        "allteeth": "Всі зуби"
         
     }
 }

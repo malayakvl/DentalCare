@@ -15,12 +15,13 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    allTeethAdultSelector,
+    teethTypeSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage23 from './periodontit23';
+import PeriodontitStage13 from './periodontit13';
 
-
-export default function Tooth23() {
+export default function Tooth13() {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -37,6 +38,8 @@ export default function Tooth23() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
     
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -146,17 +149,47 @@ export default function Tooth23() {
     
     return (
         <>
-            <g id="23" className="df-tooth-text" style={{opacity: 1}}>
+            <g id="23" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1250.251 716.1968)" className={`st3 st4 st5 ${toothActive.tooth23.active ? 'num-active' : ''}`}>23</text>
             </g>
-            <g className={`f-tooth-active`}
+            <g id="TH-23" className={`f-tooth-init ${(teethDiagnozis.tooth23.show && !teethDiagnozis.tooth23.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth23.show) {
+                        if (teethType === 'child') {
+                            document.getElementById('TH-23').style.visibility = 'hidden'
+                            document.getElementById('TH-63').style.visibility = 'inherit'
+                        }
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-23').style.visibility = 'inherit'
+                            document.getElementById('TH-63').style.visibility = 'hidden'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth23.show && !teethDiagnozis.tooth23.absent && teethType === 'child') {
+                        document.getElementById('TH-23').style.visibility = 'hidden'
+                        document.getElementById('TH-63').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('23').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
+                    if (teethDiagnozis.tooth63.show && !teethDiagnozis.tooth63.absent && teethType === 'adult') {
+                        document.getElementById('TH-23').style.visibility = 'hidden'
+                        document.getElementById('TH-63').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('23').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    // effects block
+                    if (teethType === 'adult' && !teethDiagnozis.tooth23.show) {
+                        teethDiagnozis.tooth23.show = true;
+                        teethDiagnozis.tooth63.show = false;
+                    }
+                    if (toothActive.tooth23.active) {
+                        dispatch(setNewToothActive({tooth23: {active: true}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth23: {active: true}}))
+                    }
+
                     dispatch(setSelectedToothNumber(23));
                     if (toothActive.tooth23.active) {
                         dispatch(setNewToothActive({tooth23: {active: true}}))
@@ -615,7 +648,7 @@ export default function Tooth23() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <PeriodontitStage23 />
+                        {/* <PeriodontitStage23 /> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

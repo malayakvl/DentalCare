@@ -15,10 +15,10 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    getStatusesSelector,
+    allTeethAdultSelector, teethTypeSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage24 from './periodontit24';
-
+import PeriodontitStage14 from './periodontit14';
 
 export default function Tooth24() {
     const dispatch = useDispatch<any>();
@@ -37,6 +37,9 @@ export default function Tooth24() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const showStatus = useSelector(allTeethAdultSelector);
+    const teethType = useSelector(teethTypeSelector);
+
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -146,17 +149,47 @@ export default function Tooth24() {
 
     return (
         <>
-            <g id="24" className="df-tooth-text" style={{opacity: 1}}>
+            <g id="24" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1339.1816 716.1968)" className={`st3 st4 st5 ${toothActive.tooth24.active ? 'num-active' : ''}`}>24</text>
             </g>
-            <g  className={`f-tooth-active`}
+            <g id="TH-24" className={`f-tooth-init ${(teethDiagnozis.tooth24.show && !teethDiagnozis.tooth24.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
+                    if (!teethDiagnozis.tooth24.show) {
+                        if (teethType === 'child') {
+                            document.getElementById('TH-24').style.visibility = 'hidden'
+                            document.getElementById('TH-64').style.visibility = 'inherit'
+                        }
+                        if (teethType === 'adult') {
+                            document.getElementById('TH-24').style.visibility = 'inherit'
+                            document.getElementById('TH-64').style.visibility = 'hidden'
+                        }
+                    } 
+                    if (teethDiagnozis.tooth24.show && !teethDiagnozis.tooth24.absent && teethType === 'child') {
+                        document.getElementById('TH-24').style.visibility = 'hidden'
+                        document.getElementById('TH-64').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('24').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
+                    if (teethDiagnozis.tooth64.show && !teethDiagnozis.tooth64.absent && teethType === 'adult') {
+                        document.getElementById('TH-24').style.visibility = 'hidden'
+                        document.getElementById('TH-64').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('24').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    // effects block
+                    if (teethType === 'adult' && !teethDiagnozis.tooth24.show) {
+                        teethDiagnozis.tooth24.show = true;
+                        teethDiagnozis.tooth64.show = false;
+                    }
+                    if (toothActive.tooth24.active) {
+                        dispatch(setNewToothActive({tooth24: {active: true}}))
+                    } else {
+                        dispatch(setDisactiveAll());
+                        dispatch(setNewToothActive({tooth24: {active: true}}))
+                    }
+
                     dispatch(setSelectedToothNumber(24));
                     if (toothActive.tooth24.active) {
                         dispatch(setNewToothActive({tooth24: {active: true}}))
@@ -710,7 +743,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <PeriodontitStage24 />
+                        {/* <PeriodontitStage24 /> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -854,7 +887,6 @@ export default function Tooth24() {
                                 style={{
                                     fill: teethDiagnozis.tooth24.caries_center ? '#606c80' : 
                                     teethDiagnozis.tooth24.seal_center ? teethDiagnozis.tooth24.seal_center_color : 'transparent',
-
                                 }}
                             />
                         </g>
@@ -978,7 +1010,7 @@ export default function Tooth24() {
                         </g>
                     </g>
                     <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
-                    <g className="vinir" 
+                        <g className="vinir" 
                             style={{
                                 visibility: tooth24Diagnozis.vinir ? 'inherit' : 'hidden',
                                 opacity: tooth24Diagnozis.vinir ? 1 : 0
