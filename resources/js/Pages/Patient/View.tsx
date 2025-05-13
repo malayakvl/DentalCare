@@ -103,7 +103,7 @@ export default function index({ patientData }) {
                                                 setStageName(e.target.value)
                                             }}
                                             required
-                                            placeholder='Новий етап'
+                                            placeholder={msg.get('patient.newstage')}
                                             label={null}
                                         /> 
                                     </div>
