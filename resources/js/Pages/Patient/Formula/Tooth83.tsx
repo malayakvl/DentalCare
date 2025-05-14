@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -183,20 +190,16 @@ export default function Tooth83() {
                     (!toothActive && !allTeeth) && document.getElementById('55').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(83));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth43.show) {
+                    dispatch(setChangeDia(Math.random()))
+                    if (teethType === 'child') {
                         teethDiagnozis.tooth43.show = false;
-                        teethDiagnozis.tooth83.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth43.show) {
-                        teethDiagnozis.tooth43.show = false;
-                        teethDiagnozis.tooth83.show = true;
+                        teethDiagnozis.tooth83.show = !teethDiagnozis.tooth83.show;
                     } else {
-                        teethDiagnozis.tooth43.show = true;
                         teethDiagnozis.tooth83.show = false;
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth83.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth83.change_color = !teethDiagnozis.tooth83.change_color;
                         else if (diagnozis === 'fissure')
@@ -327,8 +330,8 @@ export default function Tooth83() {
                                 teethDiagnozis.tooth83.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'hidden', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
@@ -337,7 +340,7 @@ export default function Tooth83() {
                         c0,29-22,50-24,73s23,38,23,94C915.8,1196.9,904.8,1220.9,902.8,1239.9z"
                     />
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 0, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 20, -21)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
                             <path className="st6" d="M836.4,978.6c-2.3,5.4-1.3,11,1.6,16.1c2.4,4.2,6.2,7.9,10.1,11.2
@@ -446,7 +449,7 @@ export default function Tooth83() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 0, -8)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 20, -60)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: "inherit"}}>
                             <path className="st9" d="M903.2,1178.7c-0.4,7.9-0.9,15.9-1.7,23.8c-2.4,22.8-6.7,45.4-9.7,68.2

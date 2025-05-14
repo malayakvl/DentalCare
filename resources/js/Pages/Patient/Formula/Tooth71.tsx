@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -150,7 +157,36 @@ export default function Tooth71() {
 
     return (
         <>
-            <g id="71" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
+            <g id="71" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}
+            onMouseOver={() => {
+                    if (teethType === 'child') {
+                        document.getElementById('TH-71').style.opacity = 1
+                    } else {
+                        if (!teethDiagnozis.tooth71.show) {
+                            document.getElementById('TH-41').style.visibility = 'inherit'
+                            document.getElementById('TH-71').style.visibility = 'hidden'
+                        } else {
+                            document.getElementById('TH-41').style.visibility = 'inherit'
+                            document.getElementById('TH-71').style.visibility = 'hidden'
+                        }
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('72').classList.add('tooth-number-hover')
+                }}
+                onMouseLeave={() => {
+                    if (teethType === 'child' && !teethDiagnozis.tooth71.show) {
+                        document.getElementById('TH-71').style.opacity = 0
+                    }
+                    if (teethDiagnozis.tooth71.show && teethType === 'adult') {
+                        document.getElementById('TH-41').style.visibility = 'hidden'
+                        document.getElementById('TH-71').style.visibility = 'inherit'
+                    }
+                    if (teethDiagnozis.tooth41.show && !teethDiagnozis.tooth41.absent && teethType === 'child') {
+                        document.getElementById('TH-41').style.visibility = 'inherit'
+                        document.getElementById('TH-71').style.visibility = 'hidden'
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('72').classList.remove('tooth-number-hover')
+                }}
+            >
                 <text transform="matrix(1 0 0 1 1061.5439 842.0025)" className="st3 st4 st5">71</text>
             </g>
             <g id="TH-71" className={`f-tooth-init-milk ${(teethDiagnozis.tooth71.show && !teethDiagnozis.tooth71.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
@@ -183,20 +219,16 @@ export default function Tooth71() {
                     (!toothActive && !allTeeth) && document.getElementById('71').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(71));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth41.show) {
+                    dispatch(setChangeDia(Math.random()))
+                    if (teethType === 'child') {
                         teethDiagnozis.tooth41.show = false;
-                        teethDiagnozis.tooth71.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth41.show) {
-                        teethDiagnozis.tooth41.show = false;
-                        teethDiagnozis.tooth71.show = true;
+                        teethDiagnozis.tooth71.show = !teethDiagnozis.tooth71.show;
                     } else {
-                        teethDiagnozis.tooth41.show = true;
                         teethDiagnozis.tooth71.show = false;
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth71.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth71.change_color = !teethDiagnozis.tooth71.change_color;
                         else if (diagnozis === 'fissure')
@@ -327,8 +359,8 @@ export default function Tooth71() {
                                 teethDiagnozis.tooth71.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'hidden', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
@@ -337,7 +369,7 @@ export default function Tooth71() {
                         s18,42,19,66s-21,47-20,93C1049.8,1184.9,1053,1203.9,1053,1203.9z"
                     />
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 27, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 21, -37)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
                             <path className="st6" d="M1108.4,990.6c-1.4,2.6-4.3,4.2-7.3,5.4c-5.5,2.1-11.7,3-17.8,3c-5.2-0.1-10.3-0.8-15.1-2.5
@@ -462,7 +494,7 @@ export default function Tooth71() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 27, -15)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 25, -60)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                             <path className="st9" d="M1107.5,1206.7c-0.2,0.7-0.5,1.4-0.8,2c-2.4,5.6-5.6,10.8-10.8,14.1

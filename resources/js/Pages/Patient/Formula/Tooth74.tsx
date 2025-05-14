@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -150,7 +157,36 @@ export default function Tooth74() {
 
     return (
         <>
-            <g id="74" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
+            <g id="74" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}
+                onMouseOver={() => {
+                    if (teethType === 'child') {
+                        document.getElementById('TH-74').style.opacity = 1
+                    } else {
+                        if (!teethDiagnozis.tooth74.show) {
+                            document.getElementById('TH-44').style.visibility = 'inherit'
+                            document.getElementById('TH-74').style.visibility = 'hidden'
+                        } else {
+                            document.getElementById('TH-44').style.visibility = 'inherit'
+                            document.getElementById('TH-74').style.visibility = 'hidden'
+                        }
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('74').classList.add('tooth-number-hover')
+                }}
+                onMouseLeave={() => {
+                    if (teethType === 'child' && !teethDiagnozis.tooth74.show) {
+                        document.getElementById('TH-74').style.opacity = 0
+                    }
+                    if (teethDiagnozis.tooth74.show && teethType === 'adult') {
+                        document.getElementById('TH-44').style.visibility = 'hidden'
+                        document.getElementById('TH-74').style.visibility = 'inherit'
+                    }
+                    if (teethDiagnozis.tooth44.show && !teethDiagnozis.tooth44.absent && teethType === 'child') {
+                        document.getElementById('TH-44').style.visibility = 'inherit'
+                        document.getElementById('TH-74').style.visibility = 'hidden'
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('74').classList.remove('tooth-number-hover')
+                }}
+            >
                 <text transform="matrix(1 0 0 1 1284.875 842.0025)" className="st3 st4 st5">74</text>
             </g>
             <g id="TH-74" className={`f-tooth-init-milk ${(teethDiagnozis.tooth74.show && !teethDiagnozis.tooth74.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
@@ -183,20 +219,16 @@ export default function Tooth74() {
                     (!toothActive && !allTeeth) && document.getElementById('74').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(74));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth44.show) {
+                    dispatch(setChangeDia(Math.random()))
+                    if (teethType === 'child') {
                         teethDiagnozis.tooth44.show = false;
-                        teethDiagnozis.tooth74.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth44.show) {
-                        teethDiagnozis.tooth44.show = false;
-                        teethDiagnozis.tooth74.show = true;
+                        teethDiagnozis.tooth74.show = !teethDiagnozis.tooth74.show;
                     } else {
-                        teethDiagnozis.tooth44.show = true;
                         teethDiagnozis.tooth74.show = false;
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth74.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth74.change_color = !teethDiagnozis.tooth74.change_color;
                         else if (diagnozis === 'fissure')
@@ -327,8 +359,8 @@ export default function Tooth74() {
                                 teethDiagnozis.tooth74.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'hidden', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
@@ -337,7 +369,7 @@ export default function Tooth74() {
                         c13,36-18,62-14,100S1282,1228.9,1287,1255.9z"
                     />
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -165, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -190, -10)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
                             <path className="st6" d="M1608.9,969.7c2.5,6.3,5.3,12.8,4.1,19.4c-0.9,4.9-4.1,9.4-8.1,13.3
@@ -518,7 +550,7 @@ export default function Tooth74() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -165, -5)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -180, -45)'}}>
                     <g className="dentin" >
                         <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                             <path className="st9" d="M1623,1172.8c0,0.2-0.1,0.4-0.1,0.6c-3.4,4.4-7.3,8.3-11.7,11.6

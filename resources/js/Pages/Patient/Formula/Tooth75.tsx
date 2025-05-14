@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -150,7 +157,36 @@ export default function Tooth75() {
 
     return (
         <>
-            <g id="75" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
+            <g id="75" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}
+                onMouseOver={() => {
+                    if (teethType === 'child') {
+                        document.getElementById('TH-75').style.opacity = 1
+                    } else {
+                        if (!teethDiagnozis.tooth75.show) {
+                            document.getElementById('TH-45').style.visibility = 'inherit'
+                            document.getElementById('TH-75').style.visibility = 'hidden'
+                        } else {
+                            document.getElementById('TH-45').style.visibility = 'inherit'
+                            document.getElementById('TH-75').style.visibility = 'hidden'
+                        }
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('75').classList.add('tooth-number-hover')
+                }}
+                onMouseLeave={() => {
+                    if (teethType === 'child' && !teethDiagnozis.tooth75.show) {
+                        document.getElementById('TH-75').style.opacity = 0
+                    }
+                    if (teethDiagnozis.tooth75.show && teethType === 'adult') {
+                        document.getElementById('TH-45').style.visibility = 'hidden'
+                        document.getElementById('TH-75').style.visibility = 'inherit'
+                    }
+                    if (teethDiagnozis.tooth45.show && !teethDiagnozis.tooth45.absent && teethType === 'child') {
+                        document.getElementById('TH-45').style.visibility = 'inherit'
+                        document.getElementById('TH-75').style.visibility = 'hidden'
+                    }
+                    (!toothActive && !allTeeth) && document.getElementById('75').classList.remove('tooth-number-hover')
+                }}
+            >
                 <text transform="matrix(1 0 0 1 1383.877 842.0025)" className="st3 st4 st5">75</text>
             </g>
             <g id="TH-75" className={`f-tooth-init-milk ${(teethDiagnozis.tooth75.show && !teethDiagnozis.tooth75.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
@@ -183,20 +219,16 @@ export default function Tooth75() {
                     (!toothActive && !allTeeth) && document.getElementById('75').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(75));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth45.show) {
+                    dispatch(setChangeDia(Math.random()))
+                    if (teethType === 'child') {
                         teethDiagnozis.tooth45.show = false;
-                        teethDiagnozis.tooth75.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth45.show) {
-                        teethDiagnozis.tooth45.show = false;
-                        teethDiagnozis.tooth75.show = true;
+                        teethDiagnozis.tooth75.show = !teethDiagnozis.tooth75.show;
                     } else {
-                        teethDiagnozis.tooth45.show = true;
                         teethDiagnozis.tooth75.show = false;
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth75.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth75.change_color = !teethDiagnozis.tooth75.change_color;
                         else if (diagnozis === 'fissure')
@@ -327,8 +359,8 @@ export default function Tooth75() {
                                 teethDiagnozis.tooth75.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'hidden', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
@@ -338,7 +370,7 @@ export default function Tooth75() {
                         C1366.4,1155.9,1382,1191.9,1390,1213.9z"
                     />
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -218, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -245, -10)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
                             <path className="st6" d="M1762.3,962.7c0.6,4,1.5,8,1.7,12.1c0.4,7.6-1.5,15.3-5.5,22.3c-2.9,5-6.8,9.8-12.3,13.3
@@ -523,7 +555,7 @@ export default function Tooth75() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -218, 17)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -230, -25)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                             <path className="st9" d="M1775.1,1133c0,0.6,0,1.2-0.1,1.9c-10.4,10.8-22.8,21.8-35.7,29.7c-0.4,0.2-0.7,0.4-1.1,0.7
