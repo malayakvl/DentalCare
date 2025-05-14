@@ -1,6 +1,13 @@
 import React from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
+import { 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setNewToothActive, 
+    setDisactiveAll, 
+    setSelectedToothNumber,
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -16,7 +23,8 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     getStatusesSelector,
-    allTeethAdultSelector, teethTypeSelector
+    allTeethAdultSelector, 
+    teethTypeSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage28 from './periodontit28';
 
@@ -164,33 +172,19 @@ export default function Tooth28() {
                     (!toothActive && !allTeeth) && document.getElementById('28').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    // if (teethDiagnozis.tooth68.show && !teethDiagnozis.tooth68.absent && teethType === 'adult') {
-                    //     document.getElementById('TH-28').style.visibility = 'hidden'
-                    //     document.getElementById('TH-68').style.visibility = 'inherit'
-                    // }
+                    if (teethDiagnozis.tooth68.show && !teethDiagnozis.tooth68.absent && teethType === 'adult') {
+                        document.getElementById('TH-28').style.visibility = 'hidden'
+                        document.getElementById('TH-68').style.visibility = 'inherit'
+                    }
                     (!toothActive && !allTeeth) && document.getElementById('28').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    // // effects block
-                    // if (teethType === 'adult' && !teethDiagnozis.tooth28.show) {
-                    //     teethDiagnozis.tooth28.show = true;
-                    //     teethDiagnozis.tooth68.show = false;
-                    // }
-                    // if (toothActive.tooth28.active) {
-                    //     dispatch(setNewToothActive({tooth28: {active: true}}))
-                    // } else {
-                    //     dispatch(setDisactiveAll());
-                    //     dispatch(setNewToothActive({tooth28: {active: true}}))
-                    // }
-
+                    teethDiagnozis.tooth28.show = !teethDiagnozis.tooth28.show;
                     dispatch(setSelectedToothNumber(28));
-                    if (toothActive.tooth28.active) {
-                        dispatch(setNewToothActive({tooth28: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth28: {active: true}}))
-                    }
+                    dispatch(setChangeDia(Math.random()));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth28.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth28.change_color = !teethDiagnozis.tooth28.change_color;
                         else if (diagnozis === 'fissure')
@@ -321,8 +315,8 @@ export default function Tooth28() {
                                 teethDiagnozis.tooth28.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>

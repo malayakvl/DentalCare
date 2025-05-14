@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber, setToothDiagnoze } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -183,21 +190,16 @@ export default function Tooth64() {
                    (!toothActive && !allTeeth) && document.getElementById('63').classList.remove('tooth-number-hover')
                 }}
                onClick={() => {
-                    // 
-                    dispatch(setSelectedToothNumber(63));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth64.show) {
-                        teethDiagnozis.tooth64.show = false;
-                        teethDiagnozis.tooth64.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth64.show) {
-                        teethDiagnozis.tooth64.show = false;
-                        teethDiagnozis.tooth64.show = true;
+                    dispatch(setChangeDia(Math.random()))
+                    if (teethType === 'child') {
+                        teethDiagnozis.tooth14.show = false;
+                        teethDiagnozis.tooth64.show = !teethDiagnozis.tooth64.show;
                     } else {
-                        teethDiagnozis.tooth64.show = true;
                         teethDiagnozis.tooth64.show = false;
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth64.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth64.change_color = !teethDiagnozis.tooth64.change_color;
                         else if (diagnozis === 'fissure')
@@ -328,8 +330,8 @@ export default function Tooth64() {
                                 teethDiagnozis.tooth64.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                }}
             >
                 <g className="underlay" style={{visibility: "inherit"}}>

@@ -182,6 +182,7 @@ export default function Tooth17() {
                     dispatch(setChangeDia(Math.random()));
 
                     if (diagnozis) {
+                        teethDiagnozis.tooth17.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth17.change_color = !teethDiagnozis.tooth17.change_color;
                         else if (diagnozis === 'fissure')

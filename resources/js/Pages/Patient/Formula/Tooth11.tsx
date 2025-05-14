@@ -193,6 +193,7 @@ export default function Tooth11() {
                     teethDiagnozis.tooth51.show = false;
 
                     if (diagnozis) {
+                        teethDiagnozis.tooth11.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth11.change_color = !teethDiagnozis.tooth11.change_color;
                         else if (diagnozis === 'fissure')

@@ -191,6 +191,7 @@ export default function Tooth14() {
                     teethDiagnozis.tooth54.show = false;
 
                     if (diagnozis) {
+                        teethDiagnozis.tooth14.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth14.change_color = !teethDiagnozis.tooth14.change_color;
                         else if (diagnozis === 'fissure')

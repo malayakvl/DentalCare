@@ -1,6 +1,13 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber, setToothDiagnoze } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -183,21 +190,16 @@ export default function Tooth62() {
                    (!toothActive && !allTeeth) && document.getElementById('62').classList.remove('tooth-number-hover')
                 }}
                onClick={() => {
-                    // 
-                    dispatch(setSelectedToothNumber(62));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth62.show) {
-                        teethDiagnozis.tooth62.show = false;
-                        teethDiagnozis.tooth62.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth62.show) {
-                        teethDiagnozis.tooth62.show = false;
-                        teethDiagnozis.tooth62.show = true;
+                    dispatch(setChangeDia(Math.random()))
+                    if (teethType === 'child') {
+                        teethDiagnozis.tooth22.show = false;
+                        teethDiagnozis.tooth62.show = !teethDiagnozis.tooth62.show;
                     } else {
-                        teethDiagnozis.tooth62.show = true;
                         teethDiagnozis.tooth62.show = false;
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth62.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth62.change_color = !teethDiagnozis.tooth62.change_color;
                         else if (diagnozis === 'fissure')

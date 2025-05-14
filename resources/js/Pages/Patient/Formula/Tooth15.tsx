@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import { 
     setSubDiagnosis, 
     setToothDiagnoze, 
@@ -7,7 +8,6 @@ import {
     setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
-import { useDispatch, useSelector } from "react-redux";
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -153,7 +153,7 @@ export default function Tooth15() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-console.log('Dia', teethDiagnozis.tooth15.show)
+
     return (
         <>
             <g id="15" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
@@ -191,6 +191,7 @@ console.log('Dia', teethDiagnozis.tooth15.show)
                     teethDiagnozis.tooth55.show = false;
 
                     if (diagnozis) {
+                        teethDiagnozis.tooth15.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth15.change_color = !teethDiagnozis.tooth15.change_color;
                         else if (diagnozis === 'fissure')

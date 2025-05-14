@@ -97,6 +97,7 @@ export default function Tooth55() {
                     }
 
                     if (diagnozis) {
+                        teethDiagnozis.tooth55.show = true;
                         if (diagnozis === 'change_color') 
                             teethDiagnozis.tooth55.change_color = !teethDiagnozis.tooth55.change_color;
                         else if (diagnozis === 'fissure')
