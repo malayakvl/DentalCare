@@ -27,6 +27,7 @@ import {
     setSelectedToothNumber,
     setDeepZondData,
     setPsrChange,
+    setChangeDia,
 
     // 1828
     setPerioZ1828VestData,
@@ -85,6 +86,7 @@ const initialState = {
     active_tooth: '',
     selected_tooth_number: '',
     psrChange: false,
+    changeDia: false,
     teethStatuses: {
         tooth18: {active: false}, 
         tooth17: {active: false}, 
@@ -4556,6 +4558,12 @@ const ACTION_HANDLERS = {
             allTeethChild: action.payload
         })
     },
+    [setChangeDia.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            changeDia: action.payload
+        })
+    },
 }
 
 export {
@@ -4614,6 +4622,7 @@ export {
     setSchema,
     showAllAdult,
     showAllChild,
+    setChangeDia,
 
     checkAction
 }

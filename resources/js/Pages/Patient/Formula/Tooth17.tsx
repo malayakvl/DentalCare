@@ -1,6 +1,14 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setNewToothActive, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber, setTooth17Active } from '../../../Redux/Formula';
+import { 
+    setSubDiagnosis, 
+    setNewToothActive, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber, 
+    setTooth17Active,
+    setChangeDia
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -169,13 +177,10 @@ export default function Tooth17() {
                     (!toothActive && !allTeeth) && document.getElementById('17').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    teethDiagnozis.tooth17.show = !teethDiagnozis.tooth17.show;
                     dispatch(setSelectedToothNumber(17));
-                    if (toothActive.tooth17.active) {
-                        dispatch(setNewToothActive({tooth17: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth17: {active: true}}))
-                    }
+                    dispatch(setChangeDia(Math.random()));
+
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth17.change_color = !teethDiagnozis.tooth17.change_color;
@@ -307,8 +312,8 @@ export default function Tooth17() {
                                 teethDiagnozis.tooth17.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: "inherit"}}>

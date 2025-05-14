@@ -1,5 +1,12 @@
 import React from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
+import { 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setNewToothActive, 
+    setDisactiveAll, 
+    setSelectedToothNumber,
+    setChangeDia 
+} from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
 import {
     allTeethSelector,
@@ -146,7 +153,7 @@ export default function Tooth15() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-
+console.log('Dia', teethDiagnozis.tooth15.show)
     return (
         <>
             <g id="15" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
@@ -178,25 +185,11 @@ export default function Tooth15() {
                     (!toothActive && !allTeeth) && document.getElementById('15').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    // effects block
-                    if (teethType === 'adult' && !teethDiagnozis.tooth15.show) {
-                        teethDiagnozis.tooth15.show = true;
-                        teethDiagnozis.tooth55.show = false;
-                    }
-                    if (toothActive.tooth15.active) {
-                        dispatch(setNewToothActive({tooth15: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth15: {active: true}}))
-                    }
-
                     dispatch(setSelectedToothNumber(15));
-                    if (toothActive.tooth15.active) {
-                        dispatch(setNewToothActive({tooth15: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth15: {active: true}}))
-                    }
+                    dispatch(setChangeDia(Math.random()));
+                    teethDiagnozis.tooth15.show = !teethDiagnozis.tooth15.show;
+                    teethDiagnozis.tooth55.show = false;
+
                     if (diagnozis) {
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth15.change_color = !teethDiagnozis.tooth15.change_color;
@@ -326,8 +319,9 @@ export default function Tooth15() {
                                 teethDiagnozis.tooth15.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
+                        teethDiagnozis.tooth15.show = true;
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>

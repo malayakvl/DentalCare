@@ -153,7 +153,7 @@ export default function Tooth83() {
             <g id="83" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 852.334 842.0025)" className="st3 st4 st5">83</text>
             </g>
-            <g id="TH-85" className={`f-tooth-init-milk ${(teethDiagnozis.tooth83.show && !teethDiagnozis.tooth83.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-83" className={`f-tooth-init-milk ${(teethDiagnozis.tooth83.show && !teethDiagnozis.tooth83.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
                     if (teethType === 'child') {
                         document.getElementById('TH-83').style.opacity = 1

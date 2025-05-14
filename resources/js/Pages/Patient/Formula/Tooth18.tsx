@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setNewToothActive, setSubDiagnosis, setToothDiagnoze, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
+import { 
+    setNewToothActive, 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setDisactiveAll, 
+    setSelectedToothNumber,
+    setChangeDia
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -17,11 +24,13 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    tooth18Selector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage18 from './periodontit18';
 
-export default function Tooth18() {
+
+export default function Tooth18({ changeDia = '' }) {
     const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const allTeeth = useSelector(allTeethSelector);
@@ -41,6 +50,7 @@ export default function Tooth18() {
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
 
+   
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
             if (toothPart === 'bottom') {
@@ -147,10 +157,11 @@ export default function Tooth18() {
         }
     }
 
+    
     return (
         <>
             <g id="18" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 247 717)" className={`st3 st4 st5 ${toothActive.tooth18.active ? 'num-active' : ''}`}>18</text>
+                <text transform="matrix(1 0 0 1 247 717)" className={`st3 st4 st5 ${toothActive.tooth18.show ? 'num-active' : ''}`}>18</text>
             </g>
             <g id="TH-18" className={`f-tooth-init ${(teethDiagnozis.tooth18.show && !teethDiagnozis.tooth18.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -168,14 +179,12 @@ export default function Tooth18() {
                     (!toothActive && !allTeeth) && document.getElementById('18').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
+                    teethDiagnozis.tooth18.show = !teethDiagnozis.tooth18.show;
                     dispatch(setSelectedToothNumber(18));
-                    if (toothActive.tooth18.active) {
-                        dispatch(setNewToothActive({tooth18: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth18: {active: true}}))
-                    }
+                    dispatch(setChangeDia(Math.random()));
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth18.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth18.change_color = !teethDiagnozis.tooth18.change_color;
                         else if (diagnozis === 'fissure')
@@ -306,8 +315,8 @@ export default function Tooth18() {
                                 teethDiagnozis.tooth18.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
