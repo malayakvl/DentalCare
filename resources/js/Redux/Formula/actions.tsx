@@ -72,3 +72,5 @@ export const showAllAdult = createAction('formula/SHOW_ALL_ADULT');
 export const showAllChild = createAction('formula/SHOW_ALL_CHILD');
 
 export const checkAction = createAction('formula/CHECK_VALUES');
+
+export const setChangeDia = createAction('formula/CHANGE_DIA');

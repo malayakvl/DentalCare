@@ -289,10 +289,8 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'absent' ? 'active' : ''}`}
                                                             onClick={() => {
-                                                                // dispatch(setDiagnosis(diagnozis === 'absent' ? '' : 'absent'));
                                                                 // нажали показать все и вибран тип постоянние
                                                                 showAllTeeth()
-                                                                // dispatch(setSubDiagnosis(''))
                                                             }}>
                                                             {msgFormula.get('formula.allteeth')}
                                                         </span>

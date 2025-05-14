@@ -1,6 +1,13 @@
 import React from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from"react-redux";
+import { 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setNewToothActive, 
+    setDisactiveAll, 
+    setSelectedToothNumber,
+    setChangeDia
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -180,21 +187,13 @@ export default function Tooth11() {
                     }
                 }}
                 onClick={() => {
-                    // effects block
-                    if (teethType === 'adult' && !teethDiagnozis.tooth11.show) {
-                        teethDiagnozis.tooth11.show = true;
-                        teethDiagnozis.tooth51.show = false;
-                    }
-                    if (toothActive.tooth11.active) {
-                        dispatch(setNewToothActive({tooth11: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth11: {active: true}}))
-                    }
-
                     dispatch(setSelectedToothNumber(11));
+                    dispatch(setChangeDia(Math.random()));
+                    teethDiagnozis.tooth11.show = !teethDiagnozis.tooth11.show;
+                    teethDiagnozis.tooth51.show = false;
 
                     if (diagnozis) {
+                        teethDiagnozis.tooth11.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth11.change_color = !teethDiagnozis.tooth11.change_color;
                         else if (diagnozis === 'fissure')
@@ -325,8 +324,8 @@ export default function Tooth11() {
                                 teethDiagnozis.tooth11.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis));
                 }}
             >
                 <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>

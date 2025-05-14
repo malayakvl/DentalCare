@@ -1,6 +1,13 @@
 import React from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
+import { 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setNewToothActive, 
+    setDisactiveAll, 
+    setSelectedToothNumber,
+    setChangeDia
+ } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -16,7 +23,8 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     getStatusesSelector,
-    allTeethAdultSelector, teethTypeSelector
+    allTeethAdultSelector, 
+    teethTypeSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage14 from './periodontit14';
 
@@ -177,26 +185,13 @@ export default function Tooth14() {
                     }
                 }}
                 onClick={() => {
-                    // effects block
-                    if (teethType === 'adult' && !teethDiagnozis.tooth14.show) {
-                        teethDiagnozis.tooth14.show = true;
-                        teethDiagnozis.tooth54.show = false;
-                    }
-                    if (toothActive.tooth14.active) {
-                        dispatch(setNewToothActive({tooth14: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth14: {active: true}}))
-                    }
-
                     dispatch(setSelectedToothNumber(14));
-                    if (toothActive.tooth14.active) {
-                        dispatch(setNewToothActive({tooth14: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth14: {active: true}}))
-                    }
+                    dispatch(setChangeDia(Math.random()));
+                    teethDiagnozis.tooth14.show = !teethDiagnozis.tooth14.show;
+                    teethDiagnozis.tooth54.show = false;
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth14.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth14.change_color = !teethDiagnozis.tooth14.change_color;
                         else if (diagnozis === 'fissure')
@@ -327,8 +322,9 @@ export default function Tooth14() {
                                 teethDiagnozis.tooth14.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
+                        teethDiagnozis.tooth14.show = true;
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>

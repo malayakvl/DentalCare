@@ -1,6 +1,13 @@
 import React from 'react';
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import { useDispatch, useSelector } from "react-redux";
+import { 
+    setSubDiagnosis, 
+    setToothDiagnoze, 
+    setNewToothActive, 
+    setDisactiveAll, 
+    setSelectedToothNumber,
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -179,26 +186,13 @@ export default function Tooth12() {
                     (!toothActive && !allTeeth) && document.getElementById('22').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => {
-                    // effects block
-                    if (teethType === 'adult' && !teethDiagnozis.tooth21.show) {
-                        teethDiagnozis.tooth22.show = true;
-                        teethDiagnozis.tooth62.show = false;
-                    }
-                    if (toothActive.tooth22.active) {
-                        dispatch(setNewToothActive({tooth22: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth22: {active: true}}))
-                    }
-
                     dispatch(setSelectedToothNumber(22));
-                    if (toothActive.tooth22.active) {
-                        dispatch(setNewToothActive({tooth22: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth22: {active: true}}))
-                    }
+                    dispatch(setChangeDia(Math.random()));
+                    teethDiagnozis.tooth22.show = !teethDiagnozis.tooth22.show;
+                    teethDiagnozis.tooth62.show = false;
+
                     if (diagnozis) {
+                        teethDiagnozis.tooth22.show = true;
                         if (diagnozis === 'change_color')
                             teethDiagnozis.tooth22.change_color = !teethDiagnozis.tooth22.change_color;
                         else if (diagnozis === 'fissure')
@@ -329,8 +323,8 @@ export default function Tooth12() {
                                 teethDiagnozis.tooth22.active = true;
                             }
                         }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis));
                 }}
             >
                 <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>

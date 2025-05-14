@@ -152,7 +152,7 @@ export default function Tooth32() {
             <g id="32" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1124.4463 842.0025)" className={`st3 st4 st5 ${toothActive.tooth32.active ? 'num-active' : ''}`}>32</text>
             </g>
-            <g id="TH-31" className={`f-tooth-init ${(teethDiagnozis.tooth32.show && !teethDiagnozis.tooth32.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-32" className={`f-tooth-init ${(teethDiagnozis.tooth32.show && !teethDiagnozis.tooth32.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
                     if (!teethDiagnozis.tooth32.show) {
                         if (teethType === 'adult') {

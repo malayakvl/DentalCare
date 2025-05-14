@@ -1,6 +1,10 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSelectedToothNumber, setToothDiagnoze } from '../../../Redux/Formula';
+import { 
+    setSelectedToothNumber, 
+    setToothDiagnoze, 
+    setChangeDia 
+} from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
@@ -77,17 +81,13 @@ export default function Tooth51() {
                    (!toothActive && !allTeeth) && document.getElementById('51').classList.remove('tooth-number-hover')
                 }}
                onClick={() => {
-                    // 
                     dispatch(setSelectedToothNumber(51));
-                    // effects block
-                    if (teethType === 'child' && teethDiagnozis.tooth11.show) {
+                    dispatch(setChangeDia(Math.random()));
+
+                    if (teethType === 'child') {
                         teethDiagnozis.tooth11.show = false;
-                        teethDiagnozis.tooth51.show = true;
-                    } else if (teethType === 'child' && !teethDiagnozis.tooth11.show) {
-                        teethDiagnozis.tooth11.show = false;
-                        teethDiagnozis.tooth51.show = true;
+                        teethDiagnozis.tooth51.show = !teethDiagnozis.tooth51.show;
                     } else {
-                        teethDiagnozis.tooth11.show = true;
                         teethDiagnozis.tooth51.show = false;
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis));

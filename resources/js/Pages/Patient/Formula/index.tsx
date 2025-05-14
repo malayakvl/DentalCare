@@ -94,7 +94,8 @@ import {
     getStatusesSelector,
     getActiveToothNumber,
     teethTypeSelector,
-    getTeethDiagnozisSelector
+    getTeethDiagnozisSelector,
+    changeDiaSelector
 } from "../../../Redux/Formula/selectors";
 import FormulaDiagnozis from "../Partials/FormulaDiagnozis";
 
@@ -103,6 +104,7 @@ export default function Formula() {
     const activeNumber = useSelector(getActiveToothNumber);
     const teethType = useSelector(teethTypeSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
+    const changeDia = useSelector(changeDiaSelector);
     
     return (
         <>
