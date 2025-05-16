@@ -191,7 +191,18 @@ export default function Tooth14() {
                     dispatch(setChangeDia(Math.random()));
 
                     if (diagnozis) {
-                        const tDiaData = setupDiagnoze(14, diagnozis, subDiagnozis, teethDiagnozis);
+                        const tDiaData = setupDiagnoze(
+                            14,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor
+                        );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis))
@@ -725,8 +736,7 @@ export default function Tooth14() {
                             423.998C702.186 424.786 701.933 425.559 701.648 426.3C701.298 427.334 700.941 428.365 700.585 429.395ZM712.15 421.695C711.702 
                             422.954 712.558 424.318 713.889 424.43L765.544 428.775C766.879 428.887 767.953 427.678 767.629 426.379C767.466 425.725 767.288 
                             425.074 767.09 424.427C766.491 422.429 765.667 420.43 764.694 418.58C761.998 413.472 758.104 408.957 753.535 405.181C750.839 402.961 
-                            747.769 400.888 744.324 399.852C742.077 399.185 739.681 398.889 737.284 399.037C728.372 399.482 720.659 404.663 716.24 411.991C714.
-                            603 414.736 713.565 417.681 712.522 420.641C712.398 420.993 712.274 421.344 712.15 421.695Z"
+                            747.769 400.888 744.324 399.852C742.077 399.185 739.681 398.889 737.284 399.037C728.372 399.482 720.659 404.663 716.24 411.991C714.603 414.736 713.565 417.681 712.522 420.641C712.398 420.993 712.274 421.344 712.15 421.695Z"
                         />
                         <path className={`st7 ${tooth14Diagnozis?.cervical_caries ? 'cervical-caries' : ''}`}  
                             d="M713.671 424.43C712.339 424.318 711.483 422.954 711.931 421.695C713.109 418.382 714.19 415.062 716.022 

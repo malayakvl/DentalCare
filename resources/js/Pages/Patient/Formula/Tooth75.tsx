@@ -555,7 +555,7 @@ export default function Tooth75() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -230, -25)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -225, -30)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                             <path className="st9" d="M1775.1,1133c0,0.6,0,1.2-0.1,1.9c-10.4,10.8-22.8,21.8-35.7,29.7c-0.4,0.2-0.7,0.4-1.1,0.7
@@ -576,7 +576,7 @@ export default function Tooth75() {
                         </g>
                     </g>
                     <g className="pulp">
-                        <g className="hEmpty hRoot hImplant pulpitis-pfilling" dataposition="75" style={{visibility: 'inherit'}}>
+                        <g className="pulpitis-pfilling" dataposition="75" style={{visibility: 'inherit'}}>
                             <path className="st22 target" d="M1739.3,1164.6c-0.4,0.2-0.7,0.4-1.1,0.7c-0.9,0.5-1.8,1.1-2.7,1.6
                                 c-0.1,0-0.1,0.1-0.2,0.1c-0.8,0.5-1.7,0.9-2.5,1.4c-0.1,0.1-0.3,0.2-0.4,0.2c-0.8,0.4-1.6,0.8-2.4,1.2c-0.7,0.4-1.4,0.7-2.2,1.1
                                 c-0.1,0-0.2,0.1-0.2,0.1c-0.4,0.2-0.8,0.4-1.3,0.6c-0.7,0.3-1.4,0.7-2.2,1c-0.8,0.4-1.7,0.8-2.5,1.1c-0.5,0.2-1,0.4-1.5,0.7
@@ -586,7 +586,7 @@ export default function Tooth75() {
                                 c7.5-2.2,13.8-6.8,17.6-12.9c3.5,3.3,6.1,7.2,7.8,11.5c1.7,4.5,2.3,9.3,3.8,13.9C1733.3,1155.4,1736,1160.1,1739.3,1164.6z"
                             />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling" dataposition="75" style={{visibility: 'inherit'}}>
+                        <g className="pulpitis-pfilling" dataposition="75" style={{visibility: 'inherit'}}>
                             <path className="st22 target" d="M1775.2,1211.5c-1.1,0.5-2.3,1-3.5,1.6c-4.8-7.3-10.3-14.3-16.9-20.5
                                 c-13-12.4-32.4-19.3-45.1-8.8c-5.5,4.6-7.3,11.3-8.2,17.8c-1.2,9.5-0.9,18.9,0.6,28.1c-1.4,0-2.8-0.1-4.2-0.2
                                 c-1.6-7.8-2.5-15.7-3.3-23.6c-0.8-7.8-1.4-15.7-3-23.3c2.1-0.3,4.1-0.6,6.2-1.1c0.9-0.2,1.9-0.4,2.8-0.6c0.3-0.1,0.7-0.2,1-0.2

@@ -27,6 +27,7 @@ import {
     teethTypeSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage13 from './periodontit13';
+import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth13() {
     const dispatch = useDispatch<any>();
@@ -190,7 +191,18 @@ export default function Tooth13() {
                     dispatch(setChangeDia(Math.random()));
 
                     if (diagnozis) {
-                        const tDiaData = setupDiagnoze(23, diagnozis, subDiagnozis, teethDiagnozis);
+                        const tDiaData = setupDiagnoze(
+                            23,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor
+                        );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis))

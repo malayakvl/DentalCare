@@ -27,7 +27,7 @@ import {
     allTeethAdultSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage41 from './periodontit41';
-
+import setupDiagnoze from "../../../lib/tfunctions";
 
 
 export default function Tooth41() {
@@ -183,7 +183,18 @@ export default function Tooth41() {
                     dispatch(setChangeDia(Math.random()));
 
                     if (diagnozis) {
-                        const tDiaData = setupDiagnoze(41, diagnozis, subDiagnozis, teethDiagnozis);
+                        const tDiaData = setupDiagnoze(
+                            41,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor
+                        );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis))
@@ -213,7 +224,8 @@ export default function Tooth41() {
                     </g>
                     <g className="pulp">
                         <g style={{visibility: tooth41Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M1008.17 985.526C1008.17 985.127 1007.75 984.098 1009.76 981.942C1011.26 980.569 1011.78 978.147 1013.7 978.109C1015.77 978.069 1016.34 980.259 1017.68 981.718C1019.28 983.469 1019.51 984.753 1019.32 985.526C1018.92 987.118 1017.82 987.148 1013.7 987.173C1009.58 987.198 1008.17 985.924 1008.17 985.526Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M1008.17 985.526C1008.17 985.127 1007.75 984.098 1009.76 981.942C1011.26 980.569 1011.78 978.147 1013.7 978.109C1015.77 978.069 1016.34 980.259 1017.68 981.718C1019.28 983.469 1019.51 984.753 1019.32 985.526C1018.92 987.118 1017.82 987.148 1013.7 987.173C1009.58 987.198 1008.17 985.924 1008.17 985.526Z"
+                             style={{fill: 'rgb(254, 246, 249)'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

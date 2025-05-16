@@ -1,6 +1,21 @@
-import {setSubDiagnosis} from "../Redux/Formula";
+// import { setSubDiagnosis } from "../Redux/Formula";
+// import {useDispatch, useSelector} from "react-redux";
+// import {
+//     getCeramicCrownColorSelector,
+//     getCeramicMCrownColorSelector,
+//     getMetalicCrownColorSelector,
+//     getVinirColorSelector,
+//     getZirconiaCrownColorSelector
+// } from "../Redux/Formula/selectors";
 
-export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiagnoze) {
+export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiagnoze, dispatch, vinirColor, ceramicCrownColor, mceramicCrownColor, metalicCrownColor, zirconiaCrownColor) {
+    // const dispatch  = useDispatch();
+    // const vinirColor = useSelector(getVinirColorSelector);
+    // const ceramicCrownColor = useSelector(getCeramicCrownColorSelector);
+    // const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
+    // const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
+    // const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+
 
     teethdiagnoze[`tooth${toothNum}`].show = true;
 

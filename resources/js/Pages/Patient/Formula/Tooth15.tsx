@@ -191,7 +191,18 @@ export default function Tooth15() {
                     dispatch(setChangeDia(Math.random()));
 
                     if (diagnozis) {
-                        const tDiaData = setupDiagnoze(15, diagnozis, subDiagnozis, teethDiagnozis);
+                        const tDiaData = setupDiagnoze(
+                            15,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor
+                        );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis))
@@ -226,7 +237,9 @@ export default function Tooth15() {
                     </g>
                     <g className="pulp" style={{visibility: tooth15Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth15Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M643 593.5C643 600.956 647.5 609 651.5 609C655.5 609 660 601.456 660 594C660 586.544 655 582 651.5 582C648.5 582 643 586.044 643 593.5Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M643 593.5C643 600.956 647.5 609 651.5 609C655.5 609 660 601.456 660 594C660 586.544 655 582 651.5 582C648.5 582 
+                                643 586.044 643 593.5Z" style={{fill: 'rgb(254, 246, 249)'}}
+                            />
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

@@ -100,7 +100,18 @@ export default function Tooth55() {
 
                     if (diagnozis) {
                         teethDiagnozis.tooth55.show = true;
-                        const tDiaData = setupDiagnoze(55, diagnozis, subDiagnozis, teethDiagnozis);
+                        const tDiaData = setupDiagnoze(
+                            55,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor
+                        );
 
                     //     if (diagnozis === 'change_color') 
                     //         teethDiagnozis.tooth55.change_color = !teethDiagnozis.tooth55.change_color;

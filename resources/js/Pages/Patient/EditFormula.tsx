@@ -287,7 +287,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                     <div className={`clearfix`} />
                                                     <li>
                                                         <span
-                                                            className={`diagnoze-title ${diagnozis === 'absent' ? 'active' : ''}`}
+                                                            className={`diagnoze-title`}
                                                             onClick={() => {
                                                                 // нажали показать все и вибран тип постоянние
                                                                 showAllTeeth()
