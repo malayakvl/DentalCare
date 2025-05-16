@@ -158,7 +158,7 @@ export default function tooth65() {
     return (
         <>
             <g id="65" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1435.5684 716.1968)" className={`st3 st4 st5 ${toothActive.tooth65.active ? 'num-active' : ''}`}>65</text>
+                <text transform="matrix(1 0 0 1 1425 716)" className={`st3 st4 st5 ${toothActive.tooth65.active ? 'num-active' : ''}`}>65</text>
             </g>
             <g id="TH-65" className={`f-tooth-init-milk ${(teethDiagnozis.tooth65.show && !teethDiagnozis.tooth65.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -340,7 +340,7 @@ export default function tooth65() {
                         c-3-40-17-52-16-74c1.3-28,15-31,15-59c0-14-4-44-6-59s-9-57-10-68s-4-67-5-80s0-32-16-34S1429,238.9,1426,248.9z"
                     />
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55,  -212, 31)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55,  -222, 31)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: "inherit"}}>
                             <path className="st24" d="M1762.6,607c-1-3.9-3.3-7.6-4.4-11.5c-2.8-9.6,1.1-20.5-5.2-29.3
@@ -510,7 +510,7 @@ export default function tooth65() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -212, 99)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -224, 121)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: "inherit"}}>
                             <path className="st9" d="M1760.3,401.5c-0.1,10.4-3.5,20.7-9.7,29.7l-33.3-6.7l-33.6,10.1l-14.2,14.8

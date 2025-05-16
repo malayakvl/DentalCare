@@ -158,7 +158,7 @@ export default function Tooth64() {
     return (
         <>
             <g id="64" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1339.5791 716.1968)" className={`st3 st4 st5 ${toothActive.tooth64.active ? 'num-active' : ''}`}>64</text>
+                <text transform="matrix(1 0 0 1 1340 716)" className={`st3 st4 st5 ${toothActive.tooth64.active ? 'num-active' : ''}`}>64</text>
             </g>
             <g id="TH-64" className={`f-tooth-init-milk ${(teethDiagnozis.tooth64.show && !teethDiagnozis.tooth64.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -339,7 +339,7 @@ export default function Tooth64() {
                     c-4.9,9.2-9.7,21.9-8.8,37.5c0.8,15.5-1.2,89.5,6.8,116.5c6.6,22.1,19,27,33,27s41-1,43-37s5-94,3-114s-19-40-20-54s20-41,20-71
                     s-6-41-4-74s3-63,4-91s-2-57-8-65s-21-9-35-4C1349,226.9,1343,229.9,1339,261.9z"></path>
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55,  -165, 31)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55,  -170, 31)'}}>
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: "inherit"}}>
                             <path className="st24" d="M1636,607.2c-1.5-3.5-3.3-6.9-4.8-10.3c-3.9-8.9-6.2-18.9-11.7-27.4

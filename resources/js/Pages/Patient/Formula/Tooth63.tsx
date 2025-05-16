@@ -158,7 +158,7 @@ export default function Tooth63() {
     return (
         <>
             <g id="63" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1250.251 716.1968)" className="st3 st4 st5">63</text>
+                <text transform="matrix(1 0 0 1 1250 716)" className="st3 st4 st5">63</text>
             </g>
             <g id="TH-63" className={`f-tooth-init-milk ${(teethDiagnozis.tooth63.show && !teethDiagnozis.tooth63.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -341,7 +341,7 @@ export default function Tooth63() {
                         c-3-38-9-52-19-56C1294.2,187.8,1286.2,200.3,1281.4,213.1z"
                     />
                 </g>
-                <g className="top-view"  style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 24, 17)'}}>
+                <g className="top-view"  style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 19, 26)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth63Diagnozis.culttab && !tooth63Diagnozis.implant && !tooth63Diagnozis.shaper ? 'inherit' : 'hidden'}}>

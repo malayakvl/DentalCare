@@ -158,7 +158,7 @@ export default function Tooth62() {
     return (
         <>
             <g id="62" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1176.7275 716.1968)" className={`st3 st4 st5 ${toothActive.tooth62.active ? 'num-active' : ''}`}>62</text>
+                <text transform="matrix(1 0 0 1 1170 716)" className={`st3 st4 st5 ${toothActive.tooth62.active ? 'num-active' : ''}`}>62</text>
             </g>
             <g id="TH-62" className={`f-tooth-init-milk ${(teethDiagnozis.tooth62.show && !teethDiagnozis.tooth62.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -339,7 +339,7 @@ export default function Tooth62() {
                         s-4.5,36.3-5.7,54.6c-1.2,18,2,102.9,7.7,120.4c5,15.3,17,24,32,23s30-6,32-32s-2-102-1-114s-17.1-30.8-16-50c1-18,16-34,17-72
                         c0.9-34.1,7.1-74,8-92c1-20,1-40,1-52c0-12,1-38-7-50s-26-8-32,1S1181,302.9,1181,302.9z"></path>
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 24, 17)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 14, 10)'}}>
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth62Diagnozis.culttab && !tooth62Diagnozis.implant && !tooth62Diagnozis.shaper ? 'inherit' : 'hidden'}}>

@@ -189,6 +189,7 @@ export default function Tooth15() {
                     teethDiagnozis.tooth15.show = !teethDiagnozis.tooth15.show;
                     dispatch(setSelectedToothNumber(15));
                     dispatch(setChangeDia(Math.random()));
+                    console.log('click 15')
 
                     if (diagnozis) {
                         const tDiaData = setupDiagnoze(

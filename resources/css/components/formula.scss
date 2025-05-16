@@ -557,3 +557,25 @@ fill: #e8e8e8;
 .dis-hover:hover {
     opacity: 0;
 }
+.hover-hide {
+    opacity: 0 !important;
+}
+.hover-show {
+    opacity: 1 !important;
+    visibility: inherit !important;
+}
+.f-tooth-active {
+    visibility: inherit !important;
+}
+.underlay {
+    fill: rgb(169, 19, 102, 0.5);
+    fill: rgb(100, 11, 11, 0.5);
+    stroke: rgb(141, 13, 13, 0.5);
+    stroke-width:   1;
+}
+.underlay .st40 {
+    opacity: 0.5;
+    fill: rgb(100, 11, 11, 0.5);
+    stroke: rgb(141, 13, 13, 0.5);
+    stroke-width:   1;
+}

@@ -304,12 +304,6 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                             }}>
                                                             {msgFormula.get('formula.absent.tooth')}
                                                         </span>
-                                                        {/* <span
-                                                            className={`diagnoze-title flex-initial cursor-pointer`}
-                                                            onClick={() => console.log(1)}
-                                                        >
-                                                            {msgFormula.get('formula.absent.tooth')}
-                                                        </span> */}
                                                     </li>
                                                     <li>
                                                         <span
@@ -1273,7 +1267,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </div>
                                                     </li>
                                                     {/* ШТИФТ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'pin' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1284,7 +1278,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* КУЛЬТОВА НАКЛАДКА */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'culttab' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1295,7 +1289,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* АБАТМЕНТ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'abutment' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1306,7 +1300,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* ФОРМУВАЧ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'shaper' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1317,7 +1311,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* ІМПЛАНТ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'implant' ? 'active' : ''}`}
                                                             onClick={() =>{

@@ -187,7 +187,7 @@ export default function Tooth72() {
                     (!toothActive && !allTeeth) && document.getElementById('72').classList.remove('tooth-number-hover')
                 }}
             >
-                <text transform="matrix(1 0 0 1 1124.4463 842.0025)" className="st3 st4 st5">72</text>
+                <text transform="matrix(1 0 0 1 1125 842)" className="st3 st4 st5">72</text>
             </g>
             <g id="TH-72" className={`f-tooth-init-milk ${(teethDiagnozis.tooth72.show && !teethDiagnozis.tooth72.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -363,13 +363,13 @@ export default function Tooth72() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'hidden', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M1119,1202.9c0,0,2,48,5,71s6,60,11,77s14,29,25,28s15-12,17-30s2-66,2-90
                         s2.7-79,3.3-98c1.7-62-17.3-79-16.3-107s15-43.5,15-67.2c0-23.8-0.6-158.8-2-173.8c-2-21-16-28-29-29s-34,4-36,38s0.8,161,1,167
                         c1,26,16,39,16,68s-17,49-15,87S1119,1202.9,1119,1202.9z"
                     />
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 20, -32)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 15, -6)'}}>
                     <g className="dentin" >
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
                             <path className="st6" d="M1173.4,990.6c-1.4,2.6-4.3,4.2-7.3,5.4c-5.5,2.1-11.7,3-17.8,3c-5.2-0.1-10.3-0.8-15.1-2.5
@@ -492,7 +492,7 @@ export default function Tooth72() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 25, -60)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 17, -23)'}}>
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                             <path className="st9" d="M1172.6,1211.7c-2.3,5.4-5.5,10.3-10.4,13.5c-2,1.3-4.2,2.2-6.5,2.8

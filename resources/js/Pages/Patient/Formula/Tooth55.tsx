@@ -57,7 +57,7 @@ export default function Tooth55() {
     return (
         <>
             <g id="55" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 621.4678 716.1968)" className={`st3 st4 st5 ${toothActive.tooth55.active ? 'num-active' : ''}`}>55</text>
+                <text transform="matrix(1 0 0 1 630 716)" className={`st3 st4 st5 ${toothActive.tooth55.active ? 'num-active' : ''}`}>55</text>
             </g>
             <g id="TH-55" className={`f-tooth-init-milk ${(teethDiagnozis.tooth55.show && !teethDiagnozis.tooth55.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
