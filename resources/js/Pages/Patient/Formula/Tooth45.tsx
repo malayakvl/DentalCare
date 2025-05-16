@@ -203,7 +203,6 @@ export default function Tooth45() {
                 onClick={() => {
                     teethDiagnozis.tooth45.show = !teethDiagnozis.tooth45.show;
                     teethDiagnozis.tooth85.show = false;
-                    // document.getElementById('TH-85').visibility = 'hidden';
 
                     dispatch(setSelectedToothNumber(45));
                     dispatch(setChangeDia(Math.random()));
@@ -543,7 +542,7 @@ export default function Tooth45() {
                             C668.3,976.2,667.6,978.1,667,980z" />
                     </g>
                 </g>
-                <g id="T_45" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTopCommonView('over')
                     }}
