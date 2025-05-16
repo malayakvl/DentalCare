@@ -53,6 +53,19 @@ export default function Tooth55() {
     const tooth55Diagnozis = teethDiagnozis.tooth55;
     const changeDia = useSelector(changeDiaSelector);
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'child' && !teethDiagnozis.tooth55.show) {
+                document.getElementById('TH-55').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'child' && !teethDiagnozis.tooth55.show) {
+                document.getElementById('TH-55').classList.remove('f-tooth-active');
+            }
+        }
+    }
     
     return (
         <>
@@ -61,32 +74,32 @@ export default function Tooth55() {
             </g>
             <g id="TH-55" className={`f-tooth-init-milk ${(teethDiagnozis.tooth55.show && !teethDiagnozis.tooth55.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
-                    if (teethType === 'child') {
-                        document.getElementById('TH-55').style.opacity = 1
-                    } else {
-                        if (!teethDiagnozis.tooth55.show) {
-                            document.getElementById('TH-15').style.visibility = 'inherit'
-                            document.getElementById('TH-55').style.visibility = 'hidden'
-                        } else {
-                            document.getElementById('TH-15').style.visibility = 'inherit'
-                            document.getElementById('TH-55').style.visibility = 'hidden'
-                        }
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('55').classList.add('tooth-number-hover')
+                    // if (teethType === 'child') {
+                    //     document.getElementById('TH-55').style.opacity = 1
+                    // } else {
+                    //     if (!teethDiagnozis.tooth55.show) {
+                    //         document.getElementById('TH-15').style.visibility = 'inherit'
+                    //         document.getElementById('TH-55').style.visibility = 'hidden'
+                    //     } else {
+                    //         document.getElementById('TH-15').style.visibility = 'inherit'
+                    //         document.getElementById('TH-55').style.visibility = 'hidden'
+                    //     }
+                    // }
+                    // (!toothActive && !allTeeth) && document.getElementById('55').classList.add('tooth-number-hover')
                 }}
                 onMouseLeave={() => {
-                    if (teethType === 'child' && !teethDiagnozis.tooth55.show) {
-                        document.getElementById('TH-55').style.opacity = 0
-                    }
-                    if (teethDiagnozis.tooth55.show && teethType === 'adult') {
-                        document.getElementById('TH-15').style.visibility = 'hidden'
-                        document.getElementById('TH-55').style.visibility = 'inherit'
-                    }
-                    if (teethDiagnozis.tooth15.show && !teethDiagnozis.tooth15.absent && teethType === 'child') {
-                        document.getElementById('TH-15').style.visibility = 'inherit'
-                        document.getElementById('TH-55').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('55').classList.remove('tooth-number-hover')
+                    // if (teethType === 'child' && !teethDiagnozis.tooth55.show) {
+                    //     document.getElementById('TH-55').style.opacity = 0
+                    // }
+                    // if (teethDiagnozis.tooth55.show && teethType === 'adult') {
+                    //     document.getElementById('TH-15').style.visibility = 'hidden'
+                    //     document.getElementById('TH-55').style.visibility = 'inherit'
+                    // }
+                    // if (teethDiagnozis.tooth15.show && !teethDiagnozis.tooth15.absent && teethType === 'child') {
+                    //     document.getElementById('TH-15').style.visibility = 'inherit'
+                    //     document.getElementById('TH-55').style.visibility = 'hidden'
+                    // }
+                    // (!toothActive && !allTeeth) && document.getElementById('55').classList.remove('tooth-number-hover')
                 }}
                 onClick={() => { 
                     dispatch(setChangeDia(Math.random()))
@@ -247,7 +260,15 @@ export default function Tooth55() {
                     }
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g 
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                    className="underlay" 
+                    style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M631,233.9c0,0-3,28-4,40s-1,58-3,83s-13.1,61.9-14.1,83.5
                     c-0.9,21.5-3.9,37.5,2.1,54.5s14,23,10,37s-14.6,37.3-14.3,60.7s-0.7,76.3,7.3,105.3s25,36.9,43,36c19-1,35-15,35-57s2-90,3-109
                     s-12-39-14-50c-2-11,12-26,13-63s2-61-1-80s-9-66-13-84s-12-48-15-57s-11-21-22-18C636,218.1,632,223.9,631,233.9z"></path>

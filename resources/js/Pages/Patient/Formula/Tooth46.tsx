@@ -156,26 +156,26 @@ export default function Tooth46() {
         }
     }
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth46.show) {
+                document.getElementById('TH-46').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth46.show) {
+                document.getElementById('TH-46').classList.remove('f-tooth-active');
+            }
+        }
+    }
+
     return (
         <>
             <g id="46" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 542.1611 842.0025)" className={`st3 st4 st5 ${toothActive.tooth46.active ? 'num-active' : ''}`}>46</text>
             </g>
             <g id="TH-46" className={`f-tooth-init ${(teethDiagnozis.tooth46.show && !teethDiagnozis.tooth46.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onMouseOver={() => {
-                    if (!teethDiagnozis.tooth46.show) {
-                        if (teethType === 'adult') {
-                            document.getElementById('TH-46').style.visibility = 'inherit'
-                        }
-                    } 
-                    if (teethDiagnozis.tooth46.show && !teethDiagnozis.tooth46.absent && teethType === 'child') {
-                        document.getElementById('TH-46').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('46').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('46').classList.remove('tooth-number-hover')
-                }}
                 onClick={() => {
                     teethDiagnozis.tooth46.show = !teethDiagnozis.tooth46.show;
                     dispatch(setSelectedToothNumber(46));
@@ -199,14 +199,28 @@ export default function Tooth46() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     <path className="st40" d="M594,1314c6-12.2,9.4-25.9,11.8-39.1c4-22,8-52,16-76s15-33,16-56
                         s-15-55-15-72s18.4-49.1,15-83c-6-59,27-207-54-220s-87,54-89,74s-12.2,120.3-15.1,140.7c-2.9,20.3,10.1,41.3,11.1,65.3
                         c1,24-5.6,72.3-13.3,91.6c-7.7,19.4-6.7,54.4-12.7,72.4s-23,67-26,88s4,42,51,49c26.3,3.9,61,7.9,83.8-9.3
                         C582.6,1332.9,589.2,1323.9,594,1314z"
                     />
                 </g>
-                <g id="T_46_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g id="T_46_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g style={{visibility: !tooth46Diagnozis.culttab && !tooth46Diagnozis.implant && !tooth46Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -529,7 +543,14 @@ export default function Tooth46() {
                         />
                     </g>
                 </g>
-                <g id="T_46" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_46" style={{visibility: !tooth46Diagnozis.implant && !tooth46Diagnozis.apex && !tooth46Diagnozis.shaper ? 'inherit' : 'hidden'}}>

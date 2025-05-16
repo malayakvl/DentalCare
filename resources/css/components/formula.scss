@@ -527,7 +527,7 @@ fill: #e8e8e8;
     // }
 }
 .f-tooth-init.child:hover f-tooth-init-milk.child {
-    opacity: 1;
+    // opacity: 1;
     // transition: opacity .5s ease-out;
     // -moz-transition: opacity .5s ease-out;
     // -webkit-transition: opacity .5s ease-out;
@@ -535,14 +535,14 @@ fill: #e8e8e8;
 }
 
 .f-tooth-init.adult:hover {
-    opacity: 1;
+    // opacity: 1;
     // transition: opacity .5s ease-out;
     // -moz-transition: opacity .5s ease-out;
     // -webkit-transition: opacity .5s ease-out;
     // -o-transition: opacity .5s ease-out;
 }
 .f-tooth-init-milk.child:hover {
-    opacity: 1;
+    // opacity: 1;
     // transition: opacity .5s ease-out;
     // -moz-transition: opacity .5s ease-out;
     // -webkit-transition: opacity .5s ease-out;
@@ -568,14 +568,31 @@ fill: #e8e8e8;
     visibility: inherit !important;
 }
 .underlay {
-    fill: rgb(169, 19, 102, 0.5);
-    fill: rgb(100, 11, 11, 0.5);
-    stroke: rgb(141, 13, 13, 0.5);
+    fill: rgba(247, 206, 228, 0.5);
+    stroke: rgb(247, 206, 228, 0.9);
     stroke-width:   1;
 }
 .underlay .st40 {
     opacity: 0.5;
-    fill: rgb(100, 11, 11, 0.5);
-    stroke: rgb(141, 13, 13, 0.5);
+    fill: rgb(247, 206, 228, 0.5);
+    stroke: rgb(247, 206, 228, 0.9);
     stroke-width:   1;
+}
+.underlay-child .st40 {
+    opacity: 0.5;
+    fill: rgba(57, 14, 176, 0.5);
+    stroke: rgb(57, 14, 176, 0.9);
+    stroke-width:   1;
+}
+.adult-underlay {
+    z-index: 999999;
+}
+.v-hidden {
+    visibility: hidden !important;
+}
+.f-tooth-init-milk.adult {
+    visibility: hidden !important;
+}
+.f-tooth-init-milk.adult.f-tooth-active {
+    visibility: inherit !important;
 }
