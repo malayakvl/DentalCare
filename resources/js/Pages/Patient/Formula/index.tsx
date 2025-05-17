@@ -92,7 +92,7 @@ import Tooth17 from "./Tooth17";
 import Tooth18 from "./Tooth18";
 import {
     getStatusesSelector,
-    getActiveToothNumber,
+    getActiveToothNumberSelector,
     teethTypeSelector,
     getTeethDiagnozisSelector,
     changeDiaSelector
@@ -101,7 +101,7 @@ import FormulaDiagnozis from "../Partials/FormulaDiagnozis";
 
 export default function Formula() {
     const toothActive = useSelector(getStatusesSelector);
-    const activeNumber = useSelector(getActiveToothNumber);
+    const activeNumber = useSelector(getActiveToothNumberSelector);
     const teethType = useSelector(teethTypeSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const changeDia = useSelector(changeDiaSelector);
@@ -217,8 +217,8 @@ export default function Formula() {
                         <path className="st35 st_pointers" d="M267.9,773l-4.3-15.9h18.7l-9.3,34.7 L267.9,773" id="pointer_48" style={{opacity: toothActive.tooth48.active ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M404.3,773l-4.3-15.9h18.7l-9.3,34.7 L404.3,773" id="pointer_47" style={{opacity: toothActive.tooth47.active ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M562.1,773l-4.3-15.9h18.7l-9.3,34.7 L562.1,773" id="pointer_46" style={{opacity: toothActive.tooth46.active ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_45" style={{opacity: toothActive.tooth45.active ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M772.4,773l-4.3-15.9h18.7l-9.3,34.7 L772.4,773" id="pointer_44" style={{opacity: toothActive.tooth44.active ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_45" style={{opacity: activeNumber == 45 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M772.4,773l-4.3-15.9h18.7l-9.3,34.7 L772.4,773" id="pointer_44" style={{opacity: teethDiagnozis.tooth44.active ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M864.9,773l-4.3-15.9h18.7l-9.3,34.7 L864.9,773" id="pointer_43" style={{opacity: toothActive.tooth43.active ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M948.6,773l-4.3-15.9H963l-9.3,34.7 L948.6,773" id="pointer_42"  style={{opacity: toothActive.tooth42.active ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1007.3,773l-4.3-15.9h18.7l-9.3,34.7 L1007.3,773" id="pointer_41" style={{opacity: toothActive.tooth41.active ? 1 : 0}} />

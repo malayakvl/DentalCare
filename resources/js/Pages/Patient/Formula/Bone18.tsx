@@ -1,17 +1,14 @@
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm } from '@inertiajs/react';
 import React, { useEffect, useState } from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setTooth18Active, setToothDiagnoze } from '../../../Redux/Formula';
+import { setToothDiagnoze } from '../../../Redux/Formula';
 import {
     allTeethSelector,
     getDiagnosisSelector,
     getSubDiagnosisSelector,
-    getTeethDiagnozisSelector,
-    tooth18Selector,
+    getTeethDiagnozisSelector
 } from "../../../Redux/Formula/selectors";
 
 export default function Bone18({
@@ -23,7 +20,6 @@ export default function Bone18({
         locale: appLang,
     });
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(tooth18Selector);
     const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
@@ -38,10 +34,10 @@ export default function Bone18({
     return (
         <g id="bone_18" className="df-bone top"  style={{opacity: 1, transition: 'opacity 0.2s'}}
             onMouseOver={() => {
-                (!toothActive && !allTeeth) && document.getElementById('18').classList.add('tooth-number-hover')
+                (!teethDiagnozis.tooth18.active && !allTeeth) && document.getElementById('18').classList.add('tooth-number-hover')
             }}
             onMouseLeave={() => {
-                (!toothActive && !allTeeth) && document.getElementById('18').classList.remove('tooth-number-hover')
+                (!teethDiagnozis.tooth18.active && !allTeeth) && document.getElementById('18').classList.remove('tooth-number-hover')
             }}
             onClick={() => {
                 if (diagnozis === 'parodontit') {
@@ -66,7 +62,7 @@ export default function Bone18({
             }}
         >
             <g className="periodontal level"
-                style={{opacity:(tooth18Diagnozis.parodontit && tooth18Diagnozis.parodontit_stage === 'pst0' && toothActive) ? 1 : 0}}
+                style={{opacity:(tooth18Diagnozis.parodontit && tooth18Diagnozis.parodontit_stage === 'pst0' && teethDiagnozis.tooth18.active) ? 1 : 0}}
             >
                 <path className="st0" d="M347.4,295.9c-1.5,20.3-5.1,42.5-11.3,60.8c0,0-0.1,0-0.1,0c-0.3-0.1-0.5-0.1-0.8-0.2
                     c-0.3-0.1-0.6-0.2-0.9-0.3c-0.3-0.1-0.5-0.2-0.8-0.3c0,0-0.1,0-0.2-0.1c-0.3-0.1-0.5-0.2-0.8-0.3c0,0,0,0,0,0

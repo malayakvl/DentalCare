@@ -18,7 +18,7 @@ export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiag
 
 
     teethdiagnoze[`tooth${toothNum}`].show = true;
-
+    teethdiagnoze[`tooth${toothNum}`].active = true;
     if (diagnoze === 'change_color')
         teethdiagnoze[`tooth${toothNum}`].change_color = !teethdiagnoze[`tooth${toothNum}`].change_color;
     else if (diagnoze === 'fissure')

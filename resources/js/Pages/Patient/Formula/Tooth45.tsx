@@ -24,7 +24,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage45 from './periodontit45';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -49,6 +50,7 @@ export default function Tooth45() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -197,12 +199,14 @@ export default function Tooth45() {
     return (
         <>
             <g id="45" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 659.2891 842.0025)" className={`st3 st4 st5 ${toothActive.tooth45.active ? 'num-active' : ''}`}>45</text>
+                <text transform="matrix(1 0 0 1 659 842)" className={`st3 st4 st5 ${selectedTooth === 45 ? 'num-active' : ''}`}>45</text>
             </g>
             <g id="TH-45" className={`f-tooth-init ${(teethDiagnozis.tooth45.show && !teethDiagnozis.tooth45.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth45.show = !teethDiagnozis.tooth45.show;
                     teethDiagnozis.tooth85.show = false;
+                    document.getElementById('un-th-45').classList.add('active');
+
 
                     dispatch(setSelectedToothNumber(45));
                     dispatch(setChangeDia(Math.random()));
@@ -225,7 +229,7 @@ export default function Tooth45() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay"
+                <g id="un-th-45" className="underlay" 
                     onMouseOver={() => {
                         showHideTeeth('over');
                     }}

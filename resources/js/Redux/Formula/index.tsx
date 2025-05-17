@@ -2,14 +2,10 @@ import { handleActions } from 'redux-actions';
 import {
     setTeethType,
     setAllTeeth,
-    setTooth18Active,
-    setTooth17Active,
-    setTooth16Active,
-    setTooth28Active,
     setToothDiagnoze,
     setPerioDiagnoze,
     setPerioDeepZond,
-    setActiveToothName,
+    setSelectedTooth,
     setDiagnosis,
     setDiagnosisClass,
     setSubDiagnosis,
@@ -83,7 +79,7 @@ const initialState = {
     allTeeth: false,
     allTeethAdult: false,
     allTeethChild: false,
-    active_tooth: '',
+    selectedTooth: '',
     selected_tooth_number: '',
     psrChange: false,
     changeDia: false,
@@ -4272,10 +4268,10 @@ const ACTION_HANDLERS = {
             allTeeth: action.payload
         })
     },
-    [setActiveToothName.toString()]: {
+    [setSelectedTooth.toString()]: {
         next: (state, action) => ({
             ...state,
-            active_tooth: action.payload
+            selectedTooth: action.payload
         })
     },
     [setDiagnosis.toString()]: {
@@ -4418,7 +4414,7 @@ const ACTION_HANDLERS = {
     [setSelectedToothNumber.toString()]: {
         next: (state, action) => ({
             ...state,
-            selected_tooth_number: action.payload
+            selectedTooth: action.payload
         })
     },
     [setPerioDeepZond.toString()]: {
@@ -4569,10 +4565,6 @@ const ACTION_HANDLERS = {
 export {
     setTeethType,
     setAllTeeth,
-    setTooth28Active,
-    setTooth18Active,
-    setTooth17Active,
-    setTooth16Active,
     setToothDiagnoze,
     setPerioDiagnoze,
     setPerioDeepZond,
@@ -4588,7 +4580,7 @@ export {
     setMCeramicCrownColor,
     setMetalicCrownColor,
     setZirconiaCrownColor,
-    setActiveToothName,
+    setSelectedTooth,
     setNewToothActive,
     setDisactiveAll,
     setSelectedToothNumber,

@@ -196,12 +196,13 @@ export default function Tooth44() {
     return (
         <>
             <g id="44" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 752.5586 842.0025)" className={`st3 st4 st5 ${toothActive.tooth44.active ? 'num-active' : ''}`}>44</text>
+                <text transform="matrix(1 0 0 1 752.5586 842.0025)" className={`st3 st4 st5 ${teethDiagnozis.tooth44.active ? 'num-active' : ''}`}>44</text>
             </g>
             <g id="TH-44" className={`f-tooth-init ${(teethDiagnozis.tooth44.show && !teethDiagnozis.tooth44.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth44.show = !teethDiagnozis.tooth44.show;
                     teethDiagnozis.tooth84.show = false;
+                    teethDiagnozis.tooth45.active = false;
                     dispatch(setSelectedToothNumber(44));
                     dispatch(setChangeDia(Math.random()));
 
