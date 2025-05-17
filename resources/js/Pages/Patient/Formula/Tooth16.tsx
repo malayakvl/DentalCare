@@ -158,31 +158,31 @@ export default function Tooth16() {
         }
     }
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth16.show) {
+                document.getElementById('TH-16').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth16.show) {
+                document.getElementById('TH-16').classList.remove('f-tooth-active');
+            }
+        }
+    }
+
     return ( 
         <>
             <g id="16" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 507.4561 716.1968)" className={`st3 st4 st5 ${selectedTooth === 16 ? 'num-active' : ''}`}>16</text>
             </g>
             <g id="TH-16" className={`f-tooth-init ${(teethDiagnozis.tooth16.show && !teethDiagnozis.tooth16.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onMouseOver={() => {
-                    if (!teethDiagnozis.tooth16.show) {
-                        if (teethType === 'adult') {
-                            document.getElementById('TH-16').style.visibility = 'inherit'
-                        }
-                    } 
-                    if (teethDiagnozis.tooth16.show && !teethDiagnozis.tooth16.absent && teethType === 'child') {
-                        document.getElementById('TH-16').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
-                }}
                 onClick={() => {
                     teethDiagnozis.tooth16.show = !teethDiagnozis.tooth16.show;
+
                     dispatch(setSelectedToothNumber(16));
                     dispatch(setChangeDia(Math.random()));
-
                     if (diagnozis) {
                         const tDiaData = setupDiagnoze(
                             16,
@@ -198,7 +198,6 @@ export default function Tooth16() {
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className={`underlay ${selectedTooth === 16 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
@@ -216,7 +215,14 @@ export default function Tooth16() {
                         c3.1-18.1,12.3-51.1,8.1-91.3c-4.1-40.2-14.4-61.6-25.1-68.3c-10.7-6.6-26.9-13.9-43.6-13S506.4,241.9,496.7,264.2z" 
                     />
                 </g>
-                <g id="T_16_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin" >
                         <g style={{visibility: !tooth16Diagnozis.culttab && !tooth16Diagnozis.implant && !tooth16Diagnozis.shaper ? 'inherit' : 'hidden'}}>

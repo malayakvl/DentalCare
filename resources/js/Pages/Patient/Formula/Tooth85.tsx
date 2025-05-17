@@ -160,9 +160,11 @@ export default function Tooth85() {
     }
 
     const showHideOverlay = (type) => {
+        console.log(type)
         if (type === 'over') {
             if (teethType === 'child' && !teethDiagnozis.tooth85.show && !teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-85').classList.add('f-tooth-active');
+                document.getElementById('TH-85').style.opacity = 1
             }
             if (teethType === 'child' && !teethDiagnozis.tooth85.show && teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-85').classList.add('f-tooth-active');
@@ -177,6 +179,7 @@ export default function Tooth85() {
         if (type === 'leave') {
             if (teethType === 'child' && !teethDiagnozis.tooth85.show && !teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-85').classList.remove('f-tooth-active');
+                document.getElementById('TH-85').style.opacity = 0;
             }
             if (teethType === 'child' && !teethDiagnozis.tooth85.show && teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-85').classList.remove('f-tooth-active');
@@ -207,7 +210,17 @@ export default function Tooth85() {
 
     return (
         <>
-            <g id="85" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
+            <g id="85" 
+                onMouseOver={() => {
+                    showHideOverlay('over');
+
+                }}
+                onMouseLeave={() => {
+                    showHideOverlay('leave');
+
+                }}
+                className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}
+            >
                 <text transform="matrix(1 0 0 1 660 842)" className={`st3 st4 st5 ${selectedTooth === 85 ? 'num-active' : ''}`}>85</text>
             </g>
             <g id="TH-85" className={`f-tooth-init-milk ${teethType} ${(teethDiagnozis.tooth85.show && !teethDiagnozis.tooth85.absent)  ? 'f-tooth-active' : ''}`}

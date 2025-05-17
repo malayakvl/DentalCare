@@ -157,31 +157,31 @@ export default function Tooth26() {
         }
     }
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth26.show) {
+                document.getElementById('TH-26').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth26.show) {
+                document.getElementById('TH-26').classList.remove('f-tooth-active');
+            }
+        }
+    }
+
     return (
         <>
             <g id="26" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1549.5791 716.1968)" className={`st3 st4 st5 ${selectedTooth === 26 ? 'num-active' : ''}`}>26</text>
             </g>
             <g id="TH-26" className={`f-tooth-init ${(teethDiagnozis.tooth26.show && !teethDiagnozis.tooth26.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onMouseOver={() => {
-                    if (!teethDiagnozis.tooth26.show) {
-                        if (teethType === 'adult') {
-                            document.getElementById('TH-26').style.visibility = 'inherit'
-                        }
-                    } 
-                    if (teethDiagnozis.tooth26.show && !teethDiagnozis.tooth26.absent && teethType === 'child') {
-                        document.getElementById('TH-26').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('26').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('26').classList.remove('tooth-number-hover')
-                }}
                 onClick={() => {
                     teethDiagnozis.tooth26.show = !teethDiagnozis.tooth26.show;
+
                     dispatch(setSelectedToothNumber(26));
                     dispatch(setChangeDia(Math.random()));
-
                     if (diagnozis) {
                         const tDiaData = setupDiagnoze(
                             26,
@@ -197,7 +197,6 @@ export default function Tooth26() {
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
-                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
                 <g className={`underlay ${selectedTooth === 26 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
@@ -214,7 +213,14 @@ export default function Tooth26() {
                         c-9.7-20.2-33.8-27.3-54.7-28.2C1527,235.9,1496,245.9,1487,281.9z"
                     />
                 </g>
-                <g id="T_26_up" className="top-view" style={{visibility: tooth26Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="top-view" style={{visibility: tooth26Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth26Diagnozis.culttab && !tooth26Diagnozis.implant && !tooth26Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
@@ -555,7 +561,14 @@ export default function Tooth26() {
                         />
                     </g>
                 </g>
-                <g id="T_26" className="common-view" style={{visibility: tooth26Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="common-view" style={{visibility: tooth26Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_26" className="hRoot hImplant hEmpty" style={{visibility: !tooth26Diagnozis.implant && !tooth26Diagnozis.apex && !tooth26Diagnozis.shaper ? 'inherit' : 'hidden'}}>

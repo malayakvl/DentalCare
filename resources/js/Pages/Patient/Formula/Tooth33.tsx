@@ -157,31 +157,56 @@ export default function Tooth33() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
+
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-33').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'child' && !teethDiagnozis.tooth73.show) {
+                document.getElementById('TH-73').classList.remove('f-tooth-active');
+            }
+            if (teethType === 'adult' && !teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-33').classList.remove('f-tooth-active');
+                if (teethDiagnozis.tooth73.show) {
+                    document.getElementById('TH-73').classList.add('f-tooth-active');
+                }
+            }
+        }
+    }
+
+    const showHideTopCommonView = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-73').classList.remove('f-tooth-active');
+                document.getElementById('TH-33').classList.add('f-tooth-active');
+            }
+        }
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-33').classList.remove('f-tooth-active');
+                if (teethDiagnozis.tooth73.show) {
+                    document.getElementById('TH-73').classList.add('f-tooth-active');
+                }
+            }
+        }
+    }
+
     return (
         <>
             <g id="33" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1204.7012 842.0025)" className={`st3 st4 st5 ${selectedTooth === 33 ? 'num-active' : ''}`}>33</text>
             </g>
             <g id="TH-33" className={`f-tooth-init ${(teethDiagnozis.tooth33.show && !teethDiagnozis.tooth33.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onMouseOver={() => {
-                    if (!teethDiagnozis.tooth33.show) {
-                        if (teethType === 'adult') {
-                            document.getElementById('TH-33').style.visibility = 'inherit'
-                        }
-                    } 
-                    if (teethDiagnozis.tooth33.show && !teethDiagnozis.tooth33.absent && teethType === 'child') {
-                        document.getElementById('TH-33').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('33').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('33').classList.remove('tooth-number-hover')
-                }}
                 onClick={() => {
                     teethDiagnozis.tooth33.show = !teethDiagnozis.tooth33.show;
+                    teethDiagnozis.tooth73.show = false;
+
                     dispatch(setSelectedToothNumber(33));
                     dispatch(setChangeDia(Math.random()));
-
                     if (diagnozis) {
                         const tDiaData = setupDiagnoze(
                             33,
@@ -200,13 +225,27 @@ export default function Tooth33() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className={`underlay ${selectedTooth === 33 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 33 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     <path className="st40" d="M1195,1239.9c0,0,5,56,6,71s7,66,11,75s12,28,30,27s26-16,26-34s-3-62-5-81
                         s1-75,3-87s6-36,6-52c0-31-29-61-28-89s26.2-45.3,27.1-78.2c0.9-32.8-3.1-144.8-4.1-169.8s-18-41-39-42s-38,17-40,52s-7,151-7,158
                         c0,29,22,50,24,73s-23,38-23,94C1182,1196.9,1193,1220.9,1195,1239.9z"
                     />
                 </g>
-                <g id="T_33_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth33Diagnozis.implant && !tooth33Diagnozis.apex && !tooth33Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -431,7 +470,14 @@ export default function Tooth33() {
                         />
                     </g>
                 </g>
-                <g id="T_33" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_33" style={{visibility: !tooth33Diagnozis.implant && !tooth33Diagnozis.apex && !tooth33Diagnozis.shaper ? 'inherit' : 'hidden'}}>

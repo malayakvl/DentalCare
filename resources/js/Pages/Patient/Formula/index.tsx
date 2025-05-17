@@ -213,6 +213,7 @@ export default function Formula() {
                     <Tooth17 />
                     <Tooth18 />
                     <g className="pointers">
+                        <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_85" style={{opacity: activeNumber == 85 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M267.3,739.2l5.1-18.8l9.3,34.7H263L267.3,739.2" id="pointer_18" style={{opacity: activeNumber == 18 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M267.9,773l-4.3-15.9h18.7l-9.3,34.7 L267.9,773" id="pointer_48" style={{opacity: activeNumber == 48 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M404.3,773l-4.3-15.9h18.7l-9.3,34.7 L404.3,773" id="pointer_47" style={{opacity: activeNumber == 47 ? 1 : 0}} />
