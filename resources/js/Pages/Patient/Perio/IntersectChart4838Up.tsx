@@ -93,7 +93,7 @@ export default function IntersectChart4838Up() {
         datasets: [
           {
             label: 'Глибина зондування',
-            pointRadius: 0,
+            pointRadius: 1,
             borderWidth: 2,
             data: zond1828VestData,
             borderColor: 'red',
@@ -101,7 +101,7 @@ export default function IntersectChart4838Up() {
           },
           {
             label: 'Ясений край',
-            pointRadius: 0,
+            pointRadius: 1,
             borderWidth: 2,
             data: yasen1828VestData,
             borderColor: 'blue',
