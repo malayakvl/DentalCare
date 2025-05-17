@@ -157,220 +157,102 @@ export default function Tooth73() {
         }
     }
 
+    const showHideOverlay = (type) => {
+        if (type === 'over') {
+            if (teethType === 'child' && !teethDiagnozis.tooth73.show && !teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-73').classList.add('f-tooth-active');
+            }
+            if (teethType === 'child' && !teethDiagnozis.tooth73.show && teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-73').classList.add('f-tooth-active');
+                document.getElementById('TH-33').classList.remove('f-tooth-active');
+            }
+            if (teethType === 'adult') {
+               document.getElementById('TH-73').classList.remove('f-tooth-active'); 
+               document.getElementById('TH-33').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'child' && !teethDiagnozis.tooth73.show && !teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-73').classList.remove('f-tooth-active');
+            }
+            if (teethType === 'child' && !teethDiagnozis.tooth73.show && teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-73').classList.remove('f-tooth-active');
+                document.getElementById('TH-33').classList.add('f-tooth-active');
+            }
+            
+        }
+    }
+    const showHideTopCommonView = (type) => {
+        if (type === 'over') {
+            if (teethType === 'child' && teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-73').classList.add('f-tooth-active');
+                document.getElementById('TH-33').classList.remove('f-tooth-active');
+            }
+            if (teethType === 'adult' && teethDiagnozis.tooth73.show) {
+                document.getElementById('TH-73').classList.remove('f-tooth-active');
+                document.getElementById('TH-33').classList.add('f-tooth-active');
+            }
+        }
+        if (type === 'leave') {
+            if (teethType === 'child' && teethDiagnozis.tooth33.show) {
+                document.getElementById('TH-33').classList.add('f-tooth-active');
+                document.getElementById('TH-73').classList.remove('f-tooth-active');
+            }
+        }
+    }
+
     return (
         <>
-            <g id="73" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}
-                onMouseOver={() => {
-                    if (teethType === 'child') {
-                        document.getElementById('TH-73').style.opacity = 1
-                    } else {
-                        if (!teethDiagnozis.tooth73.show) {
-                            document.getElementById('TH-43').style.visibility = 'inherit'
-                            document.getElementById('TH-73').style.visibility = 'hidden'
-                        } else {
-                            document.getElementById('TH-43').style.visibility = 'inherit'
-                            document.getElementById('TH-73').style.visibility = 'hidden'
-                        }
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('73').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    if (teethType === 'child' && !teethDiagnozis.tooth73.show) {
-                        document.getElementById('TH-73').style.opacity = 0
-                    }
-                    if (teethDiagnozis.tooth73.show && teethType === 'adult') {
-                        document.getElementById('TH-43').style.visibility = 'hidden'
-                        document.getElementById('TH-73').style.visibility = 'inherit'
-                    }
-                    if (teethDiagnozis.tooth43.show && !teethDiagnozis.tooth43.absent && teethType === 'child') {
-                        document.getElementById('TH-43').style.visibility = 'inherit'
-                        document.getElementById('TH-73').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('73').classList.remove('tooth-number-hover')
-                }}
-            >
+            <g id="73" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1205 842)" className="st3 st4 st5">73</text>
             </g>
             <g id="TH-73" className={`f-tooth-init-milk ${(teethDiagnozis.tooth73.show && !teethDiagnozis.tooth73.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onMouseOver={() => {
-                    if (teethType === 'child') {
-                        document.getElementById('TH-73').style.opacity = 1
-                    } else {
-                        if (!teethDiagnozis.tooth73.show) {
-                            document.getElementById('TH-43').style.visibility = 'inherit'
-                            document.getElementById('TH-73').style.visibility = 'hidden'
-                        } else {
-                            document.getElementById('TH-43').style.visibility = 'inherit'
-                            document.getElementById('TH-73').style.visibility = 'hidden'
-                        }
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('73').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    if (teethType === 'child' && !teethDiagnozis.tooth73.show) {
-                        document.getElementById('TH-73').style.opacity = 0
-                    }
-                    if (teethDiagnozis.tooth73.show && teethType === 'adult') {
-                        document.getElementById('TH-43').style.visibility = 'hidden'
-                        document.getElementById('TH-73').style.visibility = 'inherit'
-                    }
-                    if (teethDiagnozis.tooth43.show && !teethDiagnozis.tooth43.absent && teethType === 'child') {
-                        document.getElementById('TH-43').style.visibility = 'inherit'
-                        document.getElementById('TH-73').style.visibility = 'hidden'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('73').classList.remove('tooth-number-hover')
-                }}
                 onClick={() => {
-                    dispatch(setChangeDia(Math.random()))
-                    if (teethType === 'child') {
-                        teethDiagnozis.tooth43.show = false;
-                        teethDiagnozis.tooth73.show = !teethDiagnozis.tooth73.show;
-                    } else {
-                        teethDiagnozis.tooth73.show = false;
-                    }
+                    teethDiagnozis.tooth73.show = !teethDiagnozis.tooth73.show;
+                    teethDiagnozis.tooth33.show = false;
+
+                    dispatch(setSelectedToothNumber(73));
+                    dispatch(setChangeDia(Math.random()));
 
                     if (diagnozis) {
-                        teethDiagnozis.tooth73.show = true;
-                        if (diagnozis === 'change_color')
-                            teethDiagnozis.tooth73.change_color = !teethDiagnozis.tooth73.change_color;
-                        else if (diagnozis === 'fissure')
-                            teethDiagnozis.tooth73.fissure = !teethDiagnozis.tooth73.fissure;
-                        else if (diagnozis === 'caries')
-                            teethDiagnozis.tooth73.caries = !teethDiagnozis.tooth73.caries;
-                        else if (diagnozis === 'cervical_caries')
-                            teethDiagnozis.tooth73.cervical_caries = !teethDiagnozis.tooth73.cervical_caries;
-                        else if (diagnozis === 'wedge_shaped_defect')
-                            teethDiagnozis.tooth73.wedge_shaped_defect = !teethDiagnozis.tooth73.wedge_shaped_defect;
-                        else if (diagnozis === 'tartar')
-                            teethDiagnozis.tooth73.tartar = !teethDiagnozis.tooth73.tartar;
-                        else if (diagnozis === 'pulpit') {
-                            teethDiagnozis.tooth73.pulpit = !teethDiagnozis.tooth73.pulpit;
-                            teethDiagnozis.tooth73.channel_class = teethDiagnozis.tooth73.pulpit ? 'pulpit' : ''
-                        } else if (diagnozis === 'channel_not_sealed') {
-                            teethDiagnozis.tooth73.channel_not_sealed = !teethDiagnozis.tooth73.channel_not_sealed;
-                            teethDiagnozis.tooth73.channel_class = teethDiagnozis.tooth73.channel_not_sealed ? 'channel-not-sealed' : '';
-                        } else if (diagnozis === 'channel_top_sealed') {
-                            teethDiagnozis.tooth73.channel_top_sealed = !teethDiagnozis.tooth73.channel_top_sealed;
-                            teethDiagnozis.tooth73.channel_class = teethDiagnozis.tooth73.channel_top_sealed ? 'channel-top-sealed' : '';
-                        } else if (diagnozis === 'channel_part_sealed') {
-                            teethDiagnozis.tooth73.channel_part_sealed = !teethDiagnozis.tooth73.channel_part_sealed;
-                            teethDiagnozis.tooth73.channel_class = teethDiagnozis.tooth73.channel_part_sealed ? 'channel-part-sealed' : '';
-                        } else if (diagnozis === 'periodontit') {
-                            if (teethDiagnozis.tooth73.periodontit_stage !== subDiagnozis) {
-                                teethDiagnozis.tooth73.periodontit_stage = subDiagnozis
-                                teethDiagnozis.tooth73.periodontit = true;
-                            } else {
-                                teethDiagnozis.tooth73.periodontit = !teethDiagnozis.tooth73.periodontit;
-                            }
-                            teethDiagnozis.tooth73.channel_class = teethDiagnozis.tooth73.periodontit ? 'periodontit' : '';
-                            if (!teethDiagnozis.tooth73.periodontit) dispatch(setSubDiagnosis(''));
-                        } else if (diagnozis === 'seal') {
-                            teethDiagnozis.tooth73.seal = !teethDiagnozis.tooth73.seal;
-                        } else if (diagnozis === 'seal_cervical') {
-                            if (!teethDiagnozis.tooth73.seal_cervical && teethDiagnozis.tooth73.seal_cervical_color === "") {
-                                teethDiagnozis.tooth73.seal_cervical = true;
-                                teethDiagnozis.tooth73.seal_cervical_color = wsDefectColor;
-                            } else if (teethDiagnozis.tooth73.seal_cervical && teethDiagnozis.tooth73.seal_cervical_color != wsDefectColor) {
-                                teethDiagnozis.tooth73.seal_cervical_color = wsDefectColor;
-                            } else {
-                                teethDiagnozis.tooth73.seal_cervical = false;
-                                teethDiagnozis.tooth73.seal_cervical_color = "";
-                            }
-                        } else if (diagnozis === 'vinir') {
-                            if (!teethDiagnozis.tooth73.vinir && teethDiagnozis.tooth73.vinir_color === "") {
-                                teethDiagnozis.tooth73.vinir = true;
-                                teethDiagnozis.tooth73.vinir_color = vinirColor;
-                            } else if (teethDiagnozis.tooth73.vinir && teethDiagnozis.tooth73.vinir_color != vinirColor) {
-                                teethDiagnozis.tooth73.vinir_color = vinirColor;
-                            } else {
-                                teethDiagnozis.tooth73.vinir = false;
-                                teethDiagnozis.tooth73.vinir_color = "";
-                            }
-                        } else if (diagnozis === 'temporary_crown') {
-                            teethDiagnozis.tooth73.temporary_crown = !teethDiagnozis.tooth73.temporary_crown;
-                        } else if (diagnozis === 'ceramic_crown') {
-                            if (!teethDiagnozis.tooth73.ceramic_crown && teethDiagnozis.tooth73.ceramic_crown_color === "") {
-                                teethDiagnozis.tooth73.ceramic_crown = true;
-                                teethDiagnozis.tooth73.ceramic_crown_color = ceramicCrownColor;
-                            } else if (teethDiagnozis.tooth73.ceramic_crown && teethDiagnozis.tooth73.ceramic_crown_color != ceramicCrownColor) {
-                                teethDiagnozis.tooth73.ceramic_crown_color = ceramicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth73.ceramic_crown = false;
-                                teethDiagnozis.tooth73.ceramic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'mceramic_crown') {
-                            if (!teethDiagnozis.tooth73.mceramic_crown && teethDiagnozis.tooth73.mceramic_crown_color === "") {
-                                teethDiagnozis.tooth73.mceramic_crown = true;
-                                teethDiagnozis.tooth73.mceramic_crown_color = mceramicCrownColor;
-                            } else if (teethDiagnozis.tooth73.mceramic_crown && teethDiagnozis.tooth73.mceramic_crown_color != mceramicCrownColor) {
-                                teethDiagnozis.tooth73.mceramic_crown_color = mceramicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth73.mceramic_crown = false;
-                                teethDiagnozis.tooth73.mceramic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'metalic_crown') {
-                            if (!teethDiagnozis.tooth73.metalic_crown && teethDiagnozis.tooth73.metalic_crown_color === "") {
-                                teethDiagnozis.tooth73.metalic_crown = true;
-                                teethDiagnozis.tooth73.metalic_crown_color = metalicCrownColor;
-                            } else if (teethDiagnozis.tooth73.metalic_crown && teethDiagnozis.tooth73.metalic_crown_color != metalicCrownColor) {
-                                teethDiagnozis.tooth73.mceramic_crown_color = metalicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth73.metalic_crown = false;
-                                teethDiagnozis.tooth73.metalic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'zirconia_crown') {
-                            if (!teethDiagnozis.tooth73.zirconia_crown && teethDiagnozis.tooth73.zirconia_crown_color === "") {
-                                teethDiagnozis.tooth73.zirconia_crown = true;
-                                teethDiagnozis.tooth73.zirconia_crown_color = zirconiaCrownColor;
-                            } else if (teethDiagnozis.tooth73.zirconia_crown && teethDiagnozis.tooth73.zirconia_crown_color != zirconiaCrownColor) {
-                                teethDiagnozis.tooth73.zirconia_crown_color = zirconiaCrownColor;
-                            } else {
-                                teethDiagnozis.tooth73.zirconia_crown = false;
-                                teethDiagnozis.tooth73.zirconia_crown_color = "";
-                            }
-                        } else if (diagnozis === 'pin') {
-                            teethDiagnozis.tooth73.pin = !teethDiagnozis.tooth73.pin;
-                        } else if (diagnozis === 'culttab') {
-                            teethDiagnozis.tooth73.culttab = !teethDiagnozis.tooth73.culttab;
-                        } else if (diagnozis === 'abutment') {
-                            teethDiagnozis.tooth73.abutment = !teethDiagnozis.tooth73.abutment;
-                        } else if (diagnozis === 'shaper') {
-                            teethDiagnozis.tooth73.shaper = !teethDiagnozis.tooth73.shaper;
-                        } else if (diagnozis === 'implant') {
-                            teethDiagnozis.tooth73.implant = !teethDiagnozis.tooth73.implant;
-                        } else if (diagnozis === 'apex') {
-                            teethDiagnozis.tooth73.apex = !teethDiagnozis.tooth73.apex;
-                        } else if (diagnozis === 'absent') {
-                            teethDiagnozis.tooth73.absent = !teethDiagnozis.tooth73.absent;
-                        } else if (diagnozis === 'cervical_caries') {
-                            teethDiagnozis.tooth73.cervical_caries = !teethDiagnozis.tooth73.cervical_caries;
-                        } else if (diagnozis === 'caries') {
-                            teethDiagnozis.tooth73.caries = !teethDiagnozis.tooth73.caries;
-                        } else if (diagnozis === 'parodontit') {
-                            if (teethDiagnozis.tooth73.parodontit) {
-                                if (teethDiagnozis.tooth73.parodontit_stage === subDiagnozis) {
-                                    teethDiagnozis.tooth73.parodontit = false;
-                                    teethDiagnozis.tooth73.active = false;
-                                } else {
-                                    teethDiagnozis.tooth73.parodontit = true;
-                                    teethDiagnozis.tooth73.parodontit_stage = subDiagnozis
-                                }
-                            } else {
-                                teethDiagnozis.tooth73.parodontit = true;
-                                teethDiagnozis.tooth73.parodontit_stage = subDiagnozis;
-                                teethDiagnozis.tooth73.active = true;
-                            }
-                        }
+                        const tDiaData = setupDiagnoze(
+                            73,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor
+                        ); 
+                        dispatch(setToothDiagnoze(tDiaData));
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className={`underlay ${selectedTooth === 73 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 73 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideOverlay('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideOverlay('leave');
+                    }}
+                >
                     <path className="st40" d="M1195,1239.9c0,0,5,56,6,71s7,66,11,75s12,28,30,27s26-16,26-34s-3-62-5-81
                         s1-75,3-87s6-36,6-52c0-31-29-61-28-89s26.2-45.3,27.1-78.2c0.9-32.8-3.1-144.8-4.1-169.8s-18-41-39-42s-38,17-40,52s-7,151-7,158
                         c0,29,22,50,24,73s-23,38-23,94C1182,1196.9,1193,1220.9,1195,1239.9z"></path>
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 20, 11)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 20, 11)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     <g className="dentin">
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
                             <path className="st6" d="M1261.6,978.6c2.3,5.4,1.3,11-1.6,16.1c-2.4,4.2-6.2,7.9-10.1,11.2
@@ -485,7 +367,14 @@ export default function Tooth73() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 18, -12)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 18, -12)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                             <path className="st9" d="M1263,1180.9c0,9.9-2.1,19.7-3.5,29.6c-0.3,0.7-0.6,1.3-0.9,1.9

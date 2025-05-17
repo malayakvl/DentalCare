@@ -228,10 +228,10 @@ export default function Tooth44() {
             >
                 <g className={`underlay ${selectedTooth === 44 ? 'selected' : ''}`} style={{visibility:'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
-                        showHideTeeth('over');
+                        showHideTopCommonView('over');
                     }}
                     onMouseLeave={() => {
-                        showHideTeeth('leave');
+                        showHideTopCommonView('leave');
                     }}
                 >
                     <path className="st40" d="M810.8,1255.9c0,0-8,42-15,67s-14,47-33,47s-25-15-25-28s4-22,5-46s-1-71-2-84

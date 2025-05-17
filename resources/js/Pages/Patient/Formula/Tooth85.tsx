@@ -160,7 +160,6 @@ export default function Tooth85() {
     }
 
     const showHideOverlay = (type) => {
-        console.log(type)
         if (type === 'over') {
             if (teethType === 'child' && !teethDiagnozis.tooth85.show && !teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-85').classList.add('f-tooth-active');

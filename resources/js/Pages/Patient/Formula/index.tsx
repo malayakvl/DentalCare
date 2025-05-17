@@ -199,8 +199,8 @@ export default function Formula() {
                     <Tooth62 />
                     <Tooth21 />
                     <Tooth61 />
-                    <Tooth51 />
                     <Tooth11 />
+                    <Tooth51 />
                     <Tooth12 />
                     <Tooth52 />
                     <Tooth13 />

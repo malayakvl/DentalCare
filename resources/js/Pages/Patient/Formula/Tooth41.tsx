@@ -202,7 +202,7 @@ export default function Tooth41() {
                 <text transform="matrix(1 0 0 1 995.4922 842.0025)" className={`st3 st4 st5 ${selectedTooth === 41 ? 'num-active' : ''}`}>41</text>
             </g>
             <g id="TH-41" className={`f-tooth-init ${(teethDiagnozis.tooth41.show && !teethDiagnozis.tooth41.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onClick={() => {
+                onClick={() => { 
                     teethDiagnozis.tooth41.show = !teethDiagnozis.tooth41.show;
                     teethDiagnozis.tooth81.show = false;
 

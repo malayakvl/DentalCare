@@ -158,36 +158,49 @@ export default function Tooth24() {
         }
     }
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth24.show) {
+                document.getElementById('TH-24').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'child' && !teethDiagnozis.tooth64.show) {
+                document.getElementById('TH-64').classList.remove('f-tooth-active');
+            }
+            if (teethType === 'adult' && !teethDiagnozis.tooth24.show) {
+                document.getElementById('TH-64').classList.remove('f-tooth-active');
+                if (teethDiagnozis.tooth64.show) {
+                    document.getElementById('TH-64').classList.add('f-tooth-active');
+                }
+            }
+        }
+    }
+
+    const showHideTopCommonView = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth24.show) {
+                document.getElementById('TH-64').classList.remove('f-tooth-active');
+                document.getElementById('TH-24').classList.add('f-tooth-active');
+            }
+        }
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth24.show) {
+                document.getElementById('TH-24').classList.remove('f-tooth-active');
+                if (teethDiagnozis.tooth64.show) {
+                    document.getElementById('TH-64').classList.add('f-tooth-active');
+                }
+            }
+        }
+    }
+
     return (
         <>
             <g id="24" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1339.1816 716.1968)" className={`st3 st4 st5 ${selectedTooth === 24 ? 'num-active' : ''}`}>24</text>
             </g>
             <g id="TH-24" className={`f-tooth-init ${(teethDiagnozis.tooth24.show && !teethDiagnozis.tooth24.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onMouseOver={() => {
-                    if (!teethDiagnozis.tooth24.show) {
-                        if (teethType === 'child') {
-                            document.getElementById('TH-24').style.visibility = 'hidden'
-                            document.getElementById('TH-64').style.visibility = 'inherit'
-                        }
-                        if (teethType === 'adult') {
-                            document.getElementById('TH-24').style.visibility = 'inherit'
-                            document.getElementById('TH-64').style.visibility = 'hidden'
-                        }
-                    } 
-                    if (teethDiagnozis.tooth24.show && !teethDiagnozis.tooth24.absent && teethType === 'child') {
-                        document.getElementById('TH-24').style.visibility = 'hidden'
-                        document.getElementById('TH-64').style.visibility = 'inherit'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('24').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    if (teethDiagnozis.tooth64.show && !teethDiagnozis.tooth64.absent && teethType === 'adult') {
-                        document.getElementById('TH-24').style.visibility = 'hidden'
-                        document.getElementById('TH-64').style.visibility = 'inherit'
-                    }
-                    (!toothActive && !allTeeth) && document.getElementById('24').classList.remove('tooth-number-hover')
-                }}
                 onClick={() => {
                     teethDiagnozis.tooth24.show = !teethDiagnozis.tooth24.show;
                     dispatch(setSelectedToothNumber(24));
@@ -224,7 +237,14 @@ export default function Tooth24() {
                         s-6-41-4-74s3-63,4-91s-2-57-8-65s-21-9-35-4C1349,226.9,1343,229.9,1339,261.9z"
                     />
                 </g>
-                <g id="T_24_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth24Diagnozis.culttab && !tooth24Diagnozis.implant && !tooth24Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -570,7 +590,14 @@ export default function Tooth24() {
                         />
                     </g>
                 </g>
-                <g id="T_24" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_24" className="hRoot hImplant hEmpty" style={{visibility: !tooth24Diagnozis.implant && !tooth24Diagnozis.apex && !tooth24Diagnozis.shaper ? 'inherit' : 'hidden'}}>

@@ -185,13 +185,23 @@ export default function Tooth45() {
                 document.getElementById('TH-85').classList.remove('f-tooth-active');
                 document.getElementById('TH-45').classList.add('f-tooth-active');
             }
+            if (teethType === 'child' && teethDiagnozis.tooth45.show) {
+                console.log('over')
+                document.getElementById('TH-85').classList.add('f-tooth-active');
+                document.getElementById('TH-45').classList.remove('f-tooth-active');
+            }
         }
         if (type === 'leave') {
+                console.log('over')
             if (teethType === 'adult' && !teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-45').classList.remove('f-tooth-active');
                 if (teethDiagnozis.tooth85.show) {
                     document.getElementById('TH-85').classList.add('f-tooth-active');
                 }
+            }
+            if (teethType === 'child' && teethDiagnozis.tooth45.show) {
+                document.getElementById('TH-85').classList.remove('f-tooth-active');
+                document.getElementById('TH-45').classList.add('f-tooth-active');
             }
         }
     }
@@ -232,10 +242,11 @@ export default function Tooth45() {
             >
                 <g className={`underlay ${selectedTooth === 45 ? 'selected' : ''}`} 
                     onMouseOver={() => {
-                        showHideTeeth('over');
+                        showHideTopCommonView('over')
+                        
                     }}
                     onMouseLeave={() => {
-                        showHideTeeth('leave');
+                        showHideTopCommonView('leave')
                     }}
                     style={{visibility: 'inherit'}}>
                     <path className="st40" d="M707.8,1213.9c0,0-12,33-17,51s-13,47-17,62s-4,36-28,34s-28-21-26-38
