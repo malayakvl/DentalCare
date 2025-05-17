@@ -24,7 +24,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage34 from './periodontit34';
 import setupDiagnoze from "../../../lib/tfunctions";
@@ -49,6 +50,7 @@ export default function Tooth34() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
     
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -159,7 +161,7 @@ export default function Tooth34() {
     return (
         <>
             <g id="34" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1304.4775 842.0025)" className={`st3 st4 st5 ${toothActive.tooth34.active ? 'num-active' : ''}`}>34</text>
+                <text transform="matrix(1 0 0 1 1304.4775 842.0025)" className={`st3 st4 st5 ${selectedTooth === 34 ? 'num-active' : ''}`}>34</text>
             </g>
             <g id="TH-34" className={`f-tooth-init ${(teethDiagnozis.tooth34.show && !teethDiagnozis.tooth34.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -199,7 +201,7 @@ export default function Tooth34() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 34 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M1287,1255.9c0,0,8,42,15,67s14,47,33,47s25-15,25-28s-4-22-5-46s1-71,2-84
                         s13-41,9-68s-21-54-22-79s23-45,21-77s-5.8-165.8-10-185c-5-23-35-31-52-21s-22,31-25,86s-7,102-7,120s2,35,15,71
                         c13,36-18,62-14,100S1282,1228.9,1287,1255.9z"

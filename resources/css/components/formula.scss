@@ -455,7 +455,7 @@
     fill: #fdde88;
 }
 .change-color.diagnoze {
-    fill: #edd389;
+    fill: #90866b;
 }
 .st61 {
     fill-rule: evenodd;
@@ -521,33 +521,8 @@ fill: #e8e8e8;
 }
 .f-tooth-init.child:hover {
     visibility: hidden;
-
-    // .f-tooth-init-milk {
-    //     opacity: 1 !important; 
-    // }
-}
-.f-tooth-init.child:hover f-tooth-init-milk.child {
-    // opacity: 1;
-    // transition: opacity .5s ease-out;
-    // -moz-transition: opacity .5s ease-out;
-    // -webkit-transition: opacity .5s ease-out;
-    // -o-transition: opacity .5s ease-out;
 }
 
-.f-tooth-init.adult:hover {
-    // opacity: 1;
-    // transition: opacity .5s ease-out;
-    // -moz-transition: opacity .5s ease-out;
-    // -webkit-transition: opacity .5s ease-out;
-    // -o-transition: opacity .5s ease-out;
-}
-.f-tooth-init-milk.child:hover {
-    // opacity: 1;
-    // transition: opacity .5s ease-out;
-    // -moz-transition: opacity .5s ease-out;
-    // -webkit-transition: opacity .5s ease-out;
-    // -o-transition: opacity .5s ease-out;
-}
 .hide-number {
     display: none;
 }
@@ -568,13 +543,13 @@ fill: #e8e8e8;
     visibility: inherit !important;
 }
 .underlay {
-    fill: rgba(247, 237, 198, 0.2);
+    fill: none;
     // stroke: rgba(222, 123, 65, 0.9);
     // stroke-width:   1;
 }
-.underlay.active .st40 {
+.underlay.selected .st40 {
     // opacity: 0.5;
-    fill: rgba(241, 223, 247, 0.2);
+    fill: rgba(199, 175, 207, 0.2);
     // stroke: rgba(40, 2, 45, 0.9);
     // stroke-width:   1;
 }

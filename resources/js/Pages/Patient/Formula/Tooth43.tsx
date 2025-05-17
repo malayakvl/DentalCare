@@ -24,7 +24,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage43 from './periodontit43';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -49,6 +50,7 @@ export default function Tooth43() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -196,7 +198,7 @@ export default function Tooth43() {
     return (
         <>
             <g id="43" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 852.334 842.0025)" className={`st3 st4 st5 ${toothActive.tooth43.active ? 'num-active' : ''}`}>43</text>
+                <text transform="matrix(1 0 0 1 852.334 842.0025)" className={`st3 st4 st5 ${selectedTooth === 43 ? 'num-active' : ''}`}>43</text>
             </g>
             <g id="TH-43" className={`f-tooth-init ${(teethDiagnozis.tooth43.show && !teethDiagnozis.tooth43.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
@@ -225,7 +227,7 @@ export default function Tooth43() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className={`underlay ${selectedTooth === 43 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTeeth('over');
                     }}

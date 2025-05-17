@@ -25,7 +25,8 @@ import {
     getStatusesSelector,
     allTeethChildSelector,
     allTeethAdultSelector,
-    teethTypeSelector
+    teethTypeSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions"
 
@@ -50,6 +51,7 @@ export default function Tooth85() {
     const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -206,7 +208,7 @@ export default function Tooth85() {
     return (
         <>
             <g id="85" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 660 842)" className={`st3 st4 st5 ${toothActive.tooth85.active ? 'num-active' : ''}`}>85</text>
+                <text transform="matrix(1 0 0 1 660 842)" className={`st3 st4 st5 ${selectedTooth === 85 ? 'num-active' : ''}`}>85</text>
             </g>
             <g id="TH-85" className={`f-tooth-init-milk ${teethType} ${(teethDiagnozis.tooth85.show && !teethDiagnozis.tooth85.absent)  ? 'f-tooth-active' : ''}`}
                 onClick={() => {
@@ -234,7 +236,7 @@ export default function Tooth85() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay underlay-child" 
+                <g className={`underlay ${selectedTooth === 85 ? 'selected' : ''}`}  
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}

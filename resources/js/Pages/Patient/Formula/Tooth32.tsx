@@ -24,7 +24,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage32 from './periodontit32';
 import setupDiagnoze from "../../../lib/tfunctions";
@@ -49,6 +50,7 @@ export default function Tooth32() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -158,7 +160,7 @@ export default function Tooth32() {
     return (
         <>
             <g id="32" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1124.4463 842.0025)" className={`st3 st4 st5 ${toothActive.tooth32.active ? 'num-active' : ''}`}>32</text>
+                <text transform="matrix(1 0 0 1 1124.4463 842.0025)" className={`st3 st4 st5 ${selectedTooth === 32 ? 'num-active' : ''}`}>32</text>
             </g>
             <g id="TH-32" className={`f-tooth-init ${(teethDiagnozis.tooth32.show && !teethDiagnozis.tooth32.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -198,7 +200,7 @@ export default function Tooth32() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 32 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M1119,1202.9c0,0,2,48,5,71s6,60,11,77s14,29,25,28s15-12,17-30s2-66,2-90
                         s2.7-79,3.3-98c1.7-62-17.3-79-16.3-107s15-43.5,15-67.2c0-23.8-0.6-158.8-2-173.8c-2-21-16-28-29-29s-34,4-36,38s0.8,161,1,167
                         c1,26,16,39,16,68s-17,49-15,87S1119,1202.9,1119,1202.9z"

@@ -25,7 +25,8 @@ import {
     getStatusesSelector,
     allTeethChildSelector,
     allTeethAdultSelector,
-    teethTypeSelector
+    teethTypeSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 
 export default function Tooth64() {
@@ -48,6 +49,7 @@ export default function Tooth64() {
     const showChildStatus = useSelector(allTeethChildSelector);
     const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -334,7 +336,7 @@ export default function Tooth64() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                }}
             >
-                <g className="underlay" style={{visibility: "inherit"}}>
+                <g className={`underlay ${selectedTooth === 64 ? 'selected' : ''}`}  style={{visibility: "inherit"}}>
                     <path className="st40" d="M1339,261.9c0,0-2,39-5,69s-17,111-18,126s7.8,37.6,13,49c11,24,4,33-3,46
                     c-4.9,9.2-9.7,21.9-8.8,37.5c0.8,15.5-1.2,89.5,6.8,116.5c6.6,22.1,19,27,33,27s41-1,43-37s5-94,3-114s-19-40-20-54s20-41,20-71
                     s-6-41-4-74s3-63,4-91s-2-57-8-65s-21-9-35-4C1349,226.9,1343,229.9,1339,261.9z"></path>

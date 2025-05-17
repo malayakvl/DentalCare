@@ -25,7 +25,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     allTeethAdultSelector,
-    teethTypeSelector
+    teethTypeSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage17 from './periodontit17';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -49,6 +50,7 @@ export default function Tooth17() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -160,7 +162,7 @@ export default function Tooth17() {
     return (
         <>
             <g id="17" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${toothActive.tooth17.active ? 'num-active' : ''}`}>17</text>
+                <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${selectedTooth === 17 ? 'num-active' : ''}`}>17</text>
             </g>
             <g id="TH-17" className={`f-tooth-init ${(teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -200,7 +202,14 @@ export default function Tooth17() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: "inherit"}}>
+                <g className={`underlay ${selectedTooth === 17 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     <path className="st40" d="M364,271c0,0,6.9,35.5,2.1,54.2s-31.7,47.3-37.1,69.1c-3.9,15.9-6,47.1,1.2,67.9
                         c3.1,9,11.4,18.1,12.6,26.5c2.3,16.6-3.1,24.6-5.4,40.5c-4,27.7-12.7,61-11.7,92.3c1.6,49.2-5.2,120.4,65.1,117
                         s54.3-83.8,55.3-92.8c0.5-4.3,0.6-14.9,4.3-27.7c4-14,11.5-34.3,13.7-43c4.3-16.5-2.9-48.3-11.1-64.8c-8.2-16.4-15.7-25.6-6.9-42.9

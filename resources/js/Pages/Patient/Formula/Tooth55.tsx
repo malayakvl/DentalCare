@@ -26,7 +26,8 @@ import {
     allTeethChildSelector,
     allTeethAdultSelector,
     teethTypeSelector,
-    changeDiaSelector
+    changeDiaSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions"
 
@@ -52,6 +53,7 @@ export default function Tooth55() {
     const showStatus = useSelector(allTeethAdultSelector);
     const tooth55Diagnozis = teethDiagnozis.tooth55;
     const changeDia = useSelector(changeDiaSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const showHideTeeth = (type) => {
         if (type === 'over') {
@@ -267,7 +269,7 @@ export default function Tooth55() {
                     onMouseLeave={() => {
                         showHideTeeth('leave');
                     }}
-                    className="underlay" 
+                    className={`underlay ${selectedTooth === 55 ? 'selected' : ''}`} 
                     style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M631,233.9c0,0-3,28-4,40s-1,58-3,83s-13.1,61.9-14.1,83.5
                     c-0.9,21.5-3.9,37.5,2.1,54.5s14,23,10,37s-14.6,37.3-14.3,60.7s-0.7,76.3,7.3,105.3s25,36.9,43,36c19-1,35-15,35-57s2-90,3-109

@@ -51,6 +51,7 @@ export default function Tooth45() {
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -205,7 +206,7 @@ export default function Tooth45() {
                 onClick={() => {
                     teethDiagnozis.tooth45.show = !teethDiagnozis.tooth45.show;
                     teethDiagnozis.tooth85.show = false;
-                    document.getElementById('un-th-45').classList.add('active');
+                    // document.getElementById('un-th-45').classList.add('active');
 
 
                     dispatch(setSelectedToothNumber(45));
@@ -229,7 +230,7 @@ export default function Tooth45() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g id="un-th-45" className="underlay" 
+                <g className={`underlay ${selectedTooth === 45 ? 'selected' : ''}`} 
                     onMouseOver={() => {
                         showHideTeeth('over');
                     }}

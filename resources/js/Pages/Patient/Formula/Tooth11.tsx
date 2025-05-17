@@ -24,7 +24,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     allTeethAdultSelector,
-    teethTypeSelector
+    teethTypeSelector, 
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage11 from './periodontit11';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -49,6 +50,7 @@ export default function Tooth11() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -159,7 +161,7 @@ export default function Tooth11() {
     return (
         <>
             <g id="11" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 981.6768 716.1968)" className={`st3 st4 st5 ${toothActive.tooth11.active ? 'num-active' : ''}`}>11</text>
+                <text transform="matrix(1 0 0 1 981.6768 716.1968)" className={`st3 st4 st5 ${selectedTooth === 11 ? 'num-active' : ''}`}>11</text>
             </g>
             <g id="TH-11" className={`f-tooth-init ${(teethDiagnozis.tooth11.show && !teethDiagnozis.tooth11.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -210,7 +212,14 @@ export default function Tooth11() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 11 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     <path className="st40" d="M958,255.9c-0.3,1.2-0.6,2.3-0.9,3.4c-3.8,13.5-6,27.6-7.1,41.6
                         c-2,25-4,63-1,88s0.9,90.4-0.2,101.7c-1.8,17.3,8.2,36.3,10.2,50.3s-11.2,31.5-9.1,53.7c2.1,22.3,7.1,89.3,11.1,108.3s16,38,45,36
                         c21-1.4,32-23,35-41s9-92,8-104s-13-29-12-40s11-17,12-50s-3-71-6-91s-15-83-18-98c-5-24.9-12.1-50-20.1-74

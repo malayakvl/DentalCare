@@ -24,7 +24,8 @@ import {
     getZirconiaCrownColorSelector,
     getStatusesSelector,
     teethTypeSelector,
-    allTeethAdultSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage37 from './periodontit37';
 import setupDiagnoze from "../../../lib/tfunctions";
@@ -49,6 +50,7 @@ export default function Tooth37() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const showStatus = useSelector(allTeethAdultSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -159,7 +161,7 @@ export default function Tooth37() {
     return (
         <>
             <g id="37" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1668.877 842.0025)" className={`st3 st4 st5 ${toothActive.tooth37.active ? 'num-active' : ''}`}>37</text>
+                <text transform="matrix(1 0 0 1 1668.877 842.0025)" className={`st3 st4 st5 ${selectedTooth === 37 ? 'num-active' : ''}`}>37</text>
             </g>
             <g id="TH-37" className={`f-tooth-init ${(teethDiagnozis.tooth37.show && !teethDiagnozis.tooth37.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onMouseOver={() => {
@@ -199,7 +201,7 @@ export default function Tooth37() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 37 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M1663.7,1221.1c1.7,3.2,3.4,6.5,4.8,9.9c2.7,6.2,5.3,12.5,7.5,19
                         c4,12,8,24,19,35s22,20,39,20s37-3,52-8s30-20,31-39s0-33-7-52s-27-56-31-70c-2.8-9.8-7-25-10-35s-20-33-21-47s25-38,22-76
                         s-13.2-105-15-122c-3-28-15-81-65-82s-72,26-77,69s2,118,6,143s17,46,17,64s-25,54-19,78c4.7,19,13,36.8,22.6,53.7
