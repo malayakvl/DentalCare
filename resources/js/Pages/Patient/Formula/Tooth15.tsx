@@ -268,10 +268,10 @@ export default function Tooth15() {
                             />
                         </g>
                     </g>
-                    <g className="pulp" style={{visibility: tooth15Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                        <g className="pulpitis-pfilling" style={{visibility: tooth15Diagnozis?.apex ? 'inherit' : 'hidden'}}>
+                    <g className="pulp" style={{visibility: tooth15Diagnozis.apex || tooth15Diagnozis.pulpit ? 'inherit' : 'hidden'}}>
+                        <g className="pulpitis-pfilling" style={{visibility: tooth15Diagnozis?.apex || tooth15Diagnozis.pulpit ? 'inherit' : 'hidden'}}>
                             <path className="st22 target" d="M643 593.5C643 600.956 647.5 609 651.5 609C655.5 609 660 601.456 660 594C660 586.544 655 582 651.5 582C648.5 582 
-                                643 586.044 643 593.5Z" style={{fill: 'rgb(254, 246, 249)'}}
+                                643 586.044 643 593.5Z" style={{fill: '#e80808'}}
                             />
                         </g>
                     </g>
@@ -320,11 +320,11 @@ export default function Tooth15() {
                         <circle className="st57" cx="651.995" cy="595" r="12.25" style={{fill: 'black', opacity: tooth15Diagnozis.pin ? 1 : 0}} />
                     </g>
                     {/* CULTTAB */}
-                    <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth15Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth15Diagnozis.culttab ? 0 : 1}}>
+                    <g className="stump" style={{visibility: !tooth15Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth15Diagnozis.culttab ? 0 : 1}}>
                         <path className="st47" d="M614.7 597.4C613.2 591.1 614.4 584.8 617.9 579.1C620.7 574.6 624.8 570.5 629.4 567.1C636 562.2 644.3 558.2 653.4 559.2C658.3 559.7 662.4 561.7 666.7 563.4C670.4 564.9 674.5 566.3 677.9 568.2C681.9 570.4 685 573.4 686.9 576.7C689 580.5 689.4 584.6 689.1 588.8C688.6 595.7 686.3 602.2 683.1 608.3C680.7 612.8 678 617.1 674.7 621.3C672.5 624.2 669.9 627 666.4 629C662 631.5 656.7 632.6 651.5 632.9C647 633.1 642.4 632.7 638.1 631.2C633 629.4 628.9 626.2 626.4 622.5C624 619 622.9 615.2 621.2 611.5C619 606.8 616 602.5 614.7 597.4Z"></path>
                         <path className="st47" d="M627.413 596.911C626.435 592.82 627.218 588.728 629.501 585.025C631.327 582.103 634.001 579.44 637.002 577.231C641.307 574.049 646.721 571.451 652.656 572.1C655.852 572.425 658.527 573.724 661.332 574.828C663.745 575.802 666.419 576.712 668.637 577.946C671.246 579.375 673.268 581.323 674.507 583.467C675.877 585.935 676.138 588.598 675.942 591.326C675.616 595.807 674.116 600.029 672.029 603.991C670.463 606.914 668.702 609.707 666.55 612.435C665.115 614.318 663.419 616.137 661.136 617.436C658.266 619.06 654.809 619.774 651.417 619.969C648.482 620.099 645.481 619.839 642.677 618.865C639.35 617.696 636.676 615.617 635.045 613.214C633.48 610.941 632.762 608.473 631.653 606.069C630.218 603.017 628.261 600.224 627.413 596.911Z"></path>
                     </g>
-                    <g className="hRoot hImplant hEmpty" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.apex && !tooth15Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.apex && !tooth15Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className="st46" d="M692.5,568.1c0-0.1-0.1-0.1-0.1-0.2c-2.2-4.9-5.9-9.1-10.5-12.4c-4.1-2.8-8.8-4.8-13.2-7
                             c-5-2.5-9.8-5.4-15.5-6.2c-10.6-1.5-20.2,4.2-27.9,11.2c-2,1.8-3.9,3.7-5.6,5.8c-3,3.5-5.7,7.4-7.7,11.5c-4,8.2-5.3,17.3-3.5,26.4
                             c1.5,7.4,5.1,13.6,7.6,20.4c1.2,3.3,2.2,6.7,3.5,10c0.8,2,1.6,4,2.7,5.8c3.1,5.4,7.8,10.1,13.8,12.7c5,2.2,10.3,2.8,15.6,2.5
@@ -339,7 +339,7 @@ export default function Tooth15() {
                         <path className="st61 level1" d="M648.497 550.063C650.122 549.95 651.777 550.984 653.456 551.187C656.142 551.489 658.611 551.241 660.997 552.175C663.42 553.123 665.757 554.259 668.15 555.302C670.045 556.149 672.034 557.969 673.997 558.836C676.271 559.84 678.509 560.906 680.525 562.148C682.692 563.461 684.62 564.01 686.27 565.72C687.985 567.498 689.399 570.451 690.469 572.499C691.678 574.911 693.377 577.423 693.723 579.999C694.04 582.365 693.058 584.786 692.899 587.235C692.715 590.044 692.308 593.799 691.716 596.499C691.157 599.048 690.433 600.548 689.576 602.999C688.624 605.72 687.508 609.381 686.27 611.982C685.387 613.808 684.466 614.607 683.497 616.384C682.182 618.793 681.777 621.161 680.251 623.499C679.525 624.611 677.773 625.715 676.989 626.814C676.066 628.156 675.078 630.48 673.997 631.74C672.232 633.796 671.217 634.681 668.819 636.191C667.052 637.298 664.154 638.179 662.177 638.871C660.496 639.458 658.759 640.909 656.997 641.243C655.131 641.597 653.238 640.821 651.356 640.941C648.746 641.069 646.105 641.995 643.497 641.632C641.139 641.304 638.808 639.738 636.551 638.871C633.508 637.687 630.787 636.005 628.492 633.999C626.539 632.291 623.895 630.348 622.624 628.275C621.316 626.173 620.358 623.982 619.497 621.76C618.612 619.478 617.831 617.163 616.879 614.879C615.667 612.025 615.208 610.292 613.885 607.499C612.554 604.691 611.362 600.822 610.697 597.708C610.14 595.129 609.92 592.55 610.021 589.999C610.134 587.117 609.656 583.27 610.562 580.499C611.241 578.426 613.134 577.394 614.233 575.422C615.292 573.546 615.519 571.727 616.879 569.981C618.146 568.353 619.528 566.788 620.997 565.297C622.558 563.712 625.217 562.211 626.939 560.808C628.08 559.874 629.268 557.967 630.497 557.106C631.941 556.095 633.443 555.147 634.997 554.293C637.229 553.068 639.569 553.037 641.997 552.292C644.101 551.648 646.271 550.218 648.497 550.063ZM617.896 579.098C614.396 584.798 613.196 591.099 614.696 597.399C615.896 602.499 618.996 606.799 621.196 611.499C622.896 615.199 623.996 618.999 626.396 622.499C628.896 626.199 632.996 629.399 638.096 631.199C642.396 632.699 646.996 633.099 651.496 632.899C656.696 632.599 661.996 631.498 666.396 628.998C669.896 626.998 672.496 624.198 674.696 621.298C677.996 617.098 680.696 612.798 683.096 608.298C686.296 602.198 688.596 595.698 689.096 588.798C689.396 584.598 688.996 580.499 686.896 576.699C684.996 573.399 681.896 570.399 677.896 568.199C674.496 566.299 670.396 564.899 666.696 563.399C662.396 561.699 658.296 559.699 653.396 559.199C644.296 558.199 635.996 562.198 629.396 567.098C624.796 570.498 620.696 574.598 617.896 579.098Z"></path>
                     </g>
                     {/*CARIES/SEAL*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.shaper && !tooth15Diagnozis.apex) ? 'inherit' : 'hidden'}}>
+                    <g className="header caries-filling" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.shaper && !tooth15Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС ЦЕНТР*/}
                         <g id="s_header_15_5" 
                             className="caries-filling"
@@ -528,7 +528,8 @@ export default function Tooth15() {
                             />
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
+                    {/*VINIR*/}
+                    <g style={{visibility: 'inherit'}}>
                         <g className="vinir"  style={
                             {
                                 visibility: tooth15Diagnozis.vinir ? 'inherit' : 'hidden',
@@ -579,7 +580,7 @@ export default function Tooth15() {
                         />
                     </g>
                     {/* FISSURES */}
-                    <g className="fissures hEmpty hRoot hImplant" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.apex && !tooth15Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="fissures" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.apex && !tooth15Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className={`st3 fissure ${tooth15Diagnozis.fissure ? 'diagnoze' : ''}`}
                             d="M654.2,602.9c-10.1,0-20-1.8-28.9-5.3l0.4-1c9.5,3.7,20.2,5.5,30.9,5.2c7.6-0.2,14.7-1.5,20.9-3.8l0.4,1
                             c-6.4,2.3-13.5,3.6-21.3,3.8C655.8,602.9,655,602.9,654.2,602.9z" 
