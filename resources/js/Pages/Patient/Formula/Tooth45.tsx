@@ -216,8 +216,6 @@ export default function Tooth45() {
                 onClick={() => {
                     teethDiagnozis.tooth45.show = !teethDiagnozis.tooth45.show;
                     teethDiagnozis.tooth85.show = false;
-                    // document.getElementById('un-th-45').classList.add('active');
-
 
                     dispatch(setSelectedToothNumber(45));
                     dispatch(setChangeDia(Math.random()));

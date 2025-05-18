@@ -202,6 +202,7 @@ export default function Tooth13() {
             <g id="TH-13" className={`f-tooth-init ${(teethDiagnozis.tooth13.show && !teethDiagnozis.tooth13.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth13.show = !teethDiagnozis.tooth13.show;
+                    teethDiagnozis.tooth53.show = false;
                     dispatch(setSelectedToothNumber(13));
                     dispatch(setChangeDia(Math.random()));
 

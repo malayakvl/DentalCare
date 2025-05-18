@@ -235,7 +235,7 @@ export default function Tooth61() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >               
-                <g className={`underlay ${selectedTooth === 51 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className={`underlay ${selectedTooth === 61 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}
