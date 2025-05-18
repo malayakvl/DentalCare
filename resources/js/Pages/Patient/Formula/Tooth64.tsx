@@ -176,7 +176,7 @@ export default function Tooth64() {
         if (type === 'leave') {
             if (teethType === 'child' && !teethDiagnozis.tooth64.show && !teethDiagnozis.tooth24.show) {
                 document.getElementById('TH-64').classList.remove('f-tooth-active');
-                document.getElementById('TH-24').style.opacity = 0;
+                document.getElementById('TH-64').style.opacity = 0;
             }
             if (teethType === 'child' && !teethDiagnozis.tooth64.show && teethDiagnozis.tooth24.show) {
                 document.getElementById('TH-64').classList.remove('f-tooth-active');
@@ -235,13 +235,15 @@ export default function Tooth64() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className={`underlay ${selectedTooth === 64 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g 
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}
                     onMouseLeave={() => {
                         showHideOverlay('leave');
                     }}
+                    className={`underlay ${selectedTooth === 64 ? 'selected' : ''}`} 
+                    style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                 >
                     <path className="st40" d="M1339,261.9c0,0-2,39-5,69s-17,111-18,126s7.8,37.6,13,49c11,24,4,33-3,46
                     c-4.9,9.2-9.7,21.9-8.8,37.5c0.8,15.5-1.2,89.5,6.8,116.5c6.6,22.1,19,27,33,27s41-1,43-37s5-94,3-114s-19-40-20-54s20-41,20-71

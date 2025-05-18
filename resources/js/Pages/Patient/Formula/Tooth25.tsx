@@ -159,19 +159,17 @@ export default function Tooth25() {
 
     const showHideTeeth = (type) => {
         if (type === 'over') {
-            console.log('over')
             if (teethType === 'adult' && !teethDiagnozis.tooth25.show) {
                 document.getElementById('TH-25').classList.add('f-tooth-active');
             }
         } 
 
         if (type === 'leave') {
-            console.log('leave')
             if (teethType === 'child' && !teethDiagnozis.tooth65.show) {
                 document.getElementById('TH-65').classList.remove('f-tooth-active');
             }
             if (teethType === 'adult' && !teethDiagnozis.tooth25.show) {
-                document.getElementById('TH-65').classList.remove('f-tooth-active');
+                document.getElementById('TH-25').classList.remove('f-tooth-active');
                 if (teethDiagnozis.tooth65.show) {
                     document.getElementById('TH-65').classList.add('f-tooth-active');
                 }
@@ -189,7 +187,7 @@ export default function Tooth25() {
         if (type === 'leave') {
             if (teethType === 'adult' && !teethDiagnozis.tooth25.show) {
                 document.getElementById('TH-25').classList.remove('f-tooth-active');
-                if (teethDiagnozis.tooth65.show) {
+                if (teethDiagnozis.tooth55.show) {
                     document.getElementById('TH-65').classList.add('f-tooth-active');
                 }
             }
@@ -205,6 +203,7 @@ export default function Tooth25() {
             <g id="TH-25" className={`f-tooth-init ${(teethDiagnozis.tooth25.show && !teethDiagnozis.tooth25.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth25.show = !teethDiagnozis.tooth25.show;
+                    teethDiagnozis.tooth65.show = false;
                     dispatch(setSelectedToothNumber(25));
                     dispatch(setChangeDia(Math.random()));
 
@@ -239,7 +238,7 @@ export default function Tooth25() {
                         c-3-40-17-52-16-74c1.3-28,15-31,15-59c0-14-4-44-6-59s-9-57-10-68s-4-67-5-80s0-32-16-34S1429,238.9,1426,248.9z"
                     />
                 </g>
-                <g id="T_25_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTopCommonView('over')
                     }}
@@ -562,7 +561,7 @@ export default function Tooth25() {
                     />
                     </g>
                 </g>
-                <g id="T_25" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTopCommonView('over')
                     }}

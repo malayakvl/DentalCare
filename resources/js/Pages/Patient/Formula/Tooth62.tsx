@@ -176,7 +176,7 @@ export default function Tooth62() {
         if (type === 'leave') {
             if (teethType === 'child' && !teethDiagnozis.tooth62.show && !teethDiagnozis.tooth22.show) {
                 document.getElementById('TH-62').classList.remove('f-tooth-active');
-                document.getElementById('TH-22').style.opacity = 0;
+                document.getElementById('TH-62').style.opacity = 0;
             }
             if (teethType === 'child' && !teethDiagnozis.tooth62.show && teethDiagnozis.tooth22.show) {
                 document.getElementById('TH-62').classList.remove('f-tooth-active');
@@ -235,13 +235,15 @@ export default function Tooth62() {
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className={`underlay ${selectedTooth === 62 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g 
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}
                     onMouseLeave={() => {
                         showHideOverlay('leave');
                     }}
+                    className={`underlay ${selectedTooth === 62 ? 'selected' : ''}`} 
+                    style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                 >
                     <path className="st40" d="M1181,302.9c0,0-10,51-14,69s-16.6,82.9-17.8,104c-1.2,21-1.2,43,5.8,62
                         s-4.5,36.3-5.7,54.6c-1.2,18,2,102.9,7.7,120.4c5,15.3,17,24,32,23s30-6,32-32s-2-102-1-114s-17.1-30.8-16-50c1-18,16-34,17-72
@@ -253,7 +255,7 @@ export default function Tooth62() {
                     }}
                     onMouseLeave={() => {
                         showHideOverlay('leave');
-                    }}  
+                    }} 
                 >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
@@ -510,7 +512,7 @@ export default function Tooth62() {
                     }}
                     onMouseLeave={() => {
                         showHideOverlay('leave');
-                    }}  
+                    }} 
                 >
                     {/* CHANGE COLOR */}
                     <g className="dentin">

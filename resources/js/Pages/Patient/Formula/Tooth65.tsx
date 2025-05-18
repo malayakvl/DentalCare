@@ -176,7 +176,7 @@ export default function tooth65() {
         if (type === 'leave') {
             if (teethType === 'child' && !teethDiagnozis.tooth65.show && !teethDiagnozis.tooth25.show) {
                 document.getElementById('TH-65').classList.remove('f-tooth-active');
-                document.getElementById('TH-25').style.opacity = 0;
+                document.getElementById('TH-65').style.opacity = 0;
             }
             if (teethType === 'child' && !teethDiagnozis.tooth65.show && teethDiagnozis.tooth25.show) {
                 document.getElementById('TH-65').classList.remove('f-tooth-active');

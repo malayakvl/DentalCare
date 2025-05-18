@@ -170,7 +170,7 @@ export default function Tooth12() {
                 document.getElementById('TH-62').classList.remove('f-tooth-active');
             }
             if (teethType === 'adult' && !teethDiagnozis.tooth22.show) {
-                document.getElementById('TH-62').classList.remove('f-tooth-active');
+                document.getElementById('TH-22').classList.remove('f-tooth-active');
                 if (teethDiagnozis.tooth62.show) {
                     document.getElementById('TH-62').classList.add('f-tooth-active');
                 }
@@ -203,6 +203,7 @@ export default function Tooth12() {
             <g id="TH-22" className={`f-tooth-init ${(teethDiagnozis.tooth22.show && !teethDiagnozis.tooth22.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth22.show = !teethDiagnozis.tooth22.show;
+                    teethDiagnozis.tooth62.show = false;
                     dispatch(setSelectedToothNumber(22));
                     dispatch(setChangeDia(Math.random()));
 

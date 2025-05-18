@@ -102,7 +102,7 @@ export default function Tooth55() {
         }
     }
     
-    return (
+    return ( 
         <>
             <g id="55" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 630 716)" className={`st3 st4 st5 ${selectedTooth === 55 ? 'num-active' : ''}`}>55</text>

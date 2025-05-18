@@ -226,7 +226,7 @@ export default function Tooth15() {
                     }
                     dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
-            >
+            > 
                 <g className={`underlay ${selectedTooth === 15 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTeeth('over');
@@ -590,7 +590,7 @@ export default function Tooth15() {
                         />
                     </g>
                 </g>
-                <g id="T_15" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTopCommonView('over')
                     }}

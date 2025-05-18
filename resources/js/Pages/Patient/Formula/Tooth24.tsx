@@ -170,7 +170,7 @@ export default function Tooth24() {
                 document.getElementById('TH-64').classList.remove('f-tooth-active');
             }
             if (teethType === 'adult' && !teethDiagnozis.tooth24.show) {
-                document.getElementById('TH-64').classList.remove('f-tooth-active');
+                document.getElementById('TH-24').classList.remove('f-tooth-active');
                 if (teethDiagnozis.tooth64.show) {
                     document.getElementById('TH-64').classList.add('f-tooth-active');
                 }
@@ -203,6 +203,7 @@ export default function Tooth24() {
             <g id="TH-24" className={`f-tooth-init ${(teethDiagnozis.tooth24.show && !teethDiagnozis.tooth24.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth24.show = !teethDiagnozis.tooth24.show;
+                    teethDiagnozis.tooth64.show = false;
                     dispatch(setSelectedToothNumber(24));
                     dispatch(setChangeDia(Math.random()));
 
@@ -226,9 +227,11 @@ export default function Tooth24() {
             >
                 <g className={`underlay ${selectedTooth === 24 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
+                        console.log('underlay 24 over')
                         showHideTeeth('over');
                     }}
                     onMouseLeave={() => {
+                        console.log('underlay 24 out')
                         showHideTeeth('leave');
                     }}
                 >
