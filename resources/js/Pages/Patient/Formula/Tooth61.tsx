@@ -28,6 +28,8 @@ import {
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
+import PeriodontitStage61 from './periodontit61';
+import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth61() {
     const dispatch = useDispatch<any>();
@@ -258,7 +260,8 @@ export default function Tooth61() {
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth61Diagnozis.culttab && !tooth61Diagnozis.implant && !tooth61Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className="st24" d="M1137.7,597.9c2-5.8-4.6-9.9-13.4-11.6c-9.3-1.8-20-1.4-30.7-1.1
+                            <path className="st24" 
+                                d="M1137.7,597.9c2-5.8-4.6-9.9-13.4-11.6c-9.3-1.8-20-1.4-30.7-1.1
                                 c-8.9,0.3-17.8,0.7-25,3.2c-3.9,1.4-7.1,3.3-8.3,6.3c-2.2,5.4,3.6,10.2,8.8,14.5c2.4,2,4.7,4.1,6.7,6.4
                                 c3.5,4.1,5.9,9.1,11.2,12.5c3.2,2,7.1,3.3,11.4,3.4c5,0.2,9.9-1.2,13.7-3.6c5.6-3.5,8.3-8.5,10.5-13.3c1.3-2.8,2.5-5.6,5.1-8
                                 C1131,603.7,1136.4,601.7,1137.7,597.9z"
@@ -345,7 +348,7 @@ export default function Tooth61() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth61Diagnozis.culttab && !tooth61Diagnozis.abutment && !tooth61Diagnozis.implant && !tooth61Diagnozis.shaper && !tooth61Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС LEFT*/}
-                        <g id="s_header_61_4" 
+                        <g 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -366,7 +369,7 @@ export default function Tooth61() {
                                 c3.4,2.3,8.6,6.2,13.1,10.8C1081.2,597.3,1083.2,601.3,1083.2,604.8z" 
                             />
                         </g>
-                        <g id="s_header_61_3" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -387,7 +390,7 @@ export default function Tooth61() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_61_2" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -408,7 +411,7 @@ export default function Tooth61() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_61_1" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -725,7 +728,7 @@ export default function Tooth61() {
                             />
                         </g>
                         <g
-                            className="caries-filling hoho1"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -793,14 +796,16 @@ export default function Tooth61() {
                             />
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'hidden'}}>
+                    <g className="hEmpty hImplant hRoot" style={{visibility:"inherit"}}>
                         <g className="vinir" 
                             style={{
                                 visibility: tooth61Diagnozis.vinir ? 'inherit' : 'hidden',
                                 opacity: tooth61Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" d="M1147.42 467.4C1146.62 460.6 1145.42 453.8 1143.82 447.2C1142.32 441 1140.42 435 1137.82 429.1C1134.12 420.6 1128.82 412.5 1120.52 408.2C1112.32 404 1102.72 404.3 1093.82 407.1C1086.82 409.3 1080.32 413 1074.82 417.8C1066.92 424.7 1061.12 433.6 1057.22 443.2C1056.92 443.8 1056.72 444.5 1056.52 445.1C1053.92 452 1052.22 459.3 1051.02 466.6C1049.52 476.4 1049.02 486.3 1049.02 496.1C1049.02 503.4 1049.22 510.6 1049.62 517.8C1049.72 519.4 1050.22 521 1050.82 522.5C1051.42 523.8 1052.22 525 1053.22 526.1L1056.12 527.3C1060.42 527.5 1064.72 527.6 1069.02 527.6C1079.32 527.7 1089.62 527.6 1099.92 527.2C1107.42 526.9 1114.92 526.5 1122.52 525.9C1125.52 525.7 1128.42 525.4 1131.42 525.1C1134.22 524 1136.72 522.6 1139.02 520.7C1141.92 518.3 1144.32 515.3 1146.02 512C1146.92 508.5 1147.62 504.9 1148.02 501.4C1149.52 490.1 1148.82 478.7 1147.42 467.4Z"></path>
+                            <path className="st55" 
+
+                                d="M1147.42 467.4C1146.62 460.6 1145.42 453.8 1143.82 447.2C1142.32 441 1140.42 435 1137.82 429.1C1134.12 420.6 1128.82 412.5 1120.52 408.2C1112.32 404 1102.72 404.3 1093.82 407.1C1086.82 409.3 1080.32 413 1074.82 417.8C1066.92 424.7 1061.12 433.6 1057.22 443.2C1056.92 443.8 1056.72 444.5 1056.52 445.1C1053.92 452 1052.22 459.3 1051.02 466.6C1049.52 476.4 1049.02 486.3 1049.02 496.1C1049.02 503.4 1049.22 510.6 1049.62 517.8C1049.72 519.4 1050.22 521 1050.82 522.5C1051.42 523.8 1052.22 525 1053.22 526.1L1056.12 527.3C1060.42 527.5 1064.72 527.6 1069.02 527.6C1079.32 527.7 1089.62 527.6 1099.92 527.2C1107.42 526.9 1114.92 526.5 1122.52 525.9C1125.52 525.7 1128.42 525.4 1131.42 525.1C1134.22 524 1136.72 522.6 1139.02 520.7C1141.92 518.3 1144.32 515.3 1146.02 512C1146.92 508.5 1147.62 504.9 1148.02 501.4C1149.52 490.1 1148.82 478.7 1147.42 467.4Z"></path>
                         </g>
                     </g>
                     {/* ТИМЧАСОВА КОРОНКА/КЕРАМІЧНА КОРОНКА */}
