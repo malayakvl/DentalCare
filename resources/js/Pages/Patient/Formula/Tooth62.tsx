@@ -28,6 +28,9 @@ import {
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
+import PeriodontitStage62 from './periodontit62';
+import setupDiagnoze from "../../../lib/tfunctions"
+
 
 export default function Tooth62() {
     const dispatch = useDispatch<any>();
@@ -506,7 +509,7 @@ export default function Tooth62() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 12, 85)'}}
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 19, 85)'}}
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}
@@ -559,7 +562,8 @@ export default function Tooth62() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
+                        <PeriodontitStage62 />
+                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
                             <circle className="st42" cx="1210.1" cy="273.3" r="8.2"></circle>
                         </g>
                         <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
@@ -567,7 +571,7 @@ export default function Tooth62() {
                         </g>
                         <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
                             <circle className="st42" cx="1209.1" cy="252.3" r="30"></circle>
-                        </g>
+                        </g> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth62Diagnozis.pin ? 1 : 0
@@ -775,7 +779,7 @@ export default function Tooth62() {
                                 d="M1169 463.5L1163 502.5" />
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'hidden'}}>
+                    <g className="hEmpty hImplant hRoot" style={{visibility:"inherit"}}>
                         <g className="vinir" 
                             style={{
                                 visibility: tooth62Diagnozis.vinir ? 'inherit' : 'hidden',

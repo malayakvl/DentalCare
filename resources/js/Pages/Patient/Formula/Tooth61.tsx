@@ -571,7 +571,8 @@ export default function Tooth61() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
+                        <PeriodontitStage61 />
+                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="1125.2" cy="234.2" r="8.2"></circle>
                         </g>
                         <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
@@ -579,7 +580,7 @@ export default function Tooth61() {
                         </g>
                         <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="1125.2" cy="215.3" r="30"></circle>
-                        </g>
+                        </g> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth61Diagnozis.pin ? 1 : 0
