@@ -570,15 +570,6 @@ export default function Tooth63() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage63 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="63"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1305.1" cy="199.8" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="63"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1303.1" cy="192.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="63"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1305.9" cy="180.3" r="30"></circle>
-                        </g> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth63Diagnozis.pin ? 1 : 0

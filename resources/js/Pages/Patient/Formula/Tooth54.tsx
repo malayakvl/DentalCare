@@ -257,7 +257,7 @@ export default function Tooth54() {
                     }}
                 >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
-                    <g className="dentin" pigmentation="0">
+                    <g className="dentin">
                         <g className={`d-ch-color`} style={{visibility: !tooth54Diagnozis.culttab && !tooth54Diagnozis.implant && !tooth54Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth54Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth54Diagnozis?.apex ? 'apex' : ''}`} 
                                 d="M462,607.2c1.5-3.5,3.3-6.9,4.8-10.3c3.9-8.9,6.2-18.9,11.7-27.4
@@ -633,7 +633,7 @@ export default function Tooth54() {
                                 c8.8-4,18.2-6.8,28.1-8.4c23.2-3.6,47.7,0,68.3,10.7c9.1,4.8,17.2,10.8,23.9,17.9C606.2,406.7,606.2,407.3,606.3,407.9z"
                             />
                         </g>
-                        <g id="d-55-1" style={{visibility: !tooth54Diagnozis.implant && !tooth54Diagnozis.abutment && !tooth54Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth54Diagnozis.implant && !tooth54Diagnozis.abutment && !tooth54Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st10 change-color ${tooth54Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M614.5,349.4c-0.7,17.4-4.3,34.5-7.1,51.7c-0.4,2.3-0.7,4.5-1.1,6.8c-0.1-0.6-0.1-1.2-0.2-1.8
                                 c-6.7-7.1-14.7-13.1-23.9-17.9c-20.6-10.7-45-14.3-68.3-10.7c-9.9,1.5-19.4,4.3-28.1,8.3c-0.1,0.1-0.2,0.2-0.2,0.2
