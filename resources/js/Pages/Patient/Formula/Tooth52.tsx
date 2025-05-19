@@ -295,7 +295,7 @@ export default function Tooth52() {
                         </g>
                     </g>
                     {/* SHAPER */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{opacity:0, visibility: "hidden"}} status="0">
+                    <g className="shaper" style={{opacity:0, visibility: "hidden"}}>
                         <circle className="st44" cx="914.77" cy="599.77" r="20.77"></circle>
                         <path className="st45"
                               d="M912.577 591.739C913.129 589.804 915.871 589.804 916.423 591.739L916.929 593.511C917.225 594.549 918.291 595.164 919.338 594.902L921.126 594.454C923.077 593.965 924.448 596.339 923.049 597.785L921.767 599.109C921.016 599.884 921.016 601.116 921.767 601.891L923.049 603.215C924.448 604.661 923.077 607.035 921.126 606.546L919.338 606.098C918.291 605.836 917.225 606.451 916.929 607.489L916.423 609.261C915.871 611.196 913.129 611.196 912.577 609.261L912.071 607.489C911.775 606.451 910.709 605.836 909.662 606.098L907.874 606.546C905.923 607.035 904.552 604.661 905.951 603.215L907.233 601.891C907.984 601.116 907.984 599.884 907.233 599.109L905.951 597.785C904.552 596.339 905.923 593.965 907.874 594.454L909.662 594.902C910.709 595.164 911.775 594.549 912.071 593.511L912.577 591.739Z"></path>
@@ -374,7 +374,7 @@ export default function Tooth52() {
                             className="caries-filling"
                         >
                             <path className="st7" d="M895.6,614.7c2.1,3.8,4.3,7.7,7.5,10.7c3.5,3.3,8.1,5.3,12.7,4.4c3.1-0.6,5.9-2.5,8-5c2.9-3.2,4.7-7.2,7-10.9
-                    c-1.1-2.5-2.7-5.9-3.6-8c-0.5-1.2-1-2.5-1.2-3.8c-5.9-0.5-16.3-1.3-23.3-1.3C902.6,603.2,898.5,610.1,895.6,614.7z"
+                                c-1.1-2.5-2.7-5.9-3.6-8c-0.5-1.2-1-2.5-1.2-3.8c-5.9-0.5-16.3-1.3-23.3-1.3C902.6,603.2,898.5,610.1,895.6,614.7z"
                             />
                             <path className={
                                     `st8 caries-bottom
@@ -627,7 +627,7 @@ export default function Tooth52() {
                         />
                     </g>
                     {/* ФОРМУВАЧ */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{opacity:0, visibility: "hidden"}} status="0">
+                    <g className="shaper" style={{opacity:0, visibility: "hidden"}} status="0">
                         <path className="st44"
                               d="M928.473 437.859C929.031 440.197 927.416 442.496 925.027 442.763L892.999 446.344C890.611 446.611 888.528 444.726 888.555 442.324L888.999 402.614C889.022 400.587 890.558 398.898 892.573 398.682L914.959 396.284C916.96 396.07 918.808 397.375 919.275 399.333L928.473 437.859Z"></path>
                     </g>
@@ -701,7 +701,7 @@ export default function Tooth52() {
                             />
                         </g>
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -728,7 +728,7 @@ export default function Tooth52() {
                         </g>
                         {/*КАРИЕС CENTER*/}
                         <g
-                            className="caries-filling hoho1"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
