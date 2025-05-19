@@ -200,7 +200,7 @@ export default function Tooth13() {
                 <text transform="matrix(1 0 0 1 806.7852 716.1968)" className={`st3 st4 st5 ${selectedTooth === 13 ? 'num-active' : ''}`}>13</text>
             </g>
             <g id="TH-13" className={`f-tooth-init ${(teethDiagnozis.tooth13.show && !teethDiagnozis.tooth13.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onClick={() => {
+                onClick={() => { 
                     teethDiagnozis.tooth13.show = !teethDiagnozis.tooth13.show;
                     teethDiagnozis.tooth53.show = false;
                     dispatch(setSelectedToothNumber(13));
@@ -248,7 +248,8 @@ export default function Tooth13() {
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth13Diagnozis.culttab && !tooth13Diagnozis.implant && !tooth13Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className={`st24 ${tooth13Diagnozis.apex ? 'apex' : ''}`} d="M791.5,598.3c-0.7-5.4,0.9-10.5,3.2-15.3c2.2-4.5,5.1-8.9,9-12.4
+                            <path className={`st24 ${tooth13Diagnozis.apex ? 'apex' : ''}`} 
+                                d="M791.5,598.3c-0.7-5.4,0.9-10.5,3.2-15.3c2.2-4.5,5.1-8.9,9-12.4
                                 c6.6-6,15.6-10.5,25.8-10.4c9.5,0.1,17.8,4.2,24,9.7c4.5,3.9,7.9,8.9,11,13.9c2.1,3.3,4.1,6.8,4.3,11c0.3,5.1-2.7,9.5-5.8,13.2
                                 c-3.4,4-7.2,7.6-10.5,11.9c-1.8,2.4-3.6,4.9-5.9,7c-3.9,3.5-9.1,5.8-14.7,6.6c-7.2,1-14.6-0.5-19.9-4.5c-3-2.3-4.9-5.2-7-8
                                 c-2.4-3.3-5-6.6-7.3-10C794.8,607.1,792.1,603.2,791.5,598.3z"
@@ -338,7 +339,8 @@ export default function Tooth13() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
-                            className="caries-filling">
+                            className="caries-filling"
+                        >
                             <path className="st7" d="M781.8,596.2c0.8,6.6,4.2,12,7.8,17.4c1.6,2.4,3.2,4.8,4.9,7.3c3.2-6,12.4-11.6,22.2-14.1
                                 c5-7.5-4.4-13.8-9.2-18.3c-5.1-4.8-14.8-13.3-19.5-17.5c-0.8,1.5-1.5,3-2.2,4.5C782.9,582,781,588.9,781.8,596.2z"
                             />
@@ -418,18 +420,20 @@ export default function Tooth13() {
                         </g>
                         <g className="with">
                             {/*Черточка лево низ*/}
-                            <path className="st54" style={{
+                            <path 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_bottom && !tooth13Diagnozis.seal_center) ||
                                         (tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_bottom && !tooth13Diagnozis.seal_center) ||
-                                        (!tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_center)
+                                        (!tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M815.5 607.5C812 607.833 803.2 610.3 796 617.5" 
                             />
                             {/*Овал лево*/}
-                            <path className="st54" style={{
+                            <path className="st54"
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_top) ||
@@ -439,27 +443,31 @@ export default function Tooth13() {
                                 d="M815 607C813 593.286 797 581.095 790 575"
                             />
                             {/*Черточка верх лево*/}
-                            <path className="st54" style={{
+                            <path className="st54"
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_top && !tooth13Diagnozis.seal_bottom) ||
-                                        (!tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_top && tooth13Diagnozis.seal_top)
+                                        (!tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_top && tooth13Diagnozis.seal_bottom) ||
+                                        (!tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_right && tooth13Diagnozis.seal_top && !tooth13Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M815 607.5C819.167 606.167 829.2 603.7 838 608.5" 
                             />
                             {/*Овал черточка верх*/}
-                            <path className="st54" style={{
+                            <path className="st54"
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_right && !tooth13Diagnozis.seal_top) ||
                                         (!tooth13Diagnozis.seal_right && tooth13Diagnozis.seal_top)
                                     ) ? 5 : 0
-                                }}
+                                }} 
                                 d="M838 608.5C840.167 604.167 849.2 593.5 868 585.5" 
                             />
                             {/*Черточка верх право*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_right && !tooth13Diagnozis.seal_bottom) ||
@@ -521,7 +529,7 @@ export default function Tooth13() {
                         />
                     </g>
                 </g>
-                <g id="T_13" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
                         showHideTopCommonView('over')
                     }}
@@ -531,16 +539,17 @@ export default function Tooth13() {
                 >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
-                        <g id="dentin_v_13" style={{visibility: !tooth13Diagnozis.implant && !tooth13Diagnozis.apex && !tooth13Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_13" className={`st10 change-color ${tooth13Diagnozis.change_color ? 'diagnoze' : ''}`} d="M862.4,463.1c-4.4,6.1-12.2,9.2-18.2,14c-5.2,4.2-9.1,9.8-15.2,13
+                        <g style={{visibility: !tooth13Diagnozis.implant && !tooth13Diagnozis.apex && !tooth13Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st10 change-color ${tooth13Diagnozis.change_color ? 'diagnoze' : ''}`} 
+                                d="M862.4,463.1c-4.4,6.1-12.2,9.2-18.2,14c-5.2,4.2-9.1,9.8-15.2,13
                                 c-1.3,0.7-2.6,1.2-4,1.6c-1.4-0.4-2.8-0.9-4-1.5c-7-3.3-11.6-9.3-16.4-14.9c-6.6-7.8-13.9-15.4-17-24.8c-2.1-6.1-2.2-12.6-2.4-19
                                 c0,0.8,0,1.6,0.1,2.4c1-3.2,2-6.3,3-9.5c1.9-5.8,3.6-11.7,6.6-17c3.5-6.1,8.4-11.1,14.4-14.3c4.1-2.2,8.7-3.6,13.5-3.9
                                 c2.1-0.1,4.2,0,6.2,0.3c1.1,0.2,2.1,0.5,3.1,0.8c4.6,1.5,8.5,4.4,12.2,7.5c6.3,5.2,12.1,11.1,16.8,17.6c0.3,1.2,0.5,2.3,0.8,3.5
                                 c1.8,7.8,3.2,15.7,4.1,23.6C866.8,449.7,866.8,456.8,862.4,463.1z"
                             />
                         </g>
-                        <g id="dentin_n_13" className="hImplant hEmpty" style={{visibility: !tooth13Diagnozis.implant && !tooth13Diagnozis.abutment && !tooth13Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_x5F_n_x5F_13_1_" className={`st10 change-color ${tooth13Diagnozis.change_color ? 'diagnoze' : ''}`} 
+                        <g className="hImplant hEmpty" style={{visibility: !tooth13Diagnozis.implant && !tooth13Diagnozis.abutment && !tooth13Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st10 change-color ${tooth13Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M861.1,415.4c-4.7-6.5-10.5-12.4-16.8-17.6c-3.7-3.1-7.6-6-12.2-7.5
                                 c-1-0.3-2.1-0.6-3.1-0.8c-2-0.4-4.1-0.5-6.2-0.3c-4.8,0.3-9.4,1.7-13.5,3.9c-5.9,3.2-10.9,8.2-14.4,14.3c-3,5.3-4.8,11.2-6.6,17
                                 c-1,3.2-2.1,6.3-3,9.5c0-1.7-0.1-3.4-0.1-5.2c-0.4-11.7-1.8-23.2-2.7-34.9c-1.1-13.4-1.7-27-2.2-40.5c-0.6-16.8-1.1-33.7-1.2-50.5
@@ -767,7 +776,7 @@ export default function Tooth13() {
                         </g>
                         {/*КАРИЕС CENTER*/}
                         <g
-                            className="caries-filling hoho1"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -796,16 +805,18 @@ export default function Tooth13() {
                         </g>
                         <g className="with">
                             {/*Черточка лево низ*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_top && !tooth13Diagnozis.seal_center) ||
                                         (!tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_top)
                                     ) ? 5 : 0
-                                }}
+                                }} 
                                 d="M807.5 501.5L801 464" />
                             {/*Черточка лево верх*/}    
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_left && !tooth13Diagnozis.seal_top) ||
@@ -816,24 +827,30 @@ export default function Tooth13() {
                                 d="M801 464C797.5 446.5 795.3 442.7 788.5 439.5" 
                             />
                             {/*Черточка середина*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_right && !tooth13Diagnozis.seal_top) ||
+                                        (!tooth13Diagnozis.seal_right && !tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_top && tooth13Diagnozis.seal_bottom) ||
                                         (tooth13Diagnozis.seal_right && tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_center && !tooth13Diagnozis.seal_top) ||
-                                        (!tooth13Diagnozis.seal_top && !tooth13Diagnozis.seal_bottom && tooth13Diagnozis.seal_center)
+                                        (!tooth13Diagnozis.seal_center && !tooth13Diagnozis.seal_bottom && tooth13Diagnozis.seal_top)
                                     ) ? 5 : 0
-                                }} d="M854.5 457C851.5 433.5 855.1 431.2 859.5 422" 
+                                }} 
+                                d="M854.5 457C851.5 433.5 855.1 431.2 859.5 422" 
                             />
                             {/*Черточка право верх*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth13Diagnozis.seal_right && !tooth13Diagnozis.seal_top) ||
+                                        (!tooth13Diagnozis.seal_right && !tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_top && tooth13Diagnozis.seal_bottom) ||
                                         (tooth13Diagnozis.seal_right && tooth13Diagnozis.seal_left && tooth13Diagnozis.seal_center && !tooth13Diagnozis.seal_top) ||
-                                        (!tooth13Diagnozis.seal_top && !tooth13Diagnozis.seal_bottom && tooth13Diagnozis.seal_center)
+                                        (!tooth13Diagnozis.seal_center && !tooth13Diagnozis.seal_bottom && tooth13Diagnozis.seal_top)
                                     ) ? 5 : 0
-                                }} d="M854.5 457L859.5 492.5" 
+                                }} 
+                                d="M854.5 457L859.5 492.5" 
                             />
                         </g>
                     </g>

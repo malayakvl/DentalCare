@@ -356,7 +356,7 @@ export default function Tooth11() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling" style={{visibility: (!tooth11Diagnozis.culttab && !tooth11Diagnozis.abutment && !tooth11Diagnozis.implant && !tooth11Diagnozis.shaper && !tooth11Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС LEFT*/}
-                        <g id="s_header_11_4" 
+                        <g 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -376,7 +376,7 @@ export default function Tooth11() {
                                 C950.1,585,948.5,588.9,949.8,593.5z"  
                             />
                         </g>
-                        <g id="s_header_11_3" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -397,7 +397,7 @@ export default function Tooth11() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_11_2" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -418,7 +418,7 @@ export default function Tooth11() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_11_1" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -440,38 +440,43 @@ export default function Tooth11() {
                         </g>
                         <g className="with">
                             {/*Черточка лево низ*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth11Diagnozis.seal_left && !tooth11Diagnozis.seal_bottom && !tooth11Diagnozis.seal_center) ||
                                         (tooth11Diagnozis.seal_left && !tooth11Diagnozis.seal_bottom && !tooth11Diagnozis.seal_center) ||
-                                        (!tooth11Diagnozis.seal_left && tooth11Diagnozis.seal_center)
+                                        (!tooth11Diagnozis.seal_left && tooth11Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M978.5 604.999C978.333 607.166 977.1 612.699 973.5 617.499" 
                             />
                             {/*Овал лево*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth11Diagnozis.seal_left && !tooth11Diagnozis.seal_top) ||
                                         (!tooth11Diagnozis.seal_left && tooth11Diagnozis.seal_top)
                                     ) ? 5 : 0
-                                }} 
+                                }}
                                 d="M978.5 604.999C973 593.999 962 587.999 957.5 584.999" 
                             />
                             {/*Черточка верх лево*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth11Diagnozis.seal_left && tooth11Diagnozis.seal_top && !tooth11Diagnozis.seal_bottom) ||
-                                        (!tooth11Diagnozis.seal_left && tooth11Diagnozis.seal_top && tooth11Diagnozis.seal_top)
+                                        (!tooth11Diagnozis.seal_left && !tooth11Diagnozis.seal_top && tooth11Diagnozis.seal_bottom) ||
+                                        (!tooth11Diagnozis.seal_left && !tooth11Diagnozis.seal_right && tooth11Diagnozis.seal_top && !tooth11Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M978.5 604.999C983.833 604.332 998.6 603.699 1015 606.499" 
                             />
                             {/*Овал черточка верх*/}
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth11Diagnozis.seal_right && !tooth11Diagnozis.seal_top) ||
@@ -480,7 +485,8 @@ export default function Tooth11() {
                                 }} 
                                 d="M1015 606.499C1014 603.832 1016.2 595.199 1033 581.999" 
                             />
-                            <path className="st54" style={{
+                            <path className="st54" 
+                                style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth11Diagnozis.seal_right && !tooth11Diagnozis.seal_bottom) ||
