@@ -339,7 +339,7 @@ export default function Tooth53() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth53Diagnozis.culttab && !tooth53Diagnozis.abutment && !tooth53Diagnozis.implant && !tooth53Diagnozis.shaper && !tooth53Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС LEFT*/}
-                        <g id="s_header_13_4" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -360,7 +360,7 @@ export default function Tooth53() {
                             />
                         </g>
                         {/*КАРИЕС НИЗ*/}
-                        <g id="s_header_13_3" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -382,7 +382,7 @@ export default function Tooth53() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_13_2" className="caries-filling"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -403,7 +403,7 @@ export default function Tooth53() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_13_1" className="caries-filling" 
+                        <g className="caries-filling" 
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
