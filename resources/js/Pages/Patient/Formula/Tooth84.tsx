@@ -282,9 +282,9 @@ export default function tooth84() {
                     </g>
                     <g className="pulp" style={{visibility: tooth84Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="84" style={{visibility: 'inherit'}}>
-                            <ellipse className="st22 target" cx="534.806" cy="976.158" rx="10.0437" ry="6.63376" transform="rotate(-90.9902 534.806 976.158)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="579.376" cy="966.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 579.376 966.454)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="579.223" cy="986.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 579.223 986.499)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
+                            <ellipse className="st22 target" cx="534.806" cy="976.158" rx="10.0437" ry="6.63376" transform="rotate(-90.9902 534.806 976.158)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" cx="579.376" cy="966.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 579.376 966.454)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" cx="579.223" cy="986.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 579.223 986.499)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

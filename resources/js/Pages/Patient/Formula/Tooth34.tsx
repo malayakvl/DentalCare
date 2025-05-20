@@ -264,7 +264,7 @@ export default function Tooth34() {
                     </g>
                     <g className="pulp">
                         <g className="pulpitis-pfilling" style={{visibility: tooth34Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M1320.22 991.299C1323.84 991.408 1328.85 987.936 1329.03 981.838C1329.22 975.739 1324.5 969.324 1320.88 969.215C1317.25 969.107 1313.51 973.944 1313.33 980.042C1313.15 986.14 1316.59 991.191 1320.22 991.299Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M1320.22 991.299C1323.84 991.408 1328.85 987.936 1329.03 981.838C1329.22 975.739 1324.5 969.324 1320.88 969.215C1317.25 969.107 1313.51 973.944 1313.33 980.042C1313.15 986.14 1316.59 991.191 1320.22 991.299Z" style={{fill: '#e80808'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

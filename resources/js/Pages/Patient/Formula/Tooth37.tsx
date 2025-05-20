@@ -248,9 +248,9 @@ export default function Tooth37() {
                     {/* PULPIT */}
                     <g className="pulp">
                         <g className="pulpitis-pfilling" style={{visibility: tooth37Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <ellipse className="st22 target" rx="10.9723" ry="7.35396" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1718.55 969.098)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1674.72 960.454)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1674.87 980.499)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
+                            <ellipse className="st22 target" rx="10.9723" ry="7.35396" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1718.55 969.098)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1674.72 960.454)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1674.87 980.499)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     {/* IMPLANT */}

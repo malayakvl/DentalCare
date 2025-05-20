@@ -244,13 +244,13 @@ export default function Tooth28() {
                     <g className="pulp" style={{visibility: tooth28Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth28Diagnozis?.apex ? 'inherit' : 'hidden'}}>
                             <ellipse className="st22 target" cx="1820.91" cy="609.563" rx="7.15314" ry="5.64935" transform="rotate(-0.796347 1820.91 609.563)"
-                                 style={{fill: 'rgb(254, 246, 249)'}}
+                                 style={{fill: '#e80808'}}
                             />
                             <ellipse className="st22 target" cx="1836.57" cy="592.048" rx="6.89579" ry="6.05115" transform="rotate(39.2014 1836.57 592.048)"
-                                 style={{fill: 'rgb(254, 246, 249)'}}
+                                 style={{fill: '#e80808'}}
                             />
                             <ellipse className="st22 target" cx="1805.94" cy="589.924" rx="6.88191" ry="5.68612" transform="rotate(-49.1967 1805.94 589.924)" 
-                                style={{fill: 'rgb(254, 246, 249)'}}
+                                style={{fill: '#e80808'}}
                             />
                         </g>
                     </g>

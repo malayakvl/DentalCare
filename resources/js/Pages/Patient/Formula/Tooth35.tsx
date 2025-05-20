@@ -267,7 +267,7 @@ const dispatch = useDispatch<any>();
                     </g>
                     <g className="pulp">
                         <g className="pulpitis-pfilling" style={{visibility: tooth35Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M1422 979.5C1422 972.044 1417.5 964 1413.5 964C1409.5 964 1405 971.544 1405 979C1405 986.456 1410 991 1413.5 991C1416.5 991 1422 986.956 1422 979.5Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M1422 979.5C1422 972.044 1417.5 964 1413.5 964C1409.5 964 1405 971.544 1405 979C1405 986.456 1410 991 1413.5 991C1416.5 991 1422 986.956 1422 979.5Z" style={{fill: '#e80808'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

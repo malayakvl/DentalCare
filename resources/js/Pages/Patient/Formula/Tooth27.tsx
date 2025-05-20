@@ -246,9 +246,9 @@ export default function Tooth27() {
                     {/* PULPIT */}
                     <g className="pulp" style={{visibility: tooth27Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth27Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <ellipse className="st22 target" cx="1682.1" cy="591.727" rx="8.62899" ry="5.75303" transform="rotate(-90.9902 1682.1 591.727)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="1724.62" cy="590.464" rx="7.75725" ry="7.03431" transform="rotate(-130.036 1724.62 590.464)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="1716.78" cy="609.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 1716.78 609.499)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
+                            <ellipse className="st22 target" cx="1682.1" cy="591.727" rx="8.62899" ry="5.75303" transform="rotate(-90.9902 1682.1 591.727)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" cx="1724.62" cy="590.464" rx="7.75725" ry="7.03431" transform="rotate(-130.036 1724.62 590.464)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" cx="1716.78" cy="609.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 1716.78 609.499)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth27Diagnozis.implant || tooth27Diagnozis.shaper ? 'inherit' : 'hidden'}}>

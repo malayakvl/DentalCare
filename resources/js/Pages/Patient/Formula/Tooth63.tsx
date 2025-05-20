@@ -277,7 +277,7 @@ export default function Tooth63() {
                     </g>
                     <g className="pulp" style={{visibility: tooth63Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth63Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M1269.46 608.01C1273.09 608.119 1278.1 604.647 1278.28 598.549C1278.46 592.45 1273.75 586.035 1270.12 585.926C1266.5 585.818 1262.76 590.655 1262.58 596.753C1262.4 602.851 1265.84 607.902 1269.46 608.01Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M1269.46 608.01C1273.09 608.119 1278.1 604.647 1278.28 598.549C1278.46 592.45 1273.75 586.035 1270.12 585.926C1266.5 585.818 1262.76 590.655 1262.58 596.753C1262.4 602.851 1265.84 607.902 1269.46 608.01Z" style={{fill: '#e80808'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

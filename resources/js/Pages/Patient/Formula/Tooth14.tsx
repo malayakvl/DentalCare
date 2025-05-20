@@ -272,8 +272,8 @@ export default function Tooth14() {
                     {/* PULPIT */}
                     <g className="pulp" style={{visibility: tooth14Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth14Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M733.062 586.821C733.612 591.656 735.273 597 738 597C740.727 597 742.449 591.664 742.938 586.821C743.487 581.393 740.253 578 738 578C735.747 578 732.512 581.987 733.062 586.821Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
-                            <path className="st22 target" d="M733 610.661C733 615.356 736.13 620 738.005 620C739.88 620 743 615.356 743 610.661C743 605.967 740.505 603 738.005 603C735.505 603 733 605.967 733 610.661Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M733.062 586.821C733.612 591.656 735.273 597 738 597C740.727 597 742.449 591.664 742.938 586.821C743.487 581.393 740.253 578 738 578C735.747 578 732.512 581.987 733.062 586.821Z" style={{fill: '#e80808'}}></path>
+                            <path className="st22 target" d="M733 610.661C733 615.356 736.13 620 738.005 620C739.88 620 743 615.356 743 610.661C743 605.967 740.505 603 738.005 603C735.505 603 733 605.967 733 610.661Z" style={{fill: '#e80808'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

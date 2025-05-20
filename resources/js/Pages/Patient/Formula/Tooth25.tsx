@@ -265,7 +265,7 @@ export default function Tooth25() {
                     </g>
                     <g className="pulp" style={{visibility: tooth25Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth25Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M1455 593.5C1455 600.956 1450.5 609 1446.5 609C1442.5 609 1438 601.456 1438 594C1438 586.544 1443 582 1446.5 582C1449.5 582 1455 586.044 1455 593.5Z" style={{fill: 'rgb(254, 246, 249)'}}></path>
+                            <path className="st22 target" d="M1455 593.5C1455 600.956 1450.5 609 1446.5 609C1442.5 609 1438 601.456 1438 594C1438 586.544 1443 582 1446.5 582C1449.5 582 1455 586.044 1455 593.5Z" style={{fill: '#e80808'}}></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

@@ -273,9 +273,9 @@ export default function Tooth74() {
                     </g>
                     <g className="pulp">
                         <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="74" style={{visibility: 'hidden'}}>
-                            <ellipse className="st22 target" rx="10.0437" ry="6.63376" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1563.95 976.158)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1519.38 966.454)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1519.53 986.499)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
+                            <ellipse className="st22 target" rx="10.0437" ry="6.63376" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1563.95 976.158)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1519.38 966.454)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1519.53 986.499)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     <g className="implant hEmpty hIntact hRoot" style={{visibility: 'hidden'}}>
