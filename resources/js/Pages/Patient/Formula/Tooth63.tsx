@@ -510,7 +510,7 @@ export default function Tooth63() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 39, 115)'}}
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 39, 95)'}}
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}
