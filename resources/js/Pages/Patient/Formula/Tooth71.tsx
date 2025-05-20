@@ -396,7 +396,7 @@ export default function Tooth71() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g
-                            dataposition="81_4"
+                            dataposition="71_4"
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
