@@ -6,7 +6,7 @@ import {
 
 
 
-export default function PeriodontitStage54() {
+export default function PeriodontitStage84() {
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const tooth84Diagnozis = teethDiagnozis.tooth84;
 
