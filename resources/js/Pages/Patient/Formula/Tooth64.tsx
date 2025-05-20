@@ -252,7 +252,7 @@ export default function Tooth64() {
                     c-4.9,9.2-9.7,21.9-8.8,37.5c0.8,15.5-1.2,89.5,6.8,116.5c6.6,22.1,19,27,33,27s41-1,43-37s5-94,3-114s-19-40-20-54s20-41,20-71
                     s-6-41-4-74s3-63,4-91s-2-57-8-65s-21-9-35-4C1349,226.9,1343,229.9,1339,261.9z"></path>
                 </g>
-                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55,  -170, 31)'}}
+                <g className="top-view" style={{visibility: 'inherit', transform:'matrix(0.55, 0, 0, 0.55, 500, 274)'}}
                     onMouseOver={() => {
                         showHideOverlay('over');
                     }}
@@ -318,7 +318,7 @@ export default function Tooth64() {
                     <g className="abutment" style={{visibility: 'inherit', opacity: tooth64Diagnozis.pin ? 1 : 0}}>
                         <path className="st56 hIntact" d="M1635.4 607.2C1633.9 603.7 1632.1 600.3 1630.6 596.9C1626.7 588 1624.4 578 1618.9 569.5C1613.6 561.2 1605.7 554.7 1594 552.4C1584.5 550.5 1574.5 552.5 1564.6 552.1C1559.5 551.9 1554.2 551.1 1549.2 550.5C1531.9 548.2 1514.1 548.7 1504.7 560C1502 563.2 1500.7 566.9 1499.9 570.6C1498.3 577.8 1498.5 585 1499.5 592.2C1500.9 602.6 1503.7 613.1 1508.7 622.8C1512.6 630.2 1517.8 637.2 1526.4 641.7C1533.7 645.5 1542.6 646.7 1551.3 645.9C1556.2 645.4 1561 644.2 1566 644.3C1574.6 644.4 1582.3 648.2 1590.7 649.5C1596 650.4 1601.5 650.3 1606.8 649.5C1612.4 648.7 1617.8 647.3 1622.7 645C1628.1 642.4 1632.6 638.7 1635.3 634.2C1640.4 625.8 1639.1 616.1 1635.4 607.2Z" style={{visibility: "hidden"}}></path>
                         <path className="st56 hIntact" d="M1618 605.458C1616.9 602.887 1615.57 600.39 1614.47 597.892C1611.6 591.354 1609.9 584.009 1605.86 577.765C1601.96 571.668 1596.14 566.893 1587.53 565.203C1580.54 563.808 1573.18 565.277 1565.89 564.983C1562.14 564.836 1558.24 564.248 1554.56 563.808C1541.82 562.118 1528.72 562.485 1521.8 570.786C1519.82 573.137 1518.86 575.855 1518.27 578.573C1517.09 583.862 1517.24 589.151 1517.98 594.44C1519.01 602.079 1521.07 609.792 1524.75 616.918C1527.62 622.354 1531.44 627.496 1537.77 630.802C1543.15 633.593 1549.7 634.474 1556.1 633.887C1559.71 633.52 1563.24 632.638 1566.92 632.711C1573.25 632.785 1578.92 635.576 1585.1 636.531C1589 637.192 1593.05 637.119 1596.95 636.531C1601.07 635.944 1605.05 634.915 1608.65 633.226C1612.63 631.316 1615.94 628.598 1617.93 625.292C1621.68 619.122 1620.72 611.996 1618 605.458Z" style={{visibility: "hidden"}}></path>
-                        <circle className="st57" r="12.25" transform="matrix(-1 0 0 1 1566.4 598)"></circle>
+                        <circle className="st57" r="12.25" style={{fill: '#dfdfdf'}}></circle>
                     </g>
                     {/* CULTTAB */}
                     <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth64Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth64Diagnozis.culttab ? 0 : 1}}>
@@ -636,7 +636,7 @@ export default function Tooth64() {
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
                     <g className="pulp">
-                        <g className="hEmpty hRoot hImplant pulpitis-pfilling"  style={{visibility: 'inherit'}}>
+                        <g className="pulpitis-pfilling"  style={{visibility: 'inherit'}}>
                             <path className={`st22 target top ${tooth64Diagnozis.channel_class} ${tooth64Diagnozis.channel_class} ${tooth64Diagnozis.pulpit ? 'pulpit' : ''} ${tooth64Diagnozis.periodontit ? 'periodontit' : ''}`} 
                                 d="M1575.8,422.5c-7.2-6.4-17.4-9-27.1-7c-8.6,1.8-15.9,7-19.8,14.2
                                 c-1.9-3.9-3.2-8.1-3.8-12.4c-0.8-5.4-0.5-10.9-0.9-16.4c-0.4-5.4-1.5-10.5-3-15.7c0,0.1,0.1,0.2,0.1,0.3c0.2-0.1,0.4-0.2,0.5-0.2
@@ -647,7 +647,7 @@ export default function Tooth64() {
                                 c-0.2,11.6,4.4,22.9,5.4,34.5C1576.3,414.6,1576.3,418.6,1575.8,422.5z"
                             />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling"  style={{visibility: 'inherit'}}>
+                        <g className="pulpitis-pfilling"  style={{visibility: 'inherit'}}>
                             <path className={`st22 target middle ${tooth64Diagnozis.channel_class} ${tooth64Diagnozis.channel_class} ${tooth64Diagnozis.pulpit ? 'pulpit' : ''} ${tooth64Diagnozis.periodontit ? 'periodontit' : ''}`}  
                                 d="M1589.4,316.2c-2.1,9.9-5.3,19.6-9.3,28.9c-4,9.5-8.7,18.6-9.4,28.7
                                 c-0.1,0.8-0.1,1.5-0.1,2.3c-1.4,0-2.8-0.1-4.1-0.1c-1,0-1.9,0-2.9,0c0,0,0,0,0,0c-0.9,0-1.8,0-2.8,0.1c-0.1,0-0.2,0-0.3,0
@@ -701,7 +701,7 @@ export default function Tooth64() {
                             d="M1564.1 446.9L1549.5 452.9L1528.7 450.2L1538 356.1L1538.1 355.6L1546.1 274.4C1546.3 273.3 1547.2 272.5 1548.3 272.5C1549.5 272.5 1550.4 273.4 1550.5 274.6L1555.3 339.9L1555.5 342.5L1564.1 446.9Z"></path>
                     </g>
                     {/* CULT TAB */}
-                    <g className="stump hEmpty hIntact hImplant" style={{visibility: tooth64Diagnozis.culttab ? 'inherit' : 'hidden', opacity: tooth64Diagnozis.culttab ? 1 : 0}}>
+                    <g className="stump" style={{visibility: tooth64Diagnozis.culttab ? 'inherit' : 'hidden', opacity: tooth64Diagnozis.culttab ? 1 : 0}}>
                         <path className="st14" d="M1558,376.5c-0.2,0-0.4,0-0.6,0c-0.7,0-1.4,0.1-2.2,0.2c-0.6,0-1.1,0.1-1.7,0.2c-0.1,0-0.2,0-0.2,0
                             c-0.2,0-0.4,0-0.5,0.1c-0.3,0-0.6,0.1-0.9,0.1c-0.9,0.1-1.7,0.2-2.6,0.4c-0.1,0-0.1,0-0.2,0c-0.3,0-0.5,0.1-0.8,0.1
                             c-0.4,0.1-0.9,0.1-1.3,0.2c-0.3,0-0.6,0.1-1,0.2c-0.1,0-0.2,0-0.3,0.1c-0.2,0-0.4,0.1-0.6,0.1c-0.2,0-0.3,0.1-0.5,0.1
@@ -935,7 +935,7 @@ export default function Tooth64() {
                             />
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: 'inherit'}}>
+                    <g style={{visibility: 'inherit'}}>
                         <g className="vinir"
                             style={{
                                 visibility: tooth64Diagnozis.vinir ? 'inherit' : 'hidden',

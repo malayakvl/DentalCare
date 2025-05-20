@@ -8,36 +8,36 @@ import {
 
 export default function PeriodontitStage54() {
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth54Diagnozis = teethDiagnozis.tooth54;
+    const tooth65Diagnozis = teethDiagnozis.tooth65;
 
     return ( 
         <>
             <g style={{
                     visibility: 'inherit',
-                    opacity: (tooth54Diagnozis.periodontit_stage === 'st1'  ? 1 : 0),
+                    opacity: (tooth65Diagnozis.periodontit_stage === 'st1'  ? 1 : 0),
                 }}
             >
-                <circle className="st42" cx="509.3" cy="248.9" r="8.2"></circle>
-                <circle className="st42" cx="544.9" cy="233.4" r="8.2"></circle>
-                <circle className="st42" cx="582.5" cy="249.9" r="8.2"></circle>
+                <circle className="st42" cx="1735.3" cy="237.3" r="8.2"></circle>
+                <circle className="st42" cx="1684.2" cy="215" r="8.2"></circle>
+                <circle className="st42" cx="1665.1" cy="239.6" r="8.2"></circle>
             </g>
             <g style={{
                     visibility: 'inherit',
-                    opacity: (tooth54Diagnozis.periodontit_stage === 'st2'  ? 1 : 0)
+                    opacity: (tooth65Diagnozis.periodontit_stage === 'st2'  ? 1 : 0)
             }}
             >
-                <circle className="st42" cx="510.6" cy="241.8" r="17.5"></circle>
-                <circle className="st42" cx="547.2" cy="226.2" r="17.5"></circle>
-                <circle className="st42" cx="583.3" cy="241.8" r="17.5"></circle>
+                <circle className="st42" cx="1734.2" cy="229.2" r="17.5"></circle>
+                <circle className="st42" cx="1681.8" cy="206.8" r="17.5"></circle>
+                <circle className="st42" cx="1662.3" cy="231.3" r="17.5"></circle>
             </g>
             <g style={{
                     visibility: 'inherit',
-                    opacity: (tooth54Diagnozis.periodontit_stage === 'st3'  ? 1 : 0),
+                    opacity: (tooth65Diagnozis.periodontit_stage === 'st3'  ? 1 : 0),
                 }}
             >
-                <circle className="st42" cx="581.2" cy="228.1" r="30"></circle>
-                <circle className="st42" cx="545.9" cy="214.1" r="30"></circle>
-                <circle className="st42" cx="509.6" cy="229.3" r="30"></circle>
+                <circle className="st42" cx="1664.3" cy="218.8" r="30"></circle>
+                <circle className="st42" cx="1685.5" cy="194.1" r="30"></circle>
+                <circle className="st42" cx="1734.2" cy="215.8" r="30"></circle>
             </g>
         </>
     )
