@@ -29,6 +29,7 @@ import {
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage85 from './periodontit85';
 
 export default function Tooth85() {
     const dispatch = useDispatch<any>();
@@ -255,7 +256,8 @@ export default function Tooth85() {
                     onMouseLeave={() => {
                         showHideOverlay('leave');
                     }}
-                    style={{visibility: 'inherit'}}>
+                    style={{visibility: 'inherit'}}
+                >
                     <path className="st40" d="M707.8,1213.9c0,0-12,33-17,51s-13,47-17,62s-4,36-28,34s-28-21-26-38
                         s11-50,13-65s6-42,5-66s-1-59,1-75s18-32,20-54s-20-52-22-79c0,0,3.6-77.5,4.3-100.8c0.4-12.7-1.2-39,2.3-61.4
                         c2.9-18.7,8.4-32.8,23.4-37.8c26.6-8.9,49,4,55,36s11,158,11,168c0,36-17,40-17,67c0,37.2,20,41,17,82
@@ -506,7 +508,7 @@ export default function Tooth85() {
                                     ) ? 5 : 0
                                 }} 
                                 d="M440.5 948.5C445 947 457 941.3 469 930.5" />
-                            <path className="st54"style={{
+                            <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (!tooth85Diagnozis.seal_right && tooth85Diagnozis.seal_center) ||
@@ -663,7 +665,8 @@ export default function Tooth85() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
+                        <PeriodontitStage85 />
+                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="295.8" cy="1280.1" r="8.2"></circle>
                             <circle className="st42" cx="355.5" cy="1297.8" r="8.2"></circle>
                         </g>
@@ -674,7 +677,7 @@ export default function Tooth85() {
                         <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
                             <circle className="st42" cx="293.2" cy="1298.9" r="30"></circle>
                             <circle className="st42" cx="350.7" cy="1315.3" r="30"></circle>
-                        </g>
+                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -718,7 +721,7 @@ export default function Tooth85() {
                         <line className="st19" x1="326.7" y1="1237.7" x2="379.4" y2="1269.5"></line>
                         <line className="st19" x1="320.7" y1="1254.7" x2="373.4" y2="1286.5"></line>
                     </g>
-                    <g style={{visibility: !tooth85Diagnozis.culttab && !tooth85Diagnozis.abutment && !tooth85Diagnozis.implant && !tooth85Diagnozis.shaper && !tooth85Diagnozis.apex  ? 'inherit' : 'hidden'}}>
+                    <g className="toutline" style={{visibility: !tooth85Diagnozis.culttab && !tooth85Diagnozis.abutment && !tooth85Diagnozis.implant && !tooth85Diagnozis.shaper && !tooth85Diagnozis.apex  ? 'inherit' : 'hidden'}}>
                         <path className="st46" d="M469.8,1092.2c-3.6-4.6-8-8.7-12.8-11.9c-0.1,0-0.1-0.1-0.2-0.1l-8.7-1.2
                             c-3,2.1-6,4.2-9,6.3c-3.6,2.5-7.3,5.1-11.7,6.2c-4.6,1.1-9.5,0.3-13.9,2.1c-4.8,1.9-8.1,6.3-8.5,11.4l-2-1.6
                             c2.4-2.8,3.8-6.2,4.2-9.9c0.3-2.8-0.1-5.7-1.5-8.1c-2.6-4.6-7.8-6.7-11.9-9.8c-3.5-2.7-6.3-6.2-8.1-10.3l-6.9-2.4
