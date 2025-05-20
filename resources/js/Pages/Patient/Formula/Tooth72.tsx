@@ -661,7 +661,7 @@ export default function Tooth72() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
-                            dataposition="71_2"
+                            dataposition="72_2"
                         >
                             <path className="st58" d="M1129.6,1196.8c-0.6,1.3-2.8,4-4.4,5.9c-0.1-0.4-0.2-0.7-0.4-1.1c-3.6-11.6-6.2-23.5-7.7-35.6
                                 c-1.5-12.3-1.8-24.7-0.9-37.1c-0.4-2.1,0.6-4.3,2.5-5.3c0.8-0.4,1.6-0.6,2.5-0.6l9-0.1c0.2,9.7,0.6,30.9,0.9,41
