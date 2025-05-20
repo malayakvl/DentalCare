@@ -38,7 +38,7 @@ export default function tooth84() {
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-     const tooth84Diagnozis = teethDiagnozis.tooth84;
+    const tooth84Diagnozis = teethDiagnozis.tooth84;
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
@@ -607,7 +607,7 @@ export default function tooth84() {
                         showHideTopCommonView('leave')
                     }}
                 >
-                     {/* CHANGE COLOR */}
+                    {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: !tooth84Diagnozis.implant && !tooth84Diagnozis.apex && !tooth84Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st10 change-color ${tooth84Diagnozis.change_color ? 'diagnoze' : ''}`} d="M622.2,1172.1c-0.2,5.8,0,6.1-1,11.4c-0.1,0.2-0.3,0.4-0.5,0.6
@@ -617,7 +617,7 @@ export default function tooth84() {
                                 C622,1156,622.5,1164.1,622.2,1172.1z"
                             />
                         </g>
-                        <g style={{visibility: 'inherit'}}>
+                        <g>
                             <path className={`st10 change-color ${tooth84Diagnozis.change_color ? 'diagnoze' : ''}`} d="M621.2,1183.5c0,0.2-0.1,0.5-0.2,0.8c-4.6,9.1-8.9,24.7-11,34.6
                                 c-2,9.2-2.8,18.5-4,27.8c-2.5,20-6.6,39.9-14.7,58.7c-5.6,13-13.3,25.6-26.7,32c-4,1.9-8.5,2.8-12.4,3.6c-0.2,0.1-0.5,0.1-0.8,0.1
                                 c-0.2,0-0.3,0.1-0.5,0.1c-2.9,0.5-5.7,0.5-8-1.2c-1.8-1.3-2.6-3.5-2.9-5.6c-0.6-3.9,0.3-7.9,1.7-11.6c2.2-5.7,5.6-11,8.2-16.6
