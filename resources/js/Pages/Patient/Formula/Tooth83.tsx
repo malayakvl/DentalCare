@@ -274,7 +274,7 @@ export default function Tooth83() {
                         </g>
                     </g>
                     <g className="pulp" style={{visibility: tooth83Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="83" style={{visibility: 'hidden'}}>
+                        <g>
                             <path className="st22 target" d="M872.187 972.254C868.564 972.146 863.551 975.618 863.369 981.716C863.187 987.814 867.905 994.23 871.528 994.338C875.151 994.446 878.892 989.61 879.074 983.512C879.256 977.413 875.81 972.362 872.187 972.254Z" 
                                 style={{fill: '#e80808'}}
                             ></path>

@@ -278,7 +278,8 @@ export default function Tooth45() {
                     </g>
                     <g className="pulpitis-filling" style={{visibility: tooth45Diagnozis.change_color ? 'hidden' : 'inherit'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth45Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M676 979.5C676 972.044 680.5 964 684.5 964C688.5 964 693 971.544 693 979C693 986.456 688 991 684.5 991C681.5 991 676 986.956 676 979.5Z"></path>
+                            <path className="st22 target" style={{fill: '#e80808'}}
+                                d="M676 979.5C676 972.044 680.5 964 684.5 964C688.5 964 693 971.544 693 979C693 986.456 688 991 684.5 991C681.5 991 676 986.956 676 979.5Z"></path>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}

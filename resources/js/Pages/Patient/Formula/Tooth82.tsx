@@ -273,7 +273,7 @@ export default function Tooth82() {
                         </g>
                     </g>
                     <g className="pulp" style={{visibility: tooth82Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="82" style={{visibility: 'hidden'}}>
+                        <g>
                             <path className="st22 target" d="M943.171 985.525C943.171 985.127 942.749 984.097 944.763 981.941C946.265 980.568 946.78 978.146 948.701 978.108C950.77 978.068 951.34 980.258 952.679 981.717C954.285 983.468 954.512 984.752 954.319 985.525C953.921 987.117 952.824 987.147 948.701 987.172C944.578 987.197 943.171 985.923 943.171 985.525Z" 
                             style={{fill: '#e80808'}}
                         />

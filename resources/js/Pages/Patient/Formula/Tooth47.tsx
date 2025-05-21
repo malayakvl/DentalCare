@@ -176,7 +176,7 @@ export default function Tooth47() {
         <>
             <g id="47" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 388.1582 842.0025)"  className={`st3 st4 st5 ${selectedTooth === 47 ? 'num-active' : ''}`}>47</text>
-            </g>
+            </g> 
             <g id="TH-47" className={`f-tooth-init ${(teethDiagnozis.tooth47.show && !teethDiagnozis.tooth47.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth47.show = !teethDiagnozis.tooth47.show;
@@ -581,7 +581,7 @@ export default function Tooth47() {
                     }}
                 >
                     <g className="dentin">
-                        <g id="dentin_v_47" style={{visibility: !tooth47Diagnozis.implant && !tooth47Diagnozis.apex && !tooth47Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth47Diagnozis.implant && !tooth47Diagnozis.apex && !tooth47Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st9 change-color ${tooth47Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M460.5,1138.7c-0.3,8.3-3.4,29.5-5.4,37.5c-0.2,0.3-0.5,0.6-0.7,0.8
                                 c-14,5.4-29.2,7.5-44.1,6c-1.3-0.1-2.6-0.3-3.9-0.5c-16.6-2.3-32.2-8.8-46.7-17.3c-0.4-0.2-0.7-0.4-1.1-0.7
@@ -589,8 +589,8 @@ export default function Tooth47() {
                                 C459.7,1115.8,460.9,1127.2,460.5,1138.7z"
                             />
                         </g>
-                        <g id="dentin_n_47" style={{visibility: !tooth47Diagnozis.implant && !tooth47Diagnozis.abutment && !tooth47Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_n_47" className={`st10 change-color ${tooth47Diagnozis.change_color ? 'diagnoze' : ''}`}
+                        <g style={{visibility: !tooth47Diagnozis.implant && !tooth47Diagnozis.abutment && !tooth47Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st10 change-color ${tooth47Diagnozis.change_color ? 'diagnoze' : ''}`}
                                 d="M454.5,1177.1c-9.2,11.2-14.9,17.1-20.7,30.4c-8.3,19.2-12.7,33.7-21.7,52.7
                                 c-6.2,13.2-15,25.8-29,32c-6,2.7-12.7,4-19.4,3.7c-3.9-0.7-7.2-3.2-8.7-6.7c-1.7-3.7-1-7.8,0.6-11.6c2.6-6.2,7.5-11.2,11.7-16.6
                                 c4.4-5.5,8.1-11.6,10-18.2c2.3-7.9,1.8-16.2,0-24.2c-0.9-3.9-2.2-8-5.8-10.3c-4.1-2.7-9.6-2.2-14.3-0.2c-4.7,2-8.7,5.3-12,9

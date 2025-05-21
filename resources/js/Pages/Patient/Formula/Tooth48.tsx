@@ -232,7 +232,7 @@ export default function Tooth48() {
                                 269.301 897.101 265.601 896.901C263.301 896.801 261.101 896.101 258.801 895.701C254.501 894.901 250.001 895.101 245.601 895.301C240.501 895.501 235.301 895.901 230.601 897.401C224.901 899.301 220.301 902.601 216.401 906.301C213.701 908.901 211.201 911.601 209.501 914.701C207.201 918.901 206.601 923.501 206.301 928.101Z"
                             />
                         </g>
-                        <g className="" style={{visibility: tooth48Diagnozis?.apex || tooth48Diagnozis?.change_color ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: tooth48Diagnozis?.apex || tooth48Diagnozis?.change_color ? 'inherit' : 'hidden'}}>
                             <path className={`st24 change-color ${tooth48Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth48Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M206.301 928.101C206.001 932.501 206.101 937.001 206.301 941.401C206.601 948.201 207.201 955.201 211.201 961.301C215.101 967.401 221.901 972.101 229.601 975.501C235.001 977.901 240.901 979.701 246.901 980.801C254.401 982.201 262.001 982.701 269.701 982.901C280.001 983.201 290.601 983.001 299.501 979.201C304.001 977.301 307.801 974.601 311.301 971.701C314.801 968.901 318.101 965.901 320.001 962.301C322.501 957.501 322.201 952.301 322.801 947.101C323.501 940.801 325.901 934.401 325.601 928.001C325.401 923.101 323.801 918.201 321.001 913.701C318.201 909.201 314.201 905.101 309.201 
                                 902.001C300.001 896.201 288.101 893.601 276.601 895.501C272.901 896.101 269.301 897.101 265.601 896.901C263.301 896.801 261.101 896.101 258.801 895.701C254.501 894.901 250.001 895.101 245.601 895.301C240.501 895.501 235.301 895.901 230.601 897.401C224.901 899.301 220.301 902.601 216.401 906.301C213.701 908.901 211.201 911.601 209.501 914.701C207.201 918.901 206.601 923.501 206.301 928.101Z"
@@ -242,16 +242,18 @@ export default function Tooth48() {
                             />
                         </g>
                     </g>
-                    {/* PULPIT */}
+                    {/* PULPIT */} 
                     <g className="pulp">
                         <g className="hIntact pulpitis-pfilling" style={{visibility: tooth48Diagnozis?.apex ? 'inherit' : 'hidden'}}>
                             <ellipse className="st22 target" rx="10.0966" ry="8.05456" transform="matrix(-0.0164692 -0.999864 0.999835 -0.0181353 245.152 933.211)" 
-                                
+                                style={{fill: '#e80808'}}
                             />
                             <ellipse className="st22 target" rx="8.25802" ry="7.57128" transform="matrix(-0.981917 -0.189312 0.142513 -0.989793 284.84 925.453)"
-                                />
+                                style={{fill: '#e80808'}}    
+                            />
                             <ellipse className="st22 target" rx="9.05222" ry="7.94373" transform="matrix(0.997644 -0.068601 0.0623222 0.998056 284.526 945.549)" 
-                                 />
+                                style={{fill: '#e80808'}}
+                            />
                         </g>
                     </g>
                     {/* IMPLANT */}
@@ -591,7 +593,7 @@ export default function Tooth48() {
                     }}
                 >
                     <g className="dentin">
-                        <g id="dentin_v_48" style={{visibility: !tooth48Diagnozis.implant && !tooth48Diagnozis.apex && !tooth48Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth48Diagnozis.implant && !tooth48Diagnozis.apex && !tooth48Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st9 change-color ${tooth48Diagnozis.change_color ? 'diagnoze' : ''}`} 
                                 d="M319.6,1097.3c-0.5,8.3-1.4,18.6-2.8,26.8c-1.3,1.3-2.5,2.5-3.6,3.8
                                 c-0.9,0.8-1.8,1.5-2.7,2.3c-12.3,2.1-24.9,2.4-37.2,0.8c-2.2-0.3-4.3-0.6-6.4-1c-10.9-1.9-21.6-5.3-31.2-10.6
@@ -599,8 +601,8 @@ export default function Tooth48() {
                                 c5.8,4.3,12,8.2,18.4,11.7c8.7,0.2,17.4-0.1,26-0.6c8.7-0.6,17.4-1.5,26-2.8C320.2,1082.3,320.1,1089.8,319.6,1097.3z" 
                             />
                         </g>
-                        <g id="dentin_n_48" style={{visibility: !tooth48Diagnozis.implant && !tooth48Diagnozis.abutment && !tooth48Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_n_48" className={`st10 change-color ${tooth48Diagnozis.change_color ? 'diagnoze' : ''}`}
+                        <g style={{visibility: !tooth48Diagnozis.implant && !tooth48Diagnozis.abutment && !tooth48Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st10 change-color ${tooth48Diagnozis.change_color ? 'diagnoze' : ''}`}
                                 d="M313.3,1127.8c-6.3,6.9-10.3,13.6-14.3,22.5c-2.7,5.9-6.7,12-9.2,18
                                 c-3.7,8.9-8.3,17.6-15.1,24.8c-3.4,3.6-7.3,6.8-11.3,9.8c-3.5,2.6-7.4,4.9-11.4,6.3c-2.9,1-6.1,1.4-9,1.9c-2.8,0.5-5.6,1-8.1-0.7
                                 c-1.1-0.7-1.8-1.8-2.2-3c0-0.1-0.1-0.2-0.1-0.2c-0.2-0.5-0.2-1-0.3-1.5c-0.2-3,1.3-5.9,2.8-8.6c3.9-7.1,8.1-14.1,10.9-21.7

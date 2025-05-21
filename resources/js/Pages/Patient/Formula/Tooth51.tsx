@@ -270,7 +270,9 @@ export default function Tooth51() {
                     </g>
                     <g className="pulp" style={{visibility: tooth51Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth51Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target " d="M989.706 604.016C989.801 605.739 991.258 606.641 993.868 608.969C995.774 610.67 996.42 612.996 998.833 613.014C1001.43 613.033 1002.11 610.273 1003.77 608.421C1005.76 606.198 1007.5 605.623 1007.39 603.47C1007.27 601.317 1003.87 600.785 998.154 600.743C992.438 600.701 989.575 601.65 989.706 604.016Z"></path>
+                            <path className="st22 target" style={{fill: '#e80808'}}
+                                d="M989.706 604.016C989.801 605.739 991.258 606.641 993.868 608.969C995.774 610.67 996.42 612.996 998.833 613.014C1001.43 613.033 1002.11 610.273 1003.77 608.421C1005.76 606.198 1007.5 605.623 1007.39 603.47C1007.27 601.317 1003.87 600.785 998.154 600.743C992.438 600.701 989.575 601.65 989.706 604.016Z"
+                            />
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}
@@ -546,15 +548,6 @@ export default function Tooth51() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage51 />
-                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="51"  style={{visibility:"inherit", opacity: 0}}>
-                            <circle className="st42" cx="973" cy="234.2" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="51"  style={{visibility:"inherit", opacity: 0}}>
-                            <circle className="st42" cx="975.4" cy="227.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="51"  style={{visibility:"inherit", opacity: 0}}>
-                            <circle className="st42" cx="973" cy="215.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

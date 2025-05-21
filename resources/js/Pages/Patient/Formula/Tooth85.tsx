@@ -274,7 +274,8 @@ export default function Tooth85() {
                 >
                     <g className="dentin">
                         <g style={{visibility: !tooth85Diagnozis.culttab && !tooth85Diagnozis.implant && !tooth85Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className="st6" d="M335.8,962.7c-0.6,4-1.5,8-1.7,12.1c-0.4,7.6,1.5,15.3,5.5,22.3c2.9,5,6.8,9.8,12.3,13.3
+                            <path className={`st6 change-color ${tooth85Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth85Diagnozis?.apex ? 'apex' : ''}`} 
+                                d="M335.8,962.7c-0.6,4-1.5,8-1.7,12.1c-0.4,7.6,1.5,15.3,5.5,22.3c2.9,5,6.8,9.8,12.3,13.3
                                 c3.9,2.5,8.3,4.2,12.9,5.9c6.5,2.3,13.2,4.4,20.3,5.4c7.2,1,14.5,0.7,21.7,0.4c6.4-0.3,12.8-0.6,19.1-1.5
                                 c4.7-0.7,9.4-1.8,13.7-3.4c4-1.5,7.6-3.4,11.1-5.4c5-3,9.5-6.4,12.8-10.6c3.5-4.3,5.4-9.3,6.8-14.3c2.5-8.4,3.9-17.1,2.9-25.8
                                 c-0.7-6.1-2.5-12.2-6-17.8c-3.8-6-9.4-11.2-16.8-14.8c-7.6-3.7-16.6-5.4-25.6-6c-4.6-0.3-9.3-0.4-13.7,0.5
@@ -283,7 +284,7 @@ export default function Tooth85() {
                             />
                         </g>
                         <g style={{visibility: tooth85Diagnozis?.apex || tooth85Diagnozis.change_color ? 'inherit' : 'hidden'}}>
-                            <path className={`st24 change-color ${tooth85Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth85Diagnozis?.apex ? 'apex' : ''}`} 
+                            <path className={`st24 change-color ${tooth85Diagnozis?.change_color ? 'diagnoze-opacity' : ''} ${tooth85Diagnozis?.apex ? 'apex' : ''}`}
                                 d="M335.8 962.7C335.2 966.7 334.3 970.7 334.1 974.8C333.7 982.4 335.6 990.1 339.6 997.1C342.5 1002.1 346.4 1006.9 351.9 1010.4C355.8 1012.9 360.2 1014.6 364.8 1016.3C371.3 1018.6 378 1020.7 385.1 1021.7C392.3 1022.7 399.6 1022.4 406.8 1022.1C413.2 1021.8 419.6 1021.5 425.9 1020.6C430.6 1019.9 435.3 1018.8 439.6 1017.2C443.6 1015.7 447.2 1013.8 450.7 1011.8C455.7 1008.8 460.2 1005.4 463.5 1001.2C467 996.9 468.9 991.9 470.3 986.9C472.8 978.5 474.2 969.8 473.2 961.1C472.5 955 470.7 948.9 467.2 943.3C463.4 937.3 457.8 932.1 450.4 928.5C442.8 924.8 433.8 923.1 424.8 922.5C420.2 922.2 415.5 922.1 411.1 923C407.7 923.7 404.6 925 401 925.1C398.4 925.1 395.9 924.4 393.4 923.8C388.5 922.6 383.4 921.9 378.3 921.6C373.3 921.3 368.2 921.2 363.3 921.9C357.6 922.7 352.2 924.5 347.7 927.3C344.2 929.6 341.5 932.3 339.9 935.6C338.4 938.6 338 941.9 337.6 945.1C337.1 950.8 336.7 
                                 956.7 335.8 962.7Z" 
                             />
@@ -293,10 +294,10 @@ export default function Tooth85() {
                         </g>
                     </g>
                     <g className="pulp" style={{visibility: tooth85Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                        <g className="hpulpitis-pfilling" style={{visibility: 'hidden'}}>
-                            <ellipse className="st22 target" cx="379.543" cy="969.098" rx="10.9723" ry="7.35396" transform="rotate(-90.9902 379.543 969.098)" style={{fill: 'gb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="423.376" cy="960.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 423.376 960.454)" style={{fill: 'gb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" cx="423.223" cy="980.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 423.223 980.499)" style={{fill: 'gb(254, 246, 249)'}}></ellipse>
+                        <g className="pulpitis-pfilling">
+                            <ellipse className="st22 target" cx="379.543" cy="969.098" rx="10.9723" ry="7.35396" transform="rotate(-90.9902 379.543 969.098)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" cx="423.376" cy="960.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 423.376 960.454)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" cx="423.223" cy="980.499" rx="8.72166" ry="7.94529" transform="rotate(-3.74907 423.223 980.499)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}
@@ -612,15 +613,17 @@ export default function Tooth85() {
                 >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
-                        <g className="hRoot hImplant hEmpty" style={{visibility: !tooth85Diagnozis.implant && !tooth85Diagnozis.apex && !tooth85Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path className={`st10 change-color ${tooth85Diagnozis.change_color ? 'diagnoze' : ''}`} d="M460.5,1138.7c-0.3,8.3-3.4,29.5-5.4,37.5c-0.2,0.3-0.5,0.6-0.7,0.8
+                        <g className="hRoot hImplant hEmpty" style={{visibility: !tooth85Diagnozis.implant && !tooth85Diagnozis.apex && !tooth85Diagnozis.shaper && !tooth85Diagnozis.apex ? 'inherit' : 'hidden'}}>
+                            <path className={`st9 change-color ${tooth85Diagnozis.change_color ? 'diagnoze' : ''}`}
+                                d="M460.5,1138.7c-0.3,8.3-3.4,29.5-5.4,37.5c-0.2,0.3-0.5,0.6-0.7,0.8
                                 c-14,5.4-29.2,7.5-44.1,6c-1.3-0.1-2.6-0.3-3.9-0.5c-16.6-2.3-32.2-8.8-46.7-17.3c-0.4-0.2-0.7-0.4-1.1-0.7
                                 c-12.8-7.8-24.6-17.1-35-27.9c0-0.2,0-0.4,0-0.5c6.1-7.3,11.7-23.2,18-30.1c5.5-6.1,11.2-12.1,16.9-18.1l37.2,23.3l60.9-6.6
                                 C459.7,1115.8,460.9,1127.2,460.5,1138.7z"
                             />
                         </g>
-                        <g style={{visibility: 'inherit'}}>
-                            <path className={`st10 change-color ${tooth85Diagnozis.change_color ? 'diagnoze' : ''}`} d="M454.5,1177.1c-9.2,11.2-14.9,17.1-20.7,30.4c-8.3,19.2-12.7,33.7-21.7,52.7
+                        <g style={{visibility: !tooth85Diagnozis.implant && !tooth85Diagnozis.abutment && !tooth85Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st10 change-color ${tooth85Diagnozis.change_color ? 'diagnoze' : ''}`} 
+                                d="M454.5,1177.1c-9.2,11.2-14.9,17.1-20.7,30.4c-8.3,19.2-12.7,33.7-21.7,52.7
                                 c-6.2,13.2-15,25.8-29,32c-6,2.7-12.7,4-19.4,3.7c-3.9-0.7-7.2-3.2-8.7-6.7c-1.7-3.7-1-7.8,0.6-11.6c2.6-6.2,7.5-11.2,11.7-16.6
                                 c4.4-5.5,8.1-11.6,10-18.2c2.3-7.9,1.8-16.2,0-24.2c-0.9-3.9-2.2-8-5.8-10.3c-4.1-2.7-9.6-2.2-14.3-0.2c-4.7,2-8.7,5.3-12,9
                                 c-14.9,16.8-16.6,41.3-34.1,56c-3.7,3.1-8.4,5.6-13.2,4.5c-6.1-1.5-8.7-7.5-10-13.3c-3.1-13.3-3.2-27.1,0-40.3
@@ -667,30 +670,20 @@ export default function Tooth85() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage85 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="295.8" cy="1280.1" r="8.2"></circle>
-                            <circle className="st42" cx="355.5" cy="1297.8" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="295.8" cy="1287.4" r="17.5"></circle>
-                            <circle className="st42" cx="354.4" cy="1306" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="293.2" cy="1298.9" r="30"></circle>
-                            <circle className="st42" cx="350.7" cy="1315.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
-                    <g className="pin" style={{
+                    <g className="pin hEmpty hImplant" style={{
                         visibility: 'inherit', opacity: tooth85Diagnozis.pin ? 1 : 0
                     }}>
-                        <path className="st56 hIntact" d="M322.9 1133C322.9 1133.6 323 1134.2 323 1134.9C331.7 1143.9 341.7 1153 352.3 1160.3C354.4 1161.8 356.6 1163.2 358.7 1164.5C359.1 1164.7 359.4 1164.9 359.8 1165.2C361.9 1166.4 364 1167.7 366.2 1168.8C378.8 1175.6 392.3 1180.6 406.5 1182.5C407.8 1182.7 409.1 1182.8 410.4 1183C425.6 1184.5 441 1182.4 455.3 1176.7C455.4 1176.6 455.5 1176.5 455.6 1176.3C457.6 1168.2 460.3 1146.8 460.6 1138.6C461 1127.1 459.7 1115.7 456.9 1104.5L396 1111.1L358.8 1087.8C353.1 1093.8 347.5 1099.8 341.9 1105.9C335.6 1112.8 326.3 1121.7 322.9 1133Z" style={{visibility: 'inherit'}}></path>
+                        <path className="st56 hIntact" d="M322.9 1133C322.9 1133.6 323 1134.2 323 1134.9C331.7 1143.9 341.7 1153 352.3 1160.3C354.4 1161.8 356.6 1163.2 358.7 1164.5C359.1 1164.7 359.4 1164.9 359.8 1165.2C361.9 1166.4 364 1167.7 366.2 1168.8C378.8 1175.6 392.3 1180.6 406.5 1182.5C407.8 1182.7 409.1 1182.8 410.4 1183C425.6 1184.5 441 1182.4 455.3 1176.7C455.4 1176.6 455.5 1176.5 455.6 1176.3C457.6 1168.2 460.3 1146.8 460.6 1138.6C461 1127.1 459.7 1115.7 456.9 1104.5L396 1111.1L358.8 1087.8C353.1 1093.8 347.5 1099.8 341.9 1105.9C335.6 1112.8 326.3 1121.7 322.9 1133Z" 
+                            style={{visibility: 'inherit'}}
+                        />
                         <path className="st57" d="M413.6 1109.3L332.7 1211.1L331.5 1212.6L317.6 1230.1C316.9 1231 315.6 1231.2 314.7 1230.6C313.7 1230 313.4 1228.7 314 1227.7L326.6 1205.5L352.4 1160.4L384.6 1104.1L396 1111.2L413.6 1109.3Z"
-                            style={{fill: tooth85Diagnozis.pin ? '#dbd9d3' : 'none'}}   
+                            style={{fill: tooth85Diagnozis.pin ? '#dbd9d3' : 'none'}}    
                         />
                     </g>
                     {/* CULTTAB */}
-                    <g className="stump hEmpty hIntact hImplant" style={{visibility: !tooth85Diagnozis.culttab ? 'hidden' : 'inherit', opacity: !tooth85Diagnozis.culttab ? 0 : 1}}>
+                    <g className="stump hEmpty hIntact hImplant" style={{visibility: tooth85Diagnozis.culttab ? 'inherit' : 'hidden', opacity: tooth85Diagnozis.culttab ? 1 : 0}}>
                         <path className="st14" d="M314.7,1230.6L314.7,1230.6c0.9,0.6,2.2,0.4,2.9-0.5l48.7-61.3c-2.2-1.1-4.3-2.3-6.4-3.6
                             c-0.4-0.2-0.7-0.4-1.1-0.7c-2.2-1.3-4.3-2.7-6.4-4.2l-38.4,67.3C313.4,1228.7,313.7,1230,314.7,1230.6z"
                         />
@@ -701,7 +694,7 @@ export default function Tooth85() {
                         />
                     </g>
                     {/* ABUTMENT */}
-                    <g className="abutment" style={{visibility: tooth85Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth85Diagnozis.abutment ? 1 : 0}}>
+                    <g className="abutment hEmpty hIntact hRoot" style={{visibility: tooth85Diagnozis.abutment ? 'inherit' : 'hidden', opacity: tooth85Diagnozis.abutment ? 1 : 0}}>
                         <path className="st16" d="M449.8,1178.7l-61.4,20.1l-25.4-12.8l-39.3-49.3c10.7,11.1,22.8,20.7,36.1,28.6c15.5,9.2,32.5,16,50.5,17.8
                             C423.7,1184.4,437.2,1182.9,449.8,1178.7z"></path>
                         <path className="st17" d="M460.5,1138.7c-0.3,8.3-3.4,29.5-5.4,37.5c-0.2,0.3-0.5,0.6-0.7,0.8c-1.5,0.6-3.1,1.2-4.7,1.7
@@ -709,7 +702,7 @@ export default function Tooth85() {
                             c6.1-7.3,11.7-23.2,18-30.1c5.5-6.1,11.2-12.1,16.9-18.1l37.2,23.3l60.9-6.6C459.7,1115.8,460.9,1127.2,460.5,1138.7z"></path>
                     </g>
                     {/* ФОРМУВАЧ */}
-                    <g className="shaper" style={{visibility: 'hidden', opacity: 0}} >
+                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}}>
                         <path className="st44" d="M366.572 1142.02C367.115 1139.6 369.71 1138.25 372.004 1139.2L417.513 1158.02C419.807 1158.97 420.692 1161.75 419.366 1163.85L398.001 1197.67C396.959 1199.32 394.879 1199.98 393.078 1199.23L360.217 1185.51C358.427 1184.76 357.431 1182.84 357.855 1180.94L366.572 1142.02Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
@@ -754,7 +747,7 @@ export default function Tooth85() {
                         <path className="st61 level1" d="M327.5 1113.5L326.5 1112.5L325 1115V1117.5L324 1119.5L323 1123V1125.5L321.5 1127.5V1130L320.5 1133V1136L323 1139.5L324 1142L328 1144.5L328.5 1147.5L332.5 1150.5L336 1155L339 1159L343 1162L347.5 1164L348.5 1166L352 1169L357 1171L361 1173.5L367 1176.5L371.5 1179.5H377.5L384 1182C385.333 1182.33 388.4 1183 390 1183C391.6 1183 395.333 1185 397 1186H404C405.5 1186.5 408.8 1187.5 410 1187.5L415.5 1188.5L418.5 1187.5L423 1188.5H428.5H432.5L435.5 1187.5L440.5 1186H444L449 1184H452L454.5 1182H457L458 1180.5L459 1179L460.5 1177.5L463 1175V1172.5L465 1171L467 1169L468 1166L469 1164L470 1160.5L471.5 1159L473 1156.5V1155L474 1152L475 1150.5L476 1146.5L473 1148.5L470 1152L469 1155L467 1159L463 1163L458 1171L451 1172.5L446 1178H438.5L434 1180.5H430.5C429 1180.5 424 1181.5 423 1182C422.2 1182.4 419.667 1181.17 418.5 1180.5H411.5L407 1179.5H401.5L397 1178L393 1176.5L385 1175L381 1172.5L376.5 1171L373.5 1169H371.5L370.5 1168L367 1166L361 1163L359.5 1162L354.5 1159L353.5 1157.5L349.5 1155L346.5 1152L343 1149.5L342 1147.5L339 1145.5L336 1142L334.5 1139.5L332.5 1138V1136L331 1133L330 1130L328.5 1127.5L328 1124.5L328.5 1123L328 1119.5L327.5 1117.5L328 1115L327.5 1113.5Z"></path>
                     </g>
                     {/*КАРИЕС*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth85Diagnozis.culttab && !tooth85Diagnozis.abutment && !tooth85Diagnozis.implant && !tooth85Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth85Diagnozis.culttab && !tooth85Diagnozis.abutment && !tooth85Diagnozis.implant && !tooth85Diagnozis.shaper && !tooth85Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС TOP*/}
                         <g className="caries-filling" style={{zIndex: 3000}}
                             onClick={() => {

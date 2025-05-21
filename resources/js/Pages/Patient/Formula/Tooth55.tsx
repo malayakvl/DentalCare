@@ -256,7 +256,7 @@ export default function Tooth55() {
                 </g>
                 <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 286, 35)'}}
                     onMouseOver={() => {
-                        showHideOverlay('over');
+                        showHideOverlay('over'); 
                     }}
                     onMouseLeave={() => {
                         showHideOverlay('leave');
@@ -303,7 +303,7 @@ export default function Tooth55() {
                         </g>
                     </g>
                     {/* SHAPER */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}} >
+                    <g className="shaper hEmpty hIntact hRoot" style={{visibility: 'hidden', opacity: 0}}>
                         <circle className="st44" cx="391.5" cy="598.5" r="28.5"></circle>
                         <path className="st45" d="M389.577 589.739C390.129 587.804 392.871 587.804 393.423 589.739L393.929 591.511C394.225 592.549 395.291 593.164 396.338 592.902L398.126 592.454C400.077 591.965 401.448 594.339 400.049 595.785L398.767 597.109C398.016 597.884 398.016 599.116 398.767 599.891L400.049 601.215C401.448 602.661 400.077 605.035 398.126 604.546L396.338 604.098C395.291 603.836 394.225 604.451 393.929 605.489L393.423 607.261C392.871 609.196 390.129 609.196 389.577 607.261L389.071 605.489C388.775 604.451 387.709 603.836 386.662 604.098L384.874 604.546C382.923 605.035 381.552 602.661 382.951 601.215L384.233 599.891C384.984 599.116 384.984 597.884 384.233 597.109L382.951 595.785C381.552 594.339 382.923 591.965 384.874 592.454L386.662 592.902C387.709 593.164 388.775 592.549 389.071 591.511L389.577 589.739Z"></path>
                     </g>
@@ -638,7 +638,7 @@ export default function Tooth55() {
                                 c8.7,3.4,16.6,8.6,23.1,15.3c4.3,4.5,7.9,9.6,10.7,15.3c0,1.4,0.1,2.8,0.1,4.1C459.6,398.3,459.8,402.1,460,405.8z"
                             />
                         </g>
-                        <g id="d-55-1" style={{visibility: !tooth55Diagnozis.implant && !tooth55Diagnozis.abutment && !tooth55Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                        <g style={{visibility: !tooth55Diagnozis.implant && !tooth55Diagnozis.abutment && !tooth55Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                             <path className={`st10 change-color ${tooth55Diagnozis.change_color ? 'diagnoze' : ''}`}  
                                 d="M462,339.2c-0.3,8.6-1.5,17.1-2.4,25.7c-0.6,6.5,0,13.1-0.2,19.7
                                 c-0.1,3.3-0.1,6.7,0,10c0-1.4-0.1-2.8-0.1-4.1c-2.8-5.6-6.4-10.8-10.7-15.3c-6.5-6.7-14.4-11.9-23.1-15.3
@@ -660,14 +660,14 @@ export default function Tooth55() {
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
                     <g className="pulp">
-                        <g className="hEmpty hRoot hImplant pulpitis-pfilling"  style={{visibility: 'inherit'}}>
+                        <g>
                             <path className={`st22 target top ${tooth55Diagnozis.channel_class} ${tooth55Diagnozis.channel_class} ${tooth55Diagnozis.pulpit ? 'pulpit' : ''} ${tooth55Diagnozis.periodontit ? 'periodontit' : ''}`} 
                                 d="M424.2,392.7c-0.5,5.9-2.2,11.6-5.1,16.9c-3.5-7.3-10.7-12.6-19.3-14.1
                                 c-7.3-1.3-14.9,0.3-20.8,4.4c-0.7-4.1-0.4-8.4,0.7-12.4c1.3-4.4,3.6-8.6,5.2-13c2.5-6.8,3.2-14,3.5-21.2c2.8,0.1,5.6,0.2,8.3,0.5
                                 c9.6,0.8,19.2,2.4,28.2,5.8c0.2,0.1,0.5,0.2,0.7,0.3c-0.8,3.2-1.5,6.4-1.7,9.7C423.3,377.2,424.8,384.9,424.2,392.7z"
                             />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling"  style={{visibility: 'inherit'}}>
+                        <g>
                             <path className={`st22 target middle ${tooth55Diagnozis.channel_class} ${tooth55Diagnozis.channel_class} ${tooth55Diagnozis.pulpit ? 'pulpit' : ''} ${tooth55Diagnozis.periodontit ? 'periodontit' : ''}`} 
                                 d="M443.5,290.9c-0.1,3.9-0.4,7.9-0.8,11.8c-1.3,11.6-4.3,22.9-8.5,33.9
                                 c-2.9,7.7-6.5,15.3-8.6,23.2c-0.2-0.1-0.5-0.2-0.8-0.3c-9-3.5-18.6-5.1-28.2-5.8c-2.8-0.2-5.5-0.4-8.3-0.5c0-0.6,0-1.2,0.1-1.7
@@ -676,7 +676,7 @@ export default function Tooth55() {
                                 c0.6,5.9,1.2,11.8,1.9,17.6c1.9-2.2,3.5-4.9,4.8-7.6c7.2-15.4,11.2-31.7,12.2-48.1H443.5z"
                             />
                         </g>
-                        <g className="pulpitis-pfilling"  style={{visibility: 'inherit'}}>
+                        <g>
                             <path className={`st22 target middle ${tooth55Diagnozis.channel_class} ${tooth55Diagnozis.channel_class} ${tooth55Diagnozis.pulpit ? 'pulpit' : ''} ${tooth55Diagnozis.periodontit ? 'periodontit' : ''}`} 
                                 d="M379.4,266.9c-3-8.2-6.9-16.2-11.4-23.8c6.8,15.4,12,31.4,15.5,47.8h3.4c-0.1-0.4-0.2-0.8-0.4-1.3
                                 C384.3,282,382.1,274.4,379.4,266.9z"
@@ -690,21 +690,6 @@ export default function Tooth55() {
                             />
                         </g>
                         <PeriodontitStage55 />
-                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1"  status="0" style={{opacity:0, visibility:"inherit"}}>
-                            <circle className="st42" cx="362.8" cy="237.3" r="8.2"></circle>
-                            <circle className="st42" cx="414" cy="215" r="8.2"></circle>
-                            <circle className="st42" cx="433" cy="239.6" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="2"  status="0" style={{opacity:0, visibility:"inherit"}}>
-                            <circle className="st42" cx="364" cy="229.2" r="17.5"></circle>
-                            <circle className="st42" cx="416.4" cy="206.8" r="17.5"></circle>
-                            <circle className="st42" cx="435.8" cy="231.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="3"  status="0" style={{opacity:0, visibility:"inherit"}}>
-                            <circle className="st42" cx="433.9" cy="218.8" r="30"></circle>
-                            <circle className="st42" cx="412.6" cy="194.1" r="30"></circle>
-                            <circle className="st42" cx="364" cy="215.8" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{

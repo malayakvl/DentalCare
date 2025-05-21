@@ -246,9 +246,9 @@ export default function Tooth17() {
                     {/* PULPIT */}
                     <g className="pulp" style={{visibility: tooth17Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth17Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <ellipse className="st22 target" rx="8.62899" ry="5.75303" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 415.901 591.728)" />
-                            <ellipse className="st22 target" rx="7.75725" ry="7.03431" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 373.376 590.464)" />
-                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 381.223 609.499)" />
+                            <ellipse className="st22 target" rx="8.62899" ry="5.75303" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 415.901 591.728)" style={{fill: '#e80808'}} />
+                            <ellipse className="st22 target" rx="7.75725" ry="7.03431" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 373.376 590.464)" style={{fill: '#e80808'}} />
+                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 381.223 609.499)" style={{fill: '#e80808'}} />
                         </g>
                     </g>
                     <g className="implant hEmpty hIntact hRoot" style={{visibility: tooth17Diagnozis.implant || tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>

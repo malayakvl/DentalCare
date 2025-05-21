@@ -273,7 +273,7 @@ export default function Tooth52() {
                     </g>
                     <g className="pulp" style={{visibility: tooth52Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth52Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target"
+                            <path className="st22 target" style={{fill: '#e80808'}}
                                   d="M908.171 597.772C908.171 598.17 907.749 599.199 909.763 601.356C911.265 602.729 911.78 605.151 913.701 605.189C915.77 605.229 916.34 603.039 917.679 601.58C919.285 599.829 919.512 598.545 919.319 597.772C918.921 596.179 917.824 596.15 913.701 596.125C909.578 596.1 908.171 597.374 
                                   908.171 597.772Z"
                             />

@@ -279,10 +279,10 @@ export default function Tooth75() {
                         </g>
                     </g>
                     <g className="pulp" style={{visibility: tooth75Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="75" style={{visibility: 'hidden'}}>
-                            <ellipse className="st22 target" rx="10.9723" ry="7.35396" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1718.55 969.098)"></ellipse>
-                            <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1674.72 960.454)"></ellipse>
-                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1674.87 980.499)"></ellipse>
+                        <g>
+                            <ellipse className="st22 target" rx="10.9723" ry="7.35396" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1718.55 969.098)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1674.72 960.454)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1674.87 980.499)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     {/* IMPLANT/CULTTAB */}
@@ -661,18 +661,6 @@ export default function Tooth75() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage75 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="75"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1802.4" cy="1280.1" r="8.2"></circle>
-                            <circle className="st42" cx="1742.6" cy="1297.8" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="75"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1802.4" cy="1287.4" r="17.5"></circle>
-                            <circle className="st42" cx="1743.8" cy="1306" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="75"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1804.9" cy="1298.9" r="30"></circle>
-                            <circle className="st42" cx="1747.5" cy="1315.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -752,7 +740,7 @@ export default function Tooth75() {
                         <path className="st61 level1" d="M1771 1113.5L1772 1112.5L1773.5 1115V1117.5L1774.5 1119.5L1775.5 1123V1125.5L1777 1127.5V1130L1778 1133V1136L1775.5 1139.5L1774.5 1142L1770.5 1144.5L1770 1147.5L1766 1150.5L1762.5 1155L1759.5 1159L1755.5 1162L1751 1164L1750 1166L1746.5 1169L1741.5 1171L1737.5 1173.5L1731.5 1176.5L1727 1179.5H1721L1714.5 1182C1713.17 1182.33 1710.1 1183 1708.5 1183C1706.9 1183 1703.17 1185 1701.5 1186H1694.5C1693 1186.5 1689.7 1187.5 1688.5 1187.5L1683 1188.5L1680 1187.5L1675.5 1188.5H1670H1666L1663 1187.5L1658 1186H1654.5L1649.5 1184H1646.5L1644 1182H1641.5L1640.5 1180.5L1639.5 1179L1638 1177.5L1635.5 1175V1172.5L1633.5 1171L1631.5 1169L1630.5 1166L1629.5 1164L1628.5 1160.5L1627 1159L1625.5 1156.5V1155L1624.5 1152L1623.5 1150.5L1622.5 1146.5L1625.5 1148.5L1628.5 1152L1629.5 1155L1631.5 1159L1635.5 1163L1640.5 1171L1647.5 1172.5L1652.5 1178H1660L1664.5 1180.5H1668C1669.5 1180.5 1674.5 1181.5 1675.5 1182C1676.3 1182.4 1678.83 1181.17 1680 1180.5H1687L1691.5 1179.5H1697L1701.5 1178L1705.5 1176.5L1713.5 1175L1717.5 1172.5L1722 1171L1725 1169H1727L1728 1168L1731.5 1166L1737.5 1163L1739 1162L1744 1159L1745 1157.5L1749 1155L1752 1152L1755.5 1149.5L1756.5 1147.5L1759.5 1145.5L1762.5 1142L1764 1139.5L1766 1138V1136L1767.5 1133L1768.5 1130L1770 1127.5L1770.5 1124.5L1770 1123L1770.5 1119.5L1771 1117.5L1770.5 1115L1771 1113.5Z"></path>
                     </g>
                     {/*КАРИЕС*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth75Diagnozis.culttab && !tooth75Diagnozis.abutment && !tooth75Diagnozis.implant && !tooth75Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth75Diagnozis.culttab && !tooth75Diagnozis.abutment && !tooth75Diagnozis.implant && !tooth75Diagnozis.shaper && !tooth75Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         <g
                             dataposition="74_5"
                             className="caries-filling"

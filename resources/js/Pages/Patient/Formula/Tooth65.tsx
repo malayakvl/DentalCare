@@ -339,7 +339,6 @@ export default function tooth65() {
                             className="caries-filling"
                             data-position={'65_5'}
                             onClick={() => {
-                                alert(1)
                                 setColordedPart(diagnozis, 'center');
                             }}
                         >

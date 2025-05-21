@@ -593,15 +593,6 @@ const dispatch = useDispatch<any>();
                             />
                         </g>
                         <PeriodontitStage35 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="35"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1468.9" cy="1347.7" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="35"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1470.7" cy="1354.5" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="35"  style={{visibility: 'inherit', opacity:0}}>
-                            <circle className="st42" cx="1472.9" cy="1367" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

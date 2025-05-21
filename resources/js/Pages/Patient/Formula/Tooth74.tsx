@@ -279,7 +279,7 @@ export default function Tooth74() {
                         </g>
                     </g>
                     <g className="pulp" style={{visibility: tooth74Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                        <g className="hIntact hEmpty hImplant pulpitis-pfilling" dataposition="74" style={{visibility: 'hidden'}}>
+                        <g>
                             <ellipse className="st22 target" rx="10.0437" ry="6.63376" transform="matrix(0.0172822 -0.999851 -0.999851 -0.0172822 1563.95 976.158)" style={{fill: '#e80808'}}></ellipse>
                             <ellipse className="st22 target" rx="8.41967" ry="7.78385" transform="matrix(0.643274 -0.765636 -0.765636 -0.643274 1519.38 966.454)" style={{fill: '#e80808'}}></ellipse>
                             <ellipse className="st22 target" rx="8.72166" ry="7.94529" transform="matrix(-0.99786 -0.0653869 -0.0653869 0.99786 1519.53 986.499)" style={{fill: '#e80808'}}></ellipse>
@@ -657,18 +657,6 @@ export default function Tooth74() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage74 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="74"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1643.7" cy="1329.2" r="8.2"></circle>
-                            <circle className="st42" cx="1549.8" cy="1345.3" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="74"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1643.7" cy="1335" r="17.5"></circle>
-                            <circle className="st42" cx="1552.5" cy="1352.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="74"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1646.1" cy="1345.3" r="30"></circle>
-                            <circle className="st42" cx="1552.5" cy="1363.6" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -769,7 +757,7 @@ export default function Tooth74() {
                         <path className="st61 level1" d="M1466 1167L1468.5 1168L1470.5 1169.5L1473 1172L1475.5 1176.5L1478.5 1177.5L1481.5 1181.5L1484.5 1184L1488 1185.5L1491 1188L1496.5 1190L1499.5 1192.5L1503.5 1194.5L1506.5 1196.5L1512 1198L1519 1200H1527.5L1535 1202H1538.5L1543.5 1201H1550.5H1557L1567 1199L1576.5 1198L1582 1194.5L1592 1192.5L1596 1190L1605.5 1185.5L1608.5 1181.5L1613.5 1177.5L1616.5 1172.5L1617.5 1168L1620 1162L1619.5 1156.5L1620 1153.5L1620.5 1149.5L1622.5 1147V1149.5L1623.5 1153V1156.5L1625 1159.5L1623.5 1164.5V1168L1622.5 1172V1177.5L1623.5 1181.5L1622.5 1185.5L1619.5 1188L1616.5 1190L1613.5 1194.5L1606.5 1196L1602 1200L1596 1201H1590L1585.5 1203.5L1583.5 1205.5L1578.5 1207H1573L1569 1208.5H1561L1553.5 1210H1547L1540.5 1211.5L1537 1210H1531L1523 1211.5L1515 1207H1510.5H1506.5L1501 1205.5L1496.5 1207L1492 1204.5H1488L1484.5 1203.5L1481.5 1201L1480 1196L1478.5 1194.5L1479 1191.5L1477 1188L1475.5 1185.5L1473 1181.5L1471.5 1178.5L1469.5 1175.5L1467.5 1173.5L1466.5 1170.5L1466 1167Z"></path>
                     </g>
                     {/*КАРИЕС*/}
-                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth74Diagnozis.culttab && !tooth74Diagnozis.abutment && !tooth74Diagnozis.implant && !tooth74Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth74Diagnozis.culttab && !tooth74Diagnozis.abutment && !tooth74Diagnozis.implant && !tooth74Diagnozis.shaper && !tooth74Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         <g
                             dataposition="74_5"
                             className="caries-filling"
