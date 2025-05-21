@@ -213,6 +213,8 @@ export default function Formula() {
                     <Tooth17 />
                     <Tooth18 />
                     <g className="pointers">
+                        <path className="st35 st_pointers" d="M864.9,773l-4.3-15.9h18.7l-9.3,34.7 L864.9,773" id="pointer_83" style={{opacity: activeNumber == 83 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M772.4,773l-4.3-15.9h18.7l-9.3,34.7 L772.4,773" id="pointer_84" style={{opacity: activeNumber == 84 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_85" style={{opacity: activeNumber == 85 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M267.3,739.2l5.1-18.8l9.3,34.7H263L267.3,739.2" id="pointer_18" style={{opacity: activeNumber == 18 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M267.9,773l-4.3-15.9h18.7l-9.3,34.7 L267.9,773" id="pointer_48" style={{opacity: activeNumber == 48 ? 1 : 0}} />
@@ -221,31 +223,31 @@ export default function Formula() {
                         <path className="st35 st_pointers" d="M676.9,773l-4.3-15.9h18.7l-9.3,34.7 L676.9,773" id="pointer_45" style={{opacity: activeNumber == 45 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M772.4,773l-4.3-15.9h18.7l-9.3,34.7 L772.4,773" id="pointer_44" style={{opacity: activeNumber == 44 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M864.9,773l-4.3-15.9h18.7l-9.3,34.7 L864.9,773" id="pointer_43" style={{opacity: activeNumber == 43 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M948.6,773l-4.3-15.9H963l-9.3,34.7 L948.6,773" id="pointer_42"  style={{opacity: activeNumber == 42 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1007.3,773l-4.3-15.9h18.7l-9.3,34.7 L1007.3,773" id="pointer_41" style={{opacity: activeNumber == 41 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M948.6,773l-4.3-15.9H963l-9.3,34.7 L948.6,773" id="pointer_42"  style={{opacity: activeNumber == 42 || activeNumber == 82 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1007.3,773l-4.3-15.9h18.7l-9.3,34.7 L1007.3,773" id="pointer_41" style={{opacity: activeNumber == 41 || activeNumber == 81 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1831.3,773l-5.1,18.8l-9.3-34.7h18.7 L1831.3,773" id="pointer_38" style={{opacity: activeNumber == 38 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1694.9,773l-5.1,18.8l-9.3-34.7h18.7 L1694.9,773" id="pointer_37" style={{opacity: activeNumber == 37 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1537.1,773l-5.1,18.8l-9.3-34.7h18.7 L1537.1,773" id="pointer_36" style={{opacity: activeNumber == 36 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1422.2,773l-5.1,18.8l-9.3-34.7h18.7 L1422.2,773" id="pointer_35" style={{opacity: activeNumber == 35 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1326.7,773l-5.1,18.8l-9.3-34.7h18.7 L1326.7,773" id="pointer_34" style={{opacity: activeNumber == 34 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1234.3,773l-5.1,18.8l-9.3-34.7h18.7 L1234.3,773" id="pointer_33" style={{opacity: activeNumber == 33 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1150.6,773l-5.1,18.8l-9.3-34.7h18.7 L1150.6,773" id="pointer_32" style={{opacity: activeNumber == 32 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1091.9,773l-5.1,18.8l-9.3-34.7h18.7 L1091.9,773" id="pointer_31" style={{opacity: activeNumber == 31 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1422.2,773l-5.1,18.8l-9.3-34.7h18.7 L1422.2,773" id="pointer_35" style={{opacity: activeNumber == 35 || activeNumber == 75? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1326.7,773l-5.1,18.8l-9.3-34.7h18.7 L1326.7,773" id="pointer_34" style={{opacity: activeNumber == 34 || activeNumber == 74 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1234.3,773l-5.1,18.8l-9.3-34.7h18.7 L1234.3,773" id="pointer_33" style={{opacity: activeNumber == 33 || activeNumber == 73 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1150.6,773l-5.1,18.8l-9.3-34.7h18.7 L1150.6,773" id="pointer_32" style={{opacity: activeNumber == 32 || activeNumber == 72 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1091.9,773l-5.1,18.8l-9.3-34.7h18.7 L1091.9,773" id="pointer_31" style={{opacity: activeNumber == 31 || activeNumber == 71 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M384.7,739.2l5.1-18.8l9.3,34.7h-18.7 L384.7,739.2" id="pointer_17" style={{opacity: activeNumber == 17 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M527.7,739.2l5.1-18.8l9.3,34.7h-18.7 L527.7,739.2" id="pointer_16" style={{opacity: activeNumber == 16 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M656.4,739.2l5.1-18.8l9.3,34.7h-18.7 L656.4,739.2" id="pointer_15" style={{opacity: activeNumber == 15 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M734,739.2l5.1-18.8l9.3,34.7h-18.7 L734,739.2" id="pointer_14" style={{opacity: activeNumber == 14 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M827.9,739.2l5.1-18.8l9.3,34.7h-18.7 L827.9,739.2" id="pointer_13" style={{opacity: activeNumber == 13 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M907.6,739.2l5.1-18.8l9.3,34.7h-18.7 L907.6,739.2" id="pointer_12" style={{opacity: activeNumber == 12 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M998.5,739.2l5.1-18.8l9.3,34.7h-18.7 L998.5,739.2" id="pointer_11" style={{opacity: activeNumber == 11 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M656.4,739.2l5.1-18.8l9.3,34.7h-18.7 L656.4,739.2" id="pointer_15" style={{opacity: activeNumber == 15 || activeNumber == 55 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M734,739.2l5.1-18.8l9.3,34.7h-18.7 L734,739.2" id="pointer_14" style={{opacity: activeNumber == 14 ||  activeNumber == 54 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M827.9,739.2l5.1-18.8l9.3,34.7h-18.7 L827.9,739.2" id="pointer_13" style={{opacity: activeNumber == 13 || activeNumber == 53 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M907.6,739.2l5.1-18.8l9.3,34.7h-18.7 L907.6,739.2" id="pointer_12" style={{opacity: activeNumber == 12 || activeNumber == 52? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M998.5,739.2l5.1-18.8l9.3,34.7h-18.7 L998.5,739.2" id="pointer_11" style={{opacity: activeNumber == 11 || activeNumber == 51 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1831.2,739.2l4.3,15.9h-18.7l9.3-34.7 L1831.2,739.2" id="pointer_28" style={{opacity: activeNumber == 28 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1713.8,739.2l4.3,15.9h-18.7l9.3-34.7 L1713.8,739.2" id="pointer_27" style={{opacity: activeNumber == 27 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M1570.8,739.2l4.3,15.9h-18.7l9.3-34.7 L1570.8,739.2" id="pointer_26" style={{opacity: activeNumber == 26 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1442.1,739.2l4.3,15.9h-18.7l9.3-34.7 L1442.1,739.2" id="pointer_25" style={{opacity: activeNumber == 25 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1364.5,739.2l4.3,15.9h-18.7l9.3-34.7 L1364.5,739.2" id="pointer_24" style={{opacity: activeNumber == 24 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1270.6,739.2l4.3,15.9h-18.7l9.3-34.7 L1270.6,739.2" id="pointer_23" style={{opacity: activeNumber == 23 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1190.9,739.2l4.3,15.9h-18.7l9.3-34.7 L1190.9,739.2" id="pointer_22" style={{opacity: activeNumber == 22 ? 1 : 0}} />
-                        <path className="st35 st_pointers" d="M1100,739.2l4.3,15.9h-18.7l9.3-34.7 L1100,739.2" id="pointer_21" style={{opacity: activeNumber == 21 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1442.1,739.2l4.3,15.9h-18.7l9.3-34.7 L1442.1,739.2" id="pointer_25" style={{opacity: activeNumber == 25 || activeNumber == 65 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1364.5,739.2l4.3,15.9h-18.7l9.3-34.7 L1364.5,739.2" id="pointer_24" style={{opacity: activeNumber == 24 || activeNumber == 64 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1270.6,739.2l4.3,15.9h-18.7l9.3-34.7 L1270.6,739.2" id="pointer_23" style={{opacity: activeNumber == 23 || activeNumber == 63 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1190.9,739.2l4.3,15.9h-18.7l9.3-34.7 L1190.9,739.2" id="pointer_22" style={{opacity: activeNumber == 22 || activeNumber == 62 ? 1 : 0}} />
+                        <path className="st35 st_pointers" d="M1100,739.2l4.3,15.9h-18.7l9.3-34.7 L1100,739.2" id="pointer_21" style={{opacity: activeNumber == 21 || activeNumber == 61 ? 1 : 0}} />
                     </g>
                 </svg>
 

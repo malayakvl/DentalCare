@@ -209,7 +209,7 @@ export default function Tooth73() {
     return (
         <>
             <g id="73" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 1205 842)" className="st3 st4 st5">73</text>
+                <text transform="matrix(1 0 0 1 1205 842)" className={`st3 st4 st5 ${selectedTooth === 73 ? 'num-active' : ''}`}>73</text>
             </g>
             <g id="TH-73" className={`f-tooth-init-milk ${(teethDiagnozis.tooth73.show && !teethDiagnozis.tooth73.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
