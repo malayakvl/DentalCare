@@ -49,7 +49,7 @@
     margin-left: 10px;
 }
 .btn-back {
-    background: #663399;
+    background: #343335;
     display: inline-block;
     color: white;
     padding: 10px 20px;
@@ -73,7 +73,8 @@
     font-size: 14px;
 }
 .btn-submit {
-    background: #663399;
+    // background: #663399;
+    background-image: linear-gradient(to left top, rgb(121, 40, 202), rgb(255, 0, 128)) !important;
     display: inline-block;
     color: white;
     padding: 10px 20px;
