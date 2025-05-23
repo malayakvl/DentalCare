@@ -5,11 +5,10 @@ import Lang from "lang.js";
 import lngPatient from "../../Lang/Patient/translation";
 import { useSelector } from "react-redux";
 import { appLangSelector } from "../../Redux/Layout/selectors";
-import { Link } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faPencil } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
-// import lngFormula from "../../Lang/Formula/translation";
 import InputText from '../../Components/Form/InputText';
 import ViewFormula from './ViewFormula';
 import moment from 'moment';
@@ -25,14 +24,14 @@ export default function index({ patientData, type, treatmentData }) {
     //     messages: lngFormula,
     //     locale: appLang,
     // });
-    const [_, setStageName] = useState('');
+    const [stageName, setStageName] = useState('');
     const handleTabClick = (tabName) => {
         setTab(tabName);
     }
 
     const submit = (e) => {
         e.preventDefault();
-        // router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
+        router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
     };
 
     const renderTreatmentStages = () => {

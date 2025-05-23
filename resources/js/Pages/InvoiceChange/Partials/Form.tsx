@@ -91,7 +91,6 @@ export default function Form({
         } else {
             const taxData = documentTax.split('_');
             if (formData.id) {
-                console.log(values);
                 router.post(`/invoice-change/update?id=${formData.id}`, {
                     invoice_number: values.invoice_number,
                     invoice_date: values.invoice_date,
