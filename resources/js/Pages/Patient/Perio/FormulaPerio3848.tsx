@@ -44,12 +44,12 @@ import Tooth37 from "./Tooth37";
 import Tooth38 from "./Tooth38";
 import {
     getStatusesSelector,
-    getActiveToothNumber
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 
 export default function FormulaPerio3848() {
     const toothActive = useSelector(getStatusesSelector);
-    const activeNumber = useSelector(getActiveToothNumber);
+    const activeNumber = useSelector(getActiveToothNumberSelector);
     return (
         <section className="f-prerio">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px"

@@ -224,10 +224,10 @@
 }
 
 .st40 {
-    opacity: 0.1;
-    fill: #ffffff00;
-    stroke: #9C9C9C00;
-    stroke-width: 1.0846;
+    // opacity: 0.1;
+    // fill: #ffffff00;
+    // stroke: #9C9C9C00;
+    // stroke-width: 1.0846;
 }
 
 .st41 {
@@ -359,7 +359,7 @@
 }
 .formula-block-title {
     text-transform: uppercase;
-    color: #663399;
+    color: #830874;
     border-bottom: solid 1px;
     padding-bottom: 10px;
 }
@@ -455,7 +455,7 @@
     fill: #fdde88;
 }
 .change-color.diagnoze {
-    fill: #5a428a;
+    fill: #6a4f04;
 }
 .st61 {
     fill-rule: evenodd;
@@ -488,14 +488,14 @@
 
 .st_pointers {
     opacity: 0;
-    fill: #ff0000;
+    fill: #830874;
 }
   
 .st40 {
-opacity: 0.5;
-fill: #b3b3b300;
-stroke: #9C9C9C00;
-stroke-width: 1.0846;
+// opacity: 0.5;
+// fill: #b3b3b300;
+// stroke: #9C9C9C00;
+// stroke-width: 1.0846;
 }
 
 .st40_selected {
@@ -519,35 +519,10 @@ fill: #e8e8e8;
 .f-tooth-init, .f-tooth-init-milk {
     opacity: 0;
 }
-.f-tooth-init.child:hover {
-    visibility: hidden;
+// .f-tooth-init.child:hover {
+//     visibility: hidden;
+// }
 
-    // .f-tooth-init-milk {
-    //     opacity: 1 !important; 
-    // }
-}
-.f-tooth-init.child:hover f-tooth-init-milk.child {
-    opacity: 1;
-    // transition: opacity .5s ease-out;
-    // -moz-transition: opacity .5s ease-out;
-    // -webkit-transition: opacity .5s ease-out;
-    // -o-transition: opacity .5s ease-out;
-}
-
-.f-tooth-init.adult:hover {
-    opacity: 1;
-    // transition: opacity .5s ease-out;
-    // -moz-transition: opacity .5s ease-out;
-    // -webkit-transition: opacity .5s ease-out;
-    // -o-transition: opacity .5s ease-out;
-}
-.f-tooth-init-milk.child:hover {
-    opacity: 1;
-    // transition: opacity .5s ease-out;
-    // -moz-transition: opacity .5s ease-out;
-    // -webkit-transition: opacity .5s ease-out;
-    // -o-transition: opacity .5s ease-out;
-}
 .hide-number {
     display: none;
 }
@@ -556,4 +531,52 @@ fill: #e8e8e8;
 }
 .dis-hover:hover {
     opacity: 0;
+}
+.hover-hide {
+    opacity: 0 !important;
+}
+.hover-show {
+    opacity: 1 !important;
+    visibility: inherit !important;
+}
+.f-tooth-active {
+    visibility: inherit !important;
+}
+.underlay {
+    fill: transparent;
+    // stroke: rgba(222, 123, 65, 0.9);
+    // stroke-width:   1;
+}
+.underlay.selected .st40 {
+    // opacity: 0.5;
+    fill: rgba(249, 230, 240, 0.5);
+    // stroke: rgba(40, 2, 45, 0.9);
+    // stroke-width:   1;
+}
+.underlay-child .st40 {
+    // opacity: 0.5;
+    // fill: rgba(211, 199, 244, 0.2);
+    stroke: rgba(22, 5, 70, 1);
+    stroke-width:   1;
+}
+.adult-underlay {
+    z-index: 999999;
+}
+.v-hidden {
+    visibility: hidden !important;
+}
+.f-tooth-init-milk.adult {
+    visibility: hidden !important;
+}
+.f-tooth-init-milk.adult.f-tooth-active {
+    visibility: inherit !important;
+}
+.num-active {
+    fill: #830874 !important;
+}
+.ot {
+    opacity: 0.1 !important;
+}
+.oh {
+    opacity: 0.9 !important;
 }

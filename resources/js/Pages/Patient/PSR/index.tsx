@@ -45,13 +45,13 @@ import Tooth18 from './Tooth18';
 // 
 import {
     getStatusesSelector,
-    getActiveToothNumber
+    getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 
 
 export default function PSR() {
     const toothActive = useSelector(getStatusesSelector);
-    const activeNumber = useSelector(getActiveToothNumber);
+    const activeNumber = useSelector(getActiveToothNumberSelector);
 
     return (
         <div className="w-full scroll-x">

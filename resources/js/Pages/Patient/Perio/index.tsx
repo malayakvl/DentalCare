@@ -1,29 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import InputSelect from "../../../Components/Form/InputSelect";
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler,
-    BarElement
-  } from 'chart.js';
-  import { Line  } from 'react-chartjs-2';
-
-  import {
-    getStatusesSelector,
-    getActiveToothNumber,
-    getPerioZond18Selector,
-    getPerioZondSelector,
-    getTeethDiagnozisSelector,
-    perioDiagnozisSelector
-} from "../../../Redux/Formula/selectors";
-import MovePerio from './Move';
+import { perioDiagnozisSelector } from "../../../Redux/Formula/selectors";
 import Furkacia from './Furkacia';
 import FormulaPerio1828 from './FormulaPerio1828';
 import FormulaPerio3848 from './FormulaPerio3848';
@@ -41,7 +18,7 @@ import IntersectChart1828Down from './IntersectChart1828Down'
 
 import IntersectChart4838Up from './IntersectChart4838Up'
 import IntersectChart4838Down from './IntersectChart4838Down'
-import { checkAction } from '@/Redux/Formula';
+import { checkAction } from '../../../Redux/Formula';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngFormula from "../../../Lang/Formula/translation";
