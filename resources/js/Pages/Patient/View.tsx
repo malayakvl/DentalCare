@@ -3,15 +3,14 @@ import { Head } from '@inertiajs/react';
 import React from "react";
 import Lang from "lang.js";
 import lngPatient from "../../Lang/Patient/translation";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { appLangSelector } from "../../Redux/Layout/selectors";
-import { Link, router } from '@inertiajs/react';
+import { Link } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faPencil, faTrash, faCopy, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
+import { faUserPlus, faPencil } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
-import lngFormula from "../../Lang/Formula/translation";
-import { setPatientTab } from '../../Redux/Patient';
-import InputText from '@/Components/Form/InputText';
+// import lngFormula from "../../Lang/Formula/translation";
+import InputText from '../../Components/Form/InputText';
 import ViewFormula from './ViewFormula';
 import moment from 'moment';
 
@@ -22,21 +21,18 @@ export default function index({ patientData, type, treatmentData }) {
         messages: lngPatient,
         locale: appLang,
     });
-    const msgFormula = new Lang({
-        messages: lngFormula,
-        locale: appLang,
-    });
-    const [stageName, setStageName] = useState('');
-    const dispatch = useDispatch<any>();
-    console.log(treatmentData)
-    
+    // const msgFormula = new Lang({
+    //     messages: lngFormula,
+    //     locale: appLang,
+    // });
+    const [_, setStageName] = useState('');
     const handleTabClick = (tabName) => {
         setTab(tabName);
     }
 
     const submit = (e) => {
         e.preventDefault();
-        router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
+        // router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
     };
 
     const renderTreatmentStages = () => {
@@ -82,7 +78,7 @@ export default function index({ patientData, type, treatmentData }) {
     return (
         <AuthenticatedLayout
             header={
-                <Head />
+                <Head title={`DentalCare`} />
             }
         >
             <Head title={'Patient Card'} />

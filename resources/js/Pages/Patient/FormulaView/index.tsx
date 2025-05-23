@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from "react-redux";
 import MaxilaryLeft from "./MaxilaryLeft";
 import MaxilaryRight from "./MaxilaryRight";
 import Bone31 from "./Bone31";
@@ -90,23 +89,9 @@ import Tooth55 from "./Tooth55";
 import Tooth16 from "./Tooth16";
 import Tooth17 from "./Tooth17";
 import Tooth18 from "./Tooth18";
-import {
-    getStatusesSelector,
-    getActiveToothNumberSelector,
-    teethTypeSelector,
-    getTeethDiagnozisSelector,
-    changeDiaSelector
-} from "../../../Redux/Formula/selectors";
-import FormulaDiagnozis from "../Partials/FormulaDiagnozis";
+
 
 export default function FormulaView({formulaData}) {
-    const toothActive = useSelector(getStatusesSelector);
-    const activeNumber = useSelector(getActiveToothNumberSelector);
-    const teethType = useSelector(teethTypeSelector);
-    // const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const teethDiagnozis = formulaData;
-    const changeDia = useSelector(changeDiaSelector);
-
     return (
         <>
             <section>
@@ -202,17 +187,17 @@ export default function FormulaView({formulaData}) {
                     {formulaData.tooth61.show && <Tooth61 formulaToothData={formulaData.tooth61} />}
                     {formulaData.tooth11.show && <Tooth11 formulaToothData={formulaData.tooth11} />}
                     {formulaData.tooth51.show && <Tooth51 formulaToothData={formulaData.tooth51} />}
-                    {formulaData.tooth32.show && <Tooth32 formulaToothData={formulaData.tooth32} />}
-                    <Tooth52 />
-                    <Tooth13 />
-                    <Tooth53 />
-                    <Tooth14 />
-                    <Tooth54 />
-                    <Tooth15 />
-                    <Tooth55 />
-                    <Tooth16 />
-                    <Tooth17 />
-                    <Tooth18 />
+                    {formulaData.tooth12.show && <Tooth12 formulaToothData={formulaData.tooth12} />}
+                    {formulaData.tooth52.show && <Tooth52 formulaToothData={formulaData.tooth52} />}
+                    {formulaData.tooth13.show && <Tooth13 formulaToothData={formulaData.tooth13} />}
+                    {formulaData.tooth53.show && <Tooth53 formulaToothData={formulaData.tooth53} />}
+                    {formulaData.tooth14.show && <Tooth14 formulaToothData={formulaData.tooth14} />}
+                    {formulaData.tooth54.show && <Tooth54 formulaToothData={formulaData.tooth54} />}
+                    {formulaData.tooth15.show && <Tooth15 formulaToothData={formulaData.tooth15} />}
+                    {formulaData.tooth55.show && <Tooth55 formulaToothData={formulaData.tooth55} />}
+                    {formulaData.tooth16.show && <Tooth16 formulaToothData={formulaData.tooth16} />}
+                    {formulaData.tooth17.show && <Tooth17 formulaToothData={formulaData.tooth17} />}
+                    {formulaData.tooth18.show && <Tooth18 formulaToothData={formulaData.tooth18} />}
                     {/* <g className="pointers">
                         <path className="st35 st_pointers" d="M864.9,773l-4.3-15.9h18.7l-9.3,34.7 L864.9,773" id="pointer_83" style={{opacity: activeNumber == 83 ? 1 : 0}} />
                         <path className="st35 st_pointers" d="M772.4,773l-4.3-15.9h18.7l-9.3,34.7 L772.4,773" id="pointer_84" style={{opacity: activeNumber == 84 ? 1 : 0}} />
