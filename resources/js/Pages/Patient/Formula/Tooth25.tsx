@@ -230,6 +230,7 @@ export default function Tooth25() {
                         showHideTeeth('over');
                     }}
                     onMouseLeave={() => {
+                        console.log('leave')
                         showHideTeeth('leave');
                     }}
                 >

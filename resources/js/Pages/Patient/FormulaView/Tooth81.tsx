@@ -460,7 +460,7 @@ export default function Tooth81() {
                             />
                         </g>
                     </g>
-                    <g className="hEmpty hImplant hRoot" style={{visibility: "inherit"}}>
+                    <g>
                         <g className="vinir"  style={
                             {
                                 visibility: tooth81Diagnozis.vinir ? 'inherit' : 'hidden',
