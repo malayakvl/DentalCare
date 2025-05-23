@@ -12,9 +12,11 @@ import { useState } from 'react';
 import lngFormula from "../../Lang/Formula/translation";
 import { setPatientTab } from '../../Redux/Patient';
 import InputText from '@/Components/Form/InputText';
+import ViewFormula from './ViewFormula';
+import moment from 'moment';
 
-export default function index({ patientData }) {
-    const [tab, setTab] = useState('formula');
+export default function index({ patientData, type, treatmentData }) {
+    const [tab, setTab] = useState(type ? type : 'history');
     const appLang = useSelector(appLangSelector);
     const msg = new Lang({
         messages: lngPatient,
@@ -26,6 +28,7 @@ export default function index({ patientData }) {
     });
     const [stageName, setStageName] = useState('');
     const dispatch = useDispatch<any>();
+    console.log(treatmentData)
     
     const handleTabClick = (tabName) => {
         setTab(tabName);
@@ -35,6 +38,46 @@ export default function index({ patientData }) {
         e.preventDefault();
         router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
     };
+
+    const renderTreatmentStages = () => {
+        return (
+            <>
+                {treatmentData.map((element, index) => {
+                    return (
+                        <div key={index} className="w-full bg-white border mt-10 patient-stage">
+                            <h2 className="text-left text-[14px] font-bold">{element.stage_name} {moment.utc(element.created_at).format('D.MM.YY')}</h2>
+                            {element.type === 'formula' && (
+                                <div className="w-full flex flex-row">
+                                    <div className="w-1/2">
+                                        <ViewFormula formulaData={element} />
+                                    </div>
+                                    <div className="w-1/2">
+                                        <ul className='tabs'>
+                                            <li>
+                                                <Link href={`patient/edit/`}>
+                                                    Верхня щелепа
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href={`patient/edit/`}>
+                                                    Нижня щелепа
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                <Link href={`patient/edit/`}>
+                                                    Оклюзія
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )
+                })}
+                
+            </>)
+    }
 
     return (
         <AuthenticatedLayout
@@ -92,6 +135,9 @@ export default function index({ patientData }) {
                                 </ul>
                             </div>
                         </div>
+                        <div className="w-full">
+                            {renderTreatmentStages()}
+                        </div>
                         <div className="w-full bg-white border mt-10 patient-stage flex">
                             <form onSubmit={submit} className="flex flex-row w-full" encType='multipart/form-data'>
                                 <div className="w-1/3">
@@ -133,6 +179,7 @@ export default function index({ patientData }) {
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
         </AuthenticatedLayout>

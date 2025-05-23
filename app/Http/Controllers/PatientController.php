@@ -147,9 +147,14 @@ class PatientController extends Controller
      */
     public function view(Request $request, $id) {
         $patientData = Patient::where('id', '=', $id)->first();
+        $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
+        $patientTreatment = PatientTreatment::where('user_id', '=', $id)->get();
 
+        // dd($patientTreatment);exit;
         return Inertia::render('Patient/View', [
-            'patientData' => $patientData
+            'patientData' => $patientData,
+            'treatmentData' => $patientTreatment,
+            'type' => $request->type,
         ]);
     }
 
