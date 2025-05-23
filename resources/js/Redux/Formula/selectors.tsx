@@ -24,6 +24,7 @@ export const getMetalicCrownColorSelector = (state) => state.formula.metalic_cro
 export const getZirconiaCrownColorSelector = (state) => state.formula.zirconia_crown_color;
 export const getStatusesSelector = (state) => state.formula.teethStatuses;
 export const getActiveToothNumberSelector = (state) => state.formula.selectedTooth;
+export const getStateFormulaSelector = (state) => state.formula.stateFormula;
 
 
 // chart variables 1828

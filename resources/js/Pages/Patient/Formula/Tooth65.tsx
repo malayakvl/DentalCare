@@ -820,7 +820,7 @@ export default function tooth65() {
                         >
                             <path className={
                                 `st8 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
+                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${tooth65Diagnozis.caries_bottom ? 'caries-fill' : ''}
                                 ${tooth65Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth65.seal_bottom_color}` : ''}
                             `}
@@ -832,7 +832,7 @@ export default function tooth65() {
                             />
                             <path className={
                                 `st58 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
+                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${tooth65Diagnozis.caries_bottom ? 'caries-fill' : ''}
                                 ${tooth65Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth65.seal_bottom_color}` : ''}
                             `} 

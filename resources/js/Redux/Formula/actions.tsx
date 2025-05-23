@@ -59,3 +59,6 @@ export const checkAction = createAction('formula/CHECK_VALUES');
 export const setChangeDia = createAction('formula/CHANGE_DIA');
 
 export const setSelectedTooth = createAction('formula/CHANGE_DIA');
+export const setDataDiagnozes = createAction('formula/SET_EXIST_DIAGNOZIS');
+export const setStateFormula = createAction('formula/SET_STATE_FORMULA');
+export const setClearFormula = createAction('formula/SET_CLEAR_FORMULA');

@@ -26,7 +26,8 @@ import {
     getStatusesSelector,
     allTeethAdultSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
+    getStateFormulaSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage17 from './periodontit17';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -51,6 +52,7 @@ export default function Tooth17() {
     const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const stateFormula = useSelector(getStateFormulaSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -159,15 +161,17 @@ export default function Tooth17() {
     }
 
     const showHideTeeth = (type) => {
-        if (type === 'over') {
-            if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
-                document.getElementById('TH-17').classList.add('f-tooth-active');
-            }
-        } 
+        if (stateFormula !== 'view') {
+            if (type === 'over') {
+                if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
+                    document.getElementById('TH-17').classList.add('f-tooth-active');
+                }
+            } 
 
-        if (type === 'leave') {
-            if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
-                document.getElementById('TH-17').classList.remove('f-tooth-active');
+            if (type === 'leave') {
+                if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
+                    document.getElementById('TH-17').classList.remove('f-tooth-active');
+                }
             }
         }
     }

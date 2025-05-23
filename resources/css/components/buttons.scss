@@ -49,7 +49,8 @@
     margin-left: 10px;
 }
 .btn-back {
-    background: #343335;
+    // background: #343335;
+    background-image: linear-gradient(to left top, rgb(215, 190, 209), rgb(167, 153, 160)) !important;
     display: inline-block;
     color: white;
     padding: 10px 20px;
@@ -60,7 +61,7 @@
     margin-right: 10px;
 }
 .btn-back:hover {
-    background: #70726f;
+    background-image: linear-gradient(to left top, rgb(155, 141, 151), rgb(137, 108, 122)) !important;
 }
 .btn-invite {
     background: #663399;
@@ -85,7 +86,7 @@
     font-size: 14px;
 }
 .btn-submit:hover {
-    background: #372c9d !important;
+    background-image: linear-gradient(to left top, rgb(92, 51, 133), rgb(225, 78, 151)) !important;
 }
 .btn-plus {
     background-image: url('../../images/action-icons/plus.svg');

@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from 'react';
 import MaxilaryLeft from "./MaxilaryLeft";
 import MaxilaryRight from "./MaxilaryRight";
 import Bone31 from "./Bone31";
@@ -95,17 +96,33 @@ import {
     getActiveToothNumberSelector,
     teethTypeSelector,
     getTeethDiagnozisSelector,
-    changeDiaSelector
+    changeDiaSelector,
+    getStateFormulaSelector
 } from "../../../Redux/Formula/selectors";
 import FormulaDiagnozis from "../Partials/FormulaDiagnozis";
+import { setDataDiagnozes, setStateFormula, setToothDiagnoze } from '../../../Redux/Formula';
 
-export default function Formula() {
+export default function Formula({formulaData, action} : {formulaData: any, action: any}) {
+    const dispatch = useDispatch<any>();
     const toothActive = useSelector(getStatusesSelector);
     const activeNumber = useSelector(getActiveToothNumberSelector);
     const teethType = useSelector(teethTypeSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const changeDia = useSelector(changeDiaSelector);
+    const editFormula = useSelector(getStateFormulaSelector);
+
     
+
+    useEffect(() => {
+        if (!editFormula && action === 'view') {
+            dispatch(setStateFormula('view'));
+            dispatch(setDataDiagnozes(formulaData));
+        } else if (action === 'edit') {
+            // dispatch(setStateFormula('edit'));
+            // dispatch(setDataDiagnozes(formulaData));
+        }
+    }, [formulaData]);
+
     return (
         <>
             <section>

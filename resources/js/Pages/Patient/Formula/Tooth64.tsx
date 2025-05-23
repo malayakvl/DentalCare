@@ -353,7 +353,7 @@ export default function Tooth64() {
                             />
                             <path className={
                                     `st8 caries-center 
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth64.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth64.seal_center ? `seal-fill ${teethDiagnozis.tooth64.seal_center_color}` : ''}
                                 `} 
@@ -866,7 +866,7 @@ export default function Tooth64() {
                             />
                             <path className={
                                 `st8 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
+                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${tooth64Diagnozis.caries_bottom ? 'caries-fill' : ''}
                                 ${tooth64Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth64.seal_bottom_color}` : ''}
                             `} 
