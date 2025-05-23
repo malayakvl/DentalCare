@@ -1,30 +1,8 @@
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm } from '@inertiajs/react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngMaterial from "../../../Lang/Material/translation";
-import InputText from "../../../Components/Form/InputText";
-import InputTreeSelect from "../../../Components/Form/InputTreeSelect";
-import { emptyProducersAutocompleteAction, findProducersAction } from "../../../Redux/Clinic";
 import { useDispatch, useSelector } from "react-redux";
-import { userSearchResultsSelector } from "../../../Redux/Clinic/selectors";
-import {
-    categoryPercentSelector,
-    sizeSearchResultsSelector,
-    unitSearchResultsSelector,
-
-} from "../../../Redux/Material/selectors";
-import {
-    emptySizeAction,
-    emptyUnitAction,
-    findSizeAction,
-    findUnitAction,
-    findPercentAction,
-    setPercentAction
-} from "../../../Redux/Material";
-import InputSelect from "../../../Components/Form/InputSelect";
-
 
 export default function MaxilaryRight({
     className = '',
