@@ -85,7 +85,7 @@ export default function ViewFormula({ formulaData }) {
     
     return (
         <div className="py-0 w-full">
-            <Formula formulaData={fData} action={'view'} />
+            <FormulaView formulaData={fData} action={'view'} />
         </div>
     );
 }
