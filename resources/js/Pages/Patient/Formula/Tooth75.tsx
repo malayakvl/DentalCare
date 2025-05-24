@@ -360,7 +360,7 @@ export default function Tooth75() {
                             />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth75.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth75.seal_left ? `seal-fill ${teethDiagnozis.tooth75.seal_left_color}` : ''}
                                 `} 
@@ -744,7 +744,7 @@ export default function Tooth75() {
                             />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth75.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth75.seal_center ? `seal-fill ${teethDiagnozis.tooth75.seal_center_color}` : ''}
                                 `}   
@@ -768,7 +768,7 @@ export default function Tooth75() {
                             />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth75.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth75.seal_left ? `seal-fill ${teethDiagnozis.tooth75.seal_left_color}` : ''}
                                 `} 

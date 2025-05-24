@@ -395,7 +395,7 @@ export default function Tooth71() {
                             />
                             <path className={
                                     `st8 caries-right
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth71.caries_right ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth71.seal_right ? `seal-fill ${teethDiagnozis.tooth71.seal_right_color}` : ''}
                                 `}  
