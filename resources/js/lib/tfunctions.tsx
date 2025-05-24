@@ -1,6 +1,6 @@
 import { setSubDiagnosis } from "../Redux/Formula";
 
-export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiagnoze, dispatch, vinirColor, ceramicCrownColor, mceramicCrownColor, metalicCrownColor, zirconiaCrownColor) {
+export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiagnoze, dispatch, vinirColor, ceramicCrownColor, mceramicCrownColor, metalicCrownColor, zirconiaCrownColor, wsDefectColor) {
     teethdiagnoze[`tooth${toothNum}`].show = true;
     teethdiagnoze[`tooth${toothNum}`].active = true;
     if (diagnoze === 'change_color')

@@ -19,7 +19,8 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
+    allTeethChildSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage53 from './periodontit53';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -41,6 +42,7 @@ export default function Tooth53() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethChildSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -147,38 +149,37 @@ export default function Tooth53() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-
     const showHideOverlay = (type) => {
         if (type === 'over') {
-            if (teethType === 'child' && !teethDiagnozis.tooth53.show && !teethDiagnozis.tooth53.show) {
+            if (teethType === 'child' && !teethDiagnozis.tooth53.show && !teethDiagnozis.tooth13.show) {
                 document.getElementById('TH-53').classList.add('f-tooth-active');
-                document.getElementById('TH-53').style.opacity = 1
+                document.getElementById('TH-53').style.opacity = "1"
             }
-            if (teethType === 'child' && !teethDiagnozis.tooth53.show && teethDiagnozis.tooth53.show) {
+            if (teethType === 'child' && !teethDiagnozis.tooth53.show && teethDiagnozis.tooth13.show) {
                 document.getElementById('TH-53').classList.add('f-tooth-active');
                 document.getElementById('TH-13').classList.remove('f-tooth-active');
             }
             if (teethType === 'adult') {
-               document.getElementById('TH-53').classList.remove('f-tooth-active'); 
-               document.getElementById('TH-13').classList.add('f-tooth-active');
-            }
-        } 
-
-        if (type === 'leave') {
-            if (teethType === 'child' && !teethDiagnozis.tooth53.show && !teethDiagnozis.tooth53.show) {
-                document.getElementById('TH-53').classList.remove('f-tooth-active');
-                document.getElementById('TH-53').style.opacity = 0;
-            }
-            if (teethType === 'child' && !teethDiagnozis.tooth53.show && teethDiagnozis.tooth53.show) {
                 document.getElementById('TH-53').classList.remove('f-tooth-active');
                 document.getElementById('TH-13').classList.add('f-tooth-active');
             }
-            
+        }
+
+        if (type === 'leave') {
+            if (teethType === 'child' && !teethDiagnozis.tooth53.show && !teethDiagnozis.tooth13.show) {
+                document.getElementById('TH-53').classList.remove('f-tooth-active');
+                document.getElementById('TH-53').style.opacity = "0";
+            }
+            if (teethType === 'child' && !teethDiagnozis.tooth53.show && teethDiagnozis.tooth13.show) {
+                document.getElementById('TH-53').classList.remove('f-tooth-active');
+                document.getElementById('TH-13').classList.add('f-tooth-active');
+            }
+
         }
     }
     const showHideTopCommonView = (type) => {
         if (type === 'over') {
-            if (teethType === 'child' && teethDiagnozis.tooth53.show) {
+            if (teethType === 'child' && teethDiagnozis.tooth13.show) {
                 document.getElementById('TH-53').classList.add('f-tooth-active');
                 document.getElementById('TH-13').classList.remove('f-tooth-active');
             }
@@ -188,7 +189,7 @@ export default function Tooth53() {
             }
         }
         if (type === 'leave') {
-            if (teethType === 'child' && teethDiagnozis.tooth53.show) {
+            if (teethType === 'child' && teethDiagnozis.tooth13.show) {
                 document.getElementById('TH-13').classList.add('f-tooth-active');
                 document.getElementById('TH-53').classList.remove('f-tooth-active');
             }
@@ -200,7 +201,7 @@ export default function Tooth53() {
             <g id="53" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 805 716)" className={`st3 st4 st5 ${selectedTooth === 53 ? 'num-active' : ''}`}>53</text>
             </g>
-            <g id="TH-53" className={`f-tooth-init-milk ${(teethDiagnozis.tooth53.show && !teethDiagnozis.tooth53.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-53" className={`f-tooth-init-milk ${((teethDiagnozis.tooth53.show || allTeeth) && !teethDiagnozis.tooth53.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth53.show = !teethDiagnozis.tooth53.show;
                     teethDiagnozis.tooth13.show = false;
@@ -219,7 +220,8 @@ export default function Tooth53() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }

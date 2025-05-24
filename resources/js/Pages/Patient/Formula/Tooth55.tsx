@@ -19,7 +19,8 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
+    allTeethChildSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage55 from './periodontit55';
 import setupDiagnoze from "../../../lib/tfunctions"
@@ -41,6 +42,7 @@ export default function Tooth55() {
     const teethType = useSelector(teethTypeSelector);
     const tooth55Diagnozis = teethDiagnozis.tooth55;
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethChildSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -147,12 +149,11 @@ export default function Tooth55() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-
     const showHideOverlay = (type) => {
         if (type === 'over') {
             if (teethType === 'child' && !teethDiagnozis.tooth55.show && !teethDiagnozis.tooth15.show) {
                 document.getElementById('TH-55').classList.add('f-tooth-active');
-                document.getElementById('TH-55').style.opacity = 1
+                document.getElementById('TH-55').style.opacity = "1"
             }
             if (teethType === 'child' && !teethDiagnozis.tooth55.show && teethDiagnozis.tooth15.show) {
                 document.getElementById('TH-55').classList.add('f-tooth-active');
@@ -167,7 +168,7 @@ export default function Tooth55() {
         if (type === 'leave') {
             if (teethType === 'child' && !teethDiagnozis.tooth55.show && !teethDiagnozis.tooth15.show) {
                 document.getElementById('TH-55').classList.remove('f-tooth-active');
-                document.getElementById('TH-55').style.opacity = 0;
+                document.getElementById('TH-55').style.opacity = "0";
             }
             if (teethType === 'child' && !teethDiagnozis.tooth55.show && teethDiagnozis.tooth15.show) {
                 document.getElementById('TH-55').classList.remove('f-tooth-active');
@@ -200,7 +201,7 @@ export default function Tooth55() {
             <g id="55" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 630 716)" className={`st3 st4 st5 ${selectedTooth === 55 ? 'num-active' : ''}`}>55</text>
             </g>
-            <g id="TH-55" className={`f-tooth-init-milk ${(teethDiagnozis.tooth55.show && !teethDiagnozis.tooth55.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-55" className={`f-tooth-init-milk ${((teethDiagnozis.tooth55.show || allTeeth) && !teethDiagnozis.tooth55.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth55.show = !teethDiagnozis.tooth55.show;
                     teethDiagnozis.tooth15.show = false;
@@ -219,7 +220,8 @@ export default function Tooth55() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -799,7 +801,7 @@ export default function Tooth55() {
                                 c4-7.5,13.4-24.8,20.7-38.1c-3.4-3.4-8.2-7.6-13.2-10.1c-12.9-6.5-36.7-12.3-58.7-7.1C354.1,424,348.2,442.5,345.5,451.1z"
                             />
                             <path className={
-                                    `st8 caries-center
+                                `st8 caries-center
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth55.caries_center ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth55.seal_center ? `seal-fill ${teethDiagnozis.tooth55.seal_center_color}` : ''}
@@ -868,8 +870,8 @@ export default function Tooth55() {
                                 C368.7,377.3,364.4,391.5,359.3,407.6z"
                             />
                             <path className={
-                                `st8 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
+                                `st8 target caries-bottom
+                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${tooth55Diagnozis.caries_bottom ? 'caries-fill' : ''}
                                 ${tooth55Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth55.seal_bottom_color}` : ''}
                             `} 

@@ -19,7 +19,8 @@ import {
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
+    allTeethChildSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions";
 import PeriodontitStage83 from './periodontit83';
@@ -41,6 +42,7 @@ export default function Tooth83() {
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethChildSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -147,7 +149,6 @@ export default function Tooth83() {
             dispatch(setToothDiagnoze(teethDiagnozis));
         }
     }
-
     const showHideOverlay = (type) => {
         if (type === 'over') {
             if (teethType === 'child' && !teethDiagnozis.tooth83.show && !teethDiagnozis.tooth43.show) {
@@ -198,7 +199,7 @@ export default function Tooth83() {
             <g id="83" className={`tooth-number-active ${teethType === 'adult' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 850 842)" className={`st3 st4 st5 ${selectedTooth === 83 ? 'num-active' : ''}`}>83</text>
             </g>
-            <g id="TH-83" className={`f-tooth-init-milk ${teethType} ${(teethDiagnozis.tooth83.show && !teethDiagnozis.tooth83.absent)  ? 'f-tooth-active' : ''}`}
+            <g id="TH-83" className={`f-tooth-init-milk ${teethType} ${((teethDiagnozis.tooth83.show || allTeeth) && !teethDiagnozis.tooth83.absent)  ? 'f-tooth-active' : ''}`}
                 onClick={() => {
                     teethDiagnozis.tooth83.show = !teethDiagnozis.tooth83.show;
                     teethDiagnozis.tooth43.show = false;
@@ -217,7 +218,8 @@ export default function Tooth83() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
