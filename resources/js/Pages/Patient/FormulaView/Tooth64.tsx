@@ -1,9 +1,6 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import { getDiagnosisSelector } from "../../../Redux/Formula/selectors";
 import PeriodontitStage64 from './periodontit64';
 export default function Tooth64({formulaToothData}) {
-    // const diagnozis = useSelector(getDiagnosisSelector);
     const tooth64Diagnozis = formulaToothData;
 
     return (
@@ -106,7 +103,6 @@ export default function Tooth64({formulaToothData}) {
                             />
                             <path className={
                                     `st8 caries-center 
-                                    ${'caries-stroke'}
                                     ${tooth64Diagnozis.caries_center ? 'caries-fill' : ''}
                                     ${tooth64Diagnozis.seal_center ? `seal-fill ${tooth64Diagnozis.seal_center_color}` : ''}
                                 `} 
