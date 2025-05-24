@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -33,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function tooth65() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,8 +39,6 @@ export default function tooth65() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -163,7 +152,7 @@ export default function tooth65() {
         if (type === 'over') {
             if (teethType === 'child' && !teethDiagnozis.tooth65.show && !teethDiagnozis.tooth25.show) {
                 document.getElementById('TH-65').classList.add('f-tooth-active');
-                document.getElementById('TH-65').style.opacity = 1
+                document.getElementById('TH-65').style.opacity = 1;
             }
             if (teethType === 'child' && !teethDiagnozis.tooth65.show && teethDiagnozis.tooth25.show) {
                 document.getElementById('TH-65').classList.add('f-tooth-active');
@@ -600,10 +589,10 @@ export default function tooth65() {
                 </g>
                 <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -224, 121)'}}
                     onMouseOver={() => {
-                        showHideOverlay('over');
+                        showHideTopCommonView('over');
                     }}
                     onMouseLeave={() => {
-                        showHideOverlay('leave');
+                        showHideTopCommonView('leave');
                     }}
                 >
                     <g className="dentin">
@@ -671,7 +660,6 @@ export default function tooth65() {
                             />
                         </g>
                         <PeriodontitStage65 />
-                        
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{

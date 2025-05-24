@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -33,8 +26,6 @@ import PeriodontitStage75 from './periodontit75';
 
 export default function Tooth75() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,10 +39,7 @@ export default function Tooth75() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -336,7 +324,7 @@ export default function Tooth75() {
                     </g>
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth75Diagnozis.culttab && !tooth75Diagnozis.abutment && !tooth75Diagnozis.implant && !tooth75Diagnozis.shaper && !tooth75Diagnozis.apex) ? 'inherit' : 'hidden'}}>
-                        <g dataposition="75_5" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
@@ -357,7 +345,6 @@ export default function Tooth75() {
                             />
                         </g>
                         <g
-                            dataposition="74_4"
                             className="caries-filling"
                             onClick={() => {
                                 
@@ -381,7 +368,6 @@ export default function Tooth75() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g className="caries-filling" 
-                            dataposition="75_3"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -405,7 +391,7 @@ export default function Tooth75() {
                                 C1755.8,908.3,1757.3,909.8,1758.6,911.4z"
                             />
                         </g>
-                        <g dataposition="75_2" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -425,7 +411,7 @@ export default function Tooth75() {
                                 c3,3.4,7.6,7.7,13.9,11.8c7.5,4.9,14.2,8.5,18.7,10.7c-5.8,7.6-6.6,18.5-3.8,27.3C1655.1,979.9,1657.6,984.4,1660.7,988.7z" 
                             />
                         </g>
-                        <g dataposition="75_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -448,7 +434,7 @@ export default function Tooth75() {
                             />
                         </g>
                         <g className="with">
-                            <path className="st54" areas="75_4 75_1"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -458,7 +444,7 @@ export default function Tooth75() {
                                 }} 
                                 d="M1735.5 988C1740.67 989.333 1752.6 994.8 1759 1006" 
                                 />
-                            <path className="st54" areas="75_4 75_5"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -468,7 +454,7 @@ export default function Tooth75() {
                                 }} 
                                 d="M1735.5 988C1744 979.5 1741.9 957.7 1733.5 950.5" 
                             />
-                            <path className="st54" areas="75_4 75_3" 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -478,7 +464,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1733.5 950.5C1735 944.667 1741.4 929.6 1755 916" 
                             />
-                            <path className="st54" areas="75_3 75_5" 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -488,7 +474,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1733.5 950.5C1721 936.001 1669.5 933.7 1657.5 948.5" 
                             />
-                            <path className="st54" areas="75_2 75_3" 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -498,7 +484,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1657.5 948.5C1653 947 1641 941.3 1629 930.5" 
                             />
-                            <path className="st54" areas="75_2 75_5"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -508,7 +494,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1657.5 948.5C1650.5 956 1653.3 973.3 1660.5 988.5" 
                             />
-                            <path className="st54" areas="75_2 75_1"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -518,7 +504,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1660 989C1651.73 997.947 1647.06 1006.79 1642 1019" 
                             />
-                            <path className="st54" areas="75_1 75_5"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -742,7 +728,6 @@ export default function Tooth75() {
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth75Diagnozis.culttab && !tooth75Diagnozis.abutment && !tooth75Diagnozis.implant && !tooth75Diagnozis.shaper && !tooth75Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         <g
-                            dataposition="74_5"
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -769,7 +754,6 @@ export default function Tooth75() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g
-                            dataposition="75_4"
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
@@ -790,7 +774,7 @@ export default function Tooth75() {
                                 c3.6,5.2,6.8,10.6,9.6,16.2c4.5,8.9,8.2,18.3,9.6,28.2C1774.3,1124.6,1774.7,1126.6,1774.9,1128.6z" 
                             />
                         </g>
-                        <g dataposition="75_2" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -810,7 +794,7 @@ export default function Tooth75() {
                                 c1.5,6.3,2.8,11.9,3,15.7C1648.7,1151.4,1644.5,1162.1,1632.6,1165.5z" 
                             />
                         </g>
-                        <g dataposition="73_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -833,7 +817,7 @@ export default function Tooth75() {
                             />
                         </g>
                         <g className="with">
-                            <path className="st54" areas="75_4 75_5" 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -844,7 +828,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1739.5 1108L1731.5 1071.5" 
                             />
-                            <path className="st54" areas="75_1 75_4"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -855,7 +839,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1739.5 1108C1742.5 1120 1742.9 1129.3 1770.5 1128.5" 
                             />
-                            <path className="st54" areas="75_1 75_5"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -867,7 +851,7 @@ export default function Tooth75() {
                                 }}
                                 d="M1739.5 1108C1728.67 1118.5 1694.6 1137.4 1645 1129" 
                             />
-                            <path className="st54" areas="75_1 75_2"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -879,7 +863,7 @@ export default function Tooth75() {
                                 }} 
                                 d="M1645 1129C1646.5 1141.5 1653.9 1147.8 1637.5 1163" 
                             />
-                            <path className="st54" areas="75_2 75_5" 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (

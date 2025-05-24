@@ -6,7 +6,6 @@ import {
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -19,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -30,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth52() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -45,8 +39,6 @@ export default function Tooth52() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -489,7 +481,7 @@ export default function Tooth52() {
                                 opacity: tooth52Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55"
+                            <path className={`vinir-fill ${tooth52Diagnozis.vinir_color}`}
                                   d="M884.611 581.577C886.411 580.377 888.511 579.377 890.811 578.777C897.611 576.877 905.311 576.877 913.011 576.777C920.811 576.677 928.511 576.377 935.511 577.777C938.211 578.277 940.911 579.277 943.111 580.677C947.011 583.077 949.711 586.677 949.611 591.277C949.597 591.86 949.529 592.426 949.415 592.976C947.818 593.048 943.102 592.278 937.011 588.62C936.379 587.977 935.648 587.402 934.848 586.9C933.27 585.875 931.334 585.144 929.398 584.778C924.377 583.754 918.855 583.973 913.262 584.047C907.74 
                                   584.12 902.218 584.12 897.341 585.51C895.692 585.949 894.186 586.68 892.895 587.558C892.478 587.845 892.082 588.151 891.713 588.476C890.042 589.809 885.082 592.576 878.606 592.976C877.929 588.44 880.518 584.335 884.611 581.577Z"
                             />
@@ -516,10 +508,10 @@ export default function Tooth52() {
                 </g>
                 <g className="common-view" style={{visibility:"inherit", transform: 'matrix(0.55, 0, 0, 0.55, 24, 85)'}}
                     onMouseOver={() => {
-                        showHideOverlay('over');
+                        showHideTopCommonView('over');
                     }}
                     onMouseLeave={() => {
-                        showHideOverlay('leave');
+                        showHideTopCommonView('leave');
                     }}
                 >
                     {/* CHANGE COLOR */}
@@ -570,18 +562,6 @@ export default function Tooth52() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage52 />
-                            {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="52" status="0"
-                            style={{visibility:"inherit", opacity: 0}}>
-                                <circle className="st42" cx="888.1" cy="273.3" r="8.2"></circle>
-                            </g>
-                            <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="52" status="0"
-                            style={{visibility:"inherit", opacity: 0}}>
-                                <circle className="st42" cx="889.1" cy="264.8" r="17.5"></circle>
-                            </g>
-                            <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="52" status="0"
-                            style={{visibility:"inherit", opacity: 0}}>
-                                <circle className="st42" cx="889.1" cy="252.3" r="30"></circle>
-                            </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -627,7 +607,7 @@ export default function Tooth52() {
                         />
                     </g>
                     {/* ФОРМУВАЧ */}
-                    <g className="shaper" style={{opacity:0, visibility: "hidden"}} status="0">
+                    <g className="shaper" style={{opacity:0, visibility: "hidden"}}>
                         <path className="st44"
                               d="M928.473 437.859C929.031 440.197 927.416 442.496 925.027 442.763L892.999 446.344C890.611 446.611 888.528 444.726 888.555 442.324L888.999 402.614C889.022 400.587 890.558 398.898 892.573 398.682L914.959 396.284C916.96 396.07 918.808 397.375 919.275 399.333L928.473 437.859Z"></path>
                     </g>

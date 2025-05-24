@@ -6,7 +6,6 @@ import {
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -19,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -30,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth53() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -45,8 +39,6 @@ export default function Tooth53() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -488,7 +480,8 @@ export default function Tooth53() {
                                 opacity: tooth53Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" d="M786.213 575.475C786.913 573.975 787.613 572.475 788.413 570.975C790.813 566.475 793.713 562.275 797.213 558.675C805.213 550.575 816.413 544.575 828.913 544.775C840.613 544.975 850.813 550.575 858.513 557.975C864.013 563.375 868.213 569.975 872.013 576.775C872.913 578.375 873.813 579.975 874.613 581.675C876.113 584.775 877.213 588.075 877.413 591.675C877.439 592.135 877.448 592.59 877.441 593.041C874.725 592.816 868.987 591.589 867.76 588.476C867.366 587.131 866.837 585.837 866.227 584.584C865.581 583.22 864.854 581.936 864.128 580.652C861.059 575.197 857.667 569.902 853.226 
+                            <path className={`vinir-fill ${tooth53Diagnozis.vinir_color}`}
+                                d="M786.213 575.475C786.913 573.975 787.613 572.475 788.413 570.975C790.813 566.475 793.713 562.275 797.213 558.675C805.213 550.575 816.413 544.575 828.913 544.775C840.613 544.975 850.813 550.575 858.513 557.975C864.013 563.375 868.213 569.975 872.013 576.775C872.913 578.375 873.813 579.975 874.613 581.675C876.113 584.775 877.213 588.075 877.413 591.675C877.439 592.135 877.448 592.59 877.441 593.041C874.725 592.816 868.987 591.589 867.76 588.476C867.366 587.131 866.837 585.837 866.227 584.584C865.581 583.22 864.854 581.936 864.128 580.652C861.059 575.197 857.667 569.902 853.226
                                 565.57C847.008 559.633 838.772 555.14 829.324 554.979C819.23 554.819 810.186 559.633 803.726 566.131C800.9 569.019 798.558 572.389 796.62 575.999C795.974 577.203 795.409 578.406 794.844 579.609C793.56 582.468 792.519 585.424 791.96 588.476C789.653 592.076 784.42 592.976 782.092 592.976C781.994 586.851 783.74 581.018 786.213 575.475Z"
                             />
                         </g>
@@ -525,10 +518,10 @@ export default function Tooth53() {
                 </g>
                 <g className="common-view" style={{visibility: "inherit", transform: 'matrix(0.55, 0, 0, 0.55, 24, 115)'}}
                     onMouseOver={() => {
-                        showHideOverlay('over');
+                        showHideTopCommonView('over');
                     }}
                     onMouseLeave={() => {
-                        showHideOverlay('leave');
+                        showHideTopCommonView('leave');
                     }}
 
                 >
@@ -623,7 +616,7 @@ export default function Tooth53() {
                         />
                     </g>
                     {/* ФОРМУВАЧ */}
-                    <g className="shaper hEmpty hIntact hRoot" style={{opacity: 0, visibility:"hidden"}} status="0">
+                    <g className="shaper hEmpty hIntact hRoot" style={{opacity: 0, visibility:"hidden"}}>
                         <path className="st44" d="M852.183 414.639C852.915 417 851.353 419.453 848.904 419.788L802.399 426.139C799.951 426.474 797.788 424.531 797.86 422.061L799.014 382.117C799.07 380.157 800.54 378.526 802.484 378.268L836.02 373.805C837.953 373.547 839.789 374.721 840.367 376.584L852.183 414.639Z"></path>
                     </g>
                     {/* IMPLANT/CULTTAB */}
@@ -699,7 +692,7 @@ export default function Tooth53() {
                             />
                         </g>
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}

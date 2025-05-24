@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -34,8 +27,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth62() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,8 +40,6 @@ export default function Tooth62() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -511,12 +500,12 @@ export default function Tooth62() {
                     </g>
                 </g>
                 <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 19, 85)'}}
-                    onMouseOver={() => {
-                        showHideOverlay('over');
-                    }}
-                    onMouseLeave={() => {
-                        showHideOverlay('leave');
-                    }} 
+                   onMouseOver={() => {
+                       showHideTopCommonView('over')
+                   }}
+                   onMouseLeave={() => {
+                       showHideTopCommonView('leave')
+                   }}
                 >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
@@ -564,15 +553,6 @@ export default function Tooth62() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage62 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1210.1" cy="273.3" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1209.1" cy="264.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="62"  style={{visibility: 'hidden', opacity: 0}}>
-                            <circle className="st42" cx="1209.1" cy="252.3" r="30"></circle>
-                        </g> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth62Diagnozis.pin ? 1 : 0

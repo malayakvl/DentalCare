@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -33,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth63() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,8 +39,6 @@ export default function Tooth63() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -477,7 +466,8 @@ export default function Tooth63() {
                                 opacity: tooth63Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" d="M1312.3 575.5C1311.6 574 1310.9 572.5 1310.1 571C1307.7 566.5 1304.8 562.3 1301.3 558.7C1293.3 550.6 1282.1 544.6 1269.6 544.8C1257.9 545 1247.7 550.6 1240 558C1234.5 563.4 1230.3 570 1226.5 576.8C1225.6 578.4 1224.7 580 1223.9 581.7C1222.4 584.8 1221.3 588.1 1221.1 591.7C1221.07 592.16 1221.06 592.615 1221.07 593.065C1223.78 592.841 1229.52 591.614 1230.75 588.5C1231.14 587.155 1231.67 585.861 1232.28 584.608C1232.93 583.244 1233.65 581.96 1234.38 580.677C1237.45 575.221 1240.84 569.926 1245.28 565.594C1251.5 559.657 1259.74 555.164 1269.18 555.004C1279.28 554.843 1288.32 559.657 1294.78 566.156C1297.61 569.044 1299.95 572.413 1301.89 576.024C1302.53 577.227 1303.1 578.43 1303.67 579.634C1304.95 582.493 1305.99 585.448 1306.55 588.5C1308.86 592.1 1314.09 593 1316.42 593C1316.51 586.876 1314.77 581.042 1312.3 575.5Z"></path>
+                            <path className={`vinir-fill ${tooth63Diagnozis.vinir_color}`}
+                                d="M1312.3 575.5C1311.6 574 1310.9 572.5 1310.1 571C1307.7 566.5 1304.8 562.3 1301.3 558.7C1293.3 550.6 1282.1 544.6 1269.6 544.8C1257.9 545 1247.7 550.6 1240 558C1234.5 563.4 1230.3 570 1226.5 576.8C1225.6 578.4 1224.7 580 1223.9 581.7C1222.4 584.8 1221.3 588.1 1221.1 591.7C1221.07 592.16 1221.06 592.615 1221.07 593.065C1223.78 592.841 1229.52 591.614 1230.75 588.5C1231.14 587.155 1231.67 585.861 1232.28 584.608C1232.93 583.244 1233.65 581.96 1234.38 580.677C1237.45 575.221 1240.84 569.926 1245.28 565.594C1251.5 559.657 1259.74 555.164 1269.18 555.004C1279.28 554.843 1288.32 559.657 1294.78 566.156C1297.61 569.044 1299.95 572.413 1301.89 576.024C1302.53 577.227 1303.1 578.43 1303.67 579.634C1304.95 582.493 1305.99 585.448 1306.55 588.5C1308.86 592.1 1314.09 593 1316.42 593C1316.51 586.876 1314.77 581.042 1312.3 575.5Z"></path>
                         </g>
                     </g>
                     {/* ТИМЧАСОВА КОРОНКА/КЕРАМІЧНА КОРОНКА */}
@@ -511,12 +501,12 @@ export default function Tooth63() {
                     </g>
                 </g>
                 <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 39, 95)'}}
-                    onMouseOver={() => {
-                        showHideOverlay('over');
-                    }}
-                    onMouseLeave={() => {
-                        showHideOverlay('leave');
-                    }}
+                   onMouseOver={() => {
+                       showHideTopCommonView('over')
+                   }}
+                   onMouseLeave={() => {
+                       showHideTopCommonView('leave')
+                   }}
                 >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
@@ -778,7 +768,8 @@ export default function Tooth63() {
                                 opacity: tooth63Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" d="M1315.1 442.8C1314.6 440.5 1314.1 438.1 1313.4 435.8C1312.3 432 1311 428.2 1309.8 424.4C1307.9 418.6 1306.2 412.7 1303.2 407.4C1297.3 397.1 1287.1 389.9 1275.3 389.2C1272.1 389 1269 389.4 1265.9 390.3C1261.3 391.8 1257.4 394.7 1253.7 397.8C1247.2 403.3 1241.2 409.4 1236.3 416.3C1232.2 422.2 1228.9 428.6 1226.9 435.7C1225.9 439.1 1225.3 442.6 1224.6 446.1C1223.6 450.9 1222.4 455.6 1221.7 460.4C1220.7 467.6 1220.8 475 1222.1 482.2C1223.8 486.3 1226.4 490 1229.8 493C1232.2 495.1 1234.9 496.8 1237.7 498.5C1240.3 500 1243 501.5 1245.5 503.2C1251.1 507 1255.9 512 1261.2 516.2C1265.3 519.5 1270.1 522.5 1275.3 521.7C1280.6 521 1284 517.2 1287.3 513.2C1287.9 512.5 1288.5 511.9 1289 511.2C1292.8 506.7 1296.9 502 1300.3 497.2C1304.3 491.6 1308 485.6 1310.8 479.3C1312.9 474.7 1314.4 469.8 1315.5 464.9C1316.7 457.5 1316.6 450.1 1315.1 442.8Z"></path>
+                            <path className={`vinir-fill ${tooth63Diagnozis.vinir_color}`}
+                                d="M1315.1 442.8C1314.6 440.5 1314.1 438.1 1313.4 435.8C1312.3 432 1311 428.2 1309.8 424.4C1307.9 418.6 1306.2 412.7 1303.2 407.4C1297.3 397.1 1287.1 389.9 1275.3 389.2C1272.1 389 1269 389.4 1265.9 390.3C1261.3 391.8 1257.4 394.7 1253.7 397.8C1247.2 403.3 1241.2 409.4 1236.3 416.3C1232.2 422.2 1228.9 428.6 1226.9 435.7C1225.9 439.1 1225.3 442.6 1224.6 446.1C1223.6 450.9 1222.4 455.6 1221.7 460.4C1220.7 467.6 1220.8 475 1222.1 482.2C1223.8 486.3 1226.4 490 1229.8 493C1232.2 495.1 1234.9 496.8 1237.7 498.5C1240.3 500 1243 501.5 1245.5 503.2C1251.1 507 1255.9 512 1261.2 516.2C1265.3 519.5 1270.1 522.5 1275.3 521.7C1280.6 521 1284 517.2 1287.3 513.2C1287.9 512.5 1288.5 511.9 1289 511.2C1292.8 506.7 1296.9 502 1300.3 497.2C1304.3 491.6 1308 485.6 1310.8 479.3C1312.9 474.7 1314.4 469.8 1315.5 464.9C1316.7 457.5 1316.6 450.1 1315.1 442.8Z"></path>
                         </g>
                     </g>
                     {/* ТИМЧАСОВА КОРОНКА/КЕРАМІЧНА КОРОНКА */}

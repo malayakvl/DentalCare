@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -34,8 +27,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth64() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,8 +40,6 @@ export default function Tooth64() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -600,12 +589,12 @@ export default function Tooth64() {
                     </g>
                 </g>
                 <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, -165, 99)'}}
-                    onMouseOver={() => {
-                        showHideOverlay('over');
-                    }}
-                    onMouseLeave={() => {
-                        showHideOverlay('leave');
-                    }}
+                   onMouseOver={() => {
+                       showHideTopCommonView('over')
+                   }}
+                   onMouseLeave={() => {
+                       showHideTopCommonView('leave')
+                   }}
                 >
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: !tooth64Diagnozis.implant && !tooth64Diagnozis.apex && !tooth64Diagnozis.shaper && !tooth64Diagnozis.apex ? 'inherit' : 'hidden'}}>
@@ -676,21 +665,6 @@ export default function Tooth64() {
                             />
                         </g>
                         <PeriodontitStage64 />
-                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="64"  style={{visibility: "inherit", opacity: 0}}>
-                            <circle className="st42" cx="1588.9" cy="248.9" r="8.2"></circle>
-                            <circle className="st42" cx="1553.3" cy="233.4" r="8.2"></circle>
-                            <circle className="st42" cx="1515.7" cy="249.9" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="64"  style={{visibility: "inherit", opacity: 0}}>
-                            <circle className="st42" cx="1587.5" cy="241.8" r="17.5"></circle>
-                            <circle className="st42" cx="1551" cy="226.2" r="17.5"></circle>
-                            <circle className="st42" cx="1514.9" cy="241.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="64"  style={{visibility: "inherit", opacity: 0}}>
-                            <circle className="st42" cx="1517" cy="228.1" r="30"></circle>
-                            <circle className="st42" cx="1552.3" cy="214.1" r="30"></circle>
-                            <circle className="st42" cx="1588.6" cy="229.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{

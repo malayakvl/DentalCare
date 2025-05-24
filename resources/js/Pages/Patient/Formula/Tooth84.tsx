@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -33,8 +26,6 @@ import PeriodontitStage84 from './periodontit84';
 
 export default function tooth84() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,10 +39,7 @@ export default function tooth84() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -546,7 +534,8 @@ export default function tooth84() {
                                 opacity: tooth84Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" d="M638.701 1001.8C638.001 1006.8 636.501 1011.8 634.501 1016.6C632.901 1020.5 630.901 1024.3 628.201 1027.6L625.801 1030.3C621.001 1034.9 614.901 1037.3 608.401 1037.6C601.101 1038 593.601 1035.6 587.101 1039C584.401 1040.4 582.401 1042.7 579.901 1044.5C575.101 1048.1 569.001 1049.5 562.901 1049.8C552.701 1050.4 542.301 1048 534.301 1041.6C528.901 1037.3 524.801 1031.3 518.401 1028.7C512.901 1026.5 506.701 1027.1 501.101 1025.3C497.201 1024 493.901 1021.5 491.001 1018.6C489.901 1017.5 488.901 1016.3 487.901 1015.1C483.601 1009.7 480.201 1003.5 479.301 996.6C478.389 990.475 479.43 984.52 481.012 978.652C484.302 978.94 490.833 980.464 490.638 984.258C490.078 987.532 489.89 990.848 490.394 994.223C491.17 1000.15 494.099 1005.48 497.803 1010.12C498.664 1011.15 499.526 1012.18 500.473 1013.12C502.971 1015.61 505.814 1017.76 509.174 1018.88C513.998 1020.42 519.339 1019.91 524.077 1021.8C529.59 1024.03 533.122 1029.19 537.774 1032.88C544.665 1038.38 553.624 1040.44 562.411 1039.92C567.666 1039.67 572.921 1038.46 577.056 1035.37C579.209 1033.82 580.932 1031.85 583.258 1030.65C588.857 1027.73 595.318 1029.79 601.607 1029.44C607.206 1029.19 612.461 1027.12 616.596 1023.17L618.663 1020.85C620.989 1018.02 622.712 1014.75 624.091 1011.4C625.813 1007.28 627.106 1002.99 627.709 998.69C628.12 995.733 628.18 992.777 628.017 989.823C628.75 986.482 635.287 985.382 638.463 985.25C639.186 990.755 639.467 996.278 638.701 1001.8Z"></path>
+                            <path className={`vinir-fill ${tooth84Diagnozis.vinir_color}`}
+                                d="M638.701 1001.8C638.001 1006.8 636.501 1011.8 634.501 1016.6C632.901 1020.5 630.901 1024.3 628.201 1027.6L625.801 1030.3C621.001 1034.9 614.901 1037.3 608.401 1037.6C601.101 1038 593.601 1035.6 587.101 1039C584.401 1040.4 582.401 1042.7 579.901 1044.5C575.101 1048.1 569.001 1049.5 562.901 1049.8C552.701 1050.4 542.301 1048 534.301 1041.6C528.901 1037.3 524.801 1031.3 518.401 1028.7C512.901 1026.5 506.701 1027.1 501.101 1025.3C497.201 1024 493.901 1021.5 491.001 1018.6C489.901 1017.5 488.901 1016.3 487.901 1015.1C483.601 1009.7 480.201 1003.5 479.301 996.6C478.389 990.475 479.43 984.52 481.012 978.652C484.302 978.94 490.833 980.464 490.638 984.258C490.078 987.532 489.89 990.848 490.394 994.223C491.17 1000.15 494.099 1005.48 497.803 1010.12C498.664 1011.15 499.526 1012.18 500.473 1013.12C502.971 1015.61 505.814 1017.76 509.174 1018.88C513.998 1020.42 519.339 1019.91 524.077 1021.8C529.59 1024.03 533.122 1029.19 537.774 1032.88C544.665 1038.38 553.624 1040.44 562.411 1039.92C567.666 1039.67 572.921 1038.46 577.056 1035.37C579.209 1033.82 580.932 1031.85 583.258 1030.65C588.857 1027.73 595.318 1029.79 601.607 1029.44C607.206 1029.19 612.461 1027.12 616.596 1023.17L618.663 1020.85C620.989 1018.02 622.712 1014.75 624.091 1011.4C625.813 1007.28 627.106 1002.99 627.709 998.69C628.12 995.733 628.18 992.777 628.017 989.823C628.75 986.482 635.287 985.382 638.463 985.25C639.186 990.755 639.467 996.278 638.701 1001.8Z"></path>
                             <path className={`vinir-fill ${tooth84Diagnozis.vinir_color}`}  
                                 d="M628.201 1027.6C630.901 1024.3 632.901 1020.5 634.501 1016.6C636.501 1011.8 638.001 1006.8 638.701 1001.8C639.467 996.278 639.186 990.755 638.463 985.25C635.287 985.382 628.75 986.482 628.017 989.823C628.18 992.777 628.12 995.733 627.709 998.69C627.106 1002.99 625.813 1007.28 624.091 1011.4C622.712 1014.75 620.989 1018.02 618.663 1020.85M628.201 1027.6C627.401 1028.5 626.601 1029.4 625.801 1030.3M628.201 1027.6L625.801 1030.3M625.801 1030.3C621.001 1034.9 614.901 1037.3 608.401 1037.6C601.101 1038 593.601 1035.6 587.101 1039C584.401 1040.4 582.401 1042.7 579.901 1044.5C575.101 1048.1 569.001 1049.5 562.901 1049.8C552.701 1050.4 542.301 1048 534.301 1041.6C528.901 1037.3 524.801 1031.3 518.401 1028.7C512.901 1026.5 506.701 1027.1 501.101 1025.3C497.201 1024 493.901 1021.5 491.001 1018.6C489.901 1017.5 488.901 1016.3 487.901 1015.1C483.601 1009.7 480.201 1003.5 479.301 996.6C478.389 990.475 479.43 984.52 481.012 978.652C484.302 978.94 490.833 980.464 490.638 984.258C490.078 987.532 489.89 990.848 490.394 994.223C491.17 1000.15 494.099 1005.48 497.803 1010.12C498.664 1011.15 499.526 1012.18 500.473 1013.12C502.971 1015.61 505.814 1017.76 509.174 1018.88C513.998 1020.42 519.339 1019.91 524.077 1021.8C529.59 1024.03 533.122 1029.19 537.774 1032.88C544.665 1038.38 553.624 1040.44 562.411 1039.92C567.666 1039.67 572.921 1038.46 577.056 1035.37C579.209 1033.82 580.932 1031.85 583.258 1030.65C588.857 1027.73 595.318 1029.79 601.607 1029.44C607.206 1029.19 612.461 1027.12 616.596 1023.17M618.663 1020.85C617.974 1021.63 617.285 1022.4 616.596 1023.17M618.663 1020.85L616.596 1023.17"></path>
                         </g>
@@ -676,18 +665,6 @@ export default function tooth84() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage84 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="454.5" cy="1329.2" r="8.2"></circle>
-                            <circle className="st42" cx="548.4" cy="1345.3" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="454.5" cy="1335" r="17.5"></circle>
-                            <circle className="st42" cx="545.7" cy="1352.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="65"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="452.1" cy="1345.3" r="30"></circle>
-                            <circle className="st42" cx="545.7" cy="1363.6" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

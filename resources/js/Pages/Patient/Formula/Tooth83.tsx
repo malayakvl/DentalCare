@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -33,8 +26,6 @@ import PeriodontitStage83 from './periodontit83';
 
 export default function Tooth83() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,10 +39,7 @@ export default function Tooth83() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -561,15 +549,6 @@ export default function Tooth83() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage83 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="83"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="856.8" cy="1396.1" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="83"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="856" cy="1402.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="83"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="852.3" cy="1414.8" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -657,7 +636,6 @@ export default function Tooth83() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
-                            dataposition="83_4"
                         >
                             <path className="st58" d="M892.9,1197.7c1,2.8,5.4,6.8,8.5,9.3c1.3-2.6,2.6-5.3,3.8-8c3.4-7.7,6.5-15.5,8.4-23.8
                                 c2.4-10.3,2.8-20.9,1.4-31.4l-3.7-7.6c-4.6-3.8-8.6-8.2-12-13.1c-1.8-2.6-3.6-5.5-5.5-8.1c-0.6,13-1.8,42.4-2,51
@@ -680,7 +658,6 @@ export default function Tooth83() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
-                            dataposition="83_2"
                         >
                             <path className="st58" d="M828.9,1181.4c1.6,7,3.6,13.8,6.2,20.5c4.4-3.5,7.1-5.7,8.2-9.8c1.4-4.9,4.2-28,5.4-40.8
                                 c0.7-8.2,1.8-19.5,2.4-26.5c-3.1,2-6.4,3.8-9.5,5.8c-3.8,2.5-7.3,5.3-10.5,8.6c-2.7,5.7-4.3,11.9-4.8,18.2
@@ -702,7 +679,6 @@ export default function Tooth83() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
-                            dataposition="83_1"
                         >
                             <path className="st58" d="M835.1,1201.9L835.1,1201.9c1.3,3.6,2.8,7.1,4.5,10.5c4,8.3,9,16.3,16.2,21.9c4.2,3.3,9.2,5.7,14.5,5.4
                                 c8.5-0.4,14.8-6.9,19.8-13.8c4.3-6,8-12.3,11.3-18.9c-3-2.5-7.4-6.6-8.5-9.3c-1.6-4.4-1.4-20.3-1.1-31.6c0.2-8.7,1.4-38,2-51
@@ -722,7 +698,7 @@ export default function Tooth83() {
                             />
                         </g>
                         <g className="with">
-                            <path className="st54" areas="83_2 83_1" 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -733,7 +709,7 @@ export default function Tooth83() {
                                 }}
                                 d="M846.5 1171L850.5 1130.5" 
                             />
-                            <path className="st54" areas="83_2 83_1"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -744,7 +720,7 @@ export default function Tooth83() {
                                 }} 
                                 d="M846.5 1171C845 1188 845 1192.1 839 1198.5" 
                             />
-                            <path className="st54" areas="83_4 83_1"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -756,7 +732,7 @@ export default function Tooth83() {
                                 }} 
                                 d="M891.5 1173.5C891.5 1192.5 890 1197.5 897 1203" 
                             />
-                            <path className="st54" areas="83_4 83_1"
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (

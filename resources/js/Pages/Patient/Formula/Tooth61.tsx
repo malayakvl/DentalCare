@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -33,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth61() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,8 +39,6 @@ export default function Tooth61() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -518,10 +507,10 @@ export default function Tooth61() {
                 </g>
                 <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 25, 101)'}}
                     onMouseOver={() => {
-                        showHideOverlay('over');
+                        showHideTopCommonView('over');
                     }}
                     onMouseLeave={() => {
-                        showHideOverlay('leave');
+                        showHideTopCommonView('leave');
                     }} 
                 >
                     {/* CHANGE COLOR */}
@@ -572,15 +561,6 @@ export default function Tooth61() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage61 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1125.2" cy="234.2" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1122.8" cy="227.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="61"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1125.2" cy="215.3" r="30"></circle>
-                        </g> */}
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth61Diagnozis.pin ? 1 : 0
@@ -804,9 +784,9 @@ export default function Tooth61() {
                                 opacity: tooth61Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" 
-
-                                d="M1147.42 467.4C1146.62 460.6 1145.42 453.8 1143.82 447.2C1142.32 441 1140.42 435 1137.82 429.1C1134.12 420.6 1128.82 412.5 1120.52 408.2C1112.32 404 1102.72 404.3 1093.82 407.1C1086.82 409.3 1080.32 413 1074.82 417.8C1066.92 424.7 1061.12 433.6 1057.22 443.2C1056.92 443.8 1056.72 444.5 1056.52 445.1C1053.92 452 1052.22 459.3 1051.02 466.6C1049.52 476.4 1049.02 486.3 1049.02 496.1C1049.02 503.4 1049.22 510.6 1049.62 517.8C1049.72 519.4 1050.22 521 1050.82 522.5C1051.42 523.8 1052.22 525 1053.22 526.1L1056.12 527.3C1060.42 527.5 1064.72 527.6 1069.02 527.6C1079.32 527.7 1089.62 527.6 1099.92 527.2C1107.42 526.9 1114.92 526.5 1122.52 525.9C1125.52 525.7 1128.42 525.4 1131.42 525.1C1134.22 524 1136.72 522.6 1139.02 520.7C1141.92 518.3 1144.32 515.3 1146.02 512C1146.92 508.5 1147.62 504.9 1148.02 501.4C1149.52 490.1 1148.82 478.7 1147.42 467.4Z"></path>
+                            <path className={`vinir-fill ${tooth61Diagnozis.vinir_color}`}
+                                d="M1147.42 467.4C1146.62 460.6 1145.42 453.8 1143.82 447.2C1142.32 441 1140.42 435 1137.82 429.1C1134.12 420.6 1128.82 412.5 1120.52 408.2C1112.32 404 1102.72 404.3 1093.82 407.1C1086.82 409.3 1080.32 413 1074.82 417.8C1066.92 424.7 1061.12 433.6 1057.22 443.2C1056.92 443.8 1056.72 444.5 1056.52 445.1C1053.92 452 1052.22 459.3 1051.02 466.6C1049.52 476.4 1049.02 486.3 1049.02 496.1C1049.02 503.4 1049.22 510.6 1049.62 517.8C1049.72 519.4 1050.22 521 1050.82 522.5C1051.42 523.8 1052.22 525 1053.22 526.1L1056.12 527.3C1060.42 527.5 1064.72 527.6 1069.02 527.6C1079.32 527.7 1089.62 527.6 1099.92 527.2C1107.42 526.9 1114.92 526.5 1122.52 525.9C1125.52 525.7 1128.42 525.4 1131.42 525.1C1134.22 524 1136.72 522.6 1139.02 520.7C1141.92 518.3 1144.32 515.3 1146.02 512C1146.92 508.5 1147.62 504.9 1148.02 501.4C1149.52 490.1 1148.82 478.7 1147.42 467.4Z"
+                            />
                         </g>
                     </g>
                     {/* ТИМЧАСОВА КОРОНКА/КЕРАМІЧНА КОРОНКА */}

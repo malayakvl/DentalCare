@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -34,8 +27,6 @@ import PeriodontitStage73 from './periodontit73';
 
 export default function Tooth73() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,10 +40,7 @@ export default function Tooth73() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -329,7 +317,7 @@ export default function Tooth73() {
                     </g>
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth73Diagnozis.culttab && !tooth73Diagnozis.abutment && !tooth73Diagnozis.implant && !tooth73Diagnozis.shaper && !tooth73Diagnozis.apex) ? 'inherit' : 'hidden'}}>
-                        <g dataposition="73_2" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -347,7 +335,6 @@ export default function Tooth73() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g className="caries-filling" 
-                            dataposition="73_3"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -365,7 +352,6 @@ export default function Tooth73() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g
-                            dataposition="73_4"
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
@@ -382,7 +368,7 @@ export default function Tooth73() {
                                 d="M1259.72 1011.8C1262.62 1008.3 1265.22 1004.6 1267.22 1000.5C1270.72 993 1272.02 984.7 1269.12 976.6C1266.82 970.1 1261.92 965.3 1258.12 959.7C1256.92 958 1255.92 956.3 1254.92 954.5C1250.2 966.1 1239.56 973.667 1234.82 976C1230.32 984 1241.32 993 1259.72 1011.8Z" 
                             />
                         </g>
-                        <g dataposition="73_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
@@ -545,15 +531,6 @@ export default function Tooth73() {
                         </g>
                         {/* Отростки периодонтита */}
                         <PeriodontitStage73 />
-                        {/* <g className="level hEmpty hImplant periodontitis"  dataposition="73"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1241.4" cy="1396.1" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="73"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1242.1" cy="1402.3" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis"  dataposition="73"  style={{visibility: 'inherit', opacity: 0}}>
-                            <circle className="st42" cx="1245.8" cy="1414.8" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -640,7 +617,6 @@ export default function Tooth73() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
-                            dataposition="73_2"
                         >
                             <path className="st58" d="M1205.1,1197.7c-1,2.8-5.4,6.8-8.5,9.3c-1.3-2.6-2.6-5.3-3.8-8c-3.4-7.7-6.5-15.5-8.4-23.8
                                 c-2.4-10.3-2.8-20.9-1.4-31.4l3.7-7.6c4.6-3.8,8.6-8.2,12-13.1c1.8-2.6,3.6-5.5,5.5-8.1c0.6,13,1.8,42.4,2,51
@@ -662,7 +638,6 @@ export default function Tooth73() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
-                            dataposition="72_1"
                         >
                             <path className="st58" d="M1263,1201.9L1263,1201.9c-1.3,3.6-2.8,7.1-4.5,10.5c-4,8.3-9,16.3-16.2,21.9c-4.2,3.3-9.2,5.7-14.5,5.4
                                 c-8.4-0.4-14.8-6.9-19.8-13.8c-4.3-6-8-12.3-11.3-18.9c3-2.5,7.4-6.6,8.5-9.3c1.6-4.4,1.4-20.3,1.1-31.6c-0.2-8.7-1.4-38-2-51
@@ -686,7 +661,6 @@ export default function Tooth73() {
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
-                            dataposition="73_4"
                         >
                             <path className="st58" d="M1269.2,1181.4c-1.6,7-3.6,13.8-6.2,20.5c-4.4-3.5-7.1-5.7-8.2-9.8c-1.4-4.9-4.2-28-5.4-40.8
                                 c-0.7-8.2-1.8-19.5-2.4-26.5c3.1,2,6.4,3.8,9.5,5.8c3.8,2.5,7.3,5.3,10.5,8.6c2.7,5.7,4.3,11.9,4.8,18.2

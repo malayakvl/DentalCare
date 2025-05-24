@@ -1,15 +1,11 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,11 +18,7 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
-    changeDiaSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
 import PeriodontitStage55 from './periodontit55';
@@ -34,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth55() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,12 +38,8 @@ export default function Tooth55() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const tooth55Diagnozis = teethDiagnozis.tooth55;
-    const changeDia = useSelector(changeDiaSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -314,7 +300,7 @@ export default function Tooth55() {
                         <circle className="st45" cx="392" cy="598" r="13"></circle>
                     </g>
                     {/* PIN */}
-                    <g className="pin hEmpty hImplant" status="0" style={{opacity:0, visibility:"inherit"}}>
+                    <g className="pin hEmpty hImplant" style={{opacity:0, visibility:"inherit"}}>
                         <path className="st56 hIntact" d="M335.5 607C336.5 603.1 338.8 599.4 339.9 595.5C342.7 585.9 338.8 575.001 345.1 566.201C349.9 559.401 358.8 555.801 368.9 554.401C378.4 553.101 388.2 553.901 397.8 552.701C403.9 551.901 410 550.5 416 550.1C422.4 549.6 428.7 550.301 434.4 551.901C438.3 553.001 442 554.6 445.2 556.8C450.6 560.6 453.6 565.901 454.7 571.401C456 577.801 454.8 584.3 452.2 590.5C448.4 599.8 441.7 608.301 437.1 617.401C434.3 623.001 432.2 628.901 427.6 633.901C423.6 638.301 417.7 641.7 410.8 642.6C405.7 643.3 400.5 642.6 395.3 642.1C388.8 641.5 382.3 641.4 375.8 641C370.1 640.7 364.4 640.2 359.1 638.6C342.3 633.9 331.9 620.7 335.5 607Z" style={{visibility:"hidden"}}></path>
                         <path className="st56 hIntact" d="M352.508 604.127C353.222 601.316 354.865 598.649 355.65 595.838C357.65 588.919 354.865 581.062 359.363 574.719C362.791 569.818 369.146 567.223 376.358 566.214C383.141 565.277 390.139 565.854 396.994 564.989C401.35 564.412 405.705 563.403 409.99 563.115C414.559 562.754 419.058 563.259 423.128 564.412C425.913 565.205 428.555 566.358 430.84 567.944C434.696 570.683 436.838 574.503 437.623 578.467C438.552 583.08 437.695 587.765 435.838 592.234C433.125 598.938 428.341 605.064 425.056 611.623C423.057 615.66 421.557 619.912 418.273 623.516C415.416 626.688 411.203 629.139 406.276 629.787C402.635 630.292 398.922 629.787 395.209 629.427C390.567 628.994 385.926 628.922 381.285 628.634C377.215 628.418 373.145 628.057 369.36 626.904C357.364 623.516 349.938 614.002 352.508 604.127Z"
                              style={{visibility:"hidden"}}
@@ -477,7 +463,7 @@ export default function Tooth55() {
                                     ) ? 5 : 0
                                 }}
                             />
-                            <path className="st54" areas="55_4 55_1" 
+                            <path className="st54"
                                 d="M363 575C360 570.5 351.5 560 341.5 554" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -487,7 +473,7 @@ export default function Tooth55() {
                                     ) ? 5 : 0
                                 }}
                             />
-                            <path className="st54" areas="55_1 55_5" 
+                            <path className="st54"
                                 d="M363 575C382.667 570.834 422.9 565.9 426.5 579.5" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -497,7 +483,7 @@ export default function Tooth55() {
                                     ) ? 5 : 0
                                 }}
                             />
-                            <path className="st54" areas="55_2 55_1" 
+                            <path className="st54"
                                 d="M426.5 579.5C428.667 576.167 438.2 567.5 459 559.5" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -507,7 +493,7 @@ export default function Tooth55() {
                                     ) ? 5 : 0
                                 }}
                             />
-                            <path className="st54" areas="55_2 55_5" 
+                            <path className="st54"
                                 d="M426.5 579.5C426.167 588 423.5 607.3 415.5 616.5" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -517,7 +503,7 @@ export default function Tooth55() {
                                     ) ? 5 : 0
                                 }}
                             />
-                            <path className="st54" areas="55_2 55_3" 
+                            <path className="st54"
                                 d="M415.5 616.5C417 620.5 423.1 630.3 435.5 637.5" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -527,7 +513,7 @@ export default function Tooth55() {
                                     ) ? 5 : 0
                                 }}
                             />
-                            <path className="st54" areas="55_3 55_5" 
+                            <path className="st54"
                                 d="M356.5 618.5C365.5 627 400.3 629.7 415.5 616.5" 
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -548,8 +534,8 @@ export default function Tooth55() {
                                     opacity: tooth55Diagnozis.vinir ? 1 : 0
                                 }}
                         >
-                            <path className="st55" 
-                                d="M337.115 551.975C337.215 551.675 337.415 551.475 337.615 551.175C343.215 542.175 353.215 537.375 364.415 535.575C375.315 533.775 386.614 534.975 397.714 533.375C404.714 532.375 411.714 530.475 418.714 529.875C426.014 529.275 433.315 530.275 440.015 532.575C444.615 534.175 448.815 536.375 452.515 539.575C457.815 544.075 461.115 550.175 462.915 556.675C463.215 557.875 463.514 559.075 463.714 560.175C465.314 569.175 463.915 578.275 461.015 586.975C460.345 588.999 459.595 590.997 458.787 592.976C455.988 592.777 450.419 591.638 450.531 588.677C450.578 588.538 450.624 588.399 450.67 588.26C453.116 580.925 454.297 573.253 452.948 565.665C452.779 564.738 452.526 563.726 452.273 562.714C450.755 557.234 447.971 552.091 443.5 548.298C440.38 545.6 436.837 543.745 432.957 542.396C427.305 540.457 421.148 539.614 414.99 540.12C409.086 540.625 403.182 542.227 397.277 543.07C387.914 544.419 378.383 543.408 369.189 544.925C359.742 546.443 351.307 550.49 346.583 558.077C346.415 558.33 346.246 558.499 346.162 558.752C341.024 567.721 343.15 578.427 342.153 588.476C341.064 
+                            <path className={`vinir-fill ${tooth55Diagnozis.vinir_color}`}
+                                  d="M337.115 551.975C337.215 551.675 337.415 551.475 337.615 551.175C343.215 542.175 353.215 537.375 364.415 535.575C375.315 533.775 386.614 534.975 397.714 533.375C404.714 532.375 411.714 530.475 418.714 529.875C426.014 529.275 433.315 530.275 440.015 532.575C444.615 534.175 448.815 536.375 452.515 539.575C457.815 544.075 461.115 550.175 462.915 556.675C463.215 557.875 463.514 559.075 463.714 560.175C465.314 569.175 463.915 578.275 461.015 586.975C460.345 588.999 459.595 590.997 458.787 592.976C455.988 592.777 450.419 591.638 450.531 588.677C450.578 588.538 450.624 588.399 450.67 588.26C453.116 580.925 454.297 573.253 452.948 565.665C452.779 564.738 452.526 563.726 452.273 562.714C450.755 557.234 447.971 552.091 443.5 548.298C440.38 545.6 436.837 543.745 432.957 542.396C427.305 540.457 421.148 539.614 414.99 540.12C409.086 540.625 403.182 542.227 397.277 543.07C387.914 544.419 378.383 543.408 369.189 544.925C359.742 546.443 351.307 550.49 346.583 558.077C346.415 558.33 346.246 558.499 346.162 558.752C341.024 567.721 343.15 578.427 342.153 588.476C341.064
                                 591.676 334.554 592.816 331.436 592.986C334.594 579.508 330.03 564.348 337.115 551.975Z"
                             />
                             <path className={`vinir-fill ${tooth55Diagnozis.vinir_color}`} 

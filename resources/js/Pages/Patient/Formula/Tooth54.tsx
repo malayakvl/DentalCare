@@ -6,7 +6,6 @@ import {
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -19,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -30,8 +26,6 @@ import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth54() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -45,8 +39,6 @@ export default function Tooth54() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
@@ -619,10 +611,10 @@ export default function Tooth54() {
                 </g>
                 <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 234, 96)'}}
                     onMouseOver={() => {
-                        showHideOverlay('over');
+                        showHideTopCommonView('over');
                     }}
                     onMouseLeave={() => {
-                        showHideOverlay('leave');
+                        showHideTopCommonView('leave');
                     }}
                 >
                     <g className="dentin">
@@ -686,24 +678,6 @@ export default function Tooth54() {
                             />
                         </g>
                         <PeriodontitStage54 />
-                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="54" status="0"
-                           style={{visibility:"inherit", opacity:0}}>
-                            <circle className="st42" cx="509.3" cy="248.9" r="8.2"></circle>
-                            <circle className="st42" cx="544.9" cy="233.4" r="8.2"></circle>
-                            <circle className="st42" cx="582.5" cy="249.9" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="54" status="0"
-                           style={{visibility:"inherit", opacity:0}}>
-                            <circle className="st42" cx="510.6" cy="241.8" r="17.5"></circle>
-                            <circle className="st42" cx="547.2" cy="226.2" r="17.5"></circle>
-                            <circle className="st42" cx="583.3" cy="241.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="54" status="0"
-                           style={{visibility:"inherit", opacity:0}}>
-                            <circle className="st42" cx="581.2" cy="228.1" r="30"></circle>
-                            <circle className="st42" cx="545.9" cy="214.1" r="30"></circle>
-                            <circle className="st42" cx="509.6" cy="229.3" r="30"></circle>
-                        </g> */}
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{

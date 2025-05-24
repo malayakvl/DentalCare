@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia 
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,9 +18,6 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
     getActiveToothNumberSelector
 } from "../../../Redux/Formula/selectors";
@@ -34,8 +27,6 @@ import PeriodontitStage74 from './periodontit74';
 
 export default function Tooth74() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,10 +40,7 @@ export default function Tooth74() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showChildStatus = useSelector(allTeethChildSelector);
-    const showAdultStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -336,7 +324,7 @@ export default function Tooth74() {
                     </g>
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth74Diagnozis.culttab && !tooth74Diagnozis.abutment && !tooth74Diagnozis.implant && !tooth74Diagnozis.shaper && !tooth74Diagnozis.apex) ? 'inherit' : 'hidden'}}>
-                        <g dataposition="74_5" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
@@ -357,7 +345,6 @@ export default function Tooth74() {
                             />
                         </g>
                         <g
-                            dataposition="74_4"
                             className="caries-filling"
                             onClick={() => {
                                 
@@ -381,7 +368,6 @@ export default function Tooth74() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g className="caries-filling" 
-                            dataposition="74_3"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -403,7 +389,7 @@ export default function Tooth74() {
                                 c5.6,0.4,11.1,1.3,16.5,2.9c6,1.9,11.7,4.8,16.3,9.1C1597.3,926.2,1599.5,929.3,1601.4,932.6z" 
                             />
                         </g>
-                        <g dataposition="74_2" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -423,7 +409,7 @@ export default function Tooth74() {
                                 c1.9-5.8,4.3-11.4,7.6-16.3c3.6,4.8,8.1,10.5,11.5,14.7c3.4,4.2,8.4,8.2,12.5,11.2C1498,955.7,1496.3,959,1495.5,962.8z" 
                             />
                         </g>
-                        <g dataposition="74_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -527,7 +513,8 @@ export default function Tooth74() {
                                 opacity: tooth74Diagnozis.vinir ? 1 : 0
                             }}
                         >
-                            <path className="st55" d="M1459.4 1001.8C1460.1 1006.8 1461.6 1011.8 1463.6 1016.6C1465.2 1020.5 1467.2 1024.3 1469.9 1027.6L1472.3 1030.3C1477.1 1034.9 1483.2 1037.3 1489.7 1037.6C1497 1038 1504.5 1035.6 1511 1039C1513.7 1040.4 1515.7 1042.7 1518.2 1044.5C1523 1048.1 1529.1 1049.5 1535.2 1049.8C1545.4 1050.4 1555.8 1048 1563.8 1041.6C1569.2 1037.3 1573.3 1031.3 1579.7 1028.7C1585.2 1026.5 1591.4 1027.1 1597 1025.3C1600.9 1024 1604.2 1021.5 1607.1 1018.6C1608.2 1017.5 1609.2 1016.3 1610.2 1015.1C1614.5 1009.7 1617.9 1003.5 1618.8 996.6C1619.71 990.475 1618.67 984.52 1617.09 978.652C1613.8 978.94 1607.27 980.464 1607.46 984.258C1608.02 987.532 1608.21 990.848 1607.71 994.223C1606.93 1000.15 1604 1005.48 1600.3 1010.12C1599.44 1011.15 1598.57 1012.18 1597.63 1013.12C1595.13 1015.61 1592.29 1017.76 1588.93 1018.88C1584.1 1020.42 1578.76 1019.91 1574.02 1021.8C1568.51 1024.03 1564.98 1029.19 1560.33 1032.88C1553.43 1038.38 1544.48 1040.44 1535.69 1039.92C1530.43 1039.67 1525.18 1038.46 1521.04 1035.37C1518.89 1033.82 1517.17 1031.85 1514.84 1030.65C1509.24 1027.73 1502.78 1029.79 1496.49 1029.44C1490.89 1029.19 1485.64 1027.12 1481.5 1023.17L1479.44 1020.85C1477.11 1018.02 1475.39 1014.75 1474.01 1011.4C1472.29 1007.28 1470.99 1002.99 1470.39 998.69C1469.98 995.733 1469.92 992.777 1470.08 989.823C1469.35 986.482 1462.81 985.382 1459.64 985.25C1458.91 990.755 1458.63 996.278 1459.4 1001.8Z"></path>
+                            <path className={`vinir-fill ${tooth74Diagnozis.vinir_color}`}
+                                d="M1459.4 1001.8C1460.1 1006.8 1461.6 1011.8 1463.6 1016.6C1465.2 1020.5 1467.2 1024.3 1469.9 1027.6L1472.3 1030.3C1477.1 1034.9 1483.2 1037.3 1489.7 1037.6C1497 1038 1504.5 1035.6 1511 1039C1513.7 1040.4 1515.7 1042.7 1518.2 1044.5C1523 1048.1 1529.1 1049.5 1535.2 1049.8C1545.4 1050.4 1555.8 1048 1563.8 1041.6C1569.2 1037.3 1573.3 1031.3 1579.7 1028.7C1585.2 1026.5 1591.4 1027.1 1597 1025.3C1600.9 1024 1604.2 1021.5 1607.1 1018.6C1608.2 1017.5 1609.2 1016.3 1610.2 1015.1C1614.5 1009.7 1617.9 1003.5 1618.8 996.6C1619.71 990.475 1618.67 984.52 1617.09 978.652C1613.8 978.94 1607.27 980.464 1607.46 984.258C1608.02 987.532 1608.21 990.848 1607.71 994.223C1606.93 1000.15 1604 1005.48 1600.3 1010.12C1599.44 1011.15 1598.57 1012.18 1597.63 1013.12C1595.13 1015.61 1592.29 1017.76 1588.93 1018.88C1584.1 1020.42 1578.76 1019.91 1574.02 1021.8C1568.51 1024.03 1564.98 1029.19 1560.33 1032.88C1553.43 1038.38 1544.48 1040.44 1535.69 1039.92C1530.43 1039.67 1525.18 1038.46 1521.04 1035.37C1518.89 1033.82 1517.17 1031.85 1514.84 1030.65C1509.24 1027.73 1502.78 1029.79 1496.49 1029.44C1490.89 1029.19 1485.64 1027.12 1481.5 1023.17L1479.44 1020.85C1477.11 1018.02 1475.39 1014.75 1474.01 1011.4C1472.29 1007.28 1470.99 1002.99 1470.39 998.69C1469.98 995.733 1469.92 992.777 1470.08 989.823C1469.35 986.482 1462.81 985.382 1459.64 985.25C1458.91 990.755 1458.63 996.278 1459.4 1001.8Z"></path>
                             <path className={`vinir-fill ${tooth74Diagnozis.vinir_color}`}  
                                 d="M1469.9 1027.6C1467.2 1024.3 1465.2 1020.5 1463.6 1016.6C1461.6 1011.8 1460.1 1006.8 1459.4 1001.8C1458.63 996.278 1458.91 990.755 1459.64 985.25C1462.81 985.382 1469.35 986.482 1470.08 989.823C1469.92 992.777 1469.98 995.733 1470.39 998.69C1470.99 1002.99 1472.29 1007.28 1474.01 1011.4C1475.39 1014.75 1477.11 1018.02 1479.44 1020.85M1469.9 1027.6C1470.7 1028.5 1471.5 1029.4 1472.3 1030.3M1469.9 1027.6L1472.3 1030.3M1472.3 1030.3C1477.1 1034.9 1483.2 1037.3 1489.7 1037.6C1497 1038 1504.5 1035.6 1511 1039C1513.7 1040.4 1515.7 1042.7 1518.2 1044.5C1523 1048.1 1529.1 1049.5 1535.2 1049.8C1545.4 1050.4 1555.8 1048 1563.8 1041.6C1569.2 1037.3 1573.3 1031.3 1579.7 1028.7C1585.2 1026.5 1591.4 1027.1 1597 1025.3C1600.9 1024 1604.2 1021.5 1607.1 1018.6C1608.2 1017.5 1609.2 1016.3 1610.2 1015.1C1614.5 1009.7 1617.9 1003.5 1618.8 996.6C1619.71 990.475 1618.67 984.52 1617.09 978.652C1613.8 978.94 1607.27 980.464 1607.46 984.258C1608.02 987.532 1608.21 990.848 1607.71 994.223C1606.93 1000.15 1604 1005.48 1600.3 1010.12C1599.44 1011.15 1598.57 1012.18 1597.63 1013.12C1595.13 1015.61 1592.29 1017.76 1588.93 1018.88C1584.1 1020.42 1578.76 1019.91 1574.02 1021.8C1568.51 1024.03 1564.98 1029.19 1560.33 1032.88C1553.43 1038.38 1544.48 1040.44 1535.69 1039.92C1530.43 1039.67 1525.18 1038.46 1521.04 1035.37C1518.89 1033.82 1517.17 1031.85 1514.84 1030.65C1509.24 1027.73 1502.78 1029.79 1496.49 1029.44C1490.89 1029.19 1485.64 1027.12 1481.5 1023.17M1479.44 1020.85C1480.13 1021.63 1480.82 1022.4 1481.5 1023.17M1479.44 1020.85L1481.5 1023.17"></path>
                         </g>
@@ -759,7 +746,6 @@ export default function Tooth74() {
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth74Diagnozis.culttab && !tooth74Diagnozis.abutment && !tooth74Diagnozis.implant && !tooth74Diagnozis.shaper && !tooth74Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         <g
-                            dataposition="74_5"
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -784,7 +770,6 @@ export default function Tooth74() {
                         </g>
                         {/*КАРИЕС RIGHT*/}
                         <g
-                            dataposition="74_4"
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
@@ -805,7 +790,7 @@ export default function Tooth74() {
                                 l11,7.4l4.8,6.6c2.3,7.2,4.1,14.5,5.2,22C1623.1,1153.2,1623.6,1161.9,1623.3,1170.6z" 
                             />
                         </g>
-                        <g dataposition="74_2" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -825,7 +810,7 @@ export default function Tooth74() {
                                 c-0.1,11.9-0.2,32.3-0.1,42.2c0,2.1,0.1,3.7,0.1,4.7C1494.8,1153.7,1493,1164.6,1489.4,1168.4z" 
                             />
                         </g>
-                        <g dataposition="73_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
