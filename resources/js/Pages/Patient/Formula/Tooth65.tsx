@@ -854,8 +854,7 @@ export default function tooth65() {
                                 c-5.1-16.1-9.4-30.3-9.4-31.4c0-1.9,4.4-14.8,6.8-21.7c9.4,8.5,18,17.7,25.8,27.7c2.7,3.5,5.4,7.1,6.8,11.3
                                 C1770.5,398.7,1770.2,404.3,1770,409.8z"
                             />
-                            <path className="st8 target" 
-                                className={
+                            <path className={
                                 `st8 caries-left
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth65.caries_right ? 'caries-fill' : ''}

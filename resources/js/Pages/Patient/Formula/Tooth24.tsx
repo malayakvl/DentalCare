@@ -227,11 +227,9 @@ export default function Tooth24() {
             >
                 <g className={`underlay ${selectedTooth === 24 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
                     onMouseOver={() => {
-                        console.log('underlay 24 over')
                         showHideTeeth('over');
                     }}
                     onMouseLeave={() => {
-                        console.log('underlay 24 out')
                         showHideTeeth('leave');
                     }}
                 >
