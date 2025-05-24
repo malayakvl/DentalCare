@@ -1,36 +1,5 @@
-import React, {useEffect} from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
-    setChangeDia 
-} from '../../../Redux/Formula';
-import {
-    allTeethSelector,
-    getDiagnosisSelector,
-    getSealColor1Selector,
-    getSealColor2Selector,
-    getSealColor3Selector,
-    getSubDiagnosisSelector,
-    getTeethDiagnozisSelector,
-    getSealServicalColorSelector,
-    getVinirColorSelector,
-    getCeramicCrownColorSelector,
-    getCeramicMCrownColorSelector,
-    getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethChildSelector,
-    allTeethAdultSelector,
-    teethTypeSelector,
-    changeDiaSelector,
-    getActiveToothNumberSelector
-} from "../../../Redux/Formula/selectors";
+import React from 'react';
 import PeriodontitStage55 from './periodontit55';
-import setupDiagnoze from "../../../lib/tfunctions"
 
 export default function Tooth55({formulaToothData}) {
     const tooth55Diagnozis = formulaToothData;
@@ -375,15 +344,7 @@ export default function Tooth55({formulaToothData}) {
                         />
                     </g>
                 </g>
-                <g className="common-view" 
-                    onMouseOver={() => {
-                        showHideTopCommonView('over')
-                    }}
-                    onMouseLeave={() => {
-                        showHideTopCommonView('leave')
-                    }}
-                    style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 286, 121)'}}
-                >
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(0.55, 0, 0, 0.55, 286, 121)'}}>
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g className="hRoot hImplant hEmpty" style={{visibility: !tooth55Diagnozis.implant && !tooth55Diagnozis.apex && !tooth55Diagnozis.shaper && !tooth55Diagnozis.apex ? 'inherit' : 'hidden'}}>
@@ -557,19 +518,14 @@ export default function Tooth55({formulaToothData}) {
                     {/*КАРИЕС*/}
                     <g className="header caries-filling" style={{visibility: 'inherit'}}>
                         {/*КАРИЕС ЦЕНТР*/}
-                        <g
-                            className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'center');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st58" 
                                 d="M345.5,451.1l2.1,0.8c3.6-2,7.6-3.1,11.8-3.5c6.5-0.5,13.3,1.1,19.2-1.9c3.6-1.8,6.1-5.1,8.1-8.7
                                 c1.3-2.5,2.4-5.1,3.1-7.8l1.9-0.1c-1.2,2.2-2.1,4.5-2.8,6.9c-0.9,3.4-1.3,7,0,10.2c3.6,8.8,15.5,9.1,21.6,15.8
                                 c4-7.5,13.4-24.8,20.7-38.1c-3.4-3.4-8.2-7.6-13.2-10.1c-12.9-6.5-36.7-12.3-58.7-7.1C354.1,424,348.2,442.5,345.5,451.1z"
                             />
                             <path className={
-                                    `st8 caries-center
+                                `st8 caries-center
                                 ${tooth55Diagnozis.caries_center ? 'caries-fill' : ''}
                                 ${tooth55Diagnozis.seal_center ? `seal-fill ${tooth55Diagnozis.seal_center_color}` : ''}
                             `} 
@@ -613,12 +569,7 @@ export default function Tooth55({formulaToothData}) {
                             />
                         </g>
                         {/*КАРИЕС У КОРНЯ*/}
-                        <g
-                            className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'bottom');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st58" 
                                 d="M359.3,407.6c22-5.2,45.8,0.6,58.7,7.1c4.9,2.5,9.7,6.7,13.2,10.1c4.7-8.5,8.5-15.3,9.5-16.8
                                 c2.2-3.2,12.7-11.6,18.7-16.3c0-0.4,0-0.8,0-1.2c-2.8-5.6-6.3-10.8-10.7-15.3c-6.7-6.9-14.8-12.1-23.8-15.6
