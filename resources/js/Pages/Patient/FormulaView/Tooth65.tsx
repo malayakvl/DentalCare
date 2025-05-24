@@ -4,7 +4,6 @@ import { getDiagnosisSelector } from "../../../Redux/Formula/selectors";
 import PeriodontitStage65 from './periodontit65';
 
 export default function tooth65({formulaToothData}) {
-    // const diagnozis = useSelector(getDiagnosisSelector);
     const tooth65Diagnozis = formulaToothData;
 
     return (
