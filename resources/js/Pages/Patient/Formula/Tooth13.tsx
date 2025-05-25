@@ -329,7 +329,7 @@ export default function Tooth13() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth13Diagnozis.culttab && !tooth13Diagnozis.abutment && !tooth13Diagnozis.implant && !tooth13Diagnozis.shaper && !tooth13Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС LEFT*/}
-                        <g id="s_header_13_4" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -340,7 +340,7 @@ export default function Tooth13() {
                             />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth13.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth13.seal_left ? `seal-fill ${teethDiagnozis.tooth13.seal_left_color}` : ''}
                                 `} 
@@ -349,7 +349,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/*КАРИЕС НИЗ*/}
-                        <g id="s_header_13_3" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -371,7 +371,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_13_2" className="caries-filling"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -392,7 +392,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_13_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -414,7 +414,7 @@ export default function Tooth13() {
                         </g>
                         <g className="with">
                             {/*Черточка лево низ*/}
-                            <path 
+                            <path className="st54"
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
@@ -511,13 +511,13 @@ export default function Tooth13() {
                             c4.1-5.8,8.7-10.6,12.9-16.1C873.7,604.7,877.3,598.8,877,591.8z"
                         />
                         {/*FISSURE*/}
-                        <path className={`st3 fissure ${tooth13Diagnozis.fissure ? 'diagnoze' : tooth13Diagnozis.fissure ? 'hidden' : ''}`} 
+                        <path className={`fissure ${tooth13Diagnozis.fissure ? 'diagnoze' : tooth13Diagnozis.fissure ? 'hidden' : ''}`}
                             d="M843.6,610.4c-4.6-1.9-9.6-3.1-14.7-3.6c-4.9-0.5-9.9-0.2-14.7,0.7l-0.2-1.1c5-0.9,10-1.2,15.1-0.7
                             c5.2,0.5,10.3,1.7,15.1,3.7L843.6,610.4z"
                         />
                     </g>
                     {/* FISSURES */}
-                    <g className={`st3 fissure ${tooth13Diagnozis.fissure ? 'diagnoze' : ''}`} style={{visibility: (!tooth13Diagnozis.culttab && !tooth13Diagnozis.abutment && !tooth13Diagnozis.implant && !tooth13Diagnozis.apex && !tooth13Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
+                    <g className={`fissure ${tooth13Diagnozis.fissure ? 'diagnoze' : ''}`} style={{visibility: (!tooth13Diagnozis.culttab && !tooth13Diagnozis.abutment && !tooth13Diagnozis.implant && !tooth13Diagnozis.apex && !tooth13Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         <path className="st3 fissure" d="M843.6,610.4c-4.6-1.9-9.6-3.1-14.7-3.6c-4.9-0.5-9.9-0.2-14.7,0.7l-0.2-1.1c5-0.9,10-1.2,15.1-0.7
                             c5.2,0.5,10.3,1.7,15.1,3.7L843.6,610.4z" 
                         />

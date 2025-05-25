@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
+import {
+    setToothDiagnoze,
     setSelectedToothNumber,
-    setChangeDia 
+    setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,19 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
     teethTypeSelector,
     allTeethAdultSelector,
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
+import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage41 from './periodontit41';
-import setupDiagnoze from "../../../lib/tfunctions";
-
 
 export default function Tooth41() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,8 +41,8 @@ export default function Tooth41() {
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -201,7 +193,7 @@ export default function Tooth41() {
             <g id="41" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 995.4922 842.0025)" className={`st3 st4 st5 ${selectedTooth === 41 ? 'num-active' : ''}`}>41</text>
             </g>
-            <g id="TH-41" className={`f-tooth-init ${(teethDiagnozis.tooth41.show && !teethDiagnozis.tooth41.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-41" className={`f-tooth-init ${((teethDiagnozis.tooth41.show || allTeeth) && !teethDiagnozis.tooth41.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => { 
                     teethDiagnozis.tooth41.show = !teethDiagnozis.tooth41.show;
                     teethDiagnozis.tooth81.show = false;
@@ -220,7 +212,8 @@ export default function Tooth41() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }

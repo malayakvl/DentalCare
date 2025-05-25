@@ -30,7 +30,7 @@ export default function Tooth22() {
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth21Diagnozis = teethDiagnozis.tooth21;
+    const tooth22Diagnozis = teethDiagnozis.tooth22;
     const sealColor1 = useSelector(getSealColor1Selector);
     const sealColor2 = useSelector(getSealColor2Selector);
     const sealColor3 = useSelector(getSealColor3Selector);
