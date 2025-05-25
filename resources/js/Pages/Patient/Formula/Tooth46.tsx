@@ -241,7 +241,7 @@ export default function Tooth46() {
                         </g>
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
-                    <g className="pulpitis-filling" style={{visibility: tooth46Diagnozis.change_color ? 'hidden' : 'inherit'}}>
+                    <g className="pulp" style={{visibility: tooth46Diagnozis.apex || tooth46Diagnozis.pulpit ? 'inherit' : 'hidden'}}>
                         <g className={`st22 target top ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.pulpit ? 'pulpit' : ''} ${tooth46Diagnozis.periodontit ? 'periodontit' : ''}`}>
                             <ellipse className="st22 target" cx="534.806" cy="976.158" rx="10.0437" ry="6.63376" transform="rotate(-90.9902 534.806 976.158)" style={{fill: '#e80808'}} />
                             <ellipse className="st22 target" cx="579.376" cy="966.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 579.376 966.454)" style={{fill: '#e80808'}} />

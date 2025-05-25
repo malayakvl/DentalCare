@@ -1,15 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { 
-    setNewToothActive, 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
+    setToothDiagnoze,
     setSelectedToothNumber,
     setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,20 +18,16 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
     teethTypeSelector,
     allTeethAdultSelector,
     getActiveToothNumberSelector,
-    getStateFormulaSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage18 from './periodontit18';
 
 
-export default function Tooth18({ changeDia = '' }) {
+export default function Tooth18() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -50,9 +42,8 @@ export default function Tooth18({ changeDia = '' }) {
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
-    const stateFormula = useSelector(getStateFormulaSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
   
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -161,17 +152,15 @@ export default function Tooth18({ changeDia = '' }) {
     }
 
     const showHideTeeth = (type) => {
-        if (stateFormula !== 'view') {
-            if (type === 'over') {
-                if (teethType === 'adult' && !teethDiagnozis.tooth18.show) {
-                    document.getElementById('TH-18').classList.add('f-tooth-active');
-                }
-            } 
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth18.show) {
+                document.getElementById('TH-18').classList.add('f-tooth-active');
+            }
+        }
 
-            if (type === 'leave') {
-                if (teethType === 'adult' && !teethDiagnozis.tooth18.show) {
-                    document.getElementById('TH-18').classList.remove('f-tooth-active');
-                }
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth18.show) {
+                document.getElementById('TH-18').classList.remove('f-tooth-active');
             }
         }
     }
@@ -181,7 +170,7 @@ export default function Tooth18({ changeDia = '' }) {
             <g id="18" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 247 717)" className={`st3 st4 st5 ${selectedTooth === 18 ? 'num-active' : ''}`}>18</text>
             </g>
-            <g id="TH-18" className={`f-tooth-init ${(teethDiagnozis.tooth18.show && !teethDiagnozis.tooth18.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-18" className={`f-tooth-init ${((teethDiagnozis.tooth18.show || allTeeth) && !teethDiagnozis.tooth18.absent)  ? 'f-tooth-active' : ''} adult`}
                 onClick={() => {
                     teethDiagnozis.tooth18.show = !teethDiagnozis.tooth18.show;
 
@@ -198,7 +187,8 @@ export default function Tooth18({ changeDia = '' }) {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -910,7 +900,7 @@ export default function Tooth18({ changeDia = '' }) {
                             />
                             <path className={
                                 `st8 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
+                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${tooth18Diagnozis.caries_bottom ? 'caries-fill' : ''}
                                 ${tooth18Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth18.seal_bottom_color}` : ''}
                             `}

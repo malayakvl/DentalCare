@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
+import {
+    setToothDiagnoze,
     setSelectedToothNumber,
-    setChangeDia 
+    setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,18 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage15 from './periodontit15';
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage15 from './periodontit15';
 
 export default function Tooth15() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -47,9 +40,9 @@ export default function Tooth15() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -199,12 +192,10 @@ export default function Tooth15() {
             <g id="15" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 631.0918 716.1968)" className={`st3 st4 st5 ${selectedTooth === 15 ? 'num-active' : ''}`}>15</text>
             </g>
-            <g id="TH-15" className={`f-tooth-init ${(teethDiagnozis.tooth15.show && !teethDiagnozis.tooth15.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-15" className={`f-tooth-init ${((teethDiagnozis.tooth15.show || allTeeth) && !teethDiagnozis.tooth15.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth15.show = !teethDiagnozis.tooth15.show;
                     teethDiagnozis.tooth55.show = false;
-                    // document.getElementById('un-th-45').classList.add('active');
-
 
                     dispatch(setSelectedToothNumber(15));
                     dispatch(setChangeDia(Math.random()));
@@ -220,7 +211,8 @@ export default function Tooth15() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -353,7 +345,7 @@ export default function Tooth15() {
                             />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth15.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth15.seal_center ? `seal-fill ${teethDiagnozis.tooth15.seal_center_color}` : ''}
                                 `} 
@@ -802,7 +794,7 @@ export default function Tooth15() {
                         </g>
                         {/*КАРИЕС CENTER*/}
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
@@ -825,7 +817,7 @@ export default function Tooth15() {
                         </g>
                         
                         {/* КАРИЕС LEFT */}
-                        <g className="caries-filling hoho1"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -835,7 +827,7 @@ export default function Tooth15() {
                                 C608.1,441,607.5,448.3,608.7,455.5z"
                             />
                             <path className={
-                                    `st8 caries-left
+                                `st8 caries-left
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth15.caries_left ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth15.seal_left ? `seal-fill ${teethDiagnozis.tooth15.seal_left_color}` : ''}
@@ -847,7 +839,7 @@ export default function Tooth15() {
                         </g>
                         
                         {/*КАРИЕС TOP*/}
-                        <g className="caries-filling hoho3"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}

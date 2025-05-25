@@ -1,15 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from"react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
+import { useDispatch, useSelector } from "react-redux";
+import {
+    setToothDiagnoze,
     setSelectedToothNumber,
     setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,19 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
+    teethTypeSelector,
     allTeethAdultSelector,
-    teethTypeSelector, 
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage11 from './periodontit11';
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage11 from './periodontit11';
 
-
-export default function Tooth11() {
+export default function Tooth12() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,9 +40,9 @@ export default function Tooth11() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -163,7 +155,7 @@ export default function Tooth11() {
             if (teethType === 'adult' && !teethDiagnozis.tooth11.show) {
                 document.getElementById('TH-11').classList.add('f-tooth-active');
             }
-        } 
+        }
 
         if (type === 'leave') {
             if (teethType === 'child' && !teethDiagnozis.tooth51.show) {
@@ -188,19 +180,19 @@ export default function Tooth11() {
         if (type === 'leave') {
             if (teethType === 'adult' && !teethDiagnozis.tooth11.show) {
                 document.getElementById('TH-11').classList.remove('f-tooth-active');
-                if (teethDiagnozis.tooth51.show) {
+                if (teethDiagnozis.tooth61.show) {
                     document.getElementById('TH-51').classList.add('f-tooth-active');
                 }
             }
         }
     }
-    
+
     return (
         <>
             <g id="11" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 981.6768 716.1968)" className={`st3 st4 st5 ${selectedTooth === 11 ? 'num-active' : ''}`}>11</text>
             </g>
-            <g id="TH-11" className={`f-tooth-init ${(teethDiagnozis.tooth11.show && !teethDiagnozis.tooth11.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-11" className={`f-tooth-init ${((teethDiagnozis.tooth11.show || allTeeth) && !teethDiagnozis.tooth11.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth11.show = !teethDiagnozis.tooth11.show;
                     teethDiagnozis.tooth51.show = false;
@@ -218,7 +210,8 @@ export default function Tooth11() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }

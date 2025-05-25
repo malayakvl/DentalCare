@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
+import {
+    setToothDiagnoze,
     setSelectedToothNumber,
-    setChangeDia 
+    setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,18 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethAdultSelector, 
     teethTypeSelector,
-    getActiveToothNumberSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage14 from './periodontit14';
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage24 from './periodontit24';
 
 export default function Tooth24() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -47,9 +40,9 @@ export default function Tooth24() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
 
     const setColordedPart = (diagnozis, toothPart = '') => {
@@ -200,7 +193,7 @@ export default function Tooth24() {
             <g id="24" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1339.1816 716.1968)" className={`st3 st4 st5 ${selectedTooth === 24 ? 'num-active' : ''}`}>24</text>
             </g>
-            <g id="TH-24" className={`f-tooth-init ${(teethDiagnozis.tooth24.show && !teethDiagnozis.tooth24.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-24" className={`f-tooth-init ${((teethDiagnozis.tooth24.show || allTeeth) && !teethDiagnozis.tooth24.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth24.show = !teethDiagnozis.tooth24.show;
                     teethDiagnozis.tooth64.show = false;
@@ -218,7 +211,8 @@ export default function Tooth24() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -342,7 +336,7 @@ export default function Tooth24() {
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth24Diagnozis.culttab && !tooth24Diagnozis.abutment && !tooth24Diagnozis.implant && !tooth24Diagnozis.shaper && !tooth24Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС CENTER*/}
-                        <g id="s_header_24_5" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
@@ -354,7 +348,7 @@ export default function Tooth24() {
                             />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth24.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth24.seal_center ? `seal-fill ${teethDiagnozis.tooth24.seal_center_color}` : ''}
                                 `}  
@@ -364,7 +358,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/*КАРИЕС LEFT*/}
-                        <g id="s_header_24_4" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -385,7 +379,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/*КАРИЕС BOTTOM*/}
-                        <g id="s_header_24_3 hoho-bottom" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -406,7 +400,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_24_2" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }} 
@@ -427,7 +421,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_24_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -826,7 +820,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/* КАРИЕС RIGHT */}
-                        <g className="caries-filling hoho1"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -847,7 +841,7 @@ export default function Tooth24() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g className="caries-filling hoho3"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}

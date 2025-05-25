@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
+import {
+    setToothDiagnoze,
     setSelectedToothNumber,
-    setChangeDia 
+    setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,18 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage13 from './periodontit13';
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage23 from './periodontit23';
 
-export default function Tooth13() {
+export default function Tooth23() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -47,9 +40,9 @@ export default function Tooth13() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
     
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -199,7 +192,7 @@ export default function Tooth13() {
             <g id="23" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 1250.251 716.1968)" className={`st3 st4 st5 ${selectedTooth === 23 ? 'num-active' : ''}`}>23</text>
             </g>
-            <g id="TH-23" className={`f-tooth-init ${(teethDiagnozis.tooth23.show && !teethDiagnozis.tooth23.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-23" className={`f-tooth-init ${((teethDiagnozis.tooth23.show || allTeeth) && !teethDiagnozis.tooth23.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth23.show = !teethDiagnozis.tooth23.show;
                     teethDiagnozis.tooth63.show = false;
@@ -217,7 +210,8 @@ export default function Tooth13() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -324,7 +318,6 @@ export default function Tooth13() {
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth23Diagnozis.culttab && !tooth23Diagnozis.abutment && !tooth23Diagnozis.implant && !tooth23Diagnozis.shaper && !tooth23Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         <g onClick={() => {
                                 setColordedPart(diagnozis, 'left');
-                                console.log('CALEFT')
                             }}
                         >
                             <path className="st7" d="M1258,606.7c0,0.1-0.1,0.2-0.2,0.5c-1.3,2-7.8,9.8-9.4,12.8c-1.3,2.4-2.7,7.3-2.8,12.1
@@ -343,7 +336,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/*КАРИЕС НИЗ*/}
-                        <g id="s_header_23_3" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -365,7 +358,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_23_2" className="caries-filling"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -384,7 +377,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_23_1" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -561,7 +554,7 @@ export default function Tooth13() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        {/* <PeriodontitStage23 /> */}
+                         <PeriodontitStage23 />
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{
@@ -634,9 +627,9 @@ export default function Tooth13() {
                         />
                         <path className={
                                 `st60
-                                    ${(tooth23Diagnozis?.wedge_shaped_defect) ? `shaped-defect-stroke` : ""}
-                                    ${(tooth23Diagnozis?.seal_cervical) ? `seal-cervical-stroke` : ""}
-                                    ${tooth23Diagnozis.seal_cervical_color}
+                                ${(tooth23Diagnozis?.wedge_shaped_defect) ? `shaped-defect-stroke` : ""}
+                                ${(tooth23Diagnozis?.seal_cervical) ? `seal-cervical-stroke` : ""}
+                                ${tooth23Diagnozis.seal_cervical_color}
                                 `
                             } 
                             d="M1300.7 423.703C1299.21 419.145 1297.88 414.508 1295.52 410.343C1290.89 402.248 1282.88 396.59 1273.62 396.04C1271.11 395.882 1268.68 396.197 1266.24 396.904C1262.63 398.083 1259.57 400.362 1256.67 402.798C1251.56 407.121 1246.86 411.915 1243.01 417.337C1239.8 421.963 1237.27 427.02 1235.68 432.407C1235.31 433.69 1236.34 434.919 1237.68 434.838L1300.46 431.048C1301.76 430.97 1302.63 429.703 1302.24 
@@ -678,7 +671,7 @@ export default function Tooth13() {
                             />
                         </g>
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -703,7 +696,7 @@ export default function Tooth13() {
                         </g>
                         {/*КАРИЕС CENTER*/}
                         <g
-                            className="caries-filling hoho1"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}

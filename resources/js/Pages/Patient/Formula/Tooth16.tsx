@@ -1,16 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
-    setTooth16Active,
+import {
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -23,18 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
-    getActiveToothNumberSelector
+    allTeethAdultSelector,
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage16 from './periodontit16';
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage16 from './periodontit16';
 
 export default function Tooth16() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -48,9 +40,9 @@ export default function Tooth16() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -177,7 +169,7 @@ export default function Tooth16() {
             <g id="16" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 507.4561 716.1968)" className={`st3 st4 st5 ${selectedTooth === 16 ? 'num-active' : ''}`}>16</text>
             </g>
-            <g id="TH-16" className={`f-tooth-init ${(teethDiagnozis.tooth16.show && !teethDiagnozis.tooth16.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-16" className={`f-tooth-init ${((teethDiagnozis.tooth16.show || allTeeth) && !teethDiagnozis.tooth16.absent)  ? 'f-tooth-active' : ''} adult`}
                 onClick={() => {
                     teethDiagnozis.tooth16.show = !teethDiagnozis.tooth16.show;
 
@@ -194,7 +186,8 @@ export default function Tooth16() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -813,7 +806,7 @@ export default function Tooth16() {
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{ visibility: 'inherit' }}>
                         {/*КАРИЕС CENTER*/}
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}

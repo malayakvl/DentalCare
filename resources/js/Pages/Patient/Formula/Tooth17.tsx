@@ -1,16 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setNewToothActive, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
-    setTooth17Active,
+import {
+    setToothDiagnoze,
+    setSelectedToothNumber,
     setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -23,19 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethAdultSelector,
     teethTypeSelector,
+    allTeethAdultSelector,
     getActiveToothNumberSelector,
-    getStateFormulaSelector
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage17 from './periodontit17';
 import setupDiagnoze from "../../../lib/tfunctions"
+import PeriodontitStage17 from './periodontit17';
 
 export default function Tooth17() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,10 +40,9 @@ export default function Tooth17() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
-    const stateFormula = useSelector(getStateFormulaSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -161,17 +151,15 @@ export default function Tooth17() {
     }
 
     const showHideTeeth = (type) => {
-        if (stateFormula !== 'view') {
-            if (type === 'over') {
-                if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
-                    document.getElementById('TH-17').classList.add('f-tooth-active');
-                }
-            } 
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
+                document.getElementById('TH-17').classList.add('f-tooth-active');
+            }
+        }
 
-            if (type === 'leave') {
-                if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
-                    document.getElementById('TH-17').classList.remove('f-tooth-active');
-                }
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
+                document.getElementById('TH-17').classList.remove('f-tooth-active');
             }
         }
     }
@@ -181,7 +169,7 @@ export default function Tooth17() {
             <g id="17" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${selectedTooth === 17 ? 'num-active' : ''}`}>17</text>
             </g>
-            <g id="TH-17" className={`f-tooth-init ${(teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-17" className={`f-tooth-init ${((teethDiagnozis.tooth17.show || allTeeth) && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth17.show = !teethDiagnozis.tooth17.show;
 
@@ -198,7 +186,8 @@ export default function Tooth17() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -834,9 +823,9 @@ export default function Tooth17() {
                             <path
                                 className={
                                     `st8 caries-center
-                                        ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                        ${teethDiagnozis.tooth17.caries_center ? 'caries-fill' : ''}
-                                        ${teethDiagnozis.tooth17.seal_center ? `seal-fill ${teethDiagnozis.tooth17.seal_center_color}` : ''}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
+                                    ${teethDiagnozis.tooth17.caries_center ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth17.seal_center ? `seal-fill ${teethDiagnozis.tooth17.seal_center_color}` : ''}
                                 `}
                                 d="M345.5,451.1l2.1,0.8c3.6-2,7.6-3.1,11.8-3.5c6.5-0.5,13.3,1.1,19.2-1.9c3.6-1.8,6.1-5.1,8.1-8.7
                                 c1.3-2.5,2.4-5.1,3.1-7.8l1.9-0.1c-1.2,2.2-2.1,4.5-2.8,6.9c-0.9,3.4-1.3,7,0,10.2c3.6,8.8,15.5,9.1,21.6,15.8
@@ -896,7 +885,7 @@ export default function Tooth17() {
                                 C368.7,377.3,364.4,391.5,359.3,407.6z" />
                             <path className={
                                 `st8 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
+                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${tooth17Diagnozis.caries_bottom ? 'caries-fill' : ''}
                                 ${tooth17Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth17.seal_bottom_color}` : ''}
                             `}
