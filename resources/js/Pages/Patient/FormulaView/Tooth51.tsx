@@ -281,7 +281,7 @@ export default function Tooth51({formulaToothData}) {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <PeriodontitStage51 />
+                        <PeriodontitStage51 toothData={tooth51Diagnozis} />
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

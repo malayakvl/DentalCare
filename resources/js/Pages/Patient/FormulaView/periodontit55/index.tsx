@@ -1,14 +1,7 @@
 import React from 'react';
-import { useSelector } from "react-redux";
-import {
-    getTeethDiagnozisSelector,
-} from "../../../../Redux/Formula/selectors";
 
-
-
-export default function PeriodontitStage55() {
-    const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth55Diagnozis = teethDiagnozis.tooth55;
+export default function PeriodontitStage55({toothData}) {
+    const tooth55Diagnozis = toothData;
 
     return ( 
         <>

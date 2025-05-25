@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 import { getDiagnosisSelector } from "../../../Redux/Formula/selectors";
 import PeriodontitStage65 from './periodontit65';
+import PeriodontitStage51 from "./periodontit51";
 
 export default function tooth65({formulaToothData}) {
     const tooth65Diagnozis = formulaToothData;
@@ -392,7 +393,7 @@ export default function tooth65({formulaToothData}) {
                                 c3.4-17.1,8.8-33.9,15.9-49.9C1725.5,250.7,1721.7,258.7,1718.7,266.9z"
                             />
                         </g>
-                        <PeriodontitStage65 />
+                        <PeriodontitStage65 toothData={tooth65Diagnozis} />
                         
                     </g>
                     {/*PIN*/}
@@ -548,8 +549,7 @@ export default function tooth65({formulaToothData}) {
                                 c-5.1-16.1-9.4-30.3-9.4-31.4c0-1.9,4.4-14.8,6.8-21.7c9.4,8.5,18,17.7,25.8,27.7c2.7,3.5,5.4,7.1,6.8,11.3
                                 C1770.5,398.7,1770.2,404.3,1770,409.8z"
                             />
-                            <path className="st8 target" 
-                                className={
+                            <path className={
                                 `st8 caries-left
                                 ${tooth65Diagnozis.caries_right ? 'caries-fill' : ''}
                                 ${tooth65Diagnozis.seal_right ? `seal-fill ${tooth65Diagnozis.seal_right_color}` : ''}

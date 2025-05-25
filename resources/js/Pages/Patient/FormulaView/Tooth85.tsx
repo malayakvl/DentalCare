@@ -1,5 +1,6 @@
 import React from 'react';
 import PeriodontitStage85 from './periodontit85';
+import PeriodontitStage51 from "./periodontit51";
 
 export default function Tooth85({formulaToothData}) {
     const tooth85Diagnozis = formulaToothData;
@@ -382,7 +383,7 @@ export default function Tooth85({formulaToothData}) {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <PeriodontitStage85 />
+                        <PeriodontitStage85 toothData={tooth85Diagnozis} />
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{

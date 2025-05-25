@@ -380,7 +380,7 @@ export default function Tooth74({formulaToothData}) {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        <PeriodontitStage74 />
+                        <PeriodontitStage74 toothData={tooth74Diagnozis} />
                     </g>
                     {/*PIN*/}
                     <g className="pin" style={{

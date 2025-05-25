@@ -1,5 +1,6 @@
 import React from 'react';
 import PeriodontitStage64 from './periodontit64';
+import PeriodontitStage51 from "./periodontit51";
 export default function Tooth64({formulaToothData}) {
     const tooth64Diagnozis = formulaToothData;
 
@@ -393,22 +394,7 @@ export default function Tooth64({formulaToothData}) {
                                 c1.3,0.2,2.5,0.5,3.6,0.7c0.1-0.4,0.2-0.9,0.3-1.3C1591.7,304.5,1592.4,293.9,1591.9,283.3z"
                             />
                         </g>
-                        <PeriodontitStage64 />
-                        {/* <g className="level hEmpty hImplant periodontitis" data-level="1" data-position="64"  style={{visibility: "inherit", opacity: 0}}>
-                            <circle className="st42" cx="1588.9" cy="248.9" r="8.2"></circle>
-                            <circle className="st42" cx="1553.3" cy="233.4" r="8.2"></circle>
-                            <circle className="st42" cx="1515.7" cy="249.9" r="8.2"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="2" data-position="64"  style={{visibility: "inherit", opacity: 0}}>
-                            <circle className="st42" cx="1587.5" cy="241.8" r="17.5"></circle>
-                            <circle className="st42" cx="1551" cy="226.2" r="17.5"></circle>
-                            <circle className="st42" cx="1514.9" cy="241.8" r="17.5"></circle>
-                        </g>
-                        <g className="level hEmpty hImplant periodontitis" data-level="3" data-position="64"  style={{visibility: "inherit", opacity: 0}}>
-                            <circle className="st42" cx="1517" cy="228.1" r="30"></circle>
-                            <circle className="st42" cx="1552.3" cy="214.1" r="30"></circle>
-                            <circle className="st42" cx="1588.6" cy="229.3" r="30"></circle>
-                        </g> */}
+                        <PeriodontitStage64 toothData={tooth64Diagnozis} />
                     </g>
                     {/*PIN*/}
                     <g className="pin hEmpty hImplant" style={{
