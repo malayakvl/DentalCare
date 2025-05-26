@@ -115,7 +115,7 @@
     background-size: cover;
     width: 100px;
     height: 94px;
-    background-image: url(../../images/patient-avatar.jpg);
+    background-image: url(../../images/patients/patient-avatar.jpg);
     margin-top: 2px;
     margin-left: 2px;
 }
@@ -143,5 +143,12 @@
     font-size: 14px;
     padding-bottom: 11px;
     cursor: pointer;
-    
+    border-bottom: solid 2px;
+    border-color:#fff;
+    margin: 0 3px;
+}
+.tabs li.active {
+    border-color: #830874 !important;
+    border-bottom: solid 2px;
+    margin: 0 3px;
 }

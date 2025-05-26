@@ -56,7 +56,10 @@ const lngPatient = {
         "yasn": "Ясений край",
         "zond": "Глибина зондування",
         "teeth.status": "Статус зуба",
-        "allteeth": "Всі зуби"
+        "allteeth": "Всі зуби",
+        "maxilla": "Верхня щелепа",
+        "mandible": "Нижня щелепа",
+        "occlusion":"Оклюзія"
         
     }
 }

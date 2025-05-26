@@ -27,9 +27,6 @@ export default function index({ patientData, type, treatmentData }) {
         locale: appLang,
     });
     const [stageName, setStageName] = useState('');
-    const dispatch = useDispatch<any>();
-    // console.log(moment.utc(element.created_at).format('MM/DD/YYYY'))
-    
     const handleTabClick = (tabName) => {
         setTab(tabName);
     }
@@ -53,19 +50,49 @@ export default function index({ patientData, type, treatmentData }) {
                                     </div>
                                     <div className="w-1/2">
                                         <ul className='tabs'>
-                                            <li>
-                                                <Link href={`patient/edit/`}>
-                                                    Верхня щелепа
-                                                </Link>
+                                            <li className={'active'} id={`up-t`}>
+                                                <span onClick={() => {
+                                                    if (!document.getElementById(`lower_${element.id}`).classList.contains('hide-up-teeth')) {
+                                                        document.getElementById('up-t').classList.remove('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`lower_${element.id}`).classList.add('hide-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.add('hide-teeth');
+                                                    } else {
+                                                        document.getElementById('up-t').classList.add('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('hide-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.remove('hide-teeth');
+                                                        document.getElementById(`lower_${element.id}`).classList.add('show-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.add('show-up-teeth');
+                                                    }
+                                                }}>
+                                                    {msgFormula.get('formula.maxilla')}
+                                                </span>
                                             </li>
-                                            <li>
-                                                <Link href={`patient/edit/`}>
-                                                    Нижня щелепа
-                                                </Link>
+                                            <li className={'active'} id={`bottom-t`}>
+                                                <span onClick={() => {
+                                                    if (!document.getElementById(`lower_${element.id}`).classList.contains('hide-teeth')) {
+                                                        document.getElementById('bottom-t').classList.remove('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`lower_${element.id}`).classList.add('hide-teeth');
+                                                        // document.getElementById(`upper_${element.id}`).classList.add('hide-teeth');
+                                                    } else {
+                                                        document.getElementById('bottom-t').classList.add('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('hide-teeth');
+                                                        // document.getElementById(`upper_${element.id}`).classList.remove('hide-teeth');
+                                                        // document.getElementById(`lower_${element.id}`).classList.add('show-up-teeth');
+                                                        // document.getElementById(`upper_${element.id}`).classList.add('show-up-teeth');
+                                                    }
+                                                }}>
+                                                    {msgFormula.get('formula.mandible')}
+                                                </span>
                                             </li>
-                                            <li>
-                                                <Link href={`patient/edit/`}>
-                                                    Оклюзія
+                                            <li className={'active'}>
+                                                <Link href={`#`} onClick={() => {
+                                                    alert(1)
+                                                }}>
+                                                    {msgFormula.get('formula.occlusion')}
                                                 </Link>
                                             </li>
                                         </ul>
