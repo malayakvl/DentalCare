@@ -201,7 +201,7 @@ export default function Tooth12() {
 
                     if (diagnozis) {
                         const tDiaData = setupDiagnoze(
-                            12,
+                            1,
                             diagnozis,
                             subDiagnozis,
                             teethDiagnozis,
@@ -343,7 +343,7 @@ export default function Tooth12() {
                             />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth12.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth12.seal_left ? `seal-fill ${teethDiagnozis.tooth12.seal_left_color}` : ''}
                                 `}  

@@ -312,7 +312,7 @@ export default function Tooth16() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth16Diagnozis.culttab && !tooth16Diagnozis.abutment && !tooth16Diagnozis.implant && !tooth16Diagnozis.shaper && !tooth16Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС ЦЕНТР*/}
-                        <g id="s_header_16_5" 
+                        <g
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -326,7 +326,7 @@ export default function Tooth16() {
                             />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth16.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth16.seal_center ? `seal-fill ${teethDiagnozis.tooth16.seal_center_color}` : ''}
                                 `}

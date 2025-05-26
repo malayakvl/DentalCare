@@ -318,7 +318,7 @@ export default function Tooth33() {
                             <path className="st7" d="M1182.12 998.8C1183.02 1002.1 1184.72 1005 1186.72 1007.7C1202.32 1004 1215.83 989 1215.82 979.5C1213.32 967.5 1200.32 964 1198.92 954C1193.12 963.9 1185.32 972.7 1182.32 983.7C1181.02 988.7 1180.72 993.9 1182.12 998.8Z"></path>
                             <path className={
                                     `st8 caries-right
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth33.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth33.seal_left ? `seal-fill ${teethDiagnozis.tooth33.seal_left_color}` : ''}
                                 `}

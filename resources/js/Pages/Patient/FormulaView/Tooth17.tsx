@@ -1,213 +1,16 @@
 import React from 'react';
-import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setNewToothActive, 
-    setToothDiagnoze, 
-    setDisactiveAll, 
-    setSelectedToothNumber, 
-    setTooth17Active,
-    setChangeDia
-} from '../../../Redux/Formula';
-import {
-    allTeethSelector,
-    getDiagnosisSelector,
-    getSealColor1Selector,
-    getSealColor2Selector,
-    getSealColor3Selector,
-    getSubDiagnosisSelector,
-    getTeethDiagnozisSelector,
-    getSealServicalColorSelector,
-    getVinirColorSelector,
-    getCeramicCrownColorSelector,
-    getCeramicMCrownColorSelector,
-    getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector,
-    getStatusesSelector,
-    allTeethAdultSelector,
-    teethTypeSelector,
-    getActiveToothNumberSelector
-} from "../../../Redux/Formula/selectors";
 import PeriodontitStage17 from './periodontit17';
-import setupDiagnoze from "../../../lib/tfunctions"
 
-export default function Tooth17() {
-    const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
-    const diagnozis = useSelector(getDiagnosisSelector);
-    const subDiagnozis = useSelector(getSubDiagnosisSelector);
-    const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const tooth17Diagnozis = teethDiagnozis.tooth17;
-    const sealColor1 = useSelector(getSealColor1Selector);
-    const sealColor2 = useSelector(getSealColor2Selector);
-    const sealColor3 = useSelector(getSealColor3Selector);
-    const wsDefectColor = useSelector(getSealServicalColorSelector);
-    const vinirColor = useSelector(getVinirColorSelector);
-    const ceramicCrownColor = useSelector(getCeramicCrownColorSelector);
-    const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
-    const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
-    const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
-    const teethType = useSelector(teethTypeSelector);
-    const selectedTooth = useSelector(getActiveToothNumberSelector);
-
-    const setColordedPart = (diagnozis, toothPart = '') => {
-        if (diagnozis === 'caries') {
-            if (toothPart === 'bottom') {
-                teethDiagnozis.tooth17.caries_bottom = !teethDiagnozis.tooth17.caries_bottom;
-            }
-            if (toothPart === 'center') {
-                teethDiagnozis.tooth17.caries_center = !teethDiagnozis.tooth17.caries_center;
-            }
-            if (toothPart === 'left') {
-                teethDiagnozis.tooth17.caries_left = !teethDiagnozis.tooth17.caries_left;
-            }
-            if (toothPart === 'right') {
-                teethDiagnozis.tooth17.caries_right = !teethDiagnozis.tooth17.caries_right;
-            }
-            if (toothPart === 'top') {
-                teethDiagnozis.tooth17.caries_top = !teethDiagnozis.tooth17.caries_top;
-            }
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-        if (diagnozis === 'seal') {
-            if (toothPart === 'center') {
-                if (teethDiagnozis.tooth17.seal_center_color != sealColor1 && sealColor1 != '') {
-                    teethDiagnozis.tooth17.seal_center_color = sealColor1;
-                    teethDiagnozis.tooth17.seal_center = true;
-                } else if (teethDiagnozis.tooth17.seal_center_color != sealColor2 && sealColor2 != '') {
-                    teethDiagnozis.tooth17.seal_center_color = sealColor2;
-                    teethDiagnozis.tooth17.seal_center = true;
-                } else if (teethDiagnozis.tooth17.seal_center_color != sealColor3 && sealColor3 != '') {
-                    teethDiagnozis.tooth17.seal_center_color = sealColor3;
-                    teethDiagnozis.tooth17.seal_center = true;
-                } else {
-                    teethDiagnozis.tooth17.seal_center = !teethDiagnozis.tooth17.seal_center;
-                }
-                dispatch(setToothDiagnoze(teethDiagnozis));
-            }
-            if (toothPart === 'bottom') {
-                if (teethDiagnozis.tooth17.seal_bottom_color != sealColor1 && sealColor1 != '') {
-                    teethDiagnozis.tooth17.seal_bottom_color = sealColor1;
-                    teethDiagnozis.tooth17.seal_bottom = true;
-                } else if (teethDiagnozis.tooth17.seal_bottom_color != sealColor2 && sealColor2 != '') {
-                    teethDiagnozis.tooth17.seal_bottom_color = sealColor2;
-                    teethDiagnozis.tooth17.seal_bottom = true;
-                } else if (teethDiagnozis.tooth17.seal_bottom_color != sealColor3 && sealColor3 != '') {
-                    teethDiagnozis.tooth17.seal_bottom_color = sealColor3;
-                    teethDiagnozis.tooth17.seal_bottom = true;
-                } else {
-                    teethDiagnozis.tooth17.seal_bottom = !teethDiagnozis.tooth17.seal_bottom;
-                }
-                dispatch(setToothDiagnoze(teethDiagnozis));
-            }
-            if (toothPart === 'left') {
-                if (teethDiagnozis.tooth17.seal_left_color != sealColor1 && sealColor1 != '') {
-                    teethDiagnozis.tooth17.seal_left_color = sealColor1;
-                    teethDiagnozis.tooth17.seal_left = true;
-                } else if (teethDiagnozis.tooth17.seal_left_color != sealColor2 && sealColor2 != '') {
-                    teethDiagnozis.tooth17.seal_left_color = sealColor2;
-                    teethDiagnozis.tooth17.seal_left = true;
-                } else if (teethDiagnozis.tooth17.seal_left_color != sealColor3 && sealColor3 != '') {
-                    teethDiagnozis.tooth17.seal_left_color = sealColor3;
-                    teethDiagnozis.tooth17.seal_left = true;
-                } else {
-                    teethDiagnozis.tooth17.seal_left = !teethDiagnozis.tooth17.seal_left;
-                }
-                dispatch(setToothDiagnoze(teethDiagnozis));
-            }
-            if (toothPart === 'right') {
-                if (teethDiagnozis.tooth17.seal_right_color != sealColor1 && sealColor1 != '') {
-                    teethDiagnozis.tooth17.seal_right_color = sealColor1;
-                    teethDiagnozis.tooth17.seal_right = true;
-                } else if (teethDiagnozis.tooth17.seal_right_color != sealColor2 && sealColor2 != '') {
-                    teethDiagnozis.tooth17.seal_right_color = sealColor2;
-                    teethDiagnozis.tooth17.seal_right = true;
-                } else if (teethDiagnozis.tooth17.seal_right_color != sealColor3 && sealColor3 != '') {
-                    teethDiagnozis.tooth17.seal_right_color = sealColor3;
-                    teethDiagnozis.tooth17.seal_right = true;
-                } else {
-                    teethDiagnozis.tooth17.seal_right = !teethDiagnozis.tooth17.seal_right;
-                }
-                dispatch(setToothDiagnoze(teethDiagnozis));
-            }
-            if (toothPart === 'top') {
-                if (teethDiagnozis.tooth17.seal_top_color != sealColor1 && sealColor1 != '') {
-                    teethDiagnozis.tooth17.seal_top_color = sealColor1;
-                    teethDiagnozis.tooth17.seal_top = true;
-                } else if (teethDiagnozis.tooth17.seal_top_color != sealColor2 && sealColor2 != '') {
-                    teethDiagnozis.tooth17.seal_top_color = sealColor2;
-                    teethDiagnozis.tooth17.seal_top = true;
-                } else if (teethDiagnozis.tooth17.seal_top_color != sealColor3 && sealColor3 != '') {
-                    teethDiagnozis.tooth17.seal_top_color = sealColor3;
-                    teethDiagnozis.tooth17.seal_top = true;
-                } else {
-                    teethDiagnozis.tooth17.seal_top = !teethDiagnozis.tooth17.seal_top;
-                }
-            }
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-        if (diagnozis === 'wedge_shaped_defect') {
-            if (teethDiagnozis.tooth17.wedge_shaped_defect_color != wsDefectColor && wsDefectColor != '') {
-                teethDiagnozis.tooth17.wedge_shaped_defect_color = wsDefectColor;
-            } else {
-                teethDiagnozis.tooth17.wedge_shaped_defect_color = !teethDiagnozis.tooth17.wedge_shaped_defect_color;
-            }
-            dispatch(setToothDiagnoze(teethDiagnozis));
-        }
-    }
-
-    const showHideTeeth = (type) => {
-        if (type === 'over') {
-            if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
-                document.getElementById('TH-17').classList.add('f-tooth-active');
-            }
-        } 
-
-        if (type === 'leave') {
-            if (teethType === 'adult' && !teethDiagnozis.tooth17.show) {
-                document.getElementById('TH-17').classList.remove('f-tooth-active');
-            }
-        }
-    }
+export default function Tooth17({formulaToothData}) {
+    const tooth17Diagnozis = formulaToothData;
 
     return (
         <>
-            <g id="17" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
-                <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5 ${selectedTooth === 17 ? 'num-active' : ''}`}>17</text>
+            <g id="17" className={`tooth-number-active ${!tooth17Diagnozis.show ? 'hide-number' : ''}`}>
+                <text transform="matrix(1 0 0 1 366.4678 716.1968)" className={`st3 st4 st5`}>17</text>
             </g>
-            <g id="TH-17" className={`f-tooth-init ${(teethDiagnozis.tooth17.show && !teethDiagnozis.tooth17.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
-                onClick={() => {
-                    teethDiagnozis.tooth17.show = !teethDiagnozis.tooth17.show;
-
-                    dispatch(setSelectedToothNumber(17));
-                    dispatch(setChangeDia(Math.random()));
-                    if (diagnozis) {
-                        const tDiaData = setupDiagnoze(
-                            17,
-                            diagnozis,
-                            subDiagnozis,
-                            teethDiagnozis,
-                            dispatch,
-                            vinirColor,
-                            ceramicCrownColor,
-                            mceramicCrownColor,
-                            metalicCrownColor,
-                            zirconiaCrownColor
-                        );
-                        dispatch(setToothDiagnoze(tDiaData));
-                    }
-                }}
-            >
-                <g className={`underlay ${selectedTooth === 17 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
-                    onMouseOver={() => {
-                        showHideTeeth('over');
-                    }}
-                    onMouseLeave={() => {
-                        showHideTeeth('leave');
-                    }}
-                >
+            <g id="TH-17" className={`f-tooth-init ${(tooth17Diagnozis.show && !tooth17Diagnozis.absent)  ? 'f-tooth-active' : ''} adult`}>
+                <g className={`underlay`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <path className="st40" d="M364,271c0,0,6.9,35.5,2.1,54.2s-31.7,47.3-37.1,69.1c-3.9,15.9-6,47.1,1.2,67.9
                         c3.1,9,11.4,18.1,12.6,26.5c2.3,16.6-3.1,24.6-5.4,40.5c-4,27.7-12.7,61-11.7,92.3c1.6,49.2-5.2,120.4,65.1,117
                         s54.3-83.8,55.3-92.8c0.5-4.3,0.6-14.9,4.3-27.7c4-14,11.5-34.3,13.7-43c4.3-16.5-2.9-48.3-11.1-64.8c-8.2-16.4-15.7-25.6-6.9-42.9
@@ -215,14 +18,7 @@ export default function Tooth17() {
                         C353.1,248.9,359.8,255.5,364,271z"
                     />
                 </g>
-                <g id="T_17_up" className="top-view" style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
-                    onMouseOver={() => {
-                        showHideTeeth('over');
-                    }}
-                    onMouseLeave={() => {
-                        showHideTeeth('leave');
-                    }}
-                >
+                <g id="T_17_up" className="top-view" style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     <g className="dentin">
                         {/* CHANGE COLOR/APEX/CULTTAB */}
                         <g style={{visibility: !tooth17Diagnozis.culttab && !tooth17Diagnozis.implant && !tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -306,7 +102,7 @@ export default function Tooth17() {
                         />
                     </g>
                     {/*TARTAR*/}
-                    <g className="tartar hImplant hEmpty"  style={{opacity: teethDiagnozis.tooth17.tartar ? 1 : 0, visibility: "inherit"}}>
+                    <g className="tartar hImplant hEmpty"  style={{opacity: tooth17Diagnozis.tartar ? 1 : 0, visibility: "inherit"}}>
                         <path className="st61 level2"
                               d="M325.795 611.115C326.966 605.16 326.658 600.51 327.946 594.555C328.655 591.383 328.997 587.118 329.172
                               583.813C329.368 580.124 328.271 576.385 328.33 572.669C328.393 568.703 329.62 564.763 330.183
@@ -325,12 +121,7 @@ export default function Tooth17() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling" style={{visibility: (!tooth17Diagnozis.culttab && !tooth17Diagnozis.abutment && !tooth17Diagnozis.implant && !tooth17Diagnozis.shaper && !tooth17Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС ЦЕНТР*/}
-                        <g
-                           className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'center');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path
                                 className={`st7`}
                                 d="M350.5,608.4c0.6,2.8,1.7,5.8,3.5,8.6c4.2,6.6,12.3,12.4,27.7,12.4c21.1,0,27.9-7.4,33.1-13.3
@@ -339,9 +130,8 @@ export default function Tooth17() {
                             <path
                                 className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
-                                    ${teethDiagnozis.tooth17.caries_center ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth17.seal_center ? `seal-fill ${teethDiagnozis.tooth17.seal_center_color}` : ''}
+                                    ${tooth17Diagnozis.caries_center ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_center ? `seal-fill ${tooth17Diagnozis.seal_center_color}` : ''}
                                 `}
                                 d="M350.5,608.4c0.6,2.8,1.7,5.8,3.5,8.6c4.2,6.6,12.3,12.4,27.7,12.4c21.1,0,27.9-7.4,33.1-13.3
                                 c0.2-0.2,0.4-0.4,0.6-0.6c5.2-6.1,6.8-19.6,9.9-28.7c0.9-2.5,1.3-4.8,1.3-7c-0.1-5.9-3.4-10.4-11-11.7c-10.4-1.8-27.1,0-27.1,0
@@ -349,20 +139,15 @@ export default function Tooth17() {
                             />
                         </g>
                         {/*КАРИЕС ЛЕВО*/}
-                        <g className={`caries-filling`}
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'left');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st7" d="M335,640.3c10.7-10.7,16.3-18.6,19.1-23.2c-1.8-2.8-2.9-5.8-3.5-8.6c-2-9.2,0.9-20.8,7.2-28.7
                                 c1.5-1.8,3.2-3.4,5.1-4.7c-9.6-11.7-19.5-19.8-24.7-23.8c-0.2,0.3-0.3,0.5-0.5,0.8c-7.1,12.4-2.5,27.6-5.7,41.1
                                 c-1.3,5.5-3.9,10.6-5,16.1C324.6,620.5,327.9,631.6,335,640.3z" />
                             <path
                                 className={`
                                     st8 target caries-left
-                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth17.caries_left ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth17.seal_left ? `seal-fill ${teethDiagnozis.tooth17.seal_left_color}` : ''}
+                                    ${tooth17Diagnozis.caries_left ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_left ? `seal-fill ${tooth17Diagnozis.seal_left_color}` : ''}
                                 `}
                                 d="M335,640.3c10.7-10.7,16.3-18.6,19.1-23.2c-1.8-2.8-2.9-5.8-3.5-8.6c-2-9.2,0.9-20.8,7.2-28.7
                                 c1.5-1.8,3.2-3.4,5.1-4.7c-9.6-11.7-19.5-19.8-24.7-23.8c-0.2,0.3-0.3,0.5-0.5,0.8c-7.1,12.4-2.5,27.6-5.7,41.1
@@ -370,20 +155,15 @@ export default function Tooth17() {
                             ></path>
                         </g>
                         {/*КАРИЕС ВЕРХ*/}
-                        <g className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'top');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st7" d="M335,640.3c4.9,6,11.7,10.8,19.8,13.6c6.2,2.2,12.8,2.9,19.3,3.4c7.5,0.6,15,0.9,22.5,1.8
                                 c6,0.7,12,1.8,17.9,0.8c7.9-1.3,14.6-6,19.2-12.1c1.8-2.4,3.3-5,4.5-7.6c-12-9.4-19.6-18.8-23.4-24.1c-5.1,6-11.9,13.3-33.1,13.3
                                 c-15.3,0-23.5-5.8-27.7-12.4C351.2,621.7,345.7,629.5,335,640.3z" />
                             <path
                                 className={
                                     `st8 caries-center
-                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth17.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth17.seal_top ? `seal-fill ${teethDiagnozis.tooth17.seal_top_color}` : ''}
+                                    ${tooth17Diagnozis.caries_top ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_top ? `seal-fill ${tooth17Diagnozis.seal_top_color}` : ''}
                                 `}
                             d="M335,640.3c4.9,6,11.7,10.8,19.8,13.6c6.2,2.2,12.8,2.9,19.3,3.4c7.5,0.6,15,0.9,22.5,1.8
                                 c6,0.7,12,1.8,17.9,0.8c7.9-1.3,14.6-6,19.2-12.1c1.8-2.4,3.3-5,4.5-7.6c-12-9.4-19.6-18.8-23.4-24.1c-5.1,6-11.9,13.3-33.1,13.3
@@ -391,21 +171,15 @@ export default function Tooth17() {
                             />
                         </g>
                         {/*КАРИЕС ПРАВО*/}
-                        <g
-                            className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'right');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st7" d="M414.7,616.1c3.8,5.3,11.4,14.7,23.4,24.1c2.4-5,4.2-10.3,6.3-15.5c5.2-12.7,12.8-24.5,17.2-37.6
                                 c2.9-8.7,4.3-17.8,2.7-26.8c-0.2-1.2-0.5-2.4-0.8-3.5c-7.8,4.2-26.2,14.3-37,23.1c0,2.2-0.4,4.6-1.3,7c-3.2,9-4.7,22.6-9.9,28.7
                                 C415.1,615.6,414.9,615.8,414.7,616.1z" />
 
                             <path className={
                                     `st8 caries-center
-                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth17.caries_right ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth17.seal_right ? `seal-fill ${teethDiagnozis.tooth17.seal_right_color}` : ''}
+                                    ${tooth17Diagnozis.caries_right ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_right ? `seal-fill ${tooth17Diagnozis.seal_right_color}` : ''}
                                 `}
                                 d="M414.7,616.1c3.8,5.3,11.4,14.7,23.4,24.1c2.4-5,4.2-10.3,6.3-15.5c5.2-12.7,12.8-24.5,17.2-37.6
                                 c2.9-8.7,4.3-17.8,2.7-26.8c-0.2-1.2-0.5-2.4-0.8-3.5c-7.8,4.2-26.2,14.3-37,23.1c0,2.2-0.4,4.6-1.3,7c-3.2,9-4.7,22.6-9.9,28.7
@@ -413,20 +187,14 @@ export default function Tooth17() {
                             />
                         </g>
                         {/*КАРИЕС НИЗ*/}
-                        <g
-                            className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'bottom');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st7" d="M338.2,551.2c5.2,3.9,15,12.1,24.7,23.8c6.3-4.4,15-6.4,25.6-7c0,0,16.7-1.8,27.1,0c7.5,1.3,10.9,5.9,11,11.7
                                 c10.8-8.7,29.2-18.9,37-23.1c-1.7-6.5-5.1-12.6-10.4-17.1c-3.7-3.2-8-5.4-12.5-7c-6.7-2.3-14-3.3-21.3-2.7c-7,0.6-14,2.5-21,3.5
                                 c-11.1,1.6-22.4,0.4-33.3,2.2C353.7,537.5,343.7,542.2,338.2,551.2z" />
                             <path className={
                                     `st8 caries-center
-                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth17.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth17.seal_bottom ? `seal-fill ${teethDiagnozis.tooth17.seal_bottom_color}` : ''}
+                                    ${tooth17Diagnozis.caries_bottom ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_bottom ? `seal-fill ${tooth17Diagnozis.seal_bottom_color}` : ''}
                                 `}
                                 d="M338.2,551.2c5.2,3.9,15,12.1,24.7,23.8c6.3-4.4,15-6.4,25.6-7c0,0,16.7-1.8,27.1,0c7.5,1.3,10.9,5.9,11,11.7
                                 c10.8-8.7,29.2-18.9,37-23.1c-1.7-6.5-5.1-12.6-10.4-17.1c-3.7-3.2-8-5.4-12.5-7c-6.7-2.3-14-3.3-21.3-2.7c-7,0.6-14,2.5-21,3.5
@@ -559,7 +327,7 @@ export default function Tooth17() {
                         opacity: (tooth17Diagnozis.temporary_crown || tooth17Diagnozis.ceramic_crown || tooth17Diagnozis.mceramic_crown || tooth17Diagnozis.metalic_crown || tooth17Diagnozis.zirconia_crown)  ? 1 : 0
                     }}>
                         <path className={
-                                `st46 target temporary-crown crown-fill ${diagnozis}
+                                `st46 target temporary-crown crown-fill
                                 ${tooth17Diagnozis.ceramic_crown_color}
                                 ${tooth17Diagnozis.mceramic_crown_color}
                                 ${tooth17Diagnozis.metalic_crown_color}
@@ -606,14 +374,7 @@ export default function Tooth17() {
                         />
                     </g>
                 </g>
-                <g className="common-view" style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
-                    onMouseOver={() => {
-                        showHideTeeth('over');
-                    }}
-                    onMouseLeave={() => {
-                        showHideTeeth('leave');
-                    }}
-                >
+                <g className="common-view" style={{visibility: tooth17Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
                     {/*CHANGE COLOR*/}
                     <g className="dentin">
                         <g id="dentin_v_17" className="hRoot hImplant hEmpty" style={{visibility: !tooth17Diagnozis.implant && !tooth17Diagnozis.apex && !tooth17Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -811,7 +572,7 @@ export default function Tooth17() {
                         />
                     </g>
                     {/*TARTAR*/}
-                    <g className="tartar" style={{visibility: 'inherit', opacity: teethDiagnozis.tooth17.tartar ? 1 : 0}}>
+                    <g className="tartar" style={{visibility: 'inherit', opacity: tooth17Diagnozis.tartar ? 1 : 0}}>
                         <path className="st61 level2"
                               d="M460.5 408L459.5 407L459 406.5L458.5 405.5L457.5 403.5L456.5 400.5L455.5 398.5V396.5L454 392L453.5 388L451 383.5L447.5 378.5L444.5 375.5L441.5 371L438.5 370L434 368L430 364L424.5 362.5L420.5 360H415.5L408.5 358L402 356H396.5L392 355H387L383.5 356L379.5 357L373.5 358L367.5 360H365.5L362.5 361L360 364L357 366L354 369L351.5 373L345.5 377L344 380L342 381.5L340 382.5L337 387L335.5 388L334 389H332L333 385.5L334 383.5L336 380.5L337 378.5L339 377L340 375.5L341 373L342 370L344 368L345.5 366L347.5 362.5L351.5 360V358L354 355L356 352.5L358 350L360 348.5L362.002 346L364.002 343L367.5 342H371.502L377.002 340L382.002 339L387 340H392L396.5 338L402 340H406.502H410.502H415.5L420.5 342H424.5L430 344H433.502L438.5 345.5L441.5 348.5L447.5 350L451 352.5L455.5 355L459 360L463 364L461.502 368L463 373V377L463.502 380L464.502 383.5L463 388L463.502 393L461.502 397V400.5V405.5L460.5 408Z"></path>
                         <path className="st61 level1"
@@ -819,10 +580,7 @@ export default function Tooth17() {
                     </g>
                     {/*КАРИЕС*/}
                     <g className="header caries-filling" style={{visibility: "inherit"}}>
-                        <g className="caries-filling"
-                           onClick={() => {
-                            setColordedPart(diagnozis, 'center');
-                        }}>
+                        <g className="caries-filling">
                             <path className={`st58`} d="M345.5,451.1l2.1,0.8c3.6-2,7.6-3.1,11.8-3.5c6.5-0.5,13.3,1.1,19.2-1.9c3.6-1.8,6.1-5.1,8.1-8.7
                                 c1.3-2.5,2.4-5.1,3.1-7.8l1.9-0.1c-1.2,2.2-2.1,4.5-2.8,6.9c-0.9,3.4-1.3,7,0,10.2c3.6,8.8,15.5,9.1,21.6,15.8
                                 c4-7.5,13.4-24.8,20.7-38.1c-3.4-3.4-8.2-7.6-13.2-10.1c-12.9-6.5-36.7-12.3-58.7-7.1C354.1,424,348.2,442.5,345.5,451.1z" />
@@ -830,9 +588,8 @@ export default function Tooth17() {
                             <path
                                 className={
                                     `st8 caries-center
-                                        ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                        ${teethDiagnozis.tooth17.caries_center ? 'caries-fill' : ''}
-                                        ${teethDiagnozis.tooth17.seal_center ? `seal-fill ${teethDiagnozis.tooth17.seal_center_color}` : ''}
+                                    ${tooth17Diagnozis.caries_center ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_center ? `seal-fill ${tooth17Diagnozis.seal_center_color}` : ''}
                                 `}
                                 d="M345.5,451.1l2.1,0.8c3.6-2,7.6-3.1,11.8-3.5c6.5-0.5,13.3,1.1,19.2-1.9c3.6-1.8,6.1-5.1,8.1-8.7
                                 c1.3-2.5,2.4-5.1,3.1-7.8l1.9-0.1c-1.2,2.2-2.1,4.5-2.8,6.9c-0.9,3.4-1.3,7,0,10.2c3.6,8.8,15.5,9.1,21.6,15.8
@@ -840,19 +597,14 @@ export default function Tooth17() {
                             />
                         </g>
                         {/*КАРИЕС ЛЕВО*/}
-                        <g className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'left');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st58" d="M328,409.8c0.1,2.1,0.1,4.1,0.2,6.2c0.9,12.6,5.9,24.6,14.3,34l2.9,1.1c2.8-8.6,8.7-27,13.8-43.5
                                 c5.1-16.1,9.4-30.3,9.4-31.4c0-1.9-4.4-14.8-6.8-21.7c-9.4,8.5-18,17.7-25.8,27.7c-2.7,3.5-5.4,7.1-6.8,11.3
                                 C327.6,398.7,327.9,404.3,328,409.8z" />
                             <path className={`
                                 st8 target caries-left
-                                ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                ${teethDiagnozis.tooth17.caries_left ? 'caries-fill' : ''}
-                                ${teethDiagnozis.tooth17.seal_left ? `seal-fill ${teethDiagnozis.tooth17.seal_left_color}` : ''}
+                                ${tooth17Diagnozis.caries_left ? 'caries-fill' : ''}
+                                ${tooth17Diagnozis.seal_left ? `seal-fill ${tooth17Diagnozis.seal_left_color}` : ''}
                             `}
                                 d="M328,409.8c0.1,2.1,0.1,4.1,0.2,6.2c0.9,12.6,5.9,24.6,14.3,34l2.9,1.1c2.8-8.6,8.7-27,13.8-43.5
                                 c5.1-16.1,9.4-30.3,9.4-31.4c0-1.9-4.4-14.8-6.8-21.7c-9.4,8.5-18,17.7-25.8,27.7c-2.7,3.5-5.4,7.1-6.8,11.3
@@ -860,20 +612,14 @@ export default function Tooth17() {
                             />
                         </g>
                         {/*КАРИЕС ПРАВО*/}
-                        <g className="caries-filling"
-                             data-position="17_2"
-                             onClick={() => {
-                                setColordedPart(diagnozis, 'right');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st58" d="M410.5,462.8c0.2,0.2,0.4,0.5,0.6,0.7c1.2,1.6,2.1,3.4,2.6,5.3l5.4,1c4.4-0.9,8.8-2.1,13-3.8
                                 c9.1-3.6,17.5-9,23.4-16.9c1-1.3,1.9-2.7,2.7-4.1c2-6.5,3-13.2,3.2-20c0.1-5.8-0.5-11.6-0.9-17.4c-0.4-5.3-0.7-10.7-0.9-16.1
                                 c-6,4.7-16.5,13.1-18.7,16.3c-1,1.5-4.9,8.3-9.5,16.8C423.9,438,414.5,455.3,410.5,462.8z"></path>
                             <path className={
                                     `st8 caries-center
-                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth17.caries_right ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth17.seal_right ? `seal-fill ${teethDiagnozis.tooth17.seal_right_color}` : ''}
+                                    ${tooth17Diagnozis.caries_right ? 'caries-fill' : ''}
+                                    ${tooth17Diagnozis.seal_right ? `seal-fill ${tooth17Diagnozis.seal_right_color}` : ''}
                                 `}
                                 d="M410.5,462.8c0.2,0.2,0.4,0.5,0.6,0.7c1.2,1.6,2.1,3.4,2.6,5.3l5.4,1c4.4-0.9,8.8-2.1,13-3.8
                                 c9.1-3.6,17.5-9,23.4-16.9c1-1.3,1.9-2.7,2.7-4.1c2-6.5,3-13.2,3.2-20c0.1-5.8-0.5-11.6-0.9-17.4c-0.4-5.3-0.7-10.7-0.9-16.1
@@ -881,20 +627,15 @@ export default function Tooth17() {
                             />
                         </g>
                         {/*КАРИЕС У КОРНЯ*/}
-                        <g className="caries-filling"
-                            onClick={() => {
-                                setColordedPart(diagnozis, 'bottom');
-                            }}
-                        >
+                        <g className="caries-filling">
                             <path className="st58" d="M359.3,407.6c22-5.2,45.8,0.6,58.7,7.1c4.9,2.5,9.7,6.7,13.2,10.1c4.7-8.5,8.5-15.3,9.5-16.8
                                 c2.2-3.2,12.7-11.6,18.7-16.3c0-0.4,0-0.8,0-1.2c-2.8-5.6-6.3-10.8-10.7-15.3c-6.7-6.9-14.8-12.1-23.8-15.6
                                 c-9-3.5-18.6-5.1-28.2-5.8c-11.5-0.9-23.1-0.7-34.6,0.7c-0.1,0-0.1,0.1-0.1,0.1c2.4,6.9,6.8,19.7,6.8,21.7
                                 C368.7,377.3,364.4,391.5,359.3,407.6z" />
                             <path className={
                                 `st8 caries-bottom
-                                ${diagnozis === 'caries' ? 'caries-stroke' : ''}
                                 ${tooth17Diagnozis.caries_bottom ? 'caries-fill' : ''}
-                                ${tooth17Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth17.seal_bottom_color}` : ''}
+                                ${tooth17Diagnozis.seal_bottom ? `seal-fill ${tooth17Diagnozis.seal_bottom_color}` : ''}
                             `}
                                 d="M359.3,407.6c22-5.2,45.8,0.6,58.7,7.1c4.9,2.5,9.7,6.7,13.2,10.1c4.7-8.5,8.5-15.3,9.5-16.8
                                 c2.2-3.2,12.7-11.6,18.7-16.3c0-0.4,0-0.8,0-1.2c-2.8-5.6-6.3-10.8-10.7-15.3c-6.7-6.9-14.8-12.1-23.8-15.6
@@ -991,7 +732,6 @@ export default function Tooth17() {
                         <path
                             className={`
                                 temporary-crown crown-fill
-                                ${diagnozis}
                                 ${tooth17Diagnozis.ceramic_crown_color}
                                 ${tooth17Diagnozis.mceramic_crown_color}
                                 ${tooth17Diagnozis.metalic_crown_color}

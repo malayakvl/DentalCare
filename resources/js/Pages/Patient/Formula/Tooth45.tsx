@@ -335,7 +335,7 @@ export default function Tooth45() {
                                 C664.5,968,663.8,975.2,665,982.6z" />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth45.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth45.seal_center ? `seal-fill ${teethDiagnozis.tooth45.seal_center_color}` : ''}
                                 `} 

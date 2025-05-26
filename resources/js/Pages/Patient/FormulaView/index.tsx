@@ -202,7 +202,7 @@ export default function FormulaView({formulaData}) {
                     {formulaData.tooth61.show && <Tooth61 formulaToothData={formulaData.tooth61} />}
                     {formulaData.tooth11.show && <Tooth11 formulaToothData={formulaData.tooth11} />}
                     {formulaData.tooth51.show && <Tooth51 formulaToothData={formulaData.tooth51} />}
-                    {formulaData.tooth32.show && <Tooth32 formulaToothData={formulaData.tooth32} />}
+                    {formulaData.tooth12.show && <Tooth12 formulaToothData={formulaData.tooth12} />}
                     {formulaData.tooth52.show && <Tooth52 formulaToothData={formulaData.tooth52} />}
                     {formulaData.tooth13.show && <Tooth13 formulaToothData={formulaData.tooth13} />}
                     {formulaData.tooth53.show && <Tooth53 formulaToothData={formulaData.tooth53} />}

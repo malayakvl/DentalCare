@@ -324,7 +324,7 @@ export default function Tooth48() {
                                 c-1.4,1.6-2.5,3.3-3.2,5.2C221.2,934,222.8,946.8,227.1,955.5z" />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth48.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth48.seal_center ? `seal-fill ${teethDiagnozis.tooth48.seal_center_color}` : ''}
                                 `} 

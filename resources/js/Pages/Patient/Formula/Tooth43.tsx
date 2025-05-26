@@ -325,7 +325,7 @@ export default function Tooth43() {
                             <path className="st7" d="M915.7 998.8C914.8 1002.1 913.1 1005 911.1 1007.7C895.5 1004 882 989 882 979.5C884.5 967.5 897.5 964 898.9 954C904.7 963.9 912.5 972.7 915.5 983.7C916.8 988.7 917.1 993.9 915.7 998.8Z"></path>
                             <path className={
                                     `st8 caries-right
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth43.caries_right ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth43.seal_right ? `seal-fill ${teethDiagnozis.tooth43.seal_right_color}` : ''}
                                 `} 

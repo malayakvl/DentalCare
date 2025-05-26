@@ -344,7 +344,7 @@ export default function Tooth21() {
                             />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth21.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth21.seal_left ? `seal-fill ${teethDiagnozis.tooth21.seal_left_color}` : ''}
                                 `}
@@ -557,7 +557,7 @@ export default function Tooth21() {
                             />
                         </g>
                         {/* Отростки периодонтита */}
-                        {/* < PeriodontitStage21 /> */}
+                         <PeriodontitStage21 />
                     </g>
                     <g className="pin" style={{
                         visibility: 'inherit', opacity: tooth21Diagnozis.pin ? 1 : 0

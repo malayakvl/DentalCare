@@ -352,7 +352,7 @@ export default function Tooth52() {
                             />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth52.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth52.seal_left ? `seal-fill ${teethDiagnozis.tooth52.seal_left_color}` : ''}
                                 `}  

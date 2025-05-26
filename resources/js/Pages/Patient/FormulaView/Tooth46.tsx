@@ -1,15 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { 
-    setSubDiagnosis, 
-    setToothDiagnoze, 
-    setNewToothActive, 
-    setDisactiveAll, 
+import {
+    setToothDiagnoze,
     setSelectedToothNumber,
-    setChangeDia 
+    setChangeDia
 } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -22,19 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector,
     teethTypeSelector,
     allTeethAdultSelector,
-    getActiveToothNumberSelector
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
-import PeriodontitStage46 from './periodontit46';
 import setupDiagnoze from "../../../lib/tfunctions"
-
+import PeriodontitStage46 from './periodontit46';
 
 export default function Tooth46() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -49,8 +41,8 @@ export default function Tooth46() {
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
     const teethType = useSelector(teethTypeSelector);
-    const showStatus = useSelector(allTeethAdultSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -177,7 +169,7 @@ export default function Tooth46() {
             <g id="46" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
                 <text transform="matrix(1 0 0 1 542.1611 842.0025)" className={`st3 st4 st5 ${selectedTooth === 46 ? 'num-active' : ''}`}>46</text>
             </g>
-            <g id="TH-46" className={`f-tooth-init ${(teethDiagnozis.tooth46.show && !teethDiagnozis.tooth46.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
+            <g id="TH-46" className={`f-tooth-init ${((teethDiagnozis.tooth46.show || allTeeth) && !teethDiagnozis.tooth46.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
                     teethDiagnozis.tooth46.show = !teethDiagnozis.tooth46.show;
                     dispatch(setSelectedToothNumber(46));
@@ -194,7 +186,8 @@ export default function Tooth46() {
                             ceramicCrownColor,
                             mceramicCrownColor,
                             metalicCrownColor,
-                            zirconiaCrownColor
+                            zirconiaCrownColor,
+                            wsDefectColor
                         );
                         dispatch(setToothDiagnoze(tDiaData));
                     }
@@ -241,7 +234,7 @@ export default function Tooth46() {
                         </g>
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
-                    <g className="pulpitis-filling" style={{visibility: tooth46Diagnozis.change_color ? 'hidden' : 'inherit'}}>
+                    <g className="pulp" style={{visibility: tooth46Diagnozis.apex || tooth46Diagnozis.pulpit ? 'inherit' : 'hidden'}}>
                         <g className={`st22 target top ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.channel_class} ${tooth46Diagnozis.pulpit ? 'pulpit' : ''} ${tooth46Diagnozis.periodontit ? 'periodontit' : ''}`}>
                             <ellipse className="st22 target" cx="534.806" cy="976.158" rx="10.0437" ry="6.63376" transform="rotate(-90.9902 534.806 976.158)" style={{fill: '#e80808'}} />
                             <ellipse className="st22 target" cx="579.376" cy="966.454" rx="8.41967" ry="7.78385" transform="rotate(-130.036 579.376 966.454)" style={{fill: '#e80808'}} />

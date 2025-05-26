@@ -324,7 +324,7 @@ export default function Tooth35() {
                             />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth35.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth35.seal_center ? `seal-fill ${teethDiagnozis.tooth35.seal_center_color}` : ''}
                                 `} 

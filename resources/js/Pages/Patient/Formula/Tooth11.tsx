@@ -25,7 +25,7 @@ import {
 import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage11 from './periodontit11';
 
-export default function Tooth12() {
+export default function Tooth11() {
     const dispatch = useDispatch<any>();
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
@@ -360,7 +360,7 @@ export default function Tooth12() {
                                 C950.1,585,948.5,588.9,949.8,593.5z" />
                             <path className={
                                     `st8 caries-left
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth11.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth11.seal_left ? `seal-fill ${teethDiagnozis.tooth11.seal_left_color}` : ''}
                                 `}  
