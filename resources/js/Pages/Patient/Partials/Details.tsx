@@ -1,20 +1,10 @@
-import InputLabel from '../../../Components/Form/InputLabel';
-import PrimaryButton from '../../../Components/Form/PrimaryButton';
-import { Transition } from '@headlessui/react';
 import { Link, router, useForm, usePage } from '@inertiajs/react';
 import React, { useState, useCallback, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngPatient from "../../../Lang/Patient/translation";
-import InputText from "../../../Components/Form/InputText";
-import InputSelect from "../../../Components/Form/InputSelect";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPercent, faPhone, faEnvelope, faFemale, faLocationDot, faMale } from '@fortawesome/free-solid-svg-icons'
-import InputTextarea from '../../../Components/Form/InputTextarea';
-import { InputMask } from '@react-input/mask';
-import moment from "moment";
-import axios from 'axios';
 import { faUserPlus, faFloppyDisk, faPencil, faTrash, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 
 export default function Details({

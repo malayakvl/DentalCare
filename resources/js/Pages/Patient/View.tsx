@@ -10,8 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faPencil, faTrash, faCopy, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import lngFormula from "../../Lang/Formula/translation";
-import { setPatientTab } from '../../Redux/Patient';
-import InputText from '@/Components/Form/InputText';
+import InputText from '../../Components/Form/InputText';
 import ViewFormula from './ViewFormula';
 import moment from 'moment';
 
@@ -42,7 +41,38 @@ export default function index({ patientData, type, treatmentData }) {
                 {treatmentData.map((element, index) => {
                     return (
                         <div key={index} className="w-full bg-white border mt-10 patient-stage">
-                            <h2 className="text-left text-[14px] font-bold">{element.stage_name} {moment.utc(element.created_at).format('D.MM.YY')}</h2>
+                            <div className="flex justify-between">
+                                <h2 className="text-left text-[14px] font-bold">{element.stage_name} {moment.utc(element.created_at).format('D.MM.YY')}</h2>
+                                <div className="icon-block actions-block">
+                                    <ul>
+                                        <li className="inline-block">
+                                            <Link href="/">
+                                                <FontAwesomeIcon icon={faUserPlus} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href={`/formula/edit/${element.id}`}>
+                                                <FontAwesomeIcon icon={faPencil} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href="">
+                                                <FontAwesomeIcon icon={faCopy} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href="">
+                                                <FontAwesomeIcon icon={faPrint} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href="">
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             {element.type === 'formula' && (
                                 <div className="w-full flex flex-row">
                                     <div className="w-1/2">

@@ -73,13 +73,6 @@ export default function Form({
         }));
     }
 
-    // const handleChangeMask = (value, name) => {
-    //     setValues(values => ({
-    //         ...values,
-    //         [name]: value,
-    //     }))
-    // }
-
     const submit = (e) => {
         e.preventDefault();
         post(route("patient.update"));

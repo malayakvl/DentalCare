@@ -31,11 +31,45 @@ export default function FormulaDiagnozis() {
     });
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
     const jawDown = ['tooth48', 'tooth47', 'tooth46', 'tooth45', 'tooth44', 'tooth43', 'tooth42', 'tooth41', 'tooth31', 'tooth32', 'tooth33', 'tooth34', 'tooth35', 'tooth36', 'tooth37', 'tooth38'];
-    const _dArray = ['change_color', 'fissure', 'pulpit']
+    const _dArray = [
+        'absent',
+        'abutment',
+        'apex',
+        'caries_bottom',
+        'caries_center',
+        'caries_left',
+        'caries_right',
+        'caries_top',
+        'ceramic_crown',
+        'change_color',
+        'channel_not_sealed',
+        'channel_part_sealed',
+        'channel_top_sealed',
+        'culttab',
+        'fissure',
+        'implant',
+        'mceramic_crown',
+        'metalic_crown',
+        'parodontit',
+        'periodontit',
+        'pin',
+        'pulpit',
+        'seal_bottom',
+        'seal_center',
+        'seal_left',
+        'seal_right',
+        'seal_top',
+        'seal_cervical',
+        'shaper',
+        'tartar',
+        'temporary_crown',
+        'vinir',
+        'wedge_shaped_defect',
+        'zirconia_crown'
+    ]
 
     const renderDiagnoze = (num) => {
         let _diagnozisStr = false;
-        const diagnozis = teethDiagnozis[`tooth${num}`];
         if (teethDiagnozis[`tooth${num}`]) {
             Object.keys(teethDiagnozis[`tooth${num}`]).forEach((key, _key) => {
                 if (teethDiagnozis[`tooth${num}`][key]) {
@@ -43,7 +77,6 @@ export default function FormulaDiagnozis() {
                 }
             });
         }  
-
         if (_diagnozisStr) {
             return (
                 <li className='flex'>
@@ -52,8 +85,16 @@ export default function FormulaDiagnozis() {
                         <span className="descr-d"><b>{num}:</b></span>
                     </div>
                     <div className="flex flex-wrap">
+                        {/*Render tooth 18 dia*/}
                         {Object.keys(teethDiagnozis[`tooth${num}`]).map((_v, _k) => (
-                            <React.Fragment key={_k}>{(teethDiagnozis[`tooth${num}`][_v] && _dArray.includes(_v)) && <span className="d-badge"><i className='d-badge-close' />{msgFormula.get(`formula.${_v}`)}</span>}</React.Fragment>
+                            <React.Fragment key={_k}>
+                                {(teethDiagnozis[`tooth${num}`][_v] && _dArray.includes(_v)) ?
+                                    <span className="d-badge">
+                                        <i className='d-badge-close' />
+                                        {msgFormula.get(`formula.${_v}`)}
+                                    </span>
+                                : ''}
+                            </React.Fragment>
                         ))}
                     </div>
                 </li>
@@ -65,14 +106,24 @@ export default function FormulaDiagnozis() {
 
     const renderJawUp = () => {
         const jawUp = [18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28];
+        const jawDown = [48,47,46,45,44,43,42,41,31,32,33,34,35,36,37,38];
         return (
-            <>
-                {jawUp.map((index, num) => (
-                    <React.Fragment key={index}>
-                        {renderDiagnoze(index)}
-                    </React.Fragment>
-                ))}
-            </>
+            <div className="w-full flex">
+                <div className="w-1/2">
+                    {jawUp.map((index, num) => (
+                        <React.Fragment key={index}>
+                            {renderDiagnoze(index)}
+                        </React.Fragment>
+                    ))}
+                </div>
+                <div className="w-1/2">
+                    {jawDown.map((index, num) => (
+                        <React.Fragment key={index}>
+                            {renderDiagnoze(index)}
+                        </React.Fragment>
+                    ))}
+                </div>
+            </div>
         );
     }
     

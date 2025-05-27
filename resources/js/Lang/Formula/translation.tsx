@@ -59,7 +59,15 @@ const lngPatient = {
         "allteeth": "Всі зуби",
         "maxilla": "Верхня щелепа",
         "mandible": "Нижня щелепа",
-        "occlusion":"Оклюзія"
+        "occlusion":"Оклюзія",
+        "wedge_shaped_defect": "Клиновидний дефект",
+        "temporary_crown": "Тимчасова коронка",
+        "zirconia_crown": "Цирконієва коронка",
+        "channel_part_sealed":"Канал частково запломбований",
+        "channel_not_sealed":"Канал не запломбований",
+        "caries_center": "Карієс",
+        "metalic_crown": "Коронка металева",
+        "culttab":"Культова вкладка"
         
     }
 }
