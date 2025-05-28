@@ -863,7 +863,7 @@ export default function Tooth26() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
-                                        (tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
+                                        (tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
                                         (tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
                                         (!tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
                                     ) ? 5 : 0

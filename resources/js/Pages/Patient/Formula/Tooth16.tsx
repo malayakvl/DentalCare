@@ -408,7 +408,6 @@ export default function Tooth16() {
                         {/*КАРИЕС BOTTOM*/}
                         <g id="s_header_16_1" 
                             onClick={() => {
-                                alert('bottom')
                                 setColordedPart(diagnozis, 'bottom');
                             }}
                             className="caries-filling"
@@ -931,7 +930,7 @@ export default function Tooth16() {
                                       stroke: 'rgb(81, 79, 72)',
                                       strokeWidth: (
                                           (!tooth16Diagnozis.seal_top && !tooth16Diagnozis.seal_center && tooth16Diagnozis.seal_bottom) ||
-                                          (tooth16Diagnozis.seal_bottom && tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_top) ||
+                                          (tooth16Diagnozis.seal_bottom && !tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_top) ||
                                           (tooth16Diagnozis.seal_right && tooth16Diagnozis.seal_left && tooth16Diagnozis.seal_center && !tooth16Diagnozis.seal_top) ||
                                           (!tooth16Diagnozis.seal_top && !tooth16Diagnozis.seal_bottom && tooth16Diagnozis.seal_center)
                                       ) ? 5 : 0

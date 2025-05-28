@@ -844,7 +844,7 @@ export default function Tooth27() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (tooth27Diagnozis.seal_bottom && !tooth27Diagnozis.seal_center) ||
-                                        (tooth27Diagnozis.seal_bottom && tooth27Diagnozis.seal_center && !tooth27Diagnozis.seal_top) ||
+                                        (tooth27Diagnozis.seal_bottom && !tooth27Diagnozis.seal_center && !tooth27Diagnozis.seal_top) ||
                                         (tooth27Diagnozis.seal_right && tooth27Diagnozis.seal_left && tooth27Diagnozis.seal_center && !tooth27Diagnozis.seal_top) ||
                                         (!tooth27Diagnozis.seal_top && !tooth27Diagnozis.seal_bottom && tooth27Diagnozis.seal_center)
                                     ) ? 5 : 0

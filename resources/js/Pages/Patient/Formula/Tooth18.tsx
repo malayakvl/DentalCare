@@ -823,7 +823,6 @@ export default function Tooth18() {
                         <g
                             className="caries-filling"
                             onClick={() => {
-                                alert('center')
                                 setColordedPart(diagnozis, 'center');
                             }}
                         >
@@ -942,7 +941,7 @@ export default function Tooth18() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (!tooth18Diagnozis.seal_top && !tooth18Diagnozis.seal_center && tooth18Diagnozis.seal_bottom) ||
-                                        (tooth18Diagnozis.seal_bottom && tooth18Diagnozis.seal_center && !tooth18Diagnozis.seal_top) ||
+                                        (tooth18Diagnozis.seal_bottom && !tooth18Diagnozis.seal_center && !tooth18Diagnozis.seal_top) ||
                                         (tooth18Diagnozis.seal_right && tooth18Diagnozis.seal_left && tooth18Diagnozis.seal_center && !tooth18Diagnozis.seal_top) ||
                                         (!tooth18Diagnozis.seal_top && !tooth18Diagnozis.seal_bottom && tooth18Diagnozis.seal_center)
                                     ) ? 5 : 0
