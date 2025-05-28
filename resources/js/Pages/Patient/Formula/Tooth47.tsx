@@ -827,9 +827,10 @@ export default function Tooth47() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth47Diagnozis.seal_top && !tooth47Diagnozis.seal_center) ||
-                                        (tooth47Diagnozis.seal_right && tooth47Diagnozis.seal_left && !tooth47Diagnozis.seal_center && tooth47Diagnozis.seal_top) ||
-                                        (!tooth47Diagnozis.seal_bottom && !tooth47Diagnozis.seal_top && tooth47Diagnozis.seal_center)
+                                        (!tooth47Diagnozis.seal_bottom && tooth47Diagnozis.seal_center && tooth47Diagnozis.seal_top) ||
+                                        (tooth47Diagnozis.seal_bottom && tooth47Diagnozis.seal_center && !tooth47Diagnozis.seal_top) ||
+                                        (tooth47Diagnozis.seal_right && tooth47Diagnozis.seal_left && tooth47Diagnozis.seal_center && !tooth47Diagnozis.seal_top) ||
+                                        (!tooth47Diagnozis.seal_top && !tooth47Diagnozis.seal_bottom && tooth47Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M358.5 1108C369.333 1118.5 403.4 1137.4 453 1129" />

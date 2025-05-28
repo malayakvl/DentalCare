@@ -719,7 +719,7 @@ export default function Tooth28() {
                                 C1805.4,380.6,1795.5,390.6,1790.9,396.2z"
                             />
                             <path className={
-                                    `st8 caries-center
+                                `st8 caries-center
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth28.caries_center ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth28.seal_center ? `seal-fill ${teethDiagnozis.tooth28.seal_center_color}` : ''}
@@ -826,9 +826,10 @@ export default function Tooth28() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth28Diagnozis.seal_bottom && !tooth28Diagnozis.seal_center) ||
-                                        (tooth28Diagnozis.seal_right && tooth28Diagnozis.seal_left && tooth28Diagnozis.seal_center && !tooth28Diagnozis.seal_bottom) ||
-                                        (!tooth28Diagnozis.seal_bottom && !tooth28Diagnozis.seal_top && tooth28Diagnozis.seal_center)
+                                        (!tooth28Diagnozis.seal_bottom && tooth28Diagnozis.seal_center && tooth28Diagnozis.seal_top) ||
+                                        (tooth28Diagnozis.seal_bottom && tooth28Diagnozis.seal_center && !tooth28Diagnozis.seal_top) ||
+                                        (tooth28Diagnozis.seal_right && tooth28Diagnozis.seal_left && tooth28Diagnozis.seal_center && !tooth28Diagnozis.seal_top) ||
+                                        (!tooth28Diagnozis.seal_top && !tooth28Diagnozis.seal_bottom && tooth28Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                                 d="M1861.5 380.999C1845.5 372.5 1805.8 379.999 1791 395.999"

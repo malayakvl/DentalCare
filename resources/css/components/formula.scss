@@ -580,3 +580,22 @@ fill: #e8e8e8;
 .oh {
     opacity: 0.9 !important;
 }
+.d-circle-blue {
+    background-color: rgb(170, 250, 169);
+    width: 8px;
+    height: 8px;
+    border-color: rgb(71, 103, 70);
+    border:solid 1px;
+    position: absolute;
+    right: 10px;
+    top: 14px;
+}
+.d-badge.blue {
+    background-color: rgb(187, 245, 187, 0.5);
+}
+.d-badge.pink {
+    background-color: rgba(246, 157, 157, 0.5);
+}
+.d-badge.yellow {
+    background-color: rgba(241, 237, 22, 0.5);
+}

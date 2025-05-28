@@ -1,26 +1,16 @@
-import InputLabel from '../../../Components/Form/InputLabel';
-import PrimaryButton from '../../../Components/Form/PrimaryButton';
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm, usePage } from '@inertiajs/react';
-import React, { useState, useCallback, useEffect } from 'react';
-import { useSelector } from "react-redux";
+import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngFormula from "../../../Lang/Formula/translation";
 import lngPatient from "../../../Lang/Patient/translation";
-import InputText from "../../../Components/Form/InputText";
-import InputSelect from "../../../Components/Form/InputSelect";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPercent, faPhone, faEnvelope, faFemale, faLocationDot, faMale } from '@fortawesome/free-solid-svg-icons'
-import InputTextarea from '../../../Components/Form/InputTextarea';
-import { InputMask } from '@react-input/mask';
-import moment from "moment";
-import axios from 'axios';
-import { faUserPlus, faFloppyDisk, faPencil, faTrash, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
-import { getTeethDiagnozisSelector } from '@/Redux/Formula/selectors';
+import { getTeethDiagnozisSelector, getRemoveDiaSelector } from '../../../Redux/Formula/selectors';
+import { setToothDiagnoze, setRemoveDia } from "../../../Redux/Formula";
 
 export default function FormulaDiagnozis() {
+    const dispatch = useDispatch<any>();
     const appLang = useSelector(appLangSelector);
+    const removeDia = useSelector(getRemoveDiaSelector); //important for update state do not remove
     const msg = new Lang({
         messages: lngPatient,
         locale: appLang,
@@ -30,7 +20,6 @@ export default function FormulaDiagnozis() {
         locale: appLang,
     });
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const jawDown = ['tooth48', 'tooth47', 'tooth46', 'tooth45', 'tooth44', 'tooth43', 'tooth42', 'tooth41', 'tooth31', 'tooth32', 'tooth33', 'tooth34', 'tooth35', 'tooth36', 'tooth37', 'tooth38'];
     const _dArray = [
         'absent',
         'abutment',
@@ -40,7 +29,7 @@ export default function FormulaDiagnozis() {
         'caries_left',
         'caries_right',
         'caries_top',
-        'ceramic_crown',
+        'cervical_caries',
         'change_color',
         'channel_not_sealed',
         'channel_part_sealed',
@@ -48,25 +37,38 @@ export default function FormulaDiagnozis() {
         'culttab',
         'fissure',
         'implant',
-        'mceramic_crown',
-        'metalic_crown',
         'parodontit',
         'periodontit',
         'pin',
         'pulpit',
+        'shaper',
+        'tartar',
+        'temporary_crown',
+        'wedge_shaped_defect',
+    ];
+    const dSealArray = [
+        'ceramic_crown',
+        'seal_cervical',
         'seal_bottom',
         'seal_center',
         'seal_left',
         'seal_right',
         'seal_top',
-        'seal_cervical',
-        'shaper',
-        'tartar',
-        'temporary_crown',
+        'metalic_crown',
+        'mceramic_crown',
+        'zirconia_crown',
         'vinir',
-        'wedge_shaped_defect',
-        'zirconia_crown'
-    ]
+    ];
+    const dMetalicCrownArray = [
+        'metalic_crown',
+    ];
+
+    const disableDia = (num, key) => {
+        const currentDiagnozis = teethDiagnozis;
+        currentDiagnozis[`tooth${num}`][`${key}`] = false;
+        dispatch(setToothDiagnoze(currentDiagnozis));
+        dispatch(setRemoveDia(true));
+    }
 
     const renderDiagnoze = (num) => {
         let _diagnozisStr = false;
@@ -89,11 +91,20 @@ export default function FormulaDiagnozis() {
                         {Object.keys(teethDiagnozis[`tooth${num}`]).map((_v, _k) => (
                             <React.Fragment key={_k}>
                                 {(teethDiagnozis[`tooth${num}`][_v] && _dArray.includes(_v)) ?
-                                    <span className="d-badge">
+                                    <span className="d-badge" onClick={() => disableDia(num, _v)}>
                                         <i className='d-badge-close' />
                                         {msgFormula.get(`formula.${_v}`)}
                                     </span>
-                                : ''}
+                                    : ''
+                                }
+                                {(teethDiagnozis[`tooth${num}`][_v] && dSealArray.includes(_v)) ?
+                                    <span className={`d-badge ${teethDiagnozis[`tooth${num}`][`${_v}_color`]}`} onClick={() => disableDia(num, _v)}>
+                                        <i className='d-badge-close' />
+                                        {msgFormula.get(`formula.${_v}`)}
+                                    </span>
+                                    : ''
+                                }
+
                             </React.Fragment>
                         ))}
                     </div>

@@ -21,6 +21,7 @@ import {
     teethTypeSelector,
     allTeethAdultSelector,
     getActiveToothNumberSelector,
+    getRemoveDiaSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage18 from './periodontit18';
@@ -44,6 +45,7 @@ export default function Tooth18() {
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
     const allTeeth = useSelector(allTeethAdultSelector);
+    const removeDia = useSelector(getRemoveDiaSelector);
   
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -164,7 +166,7 @@ export default function Tooth18() {
             }
         }
     }
-    
+ console.log('Remove dia', removeDia)
     return (
         <>
             <g id="18" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
@@ -821,6 +823,7 @@ export default function Tooth18() {
                         <g
                             className="caries-filling"
                             onClick={() => {
+                                alert('center')
                                 setColordedPart(diagnozis, 'center');
                             }}
                         >
@@ -854,7 +857,7 @@ export default function Tooth18() {
                             C328.3,385.4,328.4,395.7,327.4,405.9z"/>
                             <path
                                 className={
-                                    `st8 caries-right
+                                `st8 caries-right
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth18.caries_right ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth18.seal_right ? `seal-fill ${teethDiagnozis.tooth18.seal_right_color}` : ''}
@@ -938,9 +941,10 @@ export default function Tooth18() {
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth18Diagnozis.seal_bottom && !tooth18Diagnozis.seal_center) ||
-                                        (tooth18Diagnozis.seal_right && tooth18Diagnozis.seal_left && tooth18Diagnozis.seal_center && !tooth18Diagnozis.seal_bottom) ||
-                                        (!tooth18Diagnozis.seal_bottom && !tooth18Diagnozis.seal_top && tooth18Diagnozis.seal_center)
+                                        (!tooth18Diagnozis.seal_bottom && tooth18Diagnozis.seal_center && tooth18Diagnozis.seal_top) ||
+                                        (tooth18Diagnozis.seal_bottom && tooth18Diagnozis.seal_center && !tooth18Diagnozis.seal_top) ||
+                                        (tooth18Diagnozis.seal_right && tooth18Diagnozis.seal_left && tooth18Diagnozis.seal_center && !tooth18Diagnozis.seal_top) ||
+                                        (!tooth18Diagnozis.seal_top && !tooth18Diagnozis.seal_bottom && tooth18Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                             />

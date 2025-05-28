@@ -58,7 +58,8 @@ import {
 
     checkAction,
     setStateFormula,
-    setClearFormula
+    setClearFormula,
+    setRemoveDia
     
 } from "./actions";
 
@@ -8309,12 +8310,19 @@ const initialState = {
     pBar2Down: [0, [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], [0,0],[0,0], [0,0], [0,0], 0],
 
     stateFormula: '',
+    removeDia: false
 }
 
 // ------------------------------------
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
+    [setRemoveDia.toString()]: {
+        next: (state, action) => ({
+            ...state,
+            removeDia: action.payload
+        })
+    },
     [setSchema.toString()]: {
         next: (state, action) => ({
             ...state,
@@ -12761,7 +12769,8 @@ export {
 
     checkAction,
     setStateFormula,
-    setClearFormula
+    setClearFormula,
+    setRemoveDia
 }
 
 export default handleActions(ACTION_HANDLERS, initialState);

@@ -201,7 +201,7 @@ export default function Tooth12() {
 
                     if (diagnozis) {
                         const tDiaData = setupDiagnoze(
-                            1,
+                            12,
                             diagnozis,
                             subDiagnozis,
                             teethDiagnozis,

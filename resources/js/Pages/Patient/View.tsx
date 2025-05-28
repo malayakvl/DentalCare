@@ -36,6 +36,7 @@ export default function index({ patientData, type, treatmentData }) {
     };
 
     const renderTreatmentStages = () => {
+        console.log('TUT', treatmentData)
         return (
             <>
                 {treatmentData.map((element, index) => {

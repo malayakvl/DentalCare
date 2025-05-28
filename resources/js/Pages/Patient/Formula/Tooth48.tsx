@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     setToothDiagnoze,
     setSelectedToothNumber,
-    setChangeDia
+    setChangeDia, setRemoveDia
 } from '../../../Redux/Formula';
 import {
     getDiagnosisSelector,
@@ -21,6 +21,8 @@ import {
     teethTypeSelector,
     allTeethAdultSelector,
     getActiveToothNumberSelector,
+    getRemoveDiaSelector,
+    changeDiaSelector
 } from "../../../Redux/Formula/selectors";
 import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage48 from './periodontit48';
@@ -43,6 +45,7 @@ export default function Tooth48() {
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
     const allTeeth = useSelector(allTeethAdultSelector);
+    const changeDia = useSelector(changeDiaSelector); //important for update state do not remove
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -841,9 +844,10 @@ export default function Tooth48() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth48Diagnozis.seal_top && !tooth48Diagnozis.seal_center) ||
-                                        (tooth48Diagnozis.seal_right && tooth48Diagnozis.seal_left && !tooth48Diagnozis.seal_center && tooth48Diagnozis.seal_top) ||
-                                        (!tooth48Diagnozis.seal_bottom && !tooth48Diagnozis.seal_top && tooth48Diagnozis.seal_center)
+                                        (!tooth48Diagnozis.seal_bottom && tooth48Diagnozis.seal_center && tooth48Diagnozis.seal_top) ||
+                                        (tooth48Diagnozis.seal_bottom && tooth48Diagnozis.seal_center && !tooth48Diagnozis.seal_top) ||
+                                        (tooth48Diagnozis.seal_right && tooth48Diagnozis.seal_left && tooth48Diagnozis.seal_center && !tooth48Diagnozis.seal_top) ||
+                                        (!tooth48Diagnozis.seal_top && !tooth48Diagnozis.seal_bottom && tooth48Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M230 1073.5C237 1085 278.2 1105.3 303 1094.5" 

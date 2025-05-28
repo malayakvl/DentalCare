@@ -50,6 +50,7 @@ export default function Tooth17() {
                 teethDiagnozis.tooth17.caries_bottom = !teethDiagnozis.tooth17.caries_bottom;
             }
             if (toothPart === 'center') {
+                alert(1)
                 teethDiagnozis.tooth17.caries_center = !teethDiagnozis.tooth17.caries_center;
             }
             if (toothPart === 'left') {
@@ -922,7 +923,8 @@ export default function Tooth17() {
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth17Diagnozis.seal_bottom && !tooth17Diagnozis.seal_center) ||
+                                        (!tooth17Diagnozis.seal_bottom && tooth17Diagnozis.seal_center && tooth17Diagnozis.seal_top) ||
+                                        (tooth17Diagnozis.seal_bottom && tooth17Diagnozis.seal_center && !tooth17Diagnozis.seal_top) ||
                                         (tooth17Diagnozis.seal_right && tooth17Diagnozis.seal_left && tooth17Diagnozis.seal_center && !tooth17Diagnozis.seal_bottom) ||
                                         (!tooth17Diagnozis.seal_bottom && !tooth17Diagnozis.seal_top && tooth17Diagnozis.seal_center)
                                     ) ? 5 : 0

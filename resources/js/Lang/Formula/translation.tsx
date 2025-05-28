@@ -65,10 +65,23 @@ const lngPatient = {
         "zirconia_crown": "Цирконієва коронка",
         "channel_part_sealed":"Канал частково запломбований",
         "channel_not_sealed":"Канал не запломбований",
-        "caries_center": "Карієс",
+        "caries_bottom": "Карієс низ",
+        "caries_center": "Карієс центр",
+        "caries_left": "Карієс ліво",
+        "caries_right": "Карієс право",
+        "caries_top": "Карієс корінь",
         "metalic_crown": "Коронка металева",
-        "culttab":"Культова вкладка"
-        
+        "culttab":"Культова вкладка",
+        "channel_top_sealed":"Канал запломбований до верхівки",
+        "ceramic_crown": "Коронка керамічна",
+        "seal_bottom": "Пломба низ",
+        "seal_center": "Пломба центр",
+        "seal_top": "Пломба корінь",
+        "seal_left": "Пломба ліво",
+        "seal_right": "Пломба право",
+        "mceramic_crown": "Коронка металокерамічна",
+        "cervical_caries": "Пришийковий карієс"
+
     }
 }
 export default lngPatient

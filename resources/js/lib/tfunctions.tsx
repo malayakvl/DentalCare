@@ -39,7 +39,7 @@ export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiag
     } else if (diagnoze === 'seal') {
         teethdiagnoze[`tooth${toothNum}`].seal = !teethdiagnoze[`tooth${toothNum}`].seal;
     } else if (diagnoze === 'seal_cervical') {
-        if (!teethdiagnoze[`tooth${toothNum}`].seal_cervical && teethdiagnoze[`tooth${toothNum}`].seal_cervical_color === "") {
+        if (!teethdiagnoze[`tooth${toothNum}`].seal_cervical && (teethdiagnoze[`tooth${toothNum}`].seal_cervical_color === "" || teethdiagnoze[`tooth${toothNum}`].seal_cervical_color === null)) {
             teethdiagnoze[`tooth${toothNum}`].seal_cervical = true;
             teethdiagnoze[`tooth${toothNum}`].seal_cervical_color = wsDefectColor;
         } else if (teethdiagnoze[`tooth${toothNum}`].seal_cervical && teethdiagnoze[`tooth${toothNum}`].seal_cervical_color != wsDefectColor) {
@@ -49,19 +49,23 @@ export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiag
             teethdiagnoze[`tooth${toothNum}`].seal_cervical_color = "";
         }
     } else if (diagnoze === 'vinir') {
-        if (!teethdiagnoze[`tooth${toothNum}`].vinir && teethdiagnoze[`tooth${toothNum}`].vinir_color === "") {
+        console.log('vinir', teethdiagnoze[`tooth${toothNum}`])
+        if (!teethdiagnoze[`tooth${toothNum}`].vinir && (teethdiagnoze[`tooth${toothNum}`].vinir_color === "" || teethdiagnoze[`tooth${toothNum}`].vinir_color === null)) {
+            console.log(1)
             teethdiagnoze[`tooth${toothNum}`].vinir = true;
             teethdiagnoze[`tooth${toothNum}`].vinir_color = vinirColor;
         } else if (teethdiagnoze[`tooth${toothNum}`].vinir && teethdiagnoze[`tooth${toothNum}`].vinir_color != vinirColor) {
+            console.log(2)
             teethdiagnoze[`tooth${toothNum}`].vinir_color = vinirColor;
         } else {
+            console.log(3)
             teethdiagnoze[`tooth${toothNum}`].vinir = false;
             teethdiagnoze[`tooth${toothNum}`].vinir_color = "";
         }
     } else if (diagnoze === 'temporary_crown') {
         teethdiagnoze[`tooth${toothNum}`].temporary_crown = !teethdiagnoze[`tooth${toothNum}`].temporary_crown;
     } else if (diagnoze === 'ceramic_crown') {
-        if (!teethdiagnoze[`tooth${toothNum}`].ceramic_crown && teethdiagnoze[`tooth${toothNum}`].ceramic_crown_color === "") {
+        if (!teethdiagnoze[`tooth${toothNum}`].ceramic_crown && (teethdiagnoze[`tooth${toothNum}`].ceramic_crown_color === ""  || teethdiagnoze[`tooth${toothNum}`].ceramic_crown_color === null)) {
             teethdiagnoze[`tooth${toothNum}`].ceramic_crown = true;
             teethdiagnoze[`tooth${toothNum}`].ceramic_crown_color = ceramicCrownColor;
         } else if (teethdiagnoze[`tooth${toothNum}`].ceramic_crown && teethdiagnoze[`tooth${toothNum}`].ceramic_crown_color != ceramicCrownColor) {
@@ -71,7 +75,7 @@ export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiag
             teethdiagnoze[`tooth${toothNum}`].ceramic_crown_color = "";
         }
     } else if (diagnoze === 'mceramic_crown') {
-        if (!teethdiagnoze[`tooth${toothNum}`].mceramic_crown && teethdiagnoze[`tooth${toothNum}`].mceramic_crown_color === "") {
+        if (!teethdiagnoze[`tooth${toothNum}`].mceramic_crown && (teethdiagnoze[`tooth${toothNum}`].mceramic_crown_color === "" || teethdiagnoze[`tooth${toothNum}`].mceramic_crown_color === null)) {
             teethdiagnoze[`tooth${toothNum}`].mceramic_crown = true;
             teethdiagnoze[`tooth${toothNum}`].mceramic_crown_color = mceramicCrownColor;
         } else if (teethdiagnoze[`tooth${toothNum}`].mceramic_crown && teethdiagnoze[`tooth${toothNum}`].mceramic_crown_color != mceramicCrownColor) {
@@ -81,7 +85,7 @@ export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiag
             teethdiagnoze[`tooth${toothNum}`].mceramic_crown_color = "";
         }
     } else if (diagnoze === 'metalic_crown') {
-        if (!teethdiagnoze[`tooth${toothNum}`].metalic_crown && teethdiagnoze[`tooth${toothNum}`].metalic_crown_color === "") {
+        if (!teethdiagnoze[`tooth${toothNum}`].metalic_crown && (teethdiagnoze[`tooth${toothNum}`].metalic_crown_color === "" || teethdiagnoze[`tooth${toothNum}`].metalic_crown_color === null)) {
             teethdiagnoze[`tooth${toothNum}`].metalic_crown = true;
             teethdiagnoze[`tooth${toothNum}`].metalic_crown_color = metalicCrownColor;
         } else if (teethdiagnoze[`tooth${toothNum}`].metalic_crown && teethdiagnoze[`tooth${toothNum}`].metalic_crown_color != metalicCrownColor) {
@@ -91,7 +95,7 @@ export default function setupDiagnoze(toothNum, diagnoze, subdiagnoze, teethdiag
             teethdiagnoze[`tooth${toothNum}`].metalic_crown_color = "";
         }
     } else if (diagnoze === 'zirconia_crown') {
-        if (!teethdiagnoze[`tooth${toothNum}`].zirconia_crown && teethdiagnoze[`tooth${toothNum}`].zirconia_crown_color === "") {
+        if (!teethdiagnoze[`tooth${toothNum}`].zirconia_crown && (teethdiagnoze[`tooth${toothNum}`].zirconia_crown_color === "" || teethdiagnoze[`tooth${toothNum}`].zirconia_crown_color === null)) {
             teethdiagnoze[`tooth${toothNum}`].zirconia_crown = true;
             teethdiagnoze[`tooth${toothNum}`].zirconia_crown_color = zirconiaCrownColor;
         } else if (teethdiagnoze[`tooth${toothNum}`].zirconia_crown && teethdiagnoze[`tooth${toothNum}`].zirconia_crown_color != zirconiaCrownColor) {

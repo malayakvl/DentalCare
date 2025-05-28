@@ -173,15 +173,17 @@
     fill: rgba(241, 236, 110);
 }
 .d-badge {
-    @apply inline-flex items-center rounded-md bg-purple-50 text-xs font-medium 
+    @apply inline-flex items-center rounded-md text-xs font-medium
         text-black ring-1 ring-inset mr-4 relative;
     padding: 0px 20px 4px 10px;
     font-size: 11px;
     height: 25px;
     margin-bottom: 10px;
-    background-color: rgb(239, 233, 235);
+    background-color: rgb(252, 234, 252);
     border-color: rgb(106, 19, 44);
     box-shadow: none !important;
+    background-color: rgba(228, 211, 250, 0.3);
+    line-height:10px;
 }
 .d-badge-close {
     @apply absolute top-[0px] right-[5px] cursor-pointer;

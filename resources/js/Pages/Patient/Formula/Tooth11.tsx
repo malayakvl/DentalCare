@@ -43,7 +43,6 @@ export default function Tooth11() {
     const teethType = useSelector(teethTypeSelector);
     const selectedTooth = useSelector(getActiveToothNumberSelector);
     const allTeeth = useSelector(allTeethAdultSelector);
-
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
             if (toothPart === 'bottom') {

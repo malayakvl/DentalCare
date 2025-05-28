@@ -813,7 +813,8 @@ export default function Tooth46() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth46Diagnozis.seal_bottom && !tooth46Diagnozis.seal_center) ||
+                                        (!tooth46Diagnozis.seal_bottom && tooth46Diagnozis.seal_center && tooth46Diagnozis.seal_top) ||
+                                        (tooth46Diagnozis.seal_bottom && tooth46Diagnozis.seal_center && !tooth46Diagnozis.seal_top) ||
                                         (tooth46Diagnozis.seal_right && tooth46Diagnozis.seal_left && tooth46Diagnozis.seal_center && !tooth46Diagnozis.seal_top) ||
                                         (!tooth46Diagnozis.seal_top && !tooth46Diagnozis.seal_bottom && tooth46Diagnozis.seal_center)
                                     ) ? 5 : 0

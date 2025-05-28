@@ -827,9 +827,10 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_top && !tooth38Diagnozis.seal_center) ||
-                                        (tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_top) ||
-                                        (!tooth38Diagnozis.seal_bottom && !tooth38Diagnozis.seal_top && tooth38Diagnozis.seal_center)
+                                        (!tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_top) ||
+                                        (tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top) ||
+                                        (tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top) ||
+                                        (!tooth38Diagnozis.seal_top && !tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1866.5 1073.5C1859.5 1085 1818.3 1105.3 1793.5 1094.5" />
