@@ -1,8 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
+    setToothDiagnoze,
+    setSelectedToothNumber,
+    setChangeDia
+} from '../../../Redux/Formula';
+import {
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -15,14 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    teethTypeSelector,
+    allTeethAdultSelector,
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
+import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage43 from './periodontit43';
 
 export default function Tooth43() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -36,6 +40,9 @@ export default function Tooth43() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const teethType = useSelector(teethTypeSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -143,166 +150,97 @@ export default function Tooth43() {
         }
     }
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth43.show) {
+                document.getElementById('TH-43').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'child' && !teethDiagnozis.tooth83.show) {
+                document.getElementById('TH-83').classList.remove('f-tooth-active');
+            }
+            if (teethType === 'adult' && !teethDiagnozis.tooth43.show) {
+                document.getElementById('TH-43').classList.remove('f-tooth-active');
+                if (teethDiagnozis.tooth83.show) {
+                    document.getElementById('TH-83').classList.add('f-tooth-active');
+                }
+            }
+        }
+    }
+
+    const showHideTopCommonView = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth43.show) {
+                document.getElementById('TH-83').classList.remove('f-tooth-active');
+                document.getElementById('TH-43').classList.add('f-tooth-active');
+            }
+        }
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth43.show) {
+                document.getElementById('TH-43').classList.remove('f-tooth-active');
+                if (teethDiagnozis.tooth83.show) {
+                    document.getElementById('TH-83').classList.add('f-tooth-active');
+                }
+            }
+        }
+    }
+
     return (
         <>
-            <g id="43" className="df-tooth-text">
-                <text transform="matrix(1 0 0 1 852.334 842.0025)" className={`st3 st4 st5 ${toothActive.tooth43.active ? 'num-active' : ''}`}>43</text>
+            <g id="43" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
+                <text transform="matrix(1 0 0 1 852.334 842.0025)" className={`st3 st4 st5 ${selectedTooth === 43 ? 'num-active' : ''}`}>43</text>
             </g>
-            <g className={`f-tooth-active`}
-                onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('45').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('45').classList.remove('tooth-number-hover')
-                }}
+            <g id="TH-43" className={`f-tooth-init ${((teethDiagnozis.tooth43.show || allTeeth) && !teethDiagnozis.tooth43.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(16));
-                    if (toothActive.tooth43.active) {
-                        dispatch(setNewToothActive({tooth43: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth43: {active: true}}))
-                    }
+                    teethDiagnozis.tooth43.show = !teethDiagnozis.tooth43.show;
+                    teethDiagnozis.tooth83.show = false;
+
+                    dispatch(setSelectedToothNumber(43));
+                    dispatch(setChangeDia(Math.random()));
+
+
                     if (diagnozis) {
-                        if (diagnozis === 'change_color')
-                            teethDiagnozis.tooth43.change_color = !teethDiagnozis.tooth43.change_color;
-                        else if (diagnozis === 'fissure')
-                            teethDiagnozis.tooth43.fissure = !teethDiagnozis.tooth43.fissure;
-                        else if (diagnozis === 'caries')
-                            teethDiagnozis.tooth43.caries = !teethDiagnozis.tooth43.caries;
-                        else if (diagnozis === 'cervical_caries')
-                            teethDiagnozis.tooth43.cervical_caries = !teethDiagnozis.tooth43.cervical_caries;
-                        else if (diagnozis === 'wedge_shaped_defect')
-                            teethDiagnozis.tooth43.wedge_shaped_defect = !teethDiagnozis.tooth43.wedge_shaped_defect;
-                        else if (diagnozis === 'tartar')
-                            teethDiagnozis.tooth43.tartar = !teethDiagnozis.tooth43.tartar;
-                        else if (diagnozis === 'pulpit') {
-                            teethDiagnozis.tooth43.pulpit = !teethDiagnozis.tooth43.pulpit;
-                            teethDiagnozis.tooth43.channel_class = teethDiagnozis.tooth43.pulpit ? 'pulpit' : ''
-                        } else if (diagnozis === 'channel_not_sealed') {
-                            teethDiagnozis.tooth43.channel_not_sealed = !teethDiagnozis.tooth43.channel_not_sealed;
-                            teethDiagnozis.tooth43.channel_class = teethDiagnozis.tooth43.channel_not_sealed ? 'channel-not-sealed' : '';
-                        } else if (diagnozis === 'channel_top_sealed') {
-                            teethDiagnozis.tooth43.channel_top_sealed = !teethDiagnozis.tooth43.channel_top_sealed;
-                            teethDiagnozis.tooth43.channel_class = teethDiagnozis.tooth43.channel_top_sealed ? 'channel-top-sealed' : '';
-                        } else if (diagnozis === 'channel_part_sealed') {
-                            teethDiagnozis.tooth43.channel_part_sealed = !teethDiagnozis.tooth43.channel_part_sealed;
-                            teethDiagnozis.tooth43.channel_class = teethDiagnozis.tooth43.channel_part_sealed ? 'channel-part-sealed' : '';
-                        } else if (diagnozis === 'periodontit') {
-                            if (teethDiagnozis.tooth43.periodontit_stage !== subDiagnozis) {
-                                teethDiagnozis.tooth43.periodontit_stage = subDiagnozis
-                                teethDiagnozis.tooth43.periodontit = true;
-                            } else {
-                                teethDiagnozis.tooth43.periodontit = !teethDiagnozis.tooth43.periodontit;
-                            }
-                            teethDiagnozis.tooth43.channel_class = teethDiagnozis.tooth43.periodontit ? 'periodontit' : '';
-                            if (!teethDiagnozis.tooth43.periodontit) dispatch(setSubDiagnosis(''));
-                        } else if (diagnozis === 'seal_cervical') {
-                            if (!teethDiagnozis.tooth43.seal_cervical && teethDiagnozis.tooth43.seal_cervical_color === "") {
-                                teethDiagnozis.tooth43.seal_cervical = true;
-                                teethDiagnozis.tooth43.seal_cervical_color = wsDefectColor;
-                            } else if (teethDiagnozis.tooth43.seal_cervical && teethDiagnozis.tooth43.seal_cervical_color != wsDefectColor) {
-                                teethDiagnozis.tooth43.seal_cervical_color = wsDefectColor;
-                            } else {
-                                teethDiagnozis.tooth43.seal_cervical = false;
-                                teethDiagnozis.tooth43.seal_cervical_color = "";
-                            }
-                        } else if (diagnozis === 'vinir') {
-                            if (!teethDiagnozis.tooth43.vinir && teethDiagnozis.tooth43.vinir_color === "") {
-                                teethDiagnozis.tooth43.vinir = true;
-                                teethDiagnozis.tooth43.vinir_color = vinirColor;
-                            } else if (teethDiagnozis.tooth43.vinir && teethDiagnozis.tooth43.vinir_color != vinirColor) {
-                                teethDiagnozis.tooth43.vinir_color = vinirColor;
-                            } else {
-                                teethDiagnozis.tooth43.vinir = false;
-                                teethDiagnozis.tooth43.vinir_color = "";
-                            }
-                        } else if (diagnozis === 'temporary_crown') {
-                            teethDiagnozis.tooth43.temporary_crown = !teethDiagnozis.tooth43.temporary_crown;
-                        } else if (diagnozis === 'ceramic_crown') {
-                            if (!teethDiagnozis.tooth43.ceramic_crown && teethDiagnozis.tooth43.ceramic_crown_color === "") {
-                                teethDiagnozis.tooth43.ceramic_crown = true;
-                                teethDiagnozis.tooth43.ceramic_crown_color = ceramicCrownColor;
-                            } else if (teethDiagnozis.tooth43.ceramic_crown && teethDiagnozis.tooth43.ceramic_crown_color != ceramicCrownColor) {
-                                teethDiagnozis.tooth43.ceramic_crown_color = ceramicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth43.ceramic_crown = false;
-                                teethDiagnozis.tooth43.ceramic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'mceramic_crown') {
-                            if (!teethDiagnozis.tooth43.mceramic_crown && teethDiagnozis.tooth43.mceramic_crown_color === "") {
-                                teethDiagnozis.tooth43.mceramic_crown = true;
-                                teethDiagnozis.tooth43.mceramic_crown_color = mceramicCrownColor;
-                            } else if (teethDiagnozis.tooth43.mceramic_crown && teethDiagnozis.tooth43.mceramic_crown_color != mceramicCrownColor) {
-                                teethDiagnozis.tooth43.mceramic_crown_color = mceramicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth43.mceramic_crown = false;
-                                teethDiagnozis.tooth43.mceramic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'metalic_crown') {
-                            if (!teethDiagnozis.tooth43.metalic_crown && teethDiagnozis.tooth43.metalic_crown_color === "") {
-                                teethDiagnozis.tooth43.metalic_crown = true;
-                                teethDiagnozis.tooth43.metalic_crown_color = metalicCrownColor;
-                            } else if (teethDiagnozis.tooth43.metalic_crown && teethDiagnozis.tooth43.metalic_crown_color != metalicCrownColor) {
-                                teethDiagnozis.tooth43.mceramic_crown_color = metalicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth43.metalic_crown = false;
-                                teethDiagnozis.tooth43.metalic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'zirconia_crown') {
-                            if (!teethDiagnozis.tooth43.zirconia_crown && teethDiagnozis.tooth43.zirconia_crown_color === "") {
-                                teethDiagnozis.tooth43.zirconia_crown = true;
-                                teethDiagnozis.tooth43.zirconia_crown_color = zirconiaCrownColor;
-                            } else if (teethDiagnozis.tooth43.zirconia_crown && teethDiagnozis.tooth43.zirconia_crown_color != zirconiaCrownColor) {
-                                teethDiagnozis.tooth43.zirconia_crown_color = zirconiaCrownColor;
-                            } else {
-                                teethDiagnozis.tooth43.zirconia_crown = false;
-                                teethDiagnozis.tooth43.zirconia_crown_color = "";
-                            }
-                        } else if (diagnozis === 'pin') {
-                            teethDiagnozis.tooth43.pin = !teethDiagnozis.tooth43.pin;
-                        } else if (diagnozis === 'culttab') {
-                            teethDiagnozis.tooth43.culttab = !teethDiagnozis.tooth43.culttab;
-                        } else if (diagnozis === 'abutment') {
-                            teethDiagnozis.tooth43.abutment = !teethDiagnozis.tooth43.abutment;
-                        } else if (diagnozis === 'shaper') {
-                            teethDiagnozis.tooth43.shaper = !teethDiagnozis.tooth43.shaper;
-                        } else if (diagnozis === 'implant') {
-                            teethDiagnozis.tooth43.implant = !teethDiagnozis.tooth43.implant;
-                        } else if (diagnozis === 'apex') {
-                            teethDiagnozis.tooth43.apex = !teethDiagnozis.tooth43.apex;
-                        } else if (diagnozis === 'absent') {
-                            teethDiagnozis.tooth43.absent = !teethDiagnozis.tooth43.absent;
-                        } else if (diagnozis === 'cervical_caries') {
-                            teethDiagnozis.tooth43.cervical_caries = !teethDiagnozis.tooth43.cervical_caries;
-                        } else if (diagnozis === 'caries') {
-                            teethDiagnozis.tooth43.caries = !teethDiagnozis.tooth43.caries;
-                        } else if (diagnozis === 'parodontit') {
-                            if (teethDiagnozis.tooth43.parodontit) {
-                                if (teethDiagnozis.tooth43.parodontit_stage === subDiagnozis) {
-                                    teethDiagnozis.tooth43.parodontit = false;
-                                    teethDiagnozis.tooth43.active = false;
-                                } else {
-                                    teethDiagnozis.tooth43.parodontit = true;
-                                    teethDiagnozis.tooth43.parodontit_stage = subDiagnozis
-                                }
-                            } else {
-                                teethDiagnozis.tooth43.parodontit = true;
-                                teethDiagnozis.tooth43.parodontit_stage = subDiagnozis;
-                                teethDiagnozis.tooth43.active = true;
-                            }
-                        }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
+                        const tDiaData = setupDiagnoze(
+                            43,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor,
+                            wsDefectColor
+                        );
+                        dispatch(setToothDiagnoze(tDiaData));
                     }
+                    dispatch(setToothDiagnoze(teethDiagnozis))
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 43 ? 'selected' : ''}`} style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     <path className="st40" d="M902.8,1239.9c0,0-5,56-6,71s-7,66-11,75s-12,28-30,27s-26-16-26-34s3-62,5-81
                         s-1-75-3-87s-6-36-6-52c0-31,29-61,28-89s-26.2-45.3-27.1-78.2c-0.9-32.8,3.1-144.8,4.1-169.8s18-41,39-42s38,17,40,52s7,151,7,158
                         c0,29-22,50-24,73s23,38,23,94C915.8,1196.9,904.8,1220.9,902.8,1239.9z"
                     />
                 </g>
-                <g id="T_43_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className="dentin">
                         <g style={{visibility: !tooth43Diagnozis.implant && !tooth43Diagnozis.apex && !tooth43Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -320,7 +258,8 @@ export default function Tooth43() {
                     </g>
                     <g className="pulp">
                         <g className="pulpitis-pfilling" style={{visibility: tooth43Diagnozis.apex ? 'inherit' : 'hidden'}}>
-                            <path className="st22 target" d="M872.187 972.254C868.564 972.146 863.551 975.618 863.369 981.716C863.187 987.814 867.905 994.23 871.528 994.338C875.151 994.446 878.892 989.61 879.074 983.512C879.256 977.413 875.81 972.362 872.187 972.254Z" 
+                            <path className="st22 target" style={{fill: '#e80808'}}
+                                d="M872.187 972.254C868.564 972.146 863.551 975.618 863.369 981.716C863.187 987.814 867.905 994.23 871.528 994.338C875.151 994.446 878.892 989.61 879.074 983.512C879.256 977.413 875.81 972.362 872.187 972.254Z" 
                             />
                         </g>
                     </g>
@@ -386,7 +325,7 @@ export default function Tooth43() {
                             <path className="st7" d="M915.7 998.8C914.8 1002.1 913.1 1005 911.1 1007.7C895.5 1004 882 989 882 979.5C884.5 967.5 897.5 964 898.9 954C904.7 963.9 912.5 972.7 915.5 983.7C916.8 988.7 917.1 993.9 915.7 998.8Z"></path>
                             <path className={
                                     `st8 caries-right
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth43.caries_right ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth43.seal_right ? `seal-fill ${teethDiagnozis.tooth43.seal_right_color}` : ''}
                                 `} 
@@ -534,7 +473,14 @@ export default function Tooth43() {
                         />
                     </g>
                 </g>
-                <g id="T_43" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTopCommonView('over')
+                    }}
+                    onMouseLeave={() => {
+                        showHideTopCommonView('leave')
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_43" style={{visibility: !tooth43Diagnozis.implant && !tooth43Diagnozis.apex && !tooth43Diagnozis.shaper ? 'inherit' : 'hidden'}}>

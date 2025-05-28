@@ -123,4 +123,14 @@
     border-radius: 5px;
     border-bottom: solid 1px #d2cfcf;
     border-right: solid 1px #d2cfcf;
-    }
+}
+.tabs li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 14px;
+    padding-bottom: 11px;
+    cursor: pointer;
+    
+}

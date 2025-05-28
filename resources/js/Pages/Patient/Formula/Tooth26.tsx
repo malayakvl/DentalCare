@@ -1,8 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setSubDiagnosis, setToothDiagnoze, setNewToothActive, setDisactiveAll, setSelectedToothNumber, settooth26Active } from '../../../Redux/Formula';
 import {
-    allTeethSelector,
+    setToothDiagnoze,
+    setSelectedToothNumber,
+    setChangeDia
+} from '../../../Redux/Formula';
+import {
     getDiagnosisSelector,
     getSealColor1Selector,
     getSealColor2Selector,
@@ -15,15 +18,15 @@ import {
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
     getZirconiaCrownColorSelector,
-    getStatusesSelector
+    teethTypeSelector,
+    allTeethAdultSelector,
+    getActiveToothNumberSelector,
 } from "../../../Redux/Formula/selectors";
+import setupDiagnoze from "../../../lib/tfunctions"
 import PeriodontitStage26 from './periodontit26';
-
 
 export default function Tooth26() {
     const dispatch = useDispatch<any>();
-    const toothActive = useSelector(getStatusesSelector);
-    const allTeeth = useSelector(allTeethSelector);
     const diagnozis = useSelector(getDiagnosisSelector);
     const subDiagnozis = useSelector(getSubDiagnosisSelector);
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
@@ -37,6 +40,9 @@ export default function Tooth26() {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    const teethType = useSelector(teethTypeSelector);
+    const selectedTooth = useSelector(getActiveToothNumberSelector);
+    const allTeeth = useSelector(allTeethAdultSelector);
 
     const setColordedPart = (diagnozis, toothPart = '') => {
         if (diagnozis === 'caries') {
@@ -144,167 +150,71 @@ export default function Tooth26() {
         }
     }
 
+    const showHideTeeth = (type) => {
+        if (type === 'over') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth26.show) {
+                document.getElementById('TH-26').classList.add('f-tooth-active');
+            }
+        } 
+
+        if (type === 'leave') {
+            if (teethType === 'adult' && !teethDiagnozis.tooth26.show) {
+                document.getElementById('TH-26').classList.remove('f-tooth-active');
+            }
+        }
+    }
+
     return (
         <>
-            <g id="26" className="df-tooth-text" style={{opacity: 1}}>
-                <text transform="matrix(1 0 0 1 1549.5791 716.1968)" className={`st3 st4 st5 ${toothActive.tooth26.active ? 'num-active' : ''}`}>26</text>
+            <g id="26" className={`tooth-number-active ${teethType === 'child' ? 'hide-number' : ''}`}>
+                <text transform="matrix(1 0 0 1 1549.5791 716.1968)" className={`st3 st4 st5 ${selectedTooth === 26 ? 'num-active' : ''}`}>26</text>
             </g>
-            <g className={`f-tooth-active`}
-                onMouseOver={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.add('tooth-number-hover')
-                }}
-                onMouseLeave={() => {
-                    (!toothActive && !allTeeth) && document.getElementById('16').classList.remove('tooth-number-hover')
-                }}
+            <g id="TH-26" className={`f-tooth-init ${((teethDiagnozis.tooth26.show || allTeeth) && !teethDiagnozis.tooth26.absent)  ? 'f-tooth-active' : ''} ${teethType}`}
                 onClick={() => {
-                    dispatch(setSelectedToothNumber(16));
-                    if (toothActive.tooth26.active) {
-                        dispatch(setNewToothActive({tooth26: {active: true}}))
-                    } else {
-                        dispatch(setDisactiveAll());
-                        dispatch(setNewToothActive({tooth26: {active: true}}))
-                    }
+                    teethDiagnozis.tooth26.show = !teethDiagnozis.tooth26.show;
+
+                    dispatch(setSelectedToothNumber(26));
+                    dispatch(setChangeDia(Math.random()));
                     if (diagnozis) {
-                        if (diagnozis === 'change_color')
-                            teethDiagnozis.tooth26.change_color = !teethDiagnozis.tooth26.change_color;
-                        else if (diagnozis === 'fissure')
-                            teethDiagnozis.tooth26.fissure = !teethDiagnozis.tooth26.fissure;
-                        else if (diagnozis === 'caries')
-                            teethDiagnozis.tooth26.caries = !teethDiagnozis.tooth26.caries;
-                        else if (diagnozis === 'cervical_caries')
-                            teethDiagnozis.tooth26.cervical_caries = !teethDiagnozis.tooth26.cervical_caries;
-                        else if (diagnozis === 'wedge_shaped_defect')
-                            teethDiagnozis.tooth26.wedge_shaped_defect = !teethDiagnozis.tooth26.wedge_shaped_defect;
-                        else if (diagnozis === 'tartar')
-                            teethDiagnozis.tooth26.tartar = !teethDiagnozis.tooth26.tartar;
-                        else if (diagnozis === 'pulpit') {
-                            teethDiagnozis.tooth26.pulpit = !teethDiagnozis.tooth26.pulpit;
-                            teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.pulpit ? 'pulpit' : ''
-                        } else if (diagnozis === 'channel_not_sealed') {
-                            teethDiagnozis.tooth26.channel_not_sealed = !teethDiagnozis.tooth26.channel_not_sealed;
-                            teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.channel_not_sealed ? 'channel-not-sealed' : '';
-                        } else if (diagnozis === 'channel_top_sealed') {
-                            teethDiagnozis.tooth26.channel_top_sealed = !teethDiagnozis.tooth26.channel_top_sealed;
-                            teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.channel_top_sealed ? 'channel-top-sealed' : '';
-                        } else if (diagnozis === 'channel_part_sealed') {
-                            teethDiagnozis.tooth26.channel_part_sealed = !teethDiagnozis.tooth26.channel_part_sealed;
-                            teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.channel_part_sealed ? 'channel-part-sealed' : '';
-                        } else if (diagnozis === 'periodontit') {
-                            if (teethDiagnozis.tooth26.periodontit_stage !== subDiagnozis) {
-                                teethDiagnozis.tooth26.periodontit_stage = subDiagnozis
-                                teethDiagnozis.tooth26.periodontit = true;
-                            } else {
-                                teethDiagnozis.tooth26.periodontit = !teethDiagnozis.tooth26.periodontit;
-                            }
-                            teethDiagnozis.tooth26.channel_class = teethDiagnozis.tooth26.periodontit ? 'periodontit' : '';
-                            if (!teethDiagnozis.tooth26.periodontit) dispatch(setSubDiagnosis(''));
-                        } else if (diagnozis === 'seal_cervical') {
-                            if (!teethDiagnozis.tooth26.seal_cervical && teethDiagnozis.tooth26.seal_cervical_color === "") {
-                                teethDiagnozis.tooth26.seal_cervical = true;
-                                teethDiagnozis.tooth26.seal_cervical_color = wsDefectColor;
-                            } else if (teethDiagnozis.tooth26.seal_cervical && teethDiagnozis.tooth26.seal_cervical_color != wsDefectColor) {
-                                teethDiagnozis.tooth26.seal_cervical_color = wsDefectColor;
-                            } else {
-                                teethDiagnozis.tooth26.seal_cervical = false;
-                                teethDiagnozis.tooth26.seal_cervical_color = "";
-                            }
-                        } else if (diagnozis === 'vinir') {
-                            if (!teethDiagnozis.tooth26.vinir && teethDiagnozis.tooth26.vinir_color === "") {
-                                teethDiagnozis.tooth26.vinir = true;
-                                teethDiagnozis.tooth26.vinir_color = vinirColor;
-                            } else if (teethDiagnozis.tooth26.vinir && teethDiagnozis.tooth26.vinir_color != vinirColor) {
-                                teethDiagnozis.tooth26.vinir_color = vinirColor;
-                            } else {
-                                teethDiagnozis.tooth26.vinir = false;
-                                teethDiagnozis.tooth26.vinir_color = "";
-                            }
-                        } else if (diagnozis === 'temporary_crown') {
-                            teethDiagnozis.tooth26.temporary_crown = !teethDiagnozis.tooth26.temporary_crown;
-                        } else if (diagnozis === 'ceramic_crown') {
-                            if (!teethDiagnozis.tooth26.ceramic_crown && teethDiagnozis.tooth26.ceramic_crown_color === "") {
-                                teethDiagnozis.tooth26.ceramic_crown = true;
-                                teethDiagnozis.tooth26.ceramic_crown_color = ceramicCrownColor;
-                            } else if (teethDiagnozis.tooth26.ceramic_crown && teethDiagnozis.tooth26.ceramic_crown_color != ceramicCrownColor) {
-                                teethDiagnozis.tooth26.ceramic_crown_color = ceramicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth26.ceramic_crown = false;
-                                teethDiagnozis.tooth26.ceramic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'mceramic_crown') {
-                            if (!teethDiagnozis.tooth26.mceramic_crown && teethDiagnozis.tooth26.mceramic_crown_color === "") {
-                                teethDiagnozis.tooth26.mceramic_crown = true;
-                                teethDiagnozis.tooth26.mceramic_crown_color = mceramicCrownColor;
-                            } else if (teethDiagnozis.tooth26.mceramic_crown && teethDiagnozis.tooth26.mceramic_crown_color != mceramicCrownColor) {
-                                teethDiagnozis.tooth26.mceramic_crown_color = mceramicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth26.mceramic_crown = false;
-                                teethDiagnozis.tooth26.mceramic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'metalic_crown') {
-                            if (!teethDiagnozis.tooth26.metalic_crown && teethDiagnozis.tooth26.metalic_crown_color === "") {
-                                teethDiagnozis.tooth26.metalic_crown = true;
-                                teethDiagnozis.tooth26.metalic_crown_color = metalicCrownColor;
-                            } else if (teethDiagnozis.tooth26.metalic_crown && teethDiagnozis.tooth26.metalic_crown_color != metalicCrownColor) {
-                                teethDiagnozis.tooth26.mceramic_crown_color = metalicCrownColor;
-                            } else {
-                                teethDiagnozis.tooth26.metalic_crown = false;
-                                teethDiagnozis.tooth26.metalic_crown_color = "";
-                            }
-                        } else if (diagnozis === 'zirconia_crown') {
-                            if (!teethDiagnozis.tooth26.zirconia_crown && teethDiagnozis.tooth26.zirconia_crown_color === "") {
-                                teethDiagnozis.tooth26.zirconia_crown = true;
-                                teethDiagnozis.tooth26.zirconia_crown_color = zirconiaCrownColor;
-                            } else if (teethDiagnozis.tooth26.zirconia_crown && teethDiagnozis.tooth26.zirconia_crown_color != zirconiaCrownColor) {
-                                teethDiagnozis.tooth26.zirconia_crown_color = zirconiaCrownColor;
-                            } else {
-                                teethDiagnozis.tooth26.zirconia_crown = false;
-                                teethDiagnozis.tooth26.zirconia_crown_color = "";
-                            }
-                        } else if (diagnozis === 'pin') {
-                            teethDiagnozis.tooth26.pin = !teethDiagnozis.tooth26.pin;
-                        } else if (diagnozis === 'culttab') {
-                            teethDiagnozis.tooth26.culttab = !teethDiagnozis.tooth26.culttab;
-                        } else if (diagnozis === 'abutment') {
-                            teethDiagnozis.tooth26.abutment = !teethDiagnozis.tooth26.abutment;
-                        } else if (diagnozis === 'shaper') {
-                            teethDiagnozis.tooth26.shaper = !teethDiagnozis.tooth26.shaper;
-                        } else if (diagnozis === 'implant') {
-                            teethDiagnozis.tooth26.implant = !teethDiagnozis.tooth26.implant;
-                        } else if (diagnozis === 'apex') {
-                            teethDiagnozis.tooth26.apex = !teethDiagnozis.tooth26.apex;
-                        } else if (diagnozis === 'absent') {
-                            teethDiagnozis.tooth26.absent = !teethDiagnozis.tooth26.absent;
-                        } else if (diagnozis === 'cervical_caries') {
-                            teethDiagnozis.tooth26.cervical_caries = !teethDiagnozis.tooth26.cervical_caries;
-                        } else if (diagnozis === 'caries') {
-                            teethDiagnozis.tooth26.caries = !teethDiagnozis.tooth26.caries;
-                        } else if (diagnozis === 'parodontit') {
-                            if (teethDiagnozis.tooth26.parodontit) {
-                                if (teethDiagnozis.tooth26.parodontit_stage === subDiagnozis) {
-                                    teethDiagnozis.tooth26.parodontit = false;
-                                    teethDiagnozis.tooth26.active = false;
-                                } else {
-                                    teethDiagnozis.tooth26.parodontit = true;
-                                    teethDiagnozis.tooth26.parodontit_stage = subDiagnozis
-                                }
-                            } else {
-                                teethDiagnozis.tooth26.parodontit = true;
-                                teethDiagnozis.tooth26.parodontit_stage = subDiagnozis;
-                                teethDiagnozis.tooth26.active = true;
-                            }
-                        }
-                        dispatch(setToothDiagnoze(teethDiagnozis))
+                        const tDiaData = setupDiagnoze(
+                            26,
+                            diagnozis,
+                            subDiagnozis,
+                            teethDiagnozis,
+                            dispatch,
+                            vinirColor,
+                            ceramicCrownColor,
+                            mceramicCrownColor,
+                            metalicCrownColor,
+                            zirconiaCrownColor,
+                            wsDefectColor
+                        );
+                        dispatch(setToothDiagnoze(tDiaData));
                     }
                 }}
             >
-                <g className="underlay" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className={`underlay ${selectedTooth === 26 ? 'selected' : ''}`}  style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     <path className="st40" d="M1487,281.9c0,0-8,36-8,50s3.9,48.9,4.4,59c0.6,10,5.6,48,6.6,63s6,33,13,45
                         s-7,27-10,42s-2.6,30.7-1.8,48.8s11.8,82.2,21.8,108.2c6,15.6,20,38,57,38c35,0,63-20,73-46s11-55,6-69c-2.8-7.8-17-44-19-60
                         s-13.6-49.9-12-63c2-16,12-25,16-37c3.8-11.4,5-18,3-32s-10-33-17-50s-13-32-10-60c1.9-17.7,1.6-37.4-6.3-53.8
                         c-9.7-20.2-33.8-27.3-54.7-28.2C1527,235.9,1496,245.9,1487,281.9z"
                     />
                 </g>
-                <g id="T_26_up" className="top-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="top-view" style={{visibility: tooth26Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR/APEX/CULTTAB */}
                     <g className={`hEmpty hRoot hImplant`} style={{visibility: !tooth26Diagnozis.culttab && !tooth26Diagnozis.implant && !tooth26Diagnozis.shaper ? 'inherit' : 'hidden'}}>
                         <g className="hEmpty hRoot hImplant" style={{visibility: 'inherit'}}>
@@ -327,9 +237,9 @@ export default function Tooth26() {
                     {/* PULPIT */}
                     <g className="pulp" style={{visibility: tooth26Diagnozis.apex ? 'inherit' : 'hidden'}}>
                         <g className="pulpitis-pfilling" style={{visibility: tooth26Diagnozis?.apex ? 'inherit' : 'hidden'}}>
-                            <ellipse className="st22 target" rx="8.35873" ry="8.88548" transform="matrix(0.20079 0.979634 -0.979591 0.201001 1589.24 611.974)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" rx="7.49795" ry="8.49071" transform="matrix(0.462479 -0.88663 0.886423 0.462876 1590.63 588.578)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
-                            <ellipse className="st22 target" rx="7.52553" ry="9.0049" transform="matrix(0.639533 0.768764 -0.768421 0.639945 1543.54 588.522)" style={{fill: 'rgb(254, 246, 249)'}}></ellipse>
+                            <ellipse className="st22 target" rx="8.35873" ry="8.88548" transform="matrix(0.20079 0.979634 -0.979591 0.201001 1589.24 611.974)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="7.49795" ry="8.49071" transform="matrix(0.462479 -0.88663 0.886423 0.462876 1590.63 588.578)" style={{fill: '#e80808'}}></ellipse>
+                            <ellipse className="st22 target" rx="7.52553" ry="9.0049" transform="matrix(0.639533 0.768764 -0.768421 0.639945 1543.54 588.522)" style={{fill: '#e80808'}}></ellipse>
                         </g>
                     </g>
                     {/* IMPLANT */}
@@ -386,7 +296,7 @@ export default function Tooth26() {
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth26Diagnozis.culttab && !tooth26Diagnozis.abutment && !tooth26Diagnozis.implant && !tooth26Diagnozis.shaper && !tooth26Diagnozis.apex) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС ЦЕНТР*/}
-                        <g id="s_header_26_5" 
+                        <g
                             className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
@@ -398,7 +308,7 @@ export default function Tooth26() {
                             />
                             <path className={
                                     `st8 caries-center
-                                    ${'caries-stroke'}
+                                    ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth26.caries_center ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth26.seal_center ? `seal-fill ${teethDiagnozis.tooth26.seal_center_color}` : ''}
                                 `} 
@@ -408,7 +318,7 @@ export default function Tooth26() {
                             />
                         </g>
                         {/*КАРИЕС LEFT*/}
-                        <g id="s_header_26_4" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -430,7 +340,7 @@ export default function Tooth26() {
                             />
                         </g>
                         {/*КАРИЕС НИЗ*/}
-                        <g id="s_header_26_3" className="caries-filling"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}
@@ -441,10 +351,10 @@ export default function Tooth26() {
                                 C1639,643.2,1642.3,644.9,1644.7,646.4z"
                             />
                             <path className={
-                                    `st8 caries-bottom
+                                    `st8 caries-top
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth26.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth26.seal_bottom ? `seal-fill ${teethDiagnozis.tooth26.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth26.caries_top ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth26.seal_top ? `seal-fill ${teethDiagnozis.tooth26.seal_top_color}` : ''}
                                 `} 
                                 d="M1644.7,646.4C1644.6,646.4,1644.6,646.4,1644.7,646.4c-3.2,6.4-8.3,11.6-14.4,15.4c-5.5,3.3-11.6,5.4-18,6.5
                                 c-6,1.1-12.2,1.3-18.2,0.1c-9.5-1.8-18.2-7-28-7.1c-5.6,0-11,1.6-16.6,2.4c-9.9,1.3-20-0.4-28.1-5.6c-2.9-1.8-5.4-4-7.7-6.4
@@ -453,7 +363,7 @@ export default function Tooth26() {
                             />
                         </g>
                         {/*КАРИЕС RIGHT*/}
-                        <g id="s_header_26_2" 
+                        <g
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
@@ -475,9 +385,9 @@ export default function Tooth26() {
                             />
                         </g>
                         {/*КАРИЕС ВЕРХ*/}
-                        <g id="s_header_26_1" 
+                        <g
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                             className="caries-filling"
                         >
@@ -486,10 +396,10 @@ export default function Tooth26() {
                                 c5.6,0.9,11.6,1.9,17.4,2.1c11.2,0.5,22.5-2.4,33.3,0.1C1608.1,533.8,1615.2,539,1620.7,546z"
                             />
                             <path className={`
-                                    st8 target caries-left
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth26.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth26.seal_top ? `seal-fill ${teethDiagnozis.tooth26.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth26.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth26.seal_bottom ? `seal-fill ${teethDiagnozis.tooth26.seal_bottom_color}` : ''}
                                 `} 
                                 d="M1620.7,546c-4.6,4.9-12.4,14.2-18.7,27.5c-5.8-4.4-17-7.8-37.7-6.8c0,0-23.7,0.9-31.4,3.9
                                 c-3.4,1.4-6,3.2-7.8,5.3c-12.9-9.6-23.6-21.9-29.5-29.4c0.6-1.2,1.2-2.3,2-3.4c10.8-16,30.9-16.9,50.5-13.8
@@ -501,8 +411,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_bottom) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom)
+                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_top) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1608.5 621C1611.67 625.333 1622.4 636.1 1640 644.5"
@@ -521,8 +431,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top)
+                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1601 574C1601.5 568.333 1605.2 555.6 1616 550" 
@@ -531,8 +441,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_top)
+                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1601 574C1588 566.5 1530.4 565.2 1524 576"
@@ -541,8 +451,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top)
+                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1524 576C1517.83 572.167 1504 561.8 1498 551" 
@@ -561,8 +471,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_bottom) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom)
+                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_top) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1536.5 624C1535.17 628.167 1529.2 639 1516 649"
@@ -571,8 +481,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_bottom) ||
-                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_bottom)
+                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
+                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1536.5 624C1546.5 630 1591.4 631.5 1609 621.5" 
@@ -645,7 +555,14 @@ export default function Tooth26() {
                         />
                     </g>
                 </g>
-                <g id="T_26" className="common-view" style={{visibility: 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}>
+                <g className="common-view" style={{visibility: tooth26Diagnozis.absent ? 'hidden' : 'inherit', transform: 'matrix(1, 0, 0, 1, 0, 0)'}}
+                    onMouseOver={() => {
+                        showHideTeeth('over');
+                    }}
+                    onMouseLeave={() => {
+                        showHideTeeth('leave');
+                    }}
+                >
                     {/* CHANGE COLOR */}
                     <g className="dentin">
                         <g id="dentin_v_26" className="hRoot hImplant hEmpty" style={{visibility: !tooth26Diagnozis.implant && !tooth26Diagnozis.apex && !tooth26Diagnozis.shaper ? 'inherit' : 'hidden'}}>
@@ -715,6 +632,7 @@ export default function Tooth26() {
                                 c1.3,0.2,2.5,0.5,3.6,0.7c0.1-0.4,0.2-0.9,0.3-1.3C1591.7,304.5,1592.4,293.9,1591.9,283.3z" 
                             />
                         </g>
+                        {/* Отростки пульпита */}
                         <PeriodontitStage26 />
                     </g>
                     {/*PIN*/}
@@ -826,7 +744,7 @@ export default function Tooth26() {
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
                         {/*КАРИЕС TOP*/}
                         <g
-                            className="caries-filling hoho"
+                            className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'center');
                             }}
@@ -859,7 +777,7 @@ export default function Tooth26() {
                                 c5.6,4.3,17.1,13.1,19.7,15.6c1.2,1.1,4.1,8.8,7.4,18.6C1523.9,454.8,1529.7,473.4,1532.3,481.9z"
                             />
                             <path className={
-                                    `st8 caries-left
+                                `st8 caries-left
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth26.caries_left ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth26.seal_left ? `seal-fill ${teethDiagnozis.tooth26.seal_left_color}` : ''}
@@ -897,7 +815,7 @@ export default function Tooth26() {
                         {/*КАРИЕС У BOTTOM*/}
                         <g className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st58" d="M1595.8,436.3c-6.6-3.5-19.1-10-22.8-10.2c-5.2-0.2-32.3,0.7-34.8,1.6c-1.8,0.6-12.6,8.2-19.1,12.8
@@ -906,10 +824,10 @@ export default function Tooth26() {
                                 C1594.3,411,1594.9,422.6,1595.8,436.3z" 
                             />
                             <path className={`
-                                    st8 target caries-top
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth26.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth26.seal_top ? `seal-fill ${teethDiagnozis.tooth26.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth26.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth26.seal_bottom ? `seal-fill ${teethDiagnozis.tooth26.seal_bottom_color}` : ''}
                                 `} 
                                 d="M1595.8,436.3c-6.6-3.5-19.1-10-22.8-10.2c-5.2-0.2-32.3,0.7-34.8,1.6c-1.8,0.6-12.6,8.2-19.1,12.8
                                 c-3.3-9.8-6.2-17.5-7.4-18.6c-2.6-2.5-14.1-11.3-19.7-15.6c0-0.1,0-0.1,0-0.2c6.7-7.1,14.7-13.1,23.9-17.9
@@ -933,9 +851,9 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_center) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top && tooth26Diagnozis.seal_center)
+                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1595.5 435.999C1594 403.999 1589.5 411.999 1609.5 389.999" 
@@ -944,7 +862,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_center) ||
+                                        (tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
+                                        (tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
                                         (tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
                                         (!tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
                                     ) ? 5 : 0
@@ -955,9 +874,9 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_center) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top && tooth26Diagnozis.seal_center)
+                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }} 

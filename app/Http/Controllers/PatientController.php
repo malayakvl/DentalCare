@@ -80,7 +80,6 @@ class PatientController extends Controller
                 ->where('clinic_id', $clinicData->id)->orderBy('name')->get();
             $contactData = DB::table('patients_contact')->get();
             $formData = Patient::where('id', '=', $id)->first();
-
             return Inertia::render('Patient/Edit', [
                 'formData' => $formData,
                 'customerData' => $customerData,
@@ -113,11 +112,9 @@ class PatientController extends Controller
             }
             if ($isNew) {
                 return Redirect::route('patient.cliniccard', ['id' => $patient->id]);
-                // return redirect()->route('patient.cliniccard', ['id' => $patient->id]);
             } else {
                 return redirect()->route('patient.index');
             }
-            // return Redirect::route('patient.index');
         }
     }
 
@@ -126,7 +123,8 @@ class PatientController extends Controller
             $patientTreatment = new PatientTreatment();
             $patientTreatment->fill($request->all());
             $patientTreatment->save();
-
+//             dd(1);exit;
+// dd(FormulaTeethContant::FORMULA_TYPE);exit;
             $patientData = Patient::where('id', '=', $request->user_id)->first();
             $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
 
@@ -147,9 +145,12 @@ class PatientController extends Controller
      */
     public function view(Request $request, $id) {
         $patientData = Patient::where('id', '=', $id)->first();
-
+        $type = $request->get('type');
         return Inertia::render('Patient/View', [
-            'patientData' => $patientData
+            'patientData' => $patientData,
+            'type' => $type,
+            'treatmentData' => PatientTreatment::where('user_id', '=', $id)->orderBy('created_at', 'desc')->get(),
+            'clinicData' => Clinic::where('user_id', '=', $request->user()->id)->first(),
         ]);
     }
 
@@ -175,12 +176,24 @@ class PatientController extends Controller
         $patientTreatment = PatientTreatment::where('id', '=', $id)->first();
         $patientData = Patient::where('id', '=', $patientTreatment->user_id)->first();
         $clinicData = Clinic::where('user_id', '=', $request->user()->id)->first();
-
         return Inertia::render('Patient/EditFormula', [
             'patientData' => $patientData,
             'clinicData' => $clinicData,
             'treatmentData' => $patientTreatment,
         ]);
+    }
+
+    public function updateFormula(Request $request) {
+        if ($request->user()->can('patient-edit')) {
+            $requestData = $request->all();
+            $formulaId = $requestData['id'];
+            $patientTreatment = PatientTreatment::where('id', '=', $formulaId)->first();
+            $patientTreatment->formula = json_encode($requestData['treatmentData']);
+            $patientTreatment->formula_type = $requestData['teethType'];
+            $patientTreatment->save();
+
+            return redirect()->route('patient.view', ['id' => $requestData['patientData']['id'], 'type' => 'history']);
+        }
     }
 
     /**

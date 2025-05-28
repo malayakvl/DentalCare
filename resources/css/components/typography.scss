@@ -4,7 +4,8 @@ h2 {
 }
 
 h3 {
-    @apply font-semibold leading-tight text-purple-800 py-4 text-center;
+    @apply font-semibold leading-tight py-4 text-center;
+    color: #830874 !important;
     font-weight: bold !important;
 }
 h5 {
@@ -20,4 +21,7 @@ h5 {
 }
 .text-orange-700 {
     color: #e0187b;
+}
+.text-purple-700 {
+    color: #830874 !important;
 }

@@ -1,26 +1,16 @@
-import InputLabel from '../../../Components/Form/InputLabel';
-import PrimaryButton from '../../../Components/Form/PrimaryButton';
-import { Transition } from '@headlessui/react';
-import { Link, router, useForm, usePage } from '@inertiajs/react';
-import React, { useState, useCallback, useEffect } from 'react';
-import { useSelector } from "react-redux";
+import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import { appLangSelector } from "../../../Redux/Layout/selectors";
 import Lang from "lang.js";
 import lngFormula from "../../../Lang/Formula/translation";
 import lngPatient from "../../../Lang/Patient/translation";
-import InputText from "../../../Components/Form/InputText";
-import InputSelect from "../../../Components/Form/InputSelect";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPercent, faPhone, faEnvelope, faFemale, faLocationDot, faMale } from '@fortawesome/free-solid-svg-icons'
-import InputTextarea from '../../../Components/Form/InputTextarea';
-import { InputMask } from '@react-input/mask';
-import moment from "moment";
-import axios from 'axios';
-import { faUserPlus, faFloppyDisk, faPencil, faTrash, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
-import { getTeethDiagnozisSelector } from '@/Redux/Formula/selectors';
+import { getTeethDiagnozisSelector, getRemoveDiaSelector } from '../../../Redux/Formula/selectors';
+import {setToothDiagnoze, setRemoveDia, setChangeDia} from "../../../Redux/Formula";
 
 export default function FormulaDiagnozis() {
+    const dispatch = useDispatch<any>();
     const appLang = useSelector(appLangSelector);
+    const removeDia = useSelector(getRemoveDiaSelector); //important for update state do not remove
     const msg = new Lang({
         messages: lngPatient,
         locale: appLang,
@@ -30,21 +20,67 @@ export default function FormulaDiagnozis() {
         locale: appLang,
     });
     const teethDiagnozis = useSelector(getTeethDiagnozisSelector);
-    const jawDown = ['tooth48', 'tooth47', 'tooth46', 'tooth45', 'tooth44', 'tooth43', 'tooth42', 'tooth41', 'tooth31', 'tooth32', 'tooth33', 'tooth34', 'tooth35', 'tooth36', 'tooth37', 'tooth38'];
+    const _dArray = [
+        'absent',
+        'abutment',
+        'apex',
+        'caries_bottom',
+        'caries_center',
+        'caries_left',
+        'caries_right',
+        'caries_top',
+        'cervical_caries',
+        'change_color',
+        'channel_not_sealed',
+        'channel_part_sealed',
+        'channel_top_sealed',
+        'culttab',
+        'fissure',
+        'implant',
+        'parodontit',
+        'periodontit',
+        'pin',
+        'pulpit',
+        'shaper',
+        'tartar',
+        'temporary_crown',
+        'wedge_shaped_defect',
+    ];
+    const dColoredArray = [
+        'ceramic_crown',
+        'seal_cervical',
+        'seal_bottom',
+        'seal_center',
+        'seal_left',
+        'seal_right',
+        'seal_top',
+        'metalic_crown',
+        'mceramic_crown',
+        'zirconia_crown',
+        'vinir',
+    ];
+    const dMetalicCrownArray = [
+        'metalic_crown',
+    ];
 
-    const _dArray = ['change_color', 'fissure', 'pulpit']
-    // teethDiagnozis['tooth48'].keys().forEach((element, _key) => {
-    //     console.log(_key)
-    // });
-// const _index = 'tooth18'; const __key = 'change_color';
-// console.log('Change color:', teethDiagnozis[_index][__key]);
-        
-// teethDiagnozis['tooth48'].forEach((element,_key) => {
-//   console.log(_key)  
-// });
+    const disableDia = (num, key) => {
+        const currentDiagnozis = teethDiagnozis;
+        currentDiagnozis[`tooth${num}`][`${key}`] = false;
+        dispatch(setToothDiagnoze(currentDiagnozis));
+        dispatch(setToothDiagnoze(currentDiagnozis));
+        // dispatch(setRemoveDia(true));
+    }
+    const disableColorDia = (num, key) =>   {
+        const currentDiagnozis = teethDiagnozis;
+        currentDiagnozis[`tooth${num}`][`${key}`] = false;
+        currentDiagnozis[`tooth${num}`][`${key}_color`] = null;
+        dispatch(setToothDiagnoze(currentDiagnozis));
+        dispatch(setChangeDia(Math.random()));
+        // dispatch(setRemoveDia(true));
+    }
+
     const renderDiagnoze = (num) => {
         let _diagnozisStr = false;
-        const diagnozis = teethDiagnozis[`tooth${num}`];
         if (teethDiagnozis[`tooth${num}`]) {
             Object.keys(teethDiagnozis[`tooth${num}`]).forEach((key, _key) => {
                 if (teethDiagnozis[`tooth${num}`][key]) {
@@ -52,7 +88,6 @@ export default function FormulaDiagnozis() {
                 }
             });
         }  
-
         if (_diagnozisStr) {
             return (
                 <li className='flex'>
@@ -61,8 +96,25 @@ export default function FormulaDiagnozis() {
                         <span className="descr-d"><b>{num}:</b></span>
                     </div>
                     <div className="flex flex-wrap">
+                        {/*Render tooth 18 dia*/}
                         {Object.keys(teethDiagnozis[`tooth${num}`]).map((_v, _k) => (
-                            <React.Fragment key={_k}>{(teethDiagnozis[`tooth${num}`][_v] && _dArray.includes(_v)) && <span className="d-badge"><i className='d-badge-close' />{msgFormula.get(`formula.${_v}`)}</span>}</React.Fragment>
+                            <React.Fragment key={_k}>
+                                {(teethDiagnozis[`tooth${num}`][_v] && _dArray.includes(_v)) ?
+                                    <span className="d-badge" onClick={() => disableDia(num, _v)}>
+                                        <i className='d-badge-close' />
+                                        {msgFormula.get(`formula.${_v}`)}
+                                    </span>
+                                    : ''
+                                }
+                                {(teethDiagnozis[`tooth${num}`][_v] && dColoredArray.includes(_v)) ?
+                                    <span className={`d-badge ${teethDiagnozis[`tooth${num}`][`${_v}_color`]}`} onClick={() => disableColorDia(num, _v)}>
+                                        <i className='d-badge-close' />
+                                        {msgFormula.get(`formula.${_v}`)}
+                                    </span>
+                                    : ''
+                                }
+
+                            </React.Fragment>
                         ))}
                     </div>
                 </li>
@@ -74,22 +126,24 @@ export default function FormulaDiagnozis() {
 
     const renderJawUp = () => {
         const jawUp = [18,17,16,15,14,13,12,11,21,22,23,24,25,26,27,28];
-        // const jawUp = ['tooth11', 'tooth12', 'tooth13', 'tooth14', 'tooth15', 'tooth16', 'tooth17', 'tooth18', 'tooth21', 'tooth22', 'tooth23', 'tooth24', 'tooth25', 'tooth26', 'tooth27', 'tooth28'];
+        const jawDown = [48,47,46,45,44,43,42,41,31,32,33,34,35,36,37,38];
         return (
-            <>
-                {jawUp.map((index, num) => (
-                    <React.Fragment key={index}>
-                        {renderDiagnoze(index)}
-                        {/* <li className='flex items-center py-2'>
-                            <div>
-                                <i className='icon-tooth float-left' />
-                                <span className="inline-block text-[14px] float-left">{num}</span>:
-                            </div>
+            <div className="w-full flex">
+                <div className="w-1/2">
+                    {jawUp.map((index, num) => (
+                        <React.Fragment key={index}>
                             {renderDiagnoze(index)}
-                        </li> */}
-                    </React.Fragment>
-                ))}
-            </>
+                        </React.Fragment>
+                    ))}
+                </div>
+                <div className="w-1/2">
+                    {jawDown.map((index, num) => (
+                        <React.Fragment key={index}>
+                            {renderDiagnoze(index)}
+                        </React.Fragment>
+                    ))}
+                </div>
+            </div>
         );
     }
     
@@ -97,36 +151,6 @@ export default function FormulaDiagnozis() {
         <>
             <ul>
                 {renderJawUp()}
-                {/* <li className='flex items-center py-2'>
-                    <div>
-                        <i className='icon-tooth float-left' /><span className="inline-block text-[14px] float-left">18</span>:
-                    </div>
-                    <div className="ml-2 flex items-center">
-                        <span className="d-badge">
-                                <i className='d-badge-close' />
-                                Змінений у кольорі
-                        </span>
-                        <span className="d-badge">
-                            <i className='d-badge-close' />
-                            Змінений у кольорі
-                        </span>
-                        <span className="d-badge">
-                            <i className='d-badge-close' />
-                            Запалені ясна
-                        </span>
-                    </div>
-                </li> */}
-                {/* <li className='flex items-center py-2'>
-                    <div>
-                        <i className='icon-tooth float-left' /><span className="inline-block text-[14px] float-left">11</span>:
-                    </div>
-                    <div className="ml-2 flex items-center">
-                        <span className="d-badge">
-                                <i className='d-badge-close' />
-                                Пульпіт
-                        </span>
-                    </div>
-                </li> */}
             </ul>  
         </>
     );

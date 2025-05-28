@@ -144,7 +144,10 @@ export default function List({clinicData, tree, services, currency}) {
                         </div>
 
                         <div className="mt-6 flex justify-end">
-                            <SecondaryButton onClick={closeModal} onClick={() => setConfirmingCategory(false)}>
+                            <SecondaryButton onClick={() => {
+                                setConfirmingCategory(false);
+                                closeModal();
+                            }}>
                                 {msg.get('mCategories.close')}
                             </SecondaryButton>
 

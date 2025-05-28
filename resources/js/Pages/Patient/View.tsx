@@ -10,11 +10,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faPencil, faTrash, faCopy, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react';
 import lngFormula from "../../Lang/Formula/translation";
-import { setPatientTab } from '../../Redux/Patient';
-import InputText from '@/Components/Form/InputText';
+import InputText from '../../Components/Form/InputText';
+import ViewFormula from './ViewFormula';
+import moment from 'moment';
 
-export default function index({ patientData }) {
-    const [tab, setTab] = useState('formula');
+export default function index({ patientData, type, treatmentData }) {
+    const [tab, setTab] = useState(type ? type : 'history');
     const appLang = useSelector(appLangSelector);
     const msg = new Lang({
         messages: lngPatient,
@@ -25,8 +26,6 @@ export default function index({ patientData }) {
         locale: appLang,
     });
     const [stageName, setStageName] = useState('');
-    const dispatch = useDispatch<any>();
-    
     const handleTabClick = (tabName) => {
         setTab(tabName);
     }
@@ -35,6 +34,108 @@ export default function index({ patientData }) {
         e.preventDefault();
         router.post(`/patient/create-treatment`, { user_id: patientData.id, stage_name: stageName, type: tab });
     };
+
+    const renderTreatmentStages = () => {
+        console.log('TUT', treatmentData)
+        return (
+            <>
+                {treatmentData.map((element, index) => {
+                    return (
+                        <div key={index} className="w-full bg-white border mt-10 patient-stage">
+                            <div className="flex justify-between">
+                                <h2 className="text-left text-[14px] font-bold">{element.stage_name} {moment.utc(element.created_at).format('D.MM.YY')}</h2>
+                                <div className="icon-block actions-block">
+                                    <ul>
+                                        <li className="inline-block">
+                                            <Link href="/">
+                                                <FontAwesomeIcon icon={faUserPlus} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href={`/formula/edit/${element.id}`}>
+                                                <FontAwesomeIcon icon={faPencil} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href="">
+                                                <FontAwesomeIcon icon={faCopy} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href="">
+                                                <FontAwesomeIcon icon={faPrint} className='mr-3' />
+                                            </Link>
+                                        </li>
+                                        <li className="inline-block">
+                                            <Link href="">
+                                                <FontAwesomeIcon icon={faTrash} />
+                                            </Link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {element.type === 'formula' && (
+                                <div className="w-full flex flex-row">
+                                    <div className="w-1/2">
+                                        <ViewFormula formulaData={element} />
+                                    </div>
+                                    <div className="w-1/2">
+                                        <ul className='tabs'>
+                                            <li className={'active'} id={`up-t`}>
+                                                <span onClick={() => {
+                                                    if (!document.getElementById(`lower_${element.id}`).classList.contains('hide-up-teeth')) {
+                                                        document.getElementById('up-t').classList.remove('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`lower_${element.id}`).classList.add('hide-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.add('hide-teeth');
+                                                    } else {
+                                                        document.getElementById('up-t').classList.add('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('hide-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.remove('hide-teeth');
+                                                        document.getElementById(`lower_${element.id}`).classList.add('show-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.add('show-up-teeth');
+                                                    }
+                                                }}>
+                                                    {msgFormula.get('formula.maxilla')}
+                                                </span>
+                                            </li>
+                                            <li className={'active'} id={`bottom-t`}>
+                                                <span onClick={() => {
+                                                    if (!document.getElementById(`lower_${element.id}`).classList.contains('hide-teeth')) {
+                                                        document.getElementById('bottom-t').classList.remove('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`upper_${element.id}`).classList.remove('show-up-teeth');
+                                                        document.getElementById(`lower_${element.id}`).classList.add('hide-teeth');
+                                                        // document.getElementById(`upper_${element.id}`).classList.add('hide-teeth');
+                                                    } else {
+                                                        document.getElementById('bottom-t').classList.add('active');
+                                                        document.getElementById(`lower_${element.id}`).classList.remove('hide-teeth');
+                                                        // document.getElementById(`upper_${element.id}`).classList.remove('hide-teeth');
+                                                        // document.getElementById(`lower_${element.id}`).classList.add('show-up-teeth');
+                                                        // document.getElementById(`upper_${element.id}`).classList.add('show-up-teeth');
+                                                    }
+                                                }}>
+                                                    {msgFormula.get('formula.mandible')}
+                                                </span>
+                                            </li>
+                                            <li className={'active'}>
+                                                <Link href={`#`} onClick={() => {
+                                                    alert(1)
+                                                }}>
+                                                    {msgFormula.get('formula.occlusion')}
+                                                </Link>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+                    )
+                })}
+                
+            </>)
+    }
 
     return (
         <AuthenticatedLayout
@@ -92,6 +193,9 @@ export default function index({ patientData }) {
                                 </ul>
                             </div>
                         </div>
+                        <div className="w-full">
+                            {renderTreatmentStages()}
+                        </div>
                         <div className="w-full bg-white border mt-10 patient-stage flex">
                             <form onSubmit={submit} className="flex flex-row w-full" encType='multipart/form-data'>
                                 <div className="w-1/3">
@@ -103,7 +207,7 @@ export default function index({ patientData }) {
                                                 setStageName(e.target.value)
                                             }}
                                             required
-                                            placeholder='Новий етап'
+                                            placeholder={msg.get('patient.newstage')}
                                             label={null}
                                         /> 
                                     </div>
@@ -133,6 +237,7 @@ export default function index({ patientData }) {
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
         </AuthenticatedLayout>

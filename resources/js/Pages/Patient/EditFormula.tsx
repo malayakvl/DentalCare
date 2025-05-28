@@ -6,12 +6,11 @@ import lngFormula from "../../Lang/Formula/translation";
 import lngPatient from "../../Lang/Patient/translation";
 import { useSelector, useDispatch } from "react-redux";
 import { appLangSelector } from "../../Redux/Layout/selectors";
-import { Link } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserPlus, faFloppyDisk, faPencil, faTrash, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react';
+import { faFloppyDisk, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
+import { useState, useEffect } from 'react';
 import Formula from "./Formula/index";
-import FormulaMilk from "./FormulaMilk/index";
 import {
     getDiagnosisSelector,
     getSealColor1Selector,
@@ -24,7 +23,8 @@ import {
     getCeramicCrownColorSelector,
     getCeramicMCrownColorSelector,
     getMetalicCrownColorSelector,
-    getZirconiaCrownColorSelector
+    getZirconiaCrownColorSelector,
+    getTeethDiagnozisSelector,
 } from '../../Redux/Formula/selectors';
 import {
     setTeethType,
@@ -39,9 +39,14 @@ import {
     setMCeramicCrownColor,
     setMetalicCrownColor,
     setZirconiaCrownColor,
-    setDiagnosisClass
+    setDiagnosisClass,
+    setToothDiagnoze,
+    showAllAdult,
+    showAllChild,
+    setDataDiagnozes,
+    setClearFormula
 } from '../../Redux/Formula'
-import PrimaryButton from '@/Components/Form/PrimaryButton';
+import PrimaryButton from '../../Components/Form/PrimaryButton';
 import Details from './Partials/Details';
 
 export default function index({ patientData, treatmentData, clinicData }) {
@@ -55,9 +60,11 @@ export default function index({ patientData, treatmentData, clinicData }) {
         messages: lngFormula,
         locale: appLang,
     });
-
     const dispatch = useDispatch<any>();
     const teethType = useSelector(teethTypeSelector);
+    const tData = treatmentData.formula ? JSON.parse(treatmentData.formula) : useSelector(getTeethDiagnozisSelector);
+
+
     const handleTabClick = (tabName) => {
         setTab(tabName);
     }
@@ -72,6 +79,133 @@ export default function index({ patientData, treatmentData, clinicData }) {
     const mceramicCrownColor = useSelector(getCeramicMCrownColorSelector);
     const metalicCrownColor = useSelector(getMetalicCrownColorSelector);
     const zirconiaCrownColor = useSelector(getZirconiaCrownColorSelector);
+    
+    const [values, setValues] = useState({
+        clinic_id: clinicData.id,
+        patientData: patientData,
+        treatmentData: treatmentData,
+        formula_type: teethType
+    })
+
+    const showAllTeeth = () => {
+        if (teethType === 'adult') {
+            dispatch(showAllAdult(true));
+            for (let i=11; i<= 18; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=41; i<= 48; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=21; i<= 28; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=31; i<= 38; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            
+            for (let i=51; i<= 55; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=61; i<= 65; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=81; i<= 85; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=71; i<= 75; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            dispatch(setToothDiagnoze(tData));
+        } else {
+            dispatch(showAllAdult(false));
+            dispatch(showAllChild(true));
+            for (let i=11; i<= 18; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=41; i<= 48; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=21; i<= 28; i++) {
+                if (!tData[`tooth${i}`].absent && tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+            for (let i=31; i<= 38; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = false;
+                }
+            }
+
+            for (let i=51; i<= 55; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=61; i<= 65; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=81; i<= 85; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            for (let i=71; i<= 75; i++) {
+                if (!tData[`tooth${i}`].absent && !tData[`tooth${i}`].show) {
+                    tData[`tooth${i}`].show = true;
+                }
+            }
+            dispatch(setToothDiagnoze(tData));
+        }
+    }
+
+    const submit = (e) => {
+        e.preventDefault();
+        values['treatmentData'] = tData;
+        values['teethType'] = teethType;
+
+        // clear selector
+        dispatch(dispatch(setClearFormula()));
+
+        if (treatmentData.id) {
+            router.post(`/patient/update-formula?id=${treatmentData.id}`, values);
+        } else {
+            
+            router.post('/pricing/update', {
+                clinic_id: values.clinic_id,
+                category_id: values.category_id,
+                name: values.name,
+                price: values.price,
+                rows: invoiceItems
+            })
+        }
+    };
+
+    useEffect(() => {
+        dispatch(setTeethType(treatmentData.formula_type));
+        dispatch(setDataDiagnozes(tData));
+    }, [treatmentData]);
 
     return (
         <AuthenticatedLayout
@@ -84,52 +218,6 @@ export default function index({ patientData, treatmentData, clinicData }) {
                 <div>
                     <div className="p-4 sm:p-8 mb-8 content-data bg-content">
                         <Details clinicData={clinicData} patientData={patientData} />
-                        {/* <div className="patient-view-border relative">
-                            <div className='flex'>
-                                {patientData.avatar ? (
-                                    <div className='profile-photo' style={{backgroundImage: `url(/uploads/patients/${patientData.avatar})`}} />
-                                ) : (
-                                    <div className='profile-photo' />
-                                )}
-                                <div className='parient-info'>
-                                    <b>{patientData.first_name} {patientData.last_name}</b>
-                                    <span className='block text-[11px]'>{patientData.phone}</span>
-                                </div>
-                            </div>
-                            <div className='icon-block'>
-                                <ul>
-                                    <li>
-                                        <Link href="/">
-                                            <FontAwesomeIcon icon={faUserPlus} className='mr-3' />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="">
-                                            <FontAwesomeIcon icon={faPencil} />
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className='tabs-block'>
-                                <ul>
-                                    <li id="documents" className={tab === 'documents' ? 'active' : ''} onClick={() => handleTabClick('documents')}>
-                                        Документи
-                                    </li>
-                                    <li id="visits" className={tab === 'visits' ? 'active' : ''} onClick={() => handleTabClick('visits')}>
-                                        Візити
-                                    </li>
-                                    <li id="plans" className={tab === 'plans' ? 'active' : ''} onClick={() => handleTabClick('plans')}>
-                                        Плани лікування
-                                    </li>
-                                    <li id="history" className={tab === 'history' ? 'active' : ''} onClick={() => handleTabClick('history')}>
-                                        Історія лікування
-                                    </li>
-                                    <li id="finances" className={tab === 'finances' ? 'active' : ''} onClick={() => handleTabClick('finances')}>
-                                        Фінанси
-                                    </li>
-                                </ul>
-                            </div>
-                        </div> */}
                         {tab === 'history' && (
                             <ul className="sub-tab text-right mt-5">
                                 <li className='relative'>
@@ -178,8 +266,9 @@ export default function index({ patientData, treatmentData, clinicData }) {
                             <div className='clearfix' />
                             <div className='flex w-full patient-content-border'>
                                 <div className='w-1/2'>
-                                    {teethType === 'adult' && <Formula />}
-                                    {teethType !== 'adult' && <FormulaMilk />}
+                                    <Formula action={'edit'} formulaData={JSON.parse(treatmentData.formula)} />
+                                    {/* {teethType === 'adult' && <Formula />}
+                                    {teethType !== 'adult' && <FormulaMilk />} */}
                                 </div>
                                 <div className='w-1/2'>
                                     <div className='flex p-2'>
@@ -191,14 +280,41 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         <div className={`flex`}>
                                                             <span
                                                                 className={`diagnoze-title flex-initial cursor-pointer ${teethType === 'adult' ? 'active': ''}`}
-                                                                onClick={() => dispatch(setTeethType('adult'))}
+                                                                onClick={() => {
+                                                                    dispatch(setTeethType('adult'));
+                                                                    if (!tData.tooth51.show) {
+                                                                        document.getElementById('TH-11').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-51').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth61.show) {
+                                                                        document.getElementById('TH-21').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-61').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth52.show) {
+                                                                        document.getElementById('TH-12').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-52').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth53.show) {
+                                                                        document.getElementById('TH-13').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-53').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth54.show) {
+                                                                        document.getElementById('TH-14').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-54').style.visibility = 'hidden'
+                                                                    }
+                                                                    if (!tData.tooth55.show) {
+                                                                        document.getElementById('TH-15').style.visibility = 'inherit'
+                                                                        document.getElementById('TH-55').style.visibility = 'hidden'
+                                                                    } 
+                                                                }}
                                                             >
                                                                 {msgFormula.get('formula.stable')}
                                                             </span>
                                                             <span
                                                                 className={`diagnoze-title flex-initial cursor-pointer ml-4 ${teethType !== 'adult' ? 'active': ''}`}
                                                                 onClick={() => {
-                                                                    dispatch(setTeethType('child'))
+                                                                    dispatch(setTeethType('child'));
+                                                                    
                                                                 }}
                                                             >
                                                                 {msgFormula.get('formula.milk')}
@@ -208,6 +324,16 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                     <div className={`clearfix`} />
                                                     <li>
                                                         <span
+                                                            className={`diagnoze-title`}
+                                                            onClick={() => {
+                                                                // нажали показать все и вибран тип постоянние
+                                                                showAllTeeth()
+                                                            }}>
+                                                            {msgFormula.get('formula.allteeth')}
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span
                                                             className={`diagnoze-title ${diagnozis === 'absent' ? 'active' : ''}`}
                                                             onClick={() => {
                                                                 dispatch(setDiagnosis(diagnozis === 'absent' ? '' : 'absent'));
@@ -215,12 +341,6 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                             }}>
                                                             {msgFormula.get('formula.absent.tooth')}
                                                         </span>
-                                                        {/* <span
-                                                            className={`diagnoze-title flex-initial cursor-pointer`}
-                                                            onClick={() => console.log(1)}
-                                                        >
-                                                            {msgFormula.get('formula.absent.tooth')}
-                                                        </span> */}
                                                     </li>
                                                     <li>
                                                         <span
@@ -1184,7 +1304,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </div>
                                                     </li>
                                                     {/* ШТИФТ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'pin' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1195,7 +1315,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* КУЛЬТОВА НАКЛАДКА */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'culttab' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1206,7 +1326,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* АБАТМЕНТ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'abutment' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1217,7 +1337,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* ФОРМУВАЧ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'shaper' ? 'active' : ''}`}
                                                             onClick={() => {
@@ -1228,7 +1348,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                                         </span>
                                                     </li>
                                                     {/* ІМПЛАНТ */}
-                                                    <li>
+                                                    <li style={{display: teethType === 'child' ? 'none' : 'inherit'}}>
                                                         <span
                                                             className={`diagnoze-title ${diagnozis === 'implant' ? 'active' : ''}`}
                                                             onClick={() =>{
@@ -1250,7 +1370,7 @@ export default function index({ patientData, treatmentData, clinicData }) {
                                         >
                                             {msg.get('patient.back')}
                                         </Link>
-                                        <PrimaryButton>{msg.get('patient.save')}</PrimaryButton>
+                                        <PrimaryButton onClick={(e) => submit(e)}>{msg.get('patient.save')}</PrimaryButton>
                                     </div>
                                 </div>
                                 <div className='clearfix' />
