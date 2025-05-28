@@ -371,7 +371,7 @@ export default function Tooth25() {
                                 c3.5,5.9,8.5,11,14.8,10.1c4.6-0.7,8.3-4.1,11-8.6C1464.6,615.8,1469.7,622.1,1478.4,627.7z"
                             />
                             <path className={`
-                                    st8 target caries-left
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth25.caries_top ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth25.seal_top ? `seal-fill ${teethDiagnozis.tooth25.seal_top_color}` : ''}
@@ -800,7 +800,7 @@ export default function Tooth25() {
                                 C1423.1,457.5,1423.9,474.1,1424.4,485z"
                             />
                             <path className={
-                                    `st8 caries-left
+                                `st8 caries-left
                                 ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                 ${teethDiagnozis.tooth25.caries_left ? 'caries-fill' : ''}
                                 ${teethDiagnozis.tooth25.seal_left ? `seal-fill ${teethDiagnozis.tooth25.seal_left_color}` : ''}
@@ -826,12 +826,8 @@ export default function Tooth25() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom) ||
-                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_right && tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_center) ||
-                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_bottom)
+                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_right) ||
+                                        (!tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_right)
                                     )
                                         ? 5 : 0
                                 }} 
@@ -853,12 +849,8 @@ export default function Tooth25() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_top && !tooth25Diagnozis.seal_bottom) ||
-                                        (!tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_center) ||
-                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && !tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center && !tooth25Diagnozis.seal_left && tooth25Diagnozis.seal_right && !tooth25Diagnozis.seal_top) ||
-                                        (!tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_top && tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_center)
+                                        (tooth25Diagnozis.seal_bottom && !tooth25Diagnozis.seal_left) ||
+                                        (!tooth25Diagnozis.seal_bottom && tooth25Diagnozis.seal_left)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1422 446.499C1421 430.499 1418.6 426.799 1411 423.999" 

@@ -376,9 +376,9 @@ export default function Tooth15() {
                             />
                         </g>
                         {/*КАРИЕС НИЗ*/}
-                        <g id="s_header_15_3" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'bottom');
+                                setColordedPart(diagnozis, 'top');
                             }}
                         >
                             <path className="st7" 
@@ -387,10 +387,10 @@ export default function Tooth15() {
                                 c-3.5,5.9-8.5,11-14.8,10.1c-4.6-0.7-8.3-4.1-11-8.6C633.4,615.8,628.3,622.1,619.6,627.7z"
                             />
                             <path className={
-                                    `st8 caries-bottom
+                                    `st8 caries-top
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth15.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth15.seal_bottom ? `seal-fill ${teethDiagnozis.tooth15.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth15.caries_top ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth15.seal_top ? `seal-fill ${teethDiagnozis.tooth15.seal_top_color}` : ''}
                                 `}
                                 d="M619.6,627.7c0.8,2,1.6,4,2.7,5.8c3.1,5.4,7.8,10.1,13.8,12.7c5,2.2,10.3,2.8,15.6,2.5
                                 c6.1-0.3,12.3-1.9,17.4-5.4c4.1-2.8,7.1-6.9,9.7-11c0.2-0.2,0.3-0.5,0.5-0.8c-5.1-7.6-13.3-16.8-17.4-21.2
@@ -416,10 +416,10 @@ export default function Tooth15() {
                                 c0.3-6-0.2-11.9-2.6-17.3c-5.1,2.8-16.5,9.1-24,15.5c0.8,4.2-0.2,9.1-1.4,13.8C666.3,600.7,664.5,605.8,661.8,610.3z"
                             />
                         </g>
-                        {/*КАРИЕС ВЕРХ*/}
-                        <g id="s_header_15_1" className="caries-filling" 
+                        {/*КАРИЕС BOTTOM*/}
+                        <g className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st7" d="M619.7,559.3c3.8,3.3,10.3,9.5,15.4,18.3c0.4-0.5,0.7-0.9,1.1-1.2c2.2-2.1,7.6-7.1,16.2-5.4
@@ -427,10 +427,10 @@ export default function Tooth15() {
                                 c-4.1-2.8-8.8-4.8-13.2-7c-5-2.5-9.8-5.4-15.5-6.2c-10.6-1.5-20.2,4.2-27.9,11.2C623.3,555.4,621.5,557.3,619.7,559.3z"
                             />
                             <path className={`
-                                    st8 target caries-left
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth15.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth15.seal_top ? `seal-fill ${teethDiagnozis.tooth15.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth15.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth15.seal_bottom ? `seal-fill ${teethDiagnozis.tooth15.seal_bottom_color}` : ''}
                                 `}
                                 d="M619.7,559.3c3.8,3.3,10.3,9.5,15.4,18.3c0.4-0.5,0.7-0.9,1.1-1.2c2.2-2.1,7.6-7.1,16.2-5.4
                                 c0,0,6.9,1.2,12.5,6.1c2.1,1.8,3.2,4.1,3.7,6.6c7.5-6.4,18.8-12.8,24-15.5c0-0.1-0.1-0.1-0.1-0.2c-2.2-4.9-5.9-9.1-10.5-12.4
@@ -442,8 +442,8 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                 stroke: 'rgb(81, 79, 72)',
                                 strokeWidth: (
-                                    (tooth15Diagnozis.seal_left && !tooth15Diagnozis.seal_bottom) ||
-                                    (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_bottom)
+                                    (tooth15Diagnozis.seal_left && !tooth15Diagnozis.seal_top) ||
+                                    (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_top)
                                 ) ? 5 : 0
                             }}
                                 d="M636.5 612C634.833 614.5 630 620.5 624 624.5" 
@@ -462,8 +462,8 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_left && !tooth15Diagnozis.seal_top) ||
-                                        (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_top)
+                                        (tooth15Diagnozis.seal_left && !tooth15Diagnozis.seal_bottom) ||
+                                        (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M635 578C633.833 575 630 567.8 624 563" 
@@ -472,8 +472,8 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_center && !tooth15Diagnozis.seal_top) ||
-                                        (!tooth15Diagnozis.seal_center && tooth15Diagnozis.seal_top)
+                                        (tooth15Diagnozis.seal_center && !tooth15Diagnozis.seal_bottom) ||
+                                        (!tooth15Diagnozis.seal_center && tooth15Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M635 578C645.5 566.001 662.5 574.3 668.5 583.5" 
@@ -482,8 +482,8 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_right && !tooth15Diagnozis.seal_top) ||
-                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_top)
+                                        (tooth15Diagnozis.seal_right && !tooth15Diagnozis.seal_bottom) ||
+                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }}
                                 d="M668.5 583.5C670.667 580.667 677.6 574.1 688 570.5" 
@@ -502,8 +502,8 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_right && !tooth15Diagnozis.seal_bottom) ||
-                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_bottom)
+                                        (tooth15Diagnozis.seal_right && !tooth15Diagnozis.seal_top) ||
+                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}
                                 d="M662.5 610.5C664.167 611.5 669.2 616.2 676 627" 
@@ -512,8 +512,8 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_center && !tooth15Diagnozis.seal_bottom) ||
-                                        (!tooth15Diagnozis.seal_center && tooth15Diagnozis.seal_bottom)
+                                        (tooth15Diagnozis.seal_center && !tooth15Diagnozis.seal_top) ||
+                                        (!tooth15Diagnozis.seal_center && tooth15Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}
                                 d="M662.5 610.5C659 617.833 648.8 628.5 636 612.5" 
@@ -841,7 +841,7 @@ export default function Tooth15() {
                         {/*КАРИЕС TOP*/}
                         <g className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st58" d="M629.2,429.6c0.3,0.8,0.4,6.5,0.3,14.2c5.1-2,14.7-5,24.4-4.1c7.2,0.7,17,4.8,22.1,7.1c0.5-4.6,1-8.2,1.5-9.8
@@ -849,10 +849,10 @@ export default function Tooth15() {
                                 c-3-0.9-6.2-1.3-9.3-1.1c-11.8,0.6-22.2,7.6-27.9,17.7c-2.4,4.2-3.8,8.9-5.5,13.4C622.5,418.5,628.4,427.6,629.2,429.6z"
                             />
                             <path className={`
-                                    st8 target caries-top
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth15.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth15.seal_top ? `seal-fill ${teethDiagnozis.tooth15.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth15.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth15.seal_bottom ? `seal-fill ${teethDiagnozis.tooth15.seal_bottom_color}` : ''}
                                 `}
                                 d="M629.2,429.6c0.3,0.8,0.4,6.5,0.3,14.2c5.1-2,14.7-5,24.4-4.1c7.2,0.7,17,4.8,22.1,7.1c0.5-4.6,1-8.2,1.5-9.8
                                 c1.7-5.2,8.9-12.6,13.1-16.6c-0.3-1.2-0.6-2.5-0.9-3.7c-2.8-10-8-19.2-15.9-26.2c-3.5-3.2-7.6-5.9-12.2-7.3
@@ -875,9 +875,9 @@ export default function Tooth15() {
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_left && !tooth15Diagnozis.seal_top) ||
-                                        (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_top && !tooth15Diagnozis.seal_center) ||
-                                        (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_top && tooth15Diagnozis.seal_center)
+                                        (tooth15Diagnozis.seal_left && !tooth15Diagnozis.seal_bottom) ||
+                                        (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_bottom && !tooth15Diagnozis.seal_center) ||
+                                        (!tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_bottom && tooth15Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                             />
@@ -885,7 +885,7 @@ export default function Tooth15() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_top && !tooth15Diagnozis.seal_center) ||
+                                        (tooth15Diagnozis.seal_bottom && !tooth15Diagnozis.seal_center) ||
                                         (tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_left && tooth15Diagnozis.seal_center && !tooth15Diagnozis.seal_top) ||
                                         (!tooth15Diagnozis.seal_top && !tooth15Diagnozis.seal_bottom && tooth15Diagnozis.seal_center)
                                     ) ? 5 : 0
@@ -897,9 +897,9 @@ export default function Tooth15() {
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth15Diagnozis.seal_right && !tooth15Diagnozis.seal_top) ||
-                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_top && !tooth15Diagnozis.seal_center) ||
-                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_top && tooth15Diagnozis.seal_center)
+                                        (tooth15Diagnozis.seal_right && !tooth15Diagnozis.seal_bottom) ||
+                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_bottom && !tooth15Diagnozis.seal_center) ||
+                                        (!tooth15Diagnozis.seal_right && tooth15Diagnozis.seal_bottom && tooth15Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }}
