@@ -923,10 +923,10 @@ export default function Tooth17() {
                                 style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth17Diagnozis.seal_bottom && tooth17Diagnozis.seal_center && tooth17Diagnozis.seal_top) ||
+                                        (!tooth17Diagnozis.seal_top && !tooth17Diagnozis.seal_center && tooth17Diagnozis.seal_bottom) ||
                                         (tooth17Diagnozis.seal_bottom && tooth17Diagnozis.seal_center && !tooth17Diagnozis.seal_top) ||
-                                        (tooth17Diagnozis.seal_right && tooth17Diagnozis.seal_left && tooth17Diagnozis.seal_center && !tooth17Diagnozis.seal_bottom) ||
-                                        (!tooth17Diagnozis.seal_bottom && !tooth17Diagnozis.seal_top && tooth17Diagnozis.seal_center)
+                                        (tooth17Diagnozis.seal_right && tooth17Diagnozis.seal_left && tooth17Diagnozis.seal_center && !tooth17Diagnozis.seal_top) ||
+                                        (!tooth17Diagnozis.seal_top && !tooth17Diagnozis.seal_bottom && tooth17Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }}
                             />

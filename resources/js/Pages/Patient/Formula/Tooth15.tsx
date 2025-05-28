@@ -767,7 +767,7 @@ export default function Tooth15() {
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: (!tooth15Diagnozis.culttab && !tooth15Diagnozis.abutment && !tooth15Diagnozis.implant && !tooth15Diagnozis.shaper) ? 'inherit' : 'hidden'}}>
                         {/*КАРИЕС RIGHT*/}
-                        <g className="caries-filling" style={{zIndex: 3000}}
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'right');
                             }}
