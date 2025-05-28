@@ -829,10 +829,8 @@ export default function Tooth37() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth37Diagnozis.seal_bottom && tooth37Diagnozis.seal_center && tooth37Diagnozis.seal_top) ||
-                                        (tooth37Diagnozis.seal_bottom && tooth37Diagnozis.seal_center && !tooth37Diagnozis.seal_top) ||
-                                        (tooth37Diagnozis.seal_right && tooth37Diagnozis.seal_left && tooth37Diagnozis.seal_center && !tooth37Diagnozis.seal_top) ||
-                                        (!tooth37Diagnozis.seal_top && !tooth37Diagnozis.seal_bottom && tooth37Diagnozis.seal_center)
+                                        (tooth37Diagnozis.seal_center && !tooth37Diagnozis.seal_top) ||
+                                        (!tooth37Diagnozis.seal_center && tooth37Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1739.5 1108C1728.67 1118.5 1694.6 1137.4 1645 1129" />

@@ -734,7 +734,7 @@ export default function Tooth45() {
                             />
                         </g>
                         {/* КАРИЕС R */}
-                        <g className="caries-filling hoho1"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}

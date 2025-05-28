@@ -306,11 +306,11 @@ export default function Tooth38() {
                     </g>
                     {/*CARIES/SEAL*/}
                     <g className="header caries-filling" style={{visibility: (!tooth38Diagnozis.culttab && !tooth38Diagnozis.abutment && !tooth38Diagnozis.implant && !tooth38Diagnozis.shaper && !tooth38Diagnozis.apex) ? 'inherit' : 'hidden'}}>
-                        {/*КАРИЕС ЦЕНТР*/}
+                        {/*КАРИЕС BOTTOM*/}
                         <g
                             className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st7" d="M1892.4,971c-4.3,8.6-11.8,15.1-20.2,19.8c-6,3.3-12.5,5.8-19.2,7.3c-8.3,1.9-16.8,2.5-25.2,2.8
@@ -318,10 +318,10 @@ export default function Tooth38() {
                                 c9,11.3,25.7,18.2,36.2,18.8c14.4,0.9,27.6-8.2,27.6-8.2c3.1-1.6,5.8-4.9,7.9-9.1C1875.5,957.8,1884.6,963.1,1892.4,971z"
                             />
                             <path className={
-                                    `st8 caries-top
+                                    `st8 caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth38.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth38.seal_top ? `seal-fill ${teethDiagnozis.tooth38.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth38.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth38.seal_bottom ? `seal-fill ${teethDiagnozis.tooth38.seal_bottom_color}` : ''}
                                 `} 
                                 d="M1892.4,971c-4.3,8.6-11.8,15.1-20.2,19.8c-6,3.3-12.5,5.8-19.2,7.3c-8.3,1.9-16.8,2.5-25.2,2.8
                                 c-11.4,0.3-23.1-0.1-33.1-5.6c-5-2.8-9.2-6.6-13.2-10.7c-0.6-0.6-1.2-1.2-1.8-1.9c7.1-15,15.9-24.9,19.6-28.6
@@ -339,7 +339,7 @@ export default function Tooth38() {
                                 C1793.4,944.7,1795.8,949.6,1799.3,954z"
                             />
                             <path className={
-                                    `st8 caries-center
+                                    `st8 caries-left
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth38.caries_left ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth38.seal_left ? `seal-fill ${teethDiagnozis.tooth38.seal_left_color}` : ''}
@@ -353,7 +353,7 @@ export default function Tooth38() {
                         <g
                             className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'bottom');
+                                setColordedPart(diagnozis, 'top');
                             }}
                         >
                             <path className="st7" d="M1884.9,891.2c-5.6,7.6-11.6,17.1-15.3,27c-9.9-11.3-34.5-13.8-49.2-11.9c-9.4,1.2-17.4,5.1-22.3,11.8
@@ -361,10 +361,10 @@ export default function Tooth38() {
                                 c2.6-0.2,5-1.1,7.5-1.6c4.8-1,9.7-0.8,14.6-0.5c5.7,0.4,11.4,1,16.6,3.2C1876,882.1,1880.8,886.4,1884.9,891.2z"
                             />
                             <path className={
-                                    `st8 caries-center
+                                    `st8 caries-top
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth38.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth38.seal_bottom ? `seal-fill ${teethDiagnozis.tooth38.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth38.caries_top ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth38.seal_top ? `seal-fill ${teethDiagnozis.tooth38.seal_top_color}` : ''}
                                 `} 
                                 d="M1884.9,891.2c-5.6,7.6-11.6,17.1-15.3,27c-9.9-11.3-34.5-13.8-49.2-11.9c-9.4,1.2-17.4,5.1-22.3,11.8
                                 c-11.6-4.5-21-10.8-27.8-16.3c3.1-6.3,7.4-12,12.8-16.4c10.1-8.2,23.3-11.6,36.1-9c4.1,0.9,8.1,2.4,12.2,2.1
@@ -420,8 +420,8 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_right && !tooth38Diagnozis.seal_top) ||
-                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_top)
+                                        (tooth38Diagnozis.seal_right && !tooth38Diagnozis.seal_bottom) ||
+                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1871 956C1874.5 957.667 1882.9 962.3 1888.5 967.5" />
@@ -438,8 +438,8 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_right && !tooth38Diagnozis.seal_bottom) ||
-                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_bottom)
+                                        (tooth38Diagnozis.seal_right && !tooth38Diagnozis.seal_top) ||
+                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}  
                                 d="M1869.5 918.5C1869.83 914.833 1872.7 905.2 1881.5 896" />
@@ -447,8 +447,8 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_bottom) ||
-                                        (!tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_bottom)
+                                        (tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top) ||
+                                        (!tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1869.5 918.5C1865.5 910 1814 902.9 1798 918.5" />
@@ -456,8 +456,8 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_bottom) ||
-                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_bottom)
+                                        (tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_top) ||
+                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }}  
                                 d="M1798 918.5C1794.5 918 1784.9 914.6 1774.5 905" />
@@ -474,8 +474,8 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_top) ||
-                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_top)
+                                        (tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_bottom) ||
+                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1799.5 954C1796.5 956.5 1788.8 964.7 1782 977.5" />
@@ -483,8 +483,8 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (!tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_top) ||
-                                        (tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top)
+                                        (!tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_bottom) ||
+                                        (tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1799 954C1808.17 966.475 1835.4 984.253 1871 955.559" />
@@ -784,7 +784,7 @@ export default function Tooth38() {
                         <g
                             className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st58" d="M1893.9,1082.8c-0.4,1.4-0.9,2.7-1.5,4c-5,11.3-12.9,21-22.9,28.2c-11.3,8.1-24.6,12.7-38.3,15
@@ -794,8 +794,8 @@ export default function Tooth38() {
                             <path className={
                                 `st8 caries-bottom
                                 ${diagnozis === 'caries' ? 'caries-stroke' : ''}
-                                ${tooth38Diagnozis.caries_top ? 'caries-fill' : ''}
-                                ${tooth38Diagnozis.seal_top ? `seal-fill ${teethDiagnozis.tooth38.seal_top_color}` : ''}
+                                ${tooth38Diagnozis.caries_bottom ? 'caries-fill' : ''}
+                                ${tooth38Diagnozis.seal_bottom ? `seal-fill ${teethDiagnozis.tooth38.seal_bottom_color}` : ''}
                             `} 
                                 d="M1893.9,1082.8c-0.4,1.4-0.9,2.7-1.5,4c-5,11.3-12.9,21-22.9,28.2c-11.3,8.1-24.6,12.7-38.3,15
                                 c-14.4,2.5-29.2,2.5-43.7,0.1c-1.2-0.9-2.3-1.9-3.4-2.9c7.2-5.4,12.3-11,12.7-16.5c0.3-3.8-1.1-10-2.7-16c8.4,2.8,19.9,5,31,2.1
@@ -817,9 +817,9 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_right && !tooth38Diagnozis.seal_top) ||
-                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_top && !tooth38Diagnozis.seal_center) ||
-                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_top && tooth38Diagnozis.seal_center)
+                                        (tooth38Diagnozis.seal_right && !tooth38Diagnozis.seal_bottom) ||
+                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_bottom && !tooth38Diagnozis.seal_center) ||
+                                        (!tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1866.5 1073.5C1874 1082.5 1880.2 1082.7 1889 1083.5" />
@@ -828,7 +828,7 @@ export default function Tooth38() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (!tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center && tooth38Diagnozis.seal_top) ||
-                                        (tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top) ||
+                                        (tooth38Diagnozis.seal_bottom && !tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top) ||
                                         (tooth38Diagnozis.seal_right && tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_center && !tooth38Diagnozis.seal_top) ||
                                         (!tooth38Diagnozis.seal_top && !tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center)
                                     ) ? 5 : 0
@@ -838,9 +838,9 @@ export default function Tooth38() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_top) ||
-                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_top && !tooth38Diagnozis.seal_center) ||
-                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_top && tooth38Diagnozis.seal_center)
+                                        (tooth38Diagnozis.seal_left && !tooth38Diagnozis.seal_bottom) ||
+                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_bottom && !tooth38Diagnozis.seal_center) ||
+                                        (!tooth38Diagnozis.seal_left && tooth38Diagnozis.seal_bottom && tooth38Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }}

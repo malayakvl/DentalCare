@@ -818,7 +818,7 @@ export default function Tooth36() {
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
                                         (!tooth36Diagnozis.seal_bottom && tooth36Diagnozis.seal_center && tooth36Diagnozis.seal_top) ||
-                                        (tooth36Diagnozis.seal_bottom && tooth36Diagnozis.seal_center && !tooth36Diagnozis.seal_top) ||
+                                        (tooth36Diagnozis.seal_bottom && !tooth36Diagnozis.seal_center && !tooth36Diagnozis.seal_top) ||
                                         (tooth36Diagnozis.seal_right && tooth36Diagnozis.seal_left && tooth36Diagnozis.seal_center && !tooth36Diagnozis.seal_top) ||
                                         (!tooth36Diagnozis.seal_top && !tooth36Diagnozis.seal_bottom && tooth36Diagnozis.seal_center)
                                     ) ? 5 : 0

@@ -352,7 +352,7 @@ export default function Tooth34() {
                             />
                         </g>
                         {/*КАРИЕС TOP*/}
-                        <g id="s_header_15_3 hoho-bottom" className="caries-filling" 
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'top');
                             }}
@@ -718,7 +718,7 @@ export default function Tooth34() {
                             />
                         </g>
                         {/* КАРИЕС R */}
-                        <g className="caries-filling hoho1"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'left');
                             }}
@@ -739,7 +739,7 @@ export default function Tooth34() {
                             />
                         </g>
                         {/*КАРИЕС B*/}
-                        <g className="caries-filling bottom"
+                        <g className="caries-filling"
                             onClick={() => {
                                 setColordedPart(diagnozis, 'bottom');
                             }}

@@ -302,7 +302,7 @@ export default function Tooth46() {
                                 c-1.9-5.8-4.3-11.4-7.6-16.3c-3.6,4.8-8.1,10.5-11.5,14.7c-3.4,4.2-8.4,8.2-12.5,11.2C600,955.7,601.7,959,602.5,962.8z"
                             />
                             <path className={
-                                    `st8 caries-center
+                                    `st8 caries-right
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
                                     ${teethDiagnozis.tooth46.caries_right ? 'caries-fill' : ''}
                                     ${teethDiagnozis.tooth46.seal_right ? `seal-fill ${teethDiagnozis.tooth46.seal_right_color}` : ''}
@@ -336,7 +336,7 @@ export default function Tooth46() {
                                 c-5.6,0.4-11.1,1.3-16.5,2.9c-6,1.9-11.7,4.8-16.3,9.1C500.8,926.2,498.5,929.3,496.7,932.6z"
                             />
                         </g>
-                        {/*КАРИЕС НИЗ*/}
+                        {/*КАРИЕС LEFT*/}
                         <g
                             className="caries-filling"
                             onClick={() => {
@@ -358,7 +358,7 @@ export default function Tooth46() {
                                 c-2.3,4.1-4,8.5-5.5,12.8c-2.7,7.8-4.9,15.8-7.4,23.9C481,978.2,477.8,987.2,479.1,996.5z"
                             />
                         </g>
-                        {/*КАРИЕС LEFT*/}
+                        {/*КАРИЕС BOTTOM*/}
                         <g
                             className="caries-filling"
                             onClick={() => {
@@ -813,8 +813,8 @@ export default function Tooth46() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth46Diagnozis.seal_top && !tooth46Diagnozis.seal_center) ||
-                                        (tooth46Diagnozis.seal_bottom && tooth46Diagnozis.seal_center && !tooth46Diagnozis.seal_top) ||
+                                        (tooth46Diagnozis.seal_bottom && !tooth46Diagnozis.seal_center) ||
+                                        (tooth46Diagnozis.seal_top && tooth46Diagnozis.seal_center && !tooth46Diagnozis.seal_bottom) ||
                                         (tooth46Diagnozis.seal_right && tooth46Diagnozis.seal_left && tooth46Diagnozis.seal_center && !tooth46Diagnozis.seal_top) ||
                                         (!tooth46Diagnozis.seal_top && !tooth46Diagnozis.seal_bottom && tooth46Diagnozis.seal_center)
                                     ) ? 5 : 0
