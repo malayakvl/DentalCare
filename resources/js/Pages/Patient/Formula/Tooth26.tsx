@@ -351,10 +351,10 @@ export default function Tooth26() {
                                 C1639,643.2,1642.3,644.9,1644.7,646.4z"
                             />
                             <path className={
-                                    `st8 caries-bottom
+                                    `st8 caries-top
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth26.caries_bottom ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth26.seal_bottom ? `seal-fill ${teethDiagnozis.tooth26.seal_bottom_color}` : ''}
+                                    ${teethDiagnozis.tooth26.caries_top ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth26.seal_top ? `seal-fill ${teethDiagnozis.tooth26.seal_top_color}` : ''}
                                 `} 
                                 d="M1644.7,646.4C1644.6,646.4,1644.6,646.4,1644.7,646.4c-3.2,6.4-8.3,11.6-14.4,15.4c-5.5,3.3-11.6,5.4-18,6.5
                                 c-6,1.1-12.2,1.3-18.2,0.1c-9.5-1.8-18.2-7-28-7.1c-5.6,0-11,1.6-16.6,2.4c-9.9,1.3-20-0.4-28.1-5.6c-2.9-1.8-5.4-4-7.7-6.4
@@ -387,7 +387,7 @@ export default function Tooth26() {
                         {/*КАРИЕС ВЕРХ*/}
                         <g
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                             className="caries-filling"
                         >
@@ -396,10 +396,10 @@ export default function Tooth26() {
                                 c5.6,0.9,11.6,1.9,17.4,2.1c11.2,0.5,22.5-2.4,33.3,0.1C1608.1,533.8,1615.2,539,1620.7,546z"
                             />
                             <path className={`
-                                    st8 target caries-left
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth26.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth26.seal_top ? `seal-fill ${teethDiagnozis.tooth26.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth26.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth26.seal_bottom ? `seal-fill ${teethDiagnozis.tooth26.seal_bottom_color}` : ''}
                                 `} 
                                 d="M1620.7,546c-4.6,4.9-12.4,14.2-18.7,27.5c-5.8-4.4-17-7.8-37.7-6.8c0,0-23.7,0.9-31.4,3.9
                                 c-3.4,1.4-6,3.2-7.8,5.3c-12.9-9.6-23.6-21.9-29.5-29.4c0.6-1.2,1.2-2.3,2-3.4c10.8-16,30.9-16.9,50.5-13.8
@@ -411,8 +411,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_bottom) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom)
+                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_top) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1608.5 621C1611.67 625.333 1622.4 636.1 1640 644.5"
@@ -431,8 +431,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top)
+                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1601 574C1601.5 568.333 1605.2 555.6 1616 550" 
@@ -441,8 +441,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_top)
+                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1601 574C1588 566.5 1530.4 565.2 1524 576"
@@ -451,8 +451,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top)
+                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1524 576C1517.83 572.167 1504 561.8 1498 551" 
@@ -471,8 +471,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_bottom) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom)
+                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_top) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1536.5 624C1535.17 628.167 1529.2 639 1516 649"
@@ -481,8 +481,8 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_bottom) ||
-                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_bottom)
+                                        (tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
+                                        (!tooth26Diagnozis.seal_center && tooth26Diagnozis.seal_top)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1536.5 624C1546.5 630 1591.4 631.5 1609 621.5" 
@@ -815,7 +815,7 @@ export default function Tooth26() {
                         {/*КАРИЕС У BOTTOM*/}
                         <g className="caries-filling"
                             onClick={() => {
-                                setColordedPart(diagnozis, 'top');
+                                setColordedPart(diagnozis, 'bottom');
                             }}
                         >
                             <path className="st58" d="M1595.8,436.3c-6.6-3.5-19.1-10-22.8-10.2c-5.2-0.2-32.3,0.7-34.8,1.6c-1.8,0.6-12.6,8.2-19.1,12.8
@@ -824,10 +824,10 @@ export default function Tooth26() {
                                 C1594.3,411,1594.9,422.6,1595.8,436.3z" 
                             />
                             <path className={`
-                                    st8 target caries-top
+                                    st8 target caries-bottom
                                     ${['caries', 'seal'].includes(diagnozis) ? 'caries-stroke' : ''}
-                                    ${teethDiagnozis.tooth26.caries_top ? 'caries-fill' : ''}
-                                    ${teethDiagnozis.tooth26.seal_top ? `seal-fill ${teethDiagnozis.tooth26.seal_top_color}` : ''}
+                                    ${teethDiagnozis.tooth26.caries_bottom ? 'caries-fill' : ''}
+                                    ${teethDiagnozis.tooth26.seal_bottom ? `seal-fill ${teethDiagnozis.tooth26.seal_bottom_color}` : ''}
                                 `} 
                                 d="M1595.8,436.3c-6.6-3.5-19.1-10-22.8-10.2c-5.2-0.2-32.3,0.7-34.8,1.6c-1.8,0.6-12.6,8.2-19.1,12.8
                                 c-3.3-9.8-6.2-17.5-7.4-18.6c-2.6-2.5-14.1-11.3-19.7-15.6c0-0.1,0-0.1,0-0.2c6.7-7.1,14.7-13.1,23.9-17.9
@@ -851,9 +851,9 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_center) ||
-                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_top && tooth26Diagnozis.seal_center)
+                                        (tooth26Diagnozis.seal_right && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
+                                        (!tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
                                     ) ? 5 : 0
                                 }} 
                                 d="M1595.5 435.999C1594 403.999 1589.5 411.999 1609.5 389.999" 
@@ -862,7 +862,7 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_center) ||
+                                        (tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
                                         (tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
                                         (tooth26Diagnozis.seal_right && tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_center && !tooth26Diagnozis.seal_top) ||
                                         (!tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
@@ -874,9 +874,9 @@ export default function Tooth26() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_top) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top && !tooth26Diagnozis.seal_center) ||
-                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_top && tooth26Diagnozis.seal_center)
+                                        (tooth26Diagnozis.seal_left && !tooth26Diagnozis.seal_bottom) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom && !tooth26Diagnozis.seal_center) ||
+                                        (!tooth26Diagnozis.seal_left && tooth26Diagnozis.seal_bottom && tooth26Diagnozis.seal_center)
                                     )
                                         ? 5 : 0
                                 }} 

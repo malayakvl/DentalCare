@@ -826,7 +826,7 @@ export default function Tooth28() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth28Diagnozis.seal_top && !tooth28Diagnozis.seal_center) ||
+                                        (tooth28Diagnozis.seal_bottom && !tooth28Diagnozis.seal_center) ||
                                         (tooth28Diagnozis.seal_bottom && tooth28Diagnozis.seal_center && !tooth28Diagnozis.seal_top) ||
                                         (tooth28Diagnozis.seal_right && tooth28Diagnozis.seal_left && tooth28Diagnozis.seal_center && !tooth28Diagnozis.seal_top) ||
                                         (!tooth28Diagnozis.seal_top && !tooth28Diagnozis.seal_bottom && tooth28Diagnozis.seal_center)

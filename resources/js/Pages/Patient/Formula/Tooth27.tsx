@@ -570,8 +570,8 @@ export default function Tooth27() {
                 >
                     {/*CHANGE COLOR*/}
                     <g className="dentin">
-                        <g id="dentin_v_27" className="hRoot hImplant hEmpty" style={{visibility: !tooth27Diagnozis.implant && !tooth27Diagnozis.apex && !tooth27Diagnozis.shaper ? 'inherit' : 'hidden'}}>
-                            <path id="dentin_v_27" className={`st9 change-color ${tooth27Diagnozis.change_color ? 'diagnoze' : ''}`} 
+                        <g className="hRoot hImplant hEmpty" style={{visibility: !tooth27Diagnozis.implant && !tooth27Diagnozis.apex && !tooth27Diagnozis.shaper ? 'inherit' : 'hidden'}}>
+                            <path className={`st9 change-color ${tooth27Diagnozis.change_color ? 'diagnoze' : ''}`}
                                 d="M1760.3,401.5c-0.1,10.4-3.5,20.7-9.7,29.7l-33.3-6.7l-33.6,10.1l-14.2,14.8
                                 c-10-6.6-18.1-15.1-23.6-24.9c-3.3-5.9-5.6-12.2-6.8-18.7c-0.3-4.2-0.4-9-0.4-13.9c0-0.5,0-1,0-1.5c2.8-5.6,6.4-10.8,10.7-15.3
                                 c6.5-6.7,14.4-11.9,23.1-15.3c0.2-0.1,0.5-0.2,0.7-0.3c9-3.5,18.6-5.1,28.2-5.8c2.8-0.2,5.5-0.4,8.3-0.5
@@ -601,7 +601,7 @@ export default function Tooth27() {
                     </g>
                     {/*PULPIT/CHANNEL NOT SEALED/PART SALED*/}
                     <g className="pulp">
-                        <g className="hEmpty hRoot hImplant pulpitis-pfilling">
+                        <g className="pulpitis-pfilling">
                             <path className={`st22 target ${tooth27Diagnozis.channel_class}`}
                                 d="M1719.1,399.8c-5.9-4.1-13.5-5.7-20.8-4.4c-8.6,1.5-15.8,6.8-19.3,14.1
                                 c-2.9-5.3-4.6-11-5.1-16.9c-0.7-7.7,0.8-15.4,0.3-23.1c-0.2-3.3-0.9-6.5-1.7-9.7c0.2-0.1,0.5-0.2,0.7-0.3l0,0
@@ -609,7 +609,7 @@ export default function Tooth27() {
                                 c0.6,0,1.2,0,1.8-0.1c0.1,0,0.2,0,0.3,0c0.3,7.2,1,14.4,3.5,21.2c1.6,4.4,3.9,8.5,5.2,13C1719.6,391.5,1719.8,395.7,1719.1,399.8z" 
                             />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling">
+                        <g className="pulpitis-pfilling">
                             <path className={`st22 target top ${tooth27Diagnozis.channel_class} ${tooth27Diagnozis.channel_class} ${tooth27Diagnozis.pulpit ? 'pulpit' : ''} ${tooth27Diagnozis.periodontit ? 'periodontit' : ''}`}
                                 d="M1713.2,298c-3.1,17.7-4.2,35.6-3.6,53.5c0,0.6,0,1.2,0.1,1.7c-0.1,0-0.2,0-0.3,0
                                 c-0.6,0-1.2,0-1.8,0.1c-0.9,0-1.8,0.1-2.7,0.1c-1.2,0.1-2.3,0.2-3.5,0.2c-6.2,0.5-12.3,1.3-18.3,2.8c-1,0.2-2,0.5-3.1,0.8
@@ -620,7 +620,7 @@ export default function Tooth27() {
                                 C1713.9,294.7,1713.5,296.3,1713.2,298z"
                             />
                         </g>
-                        <g className="hEmpty hImplant pulpitis-pfilling" style={{visibility: 'inherit'}}>
+                        <g className="pulpitis-pfilling" style={{visibility: 'inherit'}}>
                             <path className={`st22 part ${tooth27Diagnozis.channel_class} ${tooth27Diagnozis.channel_class} ${tooth27Diagnozis.pulpit ? 'pulpit' : ''} ${tooth27Diagnozis.periodontit ? 'periodontit' : ''} top-sealed-part`} 
                                 d="M1655,299.5c0.6-0.4,1.3-0.9,2-1.3c-1.9-17-0.5-34.2,4.3-50.9C1655.6,264.1,1653.4,281.9,1655,299.5z"
                             />
@@ -733,7 +733,7 @@ export default function Tooth27() {
                     </g>
                     {/*КАРИЕС*/}
                     <g className="header caries-filling hRoot hImplant hEmpty" style={{visibility: 'inherit'}}>
-                    <g className="caries-filling"
+                        <g className="caries-filling"
                            onClick={() => {
                             setColordedPart(diagnozis, 'center');
                         }}>
@@ -816,7 +816,7 @@ export default function Tooth27() {
                                 C1729.3,377.3,1733.7,391.5,1738.8,407.6z"
                             />
                         </g>
-                        <g className="with top-t-line">
+                        <g className="with">
                             {/*Черточка лево низ*/}
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
@@ -843,7 +843,7 @@ export default function Tooth27() {
                             <path className="st54" style={{
                                     stroke: 'rgb(81, 79, 72)',
                                     strokeWidth: (
-                                        (tooth27Diagnozis.seal_top && !tooth27Diagnozis.seal_center) ||
+                                        (tooth27Diagnozis.seal_bottom && !tooth27Diagnozis.seal_center) ||
                                         (tooth27Diagnozis.seal_bottom && tooth27Diagnozis.seal_center && !tooth27Diagnozis.seal_top) ||
                                         (tooth27Diagnozis.seal_right && tooth27Diagnozis.seal_left && tooth27Diagnozis.seal_center && !tooth27Diagnozis.seal_top) ||
                                         (!tooth27Diagnozis.seal_top && !tooth27Diagnozis.seal_bottom && tooth27Diagnozis.seal_center)
