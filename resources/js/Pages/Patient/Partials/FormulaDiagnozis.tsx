@@ -5,7 +5,7 @@ import Lang from "lang.js";
 import lngFormula from "../../../Lang/Formula/translation";
 import lngPatient from "../../../Lang/Patient/translation";
 import { getTeethDiagnozisSelector, getRemoveDiaSelector } from '../../../Redux/Formula/selectors';
-import { setToothDiagnoze, setRemoveDia } from "../../../Redux/Formula";
+import {setToothDiagnoze, setRemoveDia, setChangeDia} from "../../../Redux/Formula";
 
 export default function FormulaDiagnozis() {
     const dispatch = useDispatch<any>();
@@ -46,7 +46,7 @@ export default function FormulaDiagnozis() {
         'temporary_crown',
         'wedge_shaped_defect',
     ];
-    const dSealArray = [
+    const dColoredArray = [
         'ceramic_crown',
         'seal_cervical',
         'seal_bottom',
@@ -67,7 +67,16 @@ export default function FormulaDiagnozis() {
         const currentDiagnozis = teethDiagnozis;
         currentDiagnozis[`tooth${num}`][`${key}`] = false;
         dispatch(setToothDiagnoze(currentDiagnozis));
-        dispatch(setRemoveDia(true));
+        dispatch(setToothDiagnoze(currentDiagnozis));
+        // dispatch(setRemoveDia(true));
+    }
+    const disableColorDia = (num, key) =>   {
+        const currentDiagnozis = teethDiagnozis;
+        currentDiagnozis[`tooth${num}`][`${key}`] = false;
+        currentDiagnozis[`tooth${num}`][`${key}_color`] = null;
+        dispatch(setToothDiagnoze(currentDiagnozis));
+        dispatch(setChangeDia(Math.random()));
+        // dispatch(setRemoveDia(true));
     }
 
     const renderDiagnoze = (num) => {
@@ -97,8 +106,8 @@ export default function FormulaDiagnozis() {
                                     </span>
                                     : ''
                                 }
-                                {(teethDiagnozis[`tooth${num}`][_v] && dSealArray.includes(_v)) ?
-                                    <span className={`d-badge ${teethDiagnozis[`tooth${num}`][`${_v}_color`]}`} onClick={() => disableDia(num, _v)}>
+                                {(teethDiagnozis[`tooth${num}`][_v] && dColoredArray.includes(_v)) ?
+                                    <span className={`d-badge ${teethDiagnozis[`tooth${num}`][`${_v}_color`]}`} onClick={() => disableColorDia(num, _v)}>
                                         <i className='d-badge-close' />
                                         {msgFormula.get(`formula.${_v}`)}
                                     </span>

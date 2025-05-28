@@ -178,13 +178,11 @@ export default function Tooth45() {
                 document.getElementById('TH-45').classList.add('f-tooth-active');
             }
             if (teethType === 'child' && teethDiagnozis.tooth45.show) {
-                console.log('over')
                 document.getElementById('TH-85').classList.add('f-tooth-active');
                 document.getElementById('TH-45').classList.remove('f-tooth-active');
             }
         }
         if (type === 'leave') {
-                console.log('over')
             if (teethType === 'adult' && !teethDiagnozis.tooth45.show) {
                 document.getElementById('TH-45').classList.remove('f-tooth-active');
                 if (teethDiagnozis.tooth85.show) {

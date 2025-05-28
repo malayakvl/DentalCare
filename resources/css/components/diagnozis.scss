@@ -175,7 +175,7 @@
 .d-badge {
     @apply inline-flex items-center rounded-md text-xs font-medium
         text-black ring-1 ring-inset mr-4 relative;
-    padding: 0px 20px 4px 10px;
+    padding: 3px 20px 4px 10px;
     font-size: 11px;
     height: 25px;
     margin-bottom: 10px;
@@ -184,9 +184,10 @@
     box-shadow: none !important;
     background-color: rgba(228, 211, 250, 0.3);
     line-height:10px;
+    cursor:pointer;
 }
 .d-badge-close {
-    @apply absolute top-[0px] right-[5px] cursor-pointer;
+    @apply absolute top-[3px] right-[5px] cursor-pointer;
     font-style: normal;
     color: #f76ab0;
     &:before {

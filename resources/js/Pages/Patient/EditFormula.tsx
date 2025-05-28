@@ -6,7 +6,7 @@ import lngFormula from "../../Lang/Formula/translation";
 import lngPatient from "../../Lang/Patient/translation";
 import { useSelector, useDispatch } from "react-redux";
 import { appLangSelector } from "../../Redux/Layout/selectors";
-import { Link, router, useForm, usePage } from '@inertiajs/react';
+import { Link, router } from '@inertiajs/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk, faPrint, faUserDoctor } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
